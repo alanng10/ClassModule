@@ -7,6 +7,7 @@
 
     <ItemGroup>
         <ProjectReference Include="../Z.Tool.Class.CountList/Z.Tool.Class.CountList.csproj" />
+        <ProjectReference Include="../Z.Tool.Class.ErrorKindList/Z.Tool.Class.ErrorKindList.csproj" />
     </ItemGroup>
 
 </Project>
