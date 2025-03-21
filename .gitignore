@@ -1,5 +1,7 @@
 .vscode/
 /Out
+bin/
+obj/
 *.jpg
 *.png
 *.bmp
