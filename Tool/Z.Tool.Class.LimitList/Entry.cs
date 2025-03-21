@@ -1,4 +1,4 @@
-namespace Z.Tool.Saber.LimitList;
+namespace Z.Tool.Class.LimitList;
 
 class Entry : EntryEntry
 {
