@@ -9,14 +9,14 @@ public class ModuleRefLess : Less
 
         this.StringLess = this.TextInfra.StringLessCreate();
 
-        this.LessInt = new LessInt();
-        this.LessInt.Init();
+        this.IntLess = new LessInt();
+        this.IntLess.Init();
         return true;
     }
 
     protected virtual TextInfra TextInfra { get; set; }
     protected virtual StringLess StringLess { get; set; }
-    protected virtual LessInt LessInt { get; set; }
+    protected virtual LessInt IntLess { get; set; }
 
     public override long Execute(object lite, object rite)
     {
@@ -33,6 +33,6 @@ public class ModuleRefLess : Less
             return a;
         }
 
-        return this.LessInt.Execute(liteA.Ver, riteA.Ver);
+        return this.IntLess.Execute(liteA.Ver, riteA.Ver);
     }
 }
