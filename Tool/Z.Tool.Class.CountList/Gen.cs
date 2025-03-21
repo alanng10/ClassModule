@@ -1,11 +1,11 @@
-namespace Z.Tool.Saber.CountList;
+namespace Z.Tool.Class.CountList;
 
 public class Gen : SourceGen
 {
     public override bool Init()
     {
         base.Init();
-        this.Module = this.S("Saber.Infra");
+        this.Module = this.S("Class.Infra");
         this.ClassName = this.S("CountList");
         this.BaseClassName = this.S("Any");
         this.AnyClassName = this.S("Any");

@@ -1,4 +1,4 @@
-namespace Z.Tool.Saber.CountList;
+namespace Z.Tool.Class.CountList;
 
 class Entry : EntryEntry
 {
