@@ -14,7 +14,7 @@ public class Gen : SourceGen
         this.Export = true;
         this.ItemListFileName = this.S("../../../Class/Out/net8.0/ToolData/Saber/ItemListTaskKind.txt");
         this.AddMethodFileName = this.S("ToolData/Class/AddMaideTaskKind.txt");
-        this.OutputFilePath = this.S("../../Module/Class.Console/TaskKindList.cs");
+        this.OutputFilePath = this.S("../../Module/Class.Console/TaskKindList.cl");
         return true;
     }
 }
