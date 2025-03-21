@@ -1,5 +1,5 @@
 @echo off
 
-pushd Tool\Z.Make.View
+pushd Tool\Z.Make.Class
 dotnet build -v quiet
 popd
