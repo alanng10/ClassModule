@@ -14,7 +14,7 @@ public class Gen : SourceGen
         this.Export = true;
         this.ItemListFileName = this.S("../../../Class/Out/net8.0/ToolData/Saber/ItemListLimit.txt");
         this.AddMethodFileName = this.S("ToolData/Class/AddMaideLimit.txt");
-        this.OutputFilePath = this.S("../../Module/Class.Infra/LimitList.cs");
+        this.OutputFilePath = this.S("../../Module/Class.Infra/LimitList.cl");
         return true;
     }
 
