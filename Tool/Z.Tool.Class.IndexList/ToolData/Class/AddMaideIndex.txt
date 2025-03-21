@@ -1,6 +1,6 @@
     maide precate #ItemClassName# AddItem(var String text)
     {
-        #ItemClassName# item;
+        var #ItemClassName# item;
         item : new #ItemClassName#;
         item.Init();
         item.Index : this.Index;
