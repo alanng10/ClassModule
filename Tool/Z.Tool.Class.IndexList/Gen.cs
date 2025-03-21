@@ -14,7 +14,7 @@ public class Gen : SourceGen
         this.Export = true;
         this.ItemListFileName = this.S("../../../Class/Out/net8.0/ToolData/Saber/ItemListIndex.txt");
         this.AddMethodFileName = this.S("ToolData/Class/AddMaideIndex.txt");
-        this.OutputFilePath = this.S("../../Module/Class.Infra/IndexList.cs");
+        this.OutputFilePath = this.S("../../Module/Class.Infra/IndexList.cl");
         return true;
     }
 
