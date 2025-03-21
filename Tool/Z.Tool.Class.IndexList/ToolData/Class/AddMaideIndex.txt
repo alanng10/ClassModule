@@ -1,14 +1,11 @@
-    protected virtual #ItemClassName# AddItem(string text)
+    maide precate #ItemClassName# AddItem(var String text)
     {
-        String k;
-        k = this.StringValue.Execute(text);
-
         #ItemClassName# item;
-        item = new #ItemClassName#();
+        item : new #ItemClassName#;
         item.Init();
-        item.IndexList = this.Index;
-        item.Text = k;
-        this.Array.SetAt(item.IndexList, item);
-        this.Index = this.Index + 1;
+        item.Index : this.Index;
+        item.Text : text;
+        this.Array.Set(item.Index, item);
+        this.Index : this.Index + 1;
         return item;
     }
