@@ -12,9 +12,9 @@ public class Gen : SourceGen
         this.ItemClassName = this.S("Count");
         this.ArrayClassName = this.S("Array");
         this.Export = true;
-        this.ItemListFileName = this.S("ToolData/Class/ItemListCount.txt");
+        this.ItemListFileName = this.S("../../../Class/Out/net8.0/ToolData/Class/ItemListCount.txt");
         this.AddMethodFileName = this.S("ToolData/Class/AddMaideCount.txt");
-        this.OutputFilePath = this.S("../../Saber/Saber.Infra/CountList.cs");
+        this.OutputFilePath = this.S("../../Module/Class.Infra/CountList.cl");
         return true;
     }
 }
