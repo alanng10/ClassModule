@@ -1,4 +1,4 @@
-namespace Z.Tool.Saber.IndexList;
+namespace Z.Tool.Class.IndexList;
 
 public class Gen : SourceGen
 {
