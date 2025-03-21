@@ -1,4 +1,4 @@
-namespace Z.Tool.Saber.ErrorKindList;
+namespace Z.Tool.Class.ErrorKindList;
 
 public class Gen : SourceGen
 {
@@ -14,18 +14,16 @@ public class Gen : SourceGen
         String k;
         k = this.S(name);
 
-        this.Module = this.AddClear().AddS("Saber.").Add(k).AddResult();
+        this.Module = this.AddClear().AddS("Class.").Add(k).AddResult();
         this.ClassName = this.S("ErrorKindList");
         this.BaseClassName = this.S("Any");
         this.AnyClassName = this.S("Any");
         this.ItemClassName = this.S("ErrorKind");
         this.ArrayClassName = this.S("Array");
         this.Export = true;
-        this.ClassFileName = this.S("ToolData/Saber/ClassErrorKind.txt");
-        this.InitMethodFileName = this.S("ToolData/Saber/InitMaideErrorKind.txt");
-        this.ItemListFileName = this.AddClear().AddS("ToolData/Saber/ItemListErrorKind").Add(k).AddS(".txt").AddResult();
-        this.AddMethodFileName = this.S("ToolData/Saber/AddMaideErrorKind.txt");
-        this.OutputFilePath = this.AddClear().AddS("../../Saber/Saber.").Add(k).AddS("/ErrorKindList.cs").AddResult();
+        this.ItemListFileName = this.AddClear().AddS("../../../Class/Out/net8.0/ToolData/Saber/ItemListErrorKind").Add(k).AddS(".txt").AddResult();
+        this.AddMethodFileName = this.S("ToolData/Class/AddMaideErrorKind.txt");
+        this.OutputFilePath = this.AddClear().AddS("../../Module/Class.").Add(k).AddS("/ErrorKindList.cl").AddResult();
         base.Execute();
         return true;
     }
