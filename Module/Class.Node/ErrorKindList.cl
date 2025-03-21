@@ -59,7 +59,7 @@ class ErrorKindList : Any
 
     maide precate ErrorKind AddItem(var String text)
     {
-        ErrorKind item;
+        var ErrorKind item;
         item : new ErrorKind;
         item.Init();
         item.Index : this.Index;
