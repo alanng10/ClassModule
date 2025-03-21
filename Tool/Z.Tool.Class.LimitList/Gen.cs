@@ -5,18 +5,16 @@ public class Gen : SourceGen
     public override bool Init()
     {
         base.Init();
-        this.Module = this.S("Saber.Infra");
+        this.Module = this.S("Class.Infra");
         this.ClassName = this.S("LimitList");
         this.BaseClassName = this.S("Any");
         this.AnyClassName = this.S("Any");
         this.ItemClassName = this.S("Limit");
         this.ArrayClassName = this.S("Array");
         this.Export = true;
-        this.ClassFileName = this.S("ToolData/Saber/ClassLimit.txt");
-        this.InitMethodFileName = this.S("ToolData/Saber/InitMaideLimit.txt");
-        this.ItemListFileName = this.S("ToolData/Saber/ItemListLimit.txt");
-        this.AddMethodFileName = this.S("ToolData/Saber/AddMaideLimit.txt");
-        this.OutputFilePath = this.S("../../Saber/Saber.Infra/LimitList.cs");
+        this.ItemListFileName = this.S("../../../Class/Out/net8.0/ToolData/Saber/ItemListLimit.txt");
+        this.AddMethodFileName = this.S("ToolData/Class/AddMaideLimit.txt");
+        this.OutputFilePath = this.S("../../Module/Class.Infra/LimitList.cs");
         return true;
     }
 
@@ -30,7 +28,7 @@ public class Gen : SourceGen
 
         Array array;
         array = this.TextLimit(k, kka);
-        
+
         Text ka;
         Text kb;
         ka = (Text)array.GetAt(0);
