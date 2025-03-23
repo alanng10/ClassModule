@@ -56,7 +56,7 @@ public class NameValid : Any
         TextForm textForm;
         textForm = this.TextForm;
 
-        if (text.Range.Count < 1)
+        if (text.Range.Count == 0)
         {
             return false;
         }

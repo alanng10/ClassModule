@@ -40,4 +40,18 @@ class NameValid : Any
 
         return this.NamePart(text);
     }
+
+    maide prusate Bool NamePart(var Text text)
+    {
+        var TextInfra textInfra;
+        textInfra : this.TextInfra;
+
+        var TextForm textForm;
+        textForm : this.TextForm;
+
+        inf (text.Range.Count = 0)
+        {
+            return false;
+        }
+    }
 }
