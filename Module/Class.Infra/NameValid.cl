@@ -71,6 +71,9 @@ class NameValid : Any
             return false;
         }
 
+        var Int line;
+        line : textInfra.Char("_");
+
         var Bool b;
         b : false;
 
@@ -91,7 +94,17 @@ class NameValid : Any
             n : textForm.Execute(n);
 
             var Bool ba;
-            ba: textInfra.Alpha(n, true) | textInfra.Alpha(n, false) | textInfra.Digit(n) | 
+            ba: textInfra.Alpha(n, true) | textInfra.Alpha(n, false) | textInfra.Digit(n) | n = line;
+
+            inf (~ba)
+            {
+                b : true;
+            }
+            i : i + 1;
         }
+
+        var Bool a;
+        a : ~b;
+        return a;
     }
 }
