@@ -136,16 +136,16 @@ public class NameValid : Any
         bool b;
         b = false;
 
-        long u;
-        u = textInfra.Index(text, dot, less);
+        long kk;
+        kk = textInfra.Index(text, dot, less);
 
         long index;
         long count;
         index = ka;
         count = kb;
-        while (!b & !(u == -1))
+        while (!b & !(kk == -1))
         {
-            count = u;
+            count = kk;
             range.Count = count;
 
             if (!this.NamePart(text))
@@ -155,13 +155,13 @@ public class NameValid : Any
 
             if (!b)
             {
-                index = index + u + 1;
+                index = index + kk + 1;
                 count = kc - index;
 
                 range.Index = index;
                 range.Count = count;
 
-                u = textInfra.Index(text, dot, less);
+                kk = textInfra.Index(text, dot, less);
             }
         }
 
