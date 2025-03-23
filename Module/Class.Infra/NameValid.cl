@@ -30,4 +30,14 @@ class NameValid : Any
     field precate StringData StringData { get { return data; } set { data : value; } }
     field precate Text Text { get { return data; } set { data : value; } }
     field precate Text DotText { get { return data; } set { data : value; } }
+
+    maide prusate Bool Name(var Text text)
+    {
+        inf (this.Index(text))
+        {
+            return false;
+        }
+
+        return this.NamePart(text);
+    }
 }
