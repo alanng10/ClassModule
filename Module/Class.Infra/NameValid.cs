@@ -23,7 +23,7 @@ public class NameValid : Any
         String o;
         o = this.StringValue.Execute(".");
 
-        this.DotText = this.TextInfra.TextCreateStringData(o, null);
+        this.TextDot = this.TextInfra.TextCreateStringData(o, null);
         return true;
     }
 
@@ -36,7 +36,7 @@ public class NameValid : Any
     protected virtual IndexList IndexList { get; set; }
     protected virtual StringData StringData { get; set; }
     protected virtual Text Text { get; set; }
-    protected virtual Text DotText { get; set; }
+    protected virtual Text TextDot { get; set; }
 
     public virtual bool Name(Text text)
     {
@@ -121,7 +121,7 @@ public class NameValid : Any
         less = this.TextLess;
 
         Text dot;
-        dot = this.DotText;
+        dot = this.TextDot;
 
         InfraRange range;
         range = text.Range;
