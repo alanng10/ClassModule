@@ -17,7 +17,7 @@ class NameValid : Any
         text.Range.Init();
         this.Text : text;
 
-        this.DotText : this.TextInfra.TextCreateStringData(".", null);
+        this.TextDot : this.TextInfra.TextCreateStringData(".", null);
         return true;
     }
 
@@ -29,7 +29,7 @@ class NameValid : Any
     field precate IndexList IndexList { get { return data; } set { data : value; } }
     field precate StringData StringData { get { return data; } set { data : value; } }
     field precate Text Text { get { return data; } set { data : value; } }
-    field precate Text DotText { get { return data; } set { data : value; } }
+    field precate Text TextDot { get { return data; } set { data : value; } }
 
     maide prusate Bool Name(var Text text)
     {
@@ -106,5 +106,17 @@ class NameValid : Any
         var Bool a;
         a : ~b;
         return a;
+    }
+
+    maide prusate Bool ModuleName(var Text text)
+    {
+        var TextInfra textInfra;
+        textInfra : this.TextInfra;
+
+        var Less less;
+        less : this.TextLess;
+
+        var Text dot;
+        dot : this.TextDot;
     }
 }
