@@ -126,12 +126,12 @@ public class NameValid : Any
         InfraRange range;
         range = text.Range;
 
-        long aa;
-        long ab;
-        aa = range.Index;
-        ab = range.Count;
-        long ac;
-        ac = aa + ab;
+        long ka;
+        long kb;
+        ka = range.Index;
+        kb = range.Count;
+        long kc;
+        kc = ka + kb;
 
         bool b;
         b = false;
@@ -141,8 +141,8 @@ public class NameValid : Any
 
         long index;
         long count;
-        index = aa;
-        count = ab;
+        index = ka;
+        count = kb;
         while (!b & !(u == -1))
         {
             count = u;
@@ -156,7 +156,7 @@ public class NameValid : Any
             if (!b)
             {
                 index = index + u + 1;
-                count = ac - index;
+                count = kc - index;
 
                 range.Index = index;
                 range.Count = count;
@@ -177,7 +177,7 @@ public class NameValid : Any
         }
         if (!ba)
         {
-            count = ac - index;
+            count = kc - index;
             range.Count = count;
 
             if (!this.NamePart(text))
@@ -186,8 +186,8 @@ public class NameValid : Any
             }
         }
 
-        range.Index = aa;
-        range.Count = ab;
+        range.Index = ka;
+        range.Count = kb;
 
         bool a;
         a = !ba;
