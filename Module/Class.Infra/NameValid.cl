@@ -118,5 +118,47 @@ class NameValid : Any
 
         var Text dot;
         dot : this.TextDot;
+
+        var InfraRange range;
+        range : text.Range;
+
+        var Int ka;
+        var Int kb;
+        ka : range.Index;
+        kb : range.Count;
+        var Int kc;
+        kc : ka + kb;
+
+        var Bool b;
+        b : false;
+
+        var Int kk;
+        kk : textInfra.Index(text, dot, less);
+
+        var Int index;
+        var Int count;
+        index : ka;
+        count : kb;
+        while (~b & ~(kk = null))
+        {
+            count : kk;
+            range.Count : count;
+
+            inf (~this.NamePart(text))
+            {
+                b : true;
+            }
+
+            inf (~b)
+            {
+                index : index + kk + 1;
+                count : kc - index;
+
+                range.Index : index;
+                range.Count : count;
+
+                kk : textInfra.Index(text, dot, less);
+            }
+        }
     }
 }
