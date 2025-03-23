@@ -160,5 +160,33 @@ class NameValid : Any
                 kk : textInfra.Index(text, dot, less);
             }
         }
+
+        var Bool ba;
+        ba : false;
+
+        inf (~ba)
+        {
+            inf (b)
+            {
+                ba : true;
+            }
+        }
+        inf (~ba)
+        {
+            count : kc - index;
+            range.Count : count;
+
+            inf (~this.NamePart(text))
+            {
+                ba : true;
+            }
+        }
+
+        range.Index : ka;
+        range.Count : kb;
+
+        var Bool a;
+        a : ~ba;
+        return a;
     }
 }
