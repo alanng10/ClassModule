@@ -53,5 +53,45 @@ class NameValid : Any
         {
             return false;
         }
+
+        var Data data;
+        data : text.Data;
+        var Int start;
+        start : text.Range.Index;
+
+        var Int index;
+        index : start;
+        var Int n;
+        n : textInfra.DataCharGet(data, index);
+
+        n : textForm.Execute(n);
+
+        inf (~(textInfra.Alpha(n, true) | textInfra.Alpha(n, false)))
+        {
+            return false;
+        }
+
+        var Bool b;
+        b : false;
+
+        var Int count;
+        count : text.Range.Count;
+        count : count - 1;
+
+        start : start + 1;
+
+        var Int i;
+        i : 0;
+        while (~b & i < count)
+        {
+            index : start + i;
+
+            n : textInfra.DataCharGet(data, index);
+
+            n : textForm.Execute(n);
+
+            var Bool ba;
+            ba: textInfra.Alpha(n, true) | textInfra.Alpha(n, false) | textInfra.Digit(n) | 
+        }
     }
 }
