@@ -97,10 +97,7 @@ public class StoragePathValid : Any
             return false;
         }
 
-        Less less;
-        less = this.TextLess;
-
-        if (!this.StorageInfra.PathRelate(text, less))
+        if (!this.StorageInfra.PathRelate(text, this.TextLess))
         {
             return false;
         }
