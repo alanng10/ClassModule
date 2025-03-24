@@ -204,8 +204,8 @@ public class NameValid : Any
         TextLess less;
         less = this.TextLess;
 
-        Text oo;
-        oo = this.Text;
+        Text k;
+        k = this.Text;
         long count;
         count = indexList.Count;
         long i;
@@ -214,12 +214,12 @@ public class NameValid : Any
         {
             Index a;
             a = indexList.Get(i);
-            String o;
-            o = a.Text;
+            String ka;
+            ka = a.Text;
 
-            this.TextStringGet(oo, o);
+            this.TextStringGet(k, ka);
 
-            if (textInfra.Same(text, oo, less))
+            if (textInfra.Same(text, k, less))
             {
                 return true;
             }
