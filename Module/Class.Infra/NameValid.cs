@@ -228,15 +228,15 @@ public class NameValid : Any
         return false;
     }
 
-    protected virtual bool TextStringGet(Text text, String o)
+    protected virtual bool TextStringGet(Text text, String value)
     {
         StringData d;
         d = this.StringData;
-        d.ValueString = o;
+        d.ValueString = value;
 
         text.Data = d;
         text.Range.Index = 0;
-        text.Range.Count = this.StringComp.Count(o);
+        text.Range.Count = this.StringComp.Count(value);
         return true;
     }
 }

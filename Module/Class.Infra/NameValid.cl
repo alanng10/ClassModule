@@ -223,4 +223,16 @@ class NameValid : Any
         }
         return false;
     }
+
+    maide precate Bool TextStringGet(var Text text, var String value)
+    {
+        var StringData d;
+        d : this.StringData;
+        d.ValueString : value;
+
+        text.Data : d;
+        text.Range.Index : 0;
+        text.Range.Count : this.StringComp.Count(value);
+        return true;
+    }
 }
