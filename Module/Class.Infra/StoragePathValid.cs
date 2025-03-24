@@ -22,12 +22,12 @@ public class StoragePathValid : Any
         this.TextLess.RiteForm = textForm;
         this.TextLess.Init();
 
-        this.Combine = this.TextInfra.TextCreateStringData(this.TextInfra.PathCombine, null);
-        this.Slash = this.TextInfra.TextCreateStringData(this.S("/"), null);
-        this.BackSlash = this.TextInfra.TextCreateStringData(this.S("\\"), null);
-        this.SlashSlash = this.TextInfra.TextCreateStringData(this.S("//"), null);
-        this.Dot = this.TextInfra.TextCreateStringData(this.S("."), null);
-        this.DotDot = this.TextInfra.TextCreateStringData(this.S(".."), null);
+        this.TextCombine = this.TextInfra.TextCreateStringData(this.TextInfra.PathCombine, null);
+        this.TextSlash = this.TextInfra.TextCreateStringData(this.S("/"), null);
+        this.TextBackSlash = this.TextInfra.TextCreateStringData(this.S("\\"), null);
+        this.TextSlashSlash = this.TextInfra.TextCreateStringData(this.S("//"), null);
+        this.TextDot = this.TextInfra.TextCreateStringData(this.S("."), null);
+        this.TextDotDot = this.TextInfra.TextCreateStringData(this.S(".."), null);
         return true;
     }
 
@@ -36,12 +36,12 @@ public class StoragePathValid : Any
     protected virtual StorageInfra StorageInfra { get; set; }
     protected virtual StringValue StringValue { get; set; }
     protected virtual TextLess TextLess { get; set; }
-    protected virtual Text Combine { get; set; }
-    protected virtual Text Slash { get; set; }
-    protected virtual Text BackSlash { get; set; }
-    protected virtual Text SlashSlash { get; set; }
-    protected virtual Text Dot { get; set; }
-    protected virtual Text DotDot { get; set; }
+    protected virtual Text TextCombine { get; set; }
+    protected virtual Text TextSlash { get; set; }
+    protected virtual Text TextBackSlash { get; set; }
+    protected virtual Text TextSlashSlash { get; set; }
+    protected virtual Text TextDot { get; set; }
+    protected virtual Text TextDotDot { get; set; }
 
     public virtual bool ValidSourcePath(Text text)
     {
