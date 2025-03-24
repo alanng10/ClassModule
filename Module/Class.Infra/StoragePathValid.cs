@@ -62,7 +62,7 @@ public class StoragePathValid : Any
         text.Range.Count = 1;
 
         bool b;
-        b = textInfra.Same(text, this.Slash, this.TextLess);
+        b = textInfra.Same(text, this.TextSlash, this.TextLess);
         
         text.Range.Index = ka;
         text.Range.Count = kb;
@@ -73,14 +73,14 @@ public class StoragePathValid : Any
         }
 
         long k;
-        k = textInfra.Index(text, this.BackSlash, this.TextLess);
+        k = textInfra.Index(text, this.TextBackSlash, this.TextLess);
 
         if (!(k == -1))
         {
             return false;
         }
 
-        k = textInfra.Index(text, this.SlashSlash, this.TextLess);
+        k = textInfra.Index(text, this.TextSlashSlash, this.TextLess);
 
         if (!(k == -1))
         {
@@ -122,11 +122,11 @@ public class StoragePathValid : Any
         less = this.TextLess;
 
         Text combine;
-        combine = this.Combine;
+        combine = this.TextCombine;
         Text dot;
-        dot = this.Dot;
+        dot = this.TextDot;
         Text dotDot;
-        dotDot = this.DotDot;
+        dotDot = this.TextDotDot;
 
         long combineCount;
         combineCount = combine.Range.Count;
