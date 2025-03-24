@@ -189,4 +189,38 @@ class NameValid : Any
         a : ~ba;
         return a;
     }
+
+    maide prusate Bool Index(var Text text)
+    {
+        var TextInfra textInfra;
+        textInfra : this.TextInfra;
+        var IndexList indexList;
+        indexList : this.IndexList;
+
+        var TextLess less;
+        less : this.TextLess;
+
+        var Text k;
+        k : this.Text;
+        var Int count;
+        count : indexList.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Index ka;
+            ka : indexList.Get(i);
+            var String kb;
+            kb : ka.Text;
+
+            this.TextStringGet(k, kb);
+
+            inf (textInfra.Same(text, k, less))
+            {
+                return true;
+            }
+            i : i + 1;
+        }
+        return false;
+    }
 }
