@@ -43,7 +43,7 @@ public class StoragePathValid : Any
     protected virtual Text Dot { get; set; }
     protected virtual Text DotDot { get; set; }
 
-    public virtual bool IsValidSourcePath(Text text)
+    public virtual bool ValidSourcePath(Text text)
     {
         TextInfra textInfra;
         textInfra = this.TextInfra;
@@ -90,9 +90,9 @@ public class StoragePathValid : Any
         return true;
     }
 
-    public virtual bool IsValidDestPath(Text text)
+    public virtual bool ValidDestPath(Text text)
     {
-        if (!this.IsValidSourcePath(text))
+        if (!this.ValidSourcePath(text))
         {
             return false;
         }
