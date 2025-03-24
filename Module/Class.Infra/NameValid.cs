@@ -212,12 +212,12 @@ public class NameValid : Any
         i = 0;
         while (i < count)
         {
-            Index a;
-            a = indexList.Get(i);
-            String ka;
-            ka = a.Text;
+            Index ka;
+            ka = indexList.Get(i);
+            String kb;
+            kb = ka.Text;
 
-            this.TextStringGet(k, ka);
+            this.TextStringGet(k, kb);
 
             if (textInfra.Same(text, k, less))
             {
