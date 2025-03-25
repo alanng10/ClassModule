@@ -143,8 +143,8 @@ public class StoragePathValid : Any
         kk = textInfra.Index(text, combine, less);
         while (!b & !(kk == -1))
         {
-            long e;
-            e = textRange.Count;
+            long ke;
+            ke = textRange.Count;
 
             textRange.Count = kk;
 
@@ -166,7 +166,7 @@ public class StoragePathValid : Any
 
             if (!b)
             {
-                textRange.Count = e;
+                textRange.Count = ke;
 
                 long ka;
                 ka = kk + combineCount;
