@@ -95,7 +95,7 @@ class NameValid : TextAdd
         less : this.TextLess;
 
         var Text dot;
-        dot : this.TextDot;
+        dot : this.TA(".");
 
         var InfraRange range;
         range : text.Range;
@@ -178,39 +178,31 @@ class NameValid : TextAdd
         var TextLess less;
         less : this.TextLess;
 
-        var Text k;
-        k : this.Text;
+        var Bool b;
+        b : false;
+
         var Int count;
         count : indexList.Count;
         var Int i;
         i : 0;
-        while (i < count)
+        while (~b & i < count)
         {
             var Index ka;
             ka : indexList.Get(i);
             var String kb;
             kb : ka.Text;
 
-            this.TextStringGet(k, kb);
-
-            inf (textInfra.Same(text, k, less))
+            inf (textInfra.Same(text, this.TA(kb), less))
             {
-                return true;
+                b : true;
             }
             i : i + 1;
         }
-        return false;
-    }
 
-    maide precate Bool TextStringGet(var Text text, var String value)
-    {
-        var StringData d;
-        d : this.StringData;
-        d.ValueString : value;
+        this.ClearData();
 
-        text.Data : d;
-        text.Range.Index : 0;
-        text.Range.Count : this.StringComp.Count(value);
-        return true;
+        var Bool a;
+        a : b;
+        return a;
     }
 }
