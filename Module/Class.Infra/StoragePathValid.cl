@@ -139,6 +139,44 @@ class StoragePathValid : TextAdd
                     b : true;
                 }
             }
+
+            inf (~b)
+            {
+                textRange.Count : ke;
+
+                var Int ka;
+                ka : kk + combineCount;
+
+                textRange.Index : textRange.Index + ka;
+                textRange.Count : textRange.Count - ka;
+
+                kk : textInfra.Index(text, combine, less);
+            }
         }
+
+        inf (~b)
+        {
+            inf (textInfra.Same(text, dot, less))
+            {
+                b : true;
+            }
+        }
+
+        inf (~b)
+        {
+            inf (textInfra.Same(text, dotDot, less))
+            {
+                b : true;
+            }
+        }
+
+        textRange.Index : kaa;
+        textRange.Count : kab;
+
+        var Bool a;
+        a : b;
+
+        this.ClearData();
+        return a;
     }
 }
