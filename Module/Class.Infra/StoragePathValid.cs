@@ -21,7 +21,7 @@ public class StoragePathValid : Any
 
         if (!b)
         {
-            if (text.Range.Count < 1)
+            if (text.Range.Count == 0)
             {
                 b = true;
             }
@@ -71,6 +71,15 @@ public class StoragePathValid : Any
             }
         }
 
+        bool a;
+        a = true;
+
+        if (b)
+        {
+            a = false;
+        }
+
+        this.ClearData();
         return true;
     }
 
