@@ -5,7 +5,6 @@ public class StoragePathValid : Any
     public override bool Init()
     {
         base.Init();
-        this.InfraInfra = InfraInfra.This;
         this.TextInfra = TextInfra.This;
         this.StorageInfra = StorageInfra.This;
         this.StringValue = StringValue.This;
@@ -31,7 +30,6 @@ public class StoragePathValid : Any
         return true;
     }
 
-    protected virtual InfraInfra InfraInfra { get; set; }
     protected virtual TextInfra TextInfra { get; set; }
     protected virtual StorageInfra StorageInfra { get; set; }
     protected virtual StringValue StringValue { get; set; }
