@@ -1,9 +1,11 @@
-class StoragePathValid : Any
+class StoragePathValid : TextAdd
 {
     maide prusate Bool Init()
     {
         base.Init();
-        this.TextInfra : share TextInfra;
         this.StorageInfra : share StorageInfra;
+        return true;
     }
+
+    field precate StorageInfra StorageInfra { get { return data; } set { data : value; } }
 }
