@@ -165,6 +165,8 @@ class NameValid : TextAdd
 
         var Bool a;
         a : ~ba;
+
+        this.ClearData();
         return a;
     }
 
@@ -199,10 +201,10 @@ class NameValid : TextAdd
             i : i + 1;
         }
 
-        this.ClearData();
-
         var Bool a;
         a : b;
+
+        this.ClearData();
         return a;
     }
 }
