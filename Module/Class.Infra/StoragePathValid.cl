@@ -85,4 +85,34 @@ class StoragePathValid : TextAdd
 
         return true;
     }
+
+    maide precate Bool HasDotOrnDotDot(var Text text)
+    {
+        var TextInfra textInfra;
+        textInfra : this.TextInfra;
+        
+        var Less less;
+        less : this.TextLess;
+
+        var Text combine;
+        combine : this.TA(this.TextInfra.PathCombine);
+        var Text dot;
+        dot : this.TB(".");
+        var Text dotDot;
+        dotDot : this.TC("..");
+
+        var Int combineCount;
+        combineCount : combine.Range.Count;
+
+        var InfraRange textRange;
+        textRange : text.Range;
+
+        var Int kaa;
+        var Int kab;
+        kaa : textRange.Index;
+        kab : textRange.Count;
+
+        var Bool b;
+        b : false;
+    }
 }
