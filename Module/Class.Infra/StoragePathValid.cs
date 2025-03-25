@@ -5,84 +5,70 @@ public class StoragePathValid : Any
     public override bool Init()
     {
         base.Init();
-        this.TextInfra = TextInfra.This;
         this.StorageInfra = StorageInfra.This;
-        this.StringValue = StringValue.This;
-
-        LessInt charLess;
-        charLess = new LessInt();
-        charLess.Init();
-        TextForm textForm;
-        textForm = new TextForm();
-        textForm.Init();
-        this.TextLess = new TextLess();
-        this.TextLess.CharLess = charLess;
-        this.TextLess.LiteForm = textForm;
-        this.TextLess.RiteForm = textForm;
-        this.TextLess.Init();
-
-        this.TextCombine = this.TextInfra.TextCreateStringData(this.TextInfra.PathCombine, null);
-        this.TextSlash = this.TextInfra.TextCreateStringData(this.S("/"), null);
-        this.TextBackSlash = this.TextInfra.TextCreateStringData(this.S("\\"), null);
-        this.TextSlashSlash = this.TextInfra.TextCreateStringData(this.S("//"), null);
-        this.TextDot = this.TextInfra.TextCreateStringData(this.S("."), null);
-        this.TextDotDot = this.TextInfra.TextCreateStringData(this.S(".."), null);
         return true;
     }
 
-    protected virtual TextInfra TextInfra { get; set; }
     protected virtual StorageInfra StorageInfra { get; set; }
-    protected virtual StringValue StringValue { get; set; }
-    protected virtual TextLess TextLess { get; set; }
-    protected virtual Text TextCombine { get; set; }
-    protected virtual Text TextSlash { get; set; }
-    protected virtual Text TextBackSlash { get; set; }
-    protected virtual Text TextSlashSlash { get; set; }
-    protected virtual Text TextDot { get; set; }
-    protected virtual Text TextDotDot { get; set; }
 
     public virtual bool ValidSourcePath(Text text)
     {
         TextInfra textInfra;
         textInfra = this.TextInfra;
 
-        if (text.Range.Count < 1)
-        {
-            return false;
-        }
-
-        long ka;
-        long kb;
-        ka = text.Range.Index;
-        kb = text.Range.Count;
-
-        text.Range.Index = ka + kb - 1;
-        text.Range.Count = 1;
-
         bool b;
-        b = textInfra.Same(text, this.TextSlash, this.TextLess);
-        
-        text.Range.Index = ka;
-        text.Range.Count = kb;
+        b = false;
 
-        if (b)
+        if (!b)
         {
-            return false;
+            if (text.Range.Count < 1)
+            {
+                b = true;
+            }
         }
 
-        long k;
-        k = textInfra.Index(text, this.TextBackSlash, this.TextLess);
-
-        if (!(k == -1))
+        if (!b)
         {
-            return false;
+            long ka;
+            long kb;
+            ka = text.Range.Index;
+            kb = text.Range.Count;
+
+            text.Range.Index = ka + kb - 1;
+            text.Range.Count = 1;
+
+            bool ba;
+            ba = textInfra.Same(text, this.TA("/"), this.TextLess);
+
+            text.Range.Index = ka;
+            text.Range.Count = kb;
+
+            if (ba)
+            {
+                b = true;
+            }
         }
 
-        k = textInfra.Index(text, this.TextSlashSlash, this.TextLess);
-
-        if (!(k == -1))
+        if (!b)
         {
-            return false;
+            long kaa;
+            kaa = textInfra.Index(text, this.TA("\\"), this.TextLess);
+
+            if (!(kaa == -1))
+            {
+                b = true;
+            }
+        }
+
+        if (!b)
+        {
+            long kab;
+            kab = textInfra.Index(text, this.TA("//"), this.TextLess);
+
+            if (!(kab == -1))
+            {
+                b = true;
+            }
         }
 
         return true;
@@ -117,11 +103,11 @@ public class StoragePathValid : Any
         less = this.TextLess;
 
         Text combine;
-        combine = this.TextCombine;
+        combine = this.TA(this.TextInfra.PathCombine);
         Text dot;
-        dot = this.TextDot;
+        dot = this.TB(".");
         Text dotDot;
-        dotDot = this.TextDotDot;
+        dotDot = this.TC("..");
 
         long combineCount;
         combineCount = combine.Range.Count;
@@ -201,10 +187,5 @@ public class StoragePathValid : Any
         }
 
         return false;
-    }
-
-    private String S(string o)
-    {
-        return this.StringValue.Execute(o);
     }
 }
