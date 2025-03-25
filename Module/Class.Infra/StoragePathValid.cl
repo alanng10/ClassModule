@@ -65,4 +65,24 @@ class StoragePathValid : TextAdd
 
         return true;
     }
+
+    maide prusate Bool ValidDestPath(var Text text)
+    {
+        inf (~this.ValidSourcePath(text))
+        {
+            return false;
+        }
+
+        inf (~this.StorageInfra.PathRelate(text, this.TextLess))
+        {
+            return false;
+        }
+
+        inf (this.HasDotOrnDotDot(text))
+        {
+            return false;
+        }
+
+        return true;
+    }
 }
