@@ -114,5 +114,31 @@ class StoragePathValid : TextAdd
 
         var Bool b;
         b : false;
+
+        var Int kk;
+        kk : textInfra.Index(text, combine, less);
+        while (~b & ~(kk = null))
+        {
+            var Int ke;
+            ke : textRange.Count;
+
+            textRange.Count : kk;
+
+            inf (~b)
+            {
+                inf (textInfra.Same(text, dot, less))
+                {
+                    b : true;
+                }
+            }
+
+            inf (~b)
+            {
+                inf (textInfra.Same(text, dotDot, less))
+                {
+                    b : true;
+                }
+            }
+        }
     }
 }
