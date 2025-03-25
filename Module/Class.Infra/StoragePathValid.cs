@@ -13,69 +13,59 @@ public class StoragePathValid : Any
 
     public virtual bool ValidSourcePath(Text text)
     {
+        bool a;
+        a = this.PrivateValidSourcePath(text);
+        
+        this.ClearData();
+        return a;
+    }
+
+    private bool PrivateValidSourcePath(Text text)
+    {
         TextInfra textInfra;
         textInfra = this.TextInfra;
 
-        bool b;
-        b = false;
-
-        if (!b)
+        if (text.Range.Count == 0)
         {
-            if (text.Range.Count == 0)
-            {
-                b = true;
-            }
+            return false;
         }
 
-        if (!b)
+        long ka;
+        long kb;
+        ka = text.Range.Index;
+        kb = text.Range.Count;
+
+        text.Range.Index = ka + kb - 1;
+        text.Range.Count = 1;
+
+        bool ba;
+        ba = textInfra.Same(text, this.TA("/"), this.TextLess);
+
+        text.Range.Index = ka;
+        text.Range.Count = kb;
+
+        if (ba)
         {
-            long ka;
-            long kb;
-            ka = text.Range.Index;
-            kb = text.Range.Count;
-
-            text.Range.Index = ka + kb - 1;
-            text.Range.Count = 1;
-
-            bool ba;
-            ba = textInfra.Same(text, this.TA("/"), this.TextLess);
-
-            text.Range.Index = ka;
-            text.Range.Count = kb;
-
-            if (ba)
-            {
-                b = true;
-            }
+            return false;
         }
 
-        if (!b)
-        {
-            long kaa;
-            kaa = textInfra.Index(text, this.TA("\\"), this.TextLess);
+        long kaa;
+        kaa = textInfra.Index(text, this.TA("\\"), this.TextLess);
 
-            if (!(kaa == -1))
-            {
-                b = true;
-            }
+        if (!(kaa == -1))
+        {
+            return false;
         }
 
-        if (!b)
-        {
-            long kab;
-            kab = textInfra.Index(text, this.TA("//"), this.TextLess);
+        long kab;
+        kab = textInfra.Index(text, this.TA("//"), this.TextLess);
 
-            if (!(kab == -1))
-            {
-                b = true;
-            }
+        if (!(kab == -1))
+        {
+            return false;
         }
 
-        bool a;
-        a = !b;
-
-        this.ClearData();
-        return a;
+        return true;
     }
 
     public virtual bool ValidDestPath(Text text)
