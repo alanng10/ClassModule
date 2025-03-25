@@ -31,12 +31,20 @@ class StoragePathValid : TextAdd
         var Int ka;
         var Int kb;
         ka : text.Range.Index;
-        kb : text.Range.Index;
+        kb : text.Range.Count;
 
         text.Range.Index : (ka + kb) - 1;
         text.Range.Count : 1;
 
         var Bool ba;
         ba : textInfra.Same(text, this.TA("/"), this.TextLess);
+
+        text.Range.Index : ka;
+        text.Range.Count : kb;
+
+        inf (ba)
+        {
+            return false;
+        }
     }
 }
