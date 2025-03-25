@@ -72,15 +72,10 @@ public class StoragePathValid : Any
         }
 
         bool a;
-        a = true;
-
-        if (b)
-        {
-            a = false;
-        }
+        a = !b;
 
         this.ClearData();
-        return true;
+        return a;
     }
 
     public virtual bool ValidDestPath(Text text)
@@ -190,11 +185,10 @@ public class StoragePathValid : Any
         textRange.Index = kaa;
         textRange.Count = kab;
 
-        if (b)
-        {
-            return true;
-        }
+        bool a;
+        a = b;
 
-        return false;
+        this.ClearData();
+        return a;
     }
 }
