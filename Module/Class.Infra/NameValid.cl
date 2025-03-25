@@ -92,7 +92,7 @@ class NameValid : TextAdd
         textInfra : this.TextInfra;
 
         var Less less;
-        less : this.TLess;
+        less : this.TextLess;
 
         var Text dot;
         dot : this.TextDot;
