@@ -46,5 +46,23 @@ class StoragePathValid : TextAdd
         {
             return false;
         }
+
+        var Int kaa;
+        kaa : textInfra.Index(text, this.TA("\\"), this.TextLess);
+
+        inf (~(kaa = null))
+        {
+            return false;
+        }
+
+        var Int kab;
+        kab : textInfra.Index(text, this.TA("//"), this.TextLess);
+
+        inf (~(kab = null))
+        {
+            return false;
+        }
+
+        return true;
     }
 }
