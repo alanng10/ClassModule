@@ -25,7 +25,7 @@ class NameValid : TextAdd
         textInfra : this.TextInfra;
 
         var TextForm textForm;
-        textForm : this.TForm;
+        textForm : this.TextForm;
 
         inf (text.Range.Count = 0)
         {
@@ -92,7 +92,7 @@ class NameValid : TextAdd
         textInfra : this.TextInfra;
 
         var Less less;
-        less : this.TextLess;
+        less : this.TLess;
 
         var Text dot;
         dot : this.TextDot;
