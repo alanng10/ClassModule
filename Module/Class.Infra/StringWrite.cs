@@ -52,10 +52,10 @@ public class StringWrite : Any
     protected virtual Infra ClassInfra { get; set; }
     protected virtual StringComp StringComp { get; set; }
 
-    public virtual String Value(Text text)
+    public virtual String Execute(Text text)
     {
         bool b;
-        b = this.CheckValueString(text);
+        b = this.ValidValue(text);
         if (!b)
         {
             return null;
@@ -63,7 +63,7 @@ public class StringWrite : Any
 
         this.WriteOperate = this.CountWriteOperate;
         this.Index = 0;
-        this.ExecuteValueString(text);
+        this.ExecuteStage(text);
 
         long count;
         count = this.Index;
@@ -77,7 +77,7 @@ public class StringWrite : Any
 
         this.WriteOperate = this.SetWriteOperate;
         this.Index = 0;
-        this.ExecuteValueString(text);
+        this.ExecuteStage(text);
 
         String a;
         a = this.StringComp.CreateData(this.Data, null);
@@ -87,7 +87,7 @@ public class StringWrite : Any
         return a;
     }
 
-    public virtual bool CheckValueString(Text text)
+    public virtual bool ValidValue(Text text)
     {
         TextInfra textInfra;
         textInfra = this.TextInfra;
@@ -227,7 +227,7 @@ public class StringWrite : Any
         return true;
     }
 
-    public virtual bool ExecuteValueString(Text text)
+    public virtual bool ExecuteStage(Text text)
     {
         TextInfra textInfra;
         textInfra = this.TextInfra;
@@ -333,7 +333,7 @@ public class StringWrite : Any
                         i = i + countA;
                     }
 
-                    this.ExecuteValueChar(escapeValue);
+                    this.ExecuteChar(escapeValue);
 
                     i = i + 1;
                 }
@@ -341,7 +341,7 @@ public class StringWrite : Any
 
             if (!b)
             {
-                this.ExecuteValueChar(c);
+                this.ExecuteChar(c);
             }
 
             i = i + 1;
@@ -349,7 +349,7 @@ public class StringWrite : Any
         return true;
     }
 
-    protected virtual bool ExecuteValueChar(long n)
+    protected virtual bool ExecuteChar(long n)
     {
         this.WriteOperate.ExecuteChar(n);
         return true;
