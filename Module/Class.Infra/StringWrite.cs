@@ -349,9 +349,9 @@ public class StringWrite : Any
         return true;
     }
 
-    protected virtual bool ExecuteValueChar(long oc)
+    protected virtual bool ExecuteValueChar(long n)
     {
-        this.WriteOperate.ExecuteChar(oc);
+        this.WriteOperate.ExecuteChar(n);
         return true;
     }
 }
