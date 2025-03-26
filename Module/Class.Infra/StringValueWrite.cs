@@ -20,17 +20,14 @@ public class StringValueWrite : Any
         return true;
     }
 
+    public virtual CountWriteOperate CountWriteOperate { get; set; }
+    public virtual SetWriteOperate SetWriteOperate { get; set; }
+    public virtual WriteOperate WriteOperate { get; set; }
+    public virtual StringWriteArg Arg { get; set; }
     protected virtual InfraInfra InfraInfra { get; set; }
     protected virtual TextInfra TextInfra { get; set; }
     protected virtual Infra ClassInfra { get; set; }
     protected virtual StringComp StringComp { get; set; }
-    public virtual CountWriteOperate CountWriteOperate { get; set; }
-    public virtual SetWriteOperate SetWriteOperate { get; set; }
-
-    public virtual WriteOperate WriteOperate { get; set; }
-
-    public virtual Data Data { get; set; }
-    public virtual long Index { get; set; }
 
     public virtual String Value(Text text)
     {
