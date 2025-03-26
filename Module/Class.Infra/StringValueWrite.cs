@@ -1,6 +1,6 @@
 namespace Saber.Infra;
 
-public class StringValueWrite : Any
+public class StringWrite : Any
 {
     public override bool Init()
     {
@@ -11,18 +11,41 @@ public class StringValueWrite : Any
         this.ClassInfra = Infra.This;
         this.StringComp = StringComp.This;
 
-        this.CountWriteOperate = new CountWriteOperate();
-        this.CountWriteOperate.Write = this;
-        this.CountWriteOperate.Init();
-        this.SetWriteOperate = new SetWriteOperate();
-        this.SetWriteOperate.Write = this;
-        this.SetWriteOperate.Init();
+        this.Arg = this.CreateArg();
+        this.CountWriteOperate = this.CreateCountOperate();
+        this.SetWriteOperate = this.CreateSetOperate();
         return true;
     }
 
-    public virtual CountWriteOperate CountWriteOperate { get; set; }
-    public virtual SetWriteOperate SetWriteOperate { get; set; }
-    public virtual WriteOperate WriteOperate { get; set; }
+    protected virtual StringWriteArg CreateArg()
+    {
+        StringWriteArg a;
+        a = new StringWriteArg();
+        a.Init();
+        return a;
+    }
+
+    protected virtual StringCountWriteOperate CreateCountOperate()
+    {
+        StringCountWriteOperate a;
+        a = new StringCountWriteOperate();
+        a.Arg = this.Arg;
+        a.Init();
+        return a;
+    }
+
+    protected virtual StringSetWriteOperate CreateSetOperate()
+    {
+        StringSetWriteOperate a;
+        a = new StringSetWriteOperate();
+        a.Arg = this.Arg;
+        a.Init();
+        return a;
+    }
+
+    public virtual StringCountWriteOperate CountOperate { get; set; }
+    public virtual StringSetWriteOperate SetOperate { get; set; }
+    public virtual StringWriteOperate Operate { get; set; }
     public virtual StringWriteArg Arg { get; set; }
     protected virtual InfraInfra InfraInfra { get; set; }
     protected virtual TextInfra TextInfra { get; set; }
