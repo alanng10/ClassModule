@@ -1,9 +1,7 @@
 namespace Saber.Infra;
 
-public class CountWriteOperate : WriteOperate
+public class StringCountWriteOperate : WriteOperate
 {
-    public virtual StringValueWrite Write { get; set; }
-
     public override bool ExecuteChar(long n)
     {
         long index;
