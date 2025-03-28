@@ -242,8 +242,6 @@ public class StringWrite : Any
 
     public virtual bool ExecuteStage(Text text)
     {
-        InfraInfra infraInfra;
-        infraInfra = this.InfraInfra;
         TextInfra textInfra;
         textInfra = this.TextInfra;
         Infra classInfra;
