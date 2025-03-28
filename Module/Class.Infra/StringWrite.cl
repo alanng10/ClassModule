@@ -87,4 +87,29 @@ class StringWrite : Any
         this.Arg : null;
         return a;
     }
+
+    maide prusate Bool ValidValue(var Text text)
+    {
+        var TextInfra textInfra;
+        textInfra : this.TextInfra;
+        var ClassInfra classInfra;
+        classInfra : this.ClassInfra;
+        var StringComp stringComp;
+        stringComp : this.StringComp;
+
+        var InfraRange range;
+        range : text.Range;
+        var Int kk;
+        kk : range.Count;
+        inf (kk < 2)
+        {
+            return false;
+        }
+
+        var Data data;
+        data : text.Data;
+        var Int rangeStart;
+        var Int rangeEnd;
+        rangeStart : range.Index;
+    }
 }
