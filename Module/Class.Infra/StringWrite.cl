@@ -38,4 +38,12 @@ class StringWrite : Any
         a.Init();
         return a;
     }
+
+    field prusate StringCountWriteOperate CountOperate { get { return data; } set { data : value; } }
+    field prusate StringSetWriteOperate SetOperate { get { return data; } set { data : value; } }
+    field prusate StringWriteOperate Operate { get { return data; } set { data : value; } }
+    field prusate StringWriteArg Arg { get { return data; } set { data : value; } }
+    field precate TextInfra TextInfra { get { return data; } set { data : value; } }
+    field precate Infra ClassInfra { get { return data; } set { data : value; } }
+    field precate StringComp StringComp { get { return data; } set { data : value; } }
 }
