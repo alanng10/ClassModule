@@ -111,8 +111,8 @@ public class StringWrite : Any
         Data data;
         data = text.Data;
         long rangeStart;
-        rangeStart = range.Index;
         long rangeEnd;
+        rangeStart = range.Index;
         rangeEnd = range.Index + range.Count;
 
         long quote;
