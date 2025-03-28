@@ -116,7 +116,7 @@ public class StringWrite : Any
         rangeEnd = rangeStart + range.Count;
 
         long quote;
-        quote = textInfra.Char(classInfra.Quote);
+        quote = textInfra.Char(classInfra.TextQuote);
 
         long oc;
         oc = textInfra.DataCharGet(data, rangeStart);
@@ -131,9 +131,9 @@ public class StringWrite : Any
         }
 
         long backSlash;
-        backSlash = textInfra.Char(classInfra.BackSlash);
+        backSlash = textInfra.Char(classInfra.TextBackSlash);
         long newLine;
-        newLine = textInfra.Char(classInfra.NewLine);
+        newLine = textInfra.Char(classInfra.TextNewLine);
 
         long countA;
         countA = 8;
@@ -253,11 +253,11 @@ public class StringWrite : Any
         kk = range.Count;
 
         long backSlash;
-        backSlash = stringComp.Char(classInfra.BackSlash, 0);
+        backSlash = stringComp.Char(classInfra.TextBackSlash, 0);
         long quote;
-        quote = stringComp.Char(classInfra.Quote, 0);
+        quote = stringComp.Char(classInfra.TextQuote, 0);
         long newLine;
-        newLine = stringComp.Char(classInfra.NewLine, 0);
+        newLine = stringComp.Char(classInfra.TextNewLine, 0);
         
         long countA;
         countA = 8;
