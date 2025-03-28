@@ -149,11 +149,11 @@ public class StringWrite : Any
             long index;
             index = start + i;
 
-            long c;
-            c = textInfra.DataCharGet(data, index);
+            long n;
+            n = textInfra.DataCharGet(data, index);
 
             bool b;
-            b = (c == backSlash);
+            b = (n == backSlash);
             if (b)
             {
                 long j;
@@ -165,24 +165,24 @@ public class StringWrite : Any
                 long indexA;
                 indexA = start + j;
 
-                long u;
-                u = textInfra.DataCharGet(data, indexA);
+                long nc;
+                nc = textInfra.DataCharGet(data, indexA);
 
                 bool bba;
                 bba = false;                
-                if (u == quote)
+                if (nc == quote)
                 {
                     bba = true;
                 }
-                if (u == 'n')
+                if (nc == 'n')
                 {
                     bba = true;
                 }
-                if (u == backSlash)
+                if (nc == backSlash)
                 {
                     bba = true;
                 }
-                if (u == 'u')
+                if (nc == 'u')
                 {
                     long k;
                     k = j + countA;
@@ -220,7 +220,7 @@ public class StringWrite : Any
             }
             if (!b)
             {
-                if (c == quote)
+                if (n == quote)
                 {
                     return false;
                 }                
