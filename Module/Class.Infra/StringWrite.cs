@@ -223,7 +223,7 @@ public class StringWrite : Any
                 if (n == quote)
                 {
                     return false;
-                }                
+                }
             }
             i = i + 1;
         }
