@@ -46,4 +46,45 @@ class StringWrite : Any
     field precate TextInfra TextInfra { get { return data; } set { data : value; } }
     field precate Infra ClassInfra { get { return data; } set { data : value; } }
     field precate StringComp StringComp { get { return data; } set { data : value; } }
+
+    maide prusate String Execute(var Text text)
+    {
+        var Bool b;
+        b : this.ValidValue(text);
+        inf (~b)
+        {
+            return null;
+        }
+
+        this.Arg : new StringWriteArg;
+        this.Arg.Init();
+
+        this.Operate : this.CountOperate;
+        this.ArgClearIndex();
+
+        this.ExecuteStage(text);
+
+        var Int count;
+        count : this.Index;
+
+        var Int k;
+        k : count;
+        k : k * 4;
+
+        this.Arg.Data : new Data;
+        this.Arg.Data.Count : k;
+        this.Arg.Data.Init();
+
+        this.Operate : this.SetOperate;
+        this.ArgClearIndex();
+
+        this.ExecuteStage(text);
+
+        var String a;
+        a : this.StringComp.CreateData(this.Arg.Data, null);
+
+        this.Operate : null;
+        this.Arg : null;
+        return a;
+    }
 }
