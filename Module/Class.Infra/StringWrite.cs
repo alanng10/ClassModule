@@ -5,6 +5,7 @@ public class StringWrite : Any
     public override bool Init()
     {
         base.Init();
+        this.InfraInfra = InfraInfra.This;
         this.TextInfra = TextInfra.This;
         this.ClassInfra = Infra.This;
         this.StringComp = StringComp.This;
@@ -45,6 +46,7 @@ public class StringWrite : Any
     public virtual StringSetWriteOperate SetOperate { get; set; }
     public virtual StringWriteOperate Operate { get; set; }
     public virtual StringWriteArg Arg { get; set; }
+    protected virtual InfraInfra InfraInfra { get; set; }
     protected virtual TextInfra TextInfra { get; set; }
     protected virtual Infra ClassInfra { get; set; }
     protected virtual StringComp StringComp { get; set; }
