@@ -111,5 +111,9 @@ class StringWrite : Any
         var Int rangeStart;
         var Int rangeEnd;
         rangeStart : range.Index;
+        rangeEnd : rangeStart + range.Count;
+
+        var Int quote;
+        quote : textInfra.Char(classInfra.TextQuote);
     }
 }
