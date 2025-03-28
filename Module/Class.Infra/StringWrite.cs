@@ -196,12 +196,12 @@ public class StringWrite : Any
                     iA = 0;
                     while (iA < countA)
                     {
-                        long oa;
-                        oa = indexAa + iA;
-                        long ua;
-                        ua = textInfra.DataCharGet(data, oa);
+                        long ka;
+                        ka = indexAa + iA;
+                        long nd;
+                        nd = textInfra.DataCharGet(data, ka);
 
-                        if (!(textInfra.Digit(ua) | textInfra.HexAlpha(ua, false)))
+                        if (!(textInfra.Digit(nd) | textInfra.HexAlpha(nd, false)))
                         {
                             return false;
                         }
