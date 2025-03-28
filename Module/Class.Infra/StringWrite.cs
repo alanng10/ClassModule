@@ -94,6 +94,8 @@ public class StringWrite : Any
 
     public virtual bool ValidValue(Text text)
     {
+        InfraInfra infraInfra;
+        infraInfra = this.InfraInfra;
         TextInfra textInfra;
         textInfra = this.TextInfra;
         Infra classInfra;
