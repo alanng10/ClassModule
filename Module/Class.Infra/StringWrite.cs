@@ -188,14 +188,14 @@ public class StringWrite : Any
                 }
                 if (nc == 'u')
                 {
-                    long k;
-                    k = j + countA;
-                    if (!(k < count))
+                    long ja;
+                    ja = j + 1;
+                    if (!infraInfra.ValidRange(count, ja, countA))
                     {
                         return false;
                     }
                     long indexAa;
-                    indexAa = start + j + 1;
+                    indexAa = start + ja;
                     long iA;
                     iA = 0;
                     while (iA < countA)
