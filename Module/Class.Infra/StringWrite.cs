@@ -10,8 +10,8 @@ public class StringWrite : Any
         this.StringComp = StringComp.This;
 
         this.Arg = this.CreateArg();
-        this.CountWriteOperate = this.CreateCountOperate();
-        this.SetWriteOperate = this.CreateSetOperate();
+        this.CountOperate = this.CreateCountOperate();
+        this.SetOperate = this.CreateSetOperate();
         return true;
     }
 
