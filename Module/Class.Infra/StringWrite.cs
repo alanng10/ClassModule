@@ -113,7 +113,7 @@ public class StringWrite : Any
         long rangeStart;
         long rangeEnd;
         rangeStart = range.Index;
-        rangeEnd = range.Index + range.Count;
+        rangeEnd = rangeStart + range.Count;
 
         long quote;
         quote = textInfra.Char(classInfra.Quote);
