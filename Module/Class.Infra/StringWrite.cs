@@ -169,7 +169,7 @@ public class StringWrite : Any
                 nc = textInfra.DataCharGet(data, indexA);
 
                 bool bba;
-                bba = false;                
+                bba = false;
                 if (nc == quote)
                 {
                     bba = true;
