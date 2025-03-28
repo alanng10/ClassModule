@@ -58,8 +58,12 @@ public class StringWrite : Any
             return null;
         }
 
-        this.WriteOperate = this.CountWriteOperate;
-        this.Arg.Index = 0;
+        this.Arg = new StringWriteArg();
+        this.Arg.Init();
+
+        this.Operate = this.CountOperate;
+        this.ArgClearIndex();
+
         this.ExecuteStage(text);
 
         long count;
@@ -68,19 +72,20 @@ public class StringWrite : Any
         long k;
         k = count;
         k = k * sizeof(uint);
-        this.Data = new Data();
-        this.Data.Count = k;
-        this.Data.Init();
+        this.Arg.Data = new Data();
+        this.Arg.Data.Count = k;
+        this.Arg.Data.Init();
 
-        this.WriteOperate = this.SetWriteOperate;
-        this.Arg.Index = 0;
+        this.Operate = this.SetOperate;
+        this.ArgClearIndex();
+
         this.ExecuteStage(text);
 
         String a;
         a = this.StringComp.CreateData(this.Data, null);
 
-        this.Data = null;
-        this.WriteOperate = null;
+        this.Operate = null;
+        this.Arg = null;
         return a;
     }
 
@@ -221,6 +226,12 @@ public class StringWrite : Any
             }
             i = i + 1;
         }
+        return true;
+    }
+
+    public virtual bool ArgClearIndex()
+    {
+        this.Arg.Index = 0;
         return true;
     }
 
