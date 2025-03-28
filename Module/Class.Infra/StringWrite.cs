@@ -294,24 +294,24 @@ public class StringWrite : Any
                 {
                     long indexA;
                     indexA = start + j;
-                    long u;
-                    u = textInfra.DataCharGet(data, indexA);
+                    long nc;
+                    nc = textInfra.DataCharGet(data, indexA);
 
                     long escapeValue;
                     escapeValue = 0;
-                    if (u == quote)
+                    if (nc == quote)
                     {
-                        escapeValue = u;
+                        escapeValue = nc;
                     }
-                    if (u == 'n')
+                    if (nc == 'n')
                     {
                         escapeValue = newLine;
                     }
-                    if (u == backSlash)
+                    if (nc == backSlash)
                     {
-                        escapeValue = u;
+                        escapeValue = nc;
                     }
-                    if (u == 'u')
+                    if (nc == 'u')
                     {
                         long ka;
                         ka = 0;
@@ -321,13 +321,13 @@ public class StringWrite : Any
                         iA = 0;
                         while (iA < countA)
                         {
-                            long oa;
-                            oa = indexAa + iA;
-                            long ua;
-                            ua = textInfra.DataCharGet(data, oa);
+                            long kb;
+                            kb = indexAa + iA;
+                            long nd;
+                            nd = textInfra.DataCharGet(data, kb);
 
-                            long od;
-                            od = textInfra.DigitValue(ua, 16);
+                            long kk;
+                            kk = textInfra.DigitValue(nd, 16);
 
                             long na;
                             na = countA - 1 - iA;
@@ -336,7 +336,7 @@ public class StringWrite : Any
                             shiftCount = (int)(na * 4);
 
                             long nn;
-                            nn = od << shiftCount;
+                            nn = kk << shiftCount;
 
                             ka = ka | nn;
 
