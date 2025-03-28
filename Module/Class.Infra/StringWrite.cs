@@ -242,6 +242,8 @@ public class StringWrite : Any
 
     public virtual bool ExecuteStage(Text text)
     {
+        InfraInfra infraInfra;
+        infraInfra = this.InfraInfra;
         TextInfra textInfra;
         textInfra = this.TextInfra;
         Infra classInfra;
@@ -276,11 +278,11 @@ public class StringWrite : Any
             long index;
             index = start + i;
 
-            long c;
-            c = textInfra.DataCharGet(data, index);
+            long n;
+            n = textInfra.DataCharGet(data, index);
 
             bool b;
-            b = (c == backSlash);
+            b = (n == backSlash);
             if (b)
             {
                 long j;
@@ -354,7 +356,7 @@ public class StringWrite : Any
 
             if (!b)
             {
-                this.ExecuteChar(c);
+                this.ExecuteChar(n);
             }
 
             i = i + 1;
