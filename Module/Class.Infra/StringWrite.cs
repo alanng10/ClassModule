@@ -118,14 +118,14 @@ public class StringWrite : Any
         long quote;
         quote = textInfra.Char(classInfra.TextQuote);
 
-        long oc;
-        oc = textInfra.DataCharGet(data, rangeStart);
-        if (!(oc == quote))
+        long na;
+        na = textInfra.DataCharGet(data, rangeStart);
+        if (!(na == quote))
         {
             return false;
         }
-        oc = textInfra.DataCharGet(data, rangeEnd - 1);
-        if (!(oc == quote))
+        na = textInfra.DataCharGet(data, rangeEnd - 1);
+        if (!(na == quote))
         {
             return false;
         }
