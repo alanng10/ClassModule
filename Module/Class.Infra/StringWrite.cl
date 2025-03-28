@@ -20,4 +20,22 @@ class StringWrite : Any
         a.Init();
         return a;
     }
+
+    maide precate StringCountWriteOperate CreateCountOperate()
+    {
+        var StringCountWriteOperate a;
+        a : new StringCountWriteOperate;
+        a.Arg : this.Arg;
+        a.Init();
+        return a;
+    }
+
+    maide precate StringSetWriteOperate CreateSetOperate()
+    {
+        var StringSetWriteOperate a;
+        a : new StringSetWriteOperate;
+        a.Arg : this.Arg;
+        a.Init();
+        return a;
+    }
 }
