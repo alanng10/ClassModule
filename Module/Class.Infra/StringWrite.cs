@@ -83,7 +83,7 @@ public class StringWrite : Any
         this.ExecuteStage(text);
 
         String a;
-        a = this.StringComp.CreateData(this.Data, null);
+        a = this.StringComp.CreateData(this.Arg.Data, null);
 
         this.Operate = null;
         this.Arg = null;
