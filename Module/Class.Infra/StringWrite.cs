@@ -72,6 +72,7 @@ public class StringWrite : Any
         long k;
         k = count;
         k = k * sizeof(uint);
+
         this.Arg.Data = new Data();
         this.Arg.Data.Count = k;
         this.Arg.Data.Init();
