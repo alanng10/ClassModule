@@ -253,11 +253,11 @@ public class StringWrite : Any
         kk = range.Count;
 
         long backSlash;
-        backSlash = stringComp.Char(classInfra.TextBackSlash, 0);
+        backSlash = textInfra.Char(classInfra.TextBackSlash);
         long quote;
-        quote = stringComp.Char(classInfra.TextQuote, 0);
+        quote = textInfra.Char(classInfra.TextQuote);
         long newLine;
-        newLine = stringComp.Char(classInfra.TextNewLine, 0);
+        newLine = textInfra.Char(classInfra.TextNewLine);
         
         long countA;
         countA = 8;
