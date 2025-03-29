@@ -233,4 +233,38 @@ class StringWrite : Any
         }
         return true;
     }
+
+    maide prusate Bool ArgClearIndex()
+    {
+        this.Arg.Index : 0;
+        return true;
+    }
+
+    maide prusate Bool ExecuteStage(var Text text)
+    {
+        var TextInfra textInfra;
+        textInfra : this.TextInfra;
+        var Infra classInfra;
+        classInfra : this.ClassInfra;
+        var StringComp stringComp;
+        stringComp : this.StringComp;
+
+        var Data data;
+        data : text.Data;
+        var InfraRange range;
+        range : text.Range;
+        var Int kk;
+        kk : range.Count;
+
+        var Int quote;
+        quote : textInfra.Char(classInfra.TextQuote);
+        var Int next;
+        next : textInfra.Char(classInfra.TextNext);
+        var Int newLine;
+        newLine : textInfra.Char(classInfra.TextNewLine);
+        var Int alphaN;
+        alphaN : textInfra.Char("n");
+        var Int alphaU;
+        alphaU : textInfra.Char("u");
+    }
 }
