@@ -151,7 +151,7 @@ class Infra : Any
 
         format.ExecuteArgResult(arg, kd);
 
-        var Int kb;
+        var String kb;
         kb : this.TextInfra.StringCreate(kd);
 
         arg.FieldWidth : 1;
@@ -163,5 +163,21 @@ class Infra : Any
         kd : this.TextInfra.TextCreate(arg.Count);
 
         format.ExecuteArgResult(arg, kd);
+
+        var String kc;
+        kc : this.TextInfra.StringCreate(kd);
+
+        var String dot;
+        dot : this.TextDot;
+
+        var StringAdd kk;
+        kk : new StringAdd;
+        kk.Init();
+
+        this.Add(kk, kc).Add(kk, dot).Add(kk, kb).Add(kk, dot).Add(kk, ka);
+
+        var String a;
+        a : kk.Result();
+        return a;
     }
 }
