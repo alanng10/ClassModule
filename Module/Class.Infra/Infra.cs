@@ -204,23 +204,23 @@ public class Infra : Any
 
     public virtual long BaseCount(Class varClass, Class anyClass)
     {
-        Class c;
-        c = varClass;
+        Class kk;
+        kk = varClass;
 
         long k;
         k = 0;
 
-        while (!(c == null))
+        while (!(kk == null))
         {
             k = k + 1;
 
             Class ka;
             ka = null;
-            if (!(c == anyClass))
+            if (!(kk == anyClass))
             {
-                ka = c.Base;
+                ka = kk.Base;
             }
-            c = ka;
+            kk = ka;
         }
 
         return k;
