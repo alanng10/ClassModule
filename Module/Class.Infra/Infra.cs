@@ -122,10 +122,10 @@ public class Infra : Any
 
     public virtual String VerString(long value)
     {
-        long ka;
-        ka = this.InfraInfra.IntCapValue - 1;
+        long kf;
+        kf = this.InfraInfra.IntCapValue - 1;
 
-        value = value & ka;
+        value = value & kf;
 
         long revise;
         revise = value & 0xff;
