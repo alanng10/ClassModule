@@ -228,30 +228,30 @@ public class Infra : Any
 
     public virtual bool ValidClass(Class varClass, Class requireClass, Class anyClass, Class nullClass)
     {
-        Class thisClass;
-        thisClass = varClass;
+        Class k;
+        k = varClass;
 
-        if (thisClass == nullClass)
+        if (k == nullClass)
         {
             return true;
         }
 
         bool b;
         b = false;
-        while (!b & !(thisClass == null))
+        while (!b & !(k == null))
         {
-            if (thisClass == requireClass)
+            if (k == requireClass)
             {
                 b = true;
             }
 
-            Class k;
-            k = null;
-            if (!(thisClass == anyClass))
+            Class ka;
+            ka = null;
+            if (!(k == anyClass))
             {
-                k = thisClass.Base;
+                ka = k.Base;
             }
-            thisClass = k;
+            k = ka;
         }
 
         bool a;
