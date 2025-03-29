@@ -120,21 +120,21 @@ public class Infra : Any
         return a;
     }
 
-    public virtual String VerString(long o)
+    public virtual String VerString(long value)
     {
         long ka;
         ka = this.InfraInfra.IntCapValue - 1;
 
-        o = o & ka;
+        value = value & ka;
 
         long revise;
-        revise = o & 0xff;
+        revise = value & 0xff;
 
         long minor;
-        minor = (o >> 8) & 0xff;
+        minor = (value >> 8) & 0xff;
 
         long major;
-        major = o >> 16;
+        major = value >> 16;
 
         Format write;
         write = new Format();
