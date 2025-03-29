@@ -136,9 +136,9 @@ public class Infra : Any
         long major;
         major = value >> 16;
 
-        Format write;
-        write = new Format();
-        write.Init();
+        Format format;
+        format = new Format();
+        format.Init();
 
         FormatArg arg;
         arg = new FormatArg();
@@ -153,53 +153,53 @@ public class Infra : Any
 
         arg.Value.Int = revise;
 
-        write.ExecuteArgCount(arg);
+        format.ExecuteArgCount(arg);
 
         Text aa;
         aa = this.TextInfra.TextCreate(arg.Count);
 
-        write.ExecuteArgResult(arg, aa);
+        format.ExecuteArgResult(arg, aa);
 
-        String oa;
-        oa = this.TextInfra.StringCreate(aa);
+        String ka;
+        ka = this.TextInfra.StringCreate(aa);
 
         arg.Value.Int = minor;
 
-        write.ExecuteArgCount(arg);
+        format.ExecuteArgCount(arg);
 
         Text ab;
         ab = this.TextInfra.TextCreate(arg.Count);
 
-        write.ExecuteArgResult(arg, ab);
+        format.ExecuteArgResult(arg, ab);
 
-        String ob;
-        ob = this.TextInfra.StringCreate(ab);
+        String kb;
+        kb = this.TextInfra.StringCreate(ab);
 
         arg.FieldWidth = 1;
         arg.MaxWidth = -1;
         arg.Value.Int = major;
 
-        write.ExecuteArgCount(arg);
+        format.ExecuteArgCount(arg);
 
         Text ac;
         ac = this.TextInfra.TextCreate(arg.Count);
 
-        write.ExecuteArgResult(arg, ac);
+        format.ExecuteArgResult(arg, ac);
 
-        String oc;
-        oc = this.TextInfra.StringCreate(ac);
+        String kc;
+        kc = this.TextInfra.StringCreate(ac);
 
         String dot;
         dot = this.Dot;
 
-        StringAdd h;
-        h = new StringAdd();
-        h.Init();
+        StringAdd kk;
+        kk = new StringAdd();
+        kk.Init();
 
-        this.Add(h, oc).Add(h, dot).Add(h, ob).Add(h, dot).Add(h, oa);
+        this.Add(kk, kc).Add(kk, dot).Add(kk, kb).Add(kk, dot).Add(kk, ka);
 
         String a;
-        a = h.Result();
+        a = kk.Result();
         return a;
     }
 
