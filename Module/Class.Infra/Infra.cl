@@ -60,4 +60,24 @@ class Infra : Any
         a.Init();
         return a;
     }
+
+    maide prusate Table TableCreateModuleRefLess()
+    {
+        var Table a;
+        a : new Table;
+        a.Less : new ModuleRefLess;
+        a.Less.Init();
+        a.Init();
+        return a;
+    }
+
+    maide prusate Table TableCreateRefLess()
+    {
+        var Table a;
+        a : new Table;
+        a.Less : new RefLess;
+        a.Less.Init();
+        a.Init();
+        return a;
+    }
 }
