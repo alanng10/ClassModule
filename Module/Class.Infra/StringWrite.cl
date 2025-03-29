@@ -266,5 +266,68 @@ class StringWrite : Any
         alphaN : textInfra.Char("n");
         var Int alphaU;
         alphaU : textInfra.Char("u");
+
+        var Int countA;
+        countA : 8;
+        var Int count;
+        count : kk - 2;
+        var Int start;
+        start : range.Index + 1;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Int index;
+            index : start + i;
+
+            var Int n;
+            n : textInfra.DataCharGet(data, index);
+
+            var Bool b;
+            b : (n = next);
+            inf (b)
+            {
+                var Int j;
+                j : i + 1;
+
+                var Int indexA;
+                indexA : start + j;
+                var Int nc;
+                nc : textInfra.DataCharGet(data, indexA);
+                
+                var Int escapeValue;
+                inf (nc = next)
+                {
+                    escapeValue : nc;
+                }
+                inf (nc = quote)
+                {
+                    escapeValue : nc;
+                }
+                inf (nc = alphaN)
+                {
+                    escapeValue : newLine;
+                }
+                inf (nc = alphaU)
+                {
+                    var Int ka;
+                    ka : 0;
+                    var Int indexAa;
+                    indexAa : start + j + 1;
+                    var Int iA;
+                    iA : 0;
+                    while (iA < countA)
+                    {
+                        var Int kb;
+                        kb : indexAa + iA;
+                        var Int nd;
+                        nd : textInfra.DataCharGet(data, kb);
+
+                        var Int kk;
+                        kk : textInfra.DigitValue(nd, 16);
+                    }
+                }
+            }
+        }
     }
 }
