@@ -134,8 +134,8 @@ public class StringWrite : Any
             return false;
         }
 
-        long backSlash;
-        backSlash = textInfra.Char(classInfra.TextBackSlash);
+        long next;
+        next = textInfra.Char(classInfra.TextNext);
         long newLine;
         newLine = textInfra.Char(classInfra.TextNewLine);
 
@@ -157,7 +157,7 @@ public class StringWrite : Any
             n = textInfra.DataCharGet(data, index);
 
             bool b;
-            b = (n == backSlash);
+            b = (n == next);
             if (b)
             {
                 long j;
@@ -256,8 +256,8 @@ public class StringWrite : Any
         long kk;
         kk = range.Count;
 
-        long backSlash;
-        backSlash = textInfra.Char(classInfra.TextBackSlash);
+        long next;
+        next = textInfra.Char(classInfra.TextNext);
         long quote;
         quote = textInfra.Char(classInfra.TextQuote);
         long newLine;
@@ -280,7 +280,7 @@ public class StringWrite : Any
             n = textInfra.DataCharGet(data, index);
 
             bool b;
-            b = (n == backSlash);
+            b = (n == next);
             if (b)
             {
                 long j;
@@ -305,7 +305,7 @@ public class StringWrite : Any
                     {
                         escapeValue = newLine;
                     }
-                    if (nc == backSlash)
+                    if (nc == next)
                     {
                         escapeValue = nc;
                     }
