@@ -29,4 +29,35 @@ class Infra : Any
     field precate InfraInfra InfraInfra { get { return data; } set { data : value; } }
     field precate TextInfra TextInfra { get { return data; } set { data : value; } }
     field precate CountList CountList { get { return data; } set { data : value; } }
+
+    maide prusate Bool IndexRange(var Range range, var Int index)
+    {
+        range.Start : index;
+        range.End : index + 1;
+        return true;
+    }
+
+    maide prusate Int Count(var Int start, var Int end)
+    {
+        return end - start;
+    }
+
+    maide prusate Bool ValidRange(var Int totalCount, var Int start, var Int end)
+    {
+        var Int count;
+        count : this.Count(start, end);
+        return this.InfraInfra.ValidRange(totalCount, start, count);
+    }
+
+    maide prusate Table TableCreateStringLess()
+    {
+        var StringLess less;
+        less : this.TextInfra.StringLessCreate();
+
+        var Table a;
+        a : new Table;
+        a.Less : less;
+        a.Init();
+        return a;
+    }
 }
