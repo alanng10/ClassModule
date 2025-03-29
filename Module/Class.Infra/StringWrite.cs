@@ -320,8 +320,8 @@ public class StringWrite : Any
                         long nd;
                         nd = textInfra.DataCharGet(data, kb);
 
-                        long kk;
-                        kk = textInfra.DigitValue(nd, 16);
+                        long kc;
+                        kc = textInfra.DigitValue(nd, 16);
 
                         long na;
                         na = countA - 1 - iA;
@@ -330,7 +330,7 @@ public class StringWrite : Any
                         shiftCount = (int)(na * 4);
 
                         long nn;
-                        nn = kk << shiftCount;
+                        nn = kc << shiftCount;
 
                         ka = ka | nn;
 
