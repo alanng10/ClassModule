@@ -323,11 +323,46 @@ class StringWrite : Any
                         var Int nd;
                         nd : textInfra.DataCharGet(data, kb);
 
-                        var Int kk;
-                        kk : textInfra.DigitValue(nd, 16);
+                        var Int kc;
+                        kc : textInfra.DigitValue(nd, 16);
+
+                        var Int na;
+                        na : (countA - 1) - iA;
+
+                        var Int shiftCount;
+                        shiftCount : na * 4;
+
+                        var Int nn;
+                        nn : bit <(kc, shiftCount);
+
+                        ka : bit |(ka, nn);
+
+                        iA : iA + 1;
                     }
+
+                    escapeValue : ka;
+
+                    i : i + countA;
                 }
+
+                this.ExecuteChar(escapeValue);
+
+                i : i + 1;
             }
+
+            inf (~b)
+            {
+                this.ExecuteChar(n);
+            }
+
+            i : i + 1;
         }
+        return true;
+    }
+
+    maide precate Bool ExecuteChar(var Int n)
+    {
+        this.WriteOperate.ExecuteChar(n);
+        return true;
     }
 }
