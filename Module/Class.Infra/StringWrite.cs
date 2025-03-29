@@ -286,70 +286,65 @@ public class StringWrite : Any
                 long j;
                 j = i + 1;
 
-                bool bb;
-                bb = (j < count);
-                if (bb)
+                long indexA;
+                indexA = start + j;
+                long nc;
+                nc = textInfra.DataCharGet(data, indexA);
+
+                long escapeValue;
+                escapeValue = 0;
+                if (nc == quote)
                 {
-                    long indexA;
-                    indexA = start + j;
-                    long nc;
-                    nc = textInfra.DataCharGet(data, indexA);
-
-                    long escapeValue;
-                    escapeValue = 0;
-                    if (nc == quote)
-                    {
-                        escapeValue = nc;
-                    }
-                    if (nc == 'n')
-                    {
-                        escapeValue = newLine;
-                    }
-                    if (nc == next)
-                    {
-                        escapeValue = nc;
-                    }
-                    if (nc == 'u')
-                    {
-                        long ka;
-                        ka = 0;
-                        long indexAa;
-                        indexAa = start + j + 1;
-                        long iA;
-                        iA = 0;
-                        while (iA < countA)
-                        {
-                            long kb;
-                            kb = indexAa + iA;
-                            long nd;
-                            nd = textInfra.DataCharGet(data, kb);
-
-                            long kk;
-                            kk = textInfra.DigitValue(nd, 16);
-
-                            long na;
-                            na = countA - 1 - iA;
-
-                            int shiftCount;
-                            shiftCount = (int)(na * 4);
-
-                            long nn;
-                            nn = kk << shiftCount;
-
-                            ka = ka | nn;
-
-                            iA = iA + 1;
-                        }
-
-                        escapeValue = ka;
-
-                        i = i + countA;
-                    }
-
-                    this.ExecuteChar(escapeValue);
-
-                    i = i + 1;
+                    escapeValue = nc;
                 }
+                if (nc == 'n')
+                {
+                    escapeValue = newLine;
+                }
+                if (nc == next)
+                {
+                    escapeValue = nc;
+                }
+                if (nc == 'u')
+                {
+                    long ka;
+                    ka = 0;
+                    long indexAa;
+                    indexAa = start + j + 1;
+                    long iA;
+                    iA = 0;
+                    while (iA < countA)
+                    {
+                        long kb;
+                        kb = indexAa + iA;
+                        long nd;
+                        nd = textInfra.DataCharGet(data, kb);
+
+                        long kk;
+                        kk = textInfra.DigitValue(nd, 16);
+
+                        long na;
+                        na = countA - 1 - iA;
+
+                        int shiftCount;
+                        shiftCount = (int)(na * 4);
+
+                        long nn;
+                        nn = kk << shiftCount;
+
+                        ka = ka | nn;
+
+                        iA = iA + 1;
+                    }
+
+                    escapeValue = ka;
+
+                    i = i + countA;
+                }
+
+                this.ExecuteChar(escapeValue);
+
+                i = i + 1;
             }
 
             if (!b)
