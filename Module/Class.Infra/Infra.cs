@@ -109,14 +109,14 @@ public class Infra : Any
 
     public virtual String ModuleRefString(String name, String verString)
     {
-        StringAdd h;
-        h = new StringAdd();
-        h.Init();
+        StringAdd k;
+        k = new StringAdd();
+        k.Init();
 
-        this.Add(h, name).Add(h, this.Hyphen).Add(h, verString);
+        this.Add(k, name).Add(k, this.TextHyphen).Add(k, verString);
 
         String a;
-        a = h.Result();
+        a = k.Result();
         return a;
     }
 
