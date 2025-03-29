@@ -204,4 +204,40 @@ class Infra : Any
 
         return k;
     }
+
+    maide prusate Bool ValidClass(var Class varClass, var Class requireClass, var Class anyClass, var Class nullClass)
+    {
+        var Class k;
+        k : varClass;
+
+        inf (k = nullClass)
+        {
+            return true;
+        }
+
+        var Bool b;
+        b : false;
+        while (~b & ~(k = null))
+        {
+            inf (k = requireClass)
+            {
+                b : true;
+            }
+
+            inf (~b)
+            {
+                var Class ka;
+
+                inf (~(k = anyClass))
+                {
+                    ka : k.Base;
+                }
+                k : ka;
+            }
+        }
+
+        var Bool a;
+        a : b;
+        return a;
+    }
 }
