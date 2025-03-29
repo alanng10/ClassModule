@@ -245,13 +245,16 @@ public class Infra : Any
                 b = true;
             }
 
-            Class ka;
-            ka = null;
-            if (!(k == anyClass))
+            if (!b)
             {
-                ka = k.Base;
+                Class ka;
+                ka = null;
+                if (!(k == anyClass))
+                {
+                    ka = k.Base;
+                }
+                k = ka;
             }
-            k = ka;
         }
 
         bool a;
