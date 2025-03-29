@@ -226,7 +226,7 @@ public class Infra : Any
         return k;
     }
 
-    public virtual bool ValidClass(Class varClass, Class requiredClass, Class anyClass, Class nullClass)
+    public virtual bool ValidClass(Class varClass, Class requireClass, Class anyClass, Class nullClass)
     {
         Class thisClass;
         thisClass = varClass;
@@ -240,7 +240,7 @@ public class Infra : Any
         b = false;
         while (!b & !(thisClass == null))
         {
-            if (thisClass == requiredClass)
+            if (thisClass == requireClass)
             {
                 b = true;
             }
