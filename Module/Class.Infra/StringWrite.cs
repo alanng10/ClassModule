@@ -182,7 +182,7 @@ public class StringWrite : Any
                 {
                     bba = true;
                 }
-                if (nc == backSlash)
+                if (nc == next)
                 {
                     bba = true;
                 }
