@@ -103,4 +103,65 @@ class Infra : Any
         a : k.Result();
         return a;
     }
+
+    maide prusate String VerString(var Int value)
+    {
+        var Int revise;
+        revise : bit &(value, 0hff);
+
+        var Int minor;
+        minor : bit &(bit >(value, 8), 0hff);
+
+        var Int major;
+        major : bit >(value, 16);
+
+        var Format format;
+        format : new Format;
+        format.Init();
+
+        var FormatArg arg;
+        arg : new FormatArg;
+        arg.Init();
+
+        arg.Kind : 1;
+        arg.Base : 10;
+        arg.AlignLeft : false;
+        arg.FieldWidth : 2;
+        arg.MaxWidth : 2;
+        arg.FillChar : this.TextInfra.Char("0");
+
+        arg.Value.Int : revise;
+
+        format.ExecuteArgCount(arg);
+
+        var Text kd;
+
+        kd : this.TextInfra.TextCreate(arg.Count);
+
+        format.ExecuteArgResult(arg, kd);
+
+        var String ka;
+        ka : this.TextInfra.StringCreate(kd);
+
+        arg.Value.Int : minor;
+
+        format.ExecuteArgCount(arg);
+
+        kd : this.TextInfra.TextCreate(arg.Count);
+
+        format.ExecuteArgResult(arg, kd);
+
+        var Int kb;
+        kb : this.TextInfra.StringCreate(kd);
+
+        arg.FieldWidth : 1;
+        arg.MaxWidth : null;
+        arg.Value.Int : major;
+
+        format.ExecuteArgCount(arg);
+
+        kd : this.TextInfra.TextCreate(arg.Count);
+
+        format.ExecuteArgResult(arg, kd);
+    }
 }
