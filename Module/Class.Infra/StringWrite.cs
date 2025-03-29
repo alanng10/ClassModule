@@ -293,6 +293,10 @@ public class StringWrite : Any
 
                 long escapeValue;
                 escapeValue = 0;
+                if (nc == next)
+                {
+                    escapeValue = nc;
+                }
                 if (nc == quote)
                 {
                     escapeValue = nc;
@@ -300,10 +304,6 @@ public class StringWrite : Any
                 if (nc == 'n')
                 {
                     escapeValue = newLine;
-                }
-                if (nc == next)
-                {
-                    escapeValue = nc;
                 }
                 if (nc == 'u')
                 {
