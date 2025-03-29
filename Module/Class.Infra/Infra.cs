@@ -155,25 +155,25 @@ public class Infra : Any
 
         format.ExecuteArgCount(arg);
 
-        Text aa;
-        aa = this.TextInfra.TextCreate(arg.Count);
+        Text kaa;
+        kaa = this.TextInfra.TextCreate(arg.Count);
 
-        format.ExecuteArgResult(arg, aa);
+        format.ExecuteArgResult(arg, kaa);
 
         String ka;
-        ka = this.TextInfra.StringCreate(aa);
+        ka = this.TextInfra.StringCreate(kaa);
 
         arg.Value.Int = minor;
 
         format.ExecuteArgCount(arg);
 
-        Text ab;
-        ab = this.TextInfra.TextCreate(arg.Count);
+        Text kab;
+        kab = this.TextInfra.TextCreate(arg.Count);
 
-        format.ExecuteArgResult(arg, ab);
+        format.ExecuteArgResult(arg, kab);
 
         String kb;
-        kb = this.TextInfra.StringCreate(ab);
+        kb = this.TextInfra.StringCreate(kab);
 
         arg.FieldWidth = 1;
         arg.MaxWidth = -1;
@@ -181,16 +181,16 @@ public class Infra : Any
 
         format.ExecuteArgCount(arg);
 
-        Text ac;
-        ac = this.TextInfra.TextCreate(arg.Count);
+        Text kac;
+        kac = this.TextInfra.TextCreate(arg.Count);
 
-        format.ExecuteArgResult(arg, ac);
+        format.ExecuteArgResult(arg, kac);
 
         String kc;
-        kc = this.TextInfra.StringCreate(ac);
+        kc = this.TextInfra.StringCreate(kac);
 
         String dot;
-        dot = this.Dot;
+        dot = this.TextDot;
 
         StringAdd kk;
         kk = new StringAdd();
