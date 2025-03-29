@@ -27,8 +27,8 @@ public class Infra : Any
         this.TextDot = this.S(".");
         this.TextHyphen = this.S("-");
         this.TextSpace = this.S(" ");
-        this.IntSignValueNegateMax = this.InfraInfra.IntCapValue / 2;
-        this.IntSignValuePositeMax = this.IntSignValueNegateMax - 1;
+        this.IntSignNegateMax = this.InfraInfra.IntCapValue / 2;
+        this.IntSignPositeMax = this.IntSignNegateMax - 1;
         this.SModule = this.S("Module");
         return true;
     }
@@ -39,8 +39,8 @@ public class Infra : Any
     public virtual String TextDot { get; set; }
     public virtual String TextHyphen { get; set; }
     public virtual String TextSpace { get; set; }
-    public virtual long IntSignValuePositeMax { get; set; }
-    public virtual long IntSignValueNegateMax { get; set; }
+    public virtual long IntSignPositeMax { get; set; }
+    public virtual long IntSignNegateMax { get; set; }
     protected virtual InfraInfra InfraInfra { get; set; }
     protected virtual TextInfra TextInfra { get; set; }
     protected virtual CountList CountList { get; set; }
