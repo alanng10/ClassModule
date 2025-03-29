@@ -80,4 +80,27 @@ class Infra : Any
         a.Init();
         return a;
     }
+
+    maide prusate ModuleRef ModuleRefCreate(var String name, var Int ver)
+    {
+        var ModuleRef a;
+        a : new ModuleRef;
+        a.Init();
+        a.Name : name;
+        a.Ver : ver;
+        return a;
+    }
+
+    maide prusate String ModuleRefString(var String name, var String verString)
+    {
+        var StringAdd k;
+        k : new StringAdd;
+        k.Init();
+
+        this.Add(k, name).Add(k, this.TextHyphen).Add(k, verString);
+
+        var String a;
+        a : k.Result();
+        return a;
+    }
 }
