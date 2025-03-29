@@ -19,10 +19,6 @@ public class Infra : Any
         base.Init();
         this.InfraInfra = InfraInfra.This;
         this.TextInfra = TextInfra.This;
-        this.StorageInfra = StorageInfra.This;
-        this.StringComp = StringComp.This;
-        this.TextCode = TextCode.This;
-        this.TextCodeKindList = TextCodeKindList.This;
         this.CountList = CountList.This;
 
         this.TextQuote = this.S("\"");
@@ -47,10 +43,6 @@ public class Infra : Any
     public virtual long IntSignValueNegateMax { get; set; }
     protected virtual InfraInfra InfraInfra { get; set; }
     protected virtual TextInfra TextInfra { get; set; }
-    protected virtual StorageInfra StorageInfra { get; set; }
-    protected virtual StringComp StringComp { get; set; }
-    protected virtual TextCode TextCode { get; set; }
-    protected virtual TextCodeKindList TextCodeKindList { get; set; }
     protected virtual CountList CountList { get; set; }
     protected virtual String SModule { get; set; }
 
