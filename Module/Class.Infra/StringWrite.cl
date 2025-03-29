@@ -117,5 +117,44 @@ class StringWrite : Any
 
         var Int quote;
         quote : textInfra.Char(classInfra.TextQuote);
+
+        var Int na;
+        na : textInfra.DataCharGet(data, rangeStart);
+        inf (~(na = quote))
+        {
+            return false;
+        }
+        na : textInfra.DataCharGet(data, rangeEnd - 1);
+        inf (~(na = quote))
+        {
+            return false;
+        }
+
+        var Int next;
+        next : textInfra.Char(classInfra.TextNext);
+        var Int quote;
+        quote : textInfra.Char(classInfra.TextQuote);
+        var Int newLine;
+        newLine : textInfra.Char(classInfra.TextNewLine);
+
+        var Int countA;
+        countA : 8;
+        var Int count;
+        count : k - 2;
+        var Int start;
+        start : range.Index + 1;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Int index;
+            index : start + i;
+
+            var Int n;
+            n : textInfra.DataCharGet(data, index);
+
+            var Bool b;
+            b : (n = next);
+        }
     }
 }
