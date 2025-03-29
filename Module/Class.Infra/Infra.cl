@@ -180,4 +180,28 @@ class Infra : Any
         a : kk.Result();
         return a;
     }
+
+    maide prusate Int BaseCount(var Class varClass, var Class anyClass)
+    {
+        var Class kk;
+        kk : varClass;
+
+        var Int k;
+        k : 0;
+
+        while (~(kk = null))
+        {
+            k : k + 1;
+
+            var Class ka;
+
+            inf (~(kk = anyClass))
+            {
+                ka : kk.Base;
+            }
+            kk : ka;
+        }
+
+        return k;
+    }
 }
