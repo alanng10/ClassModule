@@ -130,11 +130,11 @@ class Infra : Any
         arg.MaxWidth : 2;
         arg.FillChar : this.TextInfra.Char("0");
 
+        var Text kd;
+
         arg.Value.Int : revise;
 
         format.ExecuteArgCount(arg);
-
-        var Text kd;
 
         kd : this.TextInfra.TextCreate(arg.Count);
 
