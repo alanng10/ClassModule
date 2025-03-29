@@ -58,7 +58,7 @@ public class Infra : Any
         return end - start;
     }
 
-    public virtual bool CheckRange(long totalCount, long start, long end)
+    public virtual bool ValidRange(long totalCount, long start, long end)
     {
         long count;
         count = this.Count(start, end);
