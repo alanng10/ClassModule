@@ -132,13 +132,16 @@ class StringWrite : Any
 
         var Int next;
         next : textInfra.Char(classInfra.TextNext);
-        var Int quote;
-        quote : textInfra.Char(classInfra.TextQuote);
         var Int newLine;
         newLine : textInfra.Char(classInfra.TextNewLine);
+        var Int alphaN;
+        alphaN : textInfra.Char("n");
+        var Int alphaU;
+        alphaU : textInfra.Char("u");
 
         var Int countA;
         countA : 8;
+
         var Int count;
         count : k - 2;
         var Int start;
@@ -155,6 +158,79 @@ class StringWrite : Any
 
             var Bool b;
             b : (n = next);
+            inf (b)
+            {
+                var Int j;
+                j : i + 1;
+                inf (~(j < count))
+                {
+                    return false;
+                }
+                var Int indexA;
+                indexA : start + j;
+
+                var Int nc;
+                nc : textInfra.DataCharGet(data, indexA);
+
+                var Bool bba;
+                bba : false;
+                inf (nc = quote)
+                {
+                    bba : true;
+                }
+                inf (nc = alphaN)
+                {
+                    bba : true;
+                }
+                inf (nc = next)
+                {
+                    bba : true;
+                }
+                inf (nc = alphaU)
+                {
+                    var Int ja;
+                    ja : j + 1;
+                    inf (~infraInfra.ValidRange(count, ja, countA))
+                    {
+                        return false;
+                    }
+                    var Int indexAa;
+                    indexAa : start + ja;
+                    var Int iA;
+                    iA : 0;
+                    while (iA < countA)
+                    {
+                        var Int ka;
+                        ka : indexAa + iA;
+                        var Int nd;
+                        nd : textInfra.DataCharGet(data, ka);
+
+                        inf (~(textInfra.Digit(nd) | textInfra.HexAlpha(nd, false)))
+                        {
+                            return false;
+                        }
+
+                        iA : iA + 1;
+                    }
+
+                    i : i + countA;
+                    bba : true;
+                }
+                inf (~bba)
+                {
+                    return false;
+                }
+                i : i + 1;
+            }
+            inf (~b)
+            {
+                inf (n = quote)
+                {
+                    return false;
+                }
+            }
+            i : i + 1;
         }
+        return true;
     }
 }
