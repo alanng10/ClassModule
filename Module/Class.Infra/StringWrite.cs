@@ -256,10 +256,10 @@ public class StringWrite : Any
         long kk;
         kk = range.Count;
 
-        long next;
-        next = textInfra.Char(classInfra.TextNext);
         long quote;
         quote = textInfra.Char(classInfra.TextQuote);
+        long next;
+        next = textInfra.Char(classInfra.TextNext);
         long newLine;
         newLine = textInfra.Char(classInfra.TextNewLine);
         
