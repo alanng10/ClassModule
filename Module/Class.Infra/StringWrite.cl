@@ -174,15 +174,15 @@ class StringWrite : Any
 
                 var Bool bba;
                 bba : false;
+                inf (nc = next)
+                {
+                    bba : true;
+                }
                 inf (nc = quote)
                 {
                     bba : true;
                 }
                 inf (nc = alphaN)
-                {
-                    bba : true;
-                }
-                inf (nc = next)
                 {
                     bba : true;
                 }
