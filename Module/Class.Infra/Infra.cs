@@ -25,24 +25,24 @@ public class Infra : Any
         this.TextCodeKindList = TextCodeKindList.This;
         this.CountList = CountList.This;
 
-        this.Quote = this.S("\"");
-        this.BackSlash = this.S("\\");
-        this.NewLine = this.S("\n");
-        this.Dot = this.S(".");
-        this.Hyphen = this.S("-");
-        this.Space = this.S(" ");
+        this.TextQuote = this.S("\"");
+        this.TextNext = this.S("\\");
+        this.TextNewLine = this.S("\n");
+        this.TextDot = this.S(".");
+        this.TextHyphen = this.S("-");
+        this.TextSpace = this.S(" ");
         this.IntSignValueNegateMax = this.InfraInfra.IntCapValue / 2;
         this.IntSignValuePositeMax = this.IntSignValueNegateMax - 1;
         this.SModule = this.S("Module");
         return true;
     }
 
-    public virtual String Quote { get; set; }
-    public virtual String BackSlash { get; set; }
-    public virtual String NewLine { get; set; }
-    public virtual String Dot { get; set; }
-    public virtual String Hyphen { get; set; }
-    public virtual String Space { get; set; }
+    public virtual String TextQuote { get; set; }
+    public virtual String TextNext { get; set; }
+    public virtual String TextNewLine { get; set; }
+    public virtual String TextDot { get; set; }
+    public virtual String TextHyphen { get; set; }
+    public virtual String TextSpace { get; set; }
     public virtual long IntSignValuePositeMax { get; set; }
     public virtual long IntSignValueNegateMax { get; set; }
     protected virtual InfraInfra InfraInfra { get; set; }
