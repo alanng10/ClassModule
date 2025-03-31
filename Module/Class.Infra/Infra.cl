@@ -350,6 +350,21 @@ class Infra : Any
                     }
                 }
             }
+
+            inf (~b)
+            {
+                var Class kd;
+
+                inf (~(kk = anyClass))
+                {
+                    kd : kk.Base;
+                }
+                kk : kd;
+            }
         }
+
+        var Any a;
+        a : k;
+        return a;
     }
 }
