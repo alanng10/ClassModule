@@ -32,6 +32,8 @@ System.Text
     TextInfra Infra
 System.Storage
     StorageInfra Infra
+Text.Text:0.00.00
+    TextAdd Add
 
 [Export]
 Class
