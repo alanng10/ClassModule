@@ -251,7 +251,7 @@ class Infra : Any
             return true;
         }
 
-        inf (count = conutList.Precate)
+        inf (count = countList.Precate)
         {
             inf (this.ValidClass(thisClass, triggClass, anyClass, nullClass))
             {
