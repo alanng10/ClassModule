@@ -92,6 +92,8 @@ class StringWrite : Any
 
     maide prusate Bool ValidValue(var Text text)
     {
+        var InfraInfra infraInfra;
+        infraInfra : this.InfraInfra;
         var TextInfra textInfra;
         textInfra : this.TextInfra;
         var Infra classInfra;
