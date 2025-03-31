@@ -240,4 +240,43 @@ class Infra : Any
         a : b;
         return a;
     }
+
+    maide prusate Bool ValidCount(var Class thisClass, var Class triggClass, var Class varClass, var Count count, var Class anyClass, var Class nullClass)
+    {
+        var CountList countList;
+        countList : this.CountList;
+
+        inf (count = countList.Prusate)
+        {
+            return true;
+        }
+
+        inf (count = conutList.Precate)
+        {
+            inf (this.ValidClass(thisClass, triggClass, anyClass, nullClass))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        inf (count = countList.Pronate)
+        {
+            inf (thisClass.Module = varClass.Module)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        inf (count = countList.Private)
+        {
+            inf (thisClass = triggClass)
+            {
+                return true;
+            }
+            return false;
+        }
+        return true;
+    }
 }
