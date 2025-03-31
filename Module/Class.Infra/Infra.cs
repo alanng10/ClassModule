@@ -316,15 +316,15 @@ public class Infra : Any
         bool b;
         b = false;
 
-        Class c;
-        c = varClass;
+        Class kk;
+        kk = varClass;
 
-        while (!b & !(c == null))
+        while (!b & !(kk == null))
         {
             if (!b)
             {
                 Field field;
-                field = (Field)c.Field.Get(name);
+                field = kk.Field.Get(name) as Field;
 
                 if (!(field == null))
                 {
@@ -338,7 +338,7 @@ public class Infra : Any
 
                     if (ka == pronateCount)
                     {
-                        if (c.Module == module)
+                        if (kk.Module == module)
                         {
                             k = field;
                             b = true;
@@ -350,7 +350,7 @@ public class Infra : Any
             if (!b)
             {
                 Maide maide;
-                maide = (Maide)c.Maide.Get(name);
+                maide = kk.Maide.Get(name) as Maide;
 
                 if (!(maide == null))
                 {
@@ -364,7 +364,7 @@ public class Infra : Any
 
                     if (kb == pronateCount)
                     {
-                        if (c.Module == module)
+                        if (kk.Module == module)
                         {
                             k = maide;
                             b = true;
@@ -375,13 +375,13 @@ public class Infra : Any
 
             if (!b)
             {
-                Class aa;
-                aa = null;
-                if (!(c == anyClass))
+                Class kd;
+                kd = null;
+                if (!(kk == anyClass))
                 {
-                    aa = c.Base;
+                    kd = kk.Base;
                 }
-                c = aa;
+                kk = kd;
             }
         }
 
