@@ -5,6 +5,6 @@ set DotNetOutFold=..\Class\Out\net8.0
 
 echo Make Module %Module%
 pushd %DotNetOutFold%
-saber make ../../../ClassModule/Module/Class.%Module%
+saber make ../../../ClassModule/Module/Class.%Module% -m
 echo Status: %errorlevel%
 popd
