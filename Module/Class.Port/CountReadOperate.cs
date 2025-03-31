@@ -10,18 +10,39 @@ public class CountReadOperate : ReadOperate
         this.ClassInfra = ClassInfra.This;
         this.String = this.TextInfra.Zero;
         this.Array = this.ListInfra.ArrayCreate(0);
-        this.Port = new Port();
-        this.Port.Init();
+        this.Port = this.CreatePort();
         this.ModuleRef = this.ClassInfra.ModuleRefCreate(null, 0);
-        this.Import = new Import();
-        this.Import.Init();
-        this.ImportClass = new ImportClass();
-        this.ImportClass.Init();
+        this.Import = this.CreateImport();
+        this.ImportClass = this.CreateImportClass();
         this.Export = new Export();
         this.Export.Init();
         this.Storage = new Storage();
         this.Storage.Init();
         return true;
+    }
+
+    protected virtual Port CreatePort()
+    {
+        Port a;
+        a = new Port();
+        a.Init();
+        return a;
+    }
+
+    protected virtual Import CreateImport()
+    {
+        Import a;
+        a = new Import();
+        a.Init();
+        return a;
+    }
+
+    protected virtual ImportClass CreateImportClass()
+    {
+        ImportClass a;
+        a = new ImportClass();
+        a.Init();
+        return a;
     }
 
     protected virtual ListInfra ListInfra { get; set; }
