@@ -65,6 +65,7 @@ StringWriteArg
 StringWriteOperate
 StringCountWriteOperate
 StringSetWriteOperate
+Infra
 
 [Storage]
 
