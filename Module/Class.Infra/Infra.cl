@@ -132,7 +132,7 @@ class Infra : Any
 
         var Text kd;
 
-        arg.Value.Int : revise;
+        arg.Value : revise;
 
         format.ExecuteArgCount(arg);
 
@@ -143,7 +143,7 @@ class Infra : Any
         var String ka;
         ka : this.TextInfra.StringCreate(kd);
 
-        arg.Value.Int : minor;
+        arg.Value : minor;
 
         format.ExecuteArgCount(arg);
 
@@ -156,7 +156,7 @@ class Infra : Any
 
         arg.FieldWidth : 1;
         arg.MaxWidth : null;
-        arg.Value.Int : major;
+        arg.Value : major;
 
         format.ExecuteArgCount(arg);
 
