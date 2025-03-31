@@ -34,8 +34,34 @@ System.Storage
     StorageInfra Infra
 
 [Export]
-Add
+Class
+Field
+Maide
+Var
+Module
+Count
+CountList
+Index
+IndexList
+Limit
+LimitList
+ModuleRef
+ModuleRefLess
+Range
+Ver
+Pos
+Error
+ErrorKind
 Create
+Stage
+PrintChar
+NameValid
+StoragePathValid
+StringWrite
+StringWriteArg
+StringWriteOperate
+StringCountWriteOperate
+StringSetWriteOperate
 
 [Storage]
 
