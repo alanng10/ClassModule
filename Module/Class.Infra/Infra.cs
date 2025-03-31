@@ -385,7 +385,9 @@ public class Infra : Any
             }
         }
 
-        return k;
+        object a;
+        a = k;
+        return a;
     }
 
     public virtual String ClassModulePath(String classPath)
