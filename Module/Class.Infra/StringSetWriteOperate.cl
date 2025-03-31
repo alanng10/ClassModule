@@ -1,4 +1,4 @@
-class StringSetWriteOperate : WriteOperate
+class StringSetWriteOperate : StringWriteOperate
 {
     maide prusate Bool Init()
     {
