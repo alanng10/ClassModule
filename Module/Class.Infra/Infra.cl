@@ -293,5 +293,63 @@ class Infra : Any
 
         var Bool b;
         b : false;
+
+        var Class kk;
+        kk : varClass;
+
+        while (~b & ~(kk = null))
+        {
+            inf (~b)
+            {
+                var Field varField;
+                varField : cast Field(kk.Field.Get(name));
+
+                inf (~(varField = null))
+                {
+                    var Count ka;
+                    ka : varField.Count;
+                    inf (ka = prusateCount | ka = precateCount)
+                    {
+                        k : varField;
+                        b : true;
+                    }
+
+                    inf (ka = pronateCount)
+                    {
+                        inf (kk.Module = module)
+                        {
+                            k : varField;
+                            b : true;
+                        }
+                    }
+                }
+            }
+
+            inf (~b)
+            {
+                var Maide varMaide;
+                varMaide : cast Maide(kk.Maide.Get(name));
+
+                inf (~(varMaide = null))
+                {
+                    var Count kb;
+                    kb : varMaide.Count;
+                    inf (kb = prusateCount | kb = precateCount)
+                    {
+                        k : varMaide;
+                        b : true;
+                    }
+
+                    inf (kb = pronateCount)
+                    {
+                        inf (kk.Module = module)
+                        {
+                            k : varMaide;
+                            b : true;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
