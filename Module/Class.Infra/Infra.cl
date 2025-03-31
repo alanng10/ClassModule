@@ -279,4 +279,19 @@ class Infra : Any
         }
         return true;
     }
+
+    maide prusate Any CompDefine(var Class varClass, var String name, var Module module, var Class anyClass)
+    {
+        var Count prusateCount;
+        var Count precateCount;
+        var Count pronateCount;
+        prusateCount : this.CountList.Prusate;
+        precateCount : this.CountList.Precate;
+        pronateCount : this.CountList.Pronate;
+
+        var Any k;
+
+        var Bool b;
+        b : false;
+    }
 }
