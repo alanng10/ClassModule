@@ -262,7 +262,7 @@ public class Infra : Any
         return a;
     }
 
-    public virtual bool ValidCount(Class thisClass, Class triggerClass, Class varClass, Count count, Class anyClass, Class nullClass)
+    public virtual bool ValidCount(Class thisClass, Class triggClass, Class varClass, Count count, Class anyClass, Class nullClass)
     {
         CountList countList;
         countList = this.CountList;
@@ -274,7 +274,7 @@ public class Infra : Any
 
         if (count == countList.Precate)
         {
-            if (this.ValidClass(thisClass, triggerClass, anyClass, nullClass))
+            if (this.ValidClass(thisClass, triggClass, anyClass, nullClass))
             {
                 return true;
             }
@@ -292,9 +292,9 @@ public class Infra : Any
 
         if (count == countList.Private)
         {
-            if (triggerClass == varClass)
+            if (triggClass == varClass)
             {
-                if (thisClass == triggerClass)
+                if (thisClass == triggClass)
                 {
                     return true;
                 }
