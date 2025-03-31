@@ -24,7 +24,6 @@ public class CountReadOperate : ReadOperate
         return true;
     }
 
-    public virtual Read Read { get; set; }
     protected virtual ListInfra ListInfra { get; set; }
     protected virtual TextInfra TextInfra { get; set; }
     protected virtual ClassInfra ClassInfra { get; set; }
