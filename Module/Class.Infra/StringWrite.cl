@@ -67,7 +67,7 @@ class StringWrite : Any
         this.ExecuteStage(text);
 
         var Int count;
-        count : this.Index;
+        count : this.Arg.Index;
 
         var Int k;
         k : count;
@@ -94,7 +94,7 @@ class StringWrite : Any
     {
         var TextInfra textInfra;
         textInfra : this.TextInfra;
-        var ClassInfra classInfra;
+        var Infra classInfra;
         classInfra : this.ClassInfra;
         var StringComp stringComp;
         stringComp : this.StringComp;
@@ -113,7 +113,7 @@ class StringWrite : Any
         var Int rangeStart;
         var Int rangeEnd;
         rangeStart : range.Index;
-        rangeEnd : rangeStart + range.Count;
+        rangeEnd : rangeStart + kk;
 
         var Int quote;
         quote : textInfra.Char(classInfra.TextQuote);
@@ -143,7 +143,7 @@ class StringWrite : Any
         countA : 8;
 
         var Int count;
-        count : k - 2;
+        count : kk - 2;
         var Int start;
         start : range.Index + 1;
         var Int i;
