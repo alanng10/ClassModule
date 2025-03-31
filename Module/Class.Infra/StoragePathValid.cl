@@ -37,7 +37,7 @@ class StoragePathValid : TextAdd
         text.Range.Count : 1;
 
         var Bool ba;
-        ba : textInfra.Same(text, this.TA("/"), this.TextLess);
+        ba : textInfra.Same(text, this.TA("/"), this.TLess);
 
         text.Range.Index : ka;
         text.Range.Count : kb;
@@ -48,7 +48,7 @@ class StoragePathValid : TextAdd
         }
 
         var Int kaa;
-        kaa : textInfra.Index(text, this.TA("\\"), this.TextLess);
+        kaa : textInfra.Index(text, this.TA("\\"), this.TLess);
 
         inf (~(kaa = null))
         {
@@ -56,7 +56,7 @@ class StoragePathValid : TextAdd
         }
 
         var Int kab;
-        kab : textInfra.Index(text, this.TA("//"), this.TextLess);
+        kab : textInfra.Index(text, this.TA("//"), this.TLess);
 
         inf (~(kab = null))
         {
@@ -73,7 +73,7 @@ class StoragePathValid : TextAdd
             return false;
         }
 
-        inf (~this.StorageInfra.PathRelate(text, this.TextLess))
+        inf (~this.StorageInfra.PathRelate(text, this.TLess))
         {
             return false;
         }
@@ -92,7 +92,7 @@ class StoragePathValid : TextAdd
         textInfra : this.TextInfra;
         
         var Less less;
-        less : this.TextLess;
+        less : this.TLess;
 
         var Text combine;
         combine : this.TA(this.TextInfra.PathCombine);
