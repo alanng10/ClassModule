@@ -1,0 +1,42 @@
+[Module]
+Class.Infra:0.00.00
+
+[Import]
+System.Infra
+    Any Any
+    Bool Bool
+    Int Int
+    String String
+    InfraRange Range
+    Data Data
+    Less Less
+    IntLess IntLess
+    RefLess RefLess
+    InfraInfra Infra
+System.List
+    List List
+    Array Array
+    Table Table
+    ListInfra Infra
+System.Text
+    Text Text
+    TextForm Form
+    TextLess Less
+    Format Format
+    FormatArg FormatArg
+    IntParse IntParse
+    StringComp StringComp
+    StringAdd StringAdd
+    StringData StringData
+    StringLess StringLess
+    TextInfra Infra
+System.Storage
+    StorageInfra Infra
+
+[Export]
+Add
+Create
+
+[Storage]
+
+[Entry]
