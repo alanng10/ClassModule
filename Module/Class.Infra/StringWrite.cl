@@ -364,7 +364,7 @@ class StringWrite : Any
 
     maide precate Bool ExecuteChar(var Int n)
     {
-        this.WriteOperate.ExecuteChar(n);
+        this.Operate.ExecuteChar(n);
         return true;
     }
 }
