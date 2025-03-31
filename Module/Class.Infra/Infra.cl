@@ -367,4 +367,21 @@ class Infra : Any
         a : k;
         return a;
     }
+
+    maide private Infra Add(var StringAdd k, var String a)
+    {
+        this.TextInfra.AddString(k, a);
+        return this;
+    }
+
+    maide private Infra AddClear(var StringAdd k)
+    {
+        k.Clear();
+        return this;
+    }
+
+    maide private String AddResult(var StringAdd k)
+    {
+        return k.Result();
+    }
 }
