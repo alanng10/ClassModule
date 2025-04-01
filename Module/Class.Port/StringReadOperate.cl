@@ -118,4 +118,22 @@ class StringReadOperate : ReadOperate
         arg.StringIndex : index + 1;
         return this.String;
     }
+
+    maide prusate Array ExecuteArray(var Int count)
+    {
+        var ReadArg arg;
+        arg : this.Arg;
+
+        var Int index;
+        index : arg.ArrayIndex;
+
+        var Int nn;
+        nn : index;
+        nn : nn * 8;
+
+        this.InfraInfra.DataIntSet(arg.ArrayCountData, nn, count);
+
+        arg.ArrayIndex : index + 1;
+        return this.Array;
+    }
 }
