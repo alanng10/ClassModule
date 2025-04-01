@@ -132,4 +132,20 @@ class CountReadOperate : ReadOperate
         arg.ImportClassIndex : arg.ImportClassIndex + 1;
         return this.ImportClass;
     }
+
+    maide prusate Export ExecuteExport()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.ExportIndex : arg.ExportIndex + 1;
+        return this.Export;
+    }
+
+    maide prusate Storage ExecuteStorage()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.StorageIndex : arg.StorageIndex + 1;
+        return this.Storage;
+    }
 }
