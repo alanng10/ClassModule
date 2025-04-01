@@ -136,4 +136,52 @@ class StringReadOperate : ReadOperate
         arg.ArrayIndex : index + 1;
         return this.Array;
     }
+
+    maide prusate Port ExecutePort()
+    {
+        var ReadArg arg;
+        arg : this.Arg;
+        arg.PortIndex : arg.PortIndex + 1;
+        return this.Port;
+    }
+
+    maide prusate ModuleRef ExecuteModuleRef()
+    {
+        var ReadArg arg;
+        arg : this.Arg;
+        arg.ModuleRefIndex : arg.ModuleRefIndex + 1;
+        return this.ModuleRef;
+    }
+
+    maide prusate Import ExecuteImport()
+    {
+        var ReadArg arg;
+        arg : this.Arg;
+        arg.ImportIndex : arg.ImportIndex + 1;
+        return this.Import;
+    }
+
+    maide prusate ImportClass ExecuteImportClass()
+    {
+        var ReadArg arg;
+        arg : this.Arg;
+        arg.ImportClassIndex : arg.ImportClassIndex + 1;
+        return this.ImportClass;
+    }
+
+    maide prusate Export ExecuteExport()
+    {
+        var ReadArg arg;
+        arg : this.Arg;
+        arg.ExportIndex : arg.ExportIndex + 1;
+        return this.Export;
+    }
+
+    maide prusate Storage ExecuteStorage()
+    {
+        var ReadArg arg;
+        arg : this.Arg;
+        arg.StorageIndex : arg.StorageIndex + 1;
+        return this.Storage;
+    }
 }
