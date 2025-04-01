@@ -15,8 +15,7 @@ public class CountReadOperate : ReadOperate
         this.Import = this.CreateImport();
         this.ImportClass = this.CreateImportClass();
         this.Export = this.CreateExport();
-        this.Storage = new Storage();
-        this.Storage.Init();
+        this.Storage = this.CreateStorage();
         return true;
     }
 
