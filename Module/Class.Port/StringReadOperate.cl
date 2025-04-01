@@ -85,4 +85,37 @@ class StringReadOperate : ReadOperate
     field precate ImportClass ImportClass { get { return data; } set { data : value; } }
     field precate Export Export { get { return data; } set { data : value; } }
     field precate Storage Storage { get { return data; } set { data : value; } }
+
+    maide prusate String ExecuteString(var Int row, var Range range)
+    {
+        var InfraInfra infraInfra;
+        infraInfra : this.InfraInfra;
+
+        var ReadArg arg;
+        arg : this.Arg;
+
+        var Int index;
+        index : arg.StringIndex;
+
+        var Data data;
+        data : arg.StringTextData;
+        var Int nn;
+        nn : index;
+        nn : nn * 3;
+        var Int ka;
+        ka : 4;
+
+        var Int na;
+        na : nn * ka;
+        infraInfra.DataIntSet(data, na, row);
+
+        na : (nn + 1) * ka;
+        infraInfra.DataIntSet(data, na, range.Index);
+
+        na : (nn + 2) * ka;
+        infraInfra.DataIntSet(data, na, range.Count);
+
+        arg.StringIndex : index + 1;
+        return this.String;
+    }
 }
