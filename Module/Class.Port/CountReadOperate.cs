@@ -14,8 +14,7 @@ public class CountReadOperate : ReadOperate
         this.ModuleRef = this.ClassInfra.ModuleRefCreate(null, 0);
         this.Import = this.CreateImport();
         this.ImportClass = this.CreateImportClass();
-        this.Export = new Export();
-        this.Export.Init();
+        this.Export = this.CreateExport();
         this.Storage = new Storage();
         this.Storage.Init();
         return true;
@@ -41,6 +40,22 @@ public class CountReadOperate : ReadOperate
     {
         ImportClass a;
         a = new ImportClass();
+        a.Init();
+        return a;
+    }
+
+    protected virtual Export CreateExport()
+    {
+        Export a;
+        a = new Export();
+        a.Init();
+        return a;
+    }
+
+    protected virtual Storage CreateStorage()
+    {
+        Storage a;
+        a = new Storage();
         a.Init();
         return a;
     }
