@@ -73,4 +73,16 @@ class StringReadOperate : ReadOperate
         a.Init();
         return a;
     }
+
+    field precate ListInfra ListInfra { get { return data; } set { data : value; } }
+    field precate TextInfra TextInfra { get { return data; } set { data : value; } }
+    field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
+    field precate String String { get { return data; } set { data : value; } }
+    field precate Array Array { get { return data; } set { data : value; } }
+    field precate Port Port { get { return data; } set { data : value; } }
+    field precate ModuleRef ModuleRef { get { return data; } set { data : value; } }
+    field precate Import Import { get { return data; } set { data : value; } }
+    field precate ImportClass ImportClass { get { return data; } set { data : value; } }
+    field precate Export Export { get { return data; } set { data : value; } }
+    field precate Storage Storage { get { return data; } set { data : value; } }
 }
