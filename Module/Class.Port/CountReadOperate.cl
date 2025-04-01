@@ -84,4 +84,52 @@ class CountReadOperate : ReadOperate
     field precate ImportClass ImportClass { get { return data; } set { data : value; } }
     field precate Export Export { get { return data; } set { data : value; } }
     field precate Storage Storage { get { return data; } set { data : value; } }
+
+    maide prusate String ExecuteString(var Int row, var Range range)
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.StringIndex : arg.StringIndex + 1;
+        return this.String;
+    }
+
+    maide prusate Array ExecuteArray(var Int count)
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.ArrayIndex : arg.ArrayIndex + 1;
+        return this.Array;
+    }
+
+    maide prusate Port ExecutePort()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.PortIndex : arg.PortIndex + 1;
+        return this.Port;
+    }
+
+    maide prusate ModuleRef ExecuteModuleRef()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.ModuleRefIndex : arg.ModuleRefIndex + 1;
+        return this.ModuleRef;
+    }
+
+    maide prusate Import ExecuteImport()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.ImportIndex : arg.ImportIndex + 1;
+        return this.Import;
+    }
+
+    maide prusate ImportClass ExecuteImportClass()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.ImportClassIndex : arg.ImportClassIndex + 1;
+        return this.ImportClass;
+    }
 }
