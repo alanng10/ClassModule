@@ -96,6 +96,7 @@ public class StringReadOperate : ReadOperate
 
         ReadArg arg;
         arg = this.Arg;
+
         long index;
         index = arg.StringIndex;
 
