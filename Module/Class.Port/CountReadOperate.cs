@@ -8,15 +8,25 @@ public class CountReadOperate : ReadOperate
         this.ListInfra = ListInfra.This;
         this.TextInfra = TextInfra.This;
         this.ClassInfra = ClassInfra.This;
-        this.String = this.TextInfra.Zero;
-        this.Array = this.ListInfra.ArrayCreate(0);
+        this.String = this.CreateString();
+        this.Array = this.CreateArray();
         this.Port = this.CreatePort();
-        this.ModuleRef = this.ClassInfra.ModuleRefCreate(null, 0);
+        this.ModuleRef = this.CreateModuleRef();
         this.Import = this.CreateImport();
         this.ImportClass = this.CreateImportClass();
         this.Export = this.CreateExport();
         this.Storage = this.CreateStorage();
         return true;
+    }
+
+    protected virtual String CreateString()
+    {
+        return this.TextInfra.Zero;
+    }
+
+    protected virtual Array CreateArray()
+    {
+        return this.ListInfra.ArrayCreate(0);
     }
 
     protected virtual Port CreatePort()
@@ -25,6 +35,11 @@ public class CountReadOperate : ReadOperate
         a = new Port();
         a.Init();
         return a;
+    }
+
+    protected virtual ModuleRef CreateModuleRef()
+    {
+        return this.ClassInfra.ModuleRefCreate(null, 0);
     }
 
     protected virtual Import CreateImport()
