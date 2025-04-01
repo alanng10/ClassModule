@@ -103,7 +103,7 @@ class StringReadOperate : ReadOperate
         nn : index;
         nn : nn * 3;
         var Int ka;
-        ka : 4;
+        ka : 8;
 
         var Int na;
         na : nn * ka;
