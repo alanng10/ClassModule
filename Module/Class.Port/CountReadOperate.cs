@@ -8,6 +8,7 @@ public class CountReadOperate : ReadOperate
         this.ListInfra = ListInfra.This;
         this.TextInfra = TextInfra.This;
         this.ClassInfra = ClassInfra.This;
+
         this.String = this.CreateString();
         this.Array = this.CreateArray();
         this.Port = this.CreatePort();
