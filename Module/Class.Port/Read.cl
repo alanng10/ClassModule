@@ -36,4 +36,12 @@ class Read : TextAdd
         a.Init();
         return a;
     }
+
+    field prusate Array Source { get { return data; } set { data : value; } }
+    field prusate Port Result { get { return data; } set { data : value; } }
+    field prusate ReadArg Arg { get { return data; } set { data : value; } }
+    field precate ReadOperate Operate { get { return data; } set { data : value; } }
+    field precate CountReadOperate CountOperate { get { return data; } set { data : value; } }
+    field precate StringReadOpeate StringOperate { get { return data; } set { data : value; } }
+    field precate SetReadOpeate SetOperate { get { return data; } set { data : value; } }
 }
