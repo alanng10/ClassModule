@@ -10,9 +10,6 @@ public class Read : TextAdd
         this.StringOperate = this.CreateStringOperate();
         this.SetOperate = this.CreateSetOperate();
 
-        this.Range = new Range();
-        this.Range.Init();
-
         this.SColon = this.S(":");
         this.SDot = this.S(".");
         this.SBraceSquareLite = this.S("[");
@@ -58,7 +55,6 @@ public class Read : TextAdd
     protected virtual CountReadOperate CountOperate { get; set; }
     protected virtual StringReadOperate StringOperate { get; set; }
     protected virtual SetReadOperate SetOperate { get; set; }
-    protected virtual Range Range { get; set; }
     protected virtual String SColon { get; set; }
     protected virtual String SDot { get; set; }
     protected virtual String SBraceSquareLite { get; set; }
