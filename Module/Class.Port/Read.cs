@@ -1,6 +1,6 @@
 namespace Saber.Port;
 
-public class Read : ClassBase
+public class Read : TextAdd
 {
     public override bool Init()
     {
