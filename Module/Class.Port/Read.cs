@@ -28,6 +28,7 @@ public class Read : TextAdd
     {
         CountReadOperate a;
         a = new CountReadOperate();
+        a.Read = this;
         a.Init();
         return a;
     }
@@ -36,6 +37,7 @@ public class Read : TextAdd
     {
         StringReadOperate a;
         a = new StringReadOperate();
+        a.Read = this;
         a.Init();
         return a;
     }
@@ -44,6 +46,7 @@ public class Read : TextAdd
     {
         SetReadOperate a;
         a = new SetReadOperate();
+        a.Read = this;
         a.Init();
         return a;
     }
