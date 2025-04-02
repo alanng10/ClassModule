@@ -88,13 +88,18 @@ public class Read : TextAdd
         this.ResetStage();
         this.ExecuteStage();
 
-        long aa;
-        aa = arg.StringIndex;
-        aa = aa * sizeof(ulong) * 3;
-        arg.StringTextData = this.CreateData(aa);
-        aa = arg.ArrayIndex;
-        aa = aa * sizeof(ulong);
-        arg.ArrayCountData = this.CreateData(aa);
+        long ka;
+        ka = arg.StringIndex;
+        ka = ka * sizeof(ulong) * 3;
+        arg.StringTextData = new Data();
+        arg.StringTextData.Count = ka;
+        arg.StringTextData.Init();
+
+        ka = arg.ArrayIndex;
+        ka = ka * sizeof(ulong);
+        arg.ArrayCountData = new Data();
+        arg.ArrayCountData.Count = ka;
+        arg.ArrayCountData.Init();
 
         this.Operate = this.StringOperate;
 
@@ -370,15 +375,6 @@ public class Read : TextAdd
             i = i + 1;
         }
         return true;
-    }
-
-    protected virtual Data CreateData(long count)
-    {
-        Data a;
-        a = new Data();
-        a.Count = count;
-        a.Init();
-        return a;
     }
 
     protected virtual bool ExecuteStage()
