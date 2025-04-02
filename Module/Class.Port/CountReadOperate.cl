@@ -88,7 +88,7 @@ class CountReadOperate : ReadOperate
     maide prusate String ExecuteString(var Int row, var Range range)
     {
         var ReadArg arg;
-        arg : this.Arg;
+        arg : this.Read.Arg;
         arg.StringIndex : arg.StringIndex + 1;
         return this.String;
     }
@@ -96,7 +96,7 @@ class CountReadOperate : ReadOperate
     maide prusate Array ExecuteArray(var Int count)
     {
         var ReadArg arg;
-        arg : this.Arg;
+        arg : this.Read.Arg;
         arg.ArrayIndex : arg.ArrayIndex + 1;
         return this.Array;
     }
@@ -104,7 +104,7 @@ class CountReadOperate : ReadOperate
     maide prusate Port ExecutePort()
     {
         var ReadArg arg;
-        arg : this.Arg;
+        arg : this.Read.Arg;
         arg.PortIndex : arg.PortIndex + 1;
         return this.Port;
     }
@@ -112,7 +112,7 @@ class CountReadOperate : ReadOperate
     maide prusate ModuleRef ExecuteModuleRef()
     {
         var ReadArg arg;
-        arg : this.Arg;
+        arg : this.Read.Arg;
         arg.ModuleRefIndex : arg.ModuleRefIndex + 1;
         return this.ModuleRef;
     }
@@ -120,7 +120,7 @@ class CountReadOperate : ReadOperate
     maide prusate Import ExecuteImport()
     {
         var ReadArg arg;
-        arg : this.Arg;
+        arg : this.Read.Arg;
         arg.ImportIndex : arg.ImportIndex + 1;
         return this.Import;
     }
@@ -128,7 +128,7 @@ class CountReadOperate : ReadOperate
     maide prusate ImportClass ExecuteImportClass()
     {
         var ReadArg arg;
-        arg : this.Arg;
+        arg : this.Read.Arg;
         arg.ImportClassIndex : arg.ImportClassIndex + 1;
         return this.ImportClass;
     }
@@ -136,7 +136,7 @@ class CountReadOperate : ReadOperate
     maide prusate Export ExecuteExport()
     {
         var ReadArg arg;
-        arg : this.Arg;
+        arg : this.Read.Arg;
         arg.ExportIndex : arg.ExportIndex + 1;
         return this.Export;
     }
@@ -144,7 +144,7 @@ class CountReadOperate : ReadOperate
     maide prusate Storage ExecuteStorage()
     {
         var ReadArg arg;
-        arg : this.Arg;
+        arg : this.Read.Arg;
         arg.StorageIndex : arg.StorageIndex + 1;
         return this.Storage;
     }
