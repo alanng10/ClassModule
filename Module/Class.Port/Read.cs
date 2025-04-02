@@ -75,10 +75,11 @@ public class Read : TextAdd
         ListInfra listInfra;
         listInfra = this.ListInfra;
         
+        this.Arg = new ReadArg();
+        this.Arg.Init();
+
         ReadArg arg;
-        arg = new ReadArg();
-        arg.Init();
-        this.Arg = arg;
+        arg = this.Arg;
 
         this.Operate = this.CountOperate;
 
