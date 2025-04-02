@@ -99,7 +99,7 @@ class StringReadOperate : ReadOperate
         index : arg.StringIndex;
 
         var Data data;
-        data : arg.StringTextData;
+        data : arg.StringRangeData;
         var Int nn;
         nn : index;
         nn : nn * 3;

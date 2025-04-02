@@ -1,7 +1,7 @@
 class ReadArg : Any
 {
     field prusate Int StringIndex { get { return data; } set { data : value; } }
-    field prusate Data StringTextData { get { return data; } set { data : value; } }
+    field prusate Data StringRangeData { get { return data; } set { data : value; } }
     field prusate Array StringArray { get { return data; } set { data : value; } }
     field prusate Int ArrayIndex { get { return data; } set { data : value; } }
     field prusate Data ArrayCountData { get { return data; } set { data : value; } }

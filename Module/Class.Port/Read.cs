@@ -91,9 +91,9 @@ public class Read : TextAdd
         long ka;
         ka = arg.StringIndex;
         ka = ka * sizeof(ulong) * 3;
-        arg.StringTextData = new Data();
-        arg.StringTextData.Count = ka;
-        arg.StringTextData.Init();
+        arg.StringRangeData = new Data();
+        arg.StringRangeData.Count = ka;
+        arg.StringRangeData.Init();
 
         ka = arg.ArrayIndex;
         ka = ka * sizeof(ulong);
