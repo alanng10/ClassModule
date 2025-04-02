@@ -102,6 +102,7 @@ public class Read : TextAdd
         arg.ImportClassArray = listInfra.ArrayCreate(arg.ImportClassIndex);
         arg.ExportArray = listInfra.ArrayCreate(arg.ExportIndex);
         arg.StorageArray = listInfra.ArrayCreate(arg.StorageIndex);
+
         this.ExecuteCreateString();
         this.ExecuteCreateArray();
         this.ExecuteCreatePort();
