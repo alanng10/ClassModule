@@ -6,15 +6,9 @@ public class Read : ClassBase
     {
         base.Init();
 
-        this.CountOperate = new CountReadOperate();
-        this.CountOperate.Read = this;
-        this.CountOperate.Init();
-        this.StringOperate = new StringReadOperate();
-        this.StringOperate.Read = this;
-        this.StringOperate.Init();
-        this.SetOperate = new SetReadOperate();
-        this.SetOperate.Read = this;
-        this.SetOperate.Init();
+        this.CountOperate = this.CreateCountOperate();
+        this.StringOperate = this.CreateStringOperate();
+        this.SetOperate = this.CreateSetOperate();
 
         this.Range = new Range();
         this.Range.Init();
@@ -31,6 +25,30 @@ public class Read : ClassBase
         this.HeadStorage = this.S("Storage");
         this.HeadEntry = this.S("Entry");
         return true;
+    }
+
+    protected virtual CountReadOperate CreateCountOperate()
+    {
+        CountReadOperate a;
+        a = new CountReadOperate();
+        a.Init();
+        return a;
+    }
+
+    protected virtual StringReadOperate CreateStringOperate()
+    {
+        StringReadOperate a;
+        a = new StringReadOperate();
+        a.Init();
+        return a;
+    }
+
+    protected virtual SetReadOperate CreateSetOperate()
+    {
+        SetReadOperate a;
+        a = new SetReadOperate();
+        a.Init();
+        return a;
     }
 
     public virtual String Source { get; set; }
