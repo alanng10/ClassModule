@@ -53,4 +53,16 @@ class SetReadOperate : ReadOperate
         arg.ModuleRefIndex : index + 1;
         return a;
     }
+
+    maide prusate Import ExecuteImport()
+    {
+        var ReadArg arg;
+        arg : this.Arg;
+        var Int index;
+        index : arg.ImportIndex;
+        var Import a;
+        a : cast Import(arg.ImportArray.Get(index));
+        arg.ImportIndex : index + 1;
+        return a;
+    }
 }
