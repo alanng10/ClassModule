@@ -65,4 +65,16 @@ class SetReadOperate : ReadOperate
         arg.ImportIndex : index + 1;
         return a;
     }
+
+    maide prusate ImportClass ExecuteImportClass()
+    {
+        var ReadArg arg;
+        arg : this.Arg;
+        var Int index;
+        index : arg.ImportClassIndex;
+        var ImportClass a;
+        a : cast ImportClass(arg.ImportClassArray.Get(index));
+        arg.ImportClassIndex : index + 1;
+        return a;
+    }
 }
