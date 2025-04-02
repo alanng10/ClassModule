@@ -63,7 +63,7 @@ public class SetReadOperate : ReadOperate
         long index;
         index = arg.ImportIndex;
         Import a;
-        a = (Import)arg.ImportArray.GetAt(index);
+        a = arg.ImportArray.GetAt(index) as Import;
         arg.ImportIndex = index + 1;
         return a;
     }
@@ -75,7 +75,7 @@ public class SetReadOperate : ReadOperate
         long index;
         index = arg.ImportClassIndex;
         ImportClass a;
-        a = (ImportClass)arg.ImportClassArray.GetAt(index);
+        a = arg.ImportClassArray.GetAt(index) as ImportClass;
         arg.ImportClassIndex = index + 1;
         return a;
     }
@@ -87,7 +87,7 @@ public class SetReadOperate : ReadOperate
         long index;
         index = arg.ExportIndex;
         Export a;
-        a = (Export)arg.ExportArray.GetAt(index);
+        a = arg.ExportArray.GetAt(index) as Export;
         arg.ExportIndex = index + 1;
         return a;
     }
@@ -99,7 +99,7 @@ public class SetReadOperate : ReadOperate
         long index;
         index = arg.StorageIndex;
         Storage a;
-        a = (Storage)arg.StorageArray.GetAt(index);
+        a = arg.StorageArray.GetAt(index) as Storage;
         arg.StorageIndex = index + 1;
         return a;
     }
