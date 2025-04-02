@@ -123,7 +123,8 @@ public class Read : TextAdd
         this.ResetStage();
         this.ExecuteStage();
 
-        this.ClearOperate();
+        this.Arg = null;
+        this.Operate = null;
         return true;
     }
 
@@ -139,19 +140,6 @@ public class Read : TextAdd
         arg.ImportClassIndex = 0;
         arg.ExportIndex = 0;
         arg.StorageIndex = 0;
-
-        this.Operate.Arg = arg;
-        return true;
-    }
-
-    protected virtual bool ClearOperate()
-    {
-        this.Arg = null;
-        this.CountOperate.Arg = null;
-        this.StringOperate.Arg = null;
-        this.SetOperate.Arg = null;
-
-        this.Operate = null;
         return true;
     }
 
