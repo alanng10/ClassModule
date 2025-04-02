@@ -3,7 +3,7 @@ class SetReadOperate : ReadOperate
     maide prusate String ExecuteString(var Int row, var Range range)
     {
         var ReadArg arg;
-        arg : this.Arg;
+        arg : this.Read.Arg;
         var Int index;
         index : arg.StringIndex;
         var String a;
@@ -15,7 +15,7 @@ class SetReadOperate : ReadOperate
     maide prusate Array ExecuteArray(var Int count)
     {
         var ReadArg arg;
-        arg : this.Arg;
+        arg : this.Read.Arg;
         var Int index;
         index : arg.ArrayIndex;
         var Array a;
@@ -33,7 +33,7 @@ class SetReadOperate : ReadOperate
     maide prusate Port ExecutePort()
     {
         var ReadArg arg;
-        arg : this.Arg;
+        arg : this.Read.Arg;
         var Int index;
         index : arg.PortIndex;
         var Port a;
@@ -45,7 +45,7 @@ class SetReadOperate : ReadOperate
     maide prusate ModuleRef ExecuteModuleRef()
     {
         var ReadArg arg;
-        arg : this.Arg;
+        arg : this.Read.Arg;
         var Int index;
         index : arg.ModuleRefIndex;
         var ModuleRef a;
@@ -57,7 +57,7 @@ class SetReadOperate : ReadOperate
     maide prusate Import ExecuteImport()
     {
         var ReadArg arg;
-        arg : this.Arg;
+        arg : this.Read.Arg;
         var Int index;
         index : arg.ImportIndex;
         var Import a;
@@ -69,7 +69,7 @@ class SetReadOperate : ReadOperate
     maide prusate ImportClass ExecuteImportClass()
     {
         var ReadArg arg;
-        arg : this.Arg;
+        arg : this.Read.Arg;
         var Int index;
         index : arg.ImportClassIndex;
         var ImportClass a;
@@ -81,7 +81,7 @@ class SetReadOperate : ReadOperate
     maide prusate Export ExecuteExport()
     {
         var ReadArg arg;
-        arg : this.Arg;
+        arg : this.Read.Arg;
         var Int index;
         index : arg.ExportIndex;
         var Export a;
@@ -93,7 +93,7 @@ class SetReadOperate : ReadOperate
     maide prusate Storage ExecuteStorage()
     {
         var ReadArg arg;
-        arg : this.Arg;
+        arg : this.Read.Arg;
         var Int index;
         index : arg.StorageIndex;
         var Storage a;
