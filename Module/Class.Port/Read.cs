@@ -64,7 +64,7 @@ public class Read : TextAdd
     {
         ListInfra listInfra;
         listInfra = this.ListInfra;
-        
+
         this.Arg = new ReadArg();
         this.Arg.Init();
 
