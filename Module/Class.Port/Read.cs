@@ -51,10 +51,9 @@ public class Read : ClassBase
         return a;
     }
 
-    public virtual String Source { get; set; }
+    public virtual Array Source { get; set; }
     public virtual Port Port { get; set; }
     public virtual ReadArg Arg { get; set; }
-    protected virtual Array LineList { get; set; }
     protected virtual ReadOperate Operate { get; set; }
     protected virtual CountReadOperate CountOperate { get; set; }
     protected virtual StringReadOperate StringOperate { get; set; }
