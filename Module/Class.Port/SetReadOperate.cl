@@ -23,4 +23,22 @@ class SetReadOperate : ReadOperate
         arg.ArrayIndex : index + 1;
         return a;
     }
+
+    maide prusate Bool ExecuteArrayItemSet(var Array array, var Int index, var Any value)
+    {
+        array.Set(index, value);
+        return true;
+    }
+
+    maide prusate Port ExecutePort()
+    {
+        var ReadArg arg;
+        arg : this.Arg;
+        var Int index;
+        index : arg.PortIndex;
+        var Port a;
+        a : cast Port(arg.PortArray.Get(index));
+        arg.PortIndex : index + 1;
+        return a;
+    }
 }
