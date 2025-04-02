@@ -74,20 +74,6 @@ public class Read : TextAdd
 
         String source;
         source = this.Source;
-
-        Text text;
-        text = new Text();
-        text.Init();
-        text.Range = new Range();
-        text.Range.Init();
-
-        StringData stringData;
-        stringData = new StringData();
-        stringData.Init();
-
-        this.TextString(source, text, stringData);
-
-        this.LineList = this.TextLimit(text, this.TA(this.ClassInfra.NewLine));
         
         ReadArg arg;
         arg = new ReadArg();
@@ -96,7 +82,7 @@ public class Read : TextAdd
 
         this.Operate = this.CountOperate;
 
-        this.ResetStageIndex();
+        this.ResetStage();
         this.ExecuteStage();
 
         long aa;
@@ -109,7 +95,7 @@ public class Read : TextAdd
 
         this.Operate = this.StringOperate;
 
-        this.ResetStageIndex();
+        this.ResetStage();
         this.ExecuteStage();
 
         arg.StringArray = listInfra.ArrayCreate(arg.StringIndex);
@@ -131,15 +117,14 @@ public class Read : TextAdd
 
         this.Operate = this.SetOperate;
 
-        this.ResetStageIndex();
+        this.ResetStage();
         this.ExecuteStage();
 
-        this.Arg = null;
-        this.LineList = null;
+        this.ClearOperate();
         return true;
     }
 
-    protected virtual bool ResetStageIndex()
+    protected virtual bool ResetStage()
     {
         ReadArg arg;
         arg = this.Arg;
@@ -151,6 +136,19 @@ public class Read : TextAdd
         arg.ImportClassIndex = 0;
         arg.ExportIndex = 0;
         arg.StorageIndex = 0;
+
+        this.Operate.Arg = arg;
+        return true;
+    }
+
+    protected virtual bool ClearOperate()
+    {
+        this.Arg = null;
+        this.CountOperate.Arg = null;
+        this.StringOperate.Arg = null;
+        this.SetOperate.Arg = null;
+
+        this.Operate = null;
         return true;
     }
 
