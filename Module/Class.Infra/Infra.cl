@@ -13,6 +13,11 @@ class Infra : Any
         this.TextDot : ".";
         this.TextHyphen : "-";
         this.TextSpace : " ";
+        this.TextModule : "Module";
+        this.TextImport : "Import";
+        this.TextExport : "Export";
+        this.TextStorage : "Storage";
+        this.TextEntry : "Entry";
         this.IntSignNegateMax : bit <(1, 59);
         this.IntSignPositeMax : this.IntSignNegateMax - 1;
         return true;
@@ -24,6 +29,11 @@ class Infra : Any
     field prusate String TextDot { get { return data; } set { data : value; } }
     field prusate String TextHyphen { get { return data; } set { data : value; } }
     field prusate String TextSpace { get { return data; } set { data : value; } }
+    field prusate String TextModule { get { return data; } set { data : value; } }
+    field prusate String TextImport { get { return data; } set { data : value; } }
+    field prusate String TextExport { get { return data; } set { data : value; } }
+    field prusate String TextStorage { get { return data; } set { data : value; } }
+    field prusate String TextEntry { get { return data; } set { data : value; } }
     field prusate Int IntSignPositeMax { get { return data; } set { data : value; } }
     field prusate Int IntSignNegateMax { get { return data; } set { data : value; } }
     field precate InfraInfra InfraInfra { get { return data; } set { data : value; } }
