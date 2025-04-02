@@ -74,9 +74,6 @@ public class Read : TextAdd
     {
         ListInfra listInfra;
         listInfra = this.ListInfra;
-
-        String source;
-        source = this.Source;
         
         ReadArg arg;
         arg = new ReadArg();
