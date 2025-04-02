@@ -59,11 +59,6 @@ public class Read : TextAdd
     protected virtual String SBraceSquareRite { get; set; }
     protected virtual String SSpace { get; set; }
     protected virtual String SIndent { get; set; }
-    protected virtual String HeadModule { get; set; }
-    protected virtual String HeadImport { get; set; }
-    protected virtual String HeadExport { get; set; }
-    protected virtual String HeadStorage { get; set; }
-    protected virtual String HeadEntry { get; set; }
 
     public virtual bool Execute()
     {
