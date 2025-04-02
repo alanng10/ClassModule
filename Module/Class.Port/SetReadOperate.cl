@@ -11,4 +11,16 @@ class SetReadOperate : ReadOperate
         arg.StringIndex : index + 1;
         return a;
     }
+
+    maide prusate Array ExecuteArray(var Int count)
+    {
+        var ReadArg arg;
+        arg : this.Arg;
+        var Int index;
+        index : arg.ArrayIndex;
+        var Array a;
+        a : cast Array(arg.ArrayArray.Get(index));
+        arg.ArrayIndex : index + 1;
+        return a;
+    }
 }
