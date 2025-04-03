@@ -268,10 +268,8 @@ public class Read : TextAdd
 
     protected virtual bool ExecuteCreateImport()
     {
-        ReadArg arg;
-        arg = this.Arg;
         Array array;
-        array = arg.ImportArray;
+        array = this.Arg.ImportArray;
 
         long count;
         count = array.Count;
@@ -282,7 +280,9 @@ public class Read : TextAdd
             Import a;
             a = new Import();
             a.Init();
+
             array.SetAt(i, a);
+
             i = i + 1;
         }
         return true;
