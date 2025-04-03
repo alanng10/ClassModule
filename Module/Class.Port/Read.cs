@@ -354,7 +354,7 @@ public class Read : TextAdd
         return true;
     }
 
-    protected virtual bool ExecuteStage()
+    public virtual bool ExecuteStage()
     {
         this.Port = this.ExecutePort();
 
