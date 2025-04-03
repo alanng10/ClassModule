@@ -106,4 +106,19 @@ class Read : TextAdd
         this.Operate : null;
         return true;
     }
+
+    maide precate Bool ResetStage()
+    {
+        var ReadArg arg;
+        arg : this.Arg;
+        arg.StringIndex : 0;
+        arg.ArrayIndex : 0;
+        arg.PortIndex : 0;
+        arg.ModuleRefIndex : 0;
+        arg.ImportIndex : 0;
+        arg.ImportClassIndex : 0;
+        arg.ExportIndex : 0;
+        arg.StorageIndex : 0;
+        return true;
+    }
 }
