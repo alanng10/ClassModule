@@ -750,9 +750,6 @@ public class Read : TextAdd
 
     protected virtual Storage ExecuteStorage(long row)
     {
-        TextInfra textInfra;
-        textInfra = this.TextInfra;
-
         Text text;
         text = this.LineText(row);
 
