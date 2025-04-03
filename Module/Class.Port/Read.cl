@@ -640,5 +640,37 @@ class Read : TextAdd
 
         var Int kk;
         kk : this.TextIndex(text, this.TA(this.ClassInfra.TextSpace));
+
+        range.Index : index;
+        range.Count : count;
+
+        inf (kk = null)
+        {
+            return null;
+        }
+
+        var Range rangeA;
+        rangeA : this.Range;
+
+        rangeA.Index : indexA;
+        rangeA.Count : kk;
+
+        var String name;
+        name : this.ExecuteString(row, rangeA);
+
+        var Int k;
+        k : kk + 1;
+
+        rangeA.Index : indexA + k;
+        rangeA.Count : countA - k;
+
+        var String varClass;
+        varClass : this.ExecuteString(row, rangeA);
+
+        var ImportClass a;
+        a : this.Operate.ExecuteImportClass();
+        a.Name : name;
+        a.Class : varClass;
+        return a;
     }
 }
