@@ -700,4 +700,18 @@ class Read : TextAdd
 
         return array;
     }
+
+    maide precate Export ExecuteExport(var Int row)
+    {
+        var Text text;
+        text : this.LineText(row);
+
+        var String varClass;
+        varClass : this.ExecuteString(row, text.Range);
+
+        var Export a;
+        a : this.Operate.ExecuteExport();
+        a.Class : varClass;
+        return a;
+    }
 }
