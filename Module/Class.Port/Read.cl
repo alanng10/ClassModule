@@ -552,7 +552,7 @@ class Read : TextAdd
             var Text text;
             text : this.LineText(row + i);
 
-            inf (~this.TextStart(text, this.TA(" ")))
+            inf (~this.TextStart(text, this.TA(this.ClassInfra.TextSpace)))
             {
                 k : k + 1;
             }
@@ -618,5 +618,27 @@ class Read : TextAdd
         {
             return null;
         }
+
+        var Int kaa;
+        kaa : this.StringCount(indent);
+
+        var Range range;
+        range : text.Range;
+
+        var Int index;
+        var Int count;
+        index : range.Index;
+        count : range.Count;
+
+        var Int indexA;
+        var Int countA;
+        indexA : index + kaa;
+        countA : count - kaa;
+
+        range.Index : indexA;
+        range.Count : countA;
+
+        var Int kk;
+        kk : this.TextIndex(text, this.TA(this.ClassInfra.TextSpace));
     }
 }
