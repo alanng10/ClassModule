@@ -141,8 +141,6 @@ public class Read : TextAdd
     {
         InfraInfra infraInfra;
         infraInfra = this.InfraInfra;
-        TextInfra textInfra;
-        textInfra = this.TextInfra;
 
         ReadArg arg;
         arg = this.Arg;
@@ -186,7 +184,7 @@ public class Read : TextAdd
             range.Count = countA;
 
             String a;
-            a = textInfra.StringCreate(text);
+            a = this.StringCreate(text);
             text.Data = null;
 
             array.SetAt(i, a);
@@ -1113,7 +1111,7 @@ public class Read : TextAdd
 
     protected virtual Text LineText(long row)
     {
-        return (Text)this.LineList.GetAt(row);
+        return this.Source.GetAt(row) as Text;
     }
 
     protected virtual bool ValidRow(long row)
