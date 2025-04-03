@@ -231,10 +231,8 @@ public class Read : TextAdd
 
     protected virtual bool ExecuteCreateModuleRef()
     {
-        ReadArg arg;
-        arg = this.Arg;
         Array array;
-        array = arg.ModuleRefArray;
+        array = this.Arg.ModuleRefArray;
 
         long count;
         count = array.Count;
@@ -245,7 +243,9 @@ public class Read : TextAdd
             ModuleRef a;
             a = new ModuleRef();
             a.Init();
+
             array.SetAt(i, a);
+
             i = i + 1;
         }
         return true;
