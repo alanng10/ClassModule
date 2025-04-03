@@ -439,5 +439,39 @@ class Read : TextAdd
         {
             return null;
         }
+
+        b : this.ValidHead(row, this.ClassInfra.TextStorage);
+        inf (~b)
+        {
+            return null;
+        }
+
+        row : row + 1;
+        ka : this.SectionLineCount(row);
+
+        var Array storage;
+        storage : this.ExecuteStorageArray(row, ka);
+        inf (storage = null)
+        {
+            return null;
+        }
+
+        row : row + ka;
+        inf (~this.ValidRow(row))
+        {
+            return null;
+        }
+
+        row : this.NextRow(row);
+        inf (row = null)
+        {
+            return null;
+        }
+
+        b : this.ValidHead(row, this.ClassInfra.TextEntry);
+        inf (~b)
+        {
+            return null;
+        }
     }
 }
