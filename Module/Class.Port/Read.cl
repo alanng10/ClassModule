@@ -209,8 +209,11 @@ class Read : TextAdd
 
     maide precate Bool ExecuteCreatePort()
     {
+        var Array array;
+        array : this.Arg.PortArray;
+
         var Int count;
-        count : this.Arg.PortArray.Count;
+        count : array.Count;
         var Int i;
         i : 0;
         while (i < count)
@@ -219,7 +222,7 @@ class Read : TextAdd
             a : new Port;
             a.Init();
 
-            this.Arg.PortArray.Set(i, a);
+            array.Set(i, a);
 
             i : i + 1;
         }
