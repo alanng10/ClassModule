@@ -121,4 +121,64 @@ class Read : TextAdd
         arg.StorageIndex : 0;
         return true;
     }
+
+    maide precate Bool ExecuteCreateString()
+    {
+        var InfraInfra infraInfra;
+        infraInfra : this.InfraInfra;
+
+        var ReadArg arg;
+        arg : this.Arg;
+        var Text text;
+        text : this.TextA;
+        var Range range;
+        range : text.Range;
+        var Data rangeData;
+        rangeData : arg.StringRangeData;
+        var Int ka;
+        ka : 8;
+        var Array array;
+        array : arg.StringArray;
+        var Int count;
+        count : array.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Int nn;
+            nn : i;
+            nn : nn * 3;
+            var Int row;
+            var Int index;
+            var Int countA;
+            var Int na;
+            na : nn * ka;
+            row : infraInfra.DataIntGet(rangeData, na);
+
+            na : (nn + 1) * ka;
+            index : infraInfra.DataIntGet(rangeData, na);
+
+            na : (nn + 2) * ka;
+            countA : infraInfra.DataIntGet(rangeData, na);
+
+            var Text line;
+            line : this.LineText(row);
+
+            text.Data : line.Data;
+            range.Index : index;
+            range.Count : countA;
+
+            var String a;
+            a : this.StringCreate(text);
+
+            range.Count : null;
+            range.Index : null;
+            text.Data : null;
+
+            array.Set(i, a);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
