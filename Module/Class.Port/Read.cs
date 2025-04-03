@@ -672,10 +672,9 @@ public class Read : TextAdd
 
         long k;
         k = kk + 1;
-        long ka;
-        ka = indexA + k;
-        rangeA.Index = ka;
-        rangeA.Count = text.Range.Count - k - kaa;
+
+        rangeA.Index = indexA + k;
+        rangeA.Count = countA - k;
 
         String varClass;
         varClass = this.ExecuteString(row, rangeA);
