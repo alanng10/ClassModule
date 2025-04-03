@@ -499,4 +499,41 @@ class Read : TextAdd
         a.Entry : entry;
         return a;
     }
+
+    maide precate Array ExecuteImportArray(var Int row, var Int lineCount)
+    {
+        var Int count;
+        count : this.ImportCount(row, lineCount);
+
+        var Array array;
+        array : this.Operate.ExecuteArray(count);
+
+        var Int k;
+        k : row;
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Int kk;
+            kk : k + 1;
+
+            var Int ka;
+            ka : this.SubSectionLineCount(kk);
+
+            var Import a;
+            a : this.ExecuteImport(k, ka);
+            inf (a = null)
+            {
+                return null;
+            }
+
+            this.Operate.ExecuteArrayItemSet(array, i, a);
+
+            k : kk + ka;
+
+            i : i + 1;
+        }
+        return array;
+    }
 }
