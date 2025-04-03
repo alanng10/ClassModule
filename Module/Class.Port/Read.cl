@@ -124,20 +124,10 @@ class Read : TextAdd
 
     maide precate Bool ExecuteCreateString()
     {
-        var ReadArg arg;
-        arg : this.Arg;
-        var Text text;
-        text : this.TextA;
-        var Range range;
-        range : text.Range;
-        var Data rangeData;
-        rangeData : arg.StringRangeData;
         var Int ka;
         ka : 8;
-        var Array array;
-        array : arg.StringArray;
         var Int count;
-        count : array.Count;
+        count : this.Arg.StringArray.Count;
         var Int i;
         i : 0;
         while (i < count)
@@ -150,32 +140,37 @@ class Read : TextAdd
             var Int countA;
             var Int na;
             na : nn * ka;
-            row : this.InfraInfra.DataIntGet(rangeData, na);
+            row : this.InfraInfra.DataIntGet(this.Arg.StringRangeData, na);
 
             na : (nn + 1) * ka;
-            index : this.InfraInfra.DataIntGet(rangeData, na);
+            index : this.InfraInfra.DataIntGet(this.Arg.StringRangeData, na);
 
             na : (nn + 2) * ka;
-            countA : this.InfraInfra.DataIntGet(rangeData, na);
+            countA : this.InfraInfra.DataIntGet(this.Arg.StringRangeData, na);
 
             var Text line;
             line : this.LineText(row);
 
-            text.Data : line.Data;
-            range.Index : index;
-            range.Count : countA;
+            this.TextA.Data : line.Data;
+            this.TextA.Range.Index : index;
+            this.TextA.Range.Count : countA;
 
             var String a;
-            a : this.StringCreate(text);
+            a : this.StringCreate(this.TextA);
 
-            range.Count : null;
-            range.Index : null;
-            text.Data : null;
+            this.TextA.Range.Count : null;
+            this.TextA.Range.Index : null;
+            this.TextA.Data : null;
 
-            array.Set(i, a);
+            this.Arg.StringArray.Set(i, a);
 
             i : i + 1;
         }
         return true;
+    }
+
+    maide precate Bool ExecuteCreateArray()
+    {
+
     }
 }
