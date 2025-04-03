@@ -139,20 +139,10 @@ public class Read : TextAdd
 
     protected virtual bool ExecuteCreateString()
     {
-        ReadArg arg;
-        arg = this.Arg;
-        Text text;
-        text = this.TextA;
-        Range range;
-        range = text.Range;
-        Data rangeData;
-        rangeData = arg.StringRangeData;
         long ka;
         ka = sizeof(ulong);
-        Array array;
-        array = arg.StringArray;
         long count;
-        count = array.Count;
+        count = this.Arg.StringArray.Count;
         long i;
         i = 0;
         while (i < count)
@@ -165,29 +155,29 @@ public class Read : TextAdd
             long countA;
             long na;
             na = nn * ka;
-            row = this.InfraInfra.DataIntGet(rangeData, na);
+            row = this.InfraInfra.DataIntGet(this.Arg.StringRangeData, na);
 
             na = (nn + 1) * ka;
-            index = this.InfraInfra.DataIntGet(rangeData, na);
+            index = this.InfraInfra.DataIntGet(this.Arg.StringRangeData, na);
 
             na = (nn + 2) * ka;
-            countA = this.InfraInfra.DataIntGet(rangeData, na);
+            countA = this.InfraInfra.DataIntGet(this.Arg.StringRangeData, na);
 
             Text line;
             line = this.LineText(row);
 
-            text.Data = line.Data;
-            range.Index = index;
-            range.Count = countA;
+            this.TextA.Data = line.Data;
+            this.TextA.Range.Index = index;
+            this.TextA.Range.Count = countA;
 
             String a;
-            a = this.StringCreate(text);
+            a = this.StringCreate(this.TextA);
 
-            range.Count = 0;
-            range.Index = 0;
-            text.Data = null;
+            this.TextA.Range.Count = 0;
+            this.TextA.Range.Index = 0;
+            this.TextA.Data = null;
 
-            array.SetAt(i, a);
+            this.Arg.StringArray.SetAt(i, a);
             
             i = i + 1;
         }
@@ -196,11 +186,6 @@ public class Read : TextAdd
 
     protected virtual bool ExecuteCreateArray()
     {
-        InfraInfra infraInfra;
-        infraInfra = this.InfraInfra;
-        ListInfra listInfra;
-        listInfra = this.ListInfra;
-
         ReadArg arg;
         arg = this.Arg;
 
@@ -222,10 +207,10 @@ public class Read : TextAdd
             nn = nn * ka;
 
             long k;
-            k = infraInfra.DataIntGet(data, nn);
+            k = this.InfraInfra.DataIntGet(data, nn);
 
             Array a;
-            a = listInfra.ArrayCreate(k);
+            a = this.ListInfra.ArrayCreate(k);
             array.SetAt(i, a);
             i = i + 1;
         }
