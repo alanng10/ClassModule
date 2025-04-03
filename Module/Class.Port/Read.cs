@@ -899,7 +899,7 @@ public class Read : TextAdd
         count = range.Count;
 
         bool a;
-        a = this.CheckHeadAll(line, head);
+        a = this.ValidHeadAll(line, head);
 
         range.Index = index;
         range.Count = count;
@@ -907,7 +907,7 @@ public class Read : TextAdd
         return a;
     }
 
-    protected virtual bool CheckHeadAll(Text line, String head)
+    protected virtual bool ValidHeadAll(Text line, String head)
     {
         Range range;
         range = line.Range;
