@@ -139,9 +139,6 @@ public class Read : TextAdd
 
     protected virtual bool ExecuteCreateString()
     {
-        InfraInfra infraInfra;
-        infraInfra = this.InfraInfra;
-
         ReadArg arg;
         arg = this.Arg;
         Text text;
@@ -168,13 +165,13 @@ public class Read : TextAdd
             long countA;
             long na;
             na = nn * ka;
-            row = infraInfra.DataIntGet(rangeData, na);
+            row = this.InfraInfra.DataIntGet(rangeData, na);
 
             na = (nn + 1) * ka;
-            index = infraInfra.DataIntGet(rangeData, na);
+            index = this.InfraInfra.DataIntGet(rangeData, na);
 
             na = (nn + 2) * ka;
-            countA = infraInfra.DataIntGet(rangeData, na);
+            countA = this.InfraInfra.DataIntGet(rangeData, na);
 
             Text line;
             line = this.LineText(row);

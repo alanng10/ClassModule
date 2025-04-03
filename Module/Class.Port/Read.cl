@@ -124,9 +124,6 @@ class Read : TextAdd
 
     maide precate Bool ExecuteCreateString()
     {
-        var InfraInfra infraInfra;
-        infraInfra : this.InfraInfra;
-
         var ReadArg arg;
         arg : this.Arg;
         var Text text;
@@ -153,13 +150,13 @@ class Read : TextAdd
             var Int countA;
             var Int na;
             na : nn * ka;
-            row : infraInfra.DataIntGet(rangeData, na);
+            row : this.InfraInfra.DataIntGet(rangeData, na);
 
             na : (nn + 1) * ka;
-            index : infraInfra.DataIntGet(rangeData, na);
+            index : this.InfraInfra.DataIntGet(rangeData, na);
 
             na : (nn + 2) * ka;
-            countA : infraInfra.DataIntGet(rangeData, na);
+            countA : this.InfraInfra.DataIntGet(rangeData, na);
 
             var Text line;
             line : this.LineText(row);
