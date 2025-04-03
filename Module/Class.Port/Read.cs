@@ -596,7 +596,7 @@ public class Read : TextAdd
 
         Array array;
         array = this.Operate.ExecuteArray(count);
-        
+
         long i;
         i = 0;
         while (i < count)
@@ -623,9 +623,6 @@ public class Read : TextAdd
 
     protected virtual ImportClass ExecuteImportClass(long row)
     {
-        TextInfra textInfra;
-        textInfra = this.TextInfra;
-
         Text text;
         text = this.LineText(row);
 
