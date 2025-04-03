@@ -495,10 +495,7 @@ public class Read : TextAdd
         entry = null;
         if (this.ValidRow(row))
         {
-            Text aa;
-            aa = this.LineText(row);
-            
-            entry = this.ExecuteString(row, aa.Range);
+            entry = this.ExecuteEntry(row);
 
             row = row + 1;
         }
@@ -784,6 +781,16 @@ public class Read : TextAdd
         a = this.Operate.ExecuteStorage();
         a.Dest = path;
         a.Source = sourcePath;
+        return a;
+    }
+
+    protected virtual String ExecuteEntry(long row)
+    {
+        Text text;
+        text = this.LineText(row);
+
+        String a;
+        a = this.ExecuteString(row, text.Range);
         return a;
     }
 
