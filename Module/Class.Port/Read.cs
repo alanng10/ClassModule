@@ -368,7 +368,7 @@ public class Read : TextAdd
         row = 0;
 
         bool b;
-        b = this.ValidHead(row, this.HeadModule);
+        b = this.ValidHead(row, this.ClassInfra.TextModule);
         if (!b)
         {
             return null;
@@ -398,7 +398,7 @@ public class Read : TextAdd
             return null;
         }
 
-        b = this.ValidHead(row, this.HeadImport);
+        b = this.ValidHead(row, this.ClassInfra.TextImport);
         if (!b)
         {
             return null;
@@ -427,7 +427,7 @@ public class Read : TextAdd
             return null;
         }
 
-        b = this.ValidHead(row, this.HeadExport);
+        b = this.ValidHead(row, this.ClassInfra.TextExport);
         if (!b)
         {
             return null;
@@ -455,7 +455,7 @@ public class Read : TextAdd
             return null;
         }
 
-        b = this.ValidHead(row, this.HeadStorage);
+        b = this.ValidHead(row, this.ClassInfra.TextStorage);
         if (!b)
         {
             return null;
@@ -483,7 +483,7 @@ public class Read : TextAdd
             return null;
         }
 
-        b = this.ValidHead(row, this.HeadEntry);
+        b = this.ValidHead(row, this.ClassInfra.TextEntry);
         if (!b)
         {
             return null;
