@@ -185,9 +185,9 @@ public class Read : TextAdd
 
             String a;
             a = this.StringCreate(text);
-            text.Data = null;
-            range.Index = 0;
             range.Count = 0;
+            range.Index = 0;
+            text.Data = null;
 
             array.SetAt(i, a);
             
