@@ -767,5 +767,20 @@ class Read : TextAdd
 
         var String dest;
         dest : this.ExecuteString(row, range);
+
+        var Int k;
+        k : kk + 1;
+
+        range.Index : index + k;
+        range.Count : count - k;
+
+        var String source;
+        source : this.ExecuteString(row, range);
+
+        var Storage a;
+        a : this.Operate.ExecuteStorage();
+        a.Dest : dest;
+        a.Source : source;
+        return a;
     }
 }
