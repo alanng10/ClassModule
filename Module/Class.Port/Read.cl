@@ -388,5 +388,44 @@ class Read : TextAdd
         {
             return null;
         }
+
+        row : row + 1;
+        var Int ka;
+        ka : this.SectionLineCount(row);
+
+        var Array import;
+        import : this.ExecuteImportArray(row, ka);
+        inf (import = null)
+        {
+            return null;
+        }
+
+        row : row + ka;
+        inf (~this.ValidRow(row))
+        {
+            return null;
+        }
+
+        row : this.NextRow(row);
+        inf (row = null)
+        {
+            return null;
+        }
+
+        b : this.ValidHead(row, this.ClassInfra.TextExport);
+        inf (~b)
+        {
+            return null;
+        }
+
+        row : row + 1;
+        ka : this.SectionLineCount(row);
+
+        var Array export;
+        export : this.ExecuteExportArray(row, ka);
+        inf (export = null)
+        {
+            return null;
+        }
     }
 }
