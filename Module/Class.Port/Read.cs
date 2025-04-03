@@ -312,10 +312,8 @@ public class Read : TextAdd
 
     protected virtual bool ExecuteCreateExport()
     {
-        ReadArg arg;
-        arg = this.Arg;
         Array array;
-        array = arg.ExportArray;
+        array = this.Arg.ExportArray;
 
         long count;
         count = array.Count;
@@ -326,7 +324,9 @@ public class Read : TextAdd
             Export a;
             a = new Export();
             a.Init();
+
             array.SetAt(i, a);
+
             i = i + 1;
         }
         return true;
