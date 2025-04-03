@@ -338,4 +338,12 @@ class Read : TextAdd
         }
         return true;
     }
+
+    maide precate Bool ExecuteStage()
+    {
+        this.Port : this.ExecutePort();
+
+        this.ClearData();
+        return true;
+    }
 }

@@ -356,14 +356,17 @@ public class Read : TextAdd
 
     protected virtual bool ExecuteStage()
     {
-        this.Port = this.ExecutePort(0);
+        this.Port = this.ExecutePort();
 
         this.ClearData();
         return true;
     }
 
-    protected virtual Port ExecutePort(long row)
+    protected virtual Port ExecutePort()
     {
+        long row;
+        row = 0;
+
         bool b;
         b = this.CheckHead(row, this.HeadModule);
         if (!b)
