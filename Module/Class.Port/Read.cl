@@ -714,4 +714,31 @@ class Read : TextAdd
         a.Class : varClass;
         return a;
     }
+
+    maide precate Array ExecuteStorageArray(var Int row, var Int lineCount)
+    {
+        var Int count;
+        count : lineCount;
+
+        var Array array;
+        array : this.Operate.ExecuteArray(count);
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Storage a;
+            a : this.ExecuteStorage(row + i);
+            inf (a = null)
+            {
+                return null;
+            }
+
+            this.Operate.ExecuteArrayItemSet(array, i, a);
+
+            i : i + 1;
+        }
+
+        return array;
+    }
 }
