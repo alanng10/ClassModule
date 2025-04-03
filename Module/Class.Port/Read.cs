@@ -334,10 +334,8 @@ public class Read : TextAdd
 
     protected virtual bool ExecuteCreateStorage()
     {
-        ReadArg arg;
-        arg = this.Arg;
         Array array;
-        array = arg.StorageArray;
+        array = this.Arg.StorageArray;
 
         long count;
         count = array.Count;
@@ -348,7 +346,9 @@ public class Read : TextAdd
             Storage a;
             a = new Storage();
             a.Init();
+
             array.SetAt(i, a);
+
             i = i + 1;
         }
         return true;
