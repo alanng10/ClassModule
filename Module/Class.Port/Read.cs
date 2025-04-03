@@ -580,7 +580,7 @@ public class Read : TextAdd
         return a;
     }
 
-    protected virtual Import ExecuteImport(long row, long subsectionLineCount)
+    protected virtual Import ExecuteImport(long row, long lineCount)
     {
         ModuleRef module;
         module = this.ExecuteModuleRef(row);
@@ -592,7 +592,7 @@ public class Read : TextAdd
         row = row + 1;
 
         long count;
-        count = subsectionLineCount;
+        count = lineCount;
 
         Array array;
         array = this.Operate.ExecuteArray(count);
