@@ -545,7 +545,7 @@ public class Read : TextAdd
 
             this.Operate.ExecuteArrayItemSet(array, i, a);
 
-            k = k + 1 + ka;
+            k = kk + ka;
 
             i = i + 1;
         }
