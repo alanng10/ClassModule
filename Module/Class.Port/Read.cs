@@ -785,8 +785,8 @@ public class Read : TextAdd
 
         Storage a;
         a = this.Operate.ExecuteStorage();
-        a.Path = path;
-        a.SourcePath = sourcePath;
+        a.Dest = path;
+        a.Source = sourcePath;
         return a;
     }
 
