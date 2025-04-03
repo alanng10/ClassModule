@@ -783,4 +783,14 @@ class Read : TextAdd
         a.Source : source;
         return a;
     }
+
+    maide precate String ExecuteEntry(var Int row)
+    {
+        var Text text;
+        text : this.LineText(row);
+
+        var String a;
+        a : this.ExecuteString(row, text.Range);
+        return a;
+    }
 }
