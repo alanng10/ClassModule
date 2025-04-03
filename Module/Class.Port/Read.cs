@@ -731,8 +731,10 @@ public class Read : TextAdd
     {
         long count;
         count = lineCount;
+
         Array array;
         array = this.Operate.ExecuteArray(count);
+
         long i;
         i = 0;
         while (i < count)
@@ -745,6 +747,7 @@ public class Read : TextAdd
             }
 
             this.Operate.ExecuteArrayItemSet(array, i, a);
+
             i = i + 1;
         }
 
