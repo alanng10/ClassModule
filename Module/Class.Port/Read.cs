@@ -368,7 +368,7 @@ public class Read : TextAdd
         row = 0;
 
         bool b;
-        b = this.CheckHead(row, this.HeadModule);
+        b = this.ValidHead(row, this.HeadModule);
         if (!b)
         {
             return null;
@@ -398,7 +398,7 @@ public class Read : TextAdd
             return null;
         }
 
-        b = this.CheckHead(row, this.HeadImport);
+        b = this.ValidHead(row, this.HeadImport);
         if (!b)
         {
             return null;
@@ -427,7 +427,7 @@ public class Read : TextAdd
             return null;
         }
 
-        b = this.CheckHead(row, this.HeadExport);
+        b = this.ValidHead(row, this.HeadExport);
         if (!b)
         {
             return null;
@@ -455,7 +455,7 @@ public class Read : TextAdd
             return null;
         }
 
-        b = this.CheckHead(row, this.HeadStorage);
+        b = this.ValidHead(row, this.HeadStorage);
         if (!b)
         {
             return null;
@@ -483,7 +483,7 @@ public class Read : TextAdd
             return null;
         }
 
-        b = this.CheckHead(row, this.HeadEntry);
+        b = this.ValidHead(row, this.HeadEntry);
         if (!b)
         {
             return null;
@@ -866,7 +866,7 @@ public class Read : TextAdd
         return o;
     }
 
-    protected virtual bool CheckHead(long row, String head)
+    protected virtual bool ValidHead(long row, String head)
     {
         Text line;
         line = this.LineText(row);
