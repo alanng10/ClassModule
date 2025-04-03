@@ -536,4 +536,32 @@ class Read : TextAdd
         }
         return array;
     }
+
+    maide precate Int ImportCount(var Int row, var Int lineCount)
+    {
+        var Int k;
+        k : 0;
+
+        var Int count;
+        count : lineCount;
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Text text;
+            text : this.LineText(row + i);
+
+            inf (~this.TextStart(text, this.TA(" ")))
+            {
+                k : k + 1;
+            }
+
+            i : i + 1;
+        }
+
+        var Int a;
+        a : k;
+        return a;
+    }
 }
