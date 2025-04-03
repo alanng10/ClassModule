@@ -652,7 +652,7 @@ public class Read : TextAdd
 
         long kk;
         kk = this.TextIndex(text, this.TA(this.SSpace));
-        
+
         range.Index = index;
         range.Count = count;
 
