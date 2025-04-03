@@ -150,8 +150,8 @@ public class Read : TextAdd
         text = this.TextA;
         Range range;
         range = text.Range;
-        Data textData;
-        textData = arg.StringTextData;
+        Data rangeData;
+        rangeData = arg.StringRangeData;
         long ka;
         ka = sizeof(ulong);
         Array array;
@@ -170,13 +170,13 @@ public class Read : TextAdd
             long countA;
             long na;
             na = nn * ka;
-            row = infraInfra.DataIntGet(textData, na);
+            row = infraInfra.DataIntGet(rangeData, na);
 
             na = (nn + 1) * ka;
-            index = infraInfra.DataIntGet(textData, na);
+            index = infraInfra.DataIntGet(rangeData, na);
 
             na = (nn + 2) * ka;
-            countA = infraInfra.DataIntGet(textData, na);
+            countA = infraInfra.DataIntGet(rangeData, na);
 
             Text line;
             line = this.LineText(row);
