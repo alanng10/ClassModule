@@ -519,10 +519,10 @@ public class Read : TextAdd
     {
         long count;
         count = this.ImportCount(row, lineCount);
-        
+
         Array array;
         array = this.Operate.ExecuteArray(count);
-        
+
         long k;
         k = row;
 
@@ -566,7 +566,7 @@ public class Read : TextAdd
         {
             Text text;
             text = this.LineText(row + i);
-            
+
             if (!this.TextStart(text, this.TA(this.SSpace)))
             {
                 k = k + 1;
