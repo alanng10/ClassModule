@@ -427,5 +427,17 @@ class Read : TextAdd
         {
             return null;
         }
+
+        row : row + ka;
+        inf (~this.ValidRow(row))
+        {
+            return null;
+        }
+
+        row : this.NextRow(row);
+        inf (row = null)
+        {
+            return null;
+        }
     }
 }
