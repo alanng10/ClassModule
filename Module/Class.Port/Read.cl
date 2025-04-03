@@ -124,10 +124,16 @@ class Read : TextAdd
 
     maide precate Bool ExecuteCreateString()
     {
+        var Array array;
+        array : this.Arg.StringArray;
+
+        var Data data;
+        data : this.Arg.StringRangeData;
+
         var Int ka;
         ka : 8;
         var Int count;
-        count : this.Arg.StringArray.Count;
+        count : array.Count;
         var Int i;
         i : 0;
         while (i < count)
@@ -140,13 +146,13 @@ class Read : TextAdd
             var Int countA;
             var Int na;
             na : nn * ka;
-            row : this.InfraInfra.DataIntGet(this.Arg.StringRangeData, na);
+            row : this.InfraInfra.DataIntGet(data, na);
 
             na : (nn + 1) * ka;
-            index : this.InfraInfra.DataIntGet(this.Arg.StringRangeData, na);
+            index : this.InfraInfra.DataIntGet(data, na);
 
             na : (nn + 2) * ka;
-            countA : this.InfraInfra.DataIntGet(this.Arg.StringRangeData, na);
+            countA : this.InfraInfra.DataIntGet(data, na);
 
             var Text line;
             line : this.LineText(row);
@@ -162,7 +168,7 @@ class Read : TextAdd
             this.TextA.Range.Index : null;
             this.TextA.Data : null;
 
-            this.Arg.StringArray.Set(i, a);
+            array.Set(i, a);
 
             i : i + 1;
         }
