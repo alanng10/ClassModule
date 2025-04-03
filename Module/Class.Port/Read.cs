@@ -795,8 +795,8 @@ public class Read : TextAdd
         long lineCount;
         lineCount = this.LineList.Count;
 
-        long o;
-        o = -1;
+        long k;
+        k = -1;
 
         bool b;
         b = false;
@@ -814,7 +814,7 @@ public class Read : TextAdd
             if (text.Range.Count == 0)
             {
                 b = true;
-                o = i;
+                k = i;
             }
 
             i = i + 1;
@@ -824,7 +824,10 @@ public class Read : TextAdd
         {
             return count;
         }
-        return o;
+
+        long a;
+        a = k;
+        return a;
     }
 
     protected virtual long SubSectionLineCount(long row)
