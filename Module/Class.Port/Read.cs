@@ -186,10 +186,16 @@ public class Read : TextAdd
 
     protected virtual bool ExecuteCreateArray()
     {
+        Array array;
+        array = this.Arg.ArrayArray;
+
+        Data data;
+        data = this.Arg.ArrayCountData;
+
         long ka;
         ka = sizeof(ulong);
         long count;
-        count = this.Arg.ArrayArray.Count;
+        count = array.Count;
         long i;
         i = 0;
         while (i < count)
@@ -198,12 +204,12 @@ public class Read : TextAdd
             nn = i * ka;
 
             long k;
-            k = this.InfraInfra.DataIntGet(this.Arg.ArrayCountData, nn);
+            k = this.InfraInfra.DataIntGet(data, nn);
 
             Array a;
             a = this.ListInfra.ArrayCreate(k);
 
-            this.Arg.ArrayArray.SetAt(i, a);
+            array.SetAt(i, a);
 
             i = i + 1;
         }
