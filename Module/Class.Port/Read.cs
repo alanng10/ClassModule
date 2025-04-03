@@ -139,10 +139,16 @@ public class Read : TextAdd
 
     protected virtual bool ExecuteCreateString()
     {
+        Array array;
+        array = this.Arg.StringArray;
+
+        Data data;
+        data = this.Arg.StringRangeData;
+
         long ka;
         ka = sizeof(ulong);
         long count;
-        count = this.Arg.StringArray.Count;
+        count = array.Count;
         long i;
         i = 0;
         while (i < count)
@@ -155,13 +161,13 @@ public class Read : TextAdd
             long countA;
             long na;
             na = nn * ka;
-            row = this.InfraInfra.DataIntGet(this.Arg.StringRangeData, na);
+            row = this.InfraInfra.DataIntGet(data, na);
 
             na = (nn + 1) * ka;
-            index = this.InfraInfra.DataIntGet(this.Arg.StringRangeData, na);
+            index = this.InfraInfra.DataIntGet(data, na);
 
             na = (nn + 2) * ka;
-            countA = this.InfraInfra.DataIntGet(this.Arg.StringRangeData, na);
+            countA = this.InfraInfra.DataIntGet(data, na);
 
             Text line;
             line = this.LineText(row);
@@ -177,7 +183,7 @@ public class Read : TextAdd
             this.TextA.Range.Index = 0;
             this.TextA.Data = null;
 
-            this.Arg.StringArray.SetAt(i, a);
+            array.SetAt(i, a);
             
             i = i + 1;
         }
