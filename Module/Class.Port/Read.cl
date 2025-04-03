@@ -605,4 +605,18 @@ class Read : TextAdd
         a.Class : array;
         return a;
     }
+
+    maide precate ImportClass ExecuteImportClass(var Int row)
+    {
+        var String indent;
+        indent : "    ";
+
+        var Text text;
+        text : this.LineText(row);
+
+        inf (~this.TextStart(text, this.TA(indent)))
+        {
+            return null;
+        }
+    }
 }
