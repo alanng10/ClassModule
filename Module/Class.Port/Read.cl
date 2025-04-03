@@ -346,4 +346,47 @@ class Read : TextAdd
         this.ClearData();
         return true;
     }
+
+    maide precate Port ExecutePort()
+    {
+        var Int row;
+        row : 0;
+
+        var Bool b;
+        b : this.ValidHead(row, this.ClassInfra.TextModule);
+        inf (~b)
+        {
+            return null;
+        }
+
+        row : this.NextRow(row);
+        inf (row = null)
+        {
+            return null;
+        }
+
+        var Module module;
+        module : this.ExecuteModuleRef(row);
+        inf (module = null)
+        {
+            return null;
+        }
+
+        row : this.NextRow(row);
+        inf (row = null)
+        {
+            return null;
+        }
+        row : this.NextRow(row);
+        inf (row = null)
+        {
+            return null;
+        }
+
+        b : this.ValidHead(row, this.ClassInfra.TextImport);
+        inf (~b)
+        {
+            return null;
+        }
+    }
 }
