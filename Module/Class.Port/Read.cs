@@ -500,7 +500,7 @@ public class Read : TextAdd
             row = row + 1;
         }
 
-        if (!(row == this.LineList.Count))
+        if (!(row == this.Source.Count))
         {
             return null;
         }

@@ -477,5 +477,26 @@ class Read : TextAdd
         row : row + 1;
 
         var String entry;
+
+        inf (this.ValidRow(row))
+        {
+            entry : this.ExecuteEntry(row);
+
+            row : row + 1;
+        }
+
+        inf (~(row = this.Source.Count))
+        {
+            return null;
+        }
+
+        var Port a;
+        a : this.Operate.ExecutePort();
+        a.Module : module;
+        a.Import : import;
+        a.Export : export;
+        a.Storage : storage;
+        a.Entry : entry;
+        return a;
     }
 }
