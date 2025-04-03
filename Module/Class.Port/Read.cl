@@ -564,4 +564,45 @@ class Read : TextAdd
         a : k;
         return a;
     }
+
+    maide precate Import ExecuteImport(var Int row, var Int lineCount)
+    {
+        var ModuleRef module;
+        module : this.ExecuteModuleRef(row);
+        inf (module = null)
+        {
+            return null;
+        }
+
+        row : row + 1;
+
+        var Int count;
+        count : lineCount;
+
+        var Array array;
+        array : this.Operate.ExecuteArray(count);
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var ImportClass ka;
+            ka : this.ExecuteImportClass(row + i);
+
+            inf (ka = null)
+            {
+                return null;
+            }
+
+            array.Set(i, ka);
+
+            i : i + 1;
+        }
+
+        var Import a;
+        a : this.Operate.ExecuteImport();
+        a.Module : module;
+        a.Class : array;
+        return a;
+    }
 }
