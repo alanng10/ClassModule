@@ -194,4 +194,23 @@ class Read : TextAdd
         }
         return true;
     }
+
+    maide precate Bool ExecuteCreatePort()
+    {
+        var Int count;
+        count : this.Arg.PortArray.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Port a;
+            a : new Port;
+            a.Init();
+
+            this.Arg.PortArray.Set(i, a);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
