@@ -195,8 +195,7 @@ public class Read : TextAdd
         while (i < count)
         {
             long nn;
-            nn = i;
-            nn = nn * ka;
+            nn = i * ka;
 
             long k;
             k = this.InfraInfra.DataIntGet(this.Arg.ArrayCountData, nn);

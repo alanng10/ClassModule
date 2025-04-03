@@ -171,6 +171,27 @@ class Read : TextAdd
 
     maide precate Bool ExecuteCreateArray()
     {
+        var Int ka;
+        ka : 8;
+        var Int count;
+        count : this.Arg.ArrayArray.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Int nn;
+            nn : i * ka;
 
+            var Int k;
+            k : this.InfraInfra.DataIntGet(this.Arg.ArrayCountData, nn);
+
+            var Array a;
+            a : this.ListInfra.ArrayCreate(k);
+
+            this.Arg.ArrayArray.Set(i, a);
+
+            i : i + 1;
+        }
+        return true;
     }
 }
