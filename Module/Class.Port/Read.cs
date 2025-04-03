@@ -636,20 +636,27 @@ public class Read : TextAdd
 
         Range range;
         range = text.Range;
+
         long index;
+        long count;
         index = range.Index;
+        count = range.Count;
 
         long indexA;
+        long countA;
         indexA = index + kaa;
+        countA = count - kaa;
 
         range.Index = indexA;
+        range.Count = countA;
 
-        long u;
-        u = this.TextIndex(text, this.TA(this.SSpace));
+        long kk;
+        kk = this.TextIndex(text, this.TA(this.SSpace));
         
         range.Index = index;
+        range.Count = count;
 
-        if (u == -1)
+        if (kk == -1)
         {
             return null;
         }
@@ -658,13 +665,13 @@ public class Read : TextAdd
         rangeA = this.Range;
 
         rangeA.Index = indexA;
-        rangeA.Count = u;
+        rangeA.Count = kk;
 
         String name;
         name = this.ExecuteString(row, rangeA);
 
         long k;
-        k = u + 1;
+        k = kk + 1;
         long ka;
         ka = indexA + k;
         rangeA.Index = ka;
