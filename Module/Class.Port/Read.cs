@@ -212,8 +212,11 @@ public class Read : TextAdd
 
     protected virtual bool ExecuteCreatePort()
     {
+        Array array;
+        array = this.Arg.PortArray;
+
         long count;
-        count = this.Arg.PortArray.Count;
+        count = array.Count;
         long i;
         i = 0;
         while (i < count)
@@ -222,7 +225,7 @@ public class Read : TextAdd
             a = new Port();
             a.Init();
 
-            this.Arg.PortArray.SetAt(i, a);
+            array.SetAt(i, a);
 
             i = i + 1;
         }
