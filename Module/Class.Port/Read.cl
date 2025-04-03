@@ -741,4 +741,31 @@ class Read : TextAdd
 
         return array;
     }
+
+    maide precate Storage ExecuteStorage(var Int row)
+    {
+        var Text text;
+        text : this.LineText(row);
+
+        var Int kk;
+        kk : this.TextIndex(text, this.TA(":"));
+        inf (kk = null)
+        {
+            return null;
+        }
+
+        var Int index;
+        var Int count;
+        index : text.Range.Index;
+        count : text.Range.Count;
+
+        var Range range;
+        range : this.Range;
+
+        range.Index : index;
+        range.Count : kk;
+
+        var String dest;
+        dest : this.ExecuteString(row, range);
+    }
 }
