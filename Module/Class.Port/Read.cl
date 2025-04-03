@@ -793,4 +793,10 @@ class Read : TextAdd
         a : this.ExecuteString(row, text.Range);
         return a;
     }
+
+    maide precate Int SectionLineCount(var Int row)
+    {
+        var Int lineCount;
+        lineCount : this.Source.Count;
+    }
 }
