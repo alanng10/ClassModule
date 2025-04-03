@@ -473,5 +473,9 @@ class Read : TextAdd
         {
             return null;
         }
+
+        row : row + 1;
+
+        var String entry;
     }
 }
