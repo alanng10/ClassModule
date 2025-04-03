@@ -759,37 +759,40 @@ public class Read : TextAdd
         Text text;
         text = this.LineText(row);
 
-        long u;
-        u = this.TextIndex(text, this.TA(this.SColon));
-        if (u == -1)
+        long kk;
+        kk = this.TextIndex(text, this.TA(this.SColon));
+        if (kk == -1)
         {
             return null;
         }
 
-        long ka;
-        ka = text.Range.Index;
+        long index;
+        long count;
+        index = text.Range.Index;
+        count = text.Range.Count;
 
         Range range;
         range = this.Range;
         
-        range.Index = ka;
-        range.Count = u;
+        range.Index = index;
+        range.Count = kk;
         
-        String path;
-        path = this.ExecuteString(row, range);
+        String dest;
+        dest = this.ExecuteString(row, range);
 
         long k;
-        k = u + 1;
-        range.Index = ka + k;
-        range.Count = text.Range.Count - k;
+        k = kk + 1;
 
-        String sourcePath;
-        sourcePath = this.ExecuteString(row, range);
+        range.Index = index + k;
+        range.Count = count - k;
+
+        String source;
+        source = this.ExecuteString(row, range);
 
         Storage a;
         a = this.Operate.ExecuteStorage();
-        a.Dest = path;
-        a.Source = sourcePath;
+        a.Dest = dest;
+        a.Source = source;
         return a;
     }
 
