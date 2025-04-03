@@ -809,7 +809,7 @@ public class Read : TextAdd
     protected virtual long SectionLineCount(long row)
     {
         long lineCount;
-        lineCount = this.LineList.Count;
+        lineCount = this.Source.Count;
 
         long k;
         k = -1;
