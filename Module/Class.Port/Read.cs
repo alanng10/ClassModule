@@ -961,7 +961,7 @@ public class Read : TextAdd
         range = text.Range;
 
         long nameCount;
-        long version;
+        long ver;
         nameCount = 0;
         ver = 0;
 
