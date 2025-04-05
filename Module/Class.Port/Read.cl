@@ -345,7 +345,7 @@ class Read : TextAdd
 
     maide prusate Bool ExecuteStage()
     {
-        this.Port : this.ExecutePort();
+        this.Result : this.ExecutePort();
 
         this.ClearData();
         return true;
