@@ -954,9 +954,6 @@ public class Read : TextAdd
 
     protected virtual ModuleRef ExecuteModuleRef(long row)
     {
-        TextInfra textInfra;
-        textInfra = this.TextInfra;
-
         Text text;
         text = this.LineText(row);
         Range range;
@@ -966,7 +963,7 @@ public class Read : TextAdd
         long version;
         nameCount = 0;
         version = 0;
-        
+
         long n;
         n = this.TextIndex(text, this.TA(this.SColon));
         bool b;
@@ -993,7 +990,7 @@ public class Read : TextAdd
 
             range.Index = aa;
             range.Count = ab;
-            
+
             if (version == -1)
             {
                 return null;
@@ -1006,7 +1003,7 @@ public class Read : TextAdd
         kkk.Count = nameCount;
         String name;
         name = this.ExecuteString(row, kkk);
-        
+
         ModuleRef a;
         a = this.Operate.ExecuteModuleRef();
         a.Name = name;
