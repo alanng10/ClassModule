@@ -91,6 +91,137 @@ public class Create : InfraCreate
         return true;
     }
 
+    protected virtual Array CreateCodeArray()
+    {
+        Array array;
+        array = this.ListInfra.ArrayCreate(this.Source.Count);
+
+        long count;
+        count = array.Count;
+        long i;
+        i = 0;
+        while (i < count)
+        {
+            Code a;
+            a = new Code();
+            a.Init();
+
+            array.SetAt(i, a);
+
+            i = i + 1;
+        }
+
+        return array;
+    }
+
+    protected virtual bool ExecuteCreateToken()
+    {
+        Array array;
+        array = this.Arg.TokenArray;
+
+        long count;
+        count = array.Count;
+        long i;
+        i = 0;
+        while (i < count)
+        {
+            Token a;
+            a = new Token();
+            a.Init();
+            a.Range = new Range();
+            a.Range.Init();
+
+            array.SetAt(i, a);
+
+            i = i + 1;
+        }
+        return true;
+    }
+
+    protected virtual bool ExecuteCreateComment()
+    {
+        Array array;
+        array = this.Arg.CommentArray;
+
+        long count;
+        count = array.Count;
+        long i;
+        i = 0;
+        while (i < count)
+        {
+            Comment a;
+            a = new Comment();
+            a.Init();
+            a.Range = new Range();
+            a.Range.Init();
+
+            array.SetAt(i, a);
+
+            i = i + 1;
+        }
+        return true;
+    }
+
+    protected virtual bool ExecuteCodeArraySet()
+    {
+        InfraInfra infraInfra;
+        infraInfra = this.InfraInfra;
+        ListInfra listInfra;
+        listInfra = this.ListInfra;
+        Array codeArray;
+        codeArray = this.CodeArray;
+        Data codeCountData;
+        codeCountData = this.Arg.CodeCountData;
+
+        Array tokenArray;
+        Array commentArray;
+        tokenArray = this.Arg.TokenArray;
+        commentArray = this.Arg.CommentArray;
+
+        long oa;
+        oa = sizeof(ulong);
+
+        long totalToken;
+        long totalComment;
+        totalToken = 0;
+        totalComment = 0;
+
+        long count;
+        count = codeArray.Count;
+        long i;
+        i = 0;
+        while (i < count)
+        {
+            Code code;
+            code = codeArray.GetAt(i) as Code;
+
+            long ob;
+            ob = i;
+            ob = ob * 2;
+            long oe;
+            oe = ob * oa;
+            long of;
+            of = (ob + 1) * oa;
+            long tokenCount;
+            long commentCount;
+            tokenCount = infraInfra.DataIntGet(codeCountData, oe);
+            commentCount = infraInfra.DataIntGet(codeCountData, of);
+
+            code.Token = listInfra.ArrayCreate(tokenCount);
+            code.Comment = listInfra.ArrayCreate(commentCount);
+
+            listInfra.ArrayCopy(code.Token, 0, tokenArray, totalToken, tokenCount);
+            listInfra.ArrayCopy(code.Comment, 0, commentArray, totalComment, commentCount);
+
+            totalToken = totalToken + tokenCount;
+            totalComment = totalComment + commentCount;
+
+            i = i + 1;
+        }
+
+        return true;
+    }
+
     public virtual bool ExecuteStage()
     {
         long count;
@@ -282,137 +413,6 @@ public class Create : InfraCreate
             row = row + 1;
         }
         
-        return true;
-    }
-
-    protected virtual Array CreateCodeArray()
-    {
-        Array array;
-        array = this.ListInfra.ArrayCreate(this.Source.Count);
-
-        long count;
-        count = array.Count;
-        long i;
-        i = 0;
-        while (i < count)
-        {
-            Code a;
-            a = new Code();
-            a.Init();
-
-            array.SetAt(i, a);
-
-            i = i + 1;
-        }
-
-        return array;
-    }
-
-    protected virtual bool ExecuteCreateToken()
-    {
-        Array array;
-        array = this.Arg.TokenArray;
-
-        long count;
-        count = array.Count;
-        long i;
-        i = 0;
-        while (i < count)
-        {
-            Token a;
-            a = new Token();
-            a.Init();
-            a.Range = new Range();
-            a.Range.Init();
-
-            array.SetAt(i, a);
-
-            i = i + 1;
-        }
-        return true;
-    }
-
-    protected virtual bool ExecuteCreateComment()
-    {
-        Array array;
-        array = this.Arg.CommentArray;
-
-        long count;
-        count = array.Count;
-        long i;
-        i = 0;
-        while (i < count)
-        {
-            Comment a;
-            a = new Comment();
-            a.Init();
-            a.Range = new Range();
-            a.Range.Init();
-
-            array.SetAt(i, a);
-
-            i = i + 1;
-        }
-        return true;
-    }
-
-    protected virtual bool ExecuteCodeArraySet()
-    {
-        InfraInfra infraInfra;
-        infraInfra = this.InfraInfra;
-        ListInfra listInfra;
-        listInfra = this.ListInfra;
-        Array codeArray;
-        codeArray = this.CodeArray;
-        Data codeCountData;
-        codeCountData = this.Arg.CodeCountData;
-
-        Array tokenArray;
-        Array commentArray;
-        tokenArray = this.Arg.TokenArray;
-        commentArray = this.Arg.CommentArray;
-
-        long oa;
-        oa = sizeof(ulong);
-
-        long totalToken;
-        long totalComment;
-        totalToken = 0;
-        totalComment = 0;
-
-        long count;
-        count = codeArray.Count;
-        long i;
-        i = 0;
-        while (i < count)
-        {
-            Code code;
-            code = codeArray.GetAt(i) as Code;
-
-            long ob;
-            ob = i;
-            ob = ob * 2;
-            long oe;
-            oe = ob * oa;
-            long of;
-            of = (ob + 1) * oa;
-            long tokenCount;
-            long commentCount;
-            tokenCount = infraInfra.DataIntGet(codeCountData, oe);
-            commentCount = infraInfra.DataIntGet(codeCountData, of);
-
-            code.Token = listInfra.ArrayCreate(tokenCount);
-            code.Comment = listInfra.ArrayCreate(commentCount);
-
-            listInfra.ArrayCopy(code.Token, 0, tokenArray, totalToken, tokenCount);
-            listInfra.ArrayCopy(code.Comment, 0, commentArray, totalComment, commentCount);
-
-            totalToken = totalToken + tokenCount;
-            totalComment = totalComment + commentCount;
-
-            i = i + 1;
-        }
-
         return true;
     }
 
