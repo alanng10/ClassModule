@@ -419,13 +419,13 @@ public class Create : InfraCreate
 
     protected virtual bool AddToken()
     {
-        this.Operate.ExecuteToken();
+        this.Operate.ExecuteToken(this.Row, this.Range);
         return true;
     }
 
     protected virtual bool AddComment()
     {
-        this.Operate.ExecuteComment();
+        this.Operate.ExecuteComment(this.Row, this.Range);
         return true;
     }
 
