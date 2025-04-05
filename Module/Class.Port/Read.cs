@@ -977,7 +977,7 @@ public class Read : TextAdd
         }
         if (!b)
         {
-            nameCount = n;
+            nameCount = kk;
 
             long ka;
             long kb;
