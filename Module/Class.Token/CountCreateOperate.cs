@@ -13,7 +13,7 @@ public class CountCreateOperate : CreateOperate
     protected virtual long CodeTokenStart { get; set; }
     protected virtual long CodeCommentStart { get; set; }
 
-    public override bool ExecuteToken()
+    public override bool ExecuteToken(long row, Range range)
     {
         CreateArg arg;
         arg = this.Create.Arg;
@@ -24,7 +24,7 @@ public class CountCreateOperate : CreateOperate
         return true;
     }
 
-    public override bool ExecuteComment()
+    public override bool ExecuteComment(long row, Range range)
     {
         CreateArg arg;
         arg = this.Create.Arg;
