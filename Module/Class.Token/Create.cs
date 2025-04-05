@@ -294,8 +294,8 @@ public class Create : InfraCreate
 
             while (col < colCount)
             {
-                bool isValid;
-                isValid = false;
+                bool valid;
+                valid = false;
 
                 long c;
                 c = textInfra.DataCharGet(data, start + col);
@@ -313,7 +313,7 @@ public class Create : InfraCreate
                     col = colCount;
                     this.Reset();
 
-                    isValid = true;
+                    valid = true;
                 }
 
                 if (c == ' ')
@@ -324,7 +324,7 @@ public class Create : InfraCreate
 
                     this.Reset();
 
-                    isValid = true;
+                    valid = true;
                 }
 
                 if (c == '\"')
@@ -374,7 +374,7 @@ public class Create : InfraCreate
 
                     this.Reset();
 
-                    isValid = true;
+                    valid = true;
                 }
 
                 if (textInfra.Alpha(c, false) | textInfra.Alpha(c, true) | textInfra.Digit(c) | c == '_')
@@ -387,10 +387,10 @@ public class Create : InfraCreate
 
                     col = col + 1;
 
-                    isValid = true;
+                    valid = true;
                 }
 
-                if (!isValid)
+                if (!valid)
                 {
                     this.EndToken(col);
 
