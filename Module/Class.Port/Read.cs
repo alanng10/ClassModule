@@ -889,11 +889,11 @@ public class Read : TextAdd
 
     protected virtual bool ValidHead(long row, String head)
     {
-        Text line;
-        line = this.LineText(row);
+        Text text;
+        text = this.LineText(row);
 
         Range range;
-        range = line.Range;
+        range = text.Range;
 
         long index;
         long count;
@@ -901,7 +901,7 @@ public class Read : TextAdd
         count = range.Count;
 
         bool a;
-        a = this.ValidHeadAll(line, head);
+        a = this.ValidHeadAll(text, head);
 
         range.Index = index;
         range.Count = count;
@@ -909,10 +909,10 @@ public class Read : TextAdd
         return a;
     }
 
-    private bool ValidHeadAll(Text line, String head)
+    private bool ValidHeadAll(Text text, String head)
     {
         Range range;
-        range = line.Range;
+        range = text.Range;
 
         long index;
         long count;
@@ -929,14 +929,14 @@ public class Read : TextAdd
 
         range.Count = 1;
 
-        if (!this.TextSame(line, this.TA(this.SBraceSquareLite)))
+        if (!this.TextSame(text, this.TA(this.SBraceSquareLite)))
         {
             return false;
         }
 
         range.Index = index + count - 1;
 
-        if (!this.TextSame(line, this.TA(this.SBraceSquareRite)))
+        if (!this.TextSame(text, this.TA(this.SBraceSquareRite)))
         {
             return false;
         }
@@ -944,7 +944,7 @@ public class Read : TextAdd
         range.Index = index + 1;
         range.Count = count - 2;
 
-        if (!this.TextSame(line, this.TA(head)))
+        if (!this.TextSame(text, this.TA(head)))
         {
             return false;
         }
