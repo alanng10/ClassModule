@@ -267,6 +267,9 @@ public class Create : InfraCreate
         Range range;
         range = this.Range;
 
+        long kaa;
+        kaa = '_';
+
         long row;
         row = 0;
         long col;
@@ -377,7 +380,7 @@ public class Create : InfraCreate
                     valid = true;
                 }
 
-                if (textInfra.Alpha(n, false) | textInfra.Alpha(n, true) | textInfra.Digit(n) | n == '_')
+                if (textInfra.Alpha(n, false) | textInfra.Alpha(n, true) | textInfra.Digit(n) | n == kaa)
                 {
                     if (this.NullRange())
                     {
