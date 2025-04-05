@@ -872,4 +872,26 @@ class Read : TextAdd
         a : k;
         return a;
     }
+
+    maide precate Bool ValidHead(var Int row, var String head)
+    {
+        var Text text;
+        text : this.LineText(row);
+
+        var Range range;
+        range : text.Range;
+
+        var Int index;
+        var Int count;
+        index : range.Index;
+        count : range.Count;
+
+        var Bool a;
+        a : this.ValidHeadAll(text, head);
+
+        range.Index : index;
+        range.Count : count;
+
+        return a;
+    }
 }
