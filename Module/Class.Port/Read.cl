@@ -999,4 +999,23 @@ class Read : TextAdd
         a.Ver : ver;
         return a;
     }
+
+    maide precate Int ExecuteModuleVer(var Text text)
+    {
+        var Range range;
+        range : text.Range;
+
+        var Int index;
+        var Int count;
+        index : range.Index;
+        count : range.Count;
+
+        var Int a;
+        a : this.ExecuteModuleVerAll(text);
+
+        range.Index : index;
+        range.Count : count;
+
+        return a;
+    }
 }

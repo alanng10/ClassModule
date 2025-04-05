@@ -1025,12 +1025,13 @@ public class Read : TextAdd
         long count;
         index = range.Index;
         count = range.Count;
-        
+
         long a;
         a = this.ExecuteModuleVerAll(text);
 
         range.Index = index;
         range.Count = count;
+
         return a;
     }
 
