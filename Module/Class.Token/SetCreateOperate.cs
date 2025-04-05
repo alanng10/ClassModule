@@ -2,7 +2,7 @@ namespace Saber.Token;
 
 public class SetCreateOperate : CreateOperate
 {
-    public override bool ExecuteToken(Range range)
+    public override bool ExecuteToken(long row, Range range)
     {
         CreateArg arg;
         arg = this.Create.Arg;
@@ -11,7 +11,7 @@ public class SetCreateOperate : CreateOperate
 
         Token token;
         token = arg.TokenArray.GetAt(index) as Token;
-        token.Row = this.Create.Row;
+        token.Row = row;
         token.Range.Index = range.Index;
         token.Range.Count = range.Count;
 
@@ -21,7 +21,7 @@ public class SetCreateOperate : CreateOperate
         return true;
     }
 
-    public override bool ExecuteComment()
+    public override bool ExecuteComment(long row, Range range)
     {
         CreateArg arg;
         arg = this.Create.Arg;
@@ -30,15 +30,9 @@ public class SetCreateOperate : CreateOperate
 
         Comment comment;
         comment = arg.CommentArray.GetAt(index) as Comment;
-        comment.Row = this.Create.Row;
-
-        Range aa;
-        aa = comment.Range;
-        Range ab;
-        ab = this.Create.LineRange;
-
-        aa.Index = ab.Index;
-        aa.Count = ab.Count;
+        comment.Row = row;
+        comment.Range.Index = range.Index;
+        comment.Range.Count = range.Count;
 
         index = index + 1;
 
