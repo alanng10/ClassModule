@@ -116,6 +116,10 @@ public class Create : InfraCreate
             i = i + 1;
         }
 
+        this.SourceItem = null;
+        this.Row = -1;
+        this.Range.Index = -1;
+        this.Range.Count = -1;
         return true;
     }
 
