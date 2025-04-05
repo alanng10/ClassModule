@@ -2,6 +2,8 @@ namespace Saber.Token;
 
 public class CreateOperate : Any
 {
+    public virtual Create Create { get; set; }
+
     public virtual bool ExecuteToken()
     {
         return false;

@@ -2,8 +2,6 @@ namespace Saber.Token;
 
 public class SetCreateOperate : CreateOperate
 {
-    public virtual Create Create { get; set; }
-
     public override bool ExecuteToken()
     {
         CreateArg arg;

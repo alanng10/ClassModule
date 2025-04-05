@@ -9,7 +9,6 @@ public class CountCreateOperate : CreateOperate
         return true;
     }
 
-    public virtual Create Create { get; set; }
     protected virtual InfraInfra InfraInfra { get; set; }
     protected virtual long CodeTokenStart { get; set; }
     protected virtual long CodeCommentStart { get; set; }
