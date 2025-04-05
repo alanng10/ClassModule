@@ -397,7 +397,7 @@ public class Create : InfraCreate
                     this.Row = row;
                     range.Index = col;
                     range.Count = 1;
-                    
+
                     this.AddToken();
 
                     col = col + 1;
