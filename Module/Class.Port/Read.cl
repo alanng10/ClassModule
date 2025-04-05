@@ -798,5 +798,38 @@ class Read : TextAdd
     {
         var Int lineCount;
         lineCount : this.Source.Count;
+
+        var Int k;
+
+        var Bool b;
+        b : false;
+
+        var Int count;
+        count : lineCount - row;
+
+        var Int i;
+        i : 0;
+
+        while (~b & i < count)
+        {
+            var Text text;
+            text : this.LineText(row + i);
+            inf (text.Range.Count = 0)
+            {
+                b : true;
+                k : i;
+            }
+
+            i : i + 1;
+        }
+
+        inf (~b)
+        {
+            return count;
+        }
+
+        var Int a;
+        a : k;
+        return a;
     }
 }
