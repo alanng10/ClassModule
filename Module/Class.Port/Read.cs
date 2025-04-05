@@ -1045,8 +1045,11 @@ public class Read : TextAdd
         index = range.Index;
         count = range.Count;
 
+        String dot;
+        dot = this.SDot;
+
         long kka;
-        kka = this.TextIndex(text, this.TA(this.SDot));
+        kka = this.TextIndex(text, this.TA(dot));
         if (kka == -1)
         {
             return -1;
@@ -1062,7 +1065,7 @@ public class Read : TextAdd
         kaa = 2;
 
         long kkb;
-        kkb = this.TextIndex(text, this.TA(this.SDot));
+        kkb = this.TextIndex(text, this.TA(dot));
         if (!(kkb == kaa))
         {
             return -1;
