@@ -1113,4 +1113,14 @@ class Read : TextAdd
         a : k;
         return a;
     }
+
+    maide precate Text LineText(var Int row)
+    {
+        return cast Text(this.Source.Get(row));
+    }
+
+    maide precate Bool ValidRow(var Int row)
+    {
+        return this.InfraInfra.ValidIndex(this.Source.Count, row);
+    }
 }
