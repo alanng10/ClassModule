@@ -1,6 +1,6 @@
 class ReadOperate : Any
 {
-    field prusate ReadArg Read { get { return data; } set { data : value; } }
+    field prusate Read Read { get { return data; } set { data : value; } }
 
     maide prusate String ExecuteString(var Int row, var Range range)
     {
