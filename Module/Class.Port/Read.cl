@@ -984,5 +984,19 @@ class Read : TextAdd
                 return null;
             }
         }
+
+        var Range rangeA;
+        rangeA : this.Range;
+        rangeA.Index : range.Index;
+        rangeA.Count : nameCount;
+
+        var String name;
+        name : this.ExecuteString(row, rangeA);
+
+        var ModuleRef a;
+        a : this.Operate.ExecuteModuleRef();
+        a.Name : name;
+        a.Ver : ver;
+        return a;
     }
 }
