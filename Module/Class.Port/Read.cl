@@ -42,8 +42,8 @@ class Read : TextAdd
     field prusate ReadArg Arg { get { return data; } set { data : value; } }
     field precate ReadOperate Operate { get { return data; } set { data : value; } }
     field precate CountReadOperate CountOperate { get { return data; } set { data : value; } }
-    field precate StringReadOpeate StringOperate { get { return data; } set { data : value; } }
-    field precate SetReadOpeate SetOperate { get { return data; } set { data : value; } }
+    field precate StringReadOperate StringOperate { get { return data; } set { data : value; } }
+    field precate SetReadOperate SetOperate { get { return data; } set { data : value; } }
 
     maide prusate Bool Execute()
     {
