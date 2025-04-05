@@ -381,7 +381,7 @@ public class Create : InfraCreate
         while (i < count)
         {
             Code code;
-            code = (Code)codeArray.GetAt(i);
+            code = codeArray.GetAt(i) as Code;
 
             long ob;
             ob = i;
@@ -392,8 +392,8 @@ public class Create : InfraCreate
             of = (ob + 1) * oa;
             long tokenCount;
             long commentCount;
-            tokenCount = (long)infraInfra.DataIntGet(codeCountData, oe);
-            commentCount = (long)infraInfra.DataIntGet(codeCountData, of);
+            tokenCount = infraInfra.DataIntGet(codeCountData, oe);
+            commentCount = infraInfra.DataIntGet(codeCountData, of);
 
             code.Token = listInfra.ArrayCreate(tokenCount);
             code.Comment = listInfra.ArrayCreate(commentCount);
