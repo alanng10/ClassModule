@@ -286,11 +286,11 @@ public class Create : InfraCreate
         i = 0;
         while (i < count)
         {
-            Code code;
-            code = new Code();
-            code.Init();
+            Code a;
+            a = new Code();
+            a.Init();
 
-            array.SetAt(i, code);
+            array.SetAt(i, a);
 
             i = i + 1;
         }
