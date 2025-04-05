@@ -1018,4 +1018,8 @@ class Read : TextAdd
 
         return a;
     }
+
+    maide private Int ExecuteModuleVerAll(var Text text)
+    {
+    }
 }
