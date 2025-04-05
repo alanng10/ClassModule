@@ -4,12 +4,12 @@ public class CreateOperate : Any
 {
     public virtual Create Create { get; set; }
 
-    public virtual bool ExecuteToken()
+    public virtual bool ExecuteToken(long row, Range range)
     {
         return false;
     }
 
-    public virtual bool ExecuteComment()
+    public virtual bool ExecuteComment(long row, Range range)
     {
         return false;
     }
