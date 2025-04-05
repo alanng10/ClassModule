@@ -320,6 +320,7 @@ public class Create : InfraCreate
             a.Init();
             a.Range = new Range();
             a.Range.Init();
+
             array.SetAt(i, a);
 
             i = i + 1;
@@ -343,6 +344,7 @@ public class Create : InfraCreate
             a.Init();
             a.Range = new Range();
             a.Range.Init();
+
             array.SetAt(i, a);
 
             i = i + 1;
