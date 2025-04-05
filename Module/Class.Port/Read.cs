@@ -956,6 +956,7 @@ public class Read : TextAdd
     {
         Text text;
         text = this.LineText(row);
+
         Range range;
         range = text.Range;
 
