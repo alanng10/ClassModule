@@ -48,11 +48,11 @@ public class Create : InfraCreate
         this.Result.Code = this.CodeArray;
         this.Result.Error = this.ListInfra.ArrayCreate(0);
 
-        CreateArg arg;
-        arg = new CreateArg();
-        arg.Init();
+        this.Arg = new CreateArg();
+        this.Arg.Init();
 
-        this.Arg = arg;
+        CreateArg arg;
+        arg = this.Arg;
 
         arg.CodeCountData = new Data();
         arg.CodeCountData.Count = this.CodeArray.Count * 2 * sizeof(ulong);
