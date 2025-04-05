@@ -1082,5 +1082,35 @@ class Read : TextAdd
         {
             return null;
         }
+
+        range.Index : index + ka;
+        range.Count : kkb;
+
+        var Int minor;
+        minor : this.IntText(text, 10);
+        inf (minor = null)
+        {
+            return null;
+        }
+
+        range.Index : index + kb;
+        range.Count : kaa;
+
+        var Int revise;
+        revise : this.IntText(text, 10);
+        inf (revise = null)
+        {
+            return null;
+        }
+
+        var Int k;
+        k : 0;
+        k : bit |(k, revise);
+        k : bit |(k, bit <(minor, 8));
+        k : bit |(k, bit <(major, 16));
+
+        var Int a;
+        a : k;
+        return a;
     }
 }
