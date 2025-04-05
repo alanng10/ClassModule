@@ -1119,11 +1119,14 @@ public class Read : TextAdd
             return -1;
         }
 
+        long k;
+        k = 0;
+        k = k | revise;
+        k = k | (minor << 8);
+        k = k | (major << 16);
+
         long a;
-        a = 0;
-        a = a | revise;
-        a = a | (minor << 8);
-        a = a | (major << 16);
+        a = k;
         return a;
     }
 
