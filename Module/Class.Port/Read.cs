@@ -1058,9 +1058,12 @@ public class Read : TextAdd
         range.Index = index + ka;
         range.Count = count - ka;
 
+        long kaa;
+        kaa = 2;
+
         long kkb;
         kkb = this.TextIndex(text, this.TA(this.SDot));
-        if (!(kkb == 2))
+        if (!(kkb == kaa))
         {
             return -1;
         }
@@ -1069,7 +1072,7 @@ public class Read : TextAdd
         kb = ka + kkb + 1;
 
         long kkc;
-        kkc = kb + 2;
+        kkc = kb + kaa;
         if (!(kkc == count))
         {
             return -1;
@@ -1104,7 +1107,7 @@ public class Read : TextAdd
         }
 
         range.Index = index + kb;
-        range.Count = 2;
+        range.Count = kaa;
 
         long revise;
         revise = this.IntText(text, 10);
