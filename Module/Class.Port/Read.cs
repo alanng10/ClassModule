@@ -964,10 +964,11 @@ public class Read : TextAdd
         nameCount = 0;
         ver = 0;
 
-        long n;
-        n = this.TextIndex(text, this.TA(this.SColon));
+        long kk;
+        kk = this.TextIndex(text, this.TA(this.SColon));
+
         bool b;
-        b = (n == -1);
+        b = (kk == -1);
         if (b)
         {
             nameCount = range.Count;
@@ -982,11 +983,11 @@ public class Read : TextAdd
             ka = range.Index;
             kb = range.Count;
 
-            long oo;
-            oo = n + 1;
+            long kd;
+            kd = kk + 1;
 
-            range.Index = ka + oo;
-            range.Count = kb - oo;
+            range.Index = ka + kd;
+            range.Count = kb - kd;
 
             ver = this.ExecuteModuleVer(text);
 
