@@ -1037,9 +1037,6 @@ public class Read : TextAdd
 
     private long ExecuteModuleVerAll(Text text)
     {
-        TextInfra textInfra;
-        textInfra = this.TextInfra;
-
         Range range;
         range = text.Range;
 
@@ -1111,16 +1108,16 @@ public class Read : TextAdd
         range.Index = index + kb;
         range.Count = 2;
 
-        long vise;
-        vise = this.IntText(text, 10);
-        if (vise == -1)
+        long revise;
+        revise = this.IntText(text, 10);
+        if (revise == -1)
         {
             return -1;
         }
 
         long a;
         a = 0;
-        a = a | vise;
+        a = a | revise;
         a = a | (minor << 8);
         a = a | (major << 16);
         return a;
