@@ -1045,38 +1045,36 @@ public class Read : TextAdd
         index = range.Index;
         count = range.Count;
 
-        long u;
-        u = this.TextIndex(text, this.TA(this.SDot));
-        if (u == -1)
+        long kka;
+        kka = this.TextIndex(text, this.TA(this.SDot));
+        if (kka == -1)
         {
             return -1;
         }
-
-        long kka;
-        kka = u;
 
         long ka;
         ka = kka + 1;
+
         range.Index = index + ka;
         range.Count = count - ka;
-        u = this.TextIndex(text, this.TA(this.SDot));
-        if (!(u == 2))
+
+        long kkb;
+        kkb = this.TextIndex(text, this.TA(this.SDot));
+        if (!(kkb == 2))
         {
             return -1;
         }
 
-        long kkb;
-        kkb = u;
         long kb;
         kb = ka + kkb + 1;
 
-        long ku;
-        ku = kb + 2;
-        if (!(ku == count))
+        long kkc;
+        kkc = kb + 2;
+        if (!(kkc == count))
         {
             return -1;
         }
-        
+
         range.Index = index;
         range.Count = kka;
 
@@ -1087,10 +1085,10 @@ public class Read : TextAdd
             return -1;
         }
 
-        long oo;
-        oo = 1;
-        oo = oo << 44;
-        if (!(major < oo))
+        long kc;
+        kc = 1;
+        kc = kc << 44;
+        if (!(major < kc))
         {
             return -1;
         }
