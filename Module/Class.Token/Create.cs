@@ -258,8 +258,8 @@ public class Create : InfraCreate
 
         this.Reset();
 
-        TextForm charForm;
-        charForm = this.TForm;
+        TextForm textForm;
+        textForm = this.TForm;
 
         Array sourceText;
         sourceText = this.SourceItem.Text;
@@ -303,7 +303,7 @@ public class Create : InfraCreate
                 long n;
                 n = textInfra.DataCharGet(data, start + col);
 
-                n = charForm.Execute(n);
+                n = textForm.Execute(n);
 
                 if (n == '#')
                 {
