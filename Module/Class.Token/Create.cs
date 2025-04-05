@@ -297,12 +297,12 @@ public class Create : InfraCreate
                 bool valid;
                 valid = false;
 
-                long c;
-                c = textInfra.DataCharGet(data, start + col);
+                long n;
+                n = textInfra.DataCharGet(data, start + col);
 
-                c = charForm.Execute(c);
+                n = charForm.Execute(n);
 
-                if (c == '#')
+                if (n == '#')
                 {
                     this.EndToken(col);
                     this.Row = row;
@@ -316,7 +316,7 @@ public class Create : InfraCreate
                     valid = true;
                 }
 
-                if (c == ' ')
+                if (n == ' ')
                 {
                     this.EndToken(col);
 
@@ -327,7 +327,7 @@ public class Create : InfraCreate
                     valid = true;
                 }
 
-                if (c == '\"')
+                if (n == '\"')
                 {
                     this.EndToken(col);
                     this.Row = row;
@@ -377,7 +377,7 @@ public class Create : InfraCreate
                     valid = true;
                 }
 
-                if (textInfra.Alpha(c, false) | textInfra.Alpha(c, true) | textInfra.Digit(c) | c == '_')
+                if (textInfra.Alpha(n, false) | textInfra.Alpha(n, true) | textInfra.Digit(n) | n == '_')
                 {
                     if (this.NullRange())
                     {
