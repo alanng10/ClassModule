@@ -894,4 +894,47 @@ class Read : TextAdd
 
         return a;
     }
+
+    maide private Bool ValidHeadAll(var Text text, var String head)
+    {
+        var Range range;
+        range : text.Range;
+
+        var Int index;
+        var Int count;
+        index : range.Index;
+        count : range.Count;
+
+        var Int kk;
+        kk : this.StringComp.Count(head);
+
+        inf (~((kk + 2) = count))
+        {
+            return false;
+        }
+
+        range.Count : 1;
+
+        inf (~this.TextSame(text, this.TA("[")))
+        {
+            return false;
+        }
+
+        range.Index : (index + count) - 1;
+
+        inf (~this.TextSame(text, this.TA("]")))
+        {
+            return false;
+        }
+
+        range.Index : index + 1;
+        range.Count : count - 2;
+
+        inf (~this.TextSame(text, this.TA(head)))
+        {
+            return false;
+        }
+
+        return true;
+    }
 }
