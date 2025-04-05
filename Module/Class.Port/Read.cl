@@ -5,6 +5,7 @@ class Read : TextAdd
         base.Init();
         this.InfraInfra : share InfraInfra;
         this.ListInfra : share ListInfra;
+        this.ClassInfra : share ClassInfra;
 
         this.CountOperate : this.CreateCountOperate();
         this.StringOperate : this.CreateStringOperate();
@@ -44,6 +45,7 @@ class Read : TextAdd
     field prusate ReadArg Arg { get { return data; } set { data : value; } }
     field precate InfraInfra InfraInfra { get { return data; } set { data : value; } }
     field precate ListInfra ListInfra { get { return data; } set { data : value; } }
+    field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
     field precate ReadOperate Operate { get { return data; } set { data : value; } }
     field precate CountReadOperate CountOperate { get { return data; } set { data : value; } }
     field precate StringReadOperate StringOperate { get { return data; } set { data : value; } }
