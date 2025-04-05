@@ -371,7 +371,7 @@ class Read : TextAdd
             return null;
         }
 
-        var Module module;
+        var ModuleRef module;
         module : this.ExecuteModuleRef(row);
         inf (module = null)
         {
