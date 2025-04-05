@@ -937,4 +937,52 @@ class Read : TextAdd
 
         return true;
     }
+
+    maide precate ModuleRef ExecuteModuleRef(var Int row)
+    {
+        var Text text;
+        text : this.LineText(row);
+
+        var Range range;
+        range : text.Range;
+
+        var Int nameCount;
+        var Int ver;
+
+        var Int kk;
+        kk : this.TextIndex(text, this.TA(":"));
+
+        var Bool b;
+        b : (kk = null);
+        inf (b)
+        {
+            nameCount : range.Count;
+            ver : null;
+        }
+        inf (~b)
+        {
+            nameCount : kk;
+
+            var Int ka;
+            var Int kb;
+            ka : range.Index;
+            kb : range.Count;
+
+            var Int kd;
+            kd : kk + 1;
+
+            range.Index : ka + kd;
+            range.Count : kb - kd;
+
+            ver : this.ExecuteModuleVer(text);
+
+            range.Index : ka;
+            range.Count : kb;
+
+            inf (ver = null)
+            {
+                return null;
+            }
+        }
+    }
 }
