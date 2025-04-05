@@ -10,16 +10,30 @@ public class Create : InfraCreate
         this.TextInfra = TextInfra.This;
         this.ClassInfra = ClassInfra.This;
 
-        this.CountOperate = new CountCreateOperate();
-        this.CountOperate.Create = this;
-        this.CountOperate.Init();
-        this.SetOperate = new SetCreateOperate();
-        this.SetOperate.Create = this;
-        this.SetOperate.Init();
+        this.CountOperate = this.CreateCountOperate();
+        this.SetOperate = this.CreateSetOperate();
 
         this.LineRange = new Range();
         this.LineRange.Init();
         return true;
+    }
+
+    protected virtual CountCreateOperate CreateCountOperate()
+    {
+        CountCreateOperate a;
+        a = new CountCreateOperate();
+        a.Create = this;
+        a.Init();
+        return a;
+    }
+
+    protected virtual SetCreateOperate CreateSetOperate()
+    {
+        SetCreateOperate a;
+        a = new SetCreateOperate();
+        a.Create = this;
+        a.Init();
+        return a;
     }
 
     public virtual Array Source { get; set; }
