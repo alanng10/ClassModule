@@ -962,7 +962,7 @@ public class Read : TextAdd
         long nameCount;
         long version;
         nameCount = 0;
-        version = 0;
+        ver = 0;
 
         long n;
         n = this.TextIndex(text, this.TA(this.SColon));
@@ -971,43 +971,46 @@ public class Read : TextAdd
         if (b)
         {
             nameCount = range.Count;
-            version = -1;
+            ver = -1;
         }
         if (!b)
         {
             nameCount = n;
 
-            long aa;
-            long ab;
-            aa = range.Index;
-            ab = range.Count;
+            long ka;
+            long kb;
+            ka = range.Index;
+            kb = range.Count;
+
             long oo;
             oo = n + 1;
-            range.Index = aa + oo;
-            range.Count = ab - oo;
 
-            version = this.ExecuteModuleVer(text);
+            range.Index = ka + oo;
+            range.Count = kb - oo;
 
-            range.Index = aa;
-            range.Count = ab;
+            ver = this.ExecuteModuleVer(text);
 
-            if (version == -1)
+            range.Index = ka;
+            range.Count = kb;
+
+            if (ver == -1)
             {
                 return null;
             }
         }
 
-        Range kkk;
-        kkk = this.Range;
-        kkk.Index = range.Index;
-        kkk.Count = nameCount;
+        Range rangeA;
+        rangeA = this.Range;
+        rangeA.Index = range.Index;
+        rangeA.Count = nameCount;
+
         String name;
-        name = this.ExecuteString(row, kkk);
+        name = this.ExecuteString(row, rangeA);
 
         ModuleRef a;
         a = this.Operate.ExecuteModuleRef();
         a.Name = name;
-        a.Ver = version;
+        a.Ver = ver;
         return a;
     }
 
