@@ -1142,15 +1142,14 @@ public class Read : TextAdd
 
     protected virtual long NextRow(long row)
     {
-        long a;
-        a = row;
-        a = a + 1;
+        long k;
+        k = row + 1;
  
-        if (!this.ValidRow(a))
+        if (!this.ValidRow(k))
         {
             return -1;
         }
-        return a;
+        return k;
     }
 
     protected virtual String ExecuteString(long row, Range range)
