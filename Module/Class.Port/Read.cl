@@ -3,6 +3,7 @@ class Read : TextAdd
     maide prusate Bool Init()
     {
         base.Init();
+        this.InfraInfra : share InfraInfra;
         this.ListInfra : share ListInfra;
 
         this.CountOperate : this.CreateCountOperate();
@@ -41,7 +42,8 @@ class Read : TextAdd
     field prusate Array Source { get { return data; } set { data : value; } }
     field prusate Port Result { get { return data; } set { data : value; } }
     field prusate ReadArg Arg { get { return data; } set { data : value; } }
-    field precate ListInfra ListInfra { get { return data; } set { data : value; } }    
+    field precate InfraInfra InfraInfra { get { return data; } set { data : value; } }
+    field precate ListInfra ListInfra { get { return data; } set { data : value; } }
     field precate ReadOperate Operate { get { return data; } set { data : value; } }
     field precate CountReadOperate CountOperate { get { return data; } set { data : value; } }
     field precate StringReadOperate StringOperate { get { return data; } set { data : value; } }
