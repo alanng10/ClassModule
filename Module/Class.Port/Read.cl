@@ -1021,5 +1021,66 @@ class Read : TextAdd
 
     maide private Int ExecuteModuleVerAll(var Text text)
     {
+        var Range range;
+        range : text.Range;
+
+        var Int index;
+        var Int count;
+        index : range.Index;
+        count : range.Count;
+
+        var String dot;
+        dot : ".";
+
+        var Int kka;
+        kka : this.TextIndex(text, this.TA(dot));
+        inf (kka = null)
+        {
+            return null;
+        }
+
+        var Int ka;
+        ka : kka + 1;
+
+        range.Index : index + ka;
+        range.Count : count - ka;
+
+        var Int kaa;
+        kaa : 2;
+
+        var Int kkb;
+        kkb : this.TextIndex(text, this.TA(dot));
+        inf (~(kkb = kaa))
+        {
+            return null;
+        }
+
+        var Int kb;
+        kb : ka + kkb + 1;
+
+        var Int kkc;
+        kkc : kb + kaa;
+        inf (~(kkc = count))
+        {
+            return null;
+        }
+
+        range.Index : index;
+        range.Count : kka;
+
+        var Int major;
+        major : this.IntText(text, 10);
+        inf (major = null)
+        {
+            return null;
+        }
+
+        var Int kc;
+        kc : 1;
+        kc : bit <(kc, 44);
+        inf (~(major < kc))
+        {
+            return null;
+        }
     }
 }
