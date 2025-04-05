@@ -909,7 +909,7 @@ public class Read : TextAdd
         return a;
     }
 
-    protected virtual bool ValidHeadAll(Text line, String head)
+    private bool ValidHeadAll(Text line, String head)
     {
         Range range;
         range = line.Range;
@@ -1032,7 +1032,7 @@ public class Read : TextAdd
         return a;
     }
 
-    protected virtual long ExecuteModuleVerAll(Text text)
+    private long ExecuteModuleVerAll(Text text)
     {
         TextInfra textInfra;
         textInfra = this.TextInfra;
