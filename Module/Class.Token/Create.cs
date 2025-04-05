@@ -12,9 +12,6 @@ public class Create : InfraCreate
 
         this.CountOperate = this.CreateCountOperate();
         this.SetOperate = this.CreateSetOperate();
-
-        this.LineRange = new Range();
-        this.LineRange.Init();
         return true;
     }
 
@@ -38,8 +35,6 @@ public class Create : InfraCreate
 
     public virtual Array Source { get; set; }
     public virtual Result Result { get; set; }
-    public virtual long Row { get; set; }
-    public virtual Range LineRange { get; set; }
     public virtual CreateArg Arg { get; set; }
     protected virtual CountCreateOperate CountOperate { get; set; }
     protected virtual SetCreateOperate SetOperate { get; set; }
@@ -139,7 +134,7 @@ public class Create : InfraCreate
         sourceText = this.SourceItem.Text;
 
         Range range;
-        range = this.LineRange;
+        range = this.Range;
 
         long row;
         row = 0;
@@ -438,8 +433,9 @@ public class Create : InfraCreate
         if (!this.NullRange())
         {
             long count;
-            count = this.ClassInfra.Count(this.LineRange.Index, col);
-            this.LineRange.Count = count;
+            count = this.ClassInfra.Count(this.Range.Index, col);
+            this.Range.Count = count;
+
             this.AddToken();
         }
         return true;
