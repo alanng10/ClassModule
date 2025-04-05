@@ -849,10 +849,10 @@ public class Read : TextAdd
     protected virtual long SubSectionLineCount(long row)
     {
         long lineCount;
-        lineCount = this.LineList.Count;
+        lineCount = this.Source.Count;
 
-        long o;
-        o = -1;
+        long k;
+        k = -1;
 
         bool b;
         b = false;
@@ -871,7 +871,7 @@ public class Read : TextAdd
             if (!this.TextStart(text, this.TA(this.SSpace)))
             {
                 b = true;
-                o = i;
+                k = i;
             }
 
             i = i + 1;
@@ -882,7 +882,9 @@ public class Read : TextAdd
             return count;
         }
 
-        return o;
+        long a;
+        a = k;
+        return a;
     }
 
     protected virtual bool ValidHead(long row, String head)
