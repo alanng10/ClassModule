@@ -832,4 +832,44 @@ class Read : TextAdd
         a : k;
         return a;
     }
+
+    maide precate Int SubSectionLineCount(var Int row)
+    {
+        var Int lineCount;
+        lineCount : this.Source.Count;
+
+        var Int k;
+
+        var Bool b;
+        b : false;
+
+        var Int count;
+        count : lineCount - row;
+
+        var Int i;
+        i : 0;
+
+        while (~b & i < count)
+        {
+            var Text text;
+            text : this.LineText(row + i);
+
+            inf (~this.TextStart(text, this.TA(" ")))
+            {
+                b : true;
+                k : i;
+            }
+
+            i : i + 1;
+        }
+
+        inf (~b)
+        {
+            return count;
+        }
+
+        var Int a;
+        a : k;
+        return a;
+    }
 }
