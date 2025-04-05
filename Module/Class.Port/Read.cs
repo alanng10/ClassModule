@@ -1130,7 +1130,7 @@ public class Read : TextAdd
 
     protected virtual bool ValidRow(long row)
     {
-        return this.InfraInfra.ValidIndex(this.LineList.Count, row);
+        return this.InfraInfra.ValidIndex(this.Source.Count, row);
     }
 
     protected virtual long NextRow(long row)
