@@ -24,7 +24,6 @@ public class Create : InfraCreate
 
     public virtual Array Source { get; set; }
     public virtual Result Result { get; set; }
-    public virtual Code Code { get; set; }
     public virtual long Row { get; set; }
     public virtual Range LineRange { get; set; }
     public virtual CreateArg Arg { get; set; }
@@ -92,8 +91,6 @@ public class Create : InfraCreate
         i = 0;
         while (i < count)
         {
-            this.Code = this.CodeArray.GetAt(i) as Code;
-
             this.SourceItem = this.Source.GetAt(i) as Source;
 
             this.Operate.ExecuteCodeStart(i);
