@@ -1123,4 +1123,23 @@ class Read : TextAdd
     {
         return this.InfraInfra.ValidIndex(this.Source.Count, row);
     }
+
+    maide precate Int NextRow(var Int row)
+    {
+        var Int k;
+        k : row + 1;
+
+        inf (~this.ValidRow(k))
+        {
+            return null;
+        }
+        return k;
+    }
+
+    maide precate String ExecuteString(var Int row, var Range range)
+    {
+        var String a;
+        a : this.Operate.ExecuteString(row, range);
+        return a;
+    }
 }
