@@ -96,14 +96,13 @@ public class Create : InfraCreate
         i = 0;
         while (i < count)
         {
-            Code code;
-            code = (Code)this.CodeArray.GetAt(i);
+            this.Code = this.CodeArray.GetAt(i) as Code;
 
-            this.SourceItem = (Source)this.Source.GetAt(i);
+            this.SourceItem = this.Source.GetAt(i) as Source;
 
             this.Operate.ExecuteCodeStart(i);
 
-            this.ExecuteCode(code);
+            this.ExecuteCode();
 
             this.Operate.ExecuteCodeEnd(i);
 
@@ -113,14 +112,12 @@ public class Create : InfraCreate
         return true;
     }
 
-    protected virtual bool ExecuteCode(Code code)
+    protected virtual bool ExecuteCode()
     {
         TextInfra textInfra;
         textInfra = this.TextInfra;
         ClassInfra classInfra;
         classInfra = this.ClassInfra;
-
-        this.Code = code;
 
         this.Reset();
 
