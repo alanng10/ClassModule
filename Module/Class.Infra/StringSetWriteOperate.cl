@@ -11,14 +11,16 @@ class StringSetWriteOperate : StringWriteOperate
 
     maide prusate Bool ExecuteChar(var Int n)
     {
+        var WriteArg arg;
+        arg : this.Write.Arg;
         var Int index;
-        index : this.Arg.Index;
+        index : arg.Index;
 
-        this.TextInfra.DataCharSet(this.Arg.Data, index, n);
+        this.TextInfra.DataCharSet(arg.Data, index, n);
 
         index : index + 1;
 
-        this.Arg.Index : index;
+        arg.Index : index;
         return true;
     }
 }
