@@ -160,4 +160,22 @@ class Create : ClassCreate
         }
         return true;
     }
+
+    maide precate Bool ExecuteCodeArraySet()
+    {
+        var InfraInfra infraInfra;
+        infraInfra : this.InfraInfra;
+        var ListInfra listInfra;
+        listInfra : this.ListInfra;
+
+        var Array codeArray;
+        codeArray : this.Code;
+        var Data data;
+        data : this.Arg.CodeCountData;
+
+        var Array tokenArray;
+        var Array commentArray;
+        tokenArray : this.Arg.TokenArray;
+        commentArray : this.Arg.CommentArray;
+    }
 }
