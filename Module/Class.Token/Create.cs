@@ -341,19 +341,19 @@ public class Create : InfraCreate
                     this.Row = i;
                     range.Index = j;
 
-                    long cc;
-                    cc = j + 1;
+                    long ka;
+                    ka = j + 1;
                     bool b;
                     b = false;
-                    while (!b & cc < colCount)
+                    while (!b & ka < colCount)
                     {
-                        long oc;
-                        oc = textInfra.DataCharGet(data, start + cc);
+                        long na;
+                        na = textInfra.DataCharGet(data, start + ka);
 
-                        oc = textForm.Execute(oc);
+                        na = textForm.Execute(na);
 
                         bool ba;
-                        ba = (oc == charQuote);
+                        ba = (na == charQuote);
                         if (ba)
                         {
                             b = true;
@@ -362,23 +362,23 @@ public class Create : InfraCreate
                         if (!b)
                         {
                             bool bb;
-                            bb = (oc == charNext);
+                            bb = (na == charNext);
                             if (bb)
                             {
                                 long uu;
-                                uu = cc + 1;
+                                uu = ka + 1;
                                 if (uu < colCount)
                                 {
-                                    cc = cc + 1;
+                                    ka = ka + 1;
                                 }
                             }
                         }
-                        cc = cc + 1;
+                        ka = ka + 1;
                     }
-                    range.Count = classInfra.Count(j, cc);
+                    range.Count = classInfra.Count(j, ka);
                     this.AddToken();
 
-                    j = cc;
+                    j = ka;
 
                     this.Reset();
 
