@@ -89,7 +89,7 @@ class Create : ClassCreate
         return true;
     }
 
-    maide prusate Array CreateCodeArray()
+    maide precate Array CreateCodeArray()
     {
         var Array array;
         array : this.ListInfra.ArrayCreate(this.Source.Count);
