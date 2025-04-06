@@ -12,6 +12,8 @@ class Infra : Any
         this.TextSpace : " ";
         this.TextQuote : "\"";
         this.TextNext : "\\";
+        this.TextAlphaN : "n";
+        this.TextAlphaU : "u";
         this.TextLine : "_";
         this.TextDot : ".";
         this.TextHyphen : "-";
@@ -30,6 +32,8 @@ class Infra : Any
     field prusate String TextSpace { get { return data; } set { data : value; } }
     field prusate String TextQuote { get { return data; } set { data : value; } }
     field prusate String TextNext { get { return data; } set { data : value; } }
+    field prusate String TextAlphaN { get { return data; } set { data : value; } }
+    field prusate String TextAlphaU { get { return data; } set { data : value; } }
     field prusate String TextLine { get { return data; } set { data : value; } }
     field prusate String TextDot { get { return data; } set { data : value; } }
     field prusate String TextHyphen { get { return data; } set { data : value; } }
