@@ -335,6 +335,25 @@ class Create : ClassCreate
 
                     valid : true;
                 }
+
+                inf (n = charQuote)
+                {
+                    this.EndToken(j);
+
+                    this.Row : i;
+                    range.Index : j;
+
+                    var Int ka;
+                    ka : j + 1;
+
+                    var Bool b;
+                    b : false;
+
+                    while (~b & ka < colCount)
+                    {
+
+                    }
+                }
             }
         }
     }
