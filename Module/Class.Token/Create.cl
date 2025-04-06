@@ -55,5 +55,30 @@ class Create : ClassCreate
 
         var CreateArg arg;
         arg : this.Arg;
+
+        arg.CodeCountData : new Data;
+        arg.CodeCountData.Count : this.Code.Count * 8 * 2;
+        arg.CodeCountData.Init();
+
+        this.Operate : this.CountOperate;
+
+        this.ResetStage();
+        this.ExecuteStage();
+
+        arg.TokenArray : this.ListInfra.ArrayCreate(arg.TokenIndex);
+        arg.CommentArray : this.ListInfra.ArrayCreate(arg.CommentIndex);
+
+        this.ExecuteCreateToken();
+        this.ExecuteCreateComment();
+        this.ExecuteCodeArraySet();
+
+        this.Operate : this.SetOperate;
+
+        this.ResetStage();
+        this.ExecuteStage();
+
+        this.Arg : null;
+        this.Operate : null;
+        return true;
     }
 }
