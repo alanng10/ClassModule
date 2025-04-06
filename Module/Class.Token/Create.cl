@@ -12,19 +12,19 @@ class Create : ClassCreate
         return true;
     }
 
-    maide precate CountCreateOperate CreateCountOperate()
+    maide precate CreateCountOperate CreateCountOperate()
     {
-        var CountCreateOperate a;
-        a : new CountCreateOperate;
+        var CreateCountOperate a;
+        a : new CreateCountOperate;
         a.Create : this;
         a.Init();
         return a;
     }
 
-    maide precate SetCreateOperate CreateSetOperate()
+    maide precate CreateSetOperate CreateSetOperate()
     {
-        var SetCreateOperate a;
-        a : new SetCreateOperate;
+        var CreateSetOperate a;
+        a : new CreateSetOperate;
         a.Create : this;
         a.Init();
         return a;
@@ -33,9 +33,9 @@ class Create : ClassCreate
     field prusate Array Source { get { return data; } set { data : value; } }
     field prusate Result Result { get { return data; } set { data : value; } }
     field prusate CreateArg Arg { get { return data; } set { data : value; } }
-    field precate CountCreateOperate CountOperate { get { return data; } set { data : value; } }
-    field precate SetCreateOperate SetOperate { get { return data; } set { data : value; } }
     field precate CreateOperate Operate { get { return data; } set { data : value; } }
+    field precate CreateCountOperate CountOperate { get { return data; } set { data : value; } }
+    field precate CreateSetOperate SetOperate { get { return data; } set { data : value; } }
     field precate Array Code { get { return data; } set { data : value; } }
     field precate Source SourceItem { get { return data; } set { data : value; } }
     field precate Int Row { get { return data; } set { data : value; } }
