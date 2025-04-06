@@ -1,12 +1,10 @@
-class StringWrite : Any
+class StringWrite : TextAdd
 {
     maide prusate Bool Init()
     {
         base.Init();
         this.InfraInfra : share InfraInfra;
-        this.TextInfra : share TextInfra;
         this.ClassInfra : share Infra;
-        this.StringComp : share StringComp;
 
         this.Arg : this.CreateArg();
         this.CountOperate : this.CreateCountOperate();
@@ -46,9 +44,7 @@ class StringWrite : Any
     field prusate StringWriteOperate Operate { get { return data; } set { data : value; } }
     field prusate StringWriteArg Arg { get { return data; } set { data : value; } }
     field precate InfraInfra InfraInfra { get { return data; } set { data : value; } }
-    field precate TextInfra TextInfra { get { return data; } set { data : value; } }
     field precate Infra ClassInfra { get { return data; } set { data : value; } }
-    field precate StringComp StringComp { get { return data; } set { data : value; } }
 
     maide prusate String Execute()
     {
@@ -99,8 +95,6 @@ class StringWrite : Any
         textInfra : this.TextInfra;
         var Infra classInfra;
         classInfra : this.ClassInfra;
-        var StringComp stringComp;
-        stringComp : this.StringComp;
 
         var InfraRange range;
         range : text.Range;
@@ -118,29 +112,26 @@ class StringWrite : Any
         rangeStart : range.Index;
         rangeEnd : rangeStart + kk;
 
-        var Int quote;
-        quote : textInfra.Char(classInfra.TextQuote);
+        var Int charQuote;
+        var Int charNext;
+        var Int alphaN;
+        var Int alphaU;
+        charQuote : this.Char(classInfra.TextQuote);
+        charNext : this.Char(classInfra.TextNext);
+        charAlphaN : this.Char(classInfra.TextAlphaN);
+        charAlphaU : this.Char(classInfra.TextAlphaU);
 
         var Int na;
         na : textInfra.DataCharGet(data, rangeStart);
-        inf (~(na = quote))
+        inf (~(na = charQuote))
         {
             return false;
         }
         na : textInfra.DataCharGet(data, rangeEnd - 1);
-        inf (~(na = quote))
+        inf (~(na = charQuote))
         {
             return false;
         }
-
-        var Int next;
-        next : textInfra.Char(classInfra.TextNext);
-        var Int newLine;
-        newLine : textInfra.Char(classInfra.TextNewLine);
-        var Int alphaN;
-        alphaN : textInfra.Char("n");
-        var Int alphaU;
-        alphaU : textInfra.Char("u");
 
         var Int countA;
         countA : 8;
@@ -160,7 +151,7 @@ class StringWrite : Any
             n : textInfra.DataCharGet(data, index);
 
             var Bool b;
-            b : (n = next);
+            b : (n = charNext);
             inf (b)
             {
                 var Int j;
@@ -177,19 +168,19 @@ class StringWrite : Any
 
                 var Bool bba;
                 bba : false;
-                inf (nc = next)
+                inf (nc = charNext)
                 {
                     bba : true;
                 }
-                inf (nc = quote)
+                inf (nc = charQuote)
                 {
                     bba : true;
                 }
-                inf (nc = alphaN)
+                inf (nc = charAlphaN)
                 {
                     bba : true;
                 }
-                inf (nc = alphaU)
+                inf (nc = charAlphaU)
                 {
                     var Int ja;
                     ja : j + 1;
