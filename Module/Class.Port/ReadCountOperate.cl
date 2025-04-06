@@ -1,4 +1,4 @@
-class CountReadOperate : ReadOperate
+class ReadCountOperate : ReadOperate
 {
     maide prusate Bool Init()
     {
