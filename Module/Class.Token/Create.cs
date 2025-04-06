@@ -276,19 +276,18 @@ public class Create : InfraCreate
         charNext = this.Char(this.ClassInfra.TextNext);
         charLine = this.Char(this.ClassInfra.TextLine);
 
-        long row;
-        row = 0;
-        long col;
-        col = 0;
-
         this.Reset();
 
         long count;
         count = sourceText.Count;
-        while (row < count)
+
+        long i;
+        i = 0;
+
+        while (i < count)
         {
             Text line;
-            line = sourceText.GetAt(row) as Text;
+            line = sourceText.GetAt(i) as Text;
             Data data;
             data = line.Data;
 
@@ -298,6 +297,7 @@ public class Create : InfraCreate
             long colCount;
             colCount = line.Range.Count;
 
+            long col;
             col = 0;
 
             while (col < colCount)
@@ -313,7 +313,7 @@ public class Create : InfraCreate
                 if (n == charHash)
                 {
                     this.EndToken(col);
-                    this.Row = row;
+                    this.Row = i;
                     range.Index = col;
                     range.Count = classInfra.Count(col, colCount);
                     this.AddComment();
@@ -338,7 +338,7 @@ public class Create : InfraCreate
                 if (n == charQuote)
                 {
                     this.EndToken(col);
-                    this.Row = row;
+                    this.Row = i;
                     range.Index = col;
 
                     long cc;
@@ -389,7 +389,7 @@ public class Create : InfraCreate
                 {
                     if (this.NullRange())
                     {
-                        this.Row = row;
+                        this.Row = i;
                         range.Index = col;
                     }
 
@@ -402,7 +402,7 @@ public class Create : InfraCreate
                 {
                     this.EndToken(col);
 
-                    this.Row = row;
+                    this.Row = i;
                     range.Index = col;
                     range.Count = 1;
 
@@ -418,7 +418,7 @@ public class Create : InfraCreate
 
             this.Reset();
 
-            row = row + 1;
+            i = i + 1;
         }
 
         return true;
