@@ -288,6 +288,7 @@ public class Create : InfraCreate
         {
             Text line;
             line = sourceText.GetAt(i) as Text;
+
             Data data;
             data = line.Data;
 
