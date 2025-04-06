@@ -20,27 +20,27 @@ class StringWrite : TextAdd
         return a;
     }
 
-    maide precate StringCountWriteOperate CreateCountOperate()
+    maide precate StringWriteCountOperate CreateCountOperate()
     {
-        var StringCountWriteOperate a;
-        a : new StringCountWriteOperate;
+        var StringWriteCountOperate a;
+        a : new StringWriteCountOperate;
         a.Write : this;
         a.Init();
         return a;
     }
 
-    maide precate StringSetWriteOperate CreateSetOperate()
+    maide precate StringWriteSetOperate CreateSetOperate()
     {
-        var StringSetWriteOperate a;
-        a : new StringSetWriteOperate;
+        var StringWriteSetOperate a;
+        a : new StringWriteSetOperate;
         a.Write : this;
         a.Init();
         return a;
     }
 
     field prusate Text Text { get { return data; } set { data : value; } }
-    field prusate StringCountWriteOperate CountOperate { get { return data; } set { data : value; } }
-    field prusate StringSetWriteOperate SetOperate { get { return data; } set { data : value; } }
+    field prusate StringWriteCountOperate CountOperate { get { return data; } set { data : value; } }
+    field prusate StringWriteSetOperate SetOperate { get { return data; } set { data : value; } }
     field prusate StringWriteOperate Operate { get { return data; } set { data : value; } }
     field prusate StringWriteArg Arg { get { return data; } set { data : value; } }
     field precate InfraInfra InfraInfra { get { return data; } set { data : value; } }
