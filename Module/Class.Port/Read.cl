@@ -113,7 +113,7 @@ class Read : TextAdd
         return true;
     }
 
-    maide precate Bool ResetStage()
+    maide prusate Bool ResetStage()
     {
         var ReadArg arg;
         arg : this.Arg;
