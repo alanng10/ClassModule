@@ -256,8 +256,6 @@ public class Create : InfraCreate
         ClassInfra classInfra;
         classInfra = this.ClassInfra;
 
-        this.Reset();
-
         TextForm textForm;
         textForm = this.TForm;
 
@@ -274,6 +272,8 @@ public class Create : InfraCreate
         row = 0;
         long col;
         col = 0;
+
+        this.Reset();
 
         long count;
         count = sourceText.Count;
