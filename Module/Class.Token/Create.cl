@@ -177,5 +177,31 @@ class Create : ClassCreate
         var Array commentArray;
         tokenArray : this.Arg.TokenArray;
         commentArray : this.Arg.CommentArray;
+
+        var Int kaa;
+        kaa : 8;
+
+        var Int totalToken;
+        var Int totalComment;
+        totalToken : 0;
+        totalComment : 0;
+
+        var Int count;
+        count : codeArray.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Code code;
+            code : cast Code(codeArray.Get(i));
+
+            var Int kk;
+            kk : i;
+            kk : kk * 2;
+            var Int ka;
+            ka : kk * kaa;
+            var Int kb;
+            kb : (kk + 1) * kaa;
+        }
     }
 }
