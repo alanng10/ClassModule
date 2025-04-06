@@ -14,19 +14,19 @@ public class Create : InfraCreate
         return true;
     }
 
-    protected virtual CountCreateOperate CreateCountOperate()
+    protected virtual CreateCountOperate CreateCountOperate()
     {
-        CountCreateOperate a;
-        a = new CountCreateOperate();
+        CreateCountOperate a;
+        a = new CreateCountOperate();
         a.Create = this;
         a.Init();
         return a;
     }
 
-    protected virtual SetCreateOperate CreateSetOperate()
+    protected virtual CreateSetOperate CreateSetOperate()
     {
-        SetCreateOperate a;
-        a = new SetCreateOperate();
+        CreateSetOperate a;
+        a = new CreateSetOperate();
         a.Create = this;
         a.Init();
         return a;
@@ -35,9 +35,9 @@ public class Create : InfraCreate
     public virtual Array Source { get; set; }
     public virtual Result Result { get; set; }
     public virtual CreateArg Arg { get; set; }
-    protected virtual CountCreateOperate CountOperate { get; set; }
-    protected virtual SetCreateOperate SetOperate { get; set; }
     protected virtual CreateOperate Operate { get; set; }
+    protected virtual CreateCountOperate CountOperate { get; set; }
+    protected virtual CreateSetOperate SetOperate { get; set; }
     protected virtual Array Code { get; set; }
     protected virtual Source SourceItem { get; set; }
     protected virtual long Row { get; set; }
