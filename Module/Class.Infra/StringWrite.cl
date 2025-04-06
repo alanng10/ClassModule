@@ -114,8 +114,8 @@ class StringWrite : TextAdd
 
         var Int charQuote;
         var Int charNext;
-        var Int alphaN;
-        var Int alphaU;
+        var Int charAlphaN;
+        var Int charAlphaU;
         charQuote : this.Char(classInfra.TextQuote);
         charNext : this.Char(classInfra.TextNext);
         charAlphaN : this.Char(classInfra.TextAlphaN);
