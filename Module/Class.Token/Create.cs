@@ -204,6 +204,7 @@ public class Create : InfraCreate
             ka = kk * kaa;
             long kb;
             kb = (kk + 1) * kaa;
+
             long tokenCount;
             long commentCount;
             tokenCount = infraInfra.DataIntGet(data, ka);
