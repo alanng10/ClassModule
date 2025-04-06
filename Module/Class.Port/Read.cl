@@ -656,7 +656,7 @@ class Read : TextAdd
         }
 
         var Range rangeA;
-        rangeA : this.Range;
+        rangeA : this.RangeA;
 
         rangeA.Index : indexA;
         rangeA.Count : kk;
@@ -766,7 +766,7 @@ class Read : TextAdd
         count : text.Range.Count;
 
         var Range range;
-        range : this.Range;
+        range : this.RangeA;
 
         range.Index : index;
         range.Count : kk;
@@ -992,7 +992,7 @@ class Read : TextAdd
         }
 
         var Range rangeA;
-        rangeA : this.Range;
+        rangeA : this.RangeA;
         rangeA.Index : range.Index;
         rangeA.Count : nameCount;
 
