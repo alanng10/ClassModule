@@ -202,6 +202,24 @@ class Create : ClassCreate
             ka : kk * kaa;
             var Int kb;
             kb : (kk + 1) * kaa;
+
+            var Int tokenCount;
+            var Int commentCount;
+            tokenCount : infraInfra.DataIntGet(data, ka);
+            commentCount : infraInfra.DataIntGet(data, kb);
+
+            code.Token : listInfra.ArrayCreate(tokenCount);
+            code.Comment : listInfra.ArrayCreate(commentCount);
+
+            listInfra.ArrayCopy(code.Token, 0, tokenArray, totalToken, tokenCount);
+            listInfra.ArrayCopy(code.Comment, 0, commentArray, totalComment, commentCount);
+
+            totalToken : totalToken + tokenCount;
+            totalComment : totalComment + commentCount;
+
+            i : i + 1;
         }
+
+        return true;
     }
 }
