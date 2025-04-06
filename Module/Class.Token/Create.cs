@@ -365,11 +365,11 @@ public class Create : InfraCreate
                             bb = (na == charNext);
                             if (bb)
                             {
-                                long uu;
-                                uu = ka + 1;
-                                if (uu < colCount)
+                                long kb;
+                                kb = ka + 1;
+                                if (kb < colCount)
                                 {
-                                    ka = ka + 1;
+                                    ka = kb;
                                 }
                             }
                         }
