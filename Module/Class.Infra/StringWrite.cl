@@ -250,16 +250,16 @@ class StringWrite : TextAdd
         var Int kk;
         kk : range.Count;
 
-        var Int quote;
-        quote : textInfra.Char(classInfra.TextQuote);
-        var Int next;
-        next : textInfra.Char(classInfra.TextNext);
-        var Int newLine;
-        newLine : textInfra.Char(classInfra.TextNewLine);
-        var Int alphaN;
-        alphaN : textInfra.Char("n");
-        var Int alphaU;
-        alphaU : textInfra.Char("u");
+        var Int charQuote;
+        var Int charNext;
+        var Int charNewLine;
+        var Int charAlphaN;
+        var Int charAlphaU;
+        charQuote : this.Char(classInfra.TextQuote);
+        charNext : this.Char(classInfra.TextNext);
+        charNewLine : this.Char(classInfra.TextNewLine);
+        charAlphaN : this.Char(classInfra.TextAlphaN);
+        charAlphaU : this.Char(classInfra.TextAlphaU);
 
         var Int countA;
         countA : 8;
@@ -278,7 +278,7 @@ class StringWrite : TextAdd
             n : textInfra.DataCharGet(data, index);
 
             var Bool b;
-            b : (n = next);
+            b : (n = charNext);
             inf (b)
             {
                 var Int j;
@@ -290,19 +290,19 @@ class StringWrite : TextAdd
                 nc : textInfra.DataCharGet(data, indexA);
                 
                 var Int escapeValue;
-                inf (nc = next)
+                inf (nc = charNext)
                 {
                     escapeValue : nc;
                 }
-                inf (nc = quote)
+                inf (nc = charQuote)
                 {
                     escapeValue : nc;
                 }
-                inf (nc = alphaN)
+                inf (nc = charAlphaN)
                 {
-                    escapeValue : newLine;
+                    escapeValue : charNewLine;
                 }
-                inf (nc = alphaU)
+                inf (nc = charAlphaU)
                 {
                     var Int ka;
                     ka : 0;
