@@ -1,4 +1,4 @@
-class SetCreateOperate : CreateOperate
+class CreateSetOperate : CreateOperate
 {
     maide prusate Bool ExecuteToken(var Int row, var Range range)
     {
