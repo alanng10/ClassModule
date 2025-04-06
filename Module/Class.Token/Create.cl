@@ -388,7 +388,43 @@ class Create : ClassCreate
 
                     valid : true;
                 }
+
+                inf (textInfra.Alpha(n, false) | textInfra.Alpha(n, true) | textInfra.Digit(n) | n = charLine)
+                {
+                    inf (this.NullRange())
+                    {
+                        this.Row : i;
+                        range.Index : j;
+                    }
+
+                    j : j + 1;
+
+                    valid : true;
+                }
+
+                inf (~valid)
+                {
+                    this.EndToken(j);
+
+                    this.Row : i;
+                    range.Index : j;
+                    range.Count : 1;
+
+                    this.AddToken();
+
+                    j : j + 1;
+
+                    this.Reset();
+                }
             }
+
+            this.EndToken(j);
+
+            this.Reset();
+
+            i : i + 1;
         }
+
+        return true;
     }
 }
