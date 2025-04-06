@@ -218,7 +218,7 @@ class StringWrite : TextAdd
             }
             inf (~b)
             {
-                inf (n = quote)
+                inf (n = charQuote)
                 {
                     return false;
                 }
