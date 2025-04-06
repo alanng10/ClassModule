@@ -48,13 +48,6 @@ class Infra : Any
     field precate TextInfra TextInfra { get { return data; } set { data : value; } }
     field precate CountList CountList { get { return data; } set { data : value; } }
 
-    maide prusate Bool IndexRange(var Range range, var Int index)
-    {
-        range.Start : index;
-        range.End : index + 1;
-        return true;
-    }
-
     maide prusate Int Count(var Int start, var Int end)
     {
         return end - start;
