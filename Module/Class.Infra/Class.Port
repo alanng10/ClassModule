@@ -63,8 +63,8 @@ StoragePathValid
 StringWrite
 StringWriteArg
 StringWriteOperate
-StringCountWriteOperate
-StringSetWriteOperate
+StringWriteCountOperate
+StringWriteSetOperate
 Infra
 
 [Storage]
