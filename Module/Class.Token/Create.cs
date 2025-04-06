@@ -59,7 +59,7 @@ public class Create : InfraCreate
         arg = this.Arg;
 
         arg.CodeCountData = new Data();
-        arg.CodeCountData.Count = this.Code.Count * 2 * sizeof(ulong);
+        arg.CodeCountData.Count = this.Code.Count * sizeof(ulong) * 2;
         arg.CodeCountData.Init();
 
         this.Operate = this.CountOperate;
