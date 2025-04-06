@@ -284,14 +284,11 @@ public class Create : InfraCreate
             Data data;
             data = line.Data;
 
-            Range ke;
-            ke = line.Range;
-            
             long start;
-            start = ke.Index;
+            start = line.Range.Index;
 
             long colCount;
-            colCount = ke.Count;
+            colCount = line.Range.Count;
 
             col = 0;
 
