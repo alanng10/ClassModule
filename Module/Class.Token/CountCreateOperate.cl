@@ -41,4 +41,35 @@ class CountCreateOperate : CreateOperate
         this.CommentStart : arg.CommentIndex;
         return true;
     }
+
+    maide prusate Bool ExecuteCodeEnd(var Int index)
+    {
+        var CreateArg arg;
+        arg : this.Create.Arg;
+
+        var Int tokenCount;
+        var Int commentCount;
+        tokenCount : arg.TokenIndex - this.TokenStart;
+        commentCount : arg.CommentIndex - this.CommentStart;
+
+        var Data data;
+        data : arg.CodeCountData;
+        var Int kd;
+        kd : 8;
+
+        var Int kk;
+        kk : index;
+        kk : kk * 2;
+
+        var Int ka;
+        ka : kk * kd;
+        this.InfraInfra.DataIntSet(data, ka, tokenCount);
+
+        ka : (kk + 1) * kd;
+        this.InfraInfra.DataIntSet(data, ka, commentCount);
+
+        this.TokenStart : null;
+        this.CommentStart : null;
+        return true;
+    }
 }
