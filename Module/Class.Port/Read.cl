@@ -43,13 +43,13 @@ class Read : TextAdd
     field prusate Array Source { get { return data; } set { data : value; } }
     field prusate Port Result { get { return data; } set { data : value; } }
     field prusate ReadArg Arg { get { return data; } set { data : value; } }
+    field prusate ReadOperate Operate { get { return data; } set { data : value; } }
+    field prusate ReadCountOperate CountOperate { get { return data; } set { data : value; } }
+    field prusate ReadStringOperate StringOperate { get { return data; } set { data : value; } }
+    field prusate ReadSetOperate SetOperate { get { return data; } set { data : value; } }
     field precate InfraInfra InfraInfra { get { return data; } set { data : value; } }
     field precate ListInfra ListInfra { get { return data; } set { data : value; } }
     field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
-    field precate ReadOperate Operate { get { return data; } set { data : value; } }
-    field precate ReadCountOperate CountOperate { get { return data; } set { data : value; } }
-    field precate ReadStringOperate StringOperate { get { return data; } set { data : value; } }
-    field precate ReadSetOperate SetOperate { get { return data; } set { data : value; } }
 
     maide prusate Bool Execute()
     {
