@@ -58,21 +58,24 @@ class StringWrite : TextAdd
         this.Arg : new StringWriteArg;
         this.Arg.Init();
 
+        var StringWriteArg arg;
+        arg : this.Arg;
+
         this.Operate : this.CountOperate;
 
         this.ResetStage();
         this.ExecuteStage();
 
         var Int count;
-        count : this.Arg.Index;
+        count : arg.Index;
 
         var Int k;
         k : count;
         k : k * 4;
 
-        this.Arg.Data : new Data;
-        this.Arg.Data.Count : k;
-        this.Arg.Data.Init();
+        arg.Data : new Data;
+        arg.Data.Count : k;
+        arg.Data.Init();
 
         this.Operate : this.SetOperate;
 
@@ -80,7 +83,7 @@ class StringWrite : TextAdd
         this.ExecuteStage();
 
         var String a;
-        a : this.StringComp.CreateData(this.Arg.Data, null);
+        a : this.StringComp.CreateData(arg.Data, null);
 
         this.Operate : null;
         this.Arg : null;
