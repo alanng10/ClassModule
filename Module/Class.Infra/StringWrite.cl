@@ -39,20 +39,23 @@ class StringWrite : TextAdd
     }
 
     field prusate Text Text { get { return data; } set { data : value; } }
+    field prusate String Result { get { return data; } set { data : value; } }
+    field prusate StringWriteArg Arg { get { return data; } set { data : value; } }
+    field prusate StringWriteOperate Operate { get { return data; } set { data : value; } }
     field prusate StringWriteCountOperate CountOperate { get { return data; } set { data : value; } }
     field prusate StringWriteSetOperate SetOperate { get { return data; } set { data : value; } }
-    field prusate StringWriteOperate Operate { get { return data; } set { data : value; } }
-    field prusate StringWriteArg Arg { get { return data; } set { data : value; } }
     field precate InfraInfra InfraInfra { get { return data; } set { data : value; } }
     field precate Infra ClassInfra { get { return data; } set { data : value; } }
 
-    maide prusate String Execute()
+    maide prusate Bool Execute()
     {
+        this.Result : null;
+
         var Bool b;
         b : this.ValidValue(this.Text);
         inf (~b)
         {
-            return null;
+            return false;
         }
 
         this.Arg : new StringWriteArg;
@@ -82,12 +85,11 @@ class StringWrite : TextAdd
         this.ResetStage();
         this.ExecuteStage();
 
-        var String a;
-        a : this.StringComp.CreateData(arg.Data, null);
+        this.Result : this.StringComp.CreateData(arg.Data, null);
 
-        this.Operate : null;
         this.Arg : null;
-        return a;
+        this.Operate : null;
+        return true;
     }
 
     maide prusate Bool ValidValue(var Text text)
