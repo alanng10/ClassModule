@@ -7,7 +7,6 @@ public class Create : InfraCreate
         base.Init();
         this.InfraInfra = InfraInfra.This;
         this.ListInfra = ListInfra.This;
-        this.TextInfra = TextInfra.This;
         this.ClassInfra = ClassInfra.This;
 
         this.CountOperate = this.CreateCountOperate();
