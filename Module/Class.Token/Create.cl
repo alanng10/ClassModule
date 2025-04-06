@@ -246,4 +246,32 @@ class Create : ClassCreate
         this.SourceItem : null;
         return true;
     }
+
+    maide precate Bool ExecuteCode()
+    {
+        var TextInfra textInfra;
+        textInfra : this.TextInfra;
+        var ClassInfra classInfra;
+        classInfra : this.ClassInfra;
+
+        var TextForm textForm;
+        textForm : this.TForm;
+
+        var Array sourceText;
+        sourceText : this.SourceItem.Text;
+
+        var Range range;
+        range : this.Range;
+
+        var Int charHash;
+        var Int charSpace;
+        var Int charQuote;
+        var Int charNext;
+        var Int charLine;
+        charHash : this.Char(this.ClassInfra.TextHash);
+        charSpace : this.Char(this.ClassInfra.TextSpace);
+        charQuote : this.Char(this.ClassInfra.TextQuote);
+        charNext : this.Char(this.ClassInfra.TextNext);
+        charLine : this.Char(this.ClassInfra.TextLine);
+    }
 }
