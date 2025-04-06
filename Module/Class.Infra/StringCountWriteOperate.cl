@@ -2,10 +2,12 @@ class StringCountWriteOperate : StringWriteOperate
 {
     maide prusate Bool ExecuteChar(var Int n)
     {
+        var WriteArg arg;
+        arg : this.Write.Arg;
         var Int index;
-        index : this.Arg.Index;
+        index : arg.Index;
         index : index + 1;
-        this.Arg.Index : index;
+        arg.Index : index;
         return true;
     }
 }
