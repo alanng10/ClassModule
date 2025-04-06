@@ -81,4 +81,11 @@ class Create : ClassCreate
         this.Operate : null;
         return true;
     }
+
+    maide prusate Bool ResetStage()
+    {
+        this.Arg.TokenIndex : 0;
+        this.Arg.CommentIndex : 0;
+        return true;
+    }
 }
