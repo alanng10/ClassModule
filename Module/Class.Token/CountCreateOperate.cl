@@ -32,4 +32,13 @@ class CountCreateOperate : CreateOperate
         arg.CommentIndex : index;
         return true;
     }
+
+    maide prusate Bool ExecuteCodeStart(var Int index)
+    {
+        var CreateArg arg;
+        arg : this.Create.Arg;
+        this.TokenStart : arg.TokenIndex;
+        this.CommentStart : arg.CommentIndex;
+        return true;
+    }
 }
