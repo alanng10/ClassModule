@@ -41,6 +41,7 @@ public class Create : InfraCreate
     protected virtual CreateOperate Operate { get; set; }
     protected virtual Array CodeArray { get; set; }
     protected virtual Source SourceItem { get; set; }
+    protected virtual long Row { get; set; }
 
     public override bool Execute()
     {
