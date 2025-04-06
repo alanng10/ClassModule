@@ -324,6 +324,17 @@ class Create : ClassCreate
 
                     valid : true;
                 }
+
+                inf (n = charSpace)
+                {
+                    this.EndToken(j);
+
+                    j : j + 1;
+
+                    this.Reset();
+
+                    valid : true;
+                }
             }
         }
     }
