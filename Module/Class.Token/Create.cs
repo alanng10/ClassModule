@@ -266,15 +266,15 @@ public class Create : InfraCreate
         range = this.Range;
 
         long charHash;
-        long charLine;
         long charSpace;
         long charQuote;
         long charNext;
-        charHash = '#';
-        charLine = '_';
-        charSpace = ' ';
-        charQuote = '\"';
-        charNext = '\\';
+        long charLine;
+        charHash = this.Char(this.ClassInfra.TextHash);
+        charSpace = this.Char(this.ClassInfra.TextSpace);
+        charQuote = this.Char(this.ClassInfra.TextQuote);
+        charNext = this.Char(this.ClassInfra.TextNext);
+        charLine = this.Char(this.ClassInfra.TextLine);
 
         long row;
         row = 0;
