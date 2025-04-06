@@ -46,9 +46,6 @@ public class CountCreateOperate : CreateOperate
 
     public override bool ExecuteCodeEnd(long index)
     {
-        InfraInfra infraInfra;
-        infraInfra = this.InfraInfra;
-
         CreateArg arg;
         arg = this.Create.Arg;
 
@@ -57,19 +54,21 @@ public class CountCreateOperate : CreateOperate
         tokenCount = arg.TokenIndex - this.TokenStart;
         commentCount = arg.CommentIndex - this.CommentStart;
 
-        Data codeCountData;
-        codeCountData = arg.CodeCountData;
-        long oa;
-        oa = sizeof(ulong);
-        long ob;
-        ob = index;
-        ob = ob * 2;
-        long oe;
-        oe = ob * oa;
-        long of;
-        of = (ob + 1) * oa;
-        infraInfra.DataIntSet(codeCountData, oe, tokenCount);
-        infraInfra.DataIntSet(codeCountData, of, commentCount);
+        Data data;
+        data = arg.CodeCountData;
+        long kd;
+        kd = sizeof(ulong);
+
+        long kk;
+        kk = index;
+        kk = kk * 2;
+
+        long ka;
+        ka = kk * kd;
+        this.InfraInfra.DataIntSet(data, ka, tokenCount);
+
+        ka = (kk + 1) * kd;
+        this.InfraInfra.DataIntSet(data, ka, commentCount);
 
         this.TokenStart = 0;
         this.CommentStart = 0;
