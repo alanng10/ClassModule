@@ -18,4 +18,23 @@ class SetCreateOperate : CreateOperate
         arg.TokenIndex : index;
         return true;
     }
+
+    maide prusate Bool ExecuteComment(var Int row, var Range range)
+    {
+        var CreateArg arg;
+        arg : this.Create.Arg;
+        var Int index;
+        index : arg.CommentIndex;
+
+        var Comment comment;
+        comment : cast Comment(arg.CommentArray.Get(index));
+        comment.Row : row;
+        comment.Range.Index : range.Index;
+        comment.Range.Count : range.Count;
+
+        index : index + 1;
+
+        arg.CommentIndex : index;
+        return true;
+    }
 }
