@@ -301,6 +301,29 @@ class Create : ClassCreate
 
             while (j < colCount)
             {
+                var Bool valid;
+                valid : false;
+
+                var Int n;
+                n : textInfra.DataCharGet(data, start + j);
+
+                n : textForm.Execute(n);
+
+                inf (n = charHash)
+                {
+                    this.EndToken(j);
+
+                    this.Row : i;
+                    range.Index : j;
+                    range.Count : classInfra.Count(j, colCount);
+                    this.AddComment();
+
+                    j : colCount;
+
+                    this.Reset();
+
+                    valid : true;
+                }
             }
         }
     }
