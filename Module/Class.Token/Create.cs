@@ -341,6 +341,7 @@ public class Create : InfraCreate
                 if (n == charQuote)
                 {
                     this.EndToken(j);
+
                     this.Row = i;
                     range.Index = j;
 
