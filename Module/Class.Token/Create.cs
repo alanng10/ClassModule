@@ -243,9 +243,6 @@ public class Create : InfraCreate
         }
 
         this.SourceItem = null;
-        this.Row = -1;
-        this.Range.Index = -1;
-        this.Range.Count = -1;
         return true;
     }
 
