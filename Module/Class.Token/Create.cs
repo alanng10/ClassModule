@@ -179,8 +179,8 @@ public class Create : InfraCreate
         tokenArray = this.Arg.TokenArray;
         commentArray = this.Arg.CommentArray;
 
-        long oa;
-        oa = sizeof(ulong);
+        long kaa;
+        kaa = sizeof(ulong);
 
         long totalToken;
         long totalComment;
@@ -196,17 +196,17 @@ public class Create : InfraCreate
             Code code;
             code = codeArray.GetAt(i) as Code;
 
-            long ob;
-            ob = i;
-            ob = ob * 2;
-            long oe;
-            oe = ob * oa;
-            long of;
-            of = (ob + 1) * oa;
+            long kk;
+            kk = i;
+            kk = kk * 2;
+            long ka;
+            ka = kk * kaa;
+            long kb;
+            kb = (kk + 1) * kaa;
             long tokenCount;
             long commentCount;
-            tokenCount = infraInfra.DataIntGet(codeCountData, oe);
-            commentCount = infraInfra.DataIntGet(codeCountData, of);
+            tokenCount = infraInfra.DataIntGet(codeCountData, ka);
+            commentCount = infraInfra.DataIntGet(codeCountData, kb);
 
             code.Token = listInfra.ArrayCreate(tokenCount);
             code.Comment = listInfra.ArrayCreate(commentCount);
