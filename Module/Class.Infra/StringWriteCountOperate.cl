@@ -1,4 +1,4 @@
-class StringCountWriteOperate : StringWriteOperate
+class StringWriteCountOperate : StringWriteOperate
 {
     maide prusate Bool ExecuteChar(var Int n)
     {
