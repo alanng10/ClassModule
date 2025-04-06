@@ -264,7 +264,7 @@ class Create : ClassCreate
         sourceText : this.SourceItem.Text;
 
         var Range range;
-        range : this.RangeA;
+        range : this.TRangeA;
 
         var Int charHash;
         var Int charSpace;
@@ -433,13 +433,13 @@ class Create : ClassCreate
 
     maide precate Bool AddToken()
     {
-        this.Operate.ExecuteToken(this.Row, this.RangeA);
+        this.Operate.ExecuteToken(this.Row, this.TRangeA);
         return true;
     }
 
     maide precate Bool AddComment()
     {
-        this.Operate.ExecuteComment(this.Row, this.RangeA);
+        this.Operate.ExecuteComment(this.Row, this.TRangeA);
         return true;
     }
 
@@ -448,8 +448,8 @@ class Create : ClassCreate
         inf (~this.NullRange())
         {
             var Int count;
-            count : this.ClassInfra.Count(this.RangeA.Index, col);
-            this.RangeA.Count : count;
+            count : this.ClassInfra.Count(this.TRangeA.Index, col);
+            this.TRangeA.Count : count;
 
             this.AddToken();
         }
