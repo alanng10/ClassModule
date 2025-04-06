@@ -32,14 +32,14 @@ class Create : ClassCreate
 
     field prusate Array Source { get { return data; } set { data : value; } }
     field prusate Result Result { get { return data; } set { data : value; } }
+    field prusate Array Code { get { return data; } set { data : value; } }
     field prusate CreateArg Arg { get { return data; } set { data : value; } }
+    field prusate CreateOperate Operate { get { return data; } set { data : value; } }
+    field prusate CreateCountOperate CountOperate { get { return data; } set { data : value; } }
+    field prusate CreateSetOperate SetOperate { get { return data; } set { data : value; } }
     field precate InfraInfra InfraInfra { get { return data; } set { data : value; } }
     field precate ListInfra ListInfra { get { return data; } set { data : value; } }
     field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
-    field precate CreateOperate Operate { get { return data; } set { data : value; } }
-    field precate CreateCountOperate CountOperate { get { return data; } set { data : value; } }
-    field precate CreateSetOperate SetOperate { get { return data; } set { data : value; } }
-    field precate Array Code { get { return data; } set { data : value; } }
     field precate Source SourceItem { get { return data; } set { data : value; } }
     field precate Int Row { get { return data; } set { data : value; } }
 
