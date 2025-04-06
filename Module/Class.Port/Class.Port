@@ -33,9 +33,9 @@ Storage
 Read
 ReadArg
 ReadOperate
-CountReadOperate
-StringReadOperate
-SetReadOperate
+ReadCountOperate
+ReadStringOperate
+ReadSetOperate
 
 [Storage]
 
