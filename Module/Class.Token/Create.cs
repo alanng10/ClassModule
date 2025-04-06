@@ -38,7 +38,7 @@ public class Create : InfraCreate
     protected virtual CountCreateOperate CountOperate { get; set; }
     protected virtual SetCreateOperate SetOperate { get; set; }
     protected virtual CreateOperate Operate { get; set; }
-    protected virtual Array CodeArray { get; set; }
+    protected virtual Array Code { get; set; }
     protected virtual Source SourceItem { get; set; }
     protected virtual long Row { get; set; }
 
@@ -47,9 +47,9 @@ public class Create : InfraCreate
         this.Result = new Result();
         this.Result.Init();
 
-        this.CodeArray = this.CreateCodeArray();
+        this.Code = this.CreateCodeArray();
 
-        this.Result.Code = this.CodeArray;
+        this.Result.Code = this.Code;
         this.Result.Error = this.ListInfra.ArrayCreate(0);
 
         this.Arg = new CreateArg();
@@ -59,7 +59,7 @@ public class Create : InfraCreate
         arg = this.Arg;
 
         arg.CodeCountData = new Data();
-        arg.CodeCountData.Count = this.CodeArray.Count * 2 * sizeof(ulong);
+        arg.CodeCountData.Count = this.Code.Count * 2 * sizeof(ulong);
         arg.CodeCountData.Init();
 
         this.Operate = this.CountOperate;
@@ -169,7 +169,7 @@ public class Create : InfraCreate
         ListInfra listInfra;
         listInfra = this.ListInfra;
         Array codeArray;
-        codeArray = this.CodeArray;
+        codeArray = this.Code;
         Data codeCountData;
         codeCountData = this.Arg.CodeCountData;
 
@@ -225,7 +225,7 @@ public class Create : InfraCreate
     public virtual bool ExecuteStage()
     {
         long count;
-        count = this.CodeArray.Count;
+        count = this.Code.Count;
 
         long i;
         i = 0;
