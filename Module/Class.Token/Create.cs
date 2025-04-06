@@ -265,8 +265,16 @@ public class Create : InfraCreate
         Range range;
         range = this.Range;
 
+        long charHash;
         long charLine;
+        long charSpace;
+        long charQuote;
+        long charNext;
+        charHash = '#';
         charLine = '_';
+        charSpace = ' ';
+        charQuote = '\"';
+        charNext = '\\';
 
         long row;
         row = 0;
@@ -302,7 +310,7 @@ public class Create : InfraCreate
 
                 n = textForm.Execute(n);
 
-                if (n == '#')
+                if (n == charHash)
                 {
                     this.EndToken(col);
                     this.Row = row;
@@ -316,7 +324,7 @@ public class Create : InfraCreate
                     valid = true;
                 }
 
-                if (n == ' ')
+                if (n == charSpace)
                 {
                     this.EndToken(col);
 
@@ -327,7 +335,7 @@ public class Create : InfraCreate
                     valid = true;
                 }
 
-                if (n == '\"')
+                if (n == charQuote)
                 {
                     this.EndToken(col);
                     this.Row = row;
@@ -345,7 +353,7 @@ public class Create : InfraCreate
                         oc = textForm.Execute(oc);
 
                         bool ba;
-                        ba = (oc == '\"');
+                        ba = (oc == charQuote);
                         if (ba)
                         {
                             b = true;
@@ -354,7 +362,7 @@ public class Create : InfraCreate
                         if (!b)
                         {
                             bool bb;
-                            bb = (oc == '\\');
+                            bb = (oc == charNext);
                             if (bb)
                             {
                                 long uu;
