@@ -321,6 +321,7 @@ public class Create : InfraCreate
                     this.AddComment();
 
                     j = colCount;
+
                     this.Reset();
 
                     valid = true;
