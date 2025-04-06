@@ -40,6 +40,7 @@ class StringWrite : Any
         return a;
     }
 
+    field prusate Text Text { get { return data; } set { data : value; } }
     field prusate StringCountWriteOperate CountOperate { get { return data; } set { data : value; } }
     field prusate StringSetWriteOperate SetOperate { get { return data; } set { data : value; } }
     field prusate StringWriteOperate Operate { get { return data; } set { data : value; } }
@@ -49,10 +50,10 @@ class StringWrite : Any
     field precate Infra ClassInfra { get { return data; } set { data : value; } }
     field precate StringComp StringComp { get { return data; } set { data : value; } }
 
-    maide prusate String Execute(var Text text)
+    maide prusate String Execute()
     {
         var Bool b;
-        b : this.ValidValue(text);
+        b : this.ValidValue(this.Text);
         inf (~b)
         {
             return null;
@@ -62,9 +63,9 @@ class StringWrite : Any
         this.Arg.Init();
 
         this.Operate : this.CountOperate;
-        this.ArgClearIndex();
 
-        this.ExecuteStage(text);
+        this.ResetStage();
+        this.ExecuteStage();
 
         var Int count;
         count : this.Arg.Index;
@@ -78,9 +79,9 @@ class StringWrite : Any
         this.Arg.Data.Init();
 
         this.Operate : this.SetOperate;
-        this.ArgClearIndex();
 
-        this.ExecuteStage(text);
+        this.ResetStage();
+        this.ExecuteStage();
 
         var String a;
         a : this.StringComp.CreateData(this.Arg.Data, null);
@@ -236,13 +237,13 @@ class StringWrite : Any
         return true;
     }
 
-    maide prusate Bool ArgClearIndex()
+    maide prusate Bool ResetStage()
     {
         this.Arg.Index : 0;
         return true;
     }
 
-    maide prusate Bool ExecuteStage(var Text text)
+    maide prusate Bool ExecuteStage()
     {
         var TextInfra textInfra;
         textInfra : this.TextInfra;
@@ -252,9 +253,9 @@ class StringWrite : Any
         stringComp : this.StringComp;
 
         var Data data;
-        data : text.Data;
+        data : this.Text.Data;
         var InfraRange range;
-        range : text.Range;
+        range : this.Text.Range;
         var Int kk;
         kk : range.Count;
 
