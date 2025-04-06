@@ -33,6 +33,9 @@ class Create : ClassCreate
     field prusate Array Source { get { return data; } set { data : value; } }
     field prusate Result Result { get { return data; } set { data : value; } }
     field prusate CreateArg Arg { get { return data; } set { data : value; } }
+    field precate InfraInfra InfraInfra { get { return data; } set { data : value; } }
+    field precate ListInfra ListInfra { get { return data; } set { data : value; } }
+    field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
     field precate CreateOperate Operate { get { return data; } set { data : value; } }
     field precate CreateCountOperate CountOperate { get { return data; } set { data : value; } }
     field precate CreateSetOperate SetOperate { get { return data; } set { data : value; } }
@@ -94,7 +97,7 @@ class Create : ClassCreate
         var Array array;
         array : this.ListInfra.ArrayCreate(this.Source.Count);
 
-        var Int Count;
+        var Int count;
         count : array.Count;
 
         var Int i;
@@ -261,7 +264,7 @@ class Create : ClassCreate
         sourceText : this.SourceItem.Text;
 
         var Range range;
-        range : this.Range;
+        range : this.RangeA;
 
         var Int charHash;
         var Int charSpace;
@@ -430,13 +433,13 @@ class Create : ClassCreate
 
     maide precate Bool AddToken()
     {
-        this.Operate.ExecuteToken(this.Row, this.Range);
+        this.Operate.ExecuteToken(this.Row, this.RangeA);
         return true;
     }
 
     maide precate Bool AddComment()
     {
-        this.Operate.ExecuteComment(this.Row, this.Range);
+        this.Operate.ExecuteComment(this.Row, this.RangeA);
         return true;
     }
 
@@ -445,8 +448,8 @@ class Create : ClassCreate
         inf (~this.NullRange())
         {
             var Int count;
-            count : this.ClassInfra.Count(this.Range.Index, col);
-            this.Range.Count : count;
+            count : this.ClassInfra.Count(this.RangeA.Index, col);
+            this.RangeA.Count : count;
 
             this.AddToken();
         }
