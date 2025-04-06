@@ -88,4 +88,28 @@ class Create : ClassCreate
         this.Arg.CommentIndex : 0;
         return true;
     }
+
+    maide prusate Array CreateCodeArray()
+    {
+        var Array array;
+        array : this.ListInfra.ArrayCreate(this.Source.Count);
+
+        var Int Count;
+        count : array.Count;
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Code a;
+            a : new Code;
+            a.Init();
+
+            array.Set(i, a);
+
+            i : i + 1;
+        }
+
+        return array;
+    }
 }
