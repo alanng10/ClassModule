@@ -39,4 +39,21 @@ class Create : ClassCreate
     field precate Array Code { get { return data; } set { data : value; } }
     field precate Source SourceItem { get { return data; } set { data : value; } }
     field precate Int Row { get { return data; } set { data : value; } }
+
+    maide prusate Bool Execute()
+    {
+        this.Result : new Result;
+        this.Result.Init();
+
+        this.Code : this.CreateCodeArray();
+
+        this.Result.Code : this.Code;
+        this.Result.Error : this.ListInfra.ArrayCreate(0);
+
+        this.Arg : new CreateArg;
+        this.Arg.Init();
+
+        var CreateArg arg;
+        arg : this.Arg;
+    }
 }
