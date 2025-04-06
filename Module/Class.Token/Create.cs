@@ -347,8 +347,10 @@ public class Create : InfraCreate
 
                     long ka;
                     ka = j + 1;
+
                     bool b;
                     b = false;
+
                     while (!b & ka < colCount)
                     {
                         long na;
