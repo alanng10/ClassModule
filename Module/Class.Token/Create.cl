@@ -427,4 +427,40 @@ class Create : ClassCreate
 
         return true;
     }
+
+    maide precate Bool AddToken()
+    {
+        this.Operate.ExecuteToken(this.Row, this.Range);
+        return true;
+    }
+
+    maide precate Bool AddComment()
+    {
+        this.Operate.ExecuteComment(this.Row, this.Range);
+        return true;
+    }
+
+    maide precate Bool EndToken(var Int col)
+    {
+        inf (~this.NullRange())
+        {
+            var Int count;
+            count : this.ClassInfra.Count(this.Range.Index, col);
+            this.Range.Count : count;
+
+            this.AddToken();
+        }
+        return true;
+    }
+
+    maide precate Bool NullRange()
+    {
+        return this.Row = null;
+    }
+
+    maide precate Bool Reset()
+    {
+        this.Row : null;
+        return true;
+    }
 }
