@@ -171,8 +171,8 @@ public class Create : InfraCreate
         listInfra = this.ListInfra;
         Array codeArray;
         codeArray = this.Code;
-        Data codeCountData;
-        codeCountData = this.Arg.CodeCountData;
+        Data data;
+        data = this.Arg.CodeCountData;
 
         Array tokenArray;
         Array commentArray;
@@ -205,8 +205,8 @@ public class Create : InfraCreate
             kb = (kk + 1) * kaa;
             long tokenCount;
             long commentCount;
-            tokenCount = infraInfra.DataIntGet(codeCountData, ka);
-            commentCount = infraInfra.DataIntGet(codeCountData, kb);
+            tokenCount = infraInfra.DataIntGet(data, ka);
+            commentCount = infraInfra.DataIntGet(data, kb);
 
             code.Token = listInfra.ArrayCreate(tokenCount);
             code.Comment = listInfra.ArrayCreate(commentCount);
