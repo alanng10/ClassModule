@@ -112,4 +112,52 @@ class Create : ClassCreate
 
         return array;
     }
+
+    maide precate Bool ExecuteCreateToken()
+    {
+        var Array array;
+        array : this.Arg.TokenArray;
+
+        var Int count;
+        count : array.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Token a;
+            a : new Token;
+            a.Init();
+            a.Range : new Range;
+            a.Range.Init();
+
+            array.Set(i, a);
+
+            i : i + 1;
+        }
+        return true;
+    }
+
+    maide precate Bool ExecuteCreateComment()
+    {
+        var Array array;
+        array : this.Arg.CommentArray;
+
+        var Int count;
+        count : array.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Comment a;
+            a : new Comment;
+            a.Init();
+            a.Range : new Range;
+            a.Range.Init();
+
+            array.Set(i, a);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
