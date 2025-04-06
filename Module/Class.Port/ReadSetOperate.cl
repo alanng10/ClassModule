@@ -1,4 +1,4 @@
-class SetReadOperate : ReadOperate
+class ReadSetOperate : ReadOperate
 {
     maide prusate String ExecuteString(var Int row, var Range range)
     {
