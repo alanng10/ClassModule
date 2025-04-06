@@ -222,4 +222,28 @@ class Create : ClassCreate
 
         return true;
     }
+
+    maide prusate Bool ExecuteStage()
+    {
+        var Int count;
+        count : this.Code.Count;
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            this.SourceItem : cast Source(this.Source.Get(i));
+
+            this.Operate.ExecuteCodeStart(i);
+
+            this.ExecuteCode();
+
+            this.Operate.ExecuteCodeEnd(i);
+
+            i : i + 1;
+        }
+
+        this.SourceItem : null;
+        return true;
+    }
 }
