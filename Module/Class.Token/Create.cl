@@ -351,8 +351,42 @@ class Create : ClassCreate
 
                     while (~b & ka < colCount)
                     {
+                        var Int na;
+                        na : textInfra.DataCharGet(data, start + ka);
 
+                        na : textForm.Execute(na);
+
+                        var Bool ba;
+                        ba : (na = charQuote);
+                        inf (ba)
+                        {
+                            b : true;
+                        }
+
+                        inf (~b)
+                        {
+                            var Bool bb;
+                            bb : (na = charNext);
+                            inf (bb)
+                            {
+                                var Int kb;
+                                kb : ka + 1;
+                                inf (kb < colCount)
+                                {
+                                    ka : kb;
+                                }
+                            }
+                        }
+                        ka : ka + 1;
                     }
+                    range.Count : classInfra.Count(j, ka);
+                    this.AddToken();
+
+                    j : ka;
+
+                    this.Reset();
+
+                    valid : true;
                 }
             }
         }
