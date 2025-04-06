@@ -297,28 +297,28 @@ public class Create : InfraCreate
             long colCount;
             colCount = line.Range.Count;
 
-            long col;
-            col = 0;
+            long j;
+            j = 0;
 
-            while (col < colCount)
+            while (j < colCount)
             {
                 bool valid;
                 valid = false;
 
                 long n;
-                n = textInfra.DataCharGet(data, start + col);
+                n = textInfra.DataCharGet(data, start + j);
 
                 n = textForm.Execute(n);
 
                 if (n == charHash)
                 {
-                    this.EndToken(col);
+                    this.EndToken(j);
                     this.Row = i;
-                    range.Index = col;
-                    range.Count = classInfra.Count(col, colCount);
+                    range.Index = j;
+                    range.Count = classInfra.Count(j, colCount);
                     this.AddComment();
 
-                    col = colCount;
+                    j = colCount;
                     this.Reset();
 
                     valid = true;
@@ -326,9 +326,9 @@ public class Create : InfraCreate
 
                 if (n == charSpace)
                 {
-                    this.EndToken(col);
+                    this.EndToken(j);
 
-                    col = col + 1;
+                    j = j + 1;
 
                     this.Reset();
 
@@ -337,12 +337,12 @@ public class Create : InfraCreate
 
                 if (n == charQuote)
                 {
-                    this.EndToken(col);
+                    this.EndToken(j);
                     this.Row = i;
-                    range.Index = col;
+                    range.Index = j;
 
                     long cc;
-                    cc = col + 1;
+                    cc = j + 1;
                     bool b;
                     b = false;
                     while (!b & cc < colCount)
@@ -375,10 +375,10 @@ public class Create : InfraCreate
                         }
                         cc = cc + 1;
                     }
-                    range.Count = classInfra.Count(col, cc);
+                    range.Count = classInfra.Count(j, cc);
                     this.AddToken();
 
-                    col = cc;
+                    j = cc;
 
                     this.Reset();
 
@@ -390,31 +390,31 @@ public class Create : InfraCreate
                     if (this.NullRange())
                     {
                         this.Row = i;
-                        range.Index = col;
+                        range.Index = j;
                     }
 
-                    col = col + 1;
+                    j = j + 1;
 
                     valid = true;
                 }
 
                 if (!valid)
                 {
-                    this.EndToken(col);
+                    this.EndToken(j);
 
                     this.Row = i;
-                    range.Index = col;
+                    range.Index = j;
                     range.Count = 1;
 
                     this.AddToken();
 
-                    col = col + 1;
+                    j = j + 1;
 
                     this.Reset();
                 }
             }
 
-            this.EndToken(col);
+            this.EndToken(j);
 
             this.Reset();
 
