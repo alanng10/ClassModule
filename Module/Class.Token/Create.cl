@@ -273,5 +273,35 @@ class Create : ClassCreate
         charQuote : this.Char(this.ClassInfra.TextQuote);
         charNext : this.Char(this.ClassInfra.TextNext);
         charLine : this.Char(this.ClassInfra.TextLine);
+
+        this.Reset();
+
+        var Int count;
+        count : sourceText.Count;
+
+        var Int i;
+        i : 0;
+
+        while (i < count)
+        {
+            var Text line;
+            line : cast Text(sourceText.Get(i));
+
+            var Data data;
+            data : line.Data;
+
+            var Int start;
+            start : line.Range.Index;
+
+            var Int colCount;
+            colCount : line.Range.Count;
+
+            var Int j;
+            j : 0;
+
+            while (j < colCount)
+            {
+            }
+        }
     }
 }
