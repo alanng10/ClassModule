@@ -7,12 +7,14 @@ class Infra : Any
         this.TextInfra : share TextInfra;
         this.CountList : share CountList;
 
+        this.TextNewLine : "\n";
+        this.TextHash : "#";
+        this.TextSpace : " ";
         this.TextQuote : "\"";
         this.TextNext : "\\";
-        this.TextNewLine : "\n";
+        this.TextLine : "_";
         this.TextDot : ".";
         this.TextHyphen : "-";
-        this.TextSpace : " ";
         this.TextModule : "Module";
         this.TextImport : "Import";
         this.TextExport : "Export";
@@ -23,12 +25,14 @@ class Infra : Any
         return true;
     }
 
+    field prusate String TextNewLine { get { return data; } set { data : value; } }
+    field prusate String TextHash { get { return data; } set { data : value; } }
+    field prusate String TextSpace { get { return data; } set { data : value; } }
     field prusate String TextQuote { get { return data; } set { data : value; } }
     field prusate String TextNext { get { return data; } set { data : value; } }
-    field prusate String TextNewLine { get { return data; } set { data : value; } }
+    field prusate String TextLine { get { return data; } set { data : value; } }
     field prusate String TextDot { get { return data; } set { data : value; } }
     field prusate String TextHyphen { get { return data; } set { data : value; } }
-    field prusate String TextSpace { get { return data; } set { data : value; } }
     field prusate String TextModule { get { return data; } set { data : value; } }
     field prusate String TextImport { get { return data; } set { data : value; } }
     field prusate String TextExport { get { return data; } set { data : value; } }
