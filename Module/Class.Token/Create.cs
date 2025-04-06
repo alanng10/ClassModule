@@ -346,7 +346,7 @@ public class Create : InfraCreate
                         long oc;
                         oc = textInfra.DataCharGet(data, start + cc);
 
-                        oc = charForm.Execute(oc);
+                        oc = textForm.Execute(oc);
 
                         bool ba;
                         ba = (oc == '\"');
