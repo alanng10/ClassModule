@@ -98,6 +98,7 @@ public class Create : InfraCreate
 
         long count;
         count = array.Count;
+
         long i;
         i = 0;
         while (i < count)
