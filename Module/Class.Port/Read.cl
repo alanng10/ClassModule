@@ -13,28 +13,28 @@ class Read : TextAdd
         return true;
     }
 
-    maide precate CountReadOperate CreateCountOperate()
+    maide precate ReadCountOperate CreateCountOperate()
     {
-        var CountReadOperate a;
-        a : new CountReadOperate;
+        var ReadCountOperate a;
+        a : new ReadCountOperate;
         a.Read : this;
         a.Init();
         return a;
     }
 
-    maide precate StringReadOperate CreateStringOperate()
+    maide precate ReadStringOperate CreateStringOperate()
     {
-        var StringReadOperate a;
-        a : new StringReadOperate;
+        var ReadStringOperate a;
+        a : new ReadStringOperate;
         a.Read : this;
         a.Init();
         return a;
     }
 
-    maide precate SetReadOperate CreateSetOperate()
+    maide precate ReadSetOperate CreateSetOperate()
     {
-        var SetReadOperate a;
-        a : new SetReadOperate;
+        var ReadSetOperate a;
+        a : new ReadSetOperate;
         a.Read : this;
         a.Init();
         return a;
@@ -47,9 +47,9 @@ class Read : TextAdd
     field precate ListInfra ListInfra { get { return data; } set { data : value; } }
     field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
     field precate ReadOperate Operate { get { return data; } set { data : value; } }
-    field precate CountReadOperate CountOperate { get { return data; } set { data : value; } }
-    field precate StringReadOperate StringOperate { get { return data; } set { data : value; } }
-    field precate SetReadOperate SetOperate { get { return data; } set { data : value; } }
+    field precate ReadCountOperate CountOperate { get { return data; } set { data : value; } }
+    field precate ReadStringOperate StringOperate { get { return data; } set { data : value; } }
+    field precate ReadSetOperate SetOperate { get { return data; } set { data : value; } }
 
     maide prusate Bool Execute()
     {
