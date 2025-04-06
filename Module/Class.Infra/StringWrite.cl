@@ -26,7 +26,7 @@ class StringWrite : Any
     {
         var StringCountWriteOperate a;
         a : new StringCountWriteOperate;
-        a.Arg : this.Arg;
+        a.Write : this;
         a.Init();
         return a;
     }
@@ -35,7 +35,7 @@ class StringWrite : Any
     {
         var StringSetWriteOperate a;
         a : new StringSetWriteOperate;
-        a.Arg : this.Arg;
+        a.Write : this;
         a.Init();
         return a;
     }
