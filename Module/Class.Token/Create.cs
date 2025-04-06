@@ -169,6 +169,7 @@ public class Create : InfraCreate
         infraInfra = this.InfraInfra;
         ListInfra listInfra;
         listInfra = this.ListInfra;
+
         Array codeArray;
         codeArray = this.Code;
         Data data;
