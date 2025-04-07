@@ -20,9 +20,6 @@ class StoragePathValid : TextAdd
 
     maide private Bool PrivateValidSourcePath(var Text text)
     {
-        var TextInfra textInfra;
-        textInfra : this.TextInfra;
-
         inf (text.Range.Count = 0)
         {
             return false;
@@ -37,7 +34,7 @@ class StoragePathValid : TextAdd
         text.Range.Count : 1;
 
         var Bool ba;
-        ba : textInfra.Same(text, this.TA("/"), this.TLess);
+        ba : this.TextSame(text, this.TA("/"));
 
         text.Range.Index : ka;
         text.Range.Count : kb;
@@ -48,7 +45,7 @@ class StoragePathValid : TextAdd
         }
 
         var Int kaa;
-        kaa : textInfra.Index(text, this.TA("\\"), this.TLess);
+        kaa : this.TextIndex(text, this.TA("\\"));
 
         inf (~(kaa = null))
         {
@@ -56,7 +53,7 @@ class StoragePathValid : TextAdd
         }
 
         var Int kab;
-        kab : textInfra.Index(text, this.TA("//"), this.TLess);
+        kab : this.TextIndex(text, this.TA("//"));
 
         inf (~(kab = null))
         {
