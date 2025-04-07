@@ -95,13 +95,13 @@ class StoragePathValid : TextAdd
         var Int combineCount;
         combineCount : combine.Range.Count;
 
-        var InfraRange textRange;
-        textRange : text.Range;
+        var InfraRange range;
+        range : text.Range;
 
         var Int kaa;
         var Int kab;
-        kaa : textRange.Index;
-        kab : textRange.Count;
+        kaa : range.Index;
+        kab : range.Count;
 
         var Bool b;
         b : false;
@@ -111,9 +111,9 @@ class StoragePathValid : TextAdd
         while (~b & ~(kk = null))
         {
             var Int ke;
-            ke : textRange.Count;
+            ke : range.Count;
 
-            textRange.Count : kk;
+            range.Count : kk;
 
             inf (~b)
             {
@@ -133,13 +133,13 @@ class StoragePathValid : TextAdd
 
             inf (~b)
             {
-                textRange.Count : ke;
+                range.Count : ke;
 
                 var Int ka;
                 ka : kk + combineCount;
 
-                textRange.Index : textRange.Index + ka;
-                textRange.Count : textRange.Count - ka;
+                range.Index : range.Index + ka;
+                range.Count : range.Count - ka;
 
                 kk : this.TextIndex(text, combine);
             }
@@ -161,8 +161,8 @@ class StoragePathValid : TextAdd
             }
         }
 
-        textRange.Index : kaa;
-        textRange.Count : kab;
+        range.Index : kaa;
+        range.Count : kab;
 
         var Bool a;
         a : b;
