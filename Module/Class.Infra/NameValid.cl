@@ -3,10 +3,12 @@ class NameValid : TextAdd
     maide prusate Bool Init()
     {
         base.Init();
+        this.ClassInfra : share Infra;
         this.IndexList : share IndexList;
         return true;
     }
 
+    field precate Infra ClassInfra { get { return data; } set { data : value; } }
     field precate IndexList IndexList { get { return data; } set { data : value; } }
 
     maide prusate Bool Name(var Text text)
@@ -50,7 +52,7 @@ class NameValid : TextAdd
         }
 
         var Int charLine;
-        charLine : textInfra.Char("_");
+        charLine : this.Char(this.ClassInfra.TextLine);
 
         var Bool b;
         b : false;
