@@ -72,7 +72,7 @@ public class StoragePathValid : TextAdd
             return false;
         }
 
-        if (!this.StorageInfra.PathRelate(text, this.TextLess))
+        if (!this.StorageInfra.PathRelate(text, this.TLess))
         {
             return false;
         }
