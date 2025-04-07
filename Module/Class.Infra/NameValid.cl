@@ -4,6 +4,7 @@ class NameValid : TextAdd
     {
         base.Init();
         this.ClassInfra : share Infra;
+
         this.IndexList : share IndexList;
         return true;
     }
