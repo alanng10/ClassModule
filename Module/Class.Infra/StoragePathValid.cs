@@ -6,10 +6,17 @@ public class StoragePathValid : TextAdd
     {
         base.Init();
         this.StorageInfra = StorageInfra.This;
+
+        this.SSlash = this.S("/");
+        this.SNext = this.S("\\");
+        this.SSlashSlash = this.S("//");
         return true;
     }
 
     protected virtual StorageInfra StorageInfra { get; set; }
+    protected virtual String SSlash { get; set; }
+    protected virtual String SNext { get; set; }
+    protected virtual String SSlashSlash { get; set; }
 
     public virtual bool ValidSourcePath(Text text)
     {
@@ -36,7 +43,7 @@ public class StoragePathValid : TextAdd
         text.Range.Count = 1;
 
         bool ba;
-        ba = this.TextSame(text, this.TA("/"));
+        ba = this.TextSame(text, this.TA(this.SSlash));
 
         text.Range.Index = ka;
         text.Range.Count = kb;
@@ -47,7 +54,7 @@ public class StoragePathValid : TextAdd
         }
 
         long kaa;
-        kaa = this.TextIndex(text, this.TA("\\"));
+        kaa = this.TextIndex(text, this.TA(this.SNext));
 
         if (!(kaa == -1))
         {
@@ -55,7 +62,7 @@ public class StoragePathValid : TextAdd
         }
 
         long kab;
-        kab = this.TextIndex(text, this.TA("//"));
+        kab = this.TextIndex(text, this.TA(this.SSlashSlash));
 
         if (!(kab == -1))
         {
