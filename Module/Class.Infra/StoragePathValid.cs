@@ -10,6 +10,8 @@ public class StoragePathValid : TextAdd
         this.SSlash = this.S("/");
         this.SNext = this.S("\\");
         this.SSlashSlash = this.S("//");
+        this.SDot = this.S(".");
+        this.SDotDot = this.S("..");
         return true;
     }
 
@@ -17,6 +19,8 @@ public class StoragePathValid : TextAdd
     protected virtual String SSlash { get; set; }
     protected virtual String SNext { get; set; }
     protected virtual String SSlashSlash { get; set; }
+    protected virtual String SDot { get; set; }
+    protected virtual String SDotDot { get; set; }
 
     public virtual bool ValidSourcePath(Text text)
     {
@@ -98,8 +102,8 @@ public class StoragePathValid : TextAdd
         Text dot;
         Text dotDot;
         combine = this.TA(this.TextInfra.PathCombine);
-        dot = this.TB(".");
-        dotDot = this.TC("..");
+        dot = this.TB(this.SDot);
+        dotDot = this.TC(this.SDotDot);
 
         long combineCount;
         combineCount = combine.Range.Count;
