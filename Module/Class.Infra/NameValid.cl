@@ -49,8 +49,8 @@ class NameValid : TextAdd
             return false;
         }
 
-        var Int line;
-        line : textInfra.Char("_");
+        var Int charLine;
+        charLine : textInfra.Char("_");
 
         var Bool b;
         b : false;
@@ -72,7 +72,7 @@ class NameValid : TextAdd
             n : textForm.Execute(n);
 
             var Bool ba;
-            ba: textInfra.Alpha(n, true) | textInfra.Alpha(n, false) | textInfra.Digit(n) | n = line;
+            ba: textInfra.Alpha(n, true) | textInfra.Alpha(n, false) | textInfra.Digit(n) | n = charLine;
 
             inf (~ba)
             {
