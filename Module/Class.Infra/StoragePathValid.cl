@@ -86,10 +86,10 @@ class StoragePathValid : TextAdd
     maide precate Bool HasDotOrnDotDot(var Text text)
     {
         var Text combine;
-        combine : this.TA(this.TextInfra.PathCombine);
         var Text dot;
-        dot : this.TB(".");
         var Text dotDot;
+        combine : this.TA(this.TextInfra.PathCombine);
+        dot : this.TB(".");
         dotDot : this.TC("..");
 
         var Int combineCount;
