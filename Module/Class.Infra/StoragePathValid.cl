@@ -113,7 +113,7 @@ class StoragePathValid : TextAdd
         b : false;
 
         var Int kk;
-        kk : textInfra.Index(text, combine, less);
+        kk : this.TextIndex(text, combine);
         while (~b & ~(kk = null))
         {
             var Int ke;
@@ -123,7 +123,7 @@ class StoragePathValid : TextAdd
 
             inf (~b)
             {
-                inf (textInfra.Same(text, dot, less))
+                inf (this.TextSame(text, dot))
                 {
                     b : true;
                 }
@@ -131,7 +131,7 @@ class StoragePathValid : TextAdd
 
             inf (~b)
             {
-                inf (textInfra.Same(text, dotDot, less))
+                inf (this.TextSame(text, dotDot))
                 {
                     b : true;
                 }
@@ -147,13 +147,13 @@ class StoragePathValid : TextAdd
                 textRange.Index : textRange.Index + ka;
                 textRange.Count : textRange.Count - ka;
 
-                kk : textInfra.Index(text, combine, less);
+                kk : this.TextIndex(text, combine);
             }
         }
 
         inf (~b)
         {
-            inf (textInfra.Same(text, dot, less))
+            inf (this.TextSame(text, dot))
             {
                 b : true;
             }
@@ -161,7 +161,7 @@ class StoragePathValid : TextAdd
 
         inf (~b)
         {
-            inf (textInfra.Same(text, dotDot, less))
+            inf (this.TextSame(text, dotDot))
             {
                 b : true;
             }
