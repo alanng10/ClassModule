@@ -98,7 +98,7 @@ class NameValid : TextAdd
         less : this.TLess;
 
         var Text dot;
-        dot : this.TA(".");
+        dot : this.TA(this.ClassInfra.TextDot);
 
         var InfraRange range;
         range : text.Range;
