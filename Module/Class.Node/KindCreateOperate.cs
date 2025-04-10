@@ -1,6 +1,6 @@
 namespace Saber.Node;
 
-public class KindCreateOperate : CreateOperate
+public class CreateKindOperate : CreateOperate
 {
     public override bool Init()
     {
