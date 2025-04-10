@@ -47,8 +47,11 @@ public class Create : ClassCreate
     public virtual String Task { get; set; }
     public virtual Result Result { get; set; }
     public virtual Source SourceItem { get; set; }
-    public virtual CreateOperate Operate { get; set; }
     public virtual CreateArg Arg { get; set; }
+    public virtual CreateOperate Operate { get; set; }
+    public virtual CountCreateOperate CountOperate { get; set; }
+    public virtual KindCreateOperate KindOperate { get; set; }
+    public virtual SetCreateOperate SetOperate { get; set; }
     public virtual CreateSetArg SetArg { get; set; }
 
     protected virtual InfraInfra InfraInfra { get; set; }
@@ -86,10 +89,6 @@ public class Create : ClassCreate
     protected virtual Token TokenG { get; set; }
     protected virtual Token TokenH { get; set; }
     protected virtual Token TokenI { get; set; }
-
-    protected virtual CountCreateOperate CountOperate { get; set; }
-    protected virtual KindCreateOperate KindOperate { get; set; }
-    protected virtual SetCreateOperate SetOperate { get; set; }
 
     protected virtual NameValid NameValid { get; set; }
     protected virtual StringWrite StringWrite { get; set; }
