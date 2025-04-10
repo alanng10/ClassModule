@@ -7,9 +7,7 @@ public class ParamItemNodeState : NodeState
         Range range;
         range = this.Arg as Range;
 
-        Node a;
-        a = this.Create.ExecuteVar(range);
-        this.Result = a;
+        this.Result = this.Create.ExecuteVar(range);
         return true;
     }
 }

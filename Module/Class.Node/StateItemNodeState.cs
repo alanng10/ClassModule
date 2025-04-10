@@ -7,9 +7,7 @@ public class StateItemNodeState : NodeState
         Range range;
         range = this.Arg as Range;
 
-        Node a;
-        a = this.Create.ExecuteExecute(range);
-        this.Result = a;
+        this.Result = this.Create.ExecuteExecute(range);
         return true;
     }
 }

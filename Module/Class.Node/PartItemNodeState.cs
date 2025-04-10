@@ -7,9 +7,7 @@ public class PartItemNodeState : NodeState
         Range range;
         range = this.Arg as Range;
 
-        Node a;
-        a = this.Create.ExecuteComp(range);
-        this.Result = a;
+        this.Result = this.Create.ExecuteComp(range);
         return true;
     }
 }

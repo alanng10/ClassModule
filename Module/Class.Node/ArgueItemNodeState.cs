@@ -7,9 +7,7 @@ public class ArgueItemNodeState : NodeState
         Range range;
         range = this.Arg as Range;
 
-        Node a;
-        a = this.Create.ExecuteOperate(range);
-        this.Result = a;
+        this.Result = this.Create.ExecuteOperate(range);
         return true;
     }
 }
