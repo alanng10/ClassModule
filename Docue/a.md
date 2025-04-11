@@ -52,4 +52,10 @@ Class has park kind arch land.
 
 Class has park create.
 
+Class has park module.
+
+Class has park node.
+
+Class has park token.
+
 Class is did.
