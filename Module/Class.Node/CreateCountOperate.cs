@@ -7,9 +7,20 @@ public class CreateCountOperate : CreateOperate
         base.Init();
         this.ListInfra = ListInfra.This;
         this.TextInfra = TextInfra.This;
-        this.List = this.ListInfra.ArrayCreate(0);
-        this.String = this.TextInfra.Zero;
+
+        this.List = this.CreateList();
+        this.String = this.CreateString();
         return true;
+    }
+
+    protected virtual Array CreateList()
+    {
+        return this.ListInfra.ArrayCreate(0);
+    }
+
+    protected virtual String CreateString()
+    {
+        return this.TextInfra.Zero;
     }
 
     protected virtual ListInfra ListInfra { get; set; }
