@@ -7,7 +7,7 @@ public class StateItemRangeState : RangeState
         RangeStateArg arg;
         arg = this.Arg as RangeStateArg;
 
-        this.Result = this.Create.ExecuteExecuteRange(arg.Result, arg.Range);
+        this.Result = this.Create.ExecuteStateItemRange(arg.Result, arg.Range);
         return true;
     }
 }
