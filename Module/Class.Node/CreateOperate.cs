@@ -19,7 +19,7 @@ public class CreateOperate : Any
         return null;
     }
 
-    public virtual bool ExecuteListSetItem(long index, long itemIndex, object item)
+    public virtual bool ExecuteListItemSet(long index, long itemIndex, object item)
     {
         return false;
     }

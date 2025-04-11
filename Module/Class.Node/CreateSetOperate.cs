@@ -76,7 +76,7 @@ public class CreateSetOperate : CreateOperate
         return this.Create.Arg.ListArray.GetAt(index) as Array;
     }
 
-    public override bool ExecuteListSetItem(long index, long itemIndex, object item)
+    public override bool ExecuteListItemSet(long index, long itemIndex, object item)
     {
         Array array;
         array = this.Create.Arg.ListArray.GetAt(index) as Array;
