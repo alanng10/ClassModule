@@ -29,7 +29,7 @@ public class CreateOperate : Any
         return false;
     }
     
-    public virtual bool ExecuteError(ErrorKind kind, long start, long end)
+    public virtual bool ExecuteError(ErrorKind kind, Range range)
     {
         return false;
     }
