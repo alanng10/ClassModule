@@ -115,10 +115,10 @@ public class CreateKindOperate : CreateOperate
 
         long count;
         count = range.Count;
-        long oa;
-        oa = index;
-        oa = oa * sizeof(ulong);
-        this.InfraInfra.DataIntSet(arg.NameValueCountData, oa, count);
+        long ka;
+        ka = index;
+        ka = ka * sizeof(ulong);
+        this.InfraInfra.DataIntSet(arg.NameValueCountData, ka, count);
 
         Data source;
         source = text.Data;
