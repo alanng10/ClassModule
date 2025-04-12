@@ -86,7 +86,7 @@ public class CreateKindOperate : CreateOperate
         return true;
     }
 
-    public override bool ExecuteError(ErrorKind kind, long start, long end)
+    public override bool ExecuteError(ErrorKind kind, Range range)
     {
         CreateArg arg;
         arg = this.Create.Arg;
