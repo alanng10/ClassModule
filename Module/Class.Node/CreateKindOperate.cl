@@ -97,4 +97,43 @@ class CreateKindOperate : CreateOperate
         arg.ErrorIndex : index;
         return true;
     }
+
+    maide prusate String ExecuteNameValue(var Text text)
+    {
+        var CreateArg arg;
+        arg : this.Create.Arg;
+
+        var Int index;
+        var Int indexA;
+        index : arg.NameValueIndex;
+        indexA : arg.NameValueTextIndex;
+
+        var InfraRange range;
+        range : text.Range;
+
+        var Int count;
+        count : range.Count;
+        var Int ka;
+        ka : index;
+        ka : ka * 8;
+        this.InfraInfra.DataIntSet(arg.NameValueCountData, ka, count);
+
+        var Data source;
+        source : text.Data;
+        var Int sourceIndex;
+        sourceIndex : range.Index;
+        var Data dest;
+        dest : arg.NameValueTextData;
+        var Int destIndex;
+        destIndex : indexA;
+
+        this.TextInfra.Copy(dest, destIndex, source, sourceIndex, count);
+
+        index : index + 1;
+        indexA : indexA + count;
+
+        arg.NameValueTextIndex : indexA;
+        arg.NameValueIndex : index;
+        return this.String;
+    }
 }
