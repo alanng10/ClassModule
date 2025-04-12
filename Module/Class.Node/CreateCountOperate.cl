@@ -59,4 +59,41 @@ class CreateCountOperate : Any
         arg.ListIndex : index;
         return a;
     }
+
+    maide prusate Array ExecuteListGet(var Int index)
+    {
+        return this.List;
+    }
+
+    maide prusate Bool ExecuteError(var ErrorKind kind, var Range range)
+    {
+        var CreateArg arg;
+        arg : this.Create.Arg;
+
+        var Int index;
+        index : arg.ErrorIndex;
+
+        index : index + 1;
+
+        arg.ErrorIndex : index;
+        return true;
+    }
+
+    maide prusate String ExecuteNameValue(var Text text)
+    {
+        var CreateArg arg;
+        arg : this.Create.Arg;
+
+        var Int index;
+        var Int indexA;
+        index : arg.NameValueIndex;
+        indexA : arg.NameValueTextIndex;
+
+        index : index + 1;
+        indexA : indexA + text.Range.Count;
+
+        arg.NameValueTextIndex : indexA;
+        arg.NameValueIndex : index;
+        return this.String;
+    }
 }
