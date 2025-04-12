@@ -139,5 +139,30 @@ class CreateKindOperate : CreateOperate
 
     maide prusate String ExecuteStringValue(var Text text)
     {
+        var Create create;
+        create : this.Create;
+        var CreateArg arg;
+        arg : create.Arg;
+
+        var Int index;
+        var Int indexA;
+        index : arg.StringValueIndex;
+        indexA : arg.StringValueTextIndex;
+
+        var Int count;
+        count : create.StringValueCount(text);
+        var Int ka;
+        ka : index;
+        ka : ka * 8;
+        this.InfraInfra.DataIntSet(arg.StringValueCountData, ka, count);
+
+        create.StringValueSet(text);
+
+        index : index + 1;
+        indexA : indexA + count;
+
+        arg.StringValueTextIndex : indexA;
+        arg.StringValueIndex : index;
+        return this.String;
     }
 }
