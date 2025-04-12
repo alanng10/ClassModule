@@ -102,4 +102,25 @@ class CreateSetOperate : CreateOperate
         arg.ErrorIndex : index;
         return true;
     }
+
+    maide prusate String ExecuteNameValue(var Text text)
+    {
+        var CreateArg arg;
+        arg : this.Create.Arg;
+
+        var Int index;
+        var Int indexA;
+        index : arg.NameValueIndex;
+        indexA : arg.NameValueTextIndex;
+
+        var String a;
+        a : cast String(arg.NameValueArray.Get(index));
+
+        index : index + 1;
+        indexA : indexA + this.StringComp.Count(a);
+
+        arg.NameValueTextIndex : indexA;
+        arg.NameValueIndex : index;
+        return a;
+    }
 }
