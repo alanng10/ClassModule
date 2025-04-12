@@ -79,10 +79,10 @@ public class CreateKindOperate : CreateOperate
 
     public override bool ExecuteListCount(long index, long count)
     {
-        long oa;
-        oa = index;
-        oa = oa * sizeof(ulong);
-        this.InfraInfra.DataIntSet(this.Create.Arg.ListData, oa, count);
+        long k;
+        k = index;
+        k = k * sizeof(ulong);
+        this.InfraInfra.DataIntSet(this.Create.Arg.ListData, k, count);
         return true;
     }
 
