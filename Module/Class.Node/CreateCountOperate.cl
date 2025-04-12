@@ -96,4 +96,25 @@ class CreateCountOperate : Any
         arg.NameValueIndex : index;
         return this.String;
     }
+
+    maide prusate String ExecuteStringValue(var Text text)
+    {
+        var CreateArg arg;
+        arg : this.Create.Arg;
+
+        var Int index;
+        var Int indexA;
+        index : arg.StringValueIndex;
+        indexA : arg.StringValueTextIndex;
+
+        var Int count;
+        count : this.Create.StringValueCount(text);
+
+        index : index + 1;
+        indexA : indexA + count;
+
+        arg.StringValueTextIndex : indexA;
+        arg.StringValueIndex : index;
+        return this.String;
+    }
 }
