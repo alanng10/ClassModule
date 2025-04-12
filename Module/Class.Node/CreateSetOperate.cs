@@ -111,8 +111,8 @@ public class CreateSetOperate : CreateOperate
         arg = this.Create.Arg;
 
         long index;
-        index = arg.NameValueIndex;
         long indexA;
+        index = arg.NameValueIndex;
         indexA = arg.NameValueTextIndex;
 
         String a;
