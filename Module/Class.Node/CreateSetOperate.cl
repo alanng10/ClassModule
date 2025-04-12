@@ -79,4 +79,27 @@ class CreateSetOperate : CreateOperate
         array.Set(itemIndex, value);
         return true;
     }
+
+    maide prusate Bool ExecuteError(var ErrorKind kind, var Range range)
+    {
+        var Create create;
+        create : this.Create;
+        var CreateArg arg;
+        arg : create.Arg;
+
+        var Int index;
+        index : arg.ErrorIndex;
+
+        var Error error;
+        error : cast Error(arg.ErrorArray.Get(index));
+        error.Kind : kind;
+        error.Range.Start : range.Start;
+        error.Range.End : range.End;
+        error.Source : create.SourceItem;
+
+        index : index + 1;
+
+        arg.ErrorIndex : index;
+        return true;
+    }
 }
