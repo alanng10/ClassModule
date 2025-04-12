@@ -48,4 +48,35 @@ class CreateSetOperate : CreateOperate
         arg.NodeIndex : index;
         return node;
     }
+
+    maide prusate Int ExecuteListNew()
+    {
+        var CreateArg arg;
+        arg : this.Create.Arg;
+
+        var Int index;
+        index : arg.ListIndex;
+
+        var Int a;
+        a : index;
+
+        index : index + 1;
+
+        arg.ListIndex : index;
+        return a;
+    }
+
+    maide prusate Array ExecuteListGet(var Int index)
+    {
+        return cast Array(this.Create.Arg.ListArray.Get(index));
+    }
+
+    maide prusate Bool ExecuteListItemSet(var Int index, var Int itemIndex, var Any value)
+    {
+        var Array array;
+        array : cast Array(this.Create.Arg.ListArray.Get(index));
+
+        array.Set(itemIndex, value);
+        return true;
+    }
 }
