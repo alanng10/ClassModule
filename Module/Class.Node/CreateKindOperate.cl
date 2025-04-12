@@ -69,4 +69,32 @@ class CreateKindOperate : CreateOperate
         arg.ListIndex : index;
         return a;
     }
+
+    maide prusate Array ExecuteListGet(var Int index)
+    {
+        return this.List;
+    }
+
+    maide prusate Bool ExecuteListCount(var Int index, var Int count)
+    {
+        var Int k;
+        k : index;
+        k : k * 8;
+        this.InfraInfra.DataIntSet(this.Create.Arg.ListData, k, count);
+        return true;
+    }
+
+    maide prusate Bool ExecuteError(var ErrorKind kind, var Range range)
+    {
+        var CreateArg arg;
+        arg : this.Create.Arg;
+
+        var Int index;
+        index : arg.ErrorIndex;
+
+        index : index + 1;
+
+        arg.ErrorIndex : index;
+        return true;
+    }
 }
