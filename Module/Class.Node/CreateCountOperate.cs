@@ -28,7 +28,7 @@ public class CreateCountOperate : CreateOperate
     protected virtual Array List { get; set; }
     protected virtual String String { get; set; }
 
-    public override Node Execute()
+    public override Node ExecuteNode()
     {
         CreateArg arg;
         arg = this.Create.Arg;

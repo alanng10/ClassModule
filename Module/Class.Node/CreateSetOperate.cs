@@ -13,7 +13,7 @@ public class CreateSetOperate : CreateOperate
     protected virtual InfraInfra InfraInfra { get; set; }
     protected virtual StringComp StringComp { get; set; }
 
-    public override Node Execute()
+    public override Node ExecuteNode()
     {
         Create create;
         create = this.Create;

@@ -19,7 +19,7 @@ public class CreateKindOperate : CreateOperate
     protected virtual Array List { get; set; }
     protected virtual String String { get; set; }
 
-    public override Node Execute()
+    public override Node ExecuteNode()
     {
         Create create;
         create = this.Create;
