@@ -4,7 +4,7 @@ public class CreateOperate : Any
 {
     public virtual Create Create { get; set; }
 
-    public virtual Node Execute()
+    public virtual Node ExecuteNode()
     {
         return null;
     }
