@@ -136,4 +136,8 @@ class CreateKindOperate : CreateOperate
         arg.NameValueIndex : index;
         return this.String;
     }
+
+    maide prusate String ExecuteStringValue(var Text text)
+    {
+    }
 }
