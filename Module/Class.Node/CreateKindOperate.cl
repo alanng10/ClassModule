@@ -52,4 +52,21 @@ class CreateKindOperate : CreateOperate
         a : kind.Node;
         return a;
     }
+
+    maide prusate Int ExecuteListNew()
+    {
+        var CreateArg arg;
+        arg : this.Create.Arg;
+
+        var Int index;
+        index : arg.ListIndex;
+
+        var Int a;
+        a : index;
+
+        index : index + 1;
+
+        arg.ListIndex : index;
+        return a;
+    }
 }
