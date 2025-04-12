@@ -43,7 +43,7 @@ public class CreateSetOperate : CreateOperate
         stateArg.SetArg = null;
         stateArg.Node = null;
 
-        create.NodeInfo(node, ka.Start, ka.End);
+        create.NodeInfo(node, ka.Range);
 
         index = index + 1;
 
