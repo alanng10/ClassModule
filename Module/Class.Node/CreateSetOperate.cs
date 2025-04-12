@@ -85,7 +85,7 @@ public class CreateSetOperate : CreateOperate
         return true;
     }
     
-    public override bool ExecuteError(ErrorKind kind, long start, long end)
+    public override bool ExecuteError(ErrorKind kind, Range range)
     {
         Create create;
         create = this.Create;
@@ -98,8 +98,8 @@ public class CreateSetOperate : CreateOperate
         Error error;
         error = arg.ErrorArray.GetAt(index) as Error;
         error.Kind = kind;
-        error.Range.Start = start;
-        error.Range.End = end;
+        error.Range.Start = range.Start;
+        error.Range.End = range.End;
         error.Source = create.SourceItem;
 
         index = index + 1;
