@@ -25,4 +25,38 @@ class CreateCountOperate : Any
     field precate TextInfra TextInfra { get { return data; } set { data : value; } }
     field precate Array List { get { return data; } set { data : value; } }
     field precate String String { get { return data; } set { data : value; } }
+
+    maide prusate Node ExecuteNode()
+    {
+        var CreateArg arg;
+        arg : this.Create.Arg;
+
+        var Int index;
+        index : arg.NodeIndex;
+
+        index : index + 1;
+
+        arg.NodeIndex : index;
+
+        var Node a;
+        a : this.Create.SetArg.Kind.Node;
+        return a;
+    }
+
+    maide prusate Int ExecuteListNew()
+    {
+        var CreateArg arg;
+        arg : this.Create.Arg;
+
+        var Int index;
+        index : arg.ListIndex;
+
+        var Int a;
+        a : index;
+
+        index : index + 1;
+
+        arg.ListIndex : index;
+        return a;
+    }
 }
