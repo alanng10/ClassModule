@@ -27,4 +27,29 @@ class CreateKindOperate : CreateOperate
     field precate TextInfra TextInfra { get { return data; } set { data : value; } }
     field precate Array List { get { return data; } set { data : value; } }
     field precate String String { get { return data; } set { data : value; } }
+
+    maide prusate Node ExecuteNode()
+    {
+        var Create create;
+        create : this.Create;
+
+        var CreateArg arg;
+        arg : create.Arg;
+
+        var NodeKind kind;
+        kind : create.SetArg.Kind;
+
+        var Int index;
+        index : arg.NodeIndex;
+
+        arg.NodeData.Set(index, kind.Index);
+
+        index : index + 1;
+
+        arg.NodeIndex : index;
+
+        var Node a;
+        a : kind.Node;
+        return a;
+    }
 }
