@@ -4,5 +4,6 @@ global using Array = Avalon.List.Array;
 global using TableEntry = Avalon.List.Entry;
 global using Text = Avalon.Text.Text;
 global using EntryEntry = Avalon.Entry.Entry;
+global using ClassGen = Z.Tool.NodeListGen.Gen;
 global using ClassNewStateGen = Z.Tool.NodeListGen.NewStateGen;
 global using STAThreadAttribute = System.STAThreadAttribute;

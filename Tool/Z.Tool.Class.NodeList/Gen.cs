@@ -1,9 +1,12 @@
 namespace Z.Tool.Class.NodeList;
 
-public class Gen : Any
+public class Gen : ClassGen
 {
-    public virtual long Execute()
+    protected override ClassNewStateGen CreateNewStateGen()
     {
-        return 0;
+        ClassNewStateGen a;
+        a = new NewStateGen();
+        a.Init();
+        return a;
     }
 }
