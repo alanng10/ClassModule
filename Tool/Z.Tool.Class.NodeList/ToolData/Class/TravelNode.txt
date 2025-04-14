@@ -1,0 +1,9 @@
+    maide prusate Bool Execute#ClassName#(var #DeclareClassName# #VarName#)
+    {
+        inf (#VarName# = null)
+        {
+            return true;
+        }
+#State#        return true;
+    }
+
