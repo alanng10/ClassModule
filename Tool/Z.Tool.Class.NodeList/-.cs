@@ -1,6 +1,7 @@
 global using Any = Avalon.Infra.Any;
 global using String = Avalon.Infra.String;
 global using Array = Avalon.List.Array;
+global using Table = Avalon.List.Table;
 global using TableEntry = Avalon.List.Entry;
 global using Text = Avalon.Text.Text;
 global using EntryEntry = Avalon.Entry.Entry;
@@ -11,4 +12,5 @@ global using ClassNodeStateGen = Z.Tool.NodeListGen.NodeStateGen;
 global using ClassCreateSetStateGen = Z.Tool.NodeListGen.CreateSetStateGen;
 global using Class = Z.Tool.NodeListGen.Class;
 global using Field = Z.Tool.NodeListGen.Field;
+global using SourceGen = Z.Infra.ListSourceGen.Gen;
 global using STAThreadAttribute = System.STAThreadAttribute;

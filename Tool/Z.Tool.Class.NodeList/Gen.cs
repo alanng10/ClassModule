@@ -33,4 +33,21 @@ public class Gen : ClassGen
         a.Init();
         return a;
     }
+
+    protected virtual NodeKindListGen CreateClassNodeKindListGen()
+    {
+        NodeKindListGen a;
+        a = new NodeKindListGen();
+        a.Init();
+        return a;
+    }
+
+    protected override bool ExecuteNodeKindList()
+    {
+        NodeKindListGen nodeKindListGen;
+        nodeKindListGen = this.CreateClassNodeKindListGen();
+        nodeKindListGen.ClassTable = this.ClassTable;
+        nodeKindListGen.Execute();
+        return true;
+    }
 }
