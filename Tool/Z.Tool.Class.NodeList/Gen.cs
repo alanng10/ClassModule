@@ -42,6 +42,14 @@ public class Gen : ClassGen
         return a;
     }
 
+    protected override ClassTravelGen CreateTravelGen()
+    {
+        ClassTravelGen a;
+        a = new TravelGen();
+        a.Init();
+        return a;
+    }
+
     protected override bool ExecuteNodeKindList()
     {
         NodeKindListGen nodeKindListGen;
