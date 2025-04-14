@@ -11,4 +11,14 @@ public class NodeGen : ClassNodeGen
         this.NodeSourceFileName = this.S("ToolData/Class/NodeSource.txt");
         return true;
     }
+
+    protected override String OutputFilePath(global::Z.Tool.NodeListGen.Class varClass)
+    {
+        String fileName;
+        fileName = this.AddClear().AddS("Z_Node_").Add(varClass.Name).AddS(".cl").AddResult();
+
+        String a;
+        a = this.AddClear().Add(this.OutputFoldPath).Add(this.TextInfra.PathCombine).Add(fileName).AddResult();
+        return a;
+    }
 }
