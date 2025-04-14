@@ -1,0 +1,7 @@
+class Travel : Any
+{
+#NodeList#    maide precate Bool ExecuteNode(Node node)
+    {
+        return true;
+    }
+}
