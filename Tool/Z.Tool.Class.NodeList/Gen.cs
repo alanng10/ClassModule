@@ -17,4 +17,12 @@ public class Gen : ClassGen
         a.Init();
         return a;
     }
+
+    protected override ClassNodeStateGen CreateNodeStateGen()
+    {
+        ClassNodeStateGen a;
+        a = new NodeStateGen();
+        a.Init();
+        return a;
+    }
 }
