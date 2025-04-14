@@ -1,0 +1,12 @@
+        var Int count;
+        count : #VarName#.Value.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var #ItemDeclareClassName# item;
+            item : cast #ItemDeclareClassName#(#VarName#.Value.Get(i));
+            this.Execute#ItemClassName#(item);
+
+            i : i + 1;
+        }
