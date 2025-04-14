@@ -45,4 +45,46 @@ public class NodeKindListGen : SourceGen
         }
         return true;
     }
+
+    protected override TableEntry GetItemEntry(String line)
+    {
+        String index;
+        index = line;
+
+        Text k;
+        k = this.TextCreate(line);
+
+        Text ka;
+        ka = this.TextCreate(this.S("Count"));
+
+        if (this.TextSame(k, ka))
+        {
+            index = this.AddClear().AddS("Item").Add(line).AddResult();
+        }
+
+        TableEntry a;
+        a = new TableEntry();
+        a.Init();
+        a.Index = index;
+        a.Value = line;
+        return a;
+    }
+
+    protected override bool AddInitFieldAddItem(String index, object value)
+    {
+        String ka;
+        ka = value as String;
+
+        this
+            .AddS("AddItem")
+            .AddS("(")
+            .AddS("\"").Add(ka).AddS("\"").AddS(",").AddS(" ")
+            .AddS("new").AddS(" ").Add(ka).AddS(",").AddS(" ")
+            .AddS("new").AddS(" ").Add(ka).AddS("NewState").AddS(",").AddS(" ")
+            .AddS("new").AddS(" ").Add(ka).AddS("NodeState").AddS(",").AddS(" ")
+            .AddS("new").AddS(" ").Add(ka).AddS("CreateSetState")
+            .AddS(")")
+            ;
+        return true;
+    }
 }
