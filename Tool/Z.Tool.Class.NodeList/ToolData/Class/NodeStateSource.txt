@@ -4,7 +4,7 @@ class #NodeKind#NodeState : NodeState
     {
         var Range range;
         range : cast Range(this.Arg);
-        
+
         this.Result : this.Create.Execute#NodeKind#(range);
         return true;
     }
