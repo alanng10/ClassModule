@@ -21,4 +21,20 @@ public class NodeGen : ClassNodeGen
         a = this.AddClear().Add(this.OutputFoldPath).Add(this.TextInfra.PathCombine).Add(fileName).AddResult();
         return a;
     }
+
+    protected override bool AddField(Field field)
+    {
+        this.AddIndent(1);
+
+        String className;
+        className = this.GetGenFieldClassName(field.Class);
+
+        this
+            .AddS("field").AddS(" ").AddS("prusate").AddS(" ")
+            .Add(className).AddS(" ").Add(field.Name).AddS(" ")
+            .AddS("{ get { return data; } set { data : value; } }")
+            .AddLine()
+            ;
+        return true;
+    }
 }
