@@ -33,4 +33,14 @@ public class CreateSetStateGen : ClassCreateSetStateGen
 
         return true;
     }
+
+    protected override String OutputFilePath(String kind)
+    {
+        String fileName;
+        fileName = this.AddClear().AddS("Z_CreateSetState_").Add(kind).AddS(".cl").AddResult();
+
+        String filePath;
+        filePath = this.AddClear().Add(this.OutputFoldPath).Add(this.TextInfra.PathCombine).Add(fileName).AddResult();
+        return filePath;
+    }
 }
