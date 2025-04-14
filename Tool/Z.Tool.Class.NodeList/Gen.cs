@@ -25,4 +25,12 @@ public class Gen : ClassGen
         a.Init();
         return a;
     }
+
+    protected override ClassCreateSetStateGen CreateCreateSetStateGen()
+    {
+        ClassCreateSetStateGen a;
+        a = new CreateSetStateGen();
+        a.Init();
+        return a;
+    }
 }
