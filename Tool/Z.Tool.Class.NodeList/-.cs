@@ -8,6 +8,7 @@ global using ClassGen = Z.Tool.NodeListGen.Gen;
 global using ClassNodeGen = Z.Tool.NodeListGen.NodeGen;
 global using ClassNewStateGen = Z.Tool.NodeListGen.NewStateGen;
 global using ClassNodeStateGen = Z.Tool.NodeListGen.NodeStateGen;
+global using ClassCreateSetStateGen = Z.Tool.NodeListGen.CreateSetStateGen;
 global using Class = Z.Tool.NodeListGen.Class;
 global using Field = Z.Tool.NodeListGen.Field;
 global using STAThreadAttribute = System.STAThreadAttribute;
