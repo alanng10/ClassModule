@@ -1,0 +1,4 @@
+        inf (~(cast #DeriveDeclareClassName#(#VarName#) = null))
+        {
+            this.Execute#DeriveClassName#(cast #DeriveDeclareClassName#(#VarName#));
+        }
