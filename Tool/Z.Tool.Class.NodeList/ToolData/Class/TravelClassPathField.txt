@@ -1,0 +1,5 @@
+        inf (this.FieldEqual("#FieldName#"))
+        {
+            this.Execute#FieldClassName#(#VarName#.#FieldName#);
+            return true;
+        }
