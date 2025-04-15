@@ -1,4 +1,0 @@
-class PathTravel : Travel
-{
-#StringFieldList#
-#NodeList#}

@@ -1,4 +1,4 @@
-class Travel : Any
+class Travel : TextAdd
 {
 #NodeList#    maide precate Bool ExecuteNode(Node node)
     {
