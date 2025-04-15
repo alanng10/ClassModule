@@ -10,16 +10,8 @@ public class TravelGen : ClassTravelGen
         return true;
     }
 
-    protected virtual String GetPathName(String name)
+    protected override String GetPathName(String name)
     {
         return this.AddClear().AddS("ToolData/Class/Travel").Add(name).AddResult();
-    }
-
-    protected override String GetPath(String name)
-    {
-        String k;
-        k = this.AddClear().Add(name).AddS(".txt").AddResult();
-
-        return this.GetPathName(k);
     }
 }
