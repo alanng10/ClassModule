@@ -1,0 +1,14 @@
+
+        var Int k;
+        k : this.Index;
+
+        var Array array;
+        array : #VarName#.Value;
+        inf (~this.InfraInfra.ValidIndex(array.Count, k))
+        {
+            return true;
+        }
+
+        var #ItemDeclareClassName# item;
+        item : cast #ItemDeclareClassName#(array.Get(k));
+        this.Execute#ItemClassName#(item);
