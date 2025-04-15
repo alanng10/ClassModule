@@ -12,6 +12,7 @@ global using ClassNewStateGen = Z.Tool.NodeListGen.NewStateGen;
 global using ClassNodeStateGen = Z.Tool.NodeListGen.NodeStateGen;
 global using ClassCreateSetStateGen = Z.Tool.NodeListGen.CreateSetStateGen;
 global using ClassTravelGen = Z.Tool.NodeListGen.TravelGen;
+global using ClassTravelPathGen = Z.Tool.NodeListGen.TravelClassPathGen;
 global using Class = Z.Tool.NodeListGen.Class;
 global using Field = Z.Tool.NodeListGen.Field;
 global using SourceGen = Z.Infra.ListSourceGen.Gen;

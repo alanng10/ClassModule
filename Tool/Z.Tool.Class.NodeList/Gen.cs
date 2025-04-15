@@ -50,6 +50,14 @@ public class Gen : ClassGen
         return a;
     }
 
+    protected override ClassTravelPathGen CreateTravelClassPathGen()
+    {
+        ClassTravelPathGen a;
+        a = new TravelPathGen();
+        a.Init();
+        return a;
+    }
+
     protected override bool ExecuteNodeKindList()
     {
         NodeKindListGen nodeKindListGen;
