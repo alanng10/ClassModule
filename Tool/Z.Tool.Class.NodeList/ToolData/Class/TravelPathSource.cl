@@ -83,19 +83,19 @@ class PathTravel : Travel
         return true;
     }
 
-    protected virtual bool FieldNameIndexSet()
+    maide precate Bool FieldNameIndexSet()
     {
-        this.TextA.Data = this.Path.Data;
-        this.TextA.Range.Index = this.Path.Range.Index + this.Field.Index;
-        this.TextA.Range.Count = this.Field.Count;
+        this.TextA.Data : this.Path.Data;
+        this.TextA.Range.Index : this.Path.Range.Index + this.Field.Index;
+        this.TextA.Range.Count : this.Field.Count;
 
-        long ka;
-        ka = this.BraceRightLiteIndex(this.TextA);
+        var Int ka;
+        ka : this.BraceRightLiteIndex(this.TextA);
 
-        bool b;
-        b = (ka == -1);
+        var Bool b;
+        b : (ka = null);
 
-        if (!b)
+        inf (~b)
         {
             long braceRightLite;
             braceRightLite = ka;
@@ -106,7 +106,7 @@ class PathTravel : Travel
             this.FieldName.Count = braceRightLite;
         }
 
-        if (b)
+        inf (b)
         {
             this.FieldIndex = -1;
 
