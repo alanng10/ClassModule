@@ -11,16 +11,16 @@ class PathTravel : Travel
         return true;
     }
 
-    public virtual NodeNode Result { get; set; }
-    public virtual Text Path { get; set; }
-    public virtual long ThisIndex { get; set; }
-    protected virtual InfraInfra InfraInfra { get; set; }
-    protected virtual ClassInfra ClassInfra { get; set; }
-    protected virtual InfraRange Field { get; set; }
-    protected virtual InfraRange FieldName { get; set; }
-    protected virtual long FieldIndex { get; set; }
-    protected virtual String TextBraceRightLite { get; set; }
-    protected virtual String TextBraceRightRite { get; set; }
+    field prusate Node Result { get { return data; } set { data : value; } }
+    field prusate Text Path { get { return data; } set { data : value; } }
+    field prusate Int ThisIndex { get { return data; } set { data : value; } }
+    field precate InfraInfra InfraInfra { get { return data; } set { data : value; } }
+    field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
+    field precate InfraRange Field { get { return data; } set { data : value; } }
+    field precate InfraRange FieldName { get { return data; } set { data : value; } }
+    field precate Int FieldIndex { get { return data; } set { data : value; } }
+    field precate String TextBraceRightLite { get { return data; } set { data : value; } }
+    field precate String TextBraceRightRite { get { return data; } set { data : value; } }
 
     protected override bool ExecuteNode(NodeNode node)
     {
