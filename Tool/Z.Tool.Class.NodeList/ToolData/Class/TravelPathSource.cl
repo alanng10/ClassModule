@@ -1,40 +1,15 @@
-class PathTravel : Travel
+namespace Saber.Console;
+
+public partial class PathTravel : Travel
 {
-    maide prusate Bool Init()
+    public override bool Init()
     {
         base.Init();
         this.InfraInfra = InfraInfra.This;
-        this.TextInfra = TextInfra.This;
+        this.ClassInfra = ClassInfra.This;
 
-        this.StringComp = StringComp.This;
-        this.TextStringValue = TextStringValue.This;
-
-        this.IntParse = new IntParse();
-        this.IntParse.Init();
-
-        this.TextA = this.CreateText();
-        this.TextB = this.CreateText();
-
-        this.StringDataA = new StringData();
-        this.StringDataA.Init();
-        this.StringDataB = new StringData();
-        this.StringDataB.Init();
-
-        LessInt charLess;
-        charLess = new LessInt();
-        charLess.Init();
-        TextForm textForm;
-        textForm = new TextForm();
-        textForm.Init();
-        this.TextLess = new TextLess();
-        this.TextLess.CharLess = charLess;
-        this.TextLess.LiteForm = textForm;
-        this.TextLess.RiteForm = textForm;
-        this.TextLess.Init();
-
-        this.Dot = this.TextInfra.TextCreateStringData(this.S("."), null);
-        this.LeftSquare = this.TextInfra.TextCreateStringData(this.S("["), null);
-        this.RightSquare = this.TextInfra.TextCreateStringData(this.S("]"), null);
+        this.TextBraceRightLite = this.S("[");
+        this.TextBraceRightRite = this.S("]");
 
         this.InitString();
         return true;
@@ -42,54 +17,35 @@ class PathTravel : Travel
 
     public virtual NodeNode Result { get; set; }
     public virtual Text Path { get; set; }
+    public virtual long ThisIndex { get; set; }
     protected virtual InfraInfra InfraInfra { get; set; }
-    protected virtual TextInfra TextInfra { get; set; }
-    protected virtual StringComp StringComp { get; set; }
-    protected virtual TextStringValue TextStringValue { get; set; }
+    protected virtual ClassInfra ClassInfra { get; set; }
     protected virtual InfraRange Field { get; set; }
     protected virtual InfraRange FieldName { get; set; }
-    protected virtual long Index { get; set; }
-    protected virtual long CurrentIndex { get; set; }
-    protected virtual IntParse IntParse { get; set; }
-    protected virtual Text TextA { get; set; }
-    protected virtual Text TextB { get; set; }
-    protected virtual StringData StringDataA { get; set; }
-    protected virtual StringData StringDataB { get; set; }
-    protected virtual TextLess TextLess { get; set; }
-    protected virtual Text Dot { get; set; }
-    protected virtual Text LeftSquare { get; set; }
-    protected virtual Text RightSquare { get; set; }
-
-    private Text CreateText()
-    {
-        Text a;
-        a = new Text();
-        a.Init();
-        a.Range = new InfraRange();
-        a.Range.Init();
-        return a;
-    }
+    protected virtual long FieldIndex { get; set; }
+    protected virtual String TextBraceRightLite { get; set; }
+    protected virtual String TextBraceRightRite { get; set; }
 
     protected override bool ExecuteNode(NodeNode node)
     {
-        if (!(this.CurrentIndex < this.Path.Range.Count))
+        if (!(this.ThisIndex < this.Path.Range.Count))
         {
             this.Result = node;
             return true;
         }
 
-        this.SetField();
+        this.FieldSet();
 
-        this.SetFieldNameIndex();
+        this.FieldNameIndexSet();
 
-        this.CurrentIndex = this.CurrentIndex + this.FieldName.Count + 1;
+        this.ThisIndex = this.ThisIndex + this.Field.Count + this.StringCount(this.ClassInfra.TextDot);
         return true;
     }
 
-    protected virtual bool SetField()
+    protected virtual bool FieldSet()
     {
         long start;
-        start = this.CurrentIndex;
+        start = this.ThisIndex;
 
         long end;
         end = 0;
@@ -109,7 +65,7 @@ class PathTravel : Travel
         range.Count = kb - start;
 
         long u;
-        u = this.TextInfra.Index(path, this.Dot, this.TextLess);
+        u = this.TextIndex(path, this.TA(this.ClassInfra.TextDot));
 
         bool b;
         b = (u < 0);
@@ -135,87 +91,60 @@ class PathTravel : Travel
         return true;
     }
 
-    protected virtual bool SetFieldNameIndex()
+    protected virtual bool FieldNameIndexSet()
     {
-        Text path;
-        path = this.Path;
-        InfraRange range;
-        range = path.Range;
+        this.TextA.Data = this.Path.Data;
+        this.TextA.Range.Index = this.Path.Range.Index + this.Field.Index;
+        this.TextA.Range.Count = this.Field.Count;
 
-        InfraRange field;
-        field = this.Field;
-
-        InfraRange fieldName;
-        fieldName = this.FieldName;
-
-        Text textA;
-        textA = this.TextA;
-        textA.Data = path.Data;
-        InfraRange rangeA;
-        rangeA = textA.Range;
-        rangeA.Index = range.Index + field.Index;
-        rangeA.Count = field.Count;
-
-        long u;
-        u = this.LeftSquareIndex(textA);
+        long ka;
+        ka = this.BraceRightLiteIndex(this.TextA);
 
         bool b;
-        b = (u < 0);
+        b = (ka < 0);
 
         if (!b)
         {
-            long leftSquareIndex;
-            leftSquareIndex = u;
+            long braceRightLite;
+            braceRightLite = ka;
 
-            this.Index = this.GetIndex(this.Field, leftSquareIndex);
+            this.FieldIndex = this.FieldIndexGet(this.Field, braceRightLite);
 
-            fieldName.Index = field.Index;
-            fieldName.Count = leftSquareIndex;
+            this.FieldName.Index = this.Field.Index;
+            this.FieldName.Count = braceRightLite;
         }
 
         if (b)
         {
-            this.Index = -1;
+            this.FieldIndex = -1;
 
-            fieldName.Index = field.Index;
-            fieldName.Count = field.Count;
+            this.FieldName.Index = this.Field.Index;
+            this.FieldName.Count = this.Field.Count;
         }
         return true;
     }
 
-    protected virtual long LeftSquareIndex(Text text)
+    protected virtual long BraceRightLiteIndex(Text text)
     {
         long a;
-        a = this.TextInfra.Index(text, this.LeftSquare, this.TextLess);
+        a = this.TextIndex(text, this.TB(this.TextBraceRightLite));
         return a;
     }
 
-    protected virtual long GetIndex(InfraRange varField, long leftSquareIndex)
+    protected virtual long FieldIndexGet(InfraRange varField, long braceRightLite)
     {
         if (varField.Count < 1)
         {
             return -1;
         }
 
-        Text path;
-        path = this.Path;
+        this.TextA.Data = this.Path.Data;
 
-        InfraRange range;
-        range = path.Range;
-
-        Text textA;
-        textA = this.TextA;
-
-        textA.Data = path.Data;
-        
-        InfraRange rangeA;
-        rangeA = textA.Range;
-
-        rangeA.Index = range.Index + varField.Index;
-        rangeA.Count = varField.Count;
+        this.TextA.Range.Index = this.Path.Range.Index + varField.Index;
+        this.TextA.Range.Count = varField.Count;
 
         bool b;
-        b = this.TextInfra.End(textA, this.RightSquare, this.TextLess);
+        b = this.TextEnd(this.TextA, this.TB(this.TextBraceRightRite));
 
         if (!b)
         {
@@ -223,19 +152,19 @@ class PathTravel : Travel
         }
 
         long start;
-        start = leftSquareIndex + this.LeftSquare.Range.Count;
+        start = braceRightLite + this.StringCount(this.TextBraceRightLite);
 
         long end;
-        end = varField.Count - this.RightSquare.Range.Count;
+        end = varField.Count - this.StringCount(this.TextBraceRightRite);
 
         long count;
         count = end - start;
 
-        rangeA.Index = rangeA.Index + start;
-        rangeA.Count = count;
+        this.TextA.Range.Index = this.TextA.Range.Index + start;
+        this.TextA.Range.Count = count;
 
         long n;
-        n = this.IntParse.Execute(textA, 10, null);
+        n = this.IntParse.Execute(this.TextA, 10, null);
 
         if (n == -1)
         {
@@ -254,45 +183,14 @@ class PathTravel : Travel
 
     protected virtual bool FieldEqual(String name)
     {
-        Text path;
-        path = this.Path;
+        this.TextA.Data = this.Path.Data;
 
-        Text textA;
-        Text textB;
-        textA = this.TextA;
-        textB = this.TextB;
-
-        InfraRange fieldName;
-        fieldName = this.FieldName;
-
-        textA.Data = path.Data;
-        
-        InfraRange ka;
-        ka = textA.Range;
-        ka.Index = path.Range.Index + fieldName.Index;
-        ka.Count = fieldName.Count;
-
-        this.TextStringGet(textB, this.StringDataB, name);
+        this.TextA.Range.Index = this.Path.Range.Index + this.FieldName.Index;
+        this.TextA.Range.Count = this.FieldName.Count;
 
         bool a;
-        a = this.TextInfra.Same(textA, textB, this.TextLess);
+        a = this.TextSame(this.TextA, this.TB(name));
         return a;
     }
 
-    protected virtual bool TextStringGet(Text text, StringData data, String o)
-    {
-        data.ValueString = o;
-
-        text.Data = data;
-        text.Range.Index = 0;
-        text.Range.Count = this.StringComp.Count(o);
-        return true;
-    }
-
-    private String S(string o)
-    {
-        return this.TextStringValue.Execute(o);
-    }
-
-#StringFieldList#
 #NodeList#}

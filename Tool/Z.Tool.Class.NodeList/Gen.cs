@@ -50,7 +50,7 @@ public class Gen : ClassGen
         return a;
     }
 
-    protected override ClassTravelPathGen CreateTravelClassPathGen()
+    protected override ClassTravelPathGen CreateTravelPathGen()
     {
         ClassTravelPathGen a;
         a = new TravelPathGen();
