@@ -38,19 +38,15 @@ class PathTravel : Travel
         return true;
     }
 
-    protected virtual bool FieldSet()
+    maide precate Bool FieldSet()
     {
-        long start;
-        start = this.ThisIndex;
+        var Int start;
+        start : this.ThisIndex;
 
-        long end;
-        end = 0;
-
-        Text path;
-        path = this.Path;
+        var Int end;
 
         InfraRange range;
-        range = path.Range;
+        range = this.Path.Range;
 
         long ka;
         long kb;
@@ -61,7 +57,7 @@ class PathTravel : Travel
         range.Count = kb - start;
 
         long u;
-        u = this.TextIndex(path, this.TA(this.ClassInfra.TextDot));
+        u = this.TextIndex(this.Path, this.TA(this.ClassInfra.TextDot));
 
         bool b;
         b = (u < 0);
