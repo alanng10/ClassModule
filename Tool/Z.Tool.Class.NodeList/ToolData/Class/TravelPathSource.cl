@@ -22,11 +22,11 @@ class PathTravel : Travel
     field precate String TextBraceRightLite { get { return data; } set { data : value; } }
     field precate String TextBraceRightRite { get { return data; } set { data : value; } }
 
-    protected override bool ExecuteNode(NodeNode node)
+    maide precate Bool ExecuteNode(var Node node)
     {
-        if (!(this.ThisIndex < this.Path.Range.Count))
+        inf (~(this.ThisIndex < this.Path.Range.Count))
         {
-            this.Result = node;
+            this.Result : node;
             return true;
         }
 
@@ -34,7 +34,7 @@ class PathTravel : Travel
 
         this.FieldNameIndexSet();
 
-        this.ThisIndex = this.ThisIndex + this.Field.Count + this.StringCount(this.ClassInfra.TextDot);
+        this.ThisIndex : this.ThisIndex + this.Field.Count + this.StringCount(this.ClassInfra.TextDot);
         return true;
     }
 
