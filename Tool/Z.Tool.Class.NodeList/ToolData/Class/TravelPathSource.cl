@@ -56,30 +56,30 @@ class PathTravel : Travel
         range.Index : ka + start;
         range.Count : kb - start;
 
-        long kaa;
-        kaa = this.TextIndex(this.Path, this.TA(this.ClassInfra.TextDot));
+        var Int kaa;
+        kaa : this.TextIndex(this.Path, this.TA(this.ClassInfra.TextDot));
 
-        bool b;
-        b = (kaa == -1);
-        if (b)
+        var Bool b;
+        b : (kaa = null);
+        inf (b)
         {
-            end = kb;
+            end : kb;
         }
-        if (!b)
+        inf (~b)
         {
-            end = start + kaa;
+            end : start + kaa;
         }
 
-        long count;
-        count = end - start;
+        var Int count;
+        count : end - start;
 
-        range.Index = ka;
-        range.Count = kb;
+        range.Index : ka;
+        range.Count : kb;
 
-        InfraRange a;
-        a = this.Field;
-        a.Index = start;
-        a.Count = count;
+        var InfraRange a;
+        a : this.Field;
+        a.Index : start;
+        a.Count : count;
         return true;
     }
 
