@@ -45,29 +45,29 @@ class PathTravel : Travel
 
         var Int end;
 
-        InfraRange range;
-        range = this.Path.Range;
+        var InfraRange range;
+        range : this.Path.Range;
 
-        long ka;
-        long kb;
-        ka = range.Index;
-        kb = range.Count;
+        var Int ka;
+        var Int kb;
+        ka : range.Index;
+        kb : range.Count;
 
-        range.Index = ka + start;
-        range.Count = kb - start;
+        range.Index : ka + start;
+        range.Count : kb - start;
 
-        long u;
-        u = this.TextIndex(this.Path, this.TA(this.ClassInfra.TextDot));
+        long kaa;
+        kaa = this.TextIndex(this.Path, this.TA(this.ClassInfra.TextDot));
 
         bool b;
-        b = (u < 0);
+        b = (kaa == -1);
         if (b)
         {
             end = kb;
         }
         if (!b)
         {
-            end = start + u;
+            end = start + kaa;
         }
 
         long count;
@@ -93,7 +93,7 @@ class PathTravel : Travel
         ka = this.BraceRightLiteIndex(this.TextA);
 
         bool b;
-        b = (ka < 0);
+        b = (ka == -1);
 
         if (!b)
         {
