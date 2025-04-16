@@ -71,7 +71,7 @@ class PathTravel : Travel
         }
 
         var Int count;
-        count : end - start;
+        count : this.ClassInfra.Count(start, end);
 
         range.Index : ka;
         range.Count : kb;
