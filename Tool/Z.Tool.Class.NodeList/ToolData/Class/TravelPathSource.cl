@@ -1,17 +1,13 @@
-namespace Saber.Console;
-
-public partial class PathTravel : Travel
+class PathTravel : Travel
 {
-    public override bool Init()
+    maide prusate Bool Init()
     {
         base.Init();
-        this.InfraInfra = InfraInfra.This;
-        this.ClassInfra = ClassInfra.This;
+        this.InfraInfra : share InfraInfra;
+        this.ClassInfra : share ClassInfra;
 
-        this.TextBraceRightLite = this.S("[");
-        this.TextBraceRightRite = this.S("]");
-
-        this.InitString();
+        this.TextBraceRightLite : "[";
+        this.TextBraceRightRite : "]";
         return true;
     }
 
