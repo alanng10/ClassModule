@@ -11,4 +11,14 @@ public class TravelPathGen : ClassTravelPathGen
         this.PathSource = this.GetPathName(this.S("PathSource.cl"));
         return true;
     }
+
+    protected override String InitStringMaide()
+    {
+        return this.TextInfra.Zero;
+    }
+
+    protected override String StringFieldList()
+    {
+        return this.TextInfra.Zero;
+    }
 }
