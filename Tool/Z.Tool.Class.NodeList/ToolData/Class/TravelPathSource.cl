@@ -97,21 +97,21 @@ class PathTravel : Travel
 
         inf (~b)
         {
-            long braceRightLite;
-            braceRightLite = ka;
+            var Int braceRightLite;
+            braceRightLite : ka;
 
-            this.FieldIndex = this.FieldIndexGet(this.Field, braceRightLite);
+            this.FieldIndex : this.FieldIndexGet(this.Field, braceRightLite);
 
-            this.FieldName.Index = this.Field.Index;
-            this.FieldName.Count = braceRightLite;
+            this.FieldName.Index : this.Field.Index;
+            this.FieldName.Count : braceRightLite;
         }
 
         inf (b)
         {
-            this.FieldIndex = -1;
+            this.FieldIndex : null;
 
-            this.FieldName.Index = this.Field.Index;
-            this.FieldName.Count = this.Field.Count;
+            this.FieldName.Index : this.Field.Index;
+            this.FieldName.Count : this.Field.Count;
         }
         return true;
     }
