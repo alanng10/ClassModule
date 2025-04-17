@@ -123,31 +123,31 @@ class PathTravel : Travel
         return a;
     }
 
-    protected virtual long FieldIndexGet(InfraRange varField, long braceRightLite)
+    maide precate Int FieldIndexGet(var InfraRange varField, var Int braceRightLite)
     {
-        if (varField.Count < 1)
+        inf (varField.Count < 1)
         {
-            return -1;
+            return null;
         }
 
-        this.TextA.Data = this.Path.Data;
+        this.TextA.Data : this.Path.Data;
 
-        this.TextA.Range.Index = this.Path.Range.Index + varField.Index;
-        this.TextA.Range.Count = varField.Count;
+        this.TextA.Range.Index : this.Path.Range.Index + varField.Index;
+        this.TextA.Range.Count : varField.Count;
 
-        bool b;
-        b = this.TextEnd(this.TextA, this.TB(this.TextBraceRightRite));
+        var Bool b;
+        b : this.TextEnd(this.TextA, this.TB(this.TextBraceRightRite));
 
-        if (!b)
+        inf (~b)
         {
-            return -1;
+            return null;
         }
 
-        long start;
-        start = braceRightLite + this.StringCount(this.TextBraceRightLite);
+        var Int start;
+        start : braceRightLite + this.StringCount(this.TextBraceRightLite);
 
-        long end;
-        end = varField.Count - this.StringCount(this.TextBraceRightRite);
+        var Int end;
+        end : varField.Count - this.StringCount(this.TextBraceRightRite);
 
         long count;
         count = end - start;
