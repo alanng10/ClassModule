@@ -149,22 +149,22 @@ class PathTravel : Travel
         var Int end;
         end : varField.Count - this.StringCount(this.TextBraceRightRite);
 
-        long count;
-        count = end - start;
+        var Int count;
+        count : this.ClassInfra.Count(start, end);
 
-        this.TextA.Range.Index = this.TextA.Range.Index + start;
-        this.TextA.Range.Count = count;
+        this.TextA.Range.Index : this.TextA.Range.Index + start;
+        this.TextA.Range.Count : count;
 
-        long n;
-        n = this.IntParse.Execute(this.TextA, 10, null);
+        var Int n;
+        n : this.IntParse.Execute(this.TextA, 10, null);
 
-        if (n == -1)
+        inf (n = null)
         {
-            return -1;
+            return null;
         }
 
-        long a;
-        a = n;
+        var Int a;
+        a : n;
         return a;
     }
 
