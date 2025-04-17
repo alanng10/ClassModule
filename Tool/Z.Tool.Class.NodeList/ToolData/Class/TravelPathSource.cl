@@ -116,10 +116,10 @@ class PathTravel : Travel
         return true;
     }
 
-    protected virtual long BraceRightLiteIndex(Text text)
+    maide precate Int BraceRightLiteIndex(var Text text)
     {
-        long a;
-        a = this.TextIndex(text, this.TB(this.TextBraceRightLite));
+        var Int a;
+        a : this.TextIndex(text, this.TB(this.TextBraceRightLite));
         return a;
     }
 
