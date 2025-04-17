@@ -168,20 +168,20 @@ class PathTravel : Travel
         return a;
     }
 
-    protected virtual bool HasResult()
+    maide precate Bool HasResult()
     {
-        return !(this.Result == null);
+        return ~(this.Result = null);
     }
 
-    protected virtual bool FieldEqual(String name)
+    maide precate Bool FieldEqual(var String name)
     {
-        this.TextA.Data = this.Path.Data;
+        this.TextA.Data : this.Path.Data;
 
-        this.TextA.Range.Index = this.Path.Range.Index + this.FieldName.Index;
-        this.TextA.Range.Count = this.FieldName.Count;
+        this.TextA.Range.Index : this.Path.Range.Index + this.FieldName.Index;
+        this.TextA.Range.Count : this.FieldName.Count;
 
-        bool a;
-        a = this.TextSame(this.TextA, this.TB(name));
+        var Bool a;
+        a : this.TextSame(this.TextA, this.TB(name));
         return a;
     }
 
