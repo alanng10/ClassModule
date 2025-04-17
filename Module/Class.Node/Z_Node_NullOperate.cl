@@ -1,0 +1,3 @@
+class NullOperate : Operate
+{
+}

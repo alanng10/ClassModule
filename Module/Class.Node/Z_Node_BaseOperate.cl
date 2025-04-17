@@ -1,0 +1,3 @@
+class BaseOperate : Operate
+{
+}

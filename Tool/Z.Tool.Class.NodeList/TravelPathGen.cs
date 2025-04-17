@@ -21,4 +21,9 @@ public class TravelPathGen : ClassTravelPathGen
     {
         return this.TextInfra.Zero;
     }
+
+    protected override String GetPathName(String name)
+    {
+        return this.AddClear().AddS("ToolData/Class/Travel").Add(name).AddResult();
+    }
 }

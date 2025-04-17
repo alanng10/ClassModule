@@ -1,0 +1,11 @@
+class PrecateCountNodeState : NodeState
+{
+    maide prusate Bool Execute()
+    {
+        var Range range;
+        range : cast Range(this.Arg);
+
+        this.Result : this.Create.ExecutePrecateCount(range);
+        return true;
+    }
+}

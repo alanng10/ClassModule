@@ -1,0 +1,3 @@
+class ThisOperate : Operate
+{
+}
