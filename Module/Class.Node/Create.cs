@@ -38,52 +38,6 @@ public class Create : ClassCreate
         return true;
     }
 
-    public virtual Array Source { get; set; }
-    public virtual Array Code { get; set; }
-    public virtual String Task { get; set; }
-    public virtual Result Result { get; set; }
-    public virtual Source SourceItem { get; set; }
-    public virtual CreateArg Arg { get; set; }
-    public virtual CreateOperate Operate { get; set; }
-    public virtual CountCreateOperate CountOperate { get; set; }
-    public virtual KindCreateOperate KindOperate { get; set; }
-    public virtual SetCreateOperate SetOperate { get; set; }
-    public virtual CreateSetArg SetArg { get; set; }
-    protected virtual InfraInfra InfraInfra { get; set; }
-    protected virtual ListInfra ListInfra { get; set; }
-    protected virtual ClassInfra ClassInfra { get; set; }
-    protected virtual IndexList Index { get; set; }
-    protected virtual LimitList Limit { get; set; }
-    protected virtual ErrorKindList ErrorKind { get; set; }
-    protected virtual NodeKindList NodeKind { get; set; }
-    protected virtual Array SourceText { get; set; }
-    protected virtual Code CodeItem { get; set; }
-    protected virtual Table NodeStateTable { get; set; }
-    protected virtual NodeState NodeState { get; set; }
-    protected virtual RangeState PartItemRangeState { get; set; }
-    protected virtual RangeState StateItemRangeState { get; set; }
-    protected virtual RangeState ParamItemRangeState { get; set; }
-    protected virtual RangeState ArgueItemRangeState { get; set; }
-    protected virtual NodeState PartItemNodeState { get; set; }
-    protected virtual NodeState StateItemNodeState { get; set; }
-    protected virtual NodeState ParamItemNodeState { get; set; }
-    protected virtual NodeState ArgueItemNodeState { get; set; }
-    protected virtual NameValid NameValid { get; set; }
-    protected virtual StringWrite StringWrite { get; set; }
-    protected virtual Range RangeA { get; set; }
-    protected virtual Range RangeB { get; set; }
-    protected virtual Range RangeC { get; set; }
-    protected virtual Range RangeD { get; set; }
-    protected virtual Token TokenA { get; set; }
-    protected virtual Token TokenB { get; set; }
-    protected virtual Token TokenC { get; set; }
-    protected virtual Token TokenD { get; set; }
-    protected virtual Token TokenE { get; set; }
-    protected virtual Token TokenF { get; set; }
-    protected virtual Token TokenG { get; set; }
-    protected virtual Token TokenH { get; set; }
-    protected virtual Token TokenI { get; set; }
-
     protected virtual NameValid CreateNameValid()
     {
         NameValid a;
@@ -162,6 +116,52 @@ public class Create : ClassCreate
         a.Range.Init();
         return a;
     }
+
+    public virtual Array Source { get; set; }
+    public virtual Array Code { get; set; }
+    public virtual String Task { get; set; }
+    public virtual Result Result { get; set; }
+    public virtual Source SourceItem { get; set; }
+    public virtual CreateArg Arg { get; set; }
+    public virtual CreateOperate Operate { get; set; }
+    public virtual CountCreateOperate CountOperate { get; set; }
+    public virtual KindCreateOperate KindOperate { get; set; }
+    public virtual SetCreateOperate SetOperate { get; set; }
+    public virtual CreateSetArg SetArg { get; set; }
+    protected virtual InfraInfra InfraInfra { get; set; }
+    protected virtual ListInfra ListInfra { get; set; }
+    protected virtual ClassInfra ClassInfra { get; set; }
+    protected virtual IndexList Index { get; set; }
+    protected virtual LimitList Limit { get; set; }
+    protected virtual ErrorKindList ErrorKind { get; set; }
+    protected virtual NodeKindList NodeKind { get; set; }
+    protected virtual Array SourceText { get; set; }
+    protected virtual Code CodeItem { get; set; }
+    protected virtual Table NodeStateTable { get; set; }
+    protected virtual NodeState NodeState { get; set; }
+    protected virtual RangeState PartItemRangeState { get; set; }
+    protected virtual RangeState StateItemRangeState { get; set; }
+    protected virtual RangeState ParamItemRangeState { get; set; }
+    protected virtual RangeState ArgueItemRangeState { get; set; }
+    protected virtual NodeState PartItemNodeState { get; set; }
+    protected virtual NodeState StateItemNodeState { get; set; }
+    protected virtual NodeState ParamItemNodeState { get; set; }
+    protected virtual NodeState ArgueItemNodeState { get; set; }
+    protected virtual NameValid NameValid { get; set; }
+    protected virtual StringWrite StringWrite { get; set; }
+    protected virtual Range RangeA { get; set; }
+    protected virtual Range RangeB { get; set; }
+    protected virtual Range RangeC { get; set; }
+    protected virtual Range RangeD { get; set; }
+    protected virtual Token TokenA { get; set; }
+    protected virtual Token TokenB { get; set; }
+    protected virtual Token TokenC { get; set; }
+    protected virtual Token TokenD { get; set; }
+    protected virtual Token TokenE { get; set; }
+    protected virtual Token TokenF { get; set; }
+    protected virtual Token TokenG { get; set; }
+    protected virtual Token TokenH { get; set; }
+    protected virtual Token TokenI { get; set; }
 
     protected virtual bool InitListItemState()
     {
