@@ -38,32 +38,6 @@ public class Create : ClassCreate
         return true;
     }
 
-    protected virtual NameValid CreateNameValid()
-    {
-        NameValid a;
-        a = new NameValid();
-        a.Init();
-        return a;
-    }
-
-    protected virtual StringWrite CreateStringWrite()
-    {
-        StringWrite a;
-        a = new StringWrite();
-        a.Init();
-        a.Arg = new StringWriteArg();
-        a.Arg.Init();
-        return a;
-    }
-
-    protected virtual TextIntParse CreateTextIntParse()
-    {
-        TextIntParse a;
-        a = new TextIntParse();
-        a.Init();
-        return a;
-    }
-
     protected virtual CreateCountOperate CreateCountOperate()
     {
         CreateCountOperate a;
@@ -96,6 +70,24 @@ public class Create : ClassCreate
         CreateSetArg a;
         a = new CreateSetArg();
         a.Init();
+        return a;
+    }
+
+    protected virtual NameValid CreateNameValid()
+    {
+        NameValid a;
+        a = new NameValid();
+        a.Init();
+        return a;
+    }
+
+    protected virtual StringWrite CreateStringWrite()
+    {
+        StringWrite a;
+        a = new StringWrite();
+        a.Init();
+        a.Arg = new StringWriteArg();
+        a.Arg.Init();
         return a;
     }
 
