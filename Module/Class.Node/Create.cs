@@ -14,10 +14,10 @@ public class Create : ClassCreate
         this.ErrorKind = ErrorKindList.This;
         this.NodeKind = NodeKindList.This;
 
-        this.CountOperate = this.CreateCountCreateOperate();
-        this.KindOperate = this.CreateKindCreateOperate();
-        this.SetOperate = this.CreateSetCreateOperate();
-        this.SetArg = this.CreateCreateSetArg();
+        this.CountOperate = this.CreateCountOperate();
+        this.KindOperate = this.CreateKindOperate();
+        this.SetOperate = this.CreateSetOperate();
+        this.SetArg = this.CreateSetArg();
 
         this.NameValid = this.CreateNameValid();
         this.StringWrite = this.CreateStringWrite();
