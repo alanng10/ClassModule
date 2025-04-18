@@ -6,7 +6,6 @@ class Create : ClassCreate
         this.InfraInfra : share InfraInfra;
         this.ListInfra : share ListInfra;
         this.ClassInfra : share ClassInfra;
-
         this.Index : share IndexList;
         this.Limit : share LimitList;
         this.ErrorKind : share ErrorKindList;
