@@ -5,7 +5,7 @@ class PronateCountCreateSetState : CreateSetState
         var CreateSetStateArg arg;
         arg : cast CreateSetStateArg(this.Arg);
         var CreateSetArg k;
-        k : arg.SetArg;
+        k : arg.Arg;
 
         var PronateCount node;
         node : cast PronateCount(arg.Node);

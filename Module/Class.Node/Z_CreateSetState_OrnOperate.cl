@@ -5,7 +5,7 @@ class OrnOperateCreateSetState : CreateSetState
         var CreateSetStateArg arg;
         arg : cast CreateSetStateArg(this.Arg);
         var CreateSetArg k;
-        k : arg.SetArg;
+        k : arg.Arg;
 
         var OrnOperate node;
         node : cast OrnOperate(arg.Node);

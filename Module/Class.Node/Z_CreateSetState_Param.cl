@@ -5,7 +5,7 @@ class ParamCreateSetState : CreateSetState
         var CreateSetStateArg arg;
         arg : cast CreateSetStateArg(this.Arg);
         var CreateSetArg k;
-        k : arg.SetArg;
+        k : arg.Arg;
 
         var Param node;
         node : cast Param(arg.Node);

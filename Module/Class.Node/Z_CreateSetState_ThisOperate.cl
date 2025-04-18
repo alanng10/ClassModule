@@ -5,7 +5,7 @@ class ThisOperateCreateSetState : CreateSetState
         var CreateSetStateArg arg;
         arg : cast CreateSetStateArg(this.Arg);
         var CreateSetArg k;
-        k : arg.SetArg;
+        k : arg.Arg;
 
         var ThisOperate node;
         node : cast ThisOperate(arg.Node);

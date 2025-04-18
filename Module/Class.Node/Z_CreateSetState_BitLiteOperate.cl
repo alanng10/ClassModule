@@ -5,7 +5,7 @@ class BitLiteOperateCreateSetState : CreateSetState
         var CreateSetStateArg arg;
         arg : cast CreateSetStateArg(this.Arg);
         var CreateSetArg k;
-        k : arg.SetArg;
+        k : arg.Arg;
 
         var BitLiteOperate node;
         node : cast BitLiteOperate(arg.Node);

@@ -5,7 +5,7 @@ class MaideNameCreateSetState : CreateSetState
         var CreateSetStateArg arg;
         arg : cast CreateSetStateArg(this.Arg);
         var CreateSetArg k;
-        k : arg.SetArg;
+        k : arg.Arg;
 
         var MaideName node;
         node : cast MaideName(arg.Node);

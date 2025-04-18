@@ -5,7 +5,7 @@ class SignLessOperateCreateSetState : CreateSetState
         var CreateSetStateArg arg;
         arg : cast CreateSetStateArg(this.Arg);
         var CreateSetArg k;
-        k : arg.SetArg;
+        k : arg.Arg;
 
         var SignLessOperate node;
         node : cast SignLessOperate(arg.Node);

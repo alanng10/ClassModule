@@ -5,7 +5,7 @@ class ValueCreateSetState : CreateSetState
         var CreateSetStateArg arg;
         arg : cast CreateSetStateArg(this.Arg);
         var CreateSetArg k;
-        k : arg.SetArg;
+        k : arg.Arg;
 
         var Value node;
         node : cast Value(arg.Node);

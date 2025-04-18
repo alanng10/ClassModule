@@ -5,7 +5,7 @@ class SetMarkCreateSetState : CreateSetState
         var CreateSetStateArg arg;
         arg : cast CreateSetStateArg(this.Arg);
         var CreateSetArg k;
-        k : arg.SetArg;
+        k : arg.Arg;
 
         var SetMark node;
         node : cast SetMark(arg.Node);
