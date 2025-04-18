@@ -1,0 +1,3 @@
+class Create : ClassCreate
+{
+}
