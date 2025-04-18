@@ -119,34 +119,34 @@ public class Create : ClassCreate
         return a;
     }
 
-    protected virtual CountCreateOperate CreateCountCreateOperate()
+    protected virtual CreateCountOperate CreateCountOperate()
     {
-        CountCreateOperate a;
-        a = new CountCreateOperate();
+        CreateCountOperate a;
+        a = new CreateCountOperate();
         a.Create = this;
         a.Init();
         return a;
     }
 
-    protected virtual KindCreateOperate CreateKindCreateOperate()
+    protected virtual CreateKindOperate CreateKindOperate()
     {
-        KindCreateOperate a;
-        a = new KindCreateOperate();
+        CreateKindOperate a;
+        a = new CreateKindOperate();
         a.Create = this;
         a.Init();
         return a;
     }
 
-    protected virtual SetCreateOperate CreateSetCreateOperate()
+    protected virtual CreateSetOperate CreateSetOperate()
     {
-        SetCreateOperate a;
-        a = new SetCreateOperate();
+        CreateSetOperate a;
+        a = new CreateSetOperate();
         a.Create = this;
         a.Init();
         return a;
     }
 
-    protected virtual CreateSetArg CreateCreateSetArg()
+    protected virtual CreateSetArg CreateSetArg()
     {
         CreateSetArg a;
         a = new CreateSetArg();
