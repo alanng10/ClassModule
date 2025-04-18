@@ -16,5 +16,24 @@ class Create : ClassCreate
         this.KindOperate : this.CreateKindOperate();
         this.SetOperate : this.CreateSetOperate();
         this.SetArg : this.CreateSetArg();
+        this.NameValid : this.CreateNameValid();
+        this.StringWrite : this.CreateStringWrite();
+        this.RangeA : this.CreateClassRange();
+        this.RangeB : this.CreateClassRange();
+        this.RangeC : this.CreateClassRange();
+        this.RangeD : this.CreateClassRange();
+        this.TokenA : this.CreateToken();
+        this.TokenB : this.CreateToken();
+        this.TokenC : this.CreateToken();
+        this.TokenD : this.CreateToken();
+        this.TokenE : this.CreateToken();
+        this.TokenF : this.CreateToken();
+        this.TokenG : this.CreateToken();
+        this.TokenH : this.CreateToken();
+        this.TokenI : this.CreateToken();
+
+        this.InitListItemState();
+        this.InitNodeState();
+        return true;
     }
 }
