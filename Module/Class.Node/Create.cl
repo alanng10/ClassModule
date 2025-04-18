@@ -63,4 +63,20 @@ class Create : ClassCreate
         a.Init();
         return a;
     }
+
+    maide precate CreateSetArg CreateSetArg()
+    {
+        var CreateSetArg a;
+        a : new CreateSetArg;
+        a.Init();
+        return a;
+    }
+
+    maide precate NameValid CreateNameValid()
+    {
+        var NameValid a;
+        a : new NameValid;
+        a.Init();
+        return a;
+    }
 }
