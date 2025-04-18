@@ -620,9 +620,9 @@ public class Create : ClassCreate
         i = 0;
         while (i < count)
         {
-            this.CodeItem = (Code)this.Code.GetAt(i);
+            this.CodeItem = this.Code.GetAt(i) as Code;
 
-            this.SourceItem = (Source)this.Source.GetAt(i);
+            this.SourceItem = this.Source.GetAt(i) as Source;
             this.SourceText = this.SourceItem.Text;
 
             Node root;
