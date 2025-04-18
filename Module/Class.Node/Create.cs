@@ -18,10 +18,8 @@ public class Create : ClassCreate
         this.KindOperate = this.CreateKindOperate();
         this.SetOperate = this.CreateSetOperate();
         this.SetArg = this.CreateSetArg();
-
         this.NameValid = this.CreateNameValid();
         this.StringWrite = this.CreateStringWrite();
-
         this.RangeA = this.CreateClassRange();
         this.RangeB = this.CreateClassRange();
         this.RangeC = this.CreateClassRange();
@@ -37,7 +35,6 @@ public class Create : ClassCreate
         this.TokenI = this.CreateToken();
 
         this.InitListItemState();
-
         this.InitNodeState();
         return true;
     }
