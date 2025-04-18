@@ -8,7 +8,6 @@ public class Create : ClassCreate
         this.InfraInfra = InfraInfra.This;
         this.ListInfra = ListInfra.This;
         this.ClassInfra = ClassInfra.This;
-
         this.Index = IndexList.This;
         this.Limit = LimitList.This;
         this.ErrorKind = ErrorKindList.This;
