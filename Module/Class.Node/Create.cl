@@ -36,4 +36,31 @@ class Create : ClassCreate
         this.InitNodeState();
         return true;
     }
+
+    maide precate CreateCountOperate CreateCountOperate()
+    {
+        var CreateCountOperate a;
+        a : new CreateCountOperate;
+        a.Create : this;
+        a.Init();
+        return a;
+    }
+
+    maide precate CreateKindOperate CreateKindOperate()
+    {
+        var CreateKindOperate a;
+        a : new CreateKindOperate;
+        a.Create : this;
+        a.Init();
+        return a;
+    }
+
+    maide precate CreateSetOperate CreateSetOperate()
+    {
+        var CreateSetOperate a;
+        a : new CreateSetOperate;
+        a.Create : this;
+        a.Init();
+        return a;
+    }
 }
