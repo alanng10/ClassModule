@@ -49,7 +49,6 @@ public class Create : ClassCreate
     public virtual KindCreateOperate KindOperate { get; set; }
     public virtual SetCreateOperate SetOperate { get; set; }
     public virtual CreateSetArg SetArg { get; set; }
-
     protected virtual InfraInfra InfraInfra { get; set; }
     protected virtual ListInfra ListInfra { get; set; }
     protected virtual ClassInfra ClassInfra { get; set; }
@@ -57,12 +56,10 @@ public class Create : ClassCreate
     protected virtual LimitList Limit { get; set; }
     protected virtual ErrorKindList ErrorKind { get; set; }
     protected virtual NodeKindList NodeKind { get; set; }
-
     protected virtual Array SourceText { get; set; }
     protected virtual Code CodeItem { get; set; }
     protected virtual Table NodeStateTable { get; set; }
     protected virtual NodeState NodeState { get; set; }
-
     protected virtual RangeState PartItemRangeState { get; set; }
     protected virtual RangeState StateItemRangeState { get; set; }
     protected virtual RangeState ParamItemRangeState { get; set; }
@@ -71,7 +68,8 @@ public class Create : ClassCreate
     protected virtual NodeState StateItemNodeState { get; set; }
     protected virtual NodeState ParamItemNodeState { get; set; }
     protected virtual NodeState ArgueItemNodeState { get; set; }
-
+    protected virtual NameValid NameValid { get; set; }
+    protected virtual StringWrite StringWrite { get; set; }
     protected virtual Range RangeA { get; set; }
     protected virtual Range RangeB { get; set; }
     protected virtual Range RangeC { get; set; }
@@ -85,9 +83,6 @@ public class Create : ClassCreate
     protected virtual Token TokenG { get; set; }
     protected virtual Token TokenH { get; set; }
     protected virtual Token TokenI { get; set; }
-
-    protected virtual NameValid NameValid { get; set; }
-    protected virtual StringWrite StringWrite { get; set; }
 
     protected virtual NameValid CreateNameValid()
     {
