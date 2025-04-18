@@ -1,0 +1,30 @@
+[Module]
+Class.Node
+
+[Import]
+System.Infra
+    Any Any
+    Bool Bool
+    Int Int
+    String String
+    InfraRange Range
+    Data Data
+    InfraState State
+    IntLess IntLess
+    InfraInfra Infra
+System.List
+    Array Array
+    Table Table
+    Iter Iter
+    ListInfra Infra
+System.Text
+    Text Text
+Class.Infra
+    ClassCreate Create
+    Range Range
+
+[Export]
+
+[Storage]
+
+[Entry]
