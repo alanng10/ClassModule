@@ -6,7 +6,6 @@ class StringWrite : TextAdd
         this.InfraInfra : share InfraInfra;
         this.ClassInfra : share Infra;
 
-        this.Arg : this.CreateArg();
         this.CountOperate : this.CreateCountOperate();
         this.SetOperate : this.CreateSetOperate();
         return true;
