@@ -11,14 +11,6 @@ class StringWrite : TextAdd
         return true;
     }
 
-    maide precate StringWriteArg CreateArg()
-    {
-        var StringWriteArg a;
-        a : new StringWriteArg;
-        a.Init();
-        return a;
-    }
-
     maide precate StringWriteCountOperate CreateCountOperate()
     {
         var StringWriteCountOperate a;
