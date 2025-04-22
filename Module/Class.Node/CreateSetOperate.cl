@@ -34,11 +34,11 @@ class CreateSetOperate : CreateOperate
         var CreateSetStateArg stateArg;
         stateArg : cast CreateSetStateArg(state.Arg);
         stateArg.Node : node;
-        stateArg.SetArg : ka;
+        stateArg.Arg : ka;
 
         state.Execute();
 
-        stateArg.SetArg : null;
+        stateArg.Arg : null;
         stateArg.Node : null;
 
         create.NodeInfo(node, ka.Range);
