@@ -127,7 +127,6 @@ public class Create : ClassCreate
     protected virtual LimitList Limit { get; set; }
     protected virtual ErrorKindList ErrorKind { get; set; }
     protected virtual NodeKindList NodeKind { get; set; }
-    protected virtual Array SourceText { get; set; }
     protected virtual Code CodeItem { get; set; }
     protected virtual Table NodeStateTable { get; set; }
     protected virtual NodeState NodeState { get; set; }
@@ -615,7 +614,6 @@ public class Create : ClassCreate
             this.CodeItem = this.Code.GetAt(i) as Code;
 
             this.SourceItem = this.Source.GetAt(i) as Source;
-            this.SourceText = this.SourceItem.Text;
 
             Node root;
             root = this.ExecuteRoot();
@@ -1436,7 +1434,7 @@ public class Create : ClassCreate
         }
 
         Text line;
-        line = (Text)this.SourceText.GetAt(aa.Row);
+        line = (Text)this.SourceItem.Text.GetAt(aa.Row);
         Text text;
         text = this.TextA;
         text.Data = line.Data;
@@ -1482,7 +1480,7 @@ public class Create : ClassCreate
         signNegative = this.IsTokenSignNegate(aa, 2);
 
         Text line;
-        line = this.SourceText.GetAt(aa.Row) as Text;
+        line = this.SourceItem.Text.GetAt(aa.Row) as Text;
         Text text;
         text = this.TextA;
         text.Data = line.Data;
@@ -1556,7 +1554,7 @@ public class Create : ClassCreate
         signNegative = this.IsTokenSignNegate(aa, 3);
 
         Text line;
-        line = (Text)this.SourceText.GetAt(aa.Row);
+        line = (Text)this.SourceItem.Text.GetAt(aa.Row);
         Text text;
         text = this.TextA;
         text.Data = line.Data;
@@ -3730,7 +3728,7 @@ public class Create : ClassCreate
         }
 
         Text line;
-        line = (Text)this.SourceText.GetAt(aa.Row);
+        line = (Text)this.SourceItem.Text.GetAt(aa.Row);
 
         Data data;
         data = line.Data;
@@ -3771,7 +3769,7 @@ public class Create : ClassCreate
         }
 
         Text line;
-        line = (Text)this.SourceText.GetAt(aa.Row);
+        line = (Text)this.SourceItem.Text.GetAt(aa.Row);
 
         Data data;
         data = line.Data;
@@ -3819,7 +3817,7 @@ public class Create : ClassCreate
         }
 
         Text line;
-        line = (Text)this.SourceText.GetAt(aa.Row);
+        line = (Text)this.SourceItem.Text.GetAt(aa.Row);
 
         Data data;
         data = line.Data;
@@ -3928,7 +3926,7 @@ public class Create : ClassCreate
     protected virtual bool IsTokenSignNegate(TokenToken o, long index)
     {
         Text line;
-        line = this.SourceText.GetAt(o.Row) as Text;
+        line = this.SourceItem.Text.GetAt(o.Row) as Text;
 
         Data data;
         data = line.Data;
@@ -3957,7 +3955,7 @@ public class Create : ClassCreate
     protected virtual Text TAToken(TokenToken token)
     {
         Text line;
-        line = this.SourceText.GetAt(token.Row) as Text;
+        line = this.SourceItem.Text.GetAt(token.Row) as Text;
         InfraRange range;
         range = token.Range;
 
