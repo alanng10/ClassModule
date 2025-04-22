@@ -19,8 +19,11 @@ System.List
     ListInfra Infra
 System.Text
     Text Text
+    StringComp StringComp
 Class.Infra
     ClassCreate Create
+    Error Error
+    ErrorKind ErrorKind
     Range Range
 
 [Export]

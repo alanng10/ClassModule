@@ -95,7 +95,7 @@ class CreateSetOperate : CreateOperate
         error.Kind : kind;
         error.Range.Start : range.Start;
         error.Range.End : range.End;
-        error.Source : create.SourceItem;
+        error.Source : create.SourceIndex;
 
         index : index + 1;
 

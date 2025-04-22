@@ -111,7 +111,7 @@ class Create : ClassCreate
     field prusate Array Code { get { return data; } set { data : value; } }
     field prusate String Task { get { return data; } set { data : value; } }
     field prusate Result Result { get { return data; } set { data : value; } }
-    field prusate Source SourceItem { get { return data; } set { data : value; } }
+    field prusate Int SourceIndex { get { return data; } set { data : value; } }
     field prusate CreateArg Arg { get { return data; } set { data : value; } }
     field prusate CreateOperate Operate { get { return data; } set { data : value; } }
     field prusate CreateCountOperate CountOperate { get { return data; } set { data : value; } }
