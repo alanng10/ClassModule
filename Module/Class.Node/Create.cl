@@ -114,4 +114,11 @@ class Create : ClassCreate
     field prusate Source SourceItem { get { return data; } set { data : value; } }
     field prusate CreateArg Arg { get { return data; } set { data : value; } }
     field prusate CreateOperate Operate { get { return data; } set { data : value; } }
+    field prusate CreateCountOperate CountOperate { get { return data; } set { data : value; } }
+    field prusate CreateKindOperate KindOperate { get { return data; } set { data : value; } }
+    field prusate CreateSetOperate SetOperate { get { return data; } set { data : value; } }
+    field prusate CreateSetArg SetArg { get { return data; } set { data : value; } }
+    field precate InfraInfra InfraInfra { get { return data; } set { data : value; } }
+    field precate ListInfra ListInfra { get { return data; } set { data : value; } }
+    field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
 }
