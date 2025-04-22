@@ -116,9 +116,9 @@ public class Create : ClassCreate
     public virtual Source SourceItem { get; set; }
     public virtual CreateArg Arg { get; set; }
     public virtual CreateOperate Operate { get; set; }
-    public virtual CountCreateOperate CountOperate { get; set; }
-    public virtual KindCreateOperate KindOperate { get; set; }
-    public virtual SetCreateOperate SetOperate { get; set; }
+    public virtual CreateCountOperate CountOperate { get; set; }
+    public virtual CreateKindOperate KindOperate { get; set; }
+    public virtual CreateSetOperate SetOperate { get; set; }
     public virtual CreateSetArg SetArg { get; set; }
     protected virtual InfraInfra InfraInfra { get; set; }
     protected virtual ListInfra ListInfra { get; set; }

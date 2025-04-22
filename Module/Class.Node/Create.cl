@@ -106,4 +106,12 @@ class Create : ClassCreate
         a.Range.Init();
         return a;
     }
+
+    field prusate Array Source { get { return data; } set { data : value; } }
+    field prusate Array Code { get { return data; } set { data : value; } }
+    field prusate String Task { get { return data; } set { data : value; } }
+    field prusate Result Result { get { return data; } set { data : value; } }
+    field prusate Source SourceItem { get { return data; } set { data : value; } }
+    field prusate CreateArg Arg { get { return data; } set { data : value; } }
+    field prusate CreateOperate Operate { get { return data; } set { data : value; } }
 }
