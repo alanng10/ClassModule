@@ -121,4 +121,8 @@ class Create : ClassCreate
     field precate InfraInfra InfraInfra { get { return data; } set { data : value; } }
     field precate ListInfra ListInfra { get { return data; } set { data : value; } }
     field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
+    field precate IndexList Index { get { return data; } set { data : value; } }
+    field precate LimitList Limit { get { return data; } set { data : value; } }
+    field precate ErrorKindList ErrorKind { get { return data; } set { data : value; } }
+    field precate NodeKindList NodeKind { get { return data; } set { data : value; } }
 }
