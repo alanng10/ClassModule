@@ -78,4 +78,14 @@ class Create : ClassCreate
         a.Init();
         return a;
     }
+
+    maide precate StringWrite CreateStringWrite()
+    {
+        var StringWrite a;
+        a : new StringWrite;
+        a.Init();
+        a.Arg : new StringWriteArg;
+        a.Arg.Init();
+        return a;
+    }
 }
