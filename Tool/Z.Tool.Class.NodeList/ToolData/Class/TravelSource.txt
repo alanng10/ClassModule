@@ -1,6 +1,6 @@
 class Travel : TextAdd
 {
-#NodeList#    maide precate Bool ExecuteNode(Node node)
+#NodeList#    maide precate Bool ExecuteNode(var Node node)
     {
         return true;
     }
