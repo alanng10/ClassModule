@@ -88,4 +88,22 @@ class Create : ClassCreate
         a.Arg.Init();
         return a;
     }
+
+    maide precate Range CreateClassRange()
+    {
+        var Range a;
+        a : new Range;
+        a.Init();
+        return a;
+    }
+
+    maide precate Token CreateToken()
+    {
+        var Token a;
+        a : new Token;
+        a.Init();
+        a.Range : new Range;
+        a.Range.Init();
+        return a;
+    }
 }
