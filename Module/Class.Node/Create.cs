@@ -579,6 +579,7 @@ public class Create : ClassCreate
         {
             this.Error(this.ErrorKind.Unvalid, rangeStart, rangeEnd);
         }
+
         Node a;
         a = node;
         return a;

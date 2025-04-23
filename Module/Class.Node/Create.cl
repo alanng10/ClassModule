@@ -536,13 +536,48 @@ class Create : ClassCreate
         while (i < count)
         {
             var Node root;
-            root : this.ExecuteRoot();
+            root : this.ExecuteRoot(i);
+
             this.Result.Root.Set(i, root);
+
             i : i + 1;
         }
 
         this.SetArgClear();
         this.ClearData();
         return true;
+    }
+
+    maide precate Node ExecuteRoot(var Int sourceIndex)
+    {
+        this.SourceIndex : sourceIndex;
+
+        var Code code;
+        code : cast Code(this.Code.Get(this.SourceIndex));
+
+        var Int rangeStart;
+        var Int rangeEnd;
+        rangeStart : 0;
+        rangeEnd : code.Token.Count;
+
+        this.Range(this.RangeA, rangeStart, rangeEnd);
+
+        this.NodeState.Arg : this.RangeA;
+        this.NodeState.Execute();
+
+        var Node node;
+        node : cast Node(this.NodeState.Result);
+
+        this.NodeState.Result : null;
+        this.NodeState.Arg : null;
+
+        inf (node = null)
+        {
+            this.Error(this.ErrorKind.Unvalid, rangeStart, rangeEnd);
+        }
+
+        var Node a;
+        a : node;
+        return a;
     }
 }
