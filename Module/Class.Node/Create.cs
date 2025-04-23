@@ -400,9 +400,6 @@ public class Create : ClassCreate
 
     protected virtual bool ExecuteCreateList()
     {
-        ListInfra listInfra;
-        listInfra = this.ListInfra;
-
         CreateArg arg;
         arg = this.Arg;
         
@@ -426,7 +423,7 @@ public class Create : ClassCreate
             oa = this.InfraInfra.DataIntGet(data, index);
 
             Array a;
-            a = listInfra.ArrayCreate(oa);
+            a = this.ListInfra.ArrayCreate(oa);
 
             array.SetAt(i, a);
             i = i + 1;
