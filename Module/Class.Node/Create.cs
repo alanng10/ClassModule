@@ -187,17 +187,14 @@ public class Create : ClassCreate
     {
         this.NodeStateTable = this.ClassInfra.TableCreateStringLess();
 
-        NodeKindList nodeKind;
-        nodeKind = this.NodeKind;
-
         long count;
-        count = nodeKind.Count;
+        count = this.NodeKind.Count;
         int i;
         i = 0;
         while (i < count)
         {
             NodeKind kind;
-            kind = nodeKind.Get(i);
+            kind = this.NodeKind.Get(i);
             this.AddNodeState(kind);
             i = i + 1;
         }
