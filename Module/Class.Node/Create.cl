@@ -428,4 +428,27 @@ class Create : ClassCreate
         }
         return true;
     }
+
+    maide precate Bool ExecuteCreateError()
+    {
+        var Array array;
+        array : this.Arg.ErrorArray;
+
+        var Int count;
+        count : array.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Error a;
+            a : new Error;
+            a.Init();
+            a.Range : this.CreateClassRange();
+
+            array.Set(i, a);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
