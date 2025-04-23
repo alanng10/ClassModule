@@ -552,10 +552,13 @@ public class Create : ClassCreate
 
     protected virtual Node ExecuteRoot()
     {
+        Code code;
+        code = this.Code.GetAt(this.SourceIndex) as Code;
+
         long rangeStart;
         long rangeEnd;
         rangeStart = 0;
-        rangeEnd = this.CodeItem.Token.Count;
+        rangeEnd = code.Token.Count;
 
         this.Range(this.RangeA, rangeStart, rangeEnd);
 
