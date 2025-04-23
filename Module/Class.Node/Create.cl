@@ -322,4 +322,25 @@ class Create : ClassCreate
         write.Text : null;
         return a;
     }
+
+    maide prusate Bool StringValueSet(var Text text)
+    {
+        var StringWrite write;
+        write : this.StringWrite;
+
+        write.Text : text;
+
+        write.Operate : write.SetOperate;
+
+        write.Arg.Index : this.Arg.StringValueTextIndex;
+        write.Arg.Data : this.Arg.StringValueTextData;
+
+        write.ExecuteStage();
+
+        write.Arg.Data : null;
+        write.Arg.Index : 0;
+        write.Operate : null
+        write.Text : null;
+        return true;
+    }
 }
