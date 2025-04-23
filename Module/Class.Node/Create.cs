@@ -113,7 +113,7 @@ public class Create : ClassCreate
     public virtual Array Code { get; set; }
     public virtual String Task { get; set; }
     public virtual Result Result { get; set; }
-    public virtual Source SourceItem { get; set; }
+    public virtual long SourceIndex { get; set; }
     public virtual CreateArg Arg { get; set; }
     public virtual CreateOperate Operate { get; set; }
     public virtual CreateCountOperate CountOperate { get; set; }
@@ -127,7 +127,6 @@ public class Create : ClassCreate
     protected virtual LimitList Limit { get; set; }
     protected virtual ErrorKindList ErrorKind { get; set; }
     protected virtual NodeKindList NodeKind { get; set; }
-    protected virtual Code CodeItem { get; set; }
     protected virtual Table NodeStateTable { get; set; }
     protected virtual NodeState NodeState { get; set; }
     protected virtual RangeState PartItemRangeState { get; set; }
@@ -611,10 +610,6 @@ public class Create : ClassCreate
         i = 0;
         while (i < count)
         {
-            this.CodeItem = this.Code.GetAt(i) as Code;
-
-            this.SourceItem = this.Source.GetAt(i) as Source;
-
             Node root;
             root = this.ExecuteRoot();
             this.Result.Root.SetAt(i, root);
