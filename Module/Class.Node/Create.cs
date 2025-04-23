@@ -467,6 +467,9 @@ public class Create : ClassCreate
         Data data;
         data = arg.NameValueCountData;
 
+        Data textData;
+        textData = arg.NameValueTextData;
+
         Text text;
         text = this.TextA;
 
@@ -486,12 +489,12 @@ public class Create : ClassCreate
             long kk;
             kk = this.InfraInfra.DataIntGet(data, ka);
 
-            text.Data = arg.NameValueTextData;
+            text.Data = textData;
             text.Range.Index = total;
             text.Range.Count = kk;
 
             String a;
-            a = this.TextInfra.StringCreate(text);
+            a = this.StringCreate(text);
 
             this.ClearText(text);
 
