@@ -208,4 +208,29 @@ class Create : ClassCreate
         this.ListInfra.TableAdd(this.NodeStateTable, kind.Name, kind.NodeState);
         return true;
     }
+
+    maide prusate Bool Execute()
+    {
+        this.Result : new Result;
+        this.Result.Init();
+
+        var Array rootArray;
+        rootArray : this.ListInfra.ArrayCreate(this.Code.Count);
+        this.Result.Root : rootArray;
+
+        this.NodeState : cast NodeState(this.NodeStateTable.Get(this.Task));
+        inf (this.NodeState = null)
+        {
+            var Array ka;
+            ka : this.ListInfra.ArrayCreate(0);
+            this.Result.Error : ka;
+            return true;
+        }
+
+        this.Arg : new CreateArg;
+        this.Arg.Init();
+
+        var CreateArg arg;
+        arg : this.Arg;
+    }
 }
