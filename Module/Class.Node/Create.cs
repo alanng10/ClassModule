@@ -451,6 +451,7 @@ public class Create : ClassCreate
             error.Range = this.CreateClassRange();
 
             array.SetAt(i, error);
+
             i = i + 1;
         }
         return true;
