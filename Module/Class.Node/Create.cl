@@ -150,4 +150,18 @@ class Create : ClassCreate
     field precate Token TokenG { get { return data; } set { data : value; } }
     field precate Token TokenH { get { return data; } set { data : value; } }
     field precate Token TokenI { get { return data; } set { data : value; } }
+
+    maide precate Bool InitListItemState()
+    {
+        this.PartItemRangeState : this.RangeStateSet(new PartItemRangeState);
+        this.StateItemRangeState : this.RangeStateSet(new StateItemRangeState);
+        this.ParamItemRangeState : this.RangeStateSet(new ParamItemRangeState);
+        this.ArgueItemRangeState : this.RangeStateSet(new ArgueItemRangeState);
+
+        this.PartItemNodeState : this.NodeStateSet(new PartItemNodeState);
+        this.StateItemNodeState : this.NodeStateSet(new StateItemNodeState);
+        this.ParamItemNodeState : this.NodeStateSet(new ParamItemNodeState);
+        this.ArgueItemNodeState : this.NodeStateSet(new ArgueItemNodeState);
+        return true;
+    }
 }
