@@ -470,40 +470,7 @@ public class Create : ClassCreate
         Data textData;
         textData = arg.NameValueTextData;
 
-        Text text;
-        text = this.TextA;
-
-        long total;
-        total = 0;
-
-        long count;
-        count = array.Count;
-        long i;
-        i = 0;
-        while (i < count)
-        {
-            long ka;
-            ka = i;
-            ka = ka * sizeof(ulong);
-
-            long kk;
-            kk = this.InfraInfra.DataIntGet(data, ka);
-
-            text.Data = textData;
-            text.Range.Index = total;
-            text.Range.Count = kk;
-
-            String a;
-            a = this.StringCreate(text);
-
-            this.ClearText(text);
-
-            array.SetAt(i, a);
-
-            total = total + kk;
-
-            i = i + 1;
-        }
+        this.PrivateExecuteCreateString(array, data, textData);
         return true;
     }
 
@@ -521,6 +488,12 @@ public class Create : ClassCreate
         Data textData;
         textData = arg.StringValueTextData;
 
+        this.PrivateExecuteCreateString(array, data, textData);
+        return true;
+    }
+
+    private bool PrivateExecuteCreateString(Array array, Data countData, Data textData)
+    {
         Text text;
         text = this.TextA;
 
@@ -538,7 +511,7 @@ public class Create : ClassCreate
             ka = ka * sizeof(ulong);
 
             long kk;
-            kk = this.InfraInfra.DataIntGet(data, ka);
+            kk = this.InfraInfra.DataIntGet(countData, ka);
 
             text.Data = textData;
             text.Range.Index = total;
