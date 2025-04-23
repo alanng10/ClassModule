@@ -402,12 +402,12 @@ public class Create : ClassCreate
     {
         CreateArg arg;
         arg = this.Arg;
-        
-        Data data;
-        data = arg.ListData;
 
         Array array;
         array = arg.ListArray;
+
+        Data data;
+        data = arg.ListData;
 
         long count;
         count = array.Count;
@@ -419,11 +419,11 @@ public class Create : ClassCreate
             index = i;
             index = index * sizeof(ulong);
 
-            long oa;
-            oa = this.InfraInfra.DataIntGet(data, index);
+            long k;
+            k = this.InfraInfra.DataIntGet(data, index);
 
             Array a;
-            a = this.ListInfra.ArrayCreate(oa);
+            a = this.ListInfra.ArrayCreate(k);
 
             array.SetAt(i, a);
             i = i + 1;
