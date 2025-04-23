@@ -171,12 +171,8 @@ public class Create : ClassCreate
     {
         state.Init();
         state.Create = this;
-
-        RangeStateArg k;
-        k = new RangeStateArg();
-        k.Init();
-
-        state.Arg = k;
+        state.Arg = new RangeStateArg();
+        state.Arg.Init();
         return state;
     }
 

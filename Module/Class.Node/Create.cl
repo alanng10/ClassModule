@@ -164,4 +164,13 @@ class Create : ClassCreate
         this.ArgueItemNodeState : this.NodeStateSet(new ArgueItemNodeState);
         return true;
     }
+
+    maide private RangeState RangeStateSet(var RangeState state)
+    {
+        state.Init();
+        state.Create : this;
+        state.Arg : new RangeStateArg;
+        state.Arg.Init();
+        return state;
+    }
 }
