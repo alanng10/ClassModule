@@ -229,10 +229,11 @@ public class Create : ClassCreate
             return true;
         }
 
+        this.Arg = new CreateArg();
+        this.Arg.Init();
+
         CreateArg arg;
-        arg = new CreateArg();
-        arg.Init();
-        this.Arg = arg;
+        arg = this.Arg;
 
         this.Operate = this.CountOperate;
 
