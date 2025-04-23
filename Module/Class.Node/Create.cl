@@ -526,4 +526,23 @@ class Create : ClassCreate
         }
         return true;
     }
+
+    maide prusate Bool ExecuteStage()
+    {
+        var Int count;
+        count : this.Code.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Node root;
+            root : this.ExecuteRoot();
+            this.Result.Root.Set(i, root);
+            i : i + 1;
+        }
+
+        this.SetArgClear();
+        this.ClearData();
+        return true;
+    }
 }
