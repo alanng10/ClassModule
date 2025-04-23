@@ -447,7 +447,6 @@ public class Create : ClassCreate
             Error a;
             a = new Error();
             a.Init();
-            a.Stage = this.Stage;
             a.Range = this.CreateClassRange();
 
             array.SetAt(i, a);
