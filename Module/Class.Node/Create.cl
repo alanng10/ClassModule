@@ -460,46 +460,13 @@ class Create : ClassCreate
         var Array array;
         array : arg.NameValueArray;
 
-        var Data data;
-        data : arg.NameValueCountData;
+        var Data countData;
+        countData : arg.NameValueCountData;
 
         var Data textData;
         textData : arg.NameValueTextData;
 
-        var Text text;
-        text : this.TextA;
-
-        var Int total;
-        total : 0;
-
-        var Int count;
-        count : array.Count;
-        var Int i;
-        i : 0;
-        while (i < count)
-        {
-            var Int ka;
-            ka : i;
-            ka : ka * 8;
-
-            var Int kk;
-            kk : this.InfraInfra.DataIntGet(data, ka);
-
-            text.Data : textData;
-            text.Range.Index : total;
-            text.Range.Count : kk;
-
-            var String a;
-            a : this.StringCreate(text);
-
-            this.ClearText(text);
-
-            array.Set(i, a);
-
-            total : total + kk;
-
-            i : i + 1;
-        }
+        this.PrivateExecuteCreateString(array, countData, textData);
         return true;
     }
 
@@ -511,12 +478,18 @@ class Create : ClassCreate
         var Array array;
         array : arg.StringValueArray;
 
-        var Data data;
-        data : arg.StringValueCountData;
+        var Data countData;
+        countData : arg.StringValueCountData;
 
         var Data textData;
         textData : arg.StringValueTextData;
 
+        this.PrivateExecuteCreateString(array, countData, textData);
+        return true;
+    }
+
+    maide private Bool PrivateExecuteCreateString(var Array array, var Data countData, var Data textData)
+    {
         var Text text;
         text : this.TextA;
 
@@ -534,7 +507,7 @@ class Create : ClassCreate
             ka : ka * 8;
 
             var Int kk;
-            kk : this.InfraInfra.DataIntGet(data, ka);
+            kk : this.InfraInfra.DataIntGet(countData, ka);
 
             text.Data : textData;
             text.Range.Index : total;
