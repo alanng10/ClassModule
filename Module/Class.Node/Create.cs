@@ -415,12 +415,12 @@ public class Create : ClassCreate
         i = 0;
         while (i < count)
         {
-            long index;
-            index = i;
-            index = index * sizeof(ulong);
+            long ka;
+            ka = i;
+            ka = ka * sizeof(ulong);
 
             long k;
-            k = this.InfraInfra.DataIntGet(data, index);
+            k = this.InfraInfra.DataIntGet(data, ka);
 
             Array a;
             a = this.ListInfra.ArrayCreate(k);
