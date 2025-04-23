@@ -237,6 +237,12 @@ class Create : ClassCreate
 
         this.ResetStage();
         this.ExecuteStage();
-        this.SetArgClear();
+
+        arg.NodeData : this.DataCreate(arg.NodeIndex);
+        arg.ListData : this.DataCreate(arg.ListIndex * 8);
+        arg.NameValueCountData : this.DataCreate(arg.NameValueIndex * 8);
+        arg.NameValueTextData : this.DataCreate(arg.NameValueTextIndex * 4);
+        arg.StringValueCountData : this.DataCreate(arg.StringValueIndex * 8);
+        arg.StringValueTextData : this.DataCreate(arg.StringValueTextIndex * 4);
     }
 }
