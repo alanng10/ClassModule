@@ -550,13 +550,6 @@ public class Create : ClassCreate
         return true;
     }
 
-    protected virtual Node ExecuteCreateOperate()
-    {
-        Node node;
-        node = this.Operate.Execute();
-        return node;
-    }
-
     protected virtual Node ExecuteRoot()
     {
         Range range;
@@ -670,7 +663,7 @@ public class Create : ClassCreate
         this.SetArg.Field01 = varBase;
         this.SetArg.Field02 = part;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -910,7 +903,7 @@ public class Create : ClassCreate
         this.SetArg.Field03 = varGet;
         this.SetArg.Field04 = varSet;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -1051,7 +1044,7 @@ public class Create : ClassCreate
         this.SetArg.Field03 = param;
         this.SetArg.Field04 = call;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -1112,7 +1105,7 @@ public class Create : ClassCreate
         this.SetArg.Field00 = varClass;
         this.SetArg.Field01 = name;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -1295,7 +1288,7 @@ public class Create : ClassCreate
         this.SetArg.End = end;
         this.SetArg.FieldBool = value;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -1334,7 +1327,7 @@ public class Create : ClassCreate
         this.SetArg.End = end;
         this.SetArg.FieldInt = value;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -1378,7 +1371,7 @@ public class Create : ClassCreate
         this.SetArg.End = end;
         this.SetArg.FieldInt = value;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -1452,7 +1445,7 @@ public class Create : ClassCreate
         this.SetArg.End = end;
         this.SetArg.FieldInt = value;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -1525,7 +1518,7 @@ public class Create : ClassCreate
         this.SetArg.End = end;
         this.SetArg.FieldInt = value;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -1562,7 +1555,7 @@ public class Create : ClassCreate
         this.SetArg.End = end;
         this.SetArg.Field00 = value;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -1708,7 +1701,7 @@ public class Create : ClassCreate
         this.SetArg.End = end;
         this.SetArg.Field00 = result;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -1762,7 +1755,7 @@ public class Create : ClassCreate
         this.SetArg.End = end;
         this.SetArg.Field00 = varVar;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -1823,7 +1816,7 @@ public class Create : ClassCreate
         this.SetArg.Field00 = mark;
         this.SetArg.Field01 = value;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -1864,7 +1857,7 @@ public class Create : ClassCreate
         this.SetArg.End = end;
         this.SetArg.Field00 = any;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -2119,7 +2112,7 @@ public class Create : ClassCreate
         this.SetArg.Field00 = varClass;
         this.SetArg.Field01 = any;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -2147,7 +2140,7 @@ public class Create : ClassCreate
         this.SetArg.End = end;
         this.SetArg.Field00 = value;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -2198,7 +2191,7 @@ public class Create : ClassCreate
         this.SetArg.End = end;
         this.SetArg.Field00 = any;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -2380,7 +2373,7 @@ public class Create : ClassCreate
         this.SetArg.Field00 = cond;
         this.SetArg.Field01 = body;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -2402,7 +2395,7 @@ public class Create : ClassCreate
         this.SetArg.Start = start;
         this.SetArg.End = end;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -2445,7 +2438,7 @@ public class Create : ClassCreate
         this.SetArg.End = end;
         this.SetArg.Field00 = varClass;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -2492,7 +2485,7 @@ public class Create : ClassCreate
         this.SetArg.Field00 = varThis;
         this.SetArg.Field01 = field;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -2573,7 +2566,7 @@ public class Create : ClassCreate
         this.SetArg.Field01 = maide;
         this.SetArg.Field02 = argue;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -2596,7 +2589,7 @@ public class Create : ClassCreate
         this.SetArg.End = end;
         this.SetArg.Field00 = varVar;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -2651,7 +2644,7 @@ public class Create : ClassCreate
         this.SetArg.End = end;
         this.SetArg.Field00 = value;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -2698,7 +2691,7 @@ public class Create : ClassCreate
         this.SetArg.Field00 = left;
         this.SetArg.Field01 = right;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -2737,7 +2730,7 @@ public class Create : ClassCreate
         this.SetArg.End = end;
         this.SetArg.Field00 = value;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -2829,7 +2822,7 @@ public class Create : ClassCreate
         this.SetArg.Field00 = lite;
         this.SetArg.Field01 = rite;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -2902,7 +2895,7 @@ public class Create : ClassCreate
         this.SetArg.End = end;
         this.SetArg.Field00 = value;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -3005,7 +2998,7 @@ public class Create : ClassCreate
         this.SetArg.Field00 = left;
         this.SetArg.Field01 = right;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -3028,7 +3021,7 @@ public class Create : ClassCreate
         this.SetArg.End = end;
         this.SetArg.Field00 = value;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
@@ -3051,7 +3044,7 @@ public class Create : ClassCreate
         this.SetArg.End = end;
         this.SetArg.Field00 = value;
         Node ret;
-        ret = this.ExecuteCreateOperate();
+        ret = this.Operate.Execute();
         return ret;
     }
 
