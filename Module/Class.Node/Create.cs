@@ -203,11 +203,9 @@ public class Create : ClassCreate
 
     protected virtual bool AddNodeState(NodeKind kind)
     {
-        NodeState state;
-        state = kind.NodeState;
-        state.Create = this;
+        kind.NodeState.Create = this;
 
-        this.ListInfra.TableAdd(this.NodeStateTable, kind.Name, state);
+        this.ListInfra.TableAdd(this.NodeStateTable, kind.Name, kind.NodeState);
         return true;
     }
 
