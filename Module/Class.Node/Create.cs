@@ -464,13 +464,13 @@ public class Create : ClassCreate
         Array array;
         array = arg.NameValueArray;
 
-        Data data;
-        data = arg.NameValueCountData;
+        Data countData;
+        countData = arg.NameValueCountData;
 
         Data textData;
         textData = arg.NameValueTextData;
 
-        this.PrivateExecuteCreateString(array, data, textData);
+        this.PrivateExecuteCreateString(array, countData, textData);
         return true;
     }
 
@@ -482,13 +482,13 @@ public class Create : ClassCreate
         Array array;
         array = arg.StringValueArray;
 
-        Data data;
-        data = arg.StringValueCountData;
+        Data countData;
+        countData = arg.StringValueCountData;
 
         Data textData;
         textData = arg.StringValueTextData;
 
-        this.PrivateExecuteCreateString(array, data, textData);
+        this.PrivateExecuteCreateString(array, countData, textData);
         return true;
     }
 
