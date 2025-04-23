@@ -125,4 +125,16 @@ class Create : ClassCreate
     field precate LimitList Limit { get { return data; } set { data : value; } }
     field precate ErrorKindList ErrorKind { get { return data; } set { data : value; } }
     field precate NodeKindList NodeKind { get { return data; } set { data : value; } }
+    field precate Table NodeStateTable { get { return data; } set { data : value; } }
+    field precate NodeState NodeState { get { return data; } set { data : value; } }
+    field precate RangeState PartItemRangeState { get { return data; } set { data : value; } }
+    field precate RangeState StateItemRangeState { get { return data; } set { data : value; } }
+    field precate RangeState ParamItemRangeState { get { return data; } set { data : value; } }
+    field precate RangeState ArgueItemRangeState { get { return data; } set { data : value; } }
+    field precate NodeState PartItemNodeState { get { return data; } set { data : value; } }
+    field precate NodeState StateItemNodeState { get { return data; } set { data : value; } }
+    field precate NodeState ParamItemNodeState { get { return data; } set { data : value; } }
+    field precate NodeState ArgueItemNodeState { get { return data; } set { data : value; } }
+    field precate NameValid NameValid { get { return data; } set { data : value; } }
+    field precate StringWrite StringWrite { get { return data; } set { data : value; } }
 }
