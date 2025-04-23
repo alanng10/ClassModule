@@ -307,8 +307,8 @@ public class Create : ClassCreate
         a.Field04 = null;
         a.FieldBool = false;
         a.FieldInt = 0;
-        a.Start = 0;
-        a.End = 0;
+        a.Range.Start = 0;
+        a.Range.End = 0;
         return true;
     }
 
