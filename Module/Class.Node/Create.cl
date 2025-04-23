@@ -288,4 +288,19 @@ class Create : ClassCreate
         arg.ErrorIndex : 0;
         return true;
     }
+
+    maide precate Bool SetArgClear()
+    {
+        var CreateSetArg a;
+        a : this.SetArg;
+        a.Kind : null;
+        a.Field00 : null;
+        a.Field01 : null;
+        a.Field02 : null;
+        a.Field03 : null;
+        a.Field04 : null;
+        a.Range.Start : 0;
+        a.Range.End : 0;
+        return true;
+    }
 }
