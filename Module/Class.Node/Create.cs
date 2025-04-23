@@ -509,11 +509,6 @@ public class Create : ClassCreate
 
     protected virtual bool ExecuteCreateStringValue()
     {
-        InfraInfra infraInfra;
-        infraInfra = this.InfraInfra;
-        TextInfra textInfra;
-        textInfra = this.TextInfra;
-
         CreateArg arg;
         arg = this.Arg;
 
@@ -523,13 +518,11 @@ public class Create : ClassCreate
         Data data;
         data = arg.StringValueCountData;
 
+        Data textData;
+        textData = arg.StringValueTextData;
+
         Text text;
         text = this.TextA;
-        text.Data = arg.StringValueTextData;
-        InfraRange range;
-        range = text.Range;
-        range.Index = 0;
-        range.Count = 0;
 
         long total;
         total = 0;
@@ -540,22 +533,25 @@ public class Create : ClassCreate
         i = 0;
         while (i < count)
         {
-            long index;
-            index = i;
-            index = index * sizeof(ulong);
+            long ka;
+            ka = i;
+            ka = ka * sizeof(ulong);
 
-            long oa;
-            oa = infraInfra.DataIntGet(data, index);
+            long kk;
+            kk = this.InfraInfra.DataIntGet(data, ka);
 
-            range.Index = total;
-            range.Count = oa;
+            text.Data = textData;
+            text.Range.Index = total;
+            text.Range.Count = kk;
 
             String a;
-            a = textInfra.StringCreate(text);
+            a = this.StringCreate(text);
+
+            this.ClearText(text);
 
             array.SetAt(i, a);
 
-            total = total + oa;
+            total = total + kk;
 
             i = i + 1;
         }
