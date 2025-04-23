@@ -273,4 +273,19 @@ class Create : ClassCreate
         this.Arg : null;
         return true;
     }
+
+    maide prusate Bool ResetStage()
+    {
+        var CreateArg arg;
+        arg : this.Arg;
+
+        arg.NodeIndex : 0;
+        arg.ListIndex : 0;
+        arg.NameValueIndex : 0;
+        arg.NameValueTextIndex : 0;
+        arg.StringValueIndex : 0;
+        arg.StringValueTextIndex : 0;
+        arg.ErrorIndex : 0;
+        return true;
+    }
 }
