@@ -383,11 +383,46 @@ class Create : ClassCreate
             k : newState.Result;
             newState.Result : null;
 
-            var Node node;
-            node : cast Node(k);
-            node.Init();
-            node.Range : this.CreateClassRange();
-            array.Set(i, node);
+            var Node a;
+            a : cast Node(k);
+            a.Init();
+            a.Range : this.CreateClassRange();
+
+            array.Set(i, a);
+
+            i : i + 1;
+        }
+        return true;
+    }
+
+    maide precate Bool ExecuteCreateList()
+    {
+        var CreateArg arg;
+        arg : this.Arg;
+
+        var Array array;
+        array : arg.ListArray;
+
+        var Data data;
+        data : arg.ListData;
+
+        var Int count;
+        conut : array.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Int ka;
+            ka : i;
+            ka : ka * 8;
+
+            var Int k;
+            k : this.InfraInfra.DataIntGet(data, ka);
+
+            var Array a;
+            a : this.ListInfra.ArrayCreate(k);
+
+            array.Set(i, a);
 
             i : i + 1;
         }
