@@ -387,11 +387,12 @@ public class Create : ClassCreate
             k = newState.Result;
             newState.Result = null;
 
-            Node node;
-            node = k as Node;
-            node.Init();
-            node.Range = this.CreateClassRange();
-            array.SetAt(i, node);
+            Node a;
+            a = k as Node;
+            a.Init();
+            a.Range = this.CreateClassRange();
+
+            array.SetAt(i, a);
 
             i = i + 1;
         }
@@ -426,6 +427,7 @@ public class Create : ClassCreate
             a = this.ListInfra.ArrayCreate(k);
 
             array.SetAt(i, a);
+
             i = i + 1;
         }
         return true;
