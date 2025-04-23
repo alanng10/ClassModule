@@ -343,4 +343,13 @@ class Create : ClassCreate
         write.Text : null;
         return true;
     }
+
+    maide precate Data DataCreate(var Int count)
+    {
+        var Data a;
+        a : new Data;
+        a.Count : count;
+        a.Init();
+        return a;
+    }
 }
