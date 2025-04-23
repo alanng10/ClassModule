@@ -333,14 +333,16 @@ public class Create : ClassCreate
         write = this.StringWrite;
 
         write.Text = text;
+
         write.Operate = write.SetOperate;
 
-        write.Arg.Data = this.Arg.StringValueTextData;
         write.Arg.Index = this.Arg.StringValueTextIndex;
+        write.Arg.Data = this.Arg.StringValueTextData;
 
         write.ExecuteStage();
 
         write.Arg.Data = null;
+        write.Arg.Index = 0;
         write.Operate = null;
         write.Text = null;
         return true;
