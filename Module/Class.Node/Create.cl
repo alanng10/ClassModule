@@ -352,4 +352,45 @@ class Create : ClassCreate
         a.Init();
         return a;
     }
+
+    maide precate Bool ExecuteCreateNode()
+    {
+        var CreateArg arg;
+        arg : this.Arg;
+
+        var Array array;
+        array : arg.NodeArray;
+
+        var Data data;
+        data : arg.NodeData;
+
+        var Int count;
+        count : array.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Int ka;
+            ka : data.Get(i);
+            var NodeKind kind;
+            kind : this.NodeKind.Get(ka);
+
+            var InfraState newState;
+            newState : kind.NewState;
+            newState.Execute();
+
+            var Any k;
+            k : newState.Result;
+            newState.Result : null;
+
+            var Node node;
+            node : cast Node(k);
+            node.Init();
+            node.Range : this.CreateClassRange();
+            array.Set(i, node);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
