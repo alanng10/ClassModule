@@ -451,4 +451,55 @@ class Create : ClassCreate
         }
         return true;
     }
+
+    maide precate Bool ExecuteCreateNameValue()
+    {
+        var CreateArg arg;
+        arg : this.Arg;
+
+        var Array array;
+        array : arg.NameValueArray;
+
+        var Data data;
+        data : arg.NameValueCountData;
+
+        var Data textData;
+        textData : arg.NameValueTextData;
+
+        var Text text;
+        text : this.TextA;
+
+        var Int total;
+        total : 0;
+
+        var Int count;
+        count : array.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Int ka;
+            ka : i;
+            ka : ka * 8;
+
+            var Int kk;
+            kk : this.InfraInfra.DataIntGet(data, ka);
+
+            text.Data : textData;
+            text.Range.Index : total;
+            text.Range.Count : kk;
+
+            var String a;
+            a : this.StringCreate(text);
+
+            this.ClearText(text);
+
+            array.Set(i, a);
+
+            total : total + kk;
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
