@@ -173,4 +173,11 @@ class Create : ClassCreate
         state.Arg.Init();
         return state;
     }
+
+    maide private NodeState NodeStateSet(var NodeState state)
+    {
+        state.Init();
+        state.Create : this;
+        return state;
+    }
 }
