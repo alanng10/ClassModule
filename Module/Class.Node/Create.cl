@@ -180,4 +180,30 @@ class Create : ClassCreate
         state.Create : this;
         return state;
     }
+
+    maide precate Bool InitNodeState()
+    {
+        this.NodeStateTable : this.ClassInfra.TableCreateStringLess();
+
+        var Int count;
+        count : this.NodeKind.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var NodeKind kind;
+            kind : this.NodeKind.Get(i);
+            this.AddNodeState(kind);
+            i : i + 1;
+        }
+        return true;
+    }
+
+    maide precate Bool AddNodeState(var NodeKind kind)
+    {
+        kind.NodeState.Create : this;
+
+        this.ListInfra.TableAdd(this.NodeStateTable, kind.Name, kind.NodeState);
+        return true;
+    }
 }
