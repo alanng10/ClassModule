@@ -521,41 +521,41 @@ public class Create : ClassCreate
         Data textData;
         textData = arg.StringValueTextData;
 
-        // Text text;
-        // text = this.TextA;
+        Text text;
+        text = this.TextA;
 
-        // long total;
-        // total = 0;
+        long total;
+        total = 0;
 
-        // long count;
-        // count = array.Count;
-        // long i;
-        // i = 0;
-        // while (i < count)
-        // {
-        //     long ka;
-        //     ka = i;
-        //     ka = ka * sizeof(ulong);
+        long count;
+        count = array.Count;
+        long i;
+        i = 0;
+        while (i < count)
+        {
+            long ka;
+            ka = i;
+            ka = ka * sizeof(ulong);
 
-        //     long kk;
-        //     kk = this.InfraInfra.DataIntGet(data, ka);
+            long kk;
+            kk = this.InfraInfra.DataIntGet(data, ka);
 
-        //     text.Data = textData;
-        //     text.Range.Index = total;
-        //     text.Range.Count = kk;
+            text.Data = textData;
+            text.Range.Index = total;
+            text.Range.Count = kk;
 
-        //     String a;
-        //     a = this.StringCreate(text);
+            String a;
+            a = this.StringCreate(text);
 
-        //     this.ClearText(text);
+            this.ClearText(text);
 
-        //     array.SetAt(i, a);
+            array.SetAt(i, a);
 
-        //     total = total + kk;
+            total = total + kk;
 
-        //     i = i + 1;
-        // }
-        // return true;
+            i = i + 1;
+        }
+        return true;
     }
 
     public virtual bool ExecuteStage()
