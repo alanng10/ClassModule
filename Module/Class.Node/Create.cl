@@ -303,4 +303,23 @@ class Create : ClassCreate
         a.Range.End : 0;
         return true;
     }
+
+    maide prusate Int StringValueCount(var Text text)
+    {
+        var StringWrite write;
+        write : this.StringWrite;
+
+        write.Text : text;
+
+        write.Operate : write.CountOperate;
+        write.ResetStage();
+        write.ExecuteStage();
+
+        var Int a;
+        a : write.Arg.Index;
+
+        write.Operate : null
+        write.Text : null;
+        return a;
+    }
 }
