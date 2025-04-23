@@ -580,4 +580,23 @@ class Create : ClassCreate
         a : node;
         return a;
     }
+
+    maide prusate Node ExecuteClass(var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        inf (start = end)
+        {
+            return null;
+        }
+        var Token classToken;
+        classToken : this.Token(this.TokenA, this.Index.Class.Text, this.IndexRange(this.RangeA, start));
+        inf (classToken = null)
+        {
+            return null;
+        }
+    }
 }
