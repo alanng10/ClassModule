@@ -232,5 +232,11 @@ class Create : ClassCreate
 
         var CreateArg arg;
         arg : this.Arg;
+
+        this.Operate : this.CountOperate;
+
+        this.ResetStage();
+        this.ExecuteStage();
+        this.SetArgClear();
     }
 }
