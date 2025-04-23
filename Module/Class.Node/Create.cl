@@ -244,5 +244,16 @@ class Create : ClassCreate
         arg.NameValueTextData : this.DataCreate(arg.NameValueTextIndex * 4);
         arg.StringValueCountData : this.DataCreate(arg.StringValueIndex * 8);
         arg.StringValueTextData : this.DataCreate(arg.StringValueTextIndex * 4);
+
+        this.Operate : this.KindOperate;
+
+        this.ResetStage();
+        this.ExecuteStage();
+
+        arg.NodeArray : this.ListInfra.ArrayCreate(arg.NodeIndex);
+        arg.ListArray : this.ListInfra.ArrayCreate(arg.ListIndex);
+        arg.NameValueArray : this.ListInfra.ArrayCreate(arg.NameValueIndex);
+        arg.StringValueArray : this.ListInfra.ArrayCreate(arg.StringValueIndex);
+        arg.ErrorArray : this.ListInfra.ArrayCreate(arg.ErrorIndex);
     }
 }
