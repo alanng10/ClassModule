@@ -68,6 +68,8 @@ class Create : ClassCreate
         var CreateSetArg a;
         a : new CreateSetArg;
         a.Init();
+        a.Range : new Range;
+        a.Range.Init();
         return a;
     }
 
