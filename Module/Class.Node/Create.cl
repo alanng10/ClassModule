@@ -137,4 +137,17 @@ class Create : ClassCreate
     field precate NodeState ArgueItemNodeState { get { return data; } set { data : value; } }
     field precate NameValid NameValid { get { return data; } set { data : value; } }
     field precate StringWrite StringWrite { get { return data; } set { data : value; } }
+    field precate Range RangeA { get { return data; } set { data : value; } }
+    field precate Range RangeB { get { return data; } set { data : value; } }
+    field precate Range RangeC { get { return data; } set { data : value; } }
+    field precate Range RangeD { get { return data; } set { data : value; } }
+    field precate Token TokenA { get { return data; } set { data : value; } }
+    field precate Token TokenB { get { return data; } set { data : value; } }
+    field precate Token TokenC { get { return data; } set { data : value; } }
+    field precate Token TokenD { get { return data; } set { data : value; } }
+    field precate Token TokenE { get { return data; } set { data : value; } }
+    field precate Token TokenF { get { return data; } set { data : value; } }
+    field precate Token TokenG { get { return data; } set { data : value; } }
+    field precate Token TokenH { get { return data; } set { data : value; } }
+    field precate Token TokenI { get { return data; } set { data : value; } }
 }
