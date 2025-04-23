@@ -237,6 +237,7 @@ public class Create : ClassCreate
 
         this.Operate = this.CountOperate;
 
+        this.ResetStage();
         this.ExecuteStage();
         this.SetArgClear();
 
@@ -254,7 +255,7 @@ public class Create : ClassCreate
         
         this.Operate = this.KindOperate;
 
-        this.ArgClearIndex();
+        this.ResetStage();
         this.ExecuteStage();
         this.SetArgClear();
 
@@ -272,7 +273,7 @@ public class Create : ClassCreate
 
         this.Operate = this.SetOperate;
 
-        this.ArgClearIndex();
+        this.ResetStage();
         this.ExecuteStage();
         this.SetArgClear();
 
@@ -283,7 +284,7 @@ public class Create : ClassCreate
         return true;
     }
     
-    public virtual bool ArgClearIndex()
+    public virtual bool ResetStage()
     {
         CreateArg arg;
         arg = this.Arg;
