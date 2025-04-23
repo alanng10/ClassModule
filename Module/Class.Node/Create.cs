@@ -239,7 +239,6 @@ public class Create : ClassCreate
 
         this.ResetStage();
         this.ExecuteStage();
-        this.SetArgClear();
 
         arg.NodeData = this.DataCreate(arg.NodeIndex);
         arg.ListData = this.DataCreate(arg.ListIndex * sizeof(ulong));
@@ -252,7 +251,6 @@ public class Create : ClassCreate
 
         this.ResetStage();
         this.ExecuteStage();
-        this.SetArgClear();
 
         arg.NodeArray = this.ListInfra.ArrayCreate(arg.NodeIndex);
         arg.ListArray = this.ListInfra.ArrayCreate(arg.ListIndex);
@@ -270,7 +268,6 @@ public class Create : ClassCreate
 
         this.ResetStage();
         this.ExecuteStage();
-        this.SetArgClear();
 
         this.Result.Error = arg.ErrorArray;
 
@@ -585,6 +582,7 @@ public class Create : ClassCreate
             i = i + 1;
         }
 
+        this.SetArgClear();
         this.ClearData();
         return true;
     }
