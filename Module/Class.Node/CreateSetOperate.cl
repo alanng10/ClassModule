@@ -92,6 +92,7 @@ class CreateSetOperate : CreateOperate
 
         var Error error;
         error : cast Error(arg.ErrorArray.Get(index));
+        error.Stage = create.Stage;
         error.Kind : kind;
         error.Range.Start : range.Start;
         error.Range.End : range.End;
