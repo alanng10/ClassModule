@@ -255,5 +255,22 @@ class Create : ClassCreate
         arg.NameValueArray : this.ListInfra.ArrayCreate(arg.NameValueIndex);
         arg.StringValueArray : this.ListInfra.ArrayCreate(arg.StringValueIndex);
         arg.ErrorArray : this.ListInfra.ArrayCreate(arg.ErrorIndex);
+
+        this.ExecuteCreateNode();
+        this.ExecuteCreateList();
+        this.ExecuteCreateNameValue();
+        this.ExecuteCreateStringValue();
+        this.ExecuteCreateError();
+
+        this.Operate : this.SetOperate;
+
+        this.ResetStage();
+        this.ExecuteStage();
+
+        this.Result.Error : arg.ErrorArray;
+
+        this.Operate : null;
+        this.Arg : null;
+        return true;
     }
 }
