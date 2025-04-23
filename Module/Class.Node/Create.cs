@@ -552,19 +552,18 @@ public class Create : ClassCreate
 
     protected virtual Node ExecuteRoot()
     {
-        Range range;
-        range = this.RangeA;
         long rangeStart;
-        rangeStart = 0;
         long rangeEnd;
+        rangeStart = 0;
         rangeEnd = this.CodeItem.Token.Count;
-        this.Range(range, rangeStart, rangeEnd);
 
-        this.NodeState.Arg = range;
+        this.Range(this.RangeA, rangeStart, rangeEnd);
+
+        this.NodeState.Arg = this.RangeA;
         this.NodeState.Execute();
 
         Node node;
-        node = (Node)this.NodeState.Result;
+        node = this.NodeState.Result as Node;
 
         this.NodeState.Result = null;
         this.NodeState.Arg = null;
