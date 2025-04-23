@@ -540,8 +540,10 @@ public class Create : ClassCreate
         while (i < count)
         {
             Node root;
-            root = this.ExecuteRoot();
+            root = this.ExecuteRoot(i);
+
             this.Result.Root.SetAt(i, root);
+
             i = i + 1;
         }
 
@@ -550,8 +552,10 @@ public class Create : ClassCreate
         return true;
     }
 
-    protected virtual Node ExecuteRoot()
+    protected virtual Node ExecuteRoot(long sourceIndex)
     {
+        this.SourceIndex = sourceIndex;
+
         Code code;
         code = this.Code.GetAt(this.SourceIndex) as Code;
 
