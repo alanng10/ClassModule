@@ -368,30 +368,27 @@ public class Create : ClassCreate
         Data data;
         data = arg.NodeData;
 
-        NodeKindList nodeKind;
-        nodeKind = this.NodeKind;
-
         long count;
         count = array.Count;
         long i;
         i = 0;
         while (i < count)
         {
-            long oa;
-            oa = data.Get(i);
+            long ka;
+            ka = data.Get(i);
             NodeKind kind;
-            kind = nodeKind.Get(oa);
+            kind = this.NodeKind.Get(ka);
 
             InfraState newState;
             newState = kind.NewState;
             newState.Execute();
 
-            object o;
-            o = newState.Result;
+            object k;
+            k = newState.Result;
             newState.Result = null;
 
             Node node;
-            node = o as Node;
+            node = k as Node;
             node.Init();
             node.Range = this.CreateClassRange();
             array.SetAt(i, node);
