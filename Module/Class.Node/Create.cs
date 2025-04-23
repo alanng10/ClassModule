@@ -241,17 +241,12 @@ public class Create : ClassCreate
         this.ExecuteStage();
         this.SetArgClear();
 
-        Data nodeData;
-        nodeData = new Data();
-        nodeData.Count = arg.NodeIndex;
-        nodeData.Init();
-        arg.NodeData = nodeData;
-
-        arg.ListData = this.CountDataCreate(arg.ListIndex);
-        arg.NameValueCountData = this.CountDataCreate(arg.NameValueIndex);
-        arg.NameValueTextData = this.TextDataCreate(arg.NameValueTextIndex);
-        arg.StringValueCountData = this.CountDataCreate(arg.StringValueIndex);
-        arg.StringValueTextData = this.TextDataCreate(arg.StringValueTextIndex);
+        arg.NodeData = this.DataCreate(arg.NodeIndex);
+        arg.ListData = this.DataCreate(arg.ListIndex * sizeof(ulong));
+        arg.NameValueCountData = this.DataCreate(arg.NameValueIndex * sizeof(ulong));
+        arg.NameValueTextData = this.DataCreate(arg.NameValueTextIndex * sizeof(uint));
+        arg.StringValueCountData = this.DataCreate(arg.StringValueIndex * sizeof(ulong));
+        arg.StringValueTextData = this.DataCreate(arg.StringValueTextIndex * sizeof(uint));
         
         this.Operate = this.KindOperate;
 
@@ -354,26 +349,11 @@ public class Create : ClassCreate
         return true;
     }
 
-    protected virtual Data CountDataCreate(long count)
+    protected virtual Data DataCreate(long count)
     {
-        long o;
-        o = count;
-        o = o * sizeof(ulong);
         Data a;
         a = new Data();
-        a.Count = o;
-        a.Init();
-        return a;
-    }
-
-    protected virtual Data TextDataCreate(long count)
-    {
-        long o;
-        o = count;
-        o = o * sizeof(uint);
-        Data a;
-        a = new Data();
-        a.Count = o;
+        a.Count = count;
         a.Init();
         return a;
     }
