@@ -444,13 +444,13 @@ public class Create : ClassCreate
         i = 0;
         while (i < count)
         {
-            Error error;
-            error = new Error();
-            error.Init();
-            error.Stage = this.Stage;
-            error.Range = this.CreateClassRange();
+            Error a;
+            a = new Error();
+            a.Init();
+            a.Stage = this.Stage;
+            a.Range = this.CreateClassRange();
 
-            array.SetAt(i, error);
+            array.SetAt(i, a);
 
             i = i + 1;
         }
