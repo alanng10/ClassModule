@@ -776,7 +776,19 @@ class Create : ClassCreate
         var Token getToken;
         inf (~b)
         {
+            getToken : this.Token(this.TokenD, this.Index.ItemGet.Text, this.IndexRange(this.RangeA, braceStart));
+            inf (getToken = null)
+            {
+                b : true;
+            }
+        }
 
+        inf (~b)
+        {
+            inf (getToken.Range.End = braceEnd)
+            {
+                b : true;
+            }
         }
     }
 }
