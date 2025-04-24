@@ -730,5 +730,22 @@ class Create : ClassCreate
         {
             classEnd : ke;
         }
+
+        var Int nameStart;
+        var Int nameEnd;
+        nameStart : classEnd;
+        nameEnd : ke;
+
+        var Int braceStart;
+        var Int braceEnd;
+        braceStart : braceCurveLite.Range.End;
+        braceEnd : braceCurveRite.Range.Start;
+
+        var Node count;
+        count : this.ExecuteCount(this.Range(this.RangeA, countStart, countEnd));
+        inf (count = null)
+        {
+            this.Error(this.ErrorKind.CountUnvalid, countStart, countEnd);
+        }
     }
 }
