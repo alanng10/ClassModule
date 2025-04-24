@@ -4226,7 +4226,7 @@ public class Create : ClassCreate
         if (this.TextSame(this.TAToken(token), this.TB(this.Limit.BraceCurveRite.Text)))
         {
             Token braceCurveLite;
-            braceCurveLite = this.TokenMatchBraceCurveRite(this.TokenA, this.Range(this.RangeA, start, t));
+            braceCurveLite = this.TokenBraceCurveLite(this.TokenA, this.Range(this.RangeA, start, t));
             if (!(braceCurveLite == null))
             {
                 ret = braceCurveLite.Range.Start;
@@ -4240,7 +4240,7 @@ public class Create : ClassCreate
         return this.TokenRiteToken(result, this.Limit.BraceCurveLite.Text, this.Limit.BraceCurveRite.Text, range);
     }
 
-    protected virtual Token TokenMatchBraceCurveRite(Token result, Range range)
+    protected virtual Token TokenBraceCurveLite(Token result, Range range)
     {
         return this.TokenLiteToken(result, this.Limit.BraceCurveLite.Text, this.Limit.BraceCurveRite.Text, range);
     }
