@@ -2517,7 +2517,7 @@ public class Create : ClassCreate
         }
 
         Token braceRoundLite;
-        braceRoundLite = this.TokenMatchBraceRoundRite(this.TokenB, this.Range(this.RangeA, start, braceRoundRite.Range.Start));
+        braceRoundLite = this.TokenBraceRoundLite(this.TokenB, this.Range(this.RangeA, start, braceRoundRite.Range.Start));
         if (braceRoundLite == null)
         {
             return null;
@@ -4216,7 +4216,7 @@ public class Create : ClassCreate
         if (this.TextSame(this.TAToken(token), this.TB(this.Limit.BraceRoundRite.Text)))
         {
             Token braceRoundLite;
-            braceRoundLite = this.TokenMatchBraceRoundRite(this.TokenA, this.Range(this.RangeA, start, t));
+            braceRoundLite = this.TokenBraceRoundLite(this.TokenA, this.Range(this.RangeA, start, t));
             if (!(braceRoundLite == null))
             {
                 ret = braceRoundLite.Range.Start;
@@ -4250,7 +4250,7 @@ public class Create : ClassCreate
         return this.TokenRiteToken(result, this.Limit.BraceRoundLite.Text, this.Limit.BraceRoundRite.Text, range);
     }
 
-    protected virtual Token TokenMatchBraceRoundRite(Token result, Range range)
+    protected virtual Token TokenBraceRoundLite(Token result, Range range)
     {
         return this.TokenLiteToken(result, this.Limit.BraceRoundLite.Text, this.Limit.BraceRoundRite.Text, range);
     }
