@@ -707,5 +707,28 @@ class Create : ClassCreate
         {
             return null;
         }
+
+        var Int countStart;
+        var Int countEnd;
+        countStart : fieldToken.Range.End;
+        countEnd : countStart + 1;
+
+        var Int ke;
+        ke : braceCurveLite.Range.Start;
+
+        inf (ke < countEnd)
+        {
+            countEnd : ke;
+        }
+
+        var Int classStart;
+        var Int classEnd;
+        classStart : countEnd;
+        classEnd : classStart + 1;
+
+        inf (ke < classEnd)
+        {
+            classEnd : ke;
+        }
     }
 }
