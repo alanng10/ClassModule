@@ -742,9 +742,9 @@ public class Create : ClassCreate
         nameEnd = ke;
 
         long braceStart;
-        long oEnd;
+        long braceEnd;
         braceStart = braceCurveLite.Range.End;
-        oEnd = braceCurveRite.Range.Start;
+        braceEnd = braceCurveRite.Range.Start;
 
         Node count;
         count = this.ExecuteCount(this.Range(this.RangeA, countStart, countEnd));
@@ -771,7 +771,7 @@ public class Create : ClassCreate
         b = false;
         if (!b)
         {
-            if (braceStart == oEnd)
+            if (braceStart == braceEnd)
             {
                 b = true;
             }
@@ -789,7 +789,7 @@ public class Create : ClassCreate
 
         if (!b)
         {
-            if (getToken.Range.End == oEnd)
+            if (getToken.Range.End == braceEnd)
             {
                 b = true;
             }
@@ -809,7 +809,7 @@ public class Create : ClassCreate
         getRightBrace = null;
         if (!b)
         {
-            getRightBrace = this.TokenBraceCurveRite(this.TokenF, this.Range(this.RangeA, getLeftBrace.Range.End, oEnd));
+            getRightBrace = this.TokenBraceCurveRite(this.TokenF, this.Range(this.RangeA, getLeftBrace.Range.End, braceEnd));
             if (getRightBrace == null)
             {
                 b = true;
@@ -818,7 +818,7 @@ public class Create : ClassCreate
 
         if (!b)
         {
-            if (getRightBrace.Range.End == oEnd)
+            if (getRightBrace.Range.End == braceEnd)
             {
                 b = true;
             }
@@ -836,7 +836,7 @@ public class Create : ClassCreate
 
         if (!b)
         {
-            if (setToken.Range.End == oEnd)
+            if (setToken.Range.End == braceEnd)
             {
                 b = true;
             }
@@ -856,7 +856,7 @@ public class Create : ClassCreate
         setRightBrace = null;
         if (!b)
         {
-            setRightBrace = this.TokenBraceCurveRite(this.TokenI, this.Range(this.RangeA, setLeftBrace.Range.End, oEnd));
+            setRightBrace = this.TokenBraceCurveRite(this.TokenI, this.Range(this.RangeA, setLeftBrace.Range.End, braceEnd));
             if (setRightBrace == null)
             {
                 b = true;
@@ -865,7 +865,7 @@ public class Create : ClassCreate
 
         if (!b)
         {
-            if (!(setRightBrace.Range.End == oEnd))
+            if (!(setRightBrace.Range.End == braceEnd))
             {
                 b = true;
             }
@@ -894,12 +894,12 @@ public class Create : ClassCreate
 
         if (varGet == null)
         {
-            this.Error(this.ErrorKind.GetUnvalid, braceStart, oEnd);
+            this.Error(this.ErrorKind.GetUnvalid, braceStart, braceEnd);
         }
 
         if (varSet == null)
         {
-            this.Error(this.ErrorKind.SetUnvalid, braceStart, oEnd);
+            this.Error(this.ErrorKind.SetUnvalid, braceStart, braceEnd);
         }
 
         this.SetArg.Kind = this.NodeKind.Field;
