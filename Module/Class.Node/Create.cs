@@ -4147,7 +4147,7 @@ public class Create : ClassCreate
             if (!b)
             {
                 long skipBracketIndex;
-                skipBracketIndex = this.BackwardSkipBracket(i, start);
+                skipBracketIndex = this.BackSkipBrace(i, start);
                 bool ba;
                 ba = (skipBracketIndex == -1);
                 if (!ba)
@@ -4203,7 +4203,7 @@ public class Create : ClassCreate
         return ret;
     }
 
-    protected virtual long BackwardSkipBracket(long index, long start)
+    protected virtual long BackSkipBrace(long index, long start)
     {
         long ret;
         ret = -1;
