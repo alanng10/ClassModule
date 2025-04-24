@@ -797,12 +797,12 @@ public class Create : ClassCreate
             }
         }
 
-        Token getLeftBrace;
-        getLeftBrace = null;
+        Token getBraceLite;
+        getBraceLite = null;
         if (!b)
         {
-            getLeftBrace = this.Token(this.TokenE, this.Limit.BraceCurveLite.Text, this.IndexRange(this.RangeA, getToken.Range.End));
-            if (getLeftBrace == null)
+            getBraceLite = this.Token(this.TokenE, this.Limit.BraceCurveLite.Text, this.IndexRange(this.RangeA, getToken.Range.End));
+            if (getBraceLite == null)
             {
                 b = true;
             }
@@ -812,7 +812,7 @@ public class Create : ClassCreate
         getRightBrace = null;
         if (!b)
         {
-            getRightBrace = this.TokenBraceCurveRite(this.TokenF, this.Range(this.RangeA, getLeftBrace.Range.End, braceEnd));
+            getRightBrace = this.TokenBraceCurveRite(this.TokenF, this.Range(this.RangeA, getBraceLite.Range.End, braceEnd));
             if (getRightBrace == null)
             {
                 b = true;
@@ -883,7 +883,7 @@ public class Create : ClassCreate
         {
             long getStart;
             long getEnd;
-            getStart = getLeftBrace.Range.End;
+            getStart = getBraceLite.Range.End;
             getEnd = getRightBrace.Range.Start;
             long setStart;
             long setEnd;
