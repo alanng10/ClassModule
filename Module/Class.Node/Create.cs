@@ -4094,7 +4094,7 @@ public class Create : ClassCreate
             if (!b)
             {
                 long skipBracketIndex;
-                skipBracketIndex = this.ForwardSkipBracket(i, end);
+                skipBracketIndex = this.FrontSkipBrace(i, end);
                 bool ba;
                 ba = (skipBracketIndex == -1);
                 if (!ba)
@@ -4173,7 +4173,7 @@ public class Create : ClassCreate
         return result;
     }
 
-    protected virtual long ForwardSkipBracket(long index, long end)
+    protected virtual long FrontSkipBrace(long index, long end)
     {
         long ret;
         ret = -1;
