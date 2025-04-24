@@ -747,5 +747,19 @@ class Create : ClassCreate
         {
             this.Error(this.ErrorKind.CountUnvalid, countStart, countEnd);
         }
+
+        var Node varClass;
+        varClass : this.ExecuteName(this.NodeKind.ClassName, this.Range(this.RangeA, classStart, classEnd));
+        inf (varClass = null)
+        {
+            this.Error(this.ErrorKind.CountUnvalid, classStart, classEnd);
+        }
+
+        var Node name;
+        name : this.ExecuteName(this.NodeKind.FieldName, this.Range(this.RangeA, nameStart, nameEnd));
+        inf (name = null)
+        {
+            this.Error(this.ErrorKind.NameUnvalid, nameStart, nameEnd);
+        }
     }
 }
