@@ -636,5 +636,19 @@ class Create : ClassCreate
         var Int partStart;
         partStart : braceCurveLite.Range.End;
         partEnd : braceCurveRite.Range.Start;
+
+        var Node name;
+        name : this.ExecuteName(this.NodeKind.ClassName, this.Range(this.RangeA, nameStart, nameEnd));
+        inf (name = null)
+        {
+            this.Error(this.ErrorKind.NameUnvalid, nameStart, nameEnd);
+        }
+
+        var Node varBase;
+        varBase : this.ExecuteName(this.NodeKind.ClassName, this.Range(this.RangeA, baseStart, baseEnd));
+        inf (varBase = null)
+        {
+            this.Error(this.ErrorKind.BaseUnvalid, baseStart, baseEnd);
+        }
     }
 }
