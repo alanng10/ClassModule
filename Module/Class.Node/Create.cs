@@ -2457,7 +2457,7 @@ public class Create : ClassCreate
         end = range.End;
 
         Token dot;
-        dot = this.TokenBackwardNoSkip(this.TokenA, this.Limit.StopSign.Text, this.Range(this.RangeA, start, end));
+        dot = this.TokenBack(this.TokenA, this.Limit.StopSign.Text, this.Range(this.RangeA, start, end));
         if (dot == null)
         {
             return null;
@@ -2524,7 +2524,7 @@ public class Create : ClassCreate
         }
 
         Token dot;
-        dot = this.TokenBackwardNoSkip(this.TokenC, this.Limit.StopSign.Text, this.Range(this.RangeA, start, leftBracket.Range.Start));
+        dot = this.TokenBack(this.TokenC, this.Limit.StopSign.Text, this.Range(this.RangeA, start, leftBracket.Range.Start));
         if (dot == null)
         {
             return null;
@@ -4011,7 +4011,7 @@ public class Create : ClassCreate
         return result;
     }
 
-    protected virtual Token TokenBackwardNoSkip(Token result, String value, Range range)
+    protected virtual Token TokenBack(Token result, String value, Range range)
     {
         long start;
         long end;
