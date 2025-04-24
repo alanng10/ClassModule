@@ -769,6 +769,7 @@ public class Create : ClassCreate
 
         bool b;
         b = false;
+
         if (!b)
         {
             if (braceStart == braceEnd)
@@ -776,6 +777,7 @@ public class Create : ClassCreate
                 b = true;
             }
         }
+
         Token getToken;
         getToken = null;
         if (!b)
