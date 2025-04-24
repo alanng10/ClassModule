@@ -650,5 +650,22 @@ class Create : ClassCreate
         {
             this.Error(this.ErrorKind.BaseUnvalid, baseStart, baseEnd);
         }
+
+        var Node part;
+        part : this.ExecutePart(this.Range(this.RangeA, partStart, partEnd));
+        inf (part = null)
+        {
+            this.Error(this.ErrorKind.PartUnvalid, partStart, partEnd);
+        }
+
+        this.SetArg.Kind : this.NodeKind.Class;
+        this.SetArg.Range.Start : start;
+        this.SetArg.Range.End : end;
+        this.SetArg.Field00 : name;
+        this.SetArg.Field01 : varBase;
+        this.SetArg.Field02 : part;
+        var Node ret;
+        ret : this.Operate.Execute();
+        return ret;
     }
 }
