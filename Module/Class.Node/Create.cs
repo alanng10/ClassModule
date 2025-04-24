@@ -1788,7 +1788,7 @@ public class Create : ClassCreate
         }
 
         Token colon;
-        colon = this.TokenForward(this.TokenB, this.Limit.AreSign.Text, this.Range(this.RangeA, start, semicolon.Range.Start));
+        colon = this.TokenFrontSkip(this.TokenB, this.Limit.AreSign.Text, this.Range(this.RangeA, start, semicolon.Range.Start));
         if (colon == null)
         {
             return null;
@@ -2663,7 +2663,7 @@ public class Create : ClassCreate
         end = range.End;
 
         Token op;
-        op = this.TokenForward(this.TokenA, limit.Text, this.Range(this.RangeA, start, end));
+        op = this.TokenFrontSkip(this.TokenA, limit.Text, this.Range(this.RangeA, start, end));
         if (op == null)
         {
             return null;
@@ -2789,7 +2789,7 @@ public class Create : ClassCreate
         }
 
         Token comma;
-        comma = this.TokenForward(this.TokenA, this.Limit.PauseSign.Text, this.Range(this.RangeA, braceLite.Range.End, braceRite.Range.Start));
+        comma = this.TokenFrontSkip(this.TokenA, this.Limit.PauseSign.Text, this.Range(this.RangeA, braceLite.Range.End, braceRite.Range.Start));
         if (comma == null)
         {
             return null;
@@ -2965,7 +2965,7 @@ public class Create : ClassCreate
         }
 
         Token comma;
-        comma = this.TokenForward(this.TokenC, this.Limit.PauseSign.Text, this.Range(this.RangeA, leftBracket.Range.End, rightBracket.Range.Start));
+        comma = this.TokenFrontSkip(this.TokenC, this.Limit.PauseSign.Text, this.Range(this.RangeA, leftBracket.Range.End, rightBracket.Range.Start));
         if (comma == null)
         {
             return null;
@@ -3315,7 +3315,7 @@ public class Create : ClassCreate
         }
 
         Token semicolon;
-        semicolon = this.TokenForward(this.TokenB, this.Limit.ExecuteSign.Text, this.Range(this.RangeA, returnToken.Range.End, end));
+        semicolon = this.TokenFrontSkip(this.TokenB, this.Limit.ExecuteSign.Text, this.Range(this.RangeA, returnToken.Range.End, end));
         if (semicolon == null)
         {
             return null;
@@ -3413,7 +3413,7 @@ public class Create : ClassCreate
         }
 
         Token semicolon;
-        semicolon = this.TokenForward(this.TokenB, this.Limit.ExecuteSign.Text, this.Range(this.RangeA, varToken.Range.End, end));
+        semicolon = this.TokenFrontSkip(this.TokenB, this.Limit.ExecuteSign.Text, this.Range(this.RangeA, varToken.Range.End, end));
         if (semicolon == null)
         {
             return null;
@@ -3436,14 +3436,14 @@ public class Create : ClassCreate
         }
 
         Token semicolon;
-        semicolon = this.TokenForward(this.TokenA, this.Limit.ExecuteSign.Text, this.Range(this.RangeA, start, end));
+        semicolon = this.TokenFrontSkip(this.TokenA, this.Limit.ExecuteSign.Text, this.Range(this.RangeA, start, end));
         if (semicolon == null)
         {
             return null;
         }
 
         Token colon;
-        colon = this.TokenForward(this.TokenB, this.Limit.AreSign.Text, this.Range(this.RangeA, start, semicolon.Range.Start));
+        colon = this.TokenFrontSkip(this.TokenB, this.Limit.AreSign.Text, this.Range(this.RangeA, start, semicolon.Range.Start));
         if (colon == null)
         {
             return null;
@@ -3461,7 +3461,7 @@ public class Create : ClassCreate
         end = range.End;
 
         Token semicolon;
-        semicolon = this.TokenForward(this.TokenA, this.Limit.ExecuteSign.Text, this.Range(this.RangeA, start, end));
+        semicolon = this.TokenFrontSkip(this.TokenA, this.Limit.ExecuteSign.Text, this.Range(this.RangeA, start, end));
         if (semicolon == null)
         {
             return null;
@@ -3489,7 +3489,7 @@ public class Create : ClassCreate
         end = range.End;
 
         Token comma;
-        comma = this.TokenForward(this.TokenA, this.Limit.PauseSign.Text, this.Range(this.RangeA, start, end));
+        comma = this.TokenFrontSkip(this.TokenA, this.Limit.PauseSign.Text, this.Range(this.RangeA, start, end));
         if (comma == null)
         {
             return null;
@@ -4069,7 +4069,7 @@ public class Create : ClassCreate
         return result;
     }
 
-    protected virtual Token TokenForward(Token result, String value, Range range)
+    protected virtual Token TokenFrontSkip(Token result, String value, Range range)
     {
         long start;
         long end;
