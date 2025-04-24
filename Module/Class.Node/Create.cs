@@ -618,7 +618,7 @@ public class Create : ClassCreate
         }
 
         Token braceCurveRite;
-        braceCurveRite = this.TokenMatchBraceCurveLite(this.TokenD, this.Range(this.RangeA, braceCurveLite.Range.End, end));
+        braceCurveRite = this.TokenBraceCurveLite(this.TokenD, this.Range(this.RangeA, braceCurveLite.Range.End, end));
         if (braceCurveRite == null)
         {
             return null;
@@ -701,7 +701,7 @@ public class Create : ClassCreate
         }
 
         Token braceCurveRite;
-        braceCurveRite = this.TokenMatchBraceCurveLite(this.TokenC, this.Range(this.RangeA, braceCurveLite.Range.End, end));
+        braceCurveRite = this.TokenBraceCurveLite(this.TokenC, this.Range(this.RangeA, braceCurveLite.Range.End, end));
         if (braceCurveRite == null)
         {
             return null;
@@ -808,7 +808,7 @@ public class Create : ClassCreate
         getRightBrace = null;
         if (!b)
         {
-            getRightBrace = this.TokenMatchBraceCurveLite(this.TokenF, this.Range(this.RangeA, getLeftBrace.Range.End, oEnd));
+            getRightBrace = this.TokenBraceCurveLite(this.TokenF, this.Range(this.RangeA, getLeftBrace.Range.End, oEnd));
             if (getRightBrace == null)
             {
                 b = true;
@@ -855,7 +855,7 @@ public class Create : ClassCreate
         setRightBrace = null;
         if (!b)
         {
-            setRightBrace = this.TokenMatchBraceCurveLite(this.TokenI, this.Range(this.RangeA, setLeftBrace.Range.End, oEnd));
+            setRightBrace = this.TokenBraceCurveLite(this.TokenI, this.Range(this.RangeA, setLeftBrace.Range.End, oEnd));
             if (setRightBrace == null)
             {
                 b = true;
@@ -959,7 +959,7 @@ public class Create : ClassCreate
         }
 
         Token braceCurveRite;
-        braceCurveRite = this.TokenMatchBraceCurveLite(this.TokenE, this.Range(this.RangeA, braceCurveLite.Range.End, end));
+        braceCurveRite = this.TokenBraceCurveLite(this.TokenE, this.Range(this.RangeA, braceCurveLite.Range.End, end));
         if (braceCurveRite == null)
         {
             return null;
@@ -2340,7 +2340,7 @@ public class Create : ClassCreate
         }
 
         Token braceCurveRite;
-        braceCurveRite = this.TokenMatchBraceCurveLite(this.TokenA, this.Range(this.RangeA, braceCurveLite.Range.End, end));
+        braceCurveRite = this.TokenBraceCurveLite(this.TokenA, this.Range(this.RangeA, braceCurveLite.Range.End, end));
         if (braceCurveRite == null)
         {
             return null;
@@ -3383,7 +3383,7 @@ public class Create : ClassCreate
         }
 
         Token braceCurveRite;
-        braceCurveRite = this.TokenMatchBraceCurveLite(this.TokenA, this.Range(this.RangeA, braceCurveLite.Range.End, end));
+        braceCurveRite = this.TokenBraceCurveLite(this.TokenA, this.Range(this.RangeA, braceCurveLite.Range.End, end));
         if (braceCurveRite == null)
         {
             return null;
@@ -3545,7 +3545,7 @@ public class Create : ClassCreate
         }
 
         Token braceCurveRite;
-        braceCurveRite = this.TokenMatchBraceCurveLite(this.TokenC, this.Range(this.RangeA, braceCurveLite.Range.End, end));
+        braceCurveRite = this.TokenBraceCurveLite(this.TokenC, this.Range(this.RangeA, braceCurveLite.Range.End, end));
         if (braceCurveRite == null)
         {
             return null;
@@ -3600,7 +3600,7 @@ public class Create : ClassCreate
         }
 
         Token braceCurveRite;
-        braceCurveRite = this.TokenMatchBraceCurveLite(this.TokenE, this.Range(this.RangeA, braceCurveLite.Range.End, end));
+        braceCurveRite = this.TokenBraceCurveLite(this.TokenE, this.Range(this.RangeA, braceCurveLite.Range.End, end));
         if (braceCurveRite == null)
         {
             return null;
@@ -4194,7 +4194,7 @@ public class Create : ClassCreate
         if (this.TextSame(this.TAToken(token), this.TB(this.Limit.BraceCurveLite.Text)))
         {
             Token braceCurveRite;
-            braceCurveRite = this.TokenMatchBraceCurveLite(this.TokenA, this.Range(this.RangeA, index + 1, end));
+            braceCurveRite = this.TokenBraceCurveLite(this.TokenA, this.Range(this.RangeA, index + 1, end));
             if (!(braceCurveRite == null))
             {
                 ret = braceCurveRite.Range.End;
@@ -4226,7 +4226,7 @@ public class Create : ClassCreate
         if (this.TextSame(this.TAToken(token), this.TB(this.Limit.BraceCurveRite.Text)))
         {
             Token braceCurveLite;
-            braceCurveLite = this.TokenMatchBraceCurveRite(this.TokenA, this.Range(this.RangeA, start, t));
+            braceCurveLite = this.TokenBraceCurveRite(this.TokenA, this.Range(this.RangeA, start, t));
             if (!(braceCurveLite == null))
             {
                 ret = braceCurveLite.Range.Start;
@@ -4235,12 +4235,12 @@ public class Create : ClassCreate
         return ret;
     }
 
-    protected virtual Token TokenMatchBraceCurveLite(Token result, Range range)
+    protected virtual Token TokenBraceCurveLite(Token result, Range range)
     {
         return this.TokenMatchLiteToken(result, this.Limit.BraceCurveLite.Text, this.Limit.BraceCurveRite.Text, range);
     }
 
-    protected virtual Token TokenMatchBraceCurveRite(Token result, Range range)
+    protected virtual Token TokenBraceCurveRite(Token result, Range range)
     {
         return this.TokenMatchRiteToken(result, this.Limit.BraceCurveLite.Text, this.Limit.BraceCurveRite.Text, range);
     }
