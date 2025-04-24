@@ -664,8 +664,8 @@ public class Create : ClassCreate
         }
 
         this.SetArg.Kind = this.NodeKind.Class;
-        this.SetArg.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range.Start = start;
+        this.SetArg.Range.End = end;
         this.SetArg.Field00 = name;
         this.SetArg.Field01 = varBase;
         this.SetArg.Field02 = part;
