@@ -752,7 +752,7 @@ class Create : ClassCreate
         varClass : this.ExecuteName(this.NodeKind.ClassName, this.Range(this.RangeA, classStart, classEnd));
         inf (varClass = null)
         {
-            this.Error(this.ErrorKind.CountUnvalid, classStart, classEnd);
+            this.Error(this.ErrorKind.ClassUnvalid, classStart, classEnd);
         }
 
         var Node name;
