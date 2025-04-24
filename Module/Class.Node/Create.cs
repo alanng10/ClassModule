@@ -891,7 +891,7 @@ public class Create : ClassCreate
 
             varSet = this.ExecuteState(this.Range(this.RangeA, setStart, setEnd));
         }
-        
+
         if (varGet == null)
         {
             this.Error(this.ErrorKind.GetUnvalid, braceStart, oEnd);
