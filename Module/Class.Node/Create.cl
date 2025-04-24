@@ -761,5 +761,22 @@ class Create : ClassCreate
         {
             this.Error(this.ErrorKind.NameUnvalid, nameStart, nameEnd);
         }
+
+        var Bool b;
+        b : false;
+
+        inf (~b)
+        {
+            inf (braceStart = braceEnd)
+            {
+                b : true;
+            }
+        }
+
+        var Token getToken;
+        inf (~b)
+        {
+
+        }
     }
 }
