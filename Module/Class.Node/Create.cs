@@ -4120,7 +4120,7 @@ public class Create : ClassCreate
         return result;
     }
 
-    protected virtual Token TokenBackward(Token result, String value, Range range)
+    protected virtual Token TokenBackSkip(Token result, String value, Range range)
     {
         long start;
         long end;
