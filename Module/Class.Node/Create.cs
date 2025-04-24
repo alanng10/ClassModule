@@ -2774,40 +2774,40 @@ public class Create : ClassCreate
         {
             return null;
         }
-        Token braceLite;
-        braceLite = this.Token(this.TokenC, this.Limit.BraceRoundLite.Text, this.IndexRange(this.RangeA, op.Range.End));
-        if (braceLite == null)
+        Token braceRoundLite;
+        braceRoundLite = this.Token(this.TokenC, this.Limit.BraceRoundLite.Text, this.IndexRange(this.RangeA, op.Range.End));
+        if (braceRoundLite == null)
         {
             return null;
         }
 
-        Token braceRite;
-        braceRite = this.TokenBraceRoundRite(this.TokenD, this.Range(this.RangeA, braceLite.Range.End, end));
-        if (braceRite == null)
+        Token braceRoundRite;
+        braceRoundRite = this.TokenBraceRoundRite(this.TokenD, this.Range(this.RangeA, braceRoundLite.Range.End, end));
+        if (braceRoundRite == null)
         {
             return null;
         }
 
         Token comma;
-        comma = this.TokenFrontSkip(this.TokenA, this.Limit.PauseSign.Text, this.Range(this.RangeA, braceLite.Range.End, braceRite.Range.Start));
+        comma = this.TokenFrontSkip(this.TokenA, this.Limit.PauseSign.Text, this.Range(this.RangeA, braceRoundLite.Range.End, braceRoundRite.Range.Start));
         if (comma == null)
         {
             return null;
         }
 
-        if (!(braceRite.Range.End == end))
+        if (!(braceRoundRite.Range.End == end))
         {
             return null;
         }
 
         long liteStart;
         long liteEnd;
-        liteStart = braceLite.Range.End;
+        liteStart = braceRoundLite.Range.End;
         liteEnd = comma.Range.Start;
         long riteStart;
         long riteEnd;
         riteStart = comma.Range.End;
-        riteEnd = braceRite.Range.Start;
+        riteEnd = braceRoundRite.Range.Start;
 
         Node lite;
         lite = this.ExecuteOperate(this.Range(this.RangeA, liteStart, liteEnd));
