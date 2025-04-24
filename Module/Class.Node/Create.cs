@@ -596,6 +596,7 @@ public class Create : ClassCreate
         {
             return null;
         }
+
         Token classToken;
         classToken = this.Token(this.TokenA, this.Index.Class.Text, this.IndexRange(this.RangeA, start));
         if (classToken == null)
