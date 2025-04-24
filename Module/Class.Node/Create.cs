@@ -903,7 +903,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = this.NodeKind.Field;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.Field00 = varClass;
         this.SetArg.Field01 = name;
         this.SetArg.Field02 = count;
@@ -1044,7 +1044,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = this.NodeKind.Maide;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.Field00 = varClass;
         this.SetArg.Field01 = name;
         this.SetArg.Field02 = count;
@@ -1108,7 +1108,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = this.NodeKind.Var;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.Field00 = varClass;
         this.SetArg.Field01 = name;
         Node ret;
@@ -1292,7 +1292,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = this.NodeKind.BoolValue;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.FieldBool = value;
         Node ret;
         ret = this.Operate.Execute();
@@ -1331,7 +1331,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = this.NodeKind.IntValue;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.FieldInt = value;
         Node ret;
         ret = this.Operate.Execute();
@@ -1375,7 +1375,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = this.NodeKind.IntHexValue;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.FieldInt = value;
         Node ret;
         ret = this.Operate.Execute();
@@ -1449,7 +1449,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = this.NodeKind.IntSignValue;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.FieldInt = value;
         Node ret;
         ret = this.Operate.Execute();
@@ -1522,7 +1522,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = this.NodeKind.IntHexSignValue;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.FieldInt = value;
         Node ret;
         ret = this.Operate.Execute();
@@ -1559,7 +1559,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = this.NodeKind.StringValue;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.Field00 = value;
         Node ret;
         ret = this.Operate.Execute();
@@ -1705,7 +1705,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = this.NodeKind.ReturnExecute;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.Field00 = result;
         Node ret;
         ret = this.Operate.Execute();
@@ -1759,7 +1759,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = this.NodeKind.ReferExecute;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.Field00 = varVar;
         Node ret;
         ret = this.Operate.Execute();
@@ -1819,7 +1819,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = this.NodeKind.AreExecute;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.Field00 = mark;
         this.SetArg.Field01 = value;
         Node ret;
@@ -1861,7 +1861,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = this.NodeKind.OperateExecute;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.Field00 = any;
         Node ret;
         ret = this.Operate.Execute();
@@ -2115,7 +2115,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = this.NodeKind.CastOperate;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.Field00 = varClass;
         this.SetArg.Field01 = any;
         Node ret;
@@ -2144,7 +2144,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = this.NodeKind.ValueOperate;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.Field00 = value;
         Node ret;
         ret = this.Operate.Execute();
@@ -2195,7 +2195,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = this.NodeKind.BraceOperate;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.Field00 = any;
         Node ret;
         ret = this.Operate.Execute();
@@ -2376,7 +2376,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = kind;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.Field00 = cond;
         this.SetArg.Field01 = body;
         Node ret;
@@ -2400,7 +2400,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = kind;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         Node ret;
         ret = this.Operate.Execute();
         return ret;
@@ -2442,7 +2442,7 @@ public class Create : ClassCreate
         
         this.SetArg.Kind = kind;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.Field00 = varClass;
         Node ret;
         ret = this.Operate.Execute();
@@ -2488,7 +2488,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = kind;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.Field00 = varThis;
         this.SetArg.Field01 = field;
         Node ret;
@@ -2568,7 +2568,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = kind;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.Field00 = varThis;
         this.SetArg.Field01 = maide;
         this.SetArg.Field02 = argue;
@@ -2593,7 +2593,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = kind;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.Field00 = varVar;
         Node ret;
         ret = this.Operate.Execute();
@@ -2648,7 +2648,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = kind;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.Field00 = value;
         Node ret;
         ret = this.Operate.Execute();
@@ -2694,7 +2694,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = kind;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.Field00 = left;
         this.SetArg.Field01 = right;
         Node ret;
@@ -2734,7 +2734,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = kind;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.Field00 = value;
         Node ret;
         ret = this.Operate.Execute();
@@ -2825,7 +2825,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = kind;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.Field00 = lite;
         this.SetArg.Field01 = rite;
         Node ret;
@@ -2899,7 +2899,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = kind;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.Field00 = value;
         Node ret;
         ret = this.Operate.Execute();
@@ -3001,7 +3001,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = kind;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.Field00 = left;
         this.SetArg.Field01 = right;
         Node ret;
@@ -3025,7 +3025,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = kind;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.Field00 = value;
         Node ret;
         ret = this.Operate.Execute();
@@ -3048,7 +3048,7 @@ public class Create : ClassCreate
 
         this.SetArg.Kind = kind;
         this.SetArg.Range.Start = start;
-        this.SetArg.End = end;
+        this.SetArg.Range..End = end;
         this.SetArg.Field00 = value;
         Node ret;
         ret = this.Operate.Execute();
