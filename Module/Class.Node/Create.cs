@@ -740,7 +740,7 @@ public class Create : ClassCreate
         long nameEnd;
         nameStart = classEnd;
         nameEnd = ke;
-        
+
         long oStart;
         long oEnd;
         oStart = braceCurveLite.Range.End;
