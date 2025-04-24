@@ -604,14 +604,14 @@ public class Create : ClassCreate
         }
 
         Token colon;
-        colon = this.TokenForwardNoSkip(this.TokenB, this.Limit.AreSign.Text, this.Range(this.RangeA, classToken.Range.End, end));
+        colon = this.TokenFront(this.TokenB, this.Limit.AreSign.Text, this.Range(this.RangeA, classToken.Range.End, end));
         if (colon == null)
         {
             return null;
         }
 
         Token leftBrace;
-        leftBrace = this.TokenForwardNoSkip(this.TokenC, this.Limit.BraceCurveLite.Text, this.Range(this.RangeA, colon.Range.End, end));
+        leftBrace = this.TokenFront(this.TokenC, this.Limit.BraceCurveLite.Text, this.Range(this.RangeA, colon.Range.End, end));
         if (leftBrace == null)
         {
             return null;
@@ -694,7 +694,7 @@ public class Create : ClassCreate
         }
 
         Token leftBrace;
-        leftBrace = this.TokenForwardNoSkip(this.TokenB, this.Limit.BraceCurveLite.Text, this.Range(this.RangeA, fieldToken.Range.End, end));
+        leftBrace = this.TokenFront(this.TokenB, this.Limit.BraceCurveLite.Text, this.Range(this.RangeA, fieldToken.Range.End, end));
         if (leftBrace == null)
         {
             return null;
@@ -934,7 +934,7 @@ public class Create : ClassCreate
         }
 
         Token leftBracket;
-        leftBracket = this.TokenForwardNoSkip(this.TokenB, this.Limit.BraceRoundLite.Text, this.Range(this.RangeA, maideToken.Range.End, end));
+        leftBracket = this.TokenFront(this.TokenB, this.Limit.BraceRoundLite.Text, this.Range(this.RangeA, maideToken.Range.End, end));
         if (leftBracket == null)
         {
             return null;
@@ -2072,7 +2072,7 @@ public class Create : ClassCreate
         }
 
         Token leftBracket;
-        leftBracket = this.TokenForwardNoSkip(this.TokenB, this.Limit.BraceRoundLite.Text, this.Range(this.RangeA, castToken.Range.End, end));
+        leftBracket = this.TokenFront(this.TokenB, this.Limit.BraceRoundLite.Text, this.Range(this.RangeA, castToken.Range.End, end));
         if (leftBracket == null)
         {
             return null;
@@ -3538,7 +3538,7 @@ public class Create : ClassCreate
         }
 
         Token leftBrace;
-        leftBrace = this.TokenForwardNoSkip(this.TokenB, this.Limit.BraceCurveLite.Text, this.Range(this.RangeA, fieldToken.Range.End, end));
+        leftBrace = this.TokenFront(this.TokenB, this.Limit.BraceCurveLite.Text, this.Range(this.RangeA, fieldToken.Range.End, end));
         if (leftBrace == null)
         {
             return null;
@@ -3575,7 +3575,7 @@ public class Create : ClassCreate
         }
 
         Token leftBracket;
-        leftBracket = this.TokenForwardNoSkip(this.TokenB, this.Limit.BraceRoundLite.Text, this.Range(this.RangeA, maideToken.Range.End, end));
+        leftBracket = this.TokenFront(this.TokenB, this.Limit.BraceRoundLite.Text, this.Range(this.RangeA, maideToken.Range.End, end));
         if (leftBracket == null)
         {
             return null;
@@ -3955,7 +3955,7 @@ public class Create : ClassCreate
         return result;
     }
 
-    protected virtual Token TokenForwardNoSkip(Token result, String value, Range range)
+    protected virtual Token TokenFront(Token result, String value, Range range)
     {
         long start;
         long end;
