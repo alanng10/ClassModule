@@ -617,14 +617,14 @@ public class Create : ClassCreate
             return null;
         }
 
-        Token rightBrace;
-        rightBrace = this.TokenMatchBraceCurveLite(this.TokenD, this.Range(this.RangeA, braceCurveLite.Range.End, end));
-        if (rightBrace == null)
+        Token braceCurveRite;
+        braceCurveRite = this.TokenMatchBraceCurveLite(this.TokenD, this.Range(this.RangeA, braceCurveLite.Range.End, end));
+        if (braceCurveRite == null)
         {
             return null;
         }
 
-        if (!(rightBrace.Range.End == end))
+        if (!(braceCurveRite.Range.End == end))
         {
             return null;
         }
@@ -640,7 +640,7 @@ public class Create : ClassCreate
         long partStart;
         long partEnd;
         partStart = braceCurveLite.Range.End;
-        partEnd = rightBrace.Range.Start;
+        partEnd = braceCurveRite.Range.Start;
 
         Node name;
         name = this.ExecuteName(this.NodeKind.ClassName, this.Range(this.RangeA, nameStart, nameEnd));
@@ -700,14 +700,14 @@ public class Create : ClassCreate
             return null;
         }
 
-        Token rightBrace;
-        rightBrace = this.TokenMatchBraceCurveLite(this.TokenC, this.Range(this.RangeA, braceCurveLite.Range.End, end));
-        if (rightBrace == null)
+        Token braceCurveRite;
+        braceCurveRite = this.TokenMatchBraceCurveLite(this.TokenC, this.Range(this.RangeA, braceCurveLite.Range.End, end));
+        if (braceCurveRite == null)
         {
             return null;
         }
 
-        if (!(rightBrace.Range.End == end))
+        if (!(braceCurveRite.Range.End == end))
         {
             return null;
         }
@@ -743,7 +743,7 @@ public class Create : ClassCreate
         long oStart;
         long oEnd;
         oStart = braceCurveLite.Range.End;
-        oEnd = rightBrace.Range.Start;
+        oEnd = braceCurveRite.Range.Start;
 
         Node count;
         count = this.ExecuteCount(this.Range(this.RangeA, countStart, countEnd));
@@ -958,14 +958,14 @@ public class Create : ClassCreate
             return null;
         }
 
-        Token rightBrace;
-        rightBrace = this.TokenMatchBraceCurveLite(this.TokenE, this.Range(this.RangeA, braceCurveLite.Range.End, end));
-        if (rightBrace == null)
+        Token braceCurveRite;
+        braceCurveRite = this.TokenMatchBraceCurveLite(this.TokenE, this.Range(this.RangeA, braceCurveLite.Range.End, end));
+        if (braceCurveRite == null)
         {
             return null;
         }
 
-        if (!(rightBrace.Range.End == end))
+        if (!(braceCurveRite.Range.End == end))
         {
             return null;
         }
@@ -1005,7 +1005,7 @@ public class Create : ClassCreate
         long callStart;
         long callEnd;
         callStart = braceCurveLite.Range.End;
-        callEnd = rightBrace.Range.Start;
+        callEnd = braceCurveRite.Range.Start;
 
         Node count;
         count = this.ExecuteCount(this.Range(this.RangeA, countStart, countEnd));
@@ -2339,14 +2339,14 @@ public class Create : ClassCreate
             return null;
         }
 
-        Token rightBrace;
-        rightBrace = this.TokenMatchBraceCurveLite(this.TokenA, this.Range(this.RangeA, braceCurveLite.Range.End, end));
-        if (rightBrace == null)
+        Token braceCurveRite;
+        braceCurveRite = this.TokenMatchBraceCurveLite(this.TokenA, this.Range(this.RangeA, braceCurveLite.Range.End, end));
+        if (braceCurveRite == null)
         {
             return null;
         }
 
-        if (!(rightBrace.Range.End == end))
+        if (!(braceCurveRite.Range.End == end))
         {
             return null;
         }
@@ -2358,7 +2358,7 @@ public class Create : ClassCreate
         long bodyStart;
         long bodyEnd;
         bodyStart = braceCurveLite.Range.End;
-        bodyEnd = rightBrace.Range.Start;
+        bodyEnd = braceCurveRite.Range.Start;
 
         Node cond;
         cond = this.ExecuteOperate(this.Range(this.RangeA, condStart, condEnd));
