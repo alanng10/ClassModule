@@ -612,5 +612,29 @@ class Create : ClassCreate
         {
             return null;
         }
+
+        var Token braceCurveRite;
+        braceCurveRite : this.TokenBraceCurveRite(this.TokenD, this.Range(this.RangeA, braceCurveLite.Range.End, end));
+        inf (braceCurveRite = null)
+        {
+            return null;
+        }
+
+        inf (~(braceCurveRite.Range.End = end))
+        {
+            return null;
+        }
+
+        var Int nameStart;
+        var Int nameEnd;
+        nameStart : classToken.Range.End;
+        nameEnd : colon.Range.Start;
+        var Int baseStart;
+        var Int baseEnd;
+        baseStart : colon.Range.End;
+        baseEnd : braceCurveLite.Range.Start;
+        var Int partStart;
+        partStart : braceCurveLite.Range.End;
+        partEnd : braceCurveRite.Range.Start;
     }
 }
