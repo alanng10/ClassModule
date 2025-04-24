@@ -741,9 +741,9 @@ public class Create : ClassCreate
         nameStart = classEnd;
         nameEnd = ke;
 
-        long oStart;
+        long braceStart;
         long oEnd;
-        oStart = braceCurveLite.Range.End;
+        braceStart = braceCurveLite.Range.End;
         oEnd = braceCurveRite.Range.Start;
 
         Node count;
@@ -771,7 +771,7 @@ public class Create : ClassCreate
         b = false;
         if (!b)
         {
-            if (oStart == oEnd)
+            if (braceStart == oEnd)
             {
                 b = true;
             }
@@ -780,7 +780,7 @@ public class Create : ClassCreate
         getToken = null;
         if (!b)
         {
-            getToken = this.Token(this.TokenD, this.Index.ItemGet.Text, this.IndexRange(this.RangeA, oStart));
+            getToken = this.Token(this.TokenD, this.Index.ItemGet.Text, this.IndexRange(this.RangeA, braceStart));
             if (getToken == null)
             {
                 b = true;
@@ -894,12 +894,12 @@ public class Create : ClassCreate
         
         if (varGet == null)
         {
-            this.Error(this.ErrorKind.GetUnvalid, oStart, oEnd);
+            this.Error(this.ErrorKind.GetUnvalid, braceStart, oEnd);
         }
 
         if (varSet == null)
         {
-            this.Error(this.ErrorKind.SetUnvalid, oStart, oEnd);
+            this.Error(this.ErrorKind.SetUnvalid, braceStart, oEnd);
         }
 
         this.SetArg.Kind = this.NodeKind.Field;
