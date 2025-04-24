@@ -796,6 +796,7 @@ public class Create : ClassCreate
                 b = true;
             }
         }
+
         Token getLeftBrace;
         getLeftBrace = null;
         if (!b)
