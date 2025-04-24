@@ -592,6 +592,7 @@ class Create : ClassCreate
         {
             return null;
         }
+
         var Token classToken;
         classToken : this.Token(this.TokenA, this.Index.Class.Text, this.IndexRange(this.RangeA, start));
         inf (classToken = null)
@@ -667,5 +668,25 @@ class Create : ClassCreate
         var Node ret;
         ret : this.Operate.Execute();
         return ret;
+    }
+
+    maide prusate Node ExecuteField(var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        inf (start = end)
+        {
+            return null;
+        }
+
+        var Token fieldToken;
+        fieldToken : this.Token(this.TokenA, this.Index.Field.Text, this.IndexRange(this.RangeA, start));
+        inf (fieldToken = null)
+        {
+            return null;
+        }
     }
 }
