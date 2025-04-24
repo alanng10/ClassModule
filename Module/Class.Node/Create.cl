@@ -598,5 +598,19 @@ class Create : ClassCreate
         {
             return null;
         }
+
+        var Token colon;
+        colon : this.TokenFront(this.TokenB, this.Limit.AreSign.Text, this.Range(this.RangeA, classToken.Range.End, end));
+        inf (colon = null)
+        {
+            return null;
+        }
+
+        var Token braceCurveLite;
+        braceCurveLite : this.TokenFront(this.TokenC, this.Limit.BraceCurveLite.Text, this.Range(this.RangeA, colon.Range.End, end));
+        inf (braceCurveLite = null)
+        {
+            return null;
+        }
     }
 }
