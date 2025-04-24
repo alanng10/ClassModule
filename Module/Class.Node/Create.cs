@@ -4242,7 +4242,7 @@ public class Create : ClassCreate
 
     protected virtual Token TokenMatchBraceCurveRite(Token result, Range range)
     {
-        return this.TokenMatchRiteToken(result, this.Limit.BraceCurveLite.Text, this.Limit.BraceCurveRite.Text, range);
+        return this.TokenLiteToken(result, this.Limit.BraceCurveLite.Text, this.Limit.BraceCurveRite.Text, range);
     }
 
     protected virtual Token TokenMatchBraceRoundLite(Token result, Range range)
@@ -4252,7 +4252,7 @@ public class Create : ClassCreate
 
     protected virtual Token TokenMatchBraceRoundRite(Token result, Range range)
     {
-        return this.TokenMatchRiteToken(result, this.Limit.BraceRoundLite.Text, this.Limit.BraceRoundRite.Text, range);
+        return this.TokenLiteToken(result, this.Limit.BraceRoundLite.Text, this.Limit.BraceRoundRite.Text, range);
     }
 
     protected virtual Token TokenRiteToken(Token result, String liteToken, String riteToken, Range range)
@@ -4311,7 +4311,7 @@ public class Create : ClassCreate
         return result;
     }
 
-    protected virtual Token TokenMatchRiteToken(Token result, String liteToken, String riteToken, Range range)
+    protected virtual Token TokenLiteToken(Token result, String liteToken, String riteToken, Range range)
     {
         long start;
         long end;
