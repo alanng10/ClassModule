@@ -810,5 +810,51 @@ class Create : ClassCreate
                 b : true;
             }
         }
+
+        inf (~b)
+        {
+            inf (getBraceRite.Range.End = braceEnd)
+            {
+                b : true;
+            }
+        }
+
+        var Token setToken;
+        inf (~b)
+        {
+            setToken : this.Token(this.TokenG, this.Index.Set.Text, this.IndexRange(this.RangeA, getBraceRite.Range.End));
+            inf (setToken = null)
+            {
+                b : true;
+            }
+        }
+
+        inf (~b)
+        {
+            inf (setToken.Range.End = braceEnd)
+            {
+                b : true;
+            }
+        }
+
+        var Token setBraceLite;
+        inf (~b)
+        {
+            setBraceLite : this.Token(this.TokenH, this.Limit.BraceCurveLite.Text, this.IndexRange(this.RangeA, setToken.Range.End));
+            inf (setBraceLite = null)
+            {
+                b : true;
+            }
+        }
+
+        var Token setBraceRite;
+        inf (~b)
+        {
+            setBraceRite : this.TokenBraceCurveRite(this.TokenI, this.Range(this.RangeA, setBraceLite.Range.End, braceEnd));
+            inf (setBraceRite = null)
+            {
+                b : true;
+            }
+        }
     }
 }
