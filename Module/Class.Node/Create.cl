@@ -1233,4 +1233,23 @@ class Create : ClassCreate
         }
         return a;
     }
+
+    maide prusate Node ExecuteBoolValue(var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        inf (~(this.Count(start, end) = 1))
+        {
+            return null;
+        }
+
+        var TokenToken token;
+        token : this.TokenToken(start);
+
+        var Text text;
+        text : this.TextToken(this.TextA, token);
+    }
 }
