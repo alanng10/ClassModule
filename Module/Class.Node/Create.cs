@@ -3872,8 +3872,11 @@ public class Create : ClassCreate
 
     protected virtual TokenToken TokenToken(long index)
     {
+        Code code;
+        code = this.Code.GetAt(this.SourceIndex) as Code;
+
         TokenToken token;
-        token = (TokenToken)this.CodeItem.Token.GetAt(index);
+        token = code.Token.GetAt(index) as TokenToken;
         return token;
     }
 
