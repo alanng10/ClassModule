@@ -1188,4 +1188,14 @@ class Create : ClassCreate
         }
         return a;
     }
+
+    maide prusate Node ExecuteVarMark(var Range range)
+    {
+        return this.ExecuteVarNameResult(this.NodeKind.VarMark, range);
+    }
+
+    maide prusate Node ExecuteSetMark(var Range range)
+    {
+        return this.ExecuteDotField(this.NodeKind.SetMark, range);
+    }
 }
