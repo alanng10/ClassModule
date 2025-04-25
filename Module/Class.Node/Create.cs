@@ -826,6 +826,7 @@ public class Create : ClassCreate
                 b = true;
             }
         }
+
         Token setToken;
         setToken = null;
         if (!b)
@@ -844,6 +845,7 @@ public class Create : ClassCreate
                 b = true;
             }
         }
+
         Token setBraceLite;
         setBraceLite = null;
         if (!b)
