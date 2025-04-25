@@ -1036,5 +1036,17 @@ class Create : ClassCreate
         {
             this.Error(this.ErrorKind.CallUnvalid, callStart, callEnd);
         }
+
+        this.SetArg.Kind : this.NodeKind.Maide;
+        this.SetArg.Range.Start : start;
+        this.SetArg.Range.End : end;
+        this.SetArg.Field00 : varClass;
+        this.SetArg.Field01 : name;
+        this.SetArg.Field02 : count;
+        this.SetArg.Field03 : param;
+        this.SetArg.Field04 : call;
+        var Node ret;
+        ret : this.Operate.Execute();
+        return ret;
     }
 }
