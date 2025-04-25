@@ -1110,4 +1110,24 @@ class Create : ClassCreate
         ret : this.Operate.Execute();
         return ret;
     }
+
+    maide prusate Node ExecuteClassName(var Range range)
+    {
+        return this.ExecuteName(this.NodeKind.ClassName, range);
+    }
+
+    maide prusate Node ExecuteFieldName(var Range range)
+    {
+        return this.ExecuteName(this.NodeKind.FieldName, range);
+    }
+
+    maide prusate Node ExecuteMaideName(var Range range)
+    {
+        return this.ExecuteName(this.NodeKind.MaideName, range);
+    }
+
+    maide prusate Node ExecuteVarName(var Range range)
+    {
+        return this.ExecuteName(this.NodeKind.VarName, range);
+    }
 }
