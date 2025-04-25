@@ -1262,9 +1262,6 @@ public class Create : ClassCreate
             return null;
         }
 
-        TextInfra textInfra;
-        textInfra = this.TextInfra;
-
         TokenToken token;
         token = this.TokenToken(start);
 
