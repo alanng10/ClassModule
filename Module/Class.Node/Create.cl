@@ -1251,5 +1251,39 @@ class Create : ClassCreate
 
         var Text text;
         text : this.TextToken(this.TextA, token);
+
+        var Bool value;
+
+        var Bool b;
+        b : false;
+        inf (~b)
+        {
+            inf (this.TextSame(text, this.TB(this.Index.True.Text)))
+            {
+                value : true;
+                b : true;
+            }
+        }
+        inf (~b)
+        {
+            inf (this.TextSame(text, this.TB(this.Index.False.Text)))
+            {
+                value : false;
+                b : true;
+            }
+        }
+
+        inf (~b)
+        {
+            return null;
+        }
+
+        this.SetArg.Kind : this.NodeKind.BoolValue;
+        this.SetArg.Range.Start : start;
+        this.SetArg.Range.End : end;
+        this.SetArg.Field00 : value;
+        var Node ret;
+        ret : this.Operate.Execute();
+        return ret;
     }
 }
