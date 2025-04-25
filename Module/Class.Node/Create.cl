@@ -1169,4 +1169,23 @@ class Create : ClassCreate
         }
         return a;
     }
+
+    maide prusate Node ExecuteMark(var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        var Node a;
+        inf (a = null)
+        {
+            a : this.ExecuteVarMark(this.Range(this.RangeA, start, end));
+        }
+        inf (a = null)
+        {
+            a : this.ExecuteSetMark(this.Range(this.RangeA, start, end));
+        }
+        return a;
+    }
 }
