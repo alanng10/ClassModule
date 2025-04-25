@@ -1304,37 +1304,71 @@ public class Create : ClassCreate
         return ret;
     }
 
-    public virtual Node ExecuteIntValue(Range range)
+    public virtual Node ExecuteIntHexSignValue(Range range)
     {
         long start;
         long end;
         start = range.Start;
         end = range.End;
 
-        if (!(this.Count(start, end) == 1))
+        if (!(start + 1 == end))
         {
             return null;
         }
 
-        TokenToken token;
-        token = this.TokenToken(start);
-
-        if (!this.IsIntValue(token))
+        TokenToken aa;
+        aa = this.TokenToken(start);
+        if (!this.IsIntHexSignValue(aa))
         {
             return null;
         }
 
+        bool signNegative;
+        signNegative = this.IsTokenSignNegate(aa, 3);
+
+        Text line;
+        line = (Text)this.SourceItem.Text.GetAt(aa.Row);
         Text text;
-        text = this.TAToken(token);
+        text = this.TextA;
+        text.Data = line.Data;
+        text.Range.Index = line.Range.Index + aa.Range.Index + 4;
+        text.Range.Count = aa.Range.Count - 4;
+
+        long o;
+        o = this.IntText(text, 16);
+        if (o == -1)
+        {
+            return null;
+        }
+
+        long max;
+        max = 0;
+        if (!signNegative)
+        {
+            max = this.ClassInfra.IntSignPositeMax;
+        }
+        if (signNegative)
+        {
+            max = this.ClassInfra.IntSignNegateMax;
+        }
+
+        if (max < o)
+        {
+            return null;
+        }
 
         long value;
-        value = this.IntText(text, 10);
-        if (value == -1)
+        value = 0;
+        if (!signNegative)
         {
-            return null;
+            value = o;
+        }
+        if (signNegative)
+        {
+            value = -o;
         }
 
-        this.SetArg.Kind = this.NodeKind.IntValue;
+        this.SetArg.Kind = this.NodeKind.IntHexSignValue;
         this.SetArg.Range.Start = start;
         this.SetArg.Range.End = end;
         this.SetArg.FieldInt = value;
@@ -1461,71 +1495,37 @@ public class Create : ClassCreate
         return ret;
     }
 
-    public virtual Node ExecuteIntHexSignValue(Range range)
+    public virtual Node ExecuteIntValue(Range range)
     {
         long start;
         long end;
         start = range.Start;
         end = range.End;
 
-        if (!(start + 1 == end))
+        if (!(this.Count(start, end) == 1))
         {
             return null;
         }
 
-        TokenToken aa;
-        aa = this.TokenToken(start);
-        if (!this.IsIntHexSignValue(aa))
+        TokenToken token;
+        token = this.TokenToken(start);
+
+        if (!this.IsIntValue(token))
         {
             return null;
         }
 
-        bool signNegative;
-        signNegative = this.IsTokenSignNegate(aa, 3);
-
-        Text line;
-        line = (Text)this.SourceItem.Text.GetAt(aa.Row);
         Text text;
-        text = this.TextA;
-        text.Data = line.Data;
-        text.Range.Index = line.Range.Index + aa.Range.Index + 4;
-        text.Range.Count = aa.Range.Count - 4;
-
-        long o;
-        o = this.IntText(text, 16);
-        if (o == -1)
-        {
-            return null;
-        }
-
-        long max;
-        max = 0;
-        if (!signNegative)
-        {
-            max = this.ClassInfra.IntSignPositeMax;
-        }
-        if (signNegative)
-        {
-            max = this.ClassInfra.IntSignNegateMax;
-        }
-
-        if (max < o)
-        {
-            return null;
-        }
+        text = this.TAToken(token);
 
         long value;
-        value = 0;
-        if (!signNegative)
+        value = this.IntText(text, 10);
+        if (value == -1)
         {
-            value = o;
-        }
-        if (signNegative)
-        {
-            value = -o;
+            return null;
         }
 
-        this.SetArg.Kind = this.NodeKind.IntHexSignValue;
+        this.SetArg.Kind = this.NodeKind.IntValue;
         this.SetArg.Range.Start = start;
         this.SetArg.Range.End = end;
         this.SetArg.FieldInt = value;
