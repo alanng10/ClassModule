@@ -987,5 +987,40 @@ class Create : ClassCreate
         {
             classEnd : ke;
         }
+
+        var Int nameStart;
+        var Int nameEnd;
+        nameStart : classEnd;
+        nameEnd : ke;
+
+        var Int paramStart;
+        var Int paramEnd;
+        paramStart : braceRoundLite.Range.End;
+        paramEnd : braceRoundRite.Range.Start;
+        var Int callStart;
+        var Int callEnd;
+        callStart : braceCurveLite.Range.End;
+        callEnd : braceCurveRite.Range.Start;
+
+        var Node count;
+        count : this.ExecuteCount(this.Range(this.RangeA, countStart, countEnd));
+        inf (count = null)
+        {
+            this.Error(this.ErrorKind.CountUnvalid, countStart, countEnd);
+        }
+
+        var Node varClass;
+        varClass : this.ExecuteName(this.NodeKind.ClassName, this.Range(this.RangeA, classStart, classEnd));
+        inf (varClass = null)
+        {
+            this.Error(this.ErrorKind.ClassUnvalid, classStart, classEnd);
+        }
+
+        var Node name;
+        name : this.ExecuteName(this.NodeKind.MaideName, this.Range(this.RangeA, nameStart, nameEnd));
+        inf (name = null)
+        {
+            this.Error(this.ErrorKind.NameUnvalid, nameStart, nameEnd);
+        }
     }
 }
