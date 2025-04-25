@@ -1145,4 +1145,9 @@ class Create : ClassCreate
     {
         return this.ExecuteListComma(this.NodeKind.Param, this.ParamItemRangeState, this.ParamItemNodeState, range);
     }
+
+    maide prusate Node ExecuteArgue(var Range range)
+    {
+        return this.ExecuteListComma(this.NodeKind.Argue, this.ArgueItemRangeState, this.ArgueItemNodeState, range);
+    }
 }
