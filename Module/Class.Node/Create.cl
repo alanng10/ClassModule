@@ -1286,4 +1286,17 @@ class Create : ClassCreate
         ret : this.Operate.Execute();
         return ret;
     }
+
+    maide prusate Node ExecuteIntValue(var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        inf (~(this.Count(start, end) = 1))
+        {
+            return null;
+        }
+    }
 }
