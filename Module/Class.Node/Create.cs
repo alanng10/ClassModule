@@ -1316,23 +1316,23 @@ public class Create : ClassCreate
             return null;
         }
 
-        TokenToken aa;
-        aa = this.TokenToken(start);
-        if (!this.IsIntHexSignValue(aa))
+        TokenToken token;
+        token = this.TokenToken(start);
+        if (!this.IsIntHexSignValue(token))
         {
             return null;
         }
 
-        bool signNegative;
-        signNegative = this.IsTokenSignNegate(aa, 3);
+        bool signNegate;
+        signNegate = this.IsTokenSignNegate(token, 3);
 
         Text line;
-        line = (Text)this.SourceItem.Text.GetAt(aa.Row);
+        line = this.SourceItem.Text.GetAt(token.Row) as Text;
         Text text;
         text = this.TextA;
         text.Data = line.Data;
-        text.Range.Index = line.Range.Index + aa.Range.Index + 4;
-        text.Range.Count = aa.Range.Count - 4;
+        text.Range.Index = line.Range.Index + token.Range.Index + 4;
+        text.Range.Count = token.Range.Count - 4;
 
         long o;
         o = this.IntText(text, 16);
@@ -1343,11 +1343,11 @@ public class Create : ClassCreate
 
         long max;
         max = 0;
-        if (!signNegative)
+        if (!signNegate)
         {
             max = this.ClassInfra.IntSignPositeMax;
         }
-        if (signNegative)
+        if (signNegate)
         {
             max = this.ClassInfra.IntSignNegateMax;
         }
