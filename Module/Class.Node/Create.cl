@@ -1150,4 +1150,23 @@ class Create : ClassCreate
     {
         return this.ExecuteListComma(this.NodeKind.Argue, this.ArgueItemRangeState, this.ArgueItemNodeState, range);
     }
+
+    maide prusate Node ExecuteComp(var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        var Node a;
+        inf (a = null)
+        {
+            a : this.ExecuteField(this.Range(this.RangeA, start, end));
+        }
+        inf (a = null)
+        {
+            a : this.ExecuteMaide(this.Range(this.RangeA, start, end));
+        }
+        return a;
+    }
 }
