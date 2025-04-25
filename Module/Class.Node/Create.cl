@@ -1049,4 +1049,27 @@ class Create : ClassCreate
         ret : this.Operate.Execute();
         return ret;
     }
+
+    maide prusate Node ExecuteVar(var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        var Int count;
+        count : this.Count(start, end);
+
+        inf (count < 1 | 3 < count)
+        {
+            return null;
+        }
+
+        var Token varToken;
+        varToken : this.Token(this.TokenA, this.Index.Var.Text, this.IndexRange(this.RangeA, start));
+        inf (varToken = null)
+        {
+            return null;
+        }
+    }
 }
