@@ -1071,5 +1071,20 @@ class Create : ClassCreate
         {
             return null;
         }
+
+        var Int classStart;
+        var Int classEnd;
+        classStart : varToken.Range.End;
+        classEnd : classStart + 1;
+
+        inf (end < classEnd)
+        {
+            classEnd : end;
+        }
+
+        var Int nameStart;
+        var Int nameEnd;
+        nameStart : classEnd;
+        nameEnd : end;
     }
 }
