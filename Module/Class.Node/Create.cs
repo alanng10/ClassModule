@@ -3882,18 +3882,17 @@ public class Create : ClassCreate
         return this.ClassInfra.Count(start, end);
     }
 
-    protected virtual Text TAToken(TokenToken token)
+    protected virtual Text TextToken(Text text, TokenToken token)
     {
-        Text line;
-        line = this.SourceItem.Text.GetAt(token.Row) as Text;
-        InfraRange range;
-        range = token.Range;
+        Source source;
+        source = this.Source.GetAt(this.SourceIndex) as Source;
 
-        Text text;
-        text = this.TextA;
+        Text line;
+        line = source.Text.GetAt(token.Row) as Text;
+
         text.Data = line.Data;
-        text.Range.Index = line.Range.Index + range.Index;
-        text.Range.Count = range.Count;
+        text.Range.Index = line.Range.Index + token.Range.Index;
+        text.Range.Count = token.Range.Count;
         return text;
     }
 
