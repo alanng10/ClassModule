@@ -1022,5 +1022,19 @@ class Create : ClassCreate
         {
             this.Error(this.ErrorKind.NameUnvalid, nameStart, nameEnd);
         }
+
+        var Node param;
+        param : this.ExecuteParam(this.Range(this.RangeA, paramStart, paramEnd));
+        inf (param = null)
+        {
+            this.Error(this.ErrorKind.ParamUnvalid, paramStart, paramEnd);
+        }
+
+        var Node call;
+        call : this.ExecuteState(this.Range(this.RangeA, callStart, callEnd));
+        inf (call = null)
+        {
+            this.Error(this.ErrorKind.CallUnvalid, callStart, callEnd);
+        }
     }
 }
