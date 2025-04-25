@@ -3887,16 +3887,30 @@ public class Create : ClassCreate
 
     protected virtual Text TextToken(Text text, TokenToken token)
     {
-        Source source;
-        source = this.Source.GetAt(this.SourceIndex) as Source;
-
         Text line;
-        line = source.Text.GetAt(token.Row) as Text;
+        line = this.Line(token.Row);
 
         text.Data = line.Data;
         text.Range.Index = line.Range.Index + token.Range.Index;
         text.Range.Count = token.Range.Count;
         return text;
+    }
+
+    protected virtual Line(long row)
+    {
+        Source source;
+        source = this.SourceItem();
+
+        Text a;
+        a = source.Text.GetAt(row) as Text;
+        return a;
+    }
+
+    protected virtual Source SourceItem()
+    {
+        Source a;
+        a = this.Source.GetAt(this.SourceIndex) as Source;
+        return a;
     }
 
     protected virtual bool IsName(TokenToken token)
