@@ -1130,4 +1130,19 @@ class Create : ClassCreate
     {
         return this.ExecuteName(this.NodeKind.VarName, range);
     }
+
+    maide prusate Node ExecutePart(var Range range)
+    {
+        return this.ExecuteList(this.NodeKind.Part, this.PartItemRangeState, this.PartItemNodeState, range);
+    }
+
+    maide prusate Node ExecuteState(var Range range)
+    {
+        return this.ExecuteList(this.NodeKind.State, this.StateItemRangeState, this.StateItemNodeState, range);
+    }
+
+    maide prusate Node ExecuteParam(var Range range)
+    {
+        return this.ExecuteListComma(this.NodeKind.Param, this.ParamItemRangeState, this.ParamItemNodeState, range);
+    }
 }
