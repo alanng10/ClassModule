@@ -1324,7 +1324,7 @@ public class Create : ClassCreate
         }
 
         bool signNegate;
-        signNegate = this.IsTokenSignNegate(token, 3);
+        signNegate = this.TokenSignNegate(token, 3);
 
         Text line;
         line = this.SourceItem.Text.GetAt(token.Row) as Text;
@@ -1441,7 +1441,7 @@ public class Create : ClassCreate
         }
 
         bool signNegative;
-        signNegative = this.IsTokenSignNegate(aa, 2);
+        signNegative = this.TokenSignNegate(aa, 2);
 
         Text line;
         line = this.SourceItem.Text.GetAt(aa.Row) as Text;
@@ -3853,7 +3853,7 @@ public class Create : ClassCreate
         return (oc == 'p') | (oc == 'n');
     }
 
-    protected virtual bool IsTokenSignNegate(TokenToken o, long index)
+    protected virtual bool TokenSignNegate(TokenToken o, long index)
     {
         Text line;
         line = this.SourceItem.Text.GetAt(o.Row) as Text;
