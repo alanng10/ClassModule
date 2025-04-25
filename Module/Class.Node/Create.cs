@@ -1359,11 +1359,11 @@ public class Create : ClassCreate
 
         long value;
         value = 0;
-        if (!signNegative)
+        if (!signNegate)
         {
             value = o;
         }
-        if (signNegative)
+        if (signNegate)
         {
             value = -o;
         }
