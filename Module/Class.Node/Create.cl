@@ -1198,4 +1198,39 @@ class Create : ClassCreate
     {
         return this.ExecuteDotField(this.NodeKind.SetMark, range);
     }
+
+    maide prusate Node ExecuteValue(var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        var Node a;
+        inf (a = null)
+        {
+            a : this.ExecuteBoolValue(this.Range(this.RangeA, start, end));
+        }
+        inf (a = null)
+        {
+            a : this.ExecuteIntHexSignValue(this.Range(this.RangeA, start, end));
+        }
+        inf (a = null)
+        {
+            a : this.ExecuteIntHexValue(this.Range(this.RangeA, start, end));
+        }
+        inf (a = null)
+        {
+            a : this.ExecuteIntSignValue(this.Range(this.RangeA, start, end));
+        }
+        inf (a = null)
+        {
+            a : this.ExecuteIntValue(this.Range(this.RangeA, start, end));
+        }
+        inf (a = null)
+        {
+            a : this.ExecuteStringValue(this.Range(this.RangeA, start, end));
+        }
+        return a;
+    }
 }
