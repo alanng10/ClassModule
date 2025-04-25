@@ -884,5 +884,27 @@ class Create : ClassCreate
 
             varSet : this.ExecuteState(this.Range(this.RangeA, setStart, setEnd));
         }
+
+        inf (varGet = null)
+        {
+            this.Error(this.ErrorKind.GetUnvalid, braceStart, braceEnd);
+        }
+
+        inf (varSet = null)
+        {
+            this.Error(this.ErrorKind.SetUnvalid, braceStart, braceEnd);
+        }
+
+        this.SetArg.Kind : this.NodeKind.Field;
+        this.SetArg.Range.Start : start;
+        this.SetArg.Range.End : end;
+        this.SetArg.Field00 : varClass;
+        this.SetArg.Field01 : name;
+        this.SetArg.Field02 : count;
+        this.SetArg.Field03 : varGet;
+        this.SetArg.Field04 : varSet;
+        var Node ret;
+        ret : this.Operate.Execute();
+        return ret;
     }
 }
