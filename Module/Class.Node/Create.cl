@@ -856,5 +856,33 @@ class Create : ClassCreate
                 b : true;
             }
         }
+
+        inf (~b)
+        {
+            inf (~(setBraceRite.Range.End = braceEnd))
+            {
+                b : true;
+            }
+        }
+
+        var Node varGet;
+
+        var Node varSet;
+
+        inf (~b)
+        {
+            var Int getStart;
+            var Int getEnd;
+            getStart : getBraceLite.Range.End;
+            getEnd : getBraceRite.Range.Start;
+            var Int setStart;
+            var Int setEnd;
+            setStart : setBraceLite.Range.End;
+            setEnd : setBraceRite.Range.Start;
+
+            varGet : this.ExecuteState(this.Range(this.RangeA, getStart, getEnd));
+
+            varSet : this.ExecuteState(this.Range(this.RangeA, setStart, setEnd));
+        }
     }
 }
