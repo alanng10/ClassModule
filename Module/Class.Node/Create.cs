@@ -881,6 +881,7 @@ public class Create : ClassCreate
 
         Node varSet;
         varSet = null;
+
         if (!b)
         {
             long getStart;
