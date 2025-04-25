@@ -3681,7 +3681,7 @@ public class Create : ClassCreate
         this.TextA.Data = data;
         this.TextA.Range.Index = startA;
         this.TextA.Range.Count = countA;
-        if (!this.IsIntHexChar(this.TextA))
+        if (!this.IntHexChar(this.TextA))
         {
             return false;
         }
@@ -3781,7 +3781,7 @@ public class Create : ClassCreate
         this.TextA.Data = data;
         this.TextA.Range.Index = startA;
         this.TextA.Range.Count = countA;
-        if (!this.IsIntHexChar(this.TextA))
+        if (!this.IntHexChar(this.TextA))
         {
             return false;
         }
@@ -3818,7 +3818,7 @@ public class Create : ClassCreate
         return true;
     }
 
-    protected virtual bool IsIntHexChar(Text text)
+    protected virtual bool IntHexChar(Text text)
     {
         TextInfra textInfra;
         textInfra = this.TextInfra;
