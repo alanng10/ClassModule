@@ -3853,20 +3853,20 @@ public class Create : ClassCreate
         return (oc == 'p') | (oc == 'n');
     }
 
-    protected virtual bool TokenSignNegate(TokenToken o, long index)
+    protected virtual bool TokenSignNegate(TokenToken token, long index)
     {
         Text line;
-        line = this.SourceItem.Text.GetAt(o.Row) as Text;
+        line = this.Line(token.Row);
 
         Data data;
         data = line.Data;
         long start;
-        start = line.Range.Index + o.Range.Index;
+        start = line.Range.Index + token.Range.Index;
 
-        long oa;
-        oa = this.TextInfra.DataCharGet(data, start + index);
+        long k;
+        k = this.TextInfra.DataCharGet(data, start + index);
         bool a;
-        a = (oa == 'n');
+        a = (k == 'n');
         return a;
     }
 
