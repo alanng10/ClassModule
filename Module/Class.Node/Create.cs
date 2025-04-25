@@ -3806,10 +3806,10 @@ public class Create : ClassCreate
             long index;
             index = start + i;
 
-            long oc;
-            oc = textInfra.DataCharGet(data, index);
+            long ka;
+            ka = textInfra.DataCharGet(data, index);
 
-            if (!(textInfra.Digit(oc)))
+            if (!(textInfra.Digit(ka)))
             {
                 return false;
             }
@@ -3836,10 +3836,10 @@ public class Create : ClassCreate
             long index;
             index = start + i;
 
-            long oc;
-            oc = textInfra.DataCharGet(data, index);
+            long ka;
+            ka = textInfra.DataCharGet(data, index);
 
-            if (!(textInfra.Digit(oc) | textInfra.HexAlpha(oc, false)))
+            if (!(textInfra.Digit(ka) | textInfra.HexAlpha(ka, false)))
             {
                 return false;
             }
