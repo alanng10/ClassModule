@@ -1086,5 +1086,28 @@ class Create : ClassCreate
         var Int nameEnd;
         nameStart : classEnd;
         nameEnd : end;
+
+        var Node varClass;
+        varClass : this.ExecuteName(this.NodeKind.ClassName, this.Range(this.RangeA, classStart, classEnd));
+        inf (varClass = null)
+        {
+            this.Error(this.ErrorKind.ClassUnvalid, classStart, classEnd);
+        }
+
+        var Node name;
+        name : this.ExecuteName(this.NodeKind.VarName, this.Range(this.RangeA, nameStart, nameEnd));
+        inf (name = null)
+        {
+            this.Error(this.ErrorKind.NameUnvalid, nameStart, nameEnd);
+        }
+
+        this.SetArg.Kind : this.NodeKind.Var;
+        this.SetArg.Range.Start : start;
+        this.SetArg.Range.End : end;
+        this.SetArg.Field00 : varClass;
+        this.SetArg.Field01 : name;
+        var Node ret;
+        ret : this.Operate.Execute();
+        return ret;
     }
 }
