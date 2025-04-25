@@ -3640,7 +3640,7 @@ public class Create : ClassCreate
 
     protected virtual bool IsIntValue(TokenToken token)
     {
-        if (!this.IsIntChar(this.TAToken(token)))
+        if (!this.IntChar(this.TAToken(token)))
         {
             return false;
         }
@@ -3729,7 +3729,7 @@ public class Create : ClassCreate
         this.TextA.Data = data;
         this.TextA.Range.Index = startA;
         this.TextA.Range.Count = countA;
-        if (!this.IsIntChar(this.TextA))
+        if (!this.IntChar(this.TextA))
         {
             return false;
         }
@@ -3788,7 +3788,7 @@ public class Create : ClassCreate
         return true;
     }
 
-    protected virtual bool IsIntChar(Text text)
+    protected virtual bool IntChar(Text text)
     {
         TextInfra textInfra;
         textInfra = this.TextInfra;
