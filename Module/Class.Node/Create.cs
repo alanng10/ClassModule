@@ -1323,8 +1323,8 @@ public class Create : ClassCreate
             return null;
         }
 
-        bool signNegate;
-        signNegate = this.TokenSignNegate(token, 3);
+        bool negate;
+        negate = this.TokenSignNegate(token, 3);
 
         Text line;
         line = this.SourceItem.Text.GetAt(token.Row) as Text;
@@ -1343,11 +1343,11 @@ public class Create : ClassCreate
 
         long max;
         max = 0;
-        if (!signNegate)
+        if (!negate)
         {
             max = this.ClassInfra.IntSignPositeMax;
         }
-        if (signNegate)
+        if (negate)
         {
             max = this.ClassInfra.IntSignNegateMax;
         }
@@ -1359,11 +1359,11 @@ public class Create : ClassCreate
 
         long value;
         value = 0;
-        if (!signNegate)
+        if (!negate)
         {
             value = o;
         }
-        if (signNegate)
+        if (negate)
         {
             value = -o;
         }
