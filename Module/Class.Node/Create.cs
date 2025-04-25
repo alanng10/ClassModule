@@ -3848,9 +3848,9 @@ public class Create : ClassCreate
         return true;
     }
 
-    protected virtual bool IsIntSignChar(long oc)
+    protected virtual bool IsIntSignChar(long value)
     {
-        return (oc == 'p') | (oc == 'n');
+        return (value == 'p') | (value == 'n');
     }
 
     protected virtual bool TokenSignNegate(TokenToken token, long index)
