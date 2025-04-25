@@ -907,4 +907,38 @@ class Create : ClassCreate
         ret : this.Operate.Execute();
         return ret;
     }
+
+    maide prusate Node ExecuteMaide(var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        inf (start = end)
+        {
+            return null;
+        }
+
+        var Token maideToken;
+        maideToken : this.Token(this.TokenA, this.Index.Maide.Text, this.IndexRange(this.RangeA, start));
+        inf (maideToken = null)
+        {
+            return null;
+        }
+
+        var Token braceRoundLite;
+        braceRoundLite : this.TokenFront(this.TokenB, this.Limit.BraceRoundLite.Text, this.Range(this.RangeA, maideToken.Range.End, end));
+        inf (braceRoundLite = null)
+        {
+            return null;
+        }
+
+        var Token braceRoundRite;
+        braceRoundRite : this.TokenBraceRoundRite(this.TokenC, this.Range(this.RangeA, braceRoundLite.Range.End, end));
+        inf (braceRoundRite = null)
+        {
+            return null;
+        }
+    }
 }
