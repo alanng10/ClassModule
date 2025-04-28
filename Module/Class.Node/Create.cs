@@ -1329,9 +1329,20 @@ public class Create : ClassCreate
         TokenToken token;
         token = this.TokenToken(start);
 
+        Text line;
+        line = this.Line(token.Row);
+
+        this.TextA.Data = line.Data;
+        this.TextA.Range.Index = line.Range.Index + token.Range.Index;
+        this.TextA.Range.Count = token.Range.Count;
 
         long value;
-        value = this.IntPar;
+        value = this.ClassIntParse.HexSignValue(this.TextA);
+
+        if (value == -1)
+        {
+            return null;
+        }
 
         this.SetArg.Kind = this.NodeKind.IntHexSignValue;
         this.SetArg.Range.Start = start;
