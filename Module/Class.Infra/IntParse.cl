@@ -12,24 +12,24 @@ class IntParse : TextAdd
 
         var Data data;
         data : text.Data;
-        var Int start;
-        start : text.Range.Index
+        var Int index;
+        index : text.Range.Index
 
-        inf (~(this.TextInfra.DataCharGet(data, start) = this.Char("0")))
+        inf (~(this.TextInfra.DataCharGet(data, index) = this.Char("0")))
         {
             return null;
         }
-        inf (~(this.TextInfra.DataCharGet(data, start + 1) = this.Char("h")))
+        inf (~(this.TextInfra.DataCharGet(data, index + 1) = this.Char("h")))
         {
             return null;
         }
-        inf (~(this.TextInfra.DataCharGet(data, start + 2) = this.Char("s")))
+        inf (~(this.TextInfra.DataCharGet(data, index + 2) = this.Char("s")))
         {
             return null;
         }
 
         var Int kaa;
-        kaa : this.TextInfra.DataCharGet(data, start + 3);
+        kaa : this.TextInfra.DataCharGet(data, index + 3);
 
         var Bool negate
         negate : this.IntSign(kaa);
@@ -39,12 +39,12 @@ class IntParse : TextAdd
             return null;
         }
 
-        var Int startA;
-        startA : start + 4;
+        var Int indexA;
         var Int countA;
+        indexA : index + 4;
         countA : count - 4;
         this.TextA.Data : data;
-        this.TextA.Range.Index : startA;
+        this.TextA.Range.Index : indexA;
         this.TextA.Range.Count : countA;
         inf (~this.IntHex(this.TextA))
         {
