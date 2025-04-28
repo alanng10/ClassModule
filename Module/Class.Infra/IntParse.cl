@@ -30,7 +30,11 @@ class IntParse : TextAdd
 
         var Int oa;
         oa : this.TextInfra.DataCharGet(data, start + 3);
-        inf (~this.IntSignChar(oa))
+
+        var Bool negate
+        negate : this.IntSign(oa);
+
+        inf (negate = null)
         {
             return null;
         }
@@ -131,8 +135,18 @@ class IntParse : TextAdd
         return true;
     }
 
-    maide precate Bool IntSignChar(var Int value)
+    maide precate Bool IntSign(var Int value)
     {
-        return (value = this.Char("p")) | (value = this.Char("n"));
+        var Bool a;
+        
+        inf (value = this.Char("p"))
+        {
+            a : false;
+        }
+        inf (value = this.Char("n"))
+        {
+            a : true;
+        }
+        return a;
     }
 }
