@@ -1360,29 +1360,32 @@ public class Create : ClassCreate
         start = range.Start;
         end = range.End;
 
-        if (!(start + 1 == end))
+        if (!(this.Count(start, end) == 1))
         {
             return null;
         }
 
-        TokenToken aa;
-        aa = this.TokenToken(start);
+        TokenToken token;
+        token = this.TokenToken(start);
 
-        if (!this.IsIntHexValue(aa))
+        long count;
+        count = token.Range.Count;
+
+        if (count < 3)
         {
             return null;
         }
 
         Text line;
-        line = (Text)this.SourceItem.Text.GetAt(aa.Row);
-        Text text;
-        text = this.TextA;
-        text.Data = line.Data;
-        text.Range.Index = line.Range.Index + aa.Range.Index + 2;
-        text.Range.Count = aa.Range.Count - 2;
+        line = this.Line(token.Row);
+
+        this.TextA.Data = line.Data;
+        this.TextA.Range.Index = line.Range.Index + token.Range.Index;
+        this.TextA.Range.Count = token.Range.Count;
 
         long value;
-        value = this.IntText(text, 16);
+        value = this.ClassIntParse.HexValue(this.TextA);
+
         if (value == -1)
         {
             return null;
@@ -3617,47 +3620,6 @@ public class Create : ClassCreate
     protected virtual bool IsIntValue(TokenToken token)
     {
         if (!this.IntChar(this.TAToken(token)))
-        {
-            return false;
-        }
-        return true;
-    }
-
-    protected virtual bool IsIntHexValue(TokenToken aa)
-    {
-        long count;
-        count = aa.Range.Count;
-
-        if (count < 3)
-        {
-            return false;
-        }
-
-        Text line;
-        line = (Text)this.SourceItem.Text.GetAt(aa.Row);
-
-        Data data;
-        data = line.Data;
-        long start;
-        start = line.Range.Index + aa.Range.Index;
-
-        if (!(this.TextInfra.DataCharGet(data, start) == '0'))
-        {
-            return false;
-        }
-        if (!(this.TextInfra.DataCharGet(data, start + 1) == 'h'))
-        {
-            return false;
-        }
-
-        long startA;
-        startA = start + 2;
-        long countA;
-        countA = count - 2;
-        this.TextA.Data = data;
-        this.TextA.Range.Index = startA;
-        this.TextA.Range.Count = countA;
-        if (!this.IntHexChar(this.TextA))
         {
             return false;
         }
