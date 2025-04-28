@@ -28,11 +28,11 @@ class IntParse : TextAdd
             return null;
         }
 
-        var Int oa;
-        oa : this.TextInfra.DataCharGet(data, start + 3);
+        var Int kaa;
+        kaa : this.TextInfra.DataCharGet(data, start + 3);
 
         var Bool negate
-        negate : this.IntSign(oa);
+        negate : this.IntSign(kaa);
 
         inf (negate = null)
         {
@@ -43,69 +43,50 @@ class IntParse : TextAdd
         startA : start + 4;
         var Int countA;
         countA : count - 4;
-        this.TextA.Data = data;
-        this.TextA.Range.Index = startA;
-        this.TextA.Range.Count = countA;
-        if (!this.IntHexChar(this.TextA))
-        {
-            return false;
-        }
-        return true;
-
-        if (!this.IsIntHexSignValue(token))
+        this.TextA.Data : data;
+        this.TextA.Range.Index : startA;
+        this.TextA.Range.Count : countA;
+        inf (~this.IntHex(this.TextA))
         {
             return null;
         }
 
-
-
-        bool negate;
-        negate = this.TokenSignNegate(token, 3);
-
-        Text line;
-        line = this.SourceItem.Text.GetAt(token.Row) as Text;
-        Text text;
-        text = this.TextA;
-        text.Data = line.Data;
-        text.Range.Index = line.Range.Index + token.Range.Index + 4;
-        text.Range.Count = token.Range.Count - 4;
-
-        long o;
-        o = this.IntText(text, 16);
-        if (o == -1)
+        var Int k;
+        k : this.IntText(text, 16);
+        inf (k = null)
         {
             return null;
         }
 
-        long max;
-        max = 0;
-        if (!negate)
+        var Int max;
+        inf (~negate)
         {
-            max = this.ClassInfra.IntSignPositeMax;
+            max : this.ClassInfra.IntSignPositeMax;
         }
-        if (negate)
+        inf (negate)
         {
-            max = this.ClassInfra.IntSignNegateMax;
+            max : this.ClassInfra.IntSignNegateMax;
         }
 
-        if (max < o)
+        inf (max < k)
         {
             return null;
         }
 
-        long value;
-        value = 0;
-        if (!negate)
+        var Int a;
+
+        inf (~negate)
         {
-            value = o;
+            a : k;
         }
-        if (negate)
+        inf (negate)
         {
-            value = -o;
+            a : -k;
         }
+        return a;
     }
 
-    maide precate Bool IntHexChar(var Text text)
+    maide precate Bool IntHex(var Text text)
     {
         var TextInfra textInfra;
         textInfra : this.TextInfra;
