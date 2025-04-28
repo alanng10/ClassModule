@@ -2,33 +2,30 @@ class IntParse : TextAdd
 {
     maide prusate Int HexSign(var Text text)
     {
-        long count;
-        count = text.Range.Count;
+        var Int count;
+        count : text.Range.Count;
 
-        if (count < 5)
+        inf (count < 5)
         {
-            return false;
+            return null;
         }
 
-        Text line;
-        line = (Text)this.SourceItem.Text.GetAt(aa.Row);
+        var Data data;
+        data : text.Data;
+        var Int start;
+        start : text.Range.Index
 
-        Data data;
-        data = line.Data;
-        long start;
-        start = line.Range.Index + aa.Range.Index;
-
-        if (!(this.TextInfra.DataCharGet(data, start) == '0'))
+        inf (~(this.TextInfra.DataCharGet(data, start) = this.Char("0")))
         {
-            return false;
+            return null;
         }
-        if (!(this.TextInfra.DataCharGet(data, start + 1) == 'h'))
+        inf (~(this.TextInfra.DataCharGet(data, start + 1) = this.Char("h")))
         {
-            return false;
+            return null;
         }
-        if (!(this.TextInfra.DataCharGet(data, start + 2) == 's'))
+        inf (~(this.TextInfra.DataCharGet(data, start + 2) = this.Char("s")))
         {
-            return false;
+            return null;
         }
 
         long oa;
@@ -50,6 +47,7 @@ class IntParse : TextAdd
             return false;
         }
         return true;
+
         if (!this.IsIntHexSignValue(token))
         {
             return null;
