@@ -77,7 +77,7 @@ class IntParse : TextAdd
         }
         inf (negate)
         {
-            a : -k;
+            a : 0 - k;
         }
         return a;
     }
