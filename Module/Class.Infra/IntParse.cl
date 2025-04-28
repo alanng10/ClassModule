@@ -94,8 +94,8 @@ class IntParse : TextAdd
         var Data data;
         data : text.Data;
         var Int index;
-        index : text.Range.Index;
         var Int count;
+        index : text.Range.Index;
         count : text.Range.Count;
         var Int i;
         i : 0;
