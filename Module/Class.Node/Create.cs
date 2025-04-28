@@ -18,7 +18,7 @@ public class Create : ClassCreate
         this.SetOperate = this.CreateSetOperate();
         this.SetArg = this.CreateSetArg();
         this.NameValid = this.CreateNameValid();
-        this.IntParse = this.CreateIntParse();
+        this.ClassIntParse = this.CreateClassIntParse();
         this.StringWrite = this.CreateStringWrite();
         this.RangeA = this.CreateClassRange();
         this.RangeB = this.CreateClassRange();
@@ -84,7 +84,7 @@ public class Create : ClassCreate
         return a;
     }
 
-    protected virtual IntParse CreateIntParse()
+    protected virtual IntParse CreateClassIntParse()
     {
         IntParse a;
         a = new IntParse();
@@ -149,7 +149,7 @@ public class Create : ClassCreate
     protected virtual NodeState ParamItemNodeState { get; set; }
     protected virtual NodeState ArgueItemNodeState { get; set; }
     protected virtual NameValid NameValid { get; set; }
-    protected virtual IntParse IntParse { get; set; }
+    protected virtual IntParse ClassIntParse { get; set; }
     protected virtual StringWrite StringWrite { get; set; }
     protected virtual Range RangeA { get; set; }
     protected virtual Range RangeB { get; set; }
@@ -1328,55 +1328,10 @@ public class Create : ClassCreate
 
         TokenToken token;
         token = this.TokenToken(start);
-        if (!this.IsIntHexSignValue(token))
-        {
-            return null;
-        }
 
-        bool negate;
-        negate = this.TokenSignNegate(token, 3);
-
-        Text line;
-        line = this.SourceItem.Text.GetAt(token.Row) as Text;
-        Text text;
-        text = this.TextA;
-        text.Data = line.Data;
-        text.Range.Index = line.Range.Index + token.Range.Index + 4;
-        text.Range.Count = token.Range.Count - 4;
-
-        long o;
-        o = this.IntText(text, 16);
-        if (o == -1)
-        {
-            return null;
-        }
-
-        long max;
-        max = 0;
-        if (!negate)
-        {
-            max = this.ClassInfra.IntSignPositeMax;
-        }
-        if (negate)
-        {
-            max = this.ClassInfra.IntSignNegateMax;
-        }
-
-        if (max < o)
-        {
-            return null;
-        }
 
         long value;
-        value = 0;
-        if (!negate)
-        {
-            value = o;
-        }
-        if (negate)
-        {
-            value = -o;
-        }
+        value = this.IntPar;
 
         this.SetArg.Kind = this.NodeKind.IntHexSignValue;
         this.SetArg.Range.Start = start;
