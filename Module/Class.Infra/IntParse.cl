@@ -101,32 +101,32 @@ class IntParse : TextAdd
         }
     }
 
-    protected virtual bool IntHexChar(Text text)
+    maide precate Bool IntHexChar(var Text text)
     {
-        TextInfra textInfra;
-        textInfra = this.TextInfra;
+        var TextInfra textInfra;
+        textInfra : this.TextInfra;
 
-        Data data;
-        data = text.Data;
-        long start;
-        start = text.Range.Index;
-        long count;
-        count = text.Range.Count;
-        long i;
-        i = 0;
+        var Data data;
+        data : text.Data;
+        var Int index;
+        index : text.Range.Index;
+        var Int count;
+        count : text.Range.Count;
+        var Int i;
+        i : 0;
         while (i < count)
         {
-            long index;
-            index = start + i;
+            var Int kk;
+            kk : index + i;
 
-            long ka;
-            ka = textInfra.DataCharGet(data, index);
+            var Int ka;
+            ka : textInfra.DataCharGet(data, kk);
 
-            if (!(textInfra.Digit(ka) | textInfra.HexAlpha(ka, false)))
+            inf (~(textInfra.Digit(ka) | textInfra.HexAlpha(ka, false)))
             {
                 return false;
             }
-            i = i + 1;
+            i : i + 1;
         }
         return true;
     }
