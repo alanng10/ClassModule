@@ -49,37 +49,38 @@ public class IntParse : TextAdd
         this.TextA.Range.Index = indexA;
         this.TextA.Range.Count = countA;
 
-        var Int k;
-        k : this.IntText(this.TextA, 16);
-        inf (k = null)
+        long k;
+        k = this.IntText(this.TextA, 16);
+        if (k == -1)
         {
-            return null;
+            return -1;
         }
 
-        var Int max;
-        inf (~negate)
+        long max;
+        max = 0;
+        if (negate == 0)
         {
-            max : this.ClassInfra.IntSignPositeMax;
+            max = this.ClassInfra.IntSignPositeMax;
         }
-        inf (negate)
+        if (negate == 1)
         {
-            max : this.ClassInfra.IntSignNegateMax;
-        }
-
-        inf (max < k)
-        {
-            return null;
+            max = this.ClassInfra.IntSignNegateMax;
         }
 
-        var Int a;
-
-        inf (~negate)
+        if (max < k)
         {
-            a : k;
+            return -1;
         }
-        inf (negate)
+
+        long a;
+
+        if (negate == 0)
         {
-            a : -k;
+            a = k;
+        }
+        if (negate == 1)
+        {
+            a = -k;
         }
         return a;
     }
