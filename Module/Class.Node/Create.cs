@@ -18,6 +18,7 @@ public class Create : ClassCreate
         this.SetOperate = this.CreateSetOperate();
         this.SetArg = this.CreateSetArg();
         this.NameValid = this.CreateNameValid();
+        this.IntParse = this.CreateIntParse();
         this.StringWrite = this.CreateStringWrite();
         this.RangeA = this.CreateClassRange();
         this.RangeB = this.CreateClassRange();
@@ -83,6 +84,14 @@ public class Create : ClassCreate
         return a;
     }
 
+    protected virtual IntParse CreateIntParse()
+    {
+        IntParse a;
+        a = new IntParse();
+        a.Init();
+        return a;
+    }
+
     protected virtual StringWrite CreateStringWrite()
     {
         StringWrite a;
@@ -140,6 +149,7 @@ public class Create : ClassCreate
     protected virtual NodeState ParamItemNodeState { get; set; }
     protected virtual NodeState ArgueItemNodeState { get; set; }
     protected virtual NameValid NameValid { get; set; }
+    protected virtual IntParse IntParse { get; set; }
     protected virtual StringWrite StringWrite { get; set; }
     protected virtual Range RangeA { get; set; }
     protected virtual Range RangeB { get; set; }
