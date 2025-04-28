@@ -1,6 +1,6 @@
 class IntParse : TextAdd
 {
-    maide prusate Int HexSign(var Text text)
+    maide prusate Int HexSignValue(var Text text)
     {
         var Int count;
         count : text.Range.Count;
