@@ -33,14 +33,11 @@ public class IntParse : TextAdd
         this.TextA.Data = data;
         this.TextA.Range.Index = indexA;
         this.TextA.Range.Count = countA;
+
         if (!this.IntHex(this.TextA))
         {
-            return false;
+            return null;
         }
-
-        this.TextA.Data = data;
-        this.TextA.Range.Index = index + 2;
-        this.TextA.Range.Count = count - 2;
 
         long value;
         value = this.IntText(this.TextA, 16);
