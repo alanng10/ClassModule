@@ -28,17 +28,17 @@ class IntParse : TextAdd
             return null;
         }
 
-        long oa;
-        oa = this.TextInfra.DataCharGet(data, start + 3);
-        if (!this.IsIntSignChar(oa))
+        var Int oa;
+        oa : this.TextInfra.DataCharGet(data, start + 3);
+        inf (~this.IntSignChar(oa))
         {
-            return false;
+            return null;
         }
 
-        long startA;
-        startA = start + 4;
-        long countA;
-        countA = count - 4;
+        var Int startA;
+        startA : start + 4;
+        var Int countA;
+        countA : count - 4;
         this.TextA.Data = data;
         this.TextA.Range.Index = startA;
         this.TextA.Range.Count = countA;
@@ -131,8 +131,8 @@ class IntParse : TextAdd
         return true;
     }
 
-    protected virtual bool IsIntSignChar(long value)
+    maide precate Bool IntSignChar(var Int value)
     {
-        return (value == 'p') | (value == 'n');
+        return (value = this.Char("p")) | (value = this.Char("n"));
     }
 }
