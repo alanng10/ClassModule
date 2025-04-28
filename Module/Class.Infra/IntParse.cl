@@ -46,13 +46,9 @@ class IntParse : TextAdd
         this.TextA.Data : data;
         this.TextA.Range.Index : indexA;
         this.TextA.Range.Count : countA;
-        inf (~this.IntHex(this.TextA))
-        {
-            return null;
-        }
 
         var Int k;
-        k : this.IntText(text, 16);
+        k : this.IntText(this.TextA, 16);
         inf (k = null)
         {
             return null;
@@ -86,34 +82,9 @@ class IntParse : TextAdd
         return a;
     }
 
-    maide precate Bool IntHex(var Text text)
+    maide prusate Int HexValue(var Text text)
     {
-        var TextInfra textInfra;
-        textInfra : this.TextInfra;
 
-        var Data data;
-        data : text.Data;
-        var Int index;
-        var Int count;
-        index : text.Range.Index;
-        count : text.Range.Count;
-        var Int i;
-        i : 0;
-        while (i < count)
-        {
-            var Int kk;
-            kk : index + i;
-
-            var Int ka;
-            ka : textInfra.DataCharGet(data, kk);
-
-            inf (~(textInfra.Digit(ka) | textInfra.HexAlpha(ka, false)))
-            {
-                return false;
-            }
-            i : i + 1;
-        }
-        return true;
     }
 
     maide precate Bool IntSign(var Int value)
