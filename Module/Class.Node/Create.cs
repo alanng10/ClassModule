@@ -1329,15 +1329,11 @@ public class Create : ClassCreate
         TokenToken token;
         token = this.TokenToken(start);
 
-        Text line;
-        line = this.Line(token.Row);
-
-        this.TextA.Data = line.Data;
-        this.TextA.Range.Index = line.Range.Index + token.Range.Index;
-        this.TextA.Range.Count = token.Range.Count;
+        Text text;
+        text = this.TextToken(this.TextA, token);
 
         long value;
-        value = this.ClassIntParse.HexSignValue(this.TextA);
+        value = this.ClassIntParse.HexSignValue(text);
 
         if (value == -1)
         {
@@ -1376,15 +1372,11 @@ public class Create : ClassCreate
             return null;
         }
 
-        Text line;
-        line = this.Line(token.Row);
-
-        this.TextA.Data = line.Data;
-        this.TextA.Range.Index = line.Range.Index + token.Range.Index;
-        this.TextA.Range.Count = token.Range.Count;
+        Text text;
+        text = this.TextToken(this.TextA, token);
 
         long value;
-        value = this.ClassIntParse.HexValue(this.TextA);
+        value = this.ClassIntParse.HexValue(text);
 
         if (value == -1)
         {
