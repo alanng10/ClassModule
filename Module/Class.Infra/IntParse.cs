@@ -117,11 +117,6 @@ public class IntParse : TextAdd
         this.TextA.Range.Index = indexA;
         this.TextA.Range.Count = countA;
 
-        if (!this.IntHex(this.TextA))
-        {
-            return null;
-        }
-
         long value;
         value = this.IntText(this.TextA, 16);
         if (value == -1)
