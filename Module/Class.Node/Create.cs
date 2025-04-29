@@ -3561,58 +3561,6 @@ public class Create : ClassCreate
         return true;
     }
 
-    protected virtual bool IsIntHexSignValue(TokenToken aa)
-    {
-        long count;
-        count = aa.Range.Count;
-
-        if (count < 5)
-        {
-            return false;
-        }
-
-        Text line;
-        line = (Text)this.SourceItem.Text.GetAt(aa.Row);
-
-        Data data;
-        data = line.Data;
-        long start;
-        start = line.Range.Index + aa.Range.Index;
-
-        if (!(this.TextInfra.DataCharGet(data, start) == '0'))
-        {
-            return false;
-        }
-        if (!(this.TextInfra.DataCharGet(data, start + 1) == 'h'))
-        {
-            return false;
-        }
-        if (!(this.TextInfra.DataCharGet(data, start + 2) == 's'))
-        {
-            return false;
-        }
-
-        long oa;
-        oa = this.TextInfra.DataCharGet(data, start + 3);
-        if (!this.IsIntSignChar(oa))
-        {
-            return false;
-        }
-
-        long startA;
-        startA = start + 4;
-        long countA;
-        countA = count - 4;
-        this.TextA.Data = data;
-        this.TextA.Range.Index = startA;
-        this.TextA.Range.Count = countA;
-        if (!this.IntHexChar(this.TextA))
-        {
-            return false;
-        }
-        return true;
-    }
-
     protected virtual bool IntChar(Text text)
     {
         TextInfra textInfra;
