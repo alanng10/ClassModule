@@ -4,11 +4,11 @@ public class IntParse : TextAdd
 {
     public override bool Init()
     {
-        this.ClassInfra = ClassInfra.This;
+        this.ClassInfra = Infra.This;
         return true;
     }
 
-    protected virtual ClassInfra ClassInfra { get; set; }
+    protected virtual Infra ClassInfra { get; set; }
 
     public virtual long HexSignValue(Text text)
     {
