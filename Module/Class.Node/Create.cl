@@ -1490,4 +1490,24 @@ class Create : ClassCreate
         }
         return a;
     }
+
+    maide prusate Node ExecutePrusateCount(var Range range)
+    {
+        return this.ExecuteWord(this.NodeKind.PrusateCount, this.Index.Prusate, range);
+    }
+
+    maide prusate Node ExecutePrecateCount(var Range range)
+    {
+        return this.ExecuteWord(this.NodeKind.PrecateCount, this.Index.Precate, range);
+    }
+
+    maide prusate Node ExecutePronateCount(var Range range)
+    {
+        return this.ExecuteWord(this.NodeKind.PronateCount, this.Index.Pronate, range);
+    }
+
+    maide prusate Node ExecutePrivateCount(var Range range)
+    {
+        return this.ExecuteWord(this.NodeKind.PrivateCount, this.Index.Private, range);
+    }
 }
