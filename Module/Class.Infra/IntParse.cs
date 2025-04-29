@@ -209,6 +209,21 @@ public class IntParse : TextAdd
         return a;
     }
 
+    public virtual long Value(Text text)
+    {
+        long k;
+        k = this.IntText(text, 10);
+
+        if (k == -1)
+        {
+            return -1;
+        }
+
+        long a;
+        a = k;
+        return a;
+    }
+
     protected virtual long IntSign(long value)
     {
         long a;
