@@ -1461,7 +1461,7 @@ public class Create : ClassCreate
         start = range.Start;
         end = range.End;
 
-        if (!(start + 1 == end))
+        if (!(this.Count(start, end) == 1))
         {
             return null;
         }
@@ -1470,7 +1470,7 @@ public class Create : ClassCreate
         token = this.TokenToken(start);
 
         Text text;
-        text = this.TAToken(token);
+        text = this.TextToken(this.TextA, token);
 
         bool b;
         b = this.StringWrite.ValidValue(text);
