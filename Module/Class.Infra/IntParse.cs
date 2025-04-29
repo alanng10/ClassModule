@@ -7,7 +7,7 @@ public class IntParse : TextAdd
         long count;
         count = text.Range.Count;
 
-        if (count < 4)
+        if (count < 5)
         {
             return -1;
         }
@@ -90,7 +90,7 @@ public class IntParse : TextAdd
         long count;
         count = text.Range.Count;
 
-        if (count < 2)
+        if (count < 3)
         {
             return null;
         }
