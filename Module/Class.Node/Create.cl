@@ -1391,4 +1391,39 @@ class Create : ClassCreate
         ret : this.Operate.Execute();
         return ret;
     }
+
+    maide prusate Node ExecuteIntValue(var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        inf (~(this.Count(start, end) = 1))
+        {
+            return null;
+        }
+
+        var TokenToken token;
+        token : this.TokenToken(start);
+
+        var Text text;
+        text : this.TextToken(this.TextA, token);
+
+        var Int value;
+        value : this.ClassIntParse.Value(text);
+
+        inf (value = null)
+        {
+            return null;
+        }
+
+        this.SetArg.Kind : this.NodeKind.IntValue;
+        this.SetArg.Range.Start : start;
+        this.SetArg.Range.End : end;
+        this.SetArg.Field00 : value;
+        var Node ret;
+        ret : this.Operate.Execute();
+        return ret;
+    }
 }
