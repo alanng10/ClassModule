@@ -615,7 +615,7 @@ public class Create : ClassCreate
         }
 
         Token colon;
-        colon = this.TokenFront(this.TokenB, this.Limit.AreSign.Text, this.Range(this.RangeA, classToken.Range.End, end));
+        colon = this.TokenFront(this.TokenB, this.Limit.Are.Text, this.Range(this.RangeA, classToken.Range.End, end));
         if (colon == null)
         {
             return null;
@@ -1718,7 +1718,7 @@ public class Create : ClassCreate
         }
 
         Token colon;
-        colon = this.TokenFrontSkip(this.TokenB, this.Limit.AreSign.Text, this.Range(this.RangeA, start, semicolon.Range.Start));
+        colon = this.TokenFrontSkip(this.TokenB, this.Limit.Are.Text, this.Range(this.RangeA, start, semicolon.Range.Start));
         if (colon == null)
         {
             return null;
@@ -3373,7 +3373,7 @@ public class Create : ClassCreate
         }
 
         Token colon;
-        colon = this.TokenFrontSkip(this.TokenB, this.Limit.AreSign.Text, this.Range(this.RangeA, start, semicolon.Range.Start));
+        colon = this.TokenFrontSkip(this.TokenB, this.Limit.Are.Text, this.Range(this.RangeA, start, semicolon.Range.Start));
         if (colon == null)
         {
             return null;
