@@ -1364,14 +1364,6 @@ public class Create : ClassCreate
         TokenToken token;
         token = this.TokenToken(start);
 
-        long count;
-        count = token.Range.Count;
-
-        if (count < 3)
-        {
-            return null;
-        }
-
         Text text;
         text = this.TextToken(this.TextA, token);
 
