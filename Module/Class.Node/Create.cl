@@ -1634,5 +1634,35 @@ class Create : ClassCreate
         {
             return null;
         }
+
+        var Int lastIndex;
+        lastIndex : end - 1;
+
+        var Token signExecute;
+        signExecute : this.Token(this.TokenB, this.Limit.Execute.Text, this.IndexRange(this.RangeA, lastIndex));
+        inf (signExecute = null)
+        {
+            return null;
+        }
+
+        var Int varStart;
+        var Int varEnd;
+        varStart : start;
+        varEnd : signExecute.Range.Start;
+
+        var Node varVar;
+        varVar : this.ExecuteVar(this.Range(this.RangeA, varStart, varEnd));
+        inf (varVar = null)
+        {
+            this.Error(this.ErrorKind.VarUnvalid, varStart, varEnd);
+        }
+
+        this.SetArg.Kind : this.NodeKind.ReferExecute;
+        this.SetArg.Range.Start : start;
+        this.SetArg.Range.End : end;
+        this.SetArg.Field00 : varVar;
+        var Node ret;
+        ret : this.Operate.Execute();
+        return ret;
     }
 }
