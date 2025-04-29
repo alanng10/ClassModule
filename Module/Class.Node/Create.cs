@@ -1710,9 +1710,9 @@ public class Create : ClassCreate
         long lastIndex;
         lastIndex = end - 1;
 
-        Token semicolon;
-        semicolon = this.Token(this.TokenA, this.Limit.Execute.Text, this.IndexRange(this.RangeA, lastIndex));
-        if (semicolon == null)
+        Token signExecute;
+        signExecute = this.Token(this.TokenA, this.Limit.Execute.Text, this.IndexRange(this.RangeA, lastIndex));
+        if (signExecute == null)
         {
             return null;
         }
@@ -1731,7 +1731,7 @@ public class Create : ClassCreate
         long valueStart;
         long valueEnd;
         valueStart = colon.Range.End;
-        valueEnd = semicolon.Range.Start;
+        valueEnd = signExecute.Range.Start;
 
         Node mark;
         mark = this.ExecuteMark(this.Range(this.RangeA, markStart, markEnd));
