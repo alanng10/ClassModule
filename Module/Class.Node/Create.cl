@@ -1287,7 +1287,7 @@ class Create : ClassCreate
         return ret;
     }
 
-    maide prusate Node ExecuteIntValue(var Range range)
+    maide prusate Node ExecuteIntHexSignValue(var Range range)
     {
         var Int start;
         var Int end;
@@ -1298,5 +1298,27 @@ class Create : ClassCreate
         {
             return null;
         }
+
+        var TokenToken token;
+        token : this.TokenToken(start);
+
+        var Text text;
+        text : this.TextToken(this.TextA, token);
+
+        var Int value;
+        value : this.ClassIntParse.HexSignValue(text);
+
+        inf (value = null)
+        {
+            return null;
+        }
+
+        this.SetArg.Kind : this.NodeKind.IntHexSignValue;
+        this.SetArg.Range.Start : start;
+        this.SetArg.Range.End : end;
+        this.SetArg.Field00 : value;
+        var Node ret;
+        ret : this.Operate.Execute();
+        return ret;
     }
 }
