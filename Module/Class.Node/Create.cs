@@ -1667,9 +1667,9 @@ public class Create : ClassCreate
         long lastIndex;
         lastIndex = end - 1;
 
-        Token semicolon;
-        semicolon = this.Token(this.TokenB, this.Limit.Execute.Text, this.IndexRange(this.RangeA, lastIndex));
-        if (semicolon == null)
+        Token signExecute;
+        signExecute = this.Token(this.TokenB, this.Limit.Execute.Text, this.IndexRange(this.RangeA, lastIndex));
+        if (signExecute == null)
         {
             return null;
         }
@@ -1677,7 +1677,7 @@ public class Create : ClassCreate
         long varStart;
         long varEnd;
         varStart = start;
-        varEnd = semicolon.Range.Start;
+        varEnd = signExecute.Range.Start;
 
         Node varVar;
         varVar = this.ExecuteVar(this.Range(this.RangeA, varStart, varEnd));
