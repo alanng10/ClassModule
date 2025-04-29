@@ -1440,6 +1440,11 @@ public class Create : ClassCreate
         long value;
         value = this.ClassIntParse.Value(text);
 
+        if (value == -1)
+        {
+            return null;
+        }
+
         this.SetArg.Kind = this.NodeKind.IntValue;
         this.SetArg.Range.Start = start;
         this.SetArg.Range.End = end;
