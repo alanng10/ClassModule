@@ -1510,4 +1510,39 @@ class Create : ClassCreate
     {
         return this.ExecuteWord(this.NodeKind.PrivateCount, this.Index.Private, range);
     }
+
+    maide prusate Node ExecuteExecute(var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        var Node a;
+        inf (a = null)
+        {
+            a : this.ExecuteReturnExecute(this.Range(this.RangeA, start, end));
+        }
+        inf (a = null)
+        {
+            a : this.ExecuteInfExecute(this.Range(this.RangeA, start, end));
+        }
+        inf (a = null)
+        {
+            a : this.ExecuteWhileExecute(this.Range(this.RangeA, start, end));
+        }
+        inf (a = null)
+        {
+            a : this.ExecuteReferExecute(this.Range(this.RangeA, start, end));
+        }
+        inf (a = null)
+        {
+            a : this.ExecuteAreExecute(this.Range(this.RangeA, start, end));
+        }
+        inf (a = null)
+        {
+            a : this.ExecuteOperateExecute(this.Range(this.RangeA, start, end));
+        }
+        return a;
+    }
 }
