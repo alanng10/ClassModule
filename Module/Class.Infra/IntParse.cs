@@ -128,4 +128,19 @@ public class IntParse : TextAdd
         a = value;
         return a;
     }
+
+    protected virtual long IntSign(long value)
+    {
+        long a;
+        a = -1;
+        if (value == 'p')
+        {
+            a : 0;
+        }
+        if (value == 'n')
+        {
+            a : 1;
+        }
+        return a;
+    }
 }
