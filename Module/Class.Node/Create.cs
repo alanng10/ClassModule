@@ -1434,16 +1434,12 @@ public class Create : ClassCreate
         TokenToken token;
         token = this.TokenToken(start);
 
-        if (!this.IsIntValue(token))
-        {
-            return null;
-        }
-
         Text text;
-        text = this.TAToken(token);
+        text = this.TextToken(this.TextA, token);
 
         long value;
-        value = this.IntText(text, 10);
+        value = this.ClassIntParse.Value(text);
+
         if (value == -1)
         {
             return null;
@@ -3560,15 +3556,6 @@ public class Create : ClassCreate
         String a;
         a = this.Operate.ExecuteNameValue(text);
         return a;
-    }
-
-    protected virtual bool IsIntValue(TokenToken token)
-    {
-        if (!this.IntChar(this.TAToken(token)))
-        {
-            return false;
-        }
-        return true;
     }
 
     protected virtual TokenToken TokenToken(long index)
