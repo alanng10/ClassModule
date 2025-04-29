@@ -1545,4 +1545,14 @@ class Create : ClassCreate
         }
         return a;
     }
+
+    maide prusate Node ExecuteInfExecute(var Range range)
+    {
+        return this.ExecuteWordBraceBody(this.NodeKind.InfExecute, this.Index.Inf, range);
+    }
+
+    maide prusate Node ExecuteWhileExecute(var Range range)
+    {
+        return this.ExecuteWordBraceBody(this.NodeKind.WhileExecute, this.Index.While, range);
+    }
 }
