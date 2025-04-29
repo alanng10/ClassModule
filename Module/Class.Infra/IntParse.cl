@@ -95,7 +95,49 @@ class IntParse : TextAdd
 
     maide prusate Int HexValue(var Text text)
     {
+        var Int index;
+        var Int count;
+        index : text.Range.Index
+        count : text.Range.Count;
 
+        inf (count < 3)
+        {
+            return null;
+        }
+
+        var Data data;
+        data : text.Data;
+
+        inf (~(this.TextInfra.DataCharGet(data, index) = this.Char("0")))
+        {
+            return null;
+        }
+        inf (~(this.TextInfra.DataCharGet(data, index + 1) = this.Char("h")))
+        {
+            return null;
+        }
+
+        var Int indexA;
+        var Int countA;
+        indexA : index + 2;
+        countA : count - 2;
+        text.Range.Index : indexA;
+        text.Range.Count : countA;
+
+        var Int k;
+        k : this.IntText(text, 16);
+
+        text.Range.Index : index;
+        text.Range.Count : count;
+
+        inf (k = null)
+        {
+            return null;
+        }
+
+        var Int a;
+        a : k;
+        return a;
     }
 
     maide precate Bool IntSign(var Int value)
