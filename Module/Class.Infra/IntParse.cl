@@ -65,31 +65,8 @@ class IntParse : TextAdd
             return null;
         }
 
-        var Int max;
-        inf (~negate)
-        {
-            max : this.ClassInfra.IntSignPositeMax;
-        }
-        inf (negate)
-        {
-            max : this.ClassInfra.IntSignNegateMax;
-        }
-
-        inf (max < k)
-        {
-            return null;
-        }
-
         var Int a;
-
-        inf (~negate)
-        {
-            a : k;
-        }
-        inf (negate)
-        {
-            a : 0 - k;
-        }
+        a : this.Negate(negate, k);
         return a;
     }
 
@@ -189,6 +166,18 @@ class IntParse : TextAdd
         text.Range.Count : count;
 
         inf (k = null)
+        {
+            return null;
+        }
+
+        var Int a;
+        a : this.Negate(negate, k);
+        return a;
+    }
+
+    maide precate Int Negate(var Bool negate, var Int value)
+    {
+        inf (sign <(value, 0))
         {
             return null;
         }
