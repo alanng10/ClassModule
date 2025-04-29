@@ -1666,6 +1666,7 @@ public class Create : ClassCreate
 
         long lastIndex;
         lastIndex = end - 1;
+
         Token semicolon;
         semicolon = this.Token(this.TokenB, this.Limit.Execute.Text, this.IndexRange(this.RangeA, lastIndex));
         if (semicolon == null)
