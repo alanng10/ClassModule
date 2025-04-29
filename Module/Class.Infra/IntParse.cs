@@ -173,7 +173,7 @@ public class IntParse : TextAdd
         this.TextA.Range.Count = countA;
 
         long k;
-        k = this.IntText(text, 10);
+        k = this.IntText(this.TextA, 10);
 
         if (k == -1)
         {
