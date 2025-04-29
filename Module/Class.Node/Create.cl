@@ -1594,5 +1594,20 @@ class Create : ClassCreate
         var Int resultEnd;
         resultStart : returnToken.Range.End;
         resultEnd : signExecute.Range.Start;
+
+        var Node result;
+        result : this.ExecuteOperate(this.Range(this.RangeA, resultStart, resultEnd));
+        inf (result = null)
+        {
+            this.Error(this.ErrorKind.ResultUnvalid, resultStart, resultEnd);
+        }
+
+        this.SetArg.Kind : this.NodeKind.ReturnExecute;
+        this.SetArg.Range.Start : start;
+        this.SetArg.Range.End : end;
+        this.SetArg.Field00 : result;
+        var Node ret;
+        ret : this.Operate.Execute();
+        return ret;
     }
 }
