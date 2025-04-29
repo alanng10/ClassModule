@@ -1718,7 +1718,7 @@ public class Create : ClassCreate
         }
 
         Token colon;
-        colon = this.TokenFrontSkip(this.TokenB, this.Limit.Are.Text, this.Range(this.RangeA, start, semicolon.Range.Start));
+        colon = this.TokenFrontSkip(this.TokenB, this.Limit.Are.Text, this.Range(this.RangeA, start, signExecute.Range.Start));
         if (colon == null)
         {
             return null;
