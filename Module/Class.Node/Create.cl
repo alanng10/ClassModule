@@ -1703,5 +1703,28 @@ class Create : ClassCreate
         var Int valueEnd;
         valueStart : signAre.Range.End;
         valueEnd : signExecute.Range.Start;
+
+        var Node mark;
+        mark : this.ExecuteMark(this.Range(this.RangeA, markStart, markEnd));
+        inf (mark = null)
+        {
+            this.Error(this.ErrorKind.MarkUnvalid, markStart, markEnd);
+        }
+
+        var Node value;
+        value : this.ExecuteOperate(this.Range(this.RangeA, valueStart, valueEnd));
+        inf (value = null)
+        {
+            this.Error(this.ErrorKind.ValueUnvalid, valueStart, valueEnd);
+        }
+
+        this.SetArg.Kind : this.NodeKind.AreExecute;
+        this.SetArg.Range.Start : start;
+        this.SetArg.Range.End : end;
+        this.SetArg.Field00 : mark;
+        this.SetArg.Field01 : value;
+        var Node ret;
+        ret : this.Operate.Execute();
+        return ret;
     }
 }
