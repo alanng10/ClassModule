@@ -1717,9 +1717,9 @@ public class Create : ClassCreate
             return null;
         }
 
-        Token colon;
-        colon = this.TokenFrontSkip(this.TokenB, this.Limit.Are.Text, this.Range(this.RangeA, start, signExecute.Range.Start));
-        if (colon == null)
+        Token signAre;
+        signAre = this.TokenFrontSkip(this.TokenB, this.Limit.Are.Text, this.Range(this.RangeA, start, signExecute.Range.Start));
+        if (signAre == null)
         {
             return null;
         }
@@ -1727,10 +1727,10 @@ public class Create : ClassCreate
         long markStart;
         long markEnd;
         markStart = start;
-        markEnd = colon.Range.Start;
+        markEnd = signAre.Range.Start;
         long valueStart;
         long valueEnd;
-        valueStart = colon.Range.End;
+        valueStart = signAre.Range.End;
         valueEnd = signExecute.Range.Start;
 
         Node mark;
