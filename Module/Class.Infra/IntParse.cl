@@ -140,6 +140,87 @@ class IntParse : TextAdd
         return a;
     }
 
+    maide prusate Int SignValue(var Text text)
+    {
+        var Int index;
+        var Int count;
+        index : text.Range.Index
+        count : text.Range.Count;
+
+        inf (count < 4)
+        {
+            return null;
+        }
+
+        var Data data;
+        data : text.Data;
+
+        inf (~(this.TextInfra.DataCharGet(data, index) = this.Char("0")))
+        {
+            return null;
+        }
+        inf (~(this.TextInfra.DataCharGet(data, index + 1) = this.Char("s")))
+        {
+            return null;
+        }
+
+        var Int kaa;
+        kaa : this.TextInfra.DataCharGet(data, index + 2);
+
+        var Bool negate
+        negate : this.IntSign(kaa);
+
+        inf (negate = null)
+        {
+            return null;
+        }
+
+        var Int indexA;
+        var Int countA;
+        indexA : index + 3;
+        countA : count - 3;
+        text.Range.Index : indexA;
+        text.Range.Count : countA;
+
+        var Int k;
+        k : this.IntText(text, 10);
+
+        text.Range.Index : index;
+        text.Range.Count : count;
+
+        inf (k = null)
+        {
+            return null;
+        }
+
+        var Int max;
+        inf (~negate)
+        {
+            max : this.ClassInfra.IntSignPositeMax;
+        }
+        inf (negate)
+        {
+            max : this.ClassInfra.IntSignNegateMax;
+        }
+
+        inf (max < k)
+        {
+            return null;
+        }
+
+        var Int a;
+
+        inf (~negate)
+        {
+            a : k;
+        }
+        inf (negate)
+        {
+            a : 0 - k;
+        }
+        return a;
+    }
+
     maide precate Bool IntSign(var Int value)
     {
         var Bool a;
