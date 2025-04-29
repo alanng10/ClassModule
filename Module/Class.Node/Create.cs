@@ -1596,6 +1596,7 @@ public class Create : ClassCreate
         {
             return null;
         }
+
         Token returnToken;
         returnToken = this.Token(this.TokenA, this.Index.Return.Text, this.IndexRange(this.RangeA, start));
         if (returnToken == null)
@@ -1607,6 +1608,7 @@ public class Create : ClassCreate
         {
             return null;
         }
+
         long lastIndex;
         lastIndex = end - 1;
         Token semicolon;
