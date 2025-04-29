@@ -1577,12 +1577,12 @@ public class Create : ClassCreate
 
     public virtual Node ExecuteInfExecute(Range range)
     {
-        return this.ExecuteWordBracketBody(this.NodeKind.InfExecute, this.Index.Inf, range);
+        return this.ExecuteWordBraceBody(this.NodeKind.InfExecute, this.Index.Inf, range);
     }
 
     public virtual Node ExecuteWhileExecute(Range range)
     {
-        return this.ExecuteWordBracketBody(this.NodeKind.WhileExecute, this.Index.While, range);
+        return this.ExecuteWordBraceBody(this.NodeKind.WhileExecute, this.Index.While, range);
     }
 
     public virtual Node ExecuteReturnExecute(Range range)
@@ -2217,7 +2217,7 @@ public class Create : ClassCreate
         return this.ExecuteWordTwoLimitTwoOperand(this.NodeKind.BitSignRiteOperate, this.Index.Bit, this.Limit.MoreSign, this.Limit.MoreSign, range);
     }
 
-    protected virtual Node ExecuteWordBracketBody(NodeKind kind, Index word, Range range)
+    protected virtual Node ExecuteWordBraceBody(NodeKind kind, Index word, Range range)
     {
         long start;
         long end;
