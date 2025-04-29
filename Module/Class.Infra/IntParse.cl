@@ -175,6 +175,26 @@ class IntParse : TextAdd
         return a;
     }
 
+    maide prusate Int Value(var Text text)
+    {
+        inf (text.Range.Count < 1)
+        {
+            return null;
+        }
+
+        var Int k;
+        k : this.IntText(text, 10);
+
+        inf (k = null)
+        {
+            return null;
+        }
+
+        var Int a;
+        a : k;
+        return a;
+    }
+
     maide precate Int Negate(var Bool negate, var Int value)
     {
         inf (sign <(value, 0))
