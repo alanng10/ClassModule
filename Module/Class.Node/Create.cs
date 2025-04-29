@@ -1667,7 +1667,7 @@ public class Create : ClassCreate
         long lastIndex;
         lastIndex = end - 1;
         Token semicolon;
-        semicolon = this.Token(this.TokenB, this.Limit.ExecuteSign.Text, this.IndexRange(this.RangeA, lastIndex));
+        semicolon = this.Token(this.TokenB, this.Limit.Execute.Text, this.IndexRange(this.RangeA, lastIndex));
         if (semicolon == null)
         {
             return null;
@@ -1709,7 +1709,7 @@ public class Create : ClassCreate
         long lastIndex;
         lastIndex = end - 1;
         Token semicolon;
-        semicolon = this.Token(this.TokenA, this.Limit.ExecuteSign.Text, this.IndexRange(this.RangeA, lastIndex));
+        semicolon = this.Token(this.TokenA, this.Limit.Execute.Text, this.IndexRange(this.RangeA, lastIndex));
         if (semicolon == null)
         {
             return null;
@@ -1769,7 +1769,7 @@ public class Create : ClassCreate
         long lastIndex;
         lastIndex = end - 1;
         Token semicolon;
-        semicolon = this.Token(this.TokenA, this.Limit.ExecuteSign.Text, this.IndexRange(this.RangeA, lastIndex));
+        semicolon = this.Token(this.TokenA, this.Limit.Execute.Text, this.IndexRange(this.RangeA, lastIndex));
         if (semicolon == null)
         {
             return null;
@@ -3243,7 +3243,7 @@ public class Create : ClassCreate
         }
 
         Token semicolon;
-        semicolon = this.TokenFrontSkip(this.TokenB, this.Limit.ExecuteSign.Text, this.Range(this.RangeA, returnToken.Range.End, end));
+        semicolon = this.TokenFrontSkip(this.TokenB, this.Limit.Execute.Text, this.Range(this.RangeA, returnToken.Range.End, end));
         if (semicolon == null)
         {
             return null;
@@ -3341,7 +3341,7 @@ public class Create : ClassCreate
         }
 
         Token semicolon;
-        semicolon = this.TokenFrontSkip(this.TokenB, this.Limit.ExecuteSign.Text, this.Range(this.RangeA, varToken.Range.End, end));
+        semicolon = this.TokenFrontSkip(this.TokenB, this.Limit.Execute.Text, this.Range(this.RangeA, varToken.Range.End, end));
         if (semicolon == null)
         {
             return null;
@@ -3364,7 +3364,7 @@ public class Create : ClassCreate
         }
 
         Token semicolon;
-        semicolon = this.TokenFrontSkip(this.TokenA, this.Limit.ExecuteSign.Text, this.Range(this.RangeA, start, end));
+        semicolon = this.TokenFrontSkip(this.TokenA, this.Limit.Execute.Text, this.Range(this.RangeA, start, end));
         if (semicolon == null)
         {
             return null;
@@ -3389,7 +3389,7 @@ public class Create : ClassCreate
         end = range.End;
 
         Token semicolon;
-        semicolon = this.TokenFrontSkip(this.TokenA, this.Limit.ExecuteSign.Text, this.Range(this.RangeA, start, end));
+        semicolon = this.TokenFrontSkip(this.TokenA, this.Limit.Execute.Text, this.Range(this.RangeA, start, end));
         if (semicolon == null)
         {
             return null;
