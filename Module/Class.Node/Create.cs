@@ -1396,9 +1396,9 @@ public class Create : ClassCreate
             return null;
         }
 
-        TokenToken aa;
-        aa = this.TokenToken(start);
-        if (!this.IsIntSignValue(aa))
+        TokenToken token;
+        token = this.TokenToken(start);
+        if (!this.IsIntSignValue(token))
         {
             return null;
         }
@@ -1411,8 +1411,8 @@ public class Create : ClassCreate
         Text text;
         text = this.TextA;
         text.Data = line.Data;
-        text.Range.Index = line.Range.Index + aa.Range.Index + 3;
-        text.Range.Count = aa.Range.Count - 3;
+        text.Range.Index = line.Range.Index + token.Range.Index + 3;
+        text.Range.Count = token.Range.Count - 3;
 
         long o;
         o = this.IntText(text, 10);
