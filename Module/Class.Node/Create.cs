@@ -1521,22 +1521,22 @@ public class Create : ClassCreate
 
     public virtual Node ExecutePrusateCount(Range range)
     {
-        return this.ExecuteOneWord(this.NodeKind.PrusateCount, this.Index.Prusate, range);
+        return this.ExecuteWord(this.NodeKind.PrusateCount, this.Index.Prusate, range);
     }
 
     public virtual Node ExecutePrecateCount(Range range)
     {
-        return this.ExecuteOneWord(this.NodeKind.PrecateCount, this.Index.Precate, range);
+        return this.ExecuteWord(this.NodeKind.PrecateCount, this.Index.Precate, range);
     }
 
     public virtual Node ExecutePronateCount(Range range)
     {
-        return this.ExecuteOneWord(this.NodeKind.PronateCount, this.Index.Pronate, range);
+        return this.ExecuteWord(this.NodeKind.PronateCount, this.Index.Pronate, range);
     }
 
     public virtual Node ExecutePrivateCount(Range range)
     {
-        return this.ExecuteOneWord(this.NodeKind.PrivateCount, this.Index.Private, range);
+        return this.ExecuteWord(this.NodeKind.PrivateCount, this.Index.Private, range);
     }
 
     public virtual Node ExecuteExecute(Range range)
@@ -1955,17 +1955,17 @@ public class Create : ClassCreate
 
     public virtual Node ExecuteThisOperate(Range range)
     {
-        return this.ExecuteOneWord(this.NodeKind.ThisOperate, this.Index.ItemThis, range);
+        return this.ExecuteWord(this.NodeKind.ThisOperate, this.Index.ItemThis, range);
     }
 
     public virtual Node ExecuteBaseOperate(Range range)
     {
-        return this.ExecuteOneWord(this.NodeKind.BaseOperate, this.Index.Base, range);
+        return this.ExecuteWord(this.NodeKind.BaseOperate, this.Index.Base, range);
     }
 
     public virtual Node ExecuteNullOperate(Range range)
     {
-        return this.ExecuteOneWord(this.NodeKind.NullOperate, this.Index.Null, range);
+        return this.ExecuteWord(this.NodeKind.NullOperate, this.Index.Null, range);
     }
 
     public virtual Node ExecuteNewOperate(Range range)
@@ -2309,7 +2309,7 @@ public class Create : ClassCreate
         return ret;
     }
 
-    protected virtual Node ExecuteOneWord(NodeKind kind, Index word, Range range)
+    protected virtual Node ExecuteWord(NodeKind kind, Index word, Range range)
     {
         long start;
         long end;
