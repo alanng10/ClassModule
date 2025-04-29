@@ -7,20 +7,20 @@ class LimitList : Any
         this.Count : this.Array.Count;
         this.Index : 0;
 
-        this.StopSign : this.AddItem(".");
-        this.PauseSign : this.AddItem(",");
-        this.AreSign : this.AddItem(":");
-        this.ExecuteSign : this.AddItem(";");
-        this.SameSign : this.AddItem("=");
-        this.AddSign : this.AddItem("+");
-        this.SubSign : this.AddItem("-");
-        this.MulSign : this.AddItem("*");
-        this.DivSign : this.AddItem("/");
-        this.AndSign : this.AddItem("&");
-        this.OrnSign : this.AddItem("|");
-        this.NotSign : this.AddItem("~");
-        this.LessSign : this.AddItem("<");
-        this.MoreSign : this.AddItem(">");
+        this.Stop : this.AddItem(".");
+        this.Pause : this.AddItem(",");
+        this.Are : this.AddItem(":");
+        this.Execute : this.AddItem(";");
+        this.Same : this.AddItem("=");
+        this.Add : this.AddItem("+");
+        this.Sub : this.AddItem("-");
+        this.Mul : this.AddItem("*");
+        this.Div : this.AddItem("/");
+        this.And : this.AddItem("&");
+        this.Orn : this.AddItem("|");
+        this.Not : this.AddItem("~");
+        this.Less : this.AddItem("<");
+        this.More : this.AddItem(">");
         this.BraceRoundLite : this.AddItem("(");
         this.BraceRoundRite : this.AddItem(")");
         this.BraceCurveLite : this.AddItem("{");
@@ -28,20 +28,20 @@ class LimitList : Any
         return true;
     }
 
-    field prusate Limit StopSign { get { return data; } set { data : value; } }
-    field prusate Limit PauseSign { get { return data; } set { data : value; } }
-    field prusate Limit AreSign { get { return data; } set { data : value; } }
-    field prusate Limit ExecuteSign { get { return data; } set { data : value; } }
-    field prusate Limit SameSign { get { return data; } set { data : value; } }
-    field prusate Limit AddSign { get { return data; } set { data : value; } }
-    field prusate Limit SubSign { get { return data; } set { data : value; } }
-    field prusate Limit MulSign { get { return data; } set { data : value; } }
-    field prusate Limit DivSign { get { return data; } set { data : value; } }
-    field prusate Limit AndSign { get { return data; } set { data : value; } }
-    field prusate Limit OrnSign { get { return data; } set { data : value; } }
-    field prusate Limit NotSign { get { return data; } set { data : value; } }
-    field prusate Limit LessSign { get { return data; } set { data : value; } }
-    field prusate Limit MoreSign { get { return data; } set { data : value; } }
+    field prusate Limit Stop { get { return data; } set { data : value; } }
+    field prusate Limit Pause { get { return data; } set { data : value; } }
+    field prusate Limit Are { get { return data; } set { data : value; } }
+    field prusate Limit Execute { get { return data; } set { data : value; } }
+    field prusate Limit Same { get { return data; } set { data : value; } }
+    field prusate Limit Add { get { return data; } set { data : value; } }
+    field prusate Limit Sub { get { return data; } set { data : value; } }
+    field prusate Limit Mul { get { return data; } set { data : value; } }
+    field prusate Limit Div { get { return data; } set { data : value; } }
+    field prusate Limit And { get { return data; } set { data : value; } }
+    field prusate Limit Orn { get { return data; } set { data : value; } }
+    field prusate Limit Not { get { return data; } set { data : value; } }
+    field prusate Limit Less { get { return data; } set { data : value; } }
+    field prusate Limit More { get { return data; } set { data : value; } }
     field prusate Limit BraceRoundLite { get { return data; } set { data : value; } }
     field prusate Limit BraceRoundRite { get { return data; } set { data : value; } }
     field prusate Limit BraceCurveLite { get { return data; } set { data : value; } }
