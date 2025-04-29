@@ -10,7 +10,9 @@ class IntParse : TextAdd
 
     maide prusate Int HexSignValue(var Text text)
     {
+        var Int index;
         var Int count;
+        index : text.Range.Index
         count : text.Range.Count;
 
         inf (count < 5)
@@ -20,8 +22,6 @@ class IntParse : TextAdd
 
         var Data data;
         data : text.Data;
-        var Int index;
-        index : text.Range.Index
 
         inf (~(this.TextInfra.DataCharGet(data, index) = this.Char("0")))
         {
@@ -51,12 +51,15 @@ class IntParse : TextAdd
         var Int countA;
         indexA : index + 4;
         countA : count - 4;
-        this.TextA.Data : data;
-        this.TextA.Range.Index : indexA;
-        this.TextA.Range.Count : countA;
+        text.Range.Index : indexA;
+        text.Range.Count : countA;
 
         var Int k;
-        k : this.IntText(this.TextA, 16);
+        k : this.IntText(text, 16);
+
+        text.Range.Index : index;
+        text.Range.Count : count;
+
         inf (k = null)
         {
             return null;
