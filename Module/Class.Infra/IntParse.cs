@@ -67,7 +67,9 @@ public class IntParse : TextAdd
             return -1;
         }
 
-
+        long a;
+        a = this.Sign(!(negate == 0), k);
+        return a;
     }
 
     public virtual long HexValue(Text text)
@@ -170,32 +172,8 @@ public class IntParse : TextAdd
             return -1;
         }
 
-        long max;
-        max = 0;
-        if (negate == 0)
-        {
-            max = this.ClassInfra.IntSignPositeMax;
-        }
-        if (negate == 1)
-        {
-            max = this.ClassInfra.IntSignNegateMax;
-        }
-
-        if (max < k)
-        {
-            return -1;
-        }
-
         long a;
-        a = 0;
-        if (negate == 0)
-        {
-            a = k;
-        }
-        if (negate == 1)
-        {
-            a = -k;
-        }
+        a = this.Sign(!(negate == 0), k);
         return a;
     }
 
