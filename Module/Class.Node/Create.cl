@@ -1680,5 +1680,12 @@ class Create : ClassCreate
 
         var Int lastIndex;
         lastIndex : end - 1;
+
+        var Token signExecute;
+        signExecute : this.Token(this.TokenA, this.Limit.Execute.Text, this.IndexRange(this.RangeA, lastIndex));
+        inf (signExecute = null)
+        {
+            return null;
+        }
     }
 }
