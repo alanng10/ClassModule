@@ -1391,7 +1391,7 @@ public class Create : ClassCreate
         start = range.Start;
         end = range.End;
 
-        if (!(start + 1 == end))
+        if (!(this.Count(start, end) == 1))
         {
             return null;
         }
@@ -1399,6 +1399,16 @@ public class Create : ClassCreate
         TokenToken token;
         token = this.TokenToken(start);
 
+        Text text;
+        text = this.TextToken(this.TextA, token);
+
+        long value;
+        value = this.ClassIntParse.SignValue(text);
+
+        if (value == -1)
+        {
+            return null;
+        }
 
         this.SetArg.Kind = this.NodeKind.IntSignValue;
         this.SetArg.Range.Start = start;
