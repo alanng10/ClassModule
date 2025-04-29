@@ -1398,56 +1398,7 @@ public class Create : ClassCreate
 
         TokenToken token;
         token = this.TokenToken(start);
-        if (!this.IsIntSignValue(token))
-        {
-            return null;
-        }
 
-        bool signNegative;
-        signNegative = this.TokenSignNegate(aa, 2);
-
-        Text line;
-        line = this.SourceItem.Text.GetAt(aa.Row) as Text;
-        Text text;
-        text = this.TextA;
-        text.Data = line.Data;
-        text.Range.Index = line.Range.Index + token.Range.Index + 3;
-        text.Range.Count = token.Range.Count - 3;
-
-        long o;
-        o = this.IntText(text, 10);
-
-        if (o == -1)
-        {
-            return null;
-        }
-
-        long max;
-        max = 0;
-        if (!signNegative)
-        {
-            max = this.ClassInfra.IntSignPositeMax;
-        }
-        if (signNegative)
-        {
-            max = this.ClassInfra.IntSignNegateMax;
-        }
-
-        if (max < o)
-        {
-            return null;
-        }
-
-        long value;
-        value = 0;
-        if (!signNegative)
-        {
-            value = o;
-        }
-        if (signNegative)
-        {
-            value = -o;
-        }
 
         this.SetArg.Kind = this.NodeKind.IntSignValue;
         this.SetArg.Range.Start = start;
@@ -3604,54 +3555,6 @@ public class Create : ClassCreate
     protected virtual bool IsIntValue(TokenToken token)
     {
         if (!this.IntChar(this.TAToken(token)))
-        {
-            return false;
-        }
-        return true;
-    }
-
-    protected virtual bool IsIntSignValue(TokenToken aa)
-    {
-        long count;
-        count = aa.Range.Count;
-
-        if (count < 4)
-        {
-            return false;
-        }
-
-        Text line;
-        line = (Text)this.SourceItem.Text.GetAt(aa.Row);
-
-        Data data;
-        data = line.Data;
-        long start;
-        start = line.Range.Index + aa.Range.Index;
-
-        if (!(this.TextInfra.DataCharGet(data, start) == '0'))
-        {
-            return false;
-        }
-        if (!(this.TextInfra.DataCharGet(data, start + 1) == 's'))
-        {
-            return false;
-        }
-
-        long oa;
-        oa = this.TextInfra.DataCharGet(data, start + 2);
-        if (!this.IsIntSignChar(oa))
-        {
-            return false;
-        }
-
-        long startA;
-        startA = start + 3;
-        long countA;
-        countA = count - 3;
-        this.TextA.Data = data;
-        this.TextA.Range.Index = startA;
-        this.TextA.Range.Count = countA;
-        if (!this.IntChar(this.TextA))
         {
             return false;
         }
