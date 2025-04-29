@@ -1613,7 +1613,7 @@ public class Create : ClassCreate
         lastIndex = end - 1;
 
         Token signExecute;
-        signExecute = this.Token(this.TokenB, this.Limit.ExecuteSign.Text, this.IndexRange(this.RangeA, lastIndex));
+        signExecute = this.Token(this.TokenB, this.Limit.Execute.Text, this.IndexRange(this.RangeA, lastIndex));
         if (signExecute == null)
         {
             return null;
