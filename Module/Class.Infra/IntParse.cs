@@ -42,7 +42,7 @@ public class IntParse : TextAdd
         kaa = this.TextInfra.DataCharGet(data, index + 3);
 
         long negate;
-        negate = this.IntSign(kaa);
+        negate = this.Sign(kaa);
 
         if (negate == -1)
         {
@@ -68,7 +68,7 @@ public class IntParse : TextAdd
         }
 
         long a;
-        a = this.Sign(!(negate == 0), k);
+        a = this.Negate(!(negate == 0), k);
         return a;
     }
 
@@ -147,7 +147,7 @@ public class IntParse : TextAdd
         kaa = this.TextInfra.DataCharGet(data, index + 2);
 
         long negate;
-        negate = this.IntSign(kaa);
+        negate = this.Sign(kaa);
 
         if (negate == -1)
         {
@@ -173,7 +173,7 @@ public class IntParse : TextAdd
         }
 
         long a;
-        a = this.Sign(!(negate == 0), k);
+        a = this.Negate(!(negate == 0), k);
         return a;
     }
 
@@ -197,7 +197,7 @@ public class IntParse : TextAdd
         return a;
     }
 
-    protected virtual long Sign(bool negate, long value)
+    protected virtual long Negate(bool negate, long value)
     {
         if (value < 0)
         {
@@ -233,7 +233,7 @@ public class IntParse : TextAdd
         return a;
     }
 
-    protected virtual long IntSign(long value)
+    protected virtual long Sign(long value)
     {
         long a;
         a = -1;
