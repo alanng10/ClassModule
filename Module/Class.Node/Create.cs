@@ -1611,9 +1611,10 @@ public class Create : ClassCreate
 
         long lastIndex;
         lastIndex = end - 1;
-        Token semicolon;
-        semicolon = this.Token(this.TokenB, this.Limit.ExecuteSign.Text, this.IndexRange(this.RangeA, lastIndex));
-        if (semicolon == null)
+
+        Token signExecute;
+        signExecute = this.Token(this.TokenB, this.Limit.ExecuteSign.Text, this.IndexRange(this.RangeA, lastIndex));
+        if (signExecute == null)
         {
             return null;
         }
@@ -1621,7 +1622,7 @@ public class Create : ClassCreate
         long resultStart;
         long resultEnd;
         resultStart = returnToken.Range.End;
-        resultEnd = semicolon.Range.Start;
+        resultEnd = signExecute.Range.Start;
 
         Node result;
         result = this.ExecuteOperate(this.Range(this.RangeA, resultStart, resultEnd));
