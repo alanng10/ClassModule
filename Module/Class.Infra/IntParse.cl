@@ -1,5 +1,13 @@
 class IntParse : TextAdd
 {
+    maide prusate Bool Init()
+    {
+        this.ClassInfra : share Infra;
+        return true;
+    }
+
+    field precate Infra ClassInfra { get { return data; } set { data : value; } }
+
     maide prusate Int HexSignValue(var Text text)
     {
         var Int count;
