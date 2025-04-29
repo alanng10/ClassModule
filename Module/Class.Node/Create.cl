@@ -1579,5 +1579,20 @@ class Create : ClassCreate
         {
             return null;
         }
+
+        var Int lastIndex;
+        lastIndex : end - 1;
+
+        var Token signExecute;
+        signExecute : this.Token(this.TokenB, this.Limit.Execute.Text, this.IndexRange(this.RangeA, lastIndex));
+        inf (signExecute = null)
+        {
+            return null;
+        }
+
+        var Int resultStart;
+        var Int resultEnd;
+        resultStart : returnToken.Range.End;
+        resultEnd : signExecute.Range.Start;
     }
 }
