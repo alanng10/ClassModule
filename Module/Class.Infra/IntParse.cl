@@ -40,7 +40,7 @@ class IntParse : TextAdd
         kaa : this.TextInfra.DataCharGet(data, index + 3);
 
         var Bool negate
-        negate : this.IntSign(kaa);
+        negate : this.Sign(kaa);
 
         inf (negate = null)
         {
@@ -168,7 +168,7 @@ class IntParse : TextAdd
         kaa : this.TextInfra.DataCharGet(data, index + 2);
 
         var Bool negate
-        negate : this.IntSign(kaa);
+        negate : this.Sign(kaa);
 
         inf (negate = null)
         {
@@ -221,7 +221,7 @@ class IntParse : TextAdd
         return a;
     }
 
-    maide precate Bool IntSign(var Int value)
+    maide precate Bool Sign(var Int value)
     {
         var Bool a;
         
