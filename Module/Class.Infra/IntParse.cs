@@ -117,15 +117,15 @@ public class IntParse : TextAdd
         this.TextA.Range.Index = indexA;
         this.TextA.Range.Count = countA;
 
-        long value;
-        value = this.IntText(this.TextA, 16);
-        if (value == -1)
+        long k;
+        k = this.IntText(this.TextA, 16);
+        if (k == -1)
         {
             return null;
         }
 
         long a;
-        a = value;
+        a = k;
         return a;
     }
 
