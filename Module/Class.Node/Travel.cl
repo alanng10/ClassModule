@@ -1009,7 +1009,7 @@ class Travel : TextAdd
         return true;
     }
 
-    maide precate Bool ExecuteNode(Node node)
+    maide precate Bool ExecuteNode(var Node node)
     {
         return true;
     }
