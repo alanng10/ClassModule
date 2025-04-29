@@ -2,6 +2,14 @@ namespace Class.Infra;
 
 public class IntParse : TextAdd
 {
+    public override bool Init()
+    {
+        this.ClassInfra = ClassInfra.This;
+        return true;
+    }
+
+    protected virtual ClassInfra ClassInfra { get; set; }
+
     public virtual long HexSignValue(Text text)
     {
         long count;
