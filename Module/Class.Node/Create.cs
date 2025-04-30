@@ -2226,7 +2226,7 @@ public class Create : ClassCreate
         return this.ExecuteWordTwoLimitTwoOperand(this.NodeKind.BitSignRiteOperate, this.Index.Bit, this.Limit.More, this.Limit.More, range);
     }
 
-    protected virtual Node ExecuteWordBraceBody(NodeKind kind, Index index, Range range)
+    protected virtual Node ExecuteIndexBraceBody(NodeKind kind, Index index, Range range)
     {
         long start;
         long end;
@@ -2321,7 +2321,7 @@ public class Create : ClassCreate
         return ret;
     }
 
-    protected virtual Node ExecuteWord(NodeKind kind, Index index, Range range)
+    protected virtual Node ExecuteIndex(NodeKind kind, Index index, Range range)
     {
         long start;
         long end;
