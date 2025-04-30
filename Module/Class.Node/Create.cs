@@ -3272,7 +3272,7 @@ public class Create : ClassCreate
         return this.ExecuteIndexBracketRange(result, this.Index.While, range);
     }
 
-    protected virtual Range ExecuteIndexBracketRange(Range result, Index word, Range range)
+    protected virtual Range ExecuteIndexBracketRange(Range result, Index index, Range range)
     {
         long start;
         long end;
@@ -3283,19 +3283,19 @@ public class Create : ClassCreate
         {
             return null;
         }
-        Token wordToken;
-        wordToken = this.Token(this.TokenA, word.Text, this.IndexRange(this.RangeA, start));
-        if (wordToken == null)
+        Token indexToken;
+        indexToken = this.Token(this.TokenA, index.Text, this.IndexRange(this.RangeA, start));
+        if (indexToken == null)
         {
             return null;
         }
 
-        if (wordToken.Range.End == end)
+        if (indexToken.Range.End == end)
         {
             return null;
         }
         Token braceRoundLite;
-        braceRoundLite = this.Token(this.TokenB, this.Limit.BraceRoundLite.Text, this.IndexRange(this.RangeA, wordToken.Range.End));
+        braceRoundLite = this.Token(this.TokenB, this.Limit.BraceRoundLite.Text, this.IndexRange(this.RangeA, indexToken.Range.End));
         if (braceRoundLite == null)
         {
             return null;
