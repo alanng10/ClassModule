@@ -2030,4 +2030,27 @@ class Create : ClassCreate
     {
         return this.ExecuteVarNameResult(this.NodeKind.VarOperate, range);
     }
+
+    maide prusate Node ExecuteValueOperate(var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        var Node value;
+        value : this.ExecuteValue(this.Range(this.RangeA, start, end));
+        inf (value = null)
+        {
+            return null;
+        }
+
+        this.SetArg.Kind : this.NodeKind.ValueOperate;
+        this.SetArg.Range.Start : start;
+        this.SetArg.Range.End : end;
+        this.SetArg.Field00 : value;
+        var Node ret;
+        ret : this.Operate.Execute();
+        return ret;
+    }
 }
