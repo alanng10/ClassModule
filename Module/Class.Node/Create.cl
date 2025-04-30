@@ -2025,4 +2025,9 @@ class Create : ClassCreate
         ret : this.Operate.Execute();
         return ret;
     }
+
+    maide prusate Node ExecuteVarOperate(var Range range)
+    {
+        return this.ExecuteVarNameResult(this.NodeKind.VarOperate, range);
+    }
 }
