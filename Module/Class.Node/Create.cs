@@ -2237,6 +2237,7 @@ public class Create : ClassCreate
         {
             return null;
         }
+
         Token wordToken;
         wordToken = this.Token(this.TokenA, word.Text, this.IndexRange(this.RangeA, start));
         if (wordToken == null)
@@ -2248,6 +2249,7 @@ public class Create : ClassCreate
         {
             return null;
         }
+
         Token braceRoundLite;
         braceRoundLite = this.Token(this.TokenB, this.Limit.BraceRoundLite.Text, this.IndexRange(this.RangeA, wordToken.Range.End));
         if (braceRoundLite == null)
@@ -2266,6 +2268,7 @@ public class Create : ClassCreate
         {
             return null;
         }
+
         Token braceCurveLite;
         braceCurveLite = this.Token(this.TokenD, this.Limit.BraceCurveLite.Text, this.IndexRange(this.RangeA, braceRoundRite.Range.End));
         if (braceCurveLite == null)
