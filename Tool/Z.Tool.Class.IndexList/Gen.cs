@@ -23,28 +23,19 @@ public class Gen : SourceGen
         String index;
         index = line;
 
-        Text aa;
-        aa = this.TextCreate(this.S("Item"));
+        String indexA;
+        indexA = index;
 
-        Text k;
-        k = this.TextCreate(index);
-
-        if (this.TextStart(k, aa))
+        if (this.TextSame(this.TA(indexA), this.TB(this.S("Get"))))
         {
-            long kk;
-            kk = aa.Range.Count;
-
-            Range range;
-            range = k.Range;
-
-            range.Index = range.Index + kk;
-            range.Count = range.Count - kk;
+            indexA = this.AddClear().AddS("Item").Add(indexA).AddResult();
         }
 
-        k = this.TextAlphaSite(k);
+        Text ka;
+        ka = this.TextAlphaSite(this.TA(index));
 
-        String text;        
-        text = this.StringCreate(k);
+        String text;
+        text = this.StringCreate(ka);
 
         Value value;
         value = new Value();
@@ -54,7 +45,7 @@ public class Gen : SourceGen
         TableEntry entry;
         entry = new TableEntry();
         entry.Init();
-        entry.Index = index;
+        entry.Index = indexA;
         entry.Value = value;
         return entry;
     }
