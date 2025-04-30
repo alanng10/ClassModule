@@ -2190,4 +2190,9 @@ class Create : ClassCreate
     {
         return this.ExecuteWordLimitTwoOperand(this.NodeKind.BitRiteOperate, this.Index.Bit, this.Limit.More, range);
     }
+
+    maide prusate Node ExecuteBitSignRiteOperate(var Range range)
+    {
+        return this.ExecuteWordTwoLimitTwoOperand(this.NodeKind.BitSignRiteOperate, this.Index.Bit, this.Limit.More, this.Limit.More, range);
+    }
 }
