@@ -2105,4 +2105,9 @@ class Create : ClassCreate
         ret : this.Operate.Execute();
         return ret;
     }
+
+    maide prusate Node ExecuteAndOperate(var Range range)
+    {
+        return this.ExecuteLimitTwoOperand(this.NodeKind.AndOperate, this.Limit.And, range);
+    }
 }
