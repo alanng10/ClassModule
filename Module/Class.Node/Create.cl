@@ -1826,5 +1826,40 @@ class Create : ClassCreate
                 }
             }
         }
+        inf (a = null)
+        {
+            inf (~(start = end))
+            {
+                var Token wordTokenB;
+                wordTokenB : this.Token(this.TokenA, this.Index.Bit.Text, this.IndexRange(this.RangeA, start));
+                inf (~(wordTokenB = null))
+                {
+                    inf (a = null)
+                    {
+                        a : this.ExecuteBitAndOperate(this.Range(this.RangeA, start, end));
+                    }
+                    inf (a = null)
+                    {
+                        a : this.ExecuteBitOrnOperate(this.Range(this.RangeA, start, end));
+                    }
+                    inf (a = null)
+                    {
+                        a : this.ExecuteBitNotOperate(this.Range(this.RangeA, start, end));
+                    }
+                    inf (a = null)
+                    {
+                        a : this.ExecuteBitLiteOperate(this.Range(this.RangeA, start, end));
+                    }
+                    inf (a = null)
+                    {
+                        a : this.ExecuteBitRiteOperate(this.Range(this.RangeA, start, end));
+                    }
+                    inf (a = null)
+                    {
+                        a : this.ExecuteBitSignRiteOperate(this.Range(this.RangeA, start, end));
+                    }
+                }
+            }
+        }
     }
 }
