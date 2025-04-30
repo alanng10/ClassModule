@@ -1996,6 +1996,7 @@ public class Create : ClassCreate
         {
             return null;
         }
+
         Token castToken;
         castToken = this.Token(this.TokenA, this.Index.Cast.Text, this.IndexRange(this.RangeA, start));
         if (castToken == null)
