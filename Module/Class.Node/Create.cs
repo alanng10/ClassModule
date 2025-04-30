@@ -2136,11 +2136,6 @@ public class Create : ClassCreate
         return ret;
     }
 
-    public virtual Node ExecuteSameOperate(Range range)
-    {
-        return this.ExecuteLimitTwoOperand(this.NodeKind.SameOperate, this.Limit.SameSign, range);
-    }
-
     public virtual Node ExecuteAndOperate(Range range)
     {
         return this.ExecuteLimitTwoOperand(this.NodeKind.AndOperate, this.Limit.AndSign, range);
@@ -2154,6 +2149,16 @@ public class Create : ClassCreate
     public virtual Node ExecuteNotOperate(Range range)
     {
         return this.ExecuteLimitOneOperand(this.NodeKind.NotOperate, this.Limit.NotSign, range);
+    }
+
+    public virtual Node ExecuteSameOperate(Range range)
+    {
+        return this.ExecuteLimitTwoOperand(this.NodeKind.SameOperate, this.Limit.SameSign, range);
+    }
+
+    public virtual Node ExecuteLessOperate(Range range)
+    {
+        return this.ExecuteLimitTwoOperand(this.NodeKind.LessOperate, this.Limit.LessSign, range);
     }
 
     public virtual Node ExecuteAddOperate(Range range)
@@ -2176,9 +2181,9 @@ public class Create : ClassCreate
         return this.ExecuteLimitTwoOperand(this.NodeKind.DivOperate, this.Limit.DivSign, range);
     }
 
-    public virtual Node ExecuteLessOperate(Range range)
+    public virtual Node ExecuteSignLessOperate(Range range)
     {
-        return this.ExecuteLimitTwoOperand(this.NodeKind.LessOperate, this.Limit.LessSign, range);
+        return this.ExecuteWordLimitTwoOperand(this.NodeKind.SignLessOperate, this.Index.Sign, this.Limit.LessSign, range);
     }
 
     public virtual Node ExecuteSignMulOperate(Range range)
@@ -2189,11 +2194,6 @@ public class Create : ClassCreate
     public virtual Node ExecuteSignDivOperate(Range range)
     {
         return this.ExecuteWordLimitTwoOperand(this.NodeKind.SignDivOperate, this.Index.Sign, this.Limit.DivSign, range);
-    }
-
-    public virtual Node ExecuteSignLessOperate(Range range)
-    {
-        return this.ExecuteWordLimitTwoOperand(this.NodeKind.SignLessOperate, this.Index.Sign, this.Limit.LessSign, range);
     }
 
     public virtual Node ExecuteBitAndOperate(Range range)
