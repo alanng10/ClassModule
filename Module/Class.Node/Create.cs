@@ -2389,7 +2389,7 @@ public class Create : ClassCreate
         end = range.End;
 
         Token dot;
-        dot = this.TokenBack(this.TokenA, this.Limit.StopSign.Text, this.Range(this.RangeA, start, end));
+        dot = this.TokenBack(this.TokenA, this.Limit.Stop.Text, this.Range(this.RangeA, start, end));
         if (dot == null)
         {
             return null;
@@ -2456,7 +2456,7 @@ public class Create : ClassCreate
         }
 
         Token dot;
-        dot = this.TokenBack(this.TokenC, this.Limit.StopSign.Text, this.Range(this.RangeA, start, braceRoundLite.Range.Start));
+        dot = this.TokenBack(this.TokenC, this.Limit.Stop.Text, this.Range(this.RangeA, start, braceRoundLite.Range.Start));
         if (dot == null)
         {
             return null;
@@ -2721,7 +2721,7 @@ public class Create : ClassCreate
         }
 
         Token comma;
-        comma = this.TokenFrontSkip(this.TokenA, this.Limit.PauseSign.Text, this.Range(this.RangeA, braceRoundLite.Range.End, braceRoundRite.Range.Start));
+        comma = this.TokenFrontSkip(this.TokenA, this.Limit.Pause.Text, this.Range(this.RangeA, braceRoundLite.Range.End, braceRoundRite.Range.Start));
         if (comma == null)
         {
             return null;
@@ -2897,7 +2897,7 @@ public class Create : ClassCreate
         }
 
         Token comma;
-        comma = this.TokenFrontSkip(this.TokenC, this.Limit.PauseSign.Text, this.Range(this.RangeA, braceRoundLite.Range.End, braceRoundRite.Range.Start));
+        comma = this.TokenFrontSkip(this.TokenC, this.Limit.Pause.Text, this.Range(this.RangeA, braceRoundLite.Range.End, braceRoundRite.Range.Start));
         if (comma == null)
         {
             return null;
@@ -3421,7 +3421,7 @@ public class Create : ClassCreate
         end = range.End;
 
         Token comma;
-        comma = this.TokenFrontSkip(this.TokenA, this.Limit.PauseSign.Text, this.Range(this.RangeA, start, end));
+        comma = this.TokenFrontSkip(this.TokenA, this.Limit.Pause.Text, this.Range(this.RangeA, start, end));
         if (comma == null)
         {
             return null;
