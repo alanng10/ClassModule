@@ -2165,4 +2165,29 @@ class Create : ClassCreate
     {
         return this.ExecuteWordLimitTwoOperand(this.NodeKind.SignDivOperate, this.Index.Sign, this.Limit.Div, range);
     }
+
+    maide prusate Node ExecuteBitAndOperate(var Range range)
+    {
+        return this.ExecuteWordLimitTwoOperand(this.NodeKind.BitAndOperate, this.Index.Bit, this.Limit.And, range);
+    }
+
+    maide prusate Node ExecuteBitOrnOperate(var Range range)
+    {
+        return this.ExecuteWordLimitTwoOperand(this.NodeKind.BitOrnOperate, this.Index.Bit, this.Limit.Orn, range);
+    }
+
+    maide prusate Node ExecuteBitNotOperate(var Range range)
+    {
+        return this.ExecuteWordLimitTwoOperand(this.NodeKind.BitNotOperate, this.Index.Bit, this.Limit.Not, range);
+    }
+
+    maide prusate Node ExecuteBitLiteOperate(var Range range)
+    {
+        return this.ExecuteWordLimitTwoOperand(this.NodeKind.BitLiteOperate, this.Index.Bit, this.Limit.Less, range);
+    }
+
+    maide prusate Node ExecuteBitRiteOperate(var Range range)
+    {
+        return this.ExecuteWordLimitTwoOperand(this.NodeKind.BitRiteOperate, this.Index.Bit, this.Limit.More, range);
+    }
 }
