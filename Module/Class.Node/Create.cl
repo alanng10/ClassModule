@@ -2084,5 +2084,25 @@ class Create : ClassCreate
         {
             return null;
         }
+
+        var Int anyStart;
+        var Int anyEnd;
+        anyStart : braceRoundLite.Range.End;
+        anyEnd : braceRoundRite.Range.Start;
+
+        var Node any;
+        any : this.ExecuteOperate(this.Range(this.RangeA, anyStart, anyEnd));
+        inf (any = null)
+        {
+            this.Error(this.ErrorKind.AnyUnvalid, anyStart, anyEnd);
+        }
+
+        this.SetArg.Kind : this.NodeKind.BraceOperate;
+        this.SetArg.Range.Start : start;
+        this.SetArg.Range.End : end;
+        this.SetArg.Field00 : any;
+        var Node ret;
+        ret : this.Operate.Execute();
+        return ret;
     }
 }
