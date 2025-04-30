@@ -13,7 +13,7 @@ class IndexList : Any
         this.Var : this.AddItem("var");
         this.ItemGet : this.AddItem("get");
         this.Set : this.AddItem("set");
-        this.ItemThis : this.AddItem("this");
+        this.This : this.AddItem("this");
         this.Base : this.AddItem("base");
         this.Return : this.AddItem("return");
         this.Inf : this.AddItem("inf");
@@ -39,7 +39,7 @@ class IndexList : Any
     field prusate Index Var { get { return data; } set { data : value; } }
     field prusate Index ItemGet { get { return data; } set { data : value; } }
     field prusate Index Set { get { return data; } set { data : value; } }
-    field prusate Index ItemThis { get { return data; } set { data : value; } }
+    field prusate Index This { get { return data; } set { data : value; } }
     field prusate Index Base { get { return data; } set { data : value; } }
     field prusate Index Return { get { return data; } set { data : value; } }
     field prusate Index Inf { get { return data; } set { data : value; } }
