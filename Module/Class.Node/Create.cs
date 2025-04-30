@@ -1837,9 +1837,9 @@ public class Create : ClassCreate
         {
             if (!(start == end))
             {
-                Token wordTokenA;
-                wordTokenA = this.Token(this.TokenA, this.Index.Sign.Text, this.IndexRange(this.RangeA, start));
-                if (!(wordTokenA == null))
+                Token indexTokenA;
+                indexTokenA = this.Token(this.TokenA, this.Index.Sign.Text, this.IndexRange(this.RangeA, start));
+                if (!(indexTokenA == null))
                 {
                     if (a == null)
                     {
@@ -1860,9 +1860,9 @@ public class Create : ClassCreate
         {
             if (!(start == end))
             {
-                Token wordTokenB;
-                wordTokenB = this.Token(this.TokenA, this.Index.Bit.Text, this.IndexRange(this.RangeA, start));
-                if (!(wordTokenB == null))
+                Token indexTokenB;
+                indexTokenB = this.Token(this.TokenA, this.Index.Bit.Text, this.IndexRange(this.RangeA, start));
+                if (!(indexTokenB == null))
                 {
                     if (a == null)
                     {
