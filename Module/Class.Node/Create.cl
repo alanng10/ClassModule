@@ -2238,5 +2238,24 @@ class Create : ClassCreate
         {
             return null;
         }
+
+        var Token braceCurveLite;
+        braceCurveLite : this.Token(this.TokenD, this.Limit.BraceCurveLite.Text, this.IndexRange(this.RangeA, braceRoundRite.Range.End));
+        inf (braceCurveLite = null)
+        {
+            return null;
+        }
+
+        var Token braceCurveRite;
+        braceCurveRite : this.TokenBraceCurveRite(this.TokenA, this.Range(this.RangeA, braceCurveLite.Range.End, end));
+        inf (braceCurveRite = null)
+        {
+            return null;
+        }
+
+        inf (~(braceCurveRite.Range.End = end))
+        {
+            return null;
+        }
     }
 }
