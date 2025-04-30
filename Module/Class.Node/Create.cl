@@ -1992,5 +1992,37 @@ class Create : ClassCreate
         {
             return null;
         }
+
+        var Int classStart;
+        var Int classEnd;
+        classStart : castToken.Range.End;
+        classEnd : braceRoundLite.Range.Start;
+        var Int anyStart;
+        var Int anyEnd;
+        anyStart : braceRoundLite.Range.End;
+        anyEnd : braceRoundRite.Range.Start;
+
+        var Node varClass;
+        varClass : this.ExecuteName(this.NodeKind.ClassName, this.Range(this.RangeA, classStart, classEnd));
+        inf (varClass = null)
+        {
+            this.Error(this.ErrorKind.ClassUnvalid, classStart, classEnd);
+        }
+
+        var Node any;
+        any : this.ExecuteOperate(this.Range(this.RangeA, anyStart, anyEnd));
+        inf (any = null)
+        {
+            this.Error(this.ErrorKind.AnyUnvalid, anyStart, anyEnd);
+        }
+
+        this.SetArg.Kind : this.NodeKind.CastOperate;
+        this.SetArg.Range.Start : start;
+        this.SetArg.Range.End : end;
+        this.SetArg.Field00 : varClass;
+        this.SetArg.Field01 : any;
+        var Node ret;
+        ret : this.Operate.Execute();
+        return ret;
     }
 }
