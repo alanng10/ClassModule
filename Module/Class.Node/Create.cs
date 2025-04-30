@@ -1768,8 +1768,10 @@ public class Create : ClassCreate
         {
             return null;
         }
+
         long lastIndex;
         lastIndex = end - 1;
+
         Token semicolon;
         semicolon = this.Token(this.TokenA, this.Limit.Execute.Text, this.IndexRange(this.RangeA, lastIndex));
         if (semicolon == null)
