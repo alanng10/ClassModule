@@ -2280,5 +2280,14 @@ class Create : ClassCreate
         {
             this.Error(this.ErrorKind.BodyUnvalid, bodyStart, bodyEnd);
         }
+
+        this.SetArg.Kind : kind;
+        this.SetArg.Range.Start : start;
+        this.SetArg.Range.End : end;
+        this.SetArg.Field00 : cond;
+        this.SetArg.Field01 : body;
+        var Node ret;
+        ret : this.Operate.Execute();
+        return ret;
     }
 }
