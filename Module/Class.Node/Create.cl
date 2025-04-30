@@ -2257,5 +2257,28 @@ class Create : ClassCreate
         {
             return null;
         }
+
+        var Int condStart;
+        var Int condEnd;
+        condStart : braceRoundLite.Range.End;
+        condEnd : braceRoundRite.Range.Start;
+        var Int bodyStart;
+        var Int bodyEnd;
+        bodyStart : braceCurveLite.Range.End;
+        bodyEnd : braceCurveRite.Range.Start;
+
+        var Node cond;
+        cond : this.ExecuteOperate(this.Range(this.RangeA, condStart, condEnd));
+        inf (cond = null)
+        {
+            this.Error(this.ErrorKind.CondUnvalid, condStart, condEnd);
+        }
+
+        var Node body;
+        body : this.ExecuteState(this.Range(this.RangeA, bodyStart, bodyEnd));
+        inf (body = null)
+        {
+            this.Error(this.ErrorKind.BodyUnvalid, bodyStart, bodyEnd);
+        }
     }
 }
