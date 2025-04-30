@@ -1954,4 +1954,43 @@ class Create : ClassCreate
     {
         return this.ExecuteWordClass(this.NodeKind.ShareOperate, this.Index.Share, range);
     }
+
+    maide prusate Node ExecuteCastOperate(var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        inf (start = end)
+        {
+            return null;
+        }
+
+        var Token castToken;
+        castToken : this.Token(this.TokenA, this.Index.Cast.Text, this.IndexRange(this.RangeA, start));
+        inf (castToken = null)
+        {
+            return null;
+        }
+
+        var Token braceRoundLite;
+        braceRoundLite : this.TokenFront(this.TokenB, this.Limit.BraceRoundLite.Text, this.Range(this.RangeA, castToken.Range.End, end));
+        inf (braceRoundLite = null)
+        {
+            return null;
+        }
+
+        var Token braceRoundRite;
+        braceRoundRite : this.TokenBraceRoundRite(this.TokenC, this.Range(this.RangeA, braceRoundLite.Range.End, end));
+        inf (braceRoundRite = null)
+        {
+            return null;
+        }
+
+        inf (~(braceRoundRite.Range.End = end))
+        {
+            return null;
+        }
+    }
 }
