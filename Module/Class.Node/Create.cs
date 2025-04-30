@@ -2138,92 +2138,92 @@ public class Create : ClassCreate
 
     public virtual Node ExecuteAndOperate(Range range)
     {
-        return this.ExecuteLimitTwoOperand(this.NodeKind.AndOperate, this.Limit.AndSign, range);
+        return this.ExecuteLimitTwoOperand(this.NodeKind.AndOperate, this.Limit.And, range);
     }
 
     public virtual Node ExecuteOrnOperate(Range range)
     {
-        return this.ExecuteLimitTwoOperand(this.NodeKind.OrnOperate, this.Limit.OrnSign, range);
+        return this.ExecuteLimitTwoOperand(this.NodeKind.OrnOperate, this.Limit.Orn, range);
     }
 
     public virtual Node ExecuteNotOperate(Range range)
     {
-        return this.ExecuteLimitOneOperand(this.NodeKind.NotOperate, this.Limit.NotSign, range);
+        return this.ExecuteLimitOneOperand(this.NodeKind.NotOperate, this.Limit.Not, range);
     }
 
     public virtual Node ExecuteSameOperate(Range range)
     {
-        return this.ExecuteLimitTwoOperand(this.NodeKind.SameOperate, this.Limit.SameSign, range);
+        return this.ExecuteLimitTwoOperand(this.NodeKind.SameOperate, this.Limit.Same, range);
     }
 
     public virtual Node ExecuteLessOperate(Range range)
     {
-        return this.ExecuteLimitTwoOperand(this.NodeKind.LessOperate, this.Limit.LessSign, range);
+        return this.ExecuteLimitTwoOperand(this.NodeKind.LessOperate, this.Limit.Less, range);
     }
 
     public virtual Node ExecuteAddOperate(Range range)
     {
-        return this.ExecuteLimitTwoOperand(this.NodeKind.AddOperate, this.Limit.AddSign, range);
+        return this.ExecuteLimitTwoOperand(this.NodeKind.AddOperate, this.Limit.Add, range);
     }
 
     public virtual Node ExecuteSubOperate(Range range)
     {
-        return this.ExecuteLimitTwoOperand(this.NodeKind.SubOperate, this.Limit.SubSign, range);
+        return this.ExecuteLimitTwoOperand(this.NodeKind.SubOperate, this.Limit.Sub, range);
     }
 
     public virtual Node ExecuteMulOperate(Range range)
     {
-        return this.ExecuteLimitTwoOperand(this.NodeKind.MulOperate, this.Limit.MulSign, range);
+        return this.ExecuteLimitTwoOperand(this.NodeKind.MulOperate, this.Limit.Mul, range);
     }
 
     public virtual Node ExecuteDivOperate(Range range)
     {
-        return this.ExecuteLimitTwoOperand(this.NodeKind.DivOperate, this.Limit.DivSign, range);
+        return this.ExecuteLimitTwoOperand(this.NodeKind.DivOperate, this.Limit.Div, range);
     }
 
     public virtual Node ExecuteSignLessOperate(Range range)
     {
-        return this.ExecuteWordLimitTwoOperand(this.NodeKind.SignLessOperate, this.Index.Sign, this.Limit.LessSign, range);
+        return this.ExecuteWordLimitTwoOperand(this.NodeKind.SignLessOperate, this.Index.Sign, this.Limit.Less, range);
     }
 
     public virtual Node ExecuteSignMulOperate(Range range)
     {
-        return this.ExecuteWordLimitTwoOperand(this.NodeKind.SignMulOperate, this.Index.Sign, this.Limit.MulSign, range);
+        return this.ExecuteWordLimitTwoOperand(this.NodeKind.SignMulOperate, this.Index.Sign, this.Limit.Mul, range);
     }
 
     public virtual Node ExecuteSignDivOperate(Range range)
     {
-        return this.ExecuteWordLimitTwoOperand(this.NodeKind.SignDivOperate, this.Index.Sign, this.Limit.DivSign, range);
+        return this.ExecuteWordLimitTwoOperand(this.NodeKind.SignDivOperate, this.Index.Sign, this.Limit.Div, range);
     }
 
     public virtual Node ExecuteBitAndOperate(Range range)
     {
-        return this.ExecuteWordLimitTwoOperand(this.NodeKind.BitAndOperate, this.Index.Bit, this.Limit.AndSign, range);
+        return this.ExecuteWordLimitTwoOperand(this.NodeKind.BitAndOperate, this.Index.Bit, this.Limit.And, range);
     }
 
     public virtual Node ExecuteBitOrnOperate(Range range)
     {
-        return this.ExecuteWordLimitTwoOperand(this.NodeKind.BitOrnOperate, this.Index.Bit, this.Limit.OrnSign, range);
+        return this.ExecuteWordLimitTwoOperand(this.NodeKind.BitOrnOperate, this.Index.Bit, this.Limit.Orn, range);
     }
 
     public virtual Node ExecuteBitNotOperate(Range range)
     {
-        return this.ExecuteWordLimitOneOperand(this.NodeKind.BitNotOperate, this.Index.Bit, this.Limit.NotSign, range);
+        return this.ExecuteWordLimitOneOperand(this.NodeKind.BitNotOperate, this.Index.Bit, this.Limit.Not, range);
     }
 
     public virtual Node ExecuteBitLiteOperate(Range range)
     {
-        return this.ExecuteWordLimitTwoOperand(this.NodeKind.BitLiteOperate, this.Index.Bit, this.Limit.LessSign, range);
+        return this.ExecuteWordLimitTwoOperand(this.NodeKind.BitLiteOperate, this.Index.Bit, this.Limit.Less, range);
     }
 
     public virtual Node ExecuteBitRiteOperate(Range range)
     {
-        return this.ExecuteWordLimitTwoOperand(this.NodeKind.BitRiteOperate, this.Index.Bit, this.Limit.MoreSign, range);
+        return this.ExecuteWordLimitTwoOperand(this.NodeKind.BitRiteOperate, this.Index.Bit, this.Limit.More, range);
     }
 
     public virtual Node ExecuteBitSignRiteOperate(Range range)
     {
-        return this.ExecuteWordTwoLimitTwoOperand(this.NodeKind.BitSignRiteOperate, this.Index.Bit, this.Limit.MoreSign, this.Limit.MoreSign, range);
+        return this.ExecuteWordTwoLimitTwoOperand(this.NodeKind.BitSignRiteOperate, this.Index.Bit, this.Limit.More, this.Limit.More, range);
     }
 
     protected virtual Node ExecuteWordBraceBody(NodeKind kind, Index word, Range range)
