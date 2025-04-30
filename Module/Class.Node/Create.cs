@@ -1521,22 +1521,22 @@ public class Create : ClassCreate
 
     public virtual Node ExecutePrusateCount(Range range)
     {
-        return this.ExecuteWord(this.NodeKind.PrusateCount, this.Index.Prusate, range);
+        return this.ExecuteIndex(this.NodeKind.PrusateCount, this.Index.Prusate, range);
     }
 
     public virtual Node ExecutePrecateCount(Range range)
     {
-        return this.ExecuteWord(this.NodeKind.PrecateCount, this.Index.Precate, range);
+        return this.ExecuteIndex(this.NodeKind.PrecateCount, this.Index.Precate, range);
     }
 
     public virtual Node ExecutePronateCount(Range range)
     {
-        return this.ExecuteWord(this.NodeKind.PronateCount, this.Index.Pronate, range);
+        return this.ExecuteIndex(this.NodeKind.PronateCount, this.Index.Pronate, range);
     }
 
     public virtual Node ExecutePrivateCount(Range range)
     {
-        return this.ExecuteWord(this.NodeKind.PrivateCount, this.Index.Private, range);
+        return this.ExecuteIndex(this.NodeKind.PrivateCount, this.Index.Private, range);
     }
 
     public virtual Node ExecuteExecute(Range range)
@@ -1577,12 +1577,12 @@ public class Create : ClassCreate
 
     public virtual Node ExecuteInfExecute(Range range)
     {
-        return this.ExecuteWordBraceBody(this.NodeKind.InfExecute, this.Index.Inf, range);
+        return this.ExecuteIndexBraceBody(this.NodeKind.InfExecute, this.Index.Inf, range);
     }
 
     public virtual Node ExecuteWhileExecute(Range range)
     {
-        return this.ExecuteWordBraceBody(this.NodeKind.WhileExecute, this.Index.While, range);
+        return this.ExecuteIndexBraceBody(this.NodeKind.WhileExecute, this.Index.While, range);
     }
 
     public virtual Node ExecuteReturnExecute(Range range)
@@ -1962,27 +1962,27 @@ public class Create : ClassCreate
 
     public virtual Node ExecuteThisOperate(Range range)
     {
-        return this.ExecuteWord(this.NodeKind.ThisOperate, this.Index.ItemThis, range);
+        return this.ExecuteIndex(this.NodeKind.ThisOperate, this.Index.ItemThis, range);
     }
 
     public virtual Node ExecuteBaseOperate(Range range)
     {
-        return this.ExecuteWord(this.NodeKind.BaseOperate, this.Index.Base, range);
+        return this.ExecuteIndex(this.NodeKind.BaseOperate, this.Index.Base, range);
     }
 
     public virtual Node ExecuteNullOperate(Range range)
     {
-        return this.ExecuteWord(this.NodeKind.NullOperate, this.Index.Null, range);
+        return this.ExecuteIndex(this.NodeKind.NullOperate, this.Index.Null, range);
     }
 
     public virtual Node ExecuteNewOperate(Range range)
     {
-        return this.ExecuteWordClass(this.NodeKind.NewOperate, this.Index.New, range);
+        return this.ExecuteIndexClass(this.NodeKind.NewOperate, this.Index.New, range);
     }
 
     public virtual Node ExecuteShareOperate(Range range)
     {
-        return this.ExecuteWordClass(this.NodeKind.ShareOperate, this.Index.Share, range);
+        return this.ExecuteIndexClass(this.NodeKind.ShareOperate, this.Index.Share, range);
     }
 
     public virtual Node ExecuteCastOperate(Range range)
@@ -2183,47 +2183,47 @@ public class Create : ClassCreate
 
     public virtual Node ExecuteSignLessOperate(Range range)
     {
-        return this.ExecuteWordLimitTwoOperand(this.NodeKind.SignLessOperate, this.Index.Sign, this.Limit.Less, range);
+        return this.ExecuteIndexLimitTwoOperand(this.NodeKind.SignLessOperate, this.Index.Sign, this.Limit.Less, range);
     }
 
     public virtual Node ExecuteSignMulOperate(Range range)
     {
-        return this.ExecuteWordLimitTwoOperand(this.NodeKind.SignMulOperate, this.Index.Sign, this.Limit.Mul, range);
+        return this.ExecuteIndexLimitTwoOperand(this.NodeKind.SignMulOperate, this.Index.Sign, this.Limit.Mul, range);
     }
 
     public virtual Node ExecuteSignDivOperate(Range range)
     {
-        return this.ExecuteWordLimitTwoOperand(this.NodeKind.SignDivOperate, this.Index.Sign, this.Limit.Div, range);
+        return this.ExecuteIndexLimitTwoOperand(this.NodeKind.SignDivOperate, this.Index.Sign, this.Limit.Div, range);
     }
 
     public virtual Node ExecuteBitAndOperate(Range range)
     {
-        return this.ExecuteWordLimitTwoOperand(this.NodeKind.BitAndOperate, this.Index.Bit, this.Limit.And, range);
+        return this.ExecuteIndexLimitTwoOperand(this.NodeKind.BitAndOperate, this.Index.Bit, this.Limit.And, range);
     }
 
     public virtual Node ExecuteBitOrnOperate(Range range)
     {
-        return this.ExecuteWordLimitTwoOperand(this.NodeKind.BitOrnOperate, this.Index.Bit, this.Limit.Orn, range);
+        return this.ExecuteIndexLimitTwoOperand(this.NodeKind.BitOrnOperate, this.Index.Bit, this.Limit.Orn, range);
     }
 
     public virtual Node ExecuteBitNotOperate(Range range)
     {
-        return this.ExecuteWordLimitOneOperand(this.NodeKind.BitNotOperate, this.Index.Bit, this.Limit.Not, range);
+        return this.ExecuteIndexLimitOneOperand(this.NodeKind.BitNotOperate, this.Index.Bit, this.Limit.Not, range);
     }
 
     public virtual Node ExecuteBitLiteOperate(Range range)
     {
-        return this.ExecuteWordLimitTwoOperand(this.NodeKind.BitLiteOperate, this.Index.Bit, this.Limit.Less, range);
+        return this.ExecuteIndexLimitTwoOperand(this.NodeKind.BitLiteOperate, this.Index.Bit, this.Limit.Less, range);
     }
 
     public virtual Node ExecuteBitRiteOperate(Range range)
     {
-        return this.ExecuteWordLimitTwoOperand(this.NodeKind.BitRiteOperate, this.Index.Bit, this.Limit.More, range);
+        return this.ExecuteIndexLimitTwoOperand(this.NodeKind.BitRiteOperate, this.Index.Bit, this.Limit.More, range);
     }
 
     public virtual Node ExecuteBitSignRiteOperate(Range range)
     {
-        return this.ExecuteWordTwoLimitTwoOperand(this.NodeKind.BitSignRiteOperate, this.Index.Bit, this.Limit.More, this.Limit.More, range);
+        return this.ExecuteIndexTwoLimitTwoOperand(this.NodeKind.BitSignRiteOperate, this.Index.Bit, this.Limit.More, this.Limit.More, range);
     }
 
     protected virtual Node ExecuteIndexBraceBody(NodeKind kind, Index index, Range range)
@@ -2343,7 +2343,7 @@ public class Create : ClassCreate
         return ret;
     }
 
-    protected virtual Node ExecuteWordClass(NodeKind kind, Index index, Range range)
+    protected virtual Node ExecuteIndexClass(NodeKind kind, Index index, Range range)
     {
         long start;
         long end;
@@ -2678,7 +2678,7 @@ public class Create : ClassCreate
         return ret;
     }
 
-    protected virtual Node ExecuteWordLimitTwoOperand(NodeKind kind, Index word, Limit limit, Range range)
+    protected virtual Node ExecuteIndexLimitTwoOperand(NodeKind kind, Index word, Limit limit, Range range)
     {
         long start;
         long end;
@@ -2770,7 +2770,7 @@ public class Create : ClassCreate
         return ret;
     }
 
-    protected virtual Node ExecuteWordLimitOneOperand(NodeKind kind, Index word, Limit limit, Range range)
+    protected virtual Node ExecuteIndexLimitOneOperand(NodeKind kind, Index word, Limit limit, Range range)
     {
         long start;
         long end;
@@ -2843,7 +2843,7 @@ public class Create : ClassCreate
         return ret;
     }
 
-    protected virtual Node ExecuteWordTwoLimitTwoOperand(NodeKind kind, Index word, Limit limitA, Limit limitB, Range range)
+    protected virtual Node ExecuteIndexTwoLimitTwoOperand(NodeKind kind, Index word, Limit limitA, Limit limitB, Range range)
     {
         long start;
         long end;
@@ -3264,15 +3264,15 @@ public class Create : ClassCreate
 
     protected virtual Range ExecuteInfExecuteRange(Range result, Range range)
     {
-        return this.ExecuteWordBracketRange(result, this.Index.Inf, range);
+        return this.ExecuteIndexBracketRange(result, this.Index.Inf, range);
     }
 
     protected virtual Range ExecuteWhileExecuteRange(Range result, Range range)
     {
-        return this.ExecuteWordBracketRange(result, this.Index.While, range);
+        return this.ExecuteIndexBracketRange(result, this.Index.While, range);
     }
 
-    protected virtual Range ExecuteWordBracketRange(Range result, Index word, Range range)
+    protected virtual Range ExecuteIndexBracketRange(Range result, Index word, Range range)
     {
         long start;
         long end;
