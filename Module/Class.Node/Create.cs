@@ -2095,6 +2095,7 @@ public class Create : ClassCreate
         {
             return null;
         }
+
         Token braceRoundLite;
         braceRoundLite = this.Token(this.TokenA, this.Limit.BraceRoundLite.Text, this.IndexRange(this.RangeA, start));
         if (braceRoundLite == null)
