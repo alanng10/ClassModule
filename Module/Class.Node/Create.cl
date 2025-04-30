@@ -1770,4 +1770,18 @@ class Create : ClassCreate
         ret : this.Operate.Execute();
         return ret;
     }
+
+    maide prusate Node ExecuteOperate(var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        var Node a;
+        inf (a = null)
+        {
+            a : this.ExecuteThisOperate(this.Range(this.RangeA, start, end));
+        }
+    }
 }
