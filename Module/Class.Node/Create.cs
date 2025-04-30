@@ -2056,34 +2056,6 @@ public class Create : ClassCreate
         return ret;
     }
 
-    public virtual Node ExecuteVarOperate(Range range)
-    {
-        return this.ExecuteVarNameResult(this.NodeKind.VarOperate, range);
-    }
-
-    public virtual Node ExecuteValueOperate(Range range)
-    {
-        long start;
-        long end;
-        start = range.Start;
-        end = range.End;
-
-        Node value;
-        value = this.ExecuteValue(this.Range(this.RangeA, start, end));
-        if (value == null)
-        {
-            return null;
-        }
-
-        this.SetArg.Kind = this.NodeKind.ValueOperate;
-        this.SetArg.Range.Start = start;
-        this.SetArg.Range.End = end;
-        this.SetArg.Field00 = value;
-        Node ret;
-        ret = this.Operate.Execute();
-        return ret;
-    }
-
     public virtual Node ExecuteBraceOperate(Range range)
     {
         long start;
@@ -2131,6 +2103,34 @@ public class Create : ClassCreate
         this.SetArg.Range.Start = start;
         this.SetArg.Range.End = end;
         this.SetArg.Field00 = any;
+        Node ret;
+        ret = this.Operate.Execute();
+        return ret;
+    }
+
+    public virtual Node ExecuteVarOperate(Range range)
+    {
+        return this.ExecuteVarNameResult(this.NodeKind.VarOperate, range);
+    }
+
+    public virtual Node ExecuteValueOperate(Range range)
+    {
+        long start;
+        long end;
+        start = range.Start;
+        end = range.End;
+
+        Node value;
+        value = this.ExecuteValue(this.Range(this.RangeA, start, end));
+        if (value == null)
+        {
+            return null;
+        }
+
+        this.SetArg.Kind = this.NodeKind.ValueOperate;
+        this.SetArg.Range.Start = start;
+        this.SetArg.Range.End = end;
+        this.SetArg.Field00 = value;
         Node ret;
         ret = this.Operate.Execute();
         return ret;
