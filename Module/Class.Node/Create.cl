@@ -2290,4 +2290,26 @@ class Create : ClassCreate
         ret : this.Operate.Execute();
         return ret;
     }
+
+    maide precate Node ExecuteWord(var NodeKind kind, var Index word, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        var Token wordToken;
+        wordToken : this.Token(this.TokenA, word.Text, this.Range(this.RangeA, start, end));
+        inf (wordToken = null)
+        {
+            return null;
+        }
+
+        this.SetArg.Kind : kind;
+        this.SetArg.Range.Start : start;
+        this.SetArg.Range.End : end;
+        var Node ret;
+        ret : this.Operate.Execute();
+        return ret;
+    }
 }
