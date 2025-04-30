@@ -2130,4 +2130,24 @@ class Create : ClassCreate
     {
         return this.ExecuteLimitTwoOperand(this.NodeKind.LessOperate, this.Limit.Less, range);
     }
+
+    maide prusate Node ExecuteAddOperate(var Range range)
+    {
+        return this.ExecuteLimitTwoOperand(this.NodeKind.AddOperate, this.Limit.Add, range);
+    }
+
+    maide prusate Node ExecuteSubOperate(var Range range)
+    {
+        return this.ExecuteLimitTwoOperand(this.NodeKind.SubOperate, this.Limit.Sub, range);
+    }
+
+    maide prusate Node ExecuteMulOperate(var Range range)
+    {
+        return this.ExecuteLimitTwoOperand(this.NodeKind.MulOperate, this.Limit.Mul, range);
+    }
+
+    maide prusate Node ExecuteDivOperate(var Range range)
+    {
+        return this.ExecuteLimitTwoOperand(this.NodeKind.DivOperate, this.Limit.Div, range);
+    }
 }
