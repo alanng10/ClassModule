@@ -1919,4 +1919,39 @@ class Create : ClassCreate
         }
         return a;
     }
+
+    maide prusate Node ExecuteGetOperate(var Range range)
+    {
+        return this.ExecuteDotField(this.NodeKind.GetOperate, range);
+    }
+
+    maide prusate Node ExecuteCallOperate(var Range range)
+    {
+        return this.ExecuteDotMaideCall(this.NodeKind.CallOperate, range);
+    }
+
+    maide prusate Node ExecuteThisOperate(var Range range)
+    {
+        return this.ExecuteWord(this.NodeKind.ThisOperate, this.Index.This, range);
+    }
+
+    maide prusate Node ExecuteBaseOperate(var Range range)
+    {
+        return this.ExecuteWord(this.NodeKind.BaseOperate, this.Index.Base, range);
+    }
+
+    maide prusate Node ExecuteNullOperate(var Range range)
+    {
+        return this.ExecuteWord(this.NodeKind.NullOperate, this.Index.Null, range);
+    }
+
+    maide prusate Node ExecuteNewOperate(var Range range)
+    {
+        return this.ExecuteWordClass(this.NodeKind.NewOperate, this.Index.New, range);
+    }
+
+    maide prusate Node ExecuteShareOperate(var Range range)
+    {
+        return this.ExecuteWordClass(this.NodeKind.ShareOperate, this.Index.Share, range);
+    }
 }
