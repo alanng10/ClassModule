@@ -1727,4 +1727,47 @@ class Create : ClassCreate
         ret : this.Operate.Execute();
         return ret;
     }
+
+    maide prusate Node ExecuteOperateExecute(var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        inf (start = end)
+        {
+            return null;
+        }
+
+        var Int lastIndex;
+        lastIndex : end - 1;
+
+        var Token signExecute;
+        signExecute : this.Token(this.TokenA, this.Limit.Execute.Text, this.IndexRange(this.RangeA, lastIndex));
+        inf (signExecute = null)
+        {
+            return null;
+        }
+
+        var Int anyStart;
+        var Int anyEnd;
+        anyStart : start;
+        anyEnd : signExecute.Range.Start;
+
+        var Node any;
+        any : this.ExecuteOperate(this.Range(this.RangeA, anyStart, anyEnd));
+        inf (any = null)
+        {
+            this.Error(this.ErrorKind.AnyUnvalid, anyStart, anyEnd);
+        }
+
+        this.SetArg.Kind : this.NodeKind.OperateExecute;
+        this.SetArg.Range.Start : start;
+        this.SetArg.Range.End : end;
+        this.SetArg.Field00 : any;
+        var Node ret;
+        ret : this.Operate.Execute();
+        return ret;
+    }
 }
