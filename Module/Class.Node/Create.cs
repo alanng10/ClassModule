@@ -2678,7 +2678,7 @@ public class Create : ClassCreate
         return ret;
     }
 
-    protected virtual Node ExecuteIndexLimitTwoOperand(NodeKind kind, Index word, Limit limit, Range range)
+    protected virtual Node ExecuteIndexLimitTwoOperand(NodeKind kind, Index index, Limit limit, Range range)
     {
         long start;
         long end;
@@ -2689,19 +2689,19 @@ public class Create : ClassCreate
         {
             return null;
         }
-        Token wordToken;
-        wordToken = this.Token(this.TokenA, word.Text, this.IndexRange(this.RangeA, start));
-        if (wordToken == null)
+        Token indexToken;
+        indexToken = this.Token(this.TokenA, index.Text, this.IndexRange(this.RangeA, start));
+        if (indexToken == null)
         {
             return null;
         }
 
-        if (wordToken.Range.End == end)
+        if (indexToken.Range.End == end)
         {
             return null;
         }
         Token op;
-        op = this.Token(this.TokenB, limit.Text, this.IndexRange(this.RangeA, wordToken.Range.End));
+        op = this.Token(this.TokenB, limit.Text, this.IndexRange(this.RangeA, indexToken.Range.End));
         if (op == null)
         {
             return null;
@@ -2770,7 +2770,7 @@ public class Create : ClassCreate
         return ret;
     }
 
-    protected virtual Node ExecuteIndexLimitOneOperand(NodeKind kind, Index word, Limit limit, Range range)
+    protected virtual Node ExecuteIndexLimitOneOperand(NodeKind kind, Index index, Limit limit, Range range)
     {
         long start;
         long end;
@@ -2781,19 +2781,19 @@ public class Create : ClassCreate
         {
             return null;
         }
-        Token wordToken;
-        wordToken = this.Token(this.TokenA, word.Text, this.IndexRange(this.RangeA, start));
-        if (wordToken == null)
+        Token indexToken;
+        indexToken = this.Token(this.TokenA, index.Text, this.IndexRange(this.RangeA, start));
+        if (indexToken == null)
         {
             return null;
         }
 
-        if (wordToken.Range.End == end)
+        if (indexToken.Range.End == end)
         {
             return null;
         }
         Token op;
-        op = this.Token(this.TokenB, limit.Text, this.IndexRange(this.RangeA, wordToken.Range.End));
+        op = this.Token(this.TokenB, limit.Text, this.IndexRange(this.RangeA, indexToken.Range.End));
         if (op == null)
         {
             return null;
@@ -2843,7 +2843,7 @@ public class Create : ClassCreate
         return ret;
     }
 
-    protected virtual Node ExecuteIndexTwoLimitTwoOperand(NodeKind kind, Index word, Limit limitA, Limit limitB, Range range)
+    protected virtual Node ExecuteIndexTwoLimitTwoOperand(NodeKind kind, Index index, Limit limitA, Limit limitB, Range range)
     {
         long start;
         long end;
@@ -2854,19 +2854,19 @@ public class Create : ClassCreate
         {
             return null;
         }
-        Token wordToken;
-        wordToken = this.Token(this.TokenA, word.Text, this.IndexRange(this.RangeA, start));
-        if (wordToken == null)
+        Token indexToken;
+        indexToken = this.Token(this.TokenA, index.Text, this.IndexRange(this.RangeA, start));
+        if (indexToken == null)
         {
             return null;
         }
 
-        if (wordToken.Range.End == end)
+        if (indexToken.Range.End == end)
         {
             return null;
         }
         Token opA;
-        opA = this.Token(this.TokenB, limitA.Text, this.IndexRange(this.RangeA, wordToken.Range.End));
+        opA = this.Token(this.TokenB, limitA.Text, this.IndexRange(this.RangeA, indexToken.Range.End));
         if (opA == null)
         {
             return null;
