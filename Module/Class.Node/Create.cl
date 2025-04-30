@@ -1783,5 +1783,48 @@ class Create : ClassCreate
         {
             a : this.ExecuteThisOperate(this.Range(this.RangeA, start, end));
         }
+        inf (a = null)
+        {
+            a : this.ExecuteBaseOperate(this.Range(this.RangeA, start, end));
+        }
+        inf (a = null)
+        {
+            a : this.ExecuteNullOperate(this.Range(this.RangeA, start, end));
+        }
+        inf (a = null)
+        {
+            a : this.ExecuteNewOperate(this.Range(this.RangeA, start, end));
+        }
+        inf (a = null)
+        {
+            a : this.ExecuteShareOperate(this.Range(this.RangeA, start, end));
+        }
+        inf (a = null)
+        {
+            a : this.ExecuteCastOperate(this.Range(this.RangeA, start, end));
+        }
+        inf (a = null)
+        {
+            inf (~(start = end))
+            {
+                var Token wordTokenA;
+                wordTokenA : this.Token(this.TokenA, this.Index.Sign.Text, this.IndexRange(this.RangeA, start));
+                inf (~(wordTokenA = null))
+                {
+                    inf (a = null)
+                    {
+                        a : this.ExecuteSignLessOperate(this.Range(this.RangeA, start, end));
+                    }
+                    inf (a = null)
+                    {
+                        a : this.ExecuteSignMulOperate(this.Range(this.RangeA, start, end));
+                    }
+                    inf (a = null)
+                    {
+                        a : this.ExecuteSignDivOperate(this.Range(this.RangeA, start, end));
+                    }
+                }
+            }
+        }
     }
 }
