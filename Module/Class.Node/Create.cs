@@ -2328,9 +2328,9 @@ public class Create : ClassCreate
         start = range.Start;
         end = range.End;
 
-        Token wordToken;
-        wordToken = this.Token(this.TokenA, index.Text, this.Range(this.RangeA, start, end));
-        if (wordToken == null)
+        Token indexToken;
+        indexToken = this.Token(this.TokenA, index.Text, this.Range(this.RangeA, start, end));
+        if (indexToken == null)
         {
             return null;
         }
@@ -2358,16 +2358,16 @@ public class Create : ClassCreate
             return null;
         }
 
-        Token wordToken;
-        wordToken = this.Token(this.TokenA, index.Text, this.IndexRange(this.RangeA, start));
-        if (wordToken == null)
+        Token indexToken;
+        indexToken = this.Token(this.TokenA, index.Text, this.IndexRange(this.RangeA, start));
+        if (indexToken == null)
         {
             return null;
         }
 
         long classStart;
         long classEnd;
-        classStart = wordToken.Range.End;
+        classStart = indexToken.Range.End;
         classEnd = end;
 
         Node varClass;
