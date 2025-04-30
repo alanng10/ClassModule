@@ -2226,7 +2226,7 @@ public class Create : ClassCreate
         return this.ExecuteWordTwoLimitTwoOperand(this.NodeKind.BitSignRiteOperate, this.Index.Bit, this.Limit.More, this.Limit.More, range);
     }
 
-    protected virtual Node ExecuteWordBraceBody(NodeKind kind, Index word, Range range)
+    protected virtual Node ExecuteWordBraceBody(NodeKind kind, Index index, Range range)
     {
         long start;
         long end;
@@ -2238,20 +2238,20 @@ public class Create : ClassCreate
             return null;
         }
 
-        Token wordToken;
-        wordToken = this.Token(this.TokenA, word.Text, this.IndexRange(this.RangeA, start));
-        if (wordToken == null)
+        Token indexToken;
+        indexToken = this.Token(this.TokenA, index.Text, this.IndexRange(this.RangeA, start));
+        if (indexToken == null)
         {
             return null;
         }
 
-        if (wordToken.Range.End == end)
+        if (indexToken.Range.End == end)
         {
             return null;
         }
 
         Token braceRoundLite;
-        braceRoundLite = this.Token(this.TokenB, this.Limit.BraceRoundLite.Text, this.IndexRange(this.RangeA, wordToken.Range.End));
+        braceRoundLite = this.Token(this.TokenB, this.Limit.BraceRoundLite.Text, this.IndexRange(this.RangeA, indexToken.Range.End));
         if (braceRoundLite == null)
         {
             return null;
@@ -2321,7 +2321,7 @@ public class Create : ClassCreate
         return ret;
     }
 
-    protected virtual Node ExecuteWord(NodeKind kind, Index word, Range range)
+    protected virtual Node ExecuteWord(NodeKind kind, Index index, Range range)
     {
         long start;
         long end;
@@ -2329,7 +2329,7 @@ public class Create : ClassCreate
         end = range.End;
 
         Token wordToken;
-        wordToken = this.Token(this.TokenA, word.Text, this.Range(this.RangeA, start, end));
+        wordToken = this.Token(this.TokenA, index.Text, this.Range(this.RangeA, start, end));
         if (wordToken == null)
         {
             return null;
@@ -2343,7 +2343,7 @@ public class Create : ClassCreate
         return ret;
     }
 
-    protected virtual Node ExecuteWordClass(NodeKind kind, Index keyword, Range range)
+    protected virtual Node ExecuteWordClass(NodeKind kind, Index index, Range range)
     {
         long start;
         long end;
@@ -2359,7 +2359,7 @@ public class Create : ClassCreate
         }
 
         Token wordToken;
-        wordToken = this.Token(this.TokenA, keyword.Text, this.IndexRange(this.RangeA, start));
+        wordToken = this.Token(this.TokenA, index.Text, this.IndexRange(this.RangeA, start));
         if (wordToken == null)
         {
             return null;
