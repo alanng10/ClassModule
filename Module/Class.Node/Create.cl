@@ -2312,4 +2312,47 @@ class Create : ClassCreate
         ret : this.Operate.Execute();
         return ret;
     }
+
+    maide precate Node ExecuteIndexClass(var NodeKind kind, var Index index, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        var Int count;
+        count : this.Count(start, end);
+
+        inf (count < 1 | 2 < count)
+        {
+            return null;
+        }
+
+        var Token indexToken;
+        indexToken : this.Token(this.TokenA, index.Text, this.IndexRange(this.RangeA, start));
+        inf (indexToken = null)
+        {
+            return null;
+        }
+
+        var Int classStart;
+        var Int classEnd;
+        classStart : indexToken.Range.End;
+        classEnd : end;
+
+        var Node varClass;
+        varClass : this.ExecuteName(this.NodeKind.ClassName, this.Range(this.RangeA, classStart, classEnd));
+        inf (varClass = null)
+        {
+            this.Error(this.ErrorKind.ClassUnvalid, classStart, classEnd);
+        }
+
+        this.SetArg.Kind : kind;
+        this.SetArg.Range.Start : start;
+        this.SetArg.Range.End : end;
+        this.SetArg.Field00 : varClass;
+        var Node ret;
+        ret : this.Operate.Execute();
+        return ret;
+    }
 }
