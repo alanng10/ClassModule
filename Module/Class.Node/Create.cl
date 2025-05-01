@@ -2196,7 +2196,7 @@ class Create : ClassCreate
         return this.ExecuteIndexTwoLimitTwoOperand(this.NodeKind.BitSignRiteOperate, this.Index.Bit, this.Limit.More, this.Limit.More, range);
     }
 
-    maide precate Node ExecuteWordBraceBody(var NodeKind kind, var Index word, var Range range)
+    maide precate Node ExecuteIndexBraceBody(var NodeKind kind, var Index index, var Range range)
     {
         var Int start;
         var Int end;
@@ -2208,20 +2208,20 @@ class Create : ClassCreate
             return null;
         }
 
-        var Token wordToken;
-        wordToken : this.Token(this.TokenA, word.Text, this.IndexRange(this.RangeA, start));
-        inf (wordToken = null)
+        var Token indexToken;
+        indexToken : this.Token(this.TokenA, index.Text, this.IndexRange(this.RangeA, start));
+        inf (indexToken = null)
         {
             return null;
         }
 
-        inf (wordToken.Range.End = end)
+        inf (indexToken.Range.End = end)
         {
             return null;
         }
 
         var Token braceRoundLite;
-        braceRoundLite : this.Token(this.TokenB, this.Limit.BraceRoundLite.Text, this.IndexRange(this.RangeA, wordToken.Range.End));
+        braceRoundLite : this.Token(this.TokenB, this.Limit.BraceRoundLite.Text, this.IndexRange(this.RangeA, indexToken.Range.End));
         inf (braceRoundLite = null)
         {
             return null;
