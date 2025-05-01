@@ -2118,7 +2118,7 @@ class Create : ClassCreate
 
     maide prusate Node ExecuteNotOperate(var Range range)
     {
-        return this.ExecuteLimitTwoOperand(this.NodeKind.NotOperate, this.Limit.Not, range);
+        return this.ExecuteLimitOneOperand(this.NodeKind.NotOperate, this.Limit.Not, range);
     }
 
     maide prusate Node ExecuteSameOperate(var Range range)
@@ -2153,47 +2153,47 @@ class Create : ClassCreate
 
     maide prusate Node ExecuteSignLessOperate(var Range range)
     {
-        return this.ExecuteWordLimitTwoOperand(this.NodeKind.SignLessOperate, this.Index.Sign, this.Limit.Less, range);
+        return this.ExecuteIndexLimitTwoOperand(this.NodeKind.SignLessOperate, this.Index.Sign, this.Limit.Less, range);
     }
 
     maide prusate Node ExecuteSignMulOperate(var Range range)
     {
-        return this.ExecuteWordLimitTwoOperand(this.NodeKind.SignMulOperate, this.Index.Sign, this.Limit.Mul, range);
+        return this.ExecuteIndexLimitTwoOperand(this.NodeKind.SignMulOperate, this.Index.Sign, this.Limit.Mul, range);
     }
 
     maide prusate Node ExecuteSignDivOperate(var Range range)
     {
-        return this.ExecuteWordLimitTwoOperand(this.NodeKind.SignDivOperate, this.Index.Sign, this.Limit.Div, range);
+        return this.ExecuteIndexLimitTwoOperand(this.NodeKind.SignDivOperate, this.Index.Sign, this.Limit.Div, range);
     }
 
     maide prusate Node ExecuteBitAndOperate(var Range range)
     {
-        return this.ExecuteWordLimitTwoOperand(this.NodeKind.BitAndOperate, this.Index.Bit, this.Limit.And, range);
+        return this.ExecuteIndexLimitTwoOperand(this.NodeKind.BitAndOperate, this.Index.Bit, this.Limit.And, range);
     }
 
     maide prusate Node ExecuteBitOrnOperate(var Range range)
     {
-        return this.ExecuteWordLimitTwoOperand(this.NodeKind.BitOrnOperate, this.Index.Bit, this.Limit.Orn, range);
+        return this.ExecuteIndexLimitTwoOperand(this.NodeKind.BitOrnOperate, this.Index.Bit, this.Limit.Orn, range);
     }
 
     maide prusate Node ExecuteBitNotOperate(var Range range)
     {
-        return this.ExecuteWordLimitTwoOperand(this.NodeKind.BitNotOperate, this.Index.Bit, this.Limit.Not, range);
+        return this.ExecuteIndexLimitOneOperand(this.NodeKind.BitNotOperate, this.Index.Bit, this.Limit.Not, range);
     }
 
     maide prusate Node ExecuteBitLiteOperate(var Range range)
     {
-        return this.ExecuteWordLimitTwoOperand(this.NodeKind.BitLiteOperate, this.Index.Bit, this.Limit.Less, range);
+        return this.ExecuteIndexLimitTwoOperand(this.NodeKind.BitLiteOperate, this.Index.Bit, this.Limit.Less, range);
     }
 
     maide prusate Node ExecuteBitRiteOperate(var Range range)
     {
-        return this.ExecuteWordLimitTwoOperand(this.NodeKind.BitRiteOperate, this.Index.Bit, this.Limit.More, range);
+        return this.ExecuteIndexLimitTwoOperand(this.NodeKind.BitRiteOperate, this.Index.Bit, this.Limit.More, range);
     }
 
     maide prusate Node ExecuteBitSignRiteOperate(var Range range)
     {
-        return this.ExecuteWordTwoLimitTwoOperand(this.NodeKind.BitSignRiteOperate, this.Index.Bit, this.Limit.More, this.Limit.More, range);
+        return this.ExecuteIndexTwoLimitTwoOperand(this.NodeKind.BitSignRiteOperate, this.Index.Bit, this.Limit.More, this.Limit.More, range);
     }
 
     maide precate Node ExecuteWordBraceBody(var NodeKind kind, var Index word, var Range range)
