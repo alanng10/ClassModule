@@ -614,15 +614,15 @@ public class Create : ClassCreate
             return null;
         }
 
-        Token colon;
-        colon = this.TokenFront(this.TokenB, this.Limit.Are.Text, this.Range(this.RangeA, classToken.Range.End, end));
-        if (colon == null)
+        Token signAre;
+        signAre = this.TokenFront(this.TokenB, this.Limit.Are.Text, this.Range(this.RangeA, classToken.Range.End, end));
+        if (signAre == null)
         {
             return null;
         }
 
         Token braceCurveLite;
-        braceCurveLite = this.TokenFront(this.TokenC, this.Limit.BraceCurveLite.Text, this.Range(this.RangeA, colon.Range.End, end));
+        braceCurveLite = this.TokenFront(this.TokenC, this.Limit.BraceCurveLite.Text, this.Range(this.RangeA, signAre.Range.End, end));
         if (braceCurveLite == null)
         {
             return null;
@@ -643,10 +643,10 @@ public class Create : ClassCreate
         long nameStart;
         long nameEnd;
         nameStart = classToken.Range.End;
-        nameEnd = colon.Range.Start;
+        nameEnd = signAre.Range.Start;
         long baseStart;
         long baseEnd;
-        baseStart = colon.Range.End;
+        baseStart = signAre.Range.End;
         baseEnd = braceCurveLite.Range.Start;
         long partStart;
         long partEnd;
