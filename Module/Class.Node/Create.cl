@@ -601,7 +601,7 @@ class Create : ClassCreate
         }
 
         var Token signAre;
-        signAre : this.TokenFront(this.TokenB, this.Limit.AreSign.Text, this.Range(this.RangeA, classToken.Range.End, end));
+        signAre : this.TokenFront(this.TokenB, this.Limit.Are.Text, this.Range(this.RangeA, classToken.Range.End, end));
         inf (signAre = null)
         {
             return null;
