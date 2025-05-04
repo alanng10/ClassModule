@@ -1493,22 +1493,22 @@ class Create : ClassCreate
 
     maide prusate Node ExecutePrusateCount(var Range range)
     {
-        return this.ExecuteWord(this.NodeKind.PrusateCount, this.Index.Prusate, range);
+        return this.ExecuteIndex(this.NodeKind.PrusateCount, this.Index.Prusate, range);
     }
 
     maide prusate Node ExecutePrecateCount(var Range range)
     {
-        return this.ExecuteWord(this.NodeKind.PrecateCount, this.Index.Precate, range);
+        return this.ExecuteIndex(this.NodeKind.PrecateCount, this.Index.Precate, range);
     }
 
     maide prusate Node ExecutePronateCount(var Range range)
     {
-        return this.ExecuteWord(this.NodeKind.PronateCount, this.Index.Pronate, range);
+        return this.ExecuteIndex(this.NodeKind.PronateCount, this.Index.Pronate, range);
     }
 
     maide prusate Node ExecutePrivateCount(var Range range)
     {
-        return this.ExecuteWord(this.NodeKind.PrivateCount, this.Index.Private, range);
+        return this.ExecuteIndex(this.NodeKind.PrivateCount, this.Index.Private, range);
     }
 
     maide prusate Node ExecuteExecute(var Range range)
@@ -1548,12 +1548,12 @@ class Create : ClassCreate
 
     maide prusate Node ExecuteInfExecute(var Range range)
     {
-        return this.ExecuteWordBraceBody(this.NodeKind.InfExecute, this.Index.Inf, range);
+        return this.ExecuteIndexBraceBody(this.NodeKind.InfExecute, this.Index.Inf, range);
     }
 
     maide prusate Node ExecuteWhileExecute(var Range range)
     {
-        return this.ExecuteWordBraceBody(this.NodeKind.WhileExecute, this.Index.While, range);
+        return this.ExecuteIndexBraceBody(this.NodeKind.WhileExecute, this.Index.While, range);
     }
 
     maide prusate Node ExecuteReturnExecute(var Range range)
@@ -1932,27 +1932,27 @@ class Create : ClassCreate
 
     maide prusate Node ExecuteThisOperate(var Range range)
     {
-        return this.ExecuteWord(this.NodeKind.ThisOperate, this.Index.This, range);
+        return this.ExecuteIndex(this.NodeKind.ThisOperate, this.Index.This, range);
     }
 
     maide prusate Node ExecuteBaseOperate(var Range range)
     {
-        return this.ExecuteWord(this.NodeKind.BaseOperate, this.Index.Base, range);
+        return this.ExecuteIndex(this.NodeKind.BaseOperate, this.Index.Base, range);
     }
 
     maide prusate Node ExecuteNullOperate(var Range range)
     {
-        return this.ExecuteWord(this.NodeKind.NullOperate, this.Index.Null, range);
+        return this.ExecuteIndex(this.NodeKind.NullOperate, this.Index.Null, range);
     }
 
     maide prusate Node ExecuteNewOperate(var Range range)
     {
-        return this.ExecuteWordClass(this.NodeKind.NewOperate, this.Index.New, range);
+        return this.ExecuteIndexClass(this.NodeKind.NewOperate, this.Index.New, range);
     }
 
     maide prusate Node ExecuteShareOperate(var Range range)
     {
-        return this.ExecuteWordClass(this.NodeKind.ShareOperate, this.Index.Share, range);
+        return this.ExecuteIndexClass(this.NodeKind.ShareOperate, this.Index.Share, range);
     }
 
     maide prusate Node ExecuteCastOperate(var Range range)
