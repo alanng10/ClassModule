@@ -2355,4 +2355,51 @@ class Create : ClassCreate
         ret : this.Operate.Execute();
         return ret;
     }
+
+    maide precate Node ExecuteDotField(var NodeKind kind, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        var Token signStop;
+        signStop : this.TokenBack(this.TokenA, this.Limit.Stop.Text, this.Range(this.RangeA, start, end));
+        inf (signStop = null)
+        {
+            return null;
+        }
+
+        var Int thisStart;
+        var Int thisEnd;
+        thisStart : start;
+        thisEnd : signStop.Range.Start;
+        var Int fieldStart;
+        var Int fieldEnd;
+        fieldStart : signStop.Range.End;
+        fieldEnd : end;
+
+        var Node varThis;
+        varThis : this.ExecuteOperate(this.Range(this.RangeA, thisStart, thisEnd));
+        inf (varThis = null)
+        {
+            this.Error(this.ErrorKind.ThisUnvalid, thisStart, thisEnd);
+        }
+
+        var Node varField;
+        varField : this.ExecuteName(this.NodeKind.FieldName, this.Range(this.RangeA, fieldStart, fieldEnd));
+        inf (varField = null)
+        {
+            this.Error(this.ErrorKind.FieldUnvalid, fieldStart, fieldEnd);
+        }
+
+        this.SetArg.Kind : kind;
+        this.SetArg.Range.Start : start;
+        this.SetArg.Range.End : end;
+        this.SetArg.Field00 : varThis;
+        this.SetArg.Field01 : varField;
+        var Node ret;
+        ret : this.Operate.Execute();
+        return ret;
+    }
 }
