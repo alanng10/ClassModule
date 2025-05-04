@@ -2402,4 +2402,34 @@ class Create : ClassCreate
         ret : this.Operate.Execute();
         return ret;
     }
+
+    maide precate Node ExecuteDotMaideCall(var NodeKind kind, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        inf (start = end)
+        {
+            return null;
+        }
+
+        var Int lastIndex;
+        lastIndex : end - 1;
+
+        var Token braceRoundRite;
+        braceRoundRite : this.Token(this.TokenA, this.Limit.BraceRoundRite.Text, this.IndexRange(this.RangeA, lastIndex));
+        inf (braceRoundRite = null)
+        {
+            return null;
+        }
+
+        var Token braceRoundLite;
+        braceRoundLite : this.TokenBraceRoundLite(this.TokenB, this.Range(this.RangeA, start, braceRoundRite.Range.Start));
+        inf (braceRoundLite = null)
+        {
+            return null;
+        }
+    }
 }
