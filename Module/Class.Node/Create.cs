@@ -2605,9 +2605,9 @@ public class Create : ClassCreate
         start = range.Start;
         end = range.End;
 
-        Token op;
-        op = this.TokenFrontSkip(this.TokenA, limit.Text, this.Range(this.RangeA, start, end));
-        if (op == null)
+        Token signToken;
+        signToken = this.TokenFrontSkip(this.TokenA, limit.Text, this.Range(this.RangeA, start, end));
+        if (signToken == null)
         {
             return null;
         }
@@ -2615,10 +2615,10 @@ public class Create : ClassCreate
         long leftStart;
         long leftEnd;
         leftStart = start;
-        leftEnd = op.Range.Start;
+        leftEnd = signToken.Range.Start;
         long rightStart;
         long rightEnd;
-        rightStart = op.Range.End;
+        rightStart = signToken.Range.End;
         rightEnd = end;
 
         Node left;
