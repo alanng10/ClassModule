@@ -2485,4 +2485,27 @@ class Create : ClassCreate
         ret : this.Operate.Execute();
         return ret;
     }
+
+    maide precate Node ExecuteVarNameNode(var NodeKind kind, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        var Node varVar;
+        varVar : this.ExecuteName(this.NodeKind.VarName, this.Range(this.RangeA, start, end));
+        inf (varVar = null)
+        {
+            return null;
+        }
+
+        this.SetArg.Kind : kind;
+        this.SetArg.Range.Start : start;
+        this.SetArg.Range.End : end;
+        this.SetArg.Field00 : varVar;
+        var Node ret;
+        ret : this.Operate.Execute();
+        return ret;
+    }
 }
