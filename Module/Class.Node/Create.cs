@@ -2460,9 +2460,9 @@ public class Create : ClassCreate
             return null;
         }
 
-        Token dot;
-        dot = this.TokenBack(this.TokenC, this.Limit.Stop.Text, this.Range(this.RangeA, start, braceRoundLite.Range.Start));
-        if (dot == null)
+        Token signStop;
+        signStop = this.TokenBack(this.TokenC, this.Limit.Stop.Text, this.Range(this.RangeA, start, braceRoundLite.Range.Start));
+        if (signStop == null)
         {
             return null;
         }
@@ -2470,11 +2470,11 @@ public class Create : ClassCreate
         long thisStart;
         long thisEnd;
         thisStart = start;
-        thisEnd = dot.Range.Start;
+        thisEnd = signStop.Range.Start;
 
         long maideStart;
         long maideEnd;
-        maideStart = dot.Range.End;
+        maideStart = signStop.Range.End;
         maideEnd = braceRoundLite.Range.Start;
 
         long argueStart;
