@@ -1216,7 +1216,7 @@ public class Create : ClassCreate
 
     public virtual Node ExecuteVarMark(Range range)
     {
-        return this.ExecuteVarNameResult(this.NodeKind.VarMark, range);
+        return this.ExecuteVarNameNode(this.NodeKind.VarMark, range);
     }
 
     public virtual Node ExecuteSetMark(Range range)
@@ -2110,7 +2110,7 @@ public class Create : ClassCreate
 
     public virtual Node ExecuteVarOperate(Range range)
     {
-        return this.ExecuteVarNameResult(this.NodeKind.VarOperate, range);
+        return this.ExecuteVarNameNode(this.NodeKind.VarOperate, range);
     }
 
     public virtual Node ExecuteValueOperate(Range range)
@@ -2516,7 +2516,7 @@ public class Create : ClassCreate
         return ret;
     }
 
-    protected virtual Node ExecuteVarNameResult(NodeKind kind, Range range)
+    protected virtual Node ExecuteVarNameNode(NodeKind kind, Range range)
     {
         long start;
         long end;
