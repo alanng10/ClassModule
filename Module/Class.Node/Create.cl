@@ -2508,4 +2508,39 @@ class Create : ClassCreate
         ret : this.Operate.Execute();
         return ret;
     }
+
+    maide precate Node ExecuteName(var NodeKind kind, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        var Node node;
+
+        var Bool b;
+        b : false;
+
+        var Range nameRange;
+        nameRange : this.ExecuteNameRange(this.RangeB, this.Range(this.RangeA, start, end));
+        inf (nameRange = null)
+        {
+            b : true;
+        }
+
+        inf (~b)
+        {
+            inf (~(nameRange.End = end))
+            {
+                b : true;
+            }
+        }
+
+        inf (~b)
+        {
+            node : this.ExecuteNameNode(kind, this.Range(this.RangeA, start, end));
+        }
+
+        return node;
+    }
 }
