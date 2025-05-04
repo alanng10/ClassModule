@@ -1807,9 +1807,9 @@ class Create : ClassCreate
         {
             inf (~(start = end))
             {
-                var Token wordTokenA;
-                wordTokenA : this.Token(this.TokenA, this.Index.Sign.Text, this.IndexRange(this.RangeA, start));
-                inf (~(wordTokenA = null))
+                var Token indexTokenA;
+                indexTokenA : this.Token(this.TokenA, this.Index.Sign.Text, this.IndexRange(this.RangeA, start));
+                inf (~(indexTokenA = null))
                 {
                     inf (a = null)
                     {
@@ -1830,9 +1830,9 @@ class Create : ClassCreate
         {
             inf (~(start = end))
             {
-                var Token wordTokenB;
-                wordTokenB : this.Token(this.TokenA, this.Index.Bit.Text, this.IndexRange(this.RangeA, start));
-                inf (~(wordTokenB = null))
+                var Token indexTokenB;
+                indexTokenB : this.Token(this.TokenA, this.Index.Bit.Text, this.IndexRange(this.RangeA, start));
+                inf (~(indexTokenB = null))
                 {
                     inf (a = null)
                     {
