@@ -2444,8 +2444,10 @@ public class Create : ClassCreate
         {
             return null;
         }
+
         long lastIndex;
         lastIndex = end - 1;
+
         Token braceRoundRite;
         braceRoundRite = this.Token(this.TokenA, this.Limit.BraceRoundRite.Text, this.IndexRange(this.RangeA, lastIndex));
         if (braceRoundRite == null)
