@@ -2431,5 +2431,58 @@ class Create : ClassCreate
         {
             return null;
         }
+
+        var Token signStop;
+        signStop : this.TokenBack(this.TokenC, this.Limit.Stop.Text, this.Range(this.RangeA, start, braceRoundLite.Range.Start));
+        inf (signStop = null)
+        {
+            return null;
+        }
+
+        var Int thisStart;
+        var Int thisEnd;
+        thisStart : start;
+        thisEnd : signStop.Range.Start;
+
+        var Int maideStart;
+        var Int maideEnd;
+        maideStart : signStop.Range.End;
+        maideEnd : braceRoundLite.Range.Start;
+
+        var Int argueStart;
+        var Int argueEnd;
+        argueStart : braceRoundLite.Range.End;
+        argueEnd : braceRoundRite.Range.Start;
+
+        var Node varThis;
+        varThis : this.ExecuteOperate(this.Range(this.RangeA, thisStart, thisEnd));
+        inf (varThis = null)
+        {
+            this.Error(this.ErrorKind.ThisUnvalid, thisStart, thisEnd);
+        }
+
+        var Node varMaide;
+        varMaide : this.ExecuteName(this.NodeKind.MaideName, this.Range(this.RangeA, maideStart, maideEnd));
+        inf (varMaide = null)
+        {
+            this.Error(this.ErrorKind.MaideUnvalid, maideStart, maideEnd);
+        }
+
+        var Node argue;
+        argue : this.ExecuteArgue(this.Range(this.RangeA, argueStart, argueEnd));
+        inf (argue = null)
+        {
+            this.Error(this.ErrorKind.ArgueUnvalid, argueStart, argueEnd);
+        }
+
+        this.SetArg.Kind : kind;
+        this.SetArg.Range.Start : start;
+        this.SetArg.Range.End : end;
+        this.SetArg.Field00 : varThis;
+        this.SetArg.Field01 : varMaide;
+        this.SetArg.Field02 : argue;
+        var Node ret;
+        ret : this.Operate.Execute();
+        return ret;
     }
 }
