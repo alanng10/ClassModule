@@ -2393,9 +2393,9 @@ public class Create : ClassCreate
         start = range.Start;
         end = range.End;
 
-        Token dot;
-        dot = this.TokenBack(this.TokenA, this.Limit.Stop.Text, this.Range(this.RangeA, start, end));
-        if (dot == null)
+        Token signStop;
+        signStop = this.TokenBack(this.TokenA, this.Limit.Stop.Text, this.Range(this.RangeA, start, end));
+        if (signStop == null)
         {
             return null;
         }
@@ -2403,10 +2403,10 @@ public class Create : ClassCreate
         long thisStart;
         long thisEnd;
         thisStart = start;
-        thisEnd = dot.Range.Start;
+        thisEnd = signStop.Range.Start;
         long fieldStart;
         long fieldEnd;
-        fieldStart = dot.Range.End;
+        fieldStart = signStop.Range.End;
         fieldEnd = end;
 
         Node varThis;
