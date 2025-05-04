@@ -2548,21 +2548,25 @@ public class Create : ClassCreate
 
         Node node;
         node = null;
+
         bool b;
         b = false;
-        Range aRange;
-        aRange = this.ExecuteNameRange(this.RangeB, this.Range(this.RangeA, start, end));
-        if (aRange == null)
+
+        Range nameRange;
+        nameRange = this.ExecuteNameRange(this.RangeB, this.Range(this.RangeA, start, end));
+        if (nameRange == null)
         {
             b = true;
         }
+
         if (!b)
         {
-            if (!(aRange.End == end))
+            if (!(nameRange.End == end))
             {
                 b = true;
             }
         }
+
         if (!b)
         {
             node = this.ExecuteNameNode(kind, this.Range(this.RangeA, start, end));
