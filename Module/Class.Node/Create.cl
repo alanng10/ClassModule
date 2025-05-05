@@ -2980,4 +2980,53 @@ class Create : ClassCreate
         ret : this.Operate.Execute();
         return ret;
     }
+
+    maide precate Array ExecuteListValue(var RangeState rangeState, var NodeState nodeState, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        var Int list;
+        list : this.Operate.ExecuteListNew();
+
+        var Int count;
+        count : 0;
+
+        var Int index;
+        index : start;
+
+        while (index < end)
+        {
+            var RangeStateArg arg;
+            arg : cast RangeStateArg(rangeState.Arg);
+
+            arg.Result : this.RangeB;
+            arg.Range : this.Range(this.RangeA, index, end);
+
+            rangeState.Execute();
+
+            var Range itemRange;
+            itemRange : cast Range(rangeState.Result);
+
+            rangeState.Result : null;
+            arg.Range : null;
+            arg.Result : null;
+
+            var Bool b;
+            b : itemRange = null;
+
+            inf (b)
+            {
+                this.Error(this.ErrorKind.ItemUnvalid, index, end);
+
+                this.Operate.ExecuteListItemSet(list, count, null);
+
+                count : count + 1;
+
+                index : end;
+            }
+        }
+    }
 }
