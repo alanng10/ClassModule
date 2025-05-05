@@ -2697,6 +2697,7 @@ public class Create : ClassCreate
         {
             return null;
         }
+
         Token indexToken;
         indexToken = this.Token(this.TokenA, index.Text, this.IndexRange(this.RangeA, start));
         if (indexToken == null)
@@ -2708,19 +2709,21 @@ public class Create : ClassCreate
         {
             return null;
         }
-        Token op;
-        op = this.Token(this.TokenB, limit.Text, this.IndexRange(this.RangeA, indexToken.Range.End));
-        if (op == null)
+
+        Token signToken;
+        signToken = this.Token(this.TokenB, limit.Text, this.IndexRange(this.RangeA, indexToken.Range.End));
+        if (signToken == null)
         {
             return null;
         }
 
-        if (op.Range.End == end)
+        if (signToken.Range.End == end)
         {
             return null;
         }
+
         Token braceRoundLite;
-        braceRoundLite = this.Token(this.TokenC, this.Limit.BraceRoundLite.Text, this.IndexRange(this.RangeA, op.Range.End));
+        braceRoundLite = this.Token(this.TokenC, this.Limit.BraceRoundLite.Text, this.IndexRange(this.RangeA, signToken.Range.End));
         if (braceRoundLite == null)
         {
             return null;
@@ -2733,9 +2736,9 @@ public class Create : ClassCreate
             return null;
         }
 
-        Token comma;
-        comma = this.TokenFrontSkip(this.TokenA, this.Limit.Pause.Text, this.Range(this.RangeA, braceRoundLite.Range.End, braceRoundRite.Range.Start));
-        if (comma == null)
+        Token signPause;
+        signPause = this.TokenFrontSkip(this.TokenA, this.Limit.Pause.Text, this.Range(this.RangeA, braceRoundLite.Range.End, braceRoundRite.Range.Start));
+        if (signPause == null)
         {
             return null;
         }
@@ -2748,10 +2751,11 @@ public class Create : ClassCreate
         long liteStart;
         long liteEnd;
         liteStart = braceRoundLite.Range.End;
-        liteEnd = comma.Range.Start;
+        liteEnd = signPause.Range.Start;
+
         long riteStart;
         long riteEnd;
-        riteStart = comma.Range.End;
+        riteStart = signPause.Range.End;
         riteEnd = braceRoundRite.Range.Start;
 
         Node lite;
