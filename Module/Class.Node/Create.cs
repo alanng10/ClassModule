@@ -3042,8 +3042,8 @@ public class Create : ClassCreate
             itemRange = rangeState.Result as Range;
             
             rangeState.Result = null;
-            arg.Result = null;
             arg.Range = null;
+            arg.Result = null;
 
             bool b;
             b = (itemRange == null);
