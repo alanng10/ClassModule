@@ -3049,6 +3049,7 @@ public class Create : ClassCreate
                 this.Error(this.ErrorKind.ItemUnvalid, index, end);
 
                 this.Operate.ExecuteListSetItem(listIndex, count, null);
+
                 count = count + 1;
 
                 index = end;
