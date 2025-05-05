@@ -2793,6 +2793,7 @@ public class Create : ClassCreate
         {
             return null;
         }
+
         Token indexToken;
         indexToken = this.Token(this.TokenA, index.Text, this.IndexRange(this.RangeA, start));
         if (indexToken == null)
@@ -2804,19 +2805,21 @@ public class Create : ClassCreate
         {
             return null;
         }
-        Token op;
-        op = this.Token(this.TokenB, limit.Text, this.IndexRange(this.RangeA, indexToken.Range.End));
-        if (op == null)
+
+        Token signToken;
+        signToken = this.Token(this.TokenB, limit.Text, this.IndexRange(this.RangeA, indexToken.Range.End));
+        if (signToken == null)
         {
             return null;
         }
 
-        if (op.Range.End == end)
+        if (signToken.Range.End == end)
         {
             return null;
         }
+
         Token braceRoundLite;
-        braceRoundLite = this.Token(this.TokenC, this.Limit.BraceRoundLite.Text, this.IndexRange(this.RangeA, op.Range.End));
+        braceRoundLite = this.Token(this.TokenC, this.Limit.BraceRoundLite.Text, this.IndexRange(this.RangeA, signToken.Range.End));
         if (braceRoundLite == null)
         {
             return null;
