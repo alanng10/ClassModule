@@ -1166,12 +1166,12 @@ public class Create : ClassCreate
 
     public virtual Node ExecuteParam(Range range)
     {
-        return this.ExecuteListComma(this.NodeKind.Param, this.ParamItemRangeState, this.ParamItemNodeState, range);
+        return this.ExecuteListPause(this.NodeKind.Param, this.ParamItemRangeState, this.ParamItemNodeState, range);
     }
 
     public virtual Node ExecuteArgue(Range range)
     {
-        return this.ExecuteListComma(this.NodeKind.Argue, this.ArgueItemRangeState, this.ArgueItemNodeState, range);
+        return this.ExecuteListPause(this.NodeKind.Argue, this.ArgueItemRangeState, this.ArgueItemNodeState, range);
     }
 
     public virtual Node ExecuteComp(Range range)
@@ -2989,7 +2989,7 @@ public class Create : ClassCreate
         return ret;
     }
 
-    protected virtual Node ExecuteListComma(NodeKind kind, RangeState rangeState, NodeState nodeState, Range range)
+    protected virtual Node ExecuteListPause(NodeKind kind, RangeState rangeState, NodeState nodeState, Range range)
     {
         long start;
         long end;
