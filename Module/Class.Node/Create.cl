@@ -3023,10 +3023,43 @@ class Create : ClassCreate
 
                 this.Operate.ExecuteListItemSet(list, count, null);
 
-                count : count + 1;
-
                 index : end;
             }
+
+            inf (~b)
+            {
+                var Int itemStart;
+                var Int itemEnd;
+                itemStart : itemRange.Start;
+                itemEnd : itemRange.End;
+
+                nodeState.Arg : this.Range(this.RangeA, itemStart, itemEnd);
+
+                nodeState.Execute();
+
+                var Node item;
+                item : cast Node(nodeState.Result);
+
+                nodeState.Result : null;
+                nodeState.Arg : null;
+
+                inf (item = null)
+                {
+                    this.Error(this.ErrorKind.ItemUnvalid, itemStart, itemEnd);
+                }
+
+                this.Operate.ExecuteListItemSet(list, count, item);
+
+                index : itemEnd;
+            }
+
+            count : count + 1;
         }
+
+        this.Operate.ExecuteListCount(list, count);
+
+        var Array array;
+        array : this.Operate.ExecuteListGet(list);
+        return array;
     }
 }
