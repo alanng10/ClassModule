@@ -2869,6 +2869,7 @@ public class Create : ClassCreate
         {
             return null;
         }
+
         Token indexToken;
         indexToken = this.Token(this.TokenA, index.Text, this.IndexRange(this.RangeA, start));
         if (indexToken == null)
@@ -2880,30 +2881,33 @@ public class Create : ClassCreate
         {
             return null;
         }
-        Token opA;
-        opA = this.Token(this.TokenB, limitA.Text, this.IndexRange(this.RangeA, indexToken.Range.End));
-        if (opA == null)
+
+        Token signTokenA;
+        signTokenA = this.Token(this.TokenB, limitA.Text, this.IndexRange(this.RangeA, indexToken.Range.End));
+        if (signTokenA == null)
         {
             return null;
         }
 
-        if (opA.Range.End == end)
-        {
-            return null;
-        }
-        Token opB;
-        opB = this.Token(this.TokenC, limitB.Text, this.IndexRange(this.RangeA, opA.Range.End));
-        if (opB == null)
+        if (signTokenA.Range.End == end)
         {
             return null;
         }
 
-        if (opB.Range.End == end)
+        Token signTokenB;
+        signTokenB = this.Token(this.TokenC, limitB.Text, this.IndexRange(this.RangeA, signTokenA.Range.End));
+        if (signTokenB == null)
         {
             return null;
         }
+
+        if (signTokenB.Range.End == end)
+        {
+            return null;
+        }
+
         Token braceRoundLite;
-        braceRoundLite = this.Token(this.TokenA, this.Limit.BraceRoundLite.Text, this.IndexRange(this.RangeA, opB.Range.End));
+        braceRoundLite = this.Token(this.TokenA, this.Limit.BraceRoundLite.Text, this.IndexRange(this.RangeA, signTokenB.Range.End));
         if (braceRoundLite == null)
         {
             return null;
@@ -2916,9 +2920,9 @@ public class Create : ClassCreate
             return null;
         }
 
-        Token comma;
-        comma = this.TokenFrontSkip(this.TokenC, this.Limit.Pause.Text, this.Range(this.RangeA, braceRoundLite.Range.End, braceRoundRite.Range.Start));
-        if (comma == null)
+        Token signPause;
+        signPause = this.TokenFrontSkip(this.TokenC, this.Limit.Pause.Text, this.Range(this.RangeA, braceRoundLite.Range.End, braceRoundRite.Range.Start));
+        if (signPause == null)
         {
             return null;
         }
@@ -2931,10 +2935,11 @@ public class Create : ClassCreate
         long leftStart;
         long leftEnd;
         leftStart = braceRoundLite.Range.End;
-        leftEnd = comma.Range.Start;
+        leftEnd = signPause.Range.Start;
+
         long rightStart;
         long rightEnd;
-        rightStart = comma.Range.End;
+        rightStart = signPause.Range.End;
         rightEnd = braceRoundRite.Range.Start;
 
         Node left;
