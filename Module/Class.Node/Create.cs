@@ -2657,16 +2657,17 @@ public class Create : ClassCreate
         {
             return null;
         }
-        Token op;
-        op = this.Token(this.TokenA, limit.Text, this.IndexRange(this.RangeA, start));
-        if (op == null)
+
+        Token signToken;
+        signToken = this.Token(this.TokenA, limit.Text, this.IndexRange(this.RangeA, start));
+        if (signToken == null)
         {
             return null;
         }
 
         long valueStart;
         long valueEnd;
-        valueStart = op.Range.End;
+        valueStart = signToken.Range.End;
         valueEnd = end;
 
         Node value;
