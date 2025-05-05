@@ -2805,5 +2805,25 @@ class Create : ClassCreate
         {
             return null;
         }
+
+        var Int valueStart;
+        var Int valueEnd;
+        valueStart : braceRoundLite.Range.End;
+        valueEnd : braceRoundRite.Range.Start;
+
+        var Node value;
+        value : this.ExecuteOperate(this.Range(this.RangeA, valueStart, valueEnd));
+        inf (value = null)
+        {
+            this.Error(this.ErrorKind.OperandUnvalid, valueStart, valueEnd);
+        }
+
+        this.SetArg.Kind : kind;
+        this.SetArg.Range.Start : start;
+        this.SetArg.Range.End : end;
+        this.SetArg.Field00 : value;
+        var Node ret;
+        ret : this.Operate.Execute();
+        return ret;
     }
 }
