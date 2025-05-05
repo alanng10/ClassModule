@@ -2874,5 +2874,31 @@ class Create : ClassCreate
         {
             return null;
         }
+
+        var Token braceRoundLite;
+        braceRoundLite : this.Token(this.TokenA, this.Limit.BraceRoundLite.Text, this.IndexRange(this.RangeA, signTokenB.Range.End));
+        inf (braceRoundLite = null)
+        {
+            return null;
+        }
+
+        var Token braceRoundRite;
+        braceRoundRite : this.TokenBraceRoundRite(this.TokenB, this.Range(this.RangeA, braceRoundLite.Range.End, end));
+        inf (braceRoundRite = null)
+        {
+            return null;
+        }
+
+        var Token signPause;
+        signPause : this.TokenFrontSkip(this.TokenC, this.Limit.Pause.Text, this.Range(this.RangeA, braceRoundLite.Range.End, braceRoundRite.Range.Start));
+        inf (signPause = null)
+        {
+            return null;
+        }
+
+        inf (~(braceRoundRite.Range.End = end))
+        {
+            return null;
+        }
     }
 }
