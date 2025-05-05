@@ -3062,8 +3062,6 @@ public class Create : ClassCreate
                 itemStart = itemRange.Start;
                 itemEnd = itemRange.End;
 
-                index = itemEnd;
-
                 nodeState.Arg = this.Range(this.RangeA, itemStart, itemEnd);
                 nodeState.Execute();
 
@@ -3081,6 +3079,8 @@ public class Create : ClassCreate
                 this.Operate.ExecuteListSetItem(list, count, item);
 
                 count = count + 1;
+
+                index = itemEnd;
             }
         }
 
