@@ -2932,35 +2932,35 @@ public class Create : ClassCreate
             return null;
         }
 
-        long leftStart;
-        long leftEnd;
-        leftStart = braceRoundLite.Range.End;
-        leftEnd = signPause.Range.Start;
+        long liteStart;
+        long liteEnd;
+        liteStart = braceRoundLite.Range.End;
+        liteEnd = signPause.Range.Start;
 
-        long rightStart;
-        long rightEnd;
-        rightStart = signPause.Range.End;
-        rightEnd = braceRoundRite.Range.Start;
+        long riteStart;
+        long riteEnd;
+        riteStart = signPause.Range.End;
+        riteEnd = braceRoundRite.Range.Start;
 
-        Node left;
-        left = this.ExecuteOperate(this.Range(this.RangeA, leftStart, leftEnd));
-        if (left == null)
+        Node lite;
+        lite = this.ExecuteOperate(this.Range(this.RangeA, liteStart, liteEnd));
+        if (lite == null)
         {
-            this.Error(this.ErrorKind.OperandUnvalid, leftStart, leftEnd);
+            this.Error(this.ErrorKind.OperandUnvalid, liteStart, liteEnd);
         }
 
-        Node right;
-        right = this.ExecuteOperate(this.Range(this.RangeA, rightStart, rightEnd));
-        if (right == null)
+        Node rite;
+        rite = this.ExecuteOperate(this.Range(this.RangeA, riteStart, riteEnd));
+        if (rite == null)
         {
-            this.Error(this.ErrorKind.OperandUnvalid, rightStart, rightEnd);
+            this.Error(this.ErrorKind.OperandUnvalid, riteStart, riteEnd);
         }
 
         this.SetArg.Kind = kind;
         this.SetArg.Range.Start = start;
         this.SetArg.Range.End = end;
-        this.SetArg.Field00 = left;
-        this.SetArg.Field01 = right;
+        this.SetArg.Field00 = lite;
+        this.SetArg.Field01 = rite;
         Node ret;
         ret = this.Operate.Execute();
         return ret;
