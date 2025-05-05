@@ -1143,12 +1143,12 @@ class Create : ClassCreate
 
     maide prusate Node ExecuteParam(var Range range)
     {
-        return this.ExecuteListComma(this.NodeKind.Param, this.ParamItemRangeState, this.ParamItemNodeState, range);
+        return this.ExecuteListPause(this.NodeKind.Param, this.ParamItemRangeState, this.ParamItemNodeState, range);
     }
 
     maide prusate Node ExecuteArgue(var Range range)
     {
-        return this.ExecuteListComma(this.NodeKind.Argue, this.ArgueItemRangeState, this.ArgueItemNodeState, range);
+        return this.ExecuteListPause(this.NodeKind.Argue, this.ArgueItemRangeState, this.ArgueItemNodeState, range);
     }
 
     maide prusate Node ExecuteComp(var Range range)
@@ -2944,6 +2944,29 @@ class Create : ClassCreate
 
         var Array value;
         value : this.ExecuteListValue(rangeState, nodeState, this.Range(this.RangeA, start, end));
+        inf (value = null)
+        {
+            return null;
+        }
+
+        this.SetArg.Kind : kind;
+        this.SetArg.Range.Start : start;
+        this.SetArg.Range.End : end;
+        this.SetArg.Field00 : value;
+        var Node ret;
+        ret : this.Operate.Execute();
+        return ret;
+    }
+
+    maide precate Node ExecuteListPause(var NodeKind kind, var RangeState rangeState, var NodeState nodeState, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        var Array value;
+        value : this.ExecuteListValuePause(rangeState, nodeState, this.Range(this.RangeA, start, end));
         inf (value = null)
         {
             return null;
