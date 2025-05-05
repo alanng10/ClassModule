@@ -3029,14 +3029,14 @@ public class Create : ClassCreate
         while (index < end)
         {
             RangeStateArg arg;
-            arg = (RangeStateArg)rangeState.Arg;
+            arg = rangeState.Arg as RangeStateArg;
 
             arg.Result = this.RangeB;
             arg.Range = this.Range(this.RangeA, index, end);
             rangeState.Execute();
 
             Range itemRange;
-            itemRange = (Range)rangeState.Result;
+            itemRange = rangeState.Result as Range;
             
             rangeState.Result = null;
             arg.Result = null;
@@ -3046,11 +3046,7 @@ public class Create : ClassCreate
             b = (itemRange == null);
             if (b)
             {
-                long aStart;
-                long aEnd;
-                aStart = index;
-                aEnd = end;
-                this.Error(this.ErrorKind.ItemUnvalid, aStart, aEnd);
+                this.Error(this.ErrorKind.ItemUnvalid, index, end);
 
                 this.Operate.ExecuteListSetItem(listIndex, count, null);
                 count = count + 1;
@@ -3071,14 +3067,12 @@ public class Create : ClassCreate
                 nodeState.Execute();
 
                 Node item;
-                item = (Node)nodeState.Result;
+                item = nodeState.Result as Node;
 
-                nodeState.Arg = null;
                 nodeState.Result = null;
+                nodeState.Arg = null;
 
-                bool ba;
-                ba = (item == null);
-                if (ba)
+                if (item == null)
                 {
                     this.Error(this.ErrorKind.ItemUnvalid, itemStart, itemEnd);
                 }
