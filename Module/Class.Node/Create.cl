@@ -2900,5 +2900,38 @@ class Create : ClassCreate
         {
             return null;
         }
+
+        var Int liteStart;
+        var Int liteEnd;
+        liteStart : braceRoundLite.Range.End;
+        liteEnd : signPause.Range.Start;
+
+        var Int riteStart;
+        var Int riteEnd;
+        riteStart : signPause.Range.End;
+        riteEnd : braceRoundRite.Range.Start;
+
+        var Node lite;
+        lite : this.ExecuteOperate(this.Range(this.RangeA, liteStart, liteEnd));
+        inf (lite = null)
+        {
+            this.Error(this.ErrorKind.OperandUnvalid, liteStart, liteEnd);
+        }
+
+        var Node rite;
+        rite : this.ExecuteOperate(this.Range(this.RangeA, riteStart, riteEnd));
+        inf (rite = null)
+        {
+            this.Error(this.ErrorKind.OperandUnvalid, riteStart, riteEnd);
+        }
+
+        this.SetArg.Kind : kind;
+        this.SetArg.Range.Start : start;
+        this.SetArg.Range.End : end;
+        this.SetArg.Field00 : lite;
+        this.SetArg.Field01 : rite;
+        var Node ret;
+        ret : this.Operate.Execute();
+        return ret;
     }
 }
