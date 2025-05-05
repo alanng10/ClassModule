@@ -2750,4 +2750,60 @@ class Create : ClassCreate
         ret : this.Operate.Execute();
         return ret;
     }
+
+    maide precate Node ExecuteIndexLimitOneOperand(var NodeKind kind, var Index index, var Limit limit, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        inf (start = end)
+        {
+            return null;
+        }
+
+        var Token indexToken;
+        indexToken : this.Token(this.TokenA, index.Text, this.IndexRange(this.RangeA, start));
+        inf (indexToken = null)
+        {
+            return null;
+        }
+
+        inf (indexToken.Range.End = end)
+        {
+            return null;
+        }
+
+        var Token signToken;
+        signToken : this.Token(this.TokenB, limit.Text, this.IndexRange(this.RangeA, indexToken.Range.End));
+        inf (signToken = null)
+        {
+            return null;
+        }
+
+        inf (signToken.Range.End = end)
+        {
+            return null;
+        }
+
+        var Token braceRoundLite;
+        braceRoundLite : this.Token(this.TokenC, this.Limit.BraceRoundLite.Text, this.IndexRange(this.RangeA, signToken.Range.End));
+        inf (braceRoundLite = null)
+        {
+            return null;
+        }
+
+        var Token braceRoundRite;
+        braceRoundRite : this.TokenBraceRoundRite(this.TokenD, this.Range(this.RangeA, braceRoundLite.Range.End, end));
+        inf (braceRoundRite = null)
+        {
+            return null;
+        }
+
+        inf (~(braceRoundRite.Range.End = end))
+        {
+            return null;
+        }
+    }
 }
