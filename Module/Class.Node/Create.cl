@@ -2826,4 +2826,53 @@ class Create : ClassCreate
         ret : this.Operate.Execute();
         return ret;
     }
+
+    maide precate Node ExecutIndexTwoLimitTwoOperand(var NodeKind kind, var Index index, var Limit limitA, var Limit limitB, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        inf (start = end)
+        {
+            return null;
+        }
+
+        var Token indexToken;
+        indexToken : this.Token(this.TokenA, index.Text, this.IndexRange(this.RangeA, start));
+        inf (indexToken = null)
+        {
+            return null;
+        }
+
+        inf (indexToken.Range.End = end)
+        {
+            return null;
+        }
+
+        var Token signTokenA;
+        signTokenA : this.Token(this.TokenB, limitA.Text, this.IndexRange(this.RangeA, indexToken.Range.End));
+        inf (signTokenA = null)
+        {
+            return null;
+        }
+
+        inf (signTokenA.Range.End = end)
+        {
+            return null;
+        }
+
+        var Token signTokenB;
+        signTokenB : this.Token(this.TokenC, limitB.Text, this.IndexRange(this.RangeA, signTokenA.Range.End));
+        inf (signTokenB = null)
+        {
+            return null;
+        }
+
+        inf (signTokenB.Range.End = end)
+        {
+            return null;
+        }
+    }
 }
