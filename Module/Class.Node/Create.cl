@@ -2614,4 +2614,44 @@ class Create : ClassCreate
         ret : this.Operate.Execute();
         return ret;
     }
+
+    maide precate Node ExecuteLimitOneOperand(var NodeKind kind, var Limit limit, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        inf (start = end)
+        {
+            return null;
+        }
+
+        var Token signToken;
+        signToken : this.Token(this.TokenA, limit.Text, this.IndexRange(this.RangeA, start));
+        inf (signToken = null)
+        {
+            return null;
+        }
+
+        var Int valueStart;
+        var Int valueEnd;
+        valueStart : signToken.Range.End;
+        valueEnd : end;
+
+        var Node value;
+        value : this.ExecuteOperate(this.Range(this.RangeA, valueStart, valueEnd));
+        inf (value = null)
+        {
+            this.Error(this.ErrorKind.OperandUnvalid, valueStart, valueEnd);
+        }
+
+        this.SetArg.Kind : kind;
+        this.SetArg.Range.Start : start;
+        this.SetArg.Range.End : end;
+        this.SetArg.Field00 : value;
+        var Node ret;
+        ret : this.Operate.Execute();
+        return ret;
+    }
 }
