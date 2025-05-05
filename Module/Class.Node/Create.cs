@@ -3107,8 +3107,8 @@ public class Create : ClassCreate
         long count;
         count = 0;
 
-        bool hasNextItem;
-        hasNextItem = false;
+        bool hasNext;
+        hasNext = false;
 
         long index;
         index = start;
@@ -3129,58 +3129,57 @@ public class Create : ClassCreate
             arg.Result = null;
             arg.Range = null;
 
-            long aStart;
-            long aEnd;
-            aStart = 0;
-            aEnd = 0;
+            long itemStart;
+            long itemEnd;
+            itemStart = 0;
+            itemEnd = 0;
 
             bool b;
             b = (itemRange == null);
             if (b)
             {
-                aStart = index;
-                aEnd = end;
+                itemStart = index;
+                itemEnd = end;
 
-                index = aEnd;
+                index = itemEnd;
 
-                hasNextItem = false;
+                hasNext = false;
             }
 
             if (!b)
             {
-                aStart = itemRange.Start;
-                aEnd = itemRange.End;
+                itemStart = itemRange.Start;
+                itemEnd = itemRange.End;
 
-                index = aEnd + 1;
+                index = itemEnd + 1;
 
-                hasNextItem = true;
+                hasNext = true;
             }
 
-            nodeState.Arg = this.Range(this.RangeA, aStart, aEnd);
+            nodeState.Arg = this.Range(this.RangeA, itemStart, itemEnd);
 
             nodeState.Execute();
 
             Node item;
-            item = (Node)nodeState.Result;
+            item = nodeState.Result as Node;
 
-            nodeState.Arg = null;
             nodeState.Result = null;
+            nodeState.Arg = null;
 
             bool ba;
             ba = (item == null);
 
             if (ba)
             {
-                this.Error(this.ErrorKind.ItemUnvalid, aStart, aEnd);
+                this.Error(this.ErrorKind.ItemUnvalid, itemStart, itemEnd);
             }
 
             this.Operate.ExecuteListSetItem(listIndex, count, item);
 
-
             count = count + 1;
         }
 
-        if (hasNextItem)
+        if (hasNext)
         {
             this.Error(this.ErrorKind.ItemUnvalid, index, index);
 
