@@ -2748,38 +2748,7 @@ public class Create : ClassCreate
             return null;
         }
 
-        long liteStart;
-        long liteEnd;
-        liteStart = braceRoundLite.Range.End;
-        liteEnd = signPause.Range.Start;
 
-        long riteStart;
-        long riteEnd;
-        riteStart = signPause.Range.End;
-        riteEnd = braceRoundRite.Range.Start;
-
-        Node lite;
-        lite = this.ExecuteOperate(this.Range(this.RangeA, liteStart, liteEnd));
-        if (lite == null)
-        {
-            this.Error(this.ErrorKind.OperandUnvalid, liteStart, liteEnd);
-        }
-
-        Node rite;
-        rite = this.ExecuteOperate(this.Range(this.RangeA, riteStart, riteEnd));
-        if (rite == null)
-        {
-            this.Error(this.ErrorKind.OperandUnvalid, riteStart, riteEnd);
-        }
-
-        this.SetArg.Kind = kind;
-        this.SetArg.Range.Start = start;
-        this.SetArg.Range.End = end;
-        this.SetArg.Field00 = lite;
-        this.SetArg.Field01 = rite;
-        Node ret;
-        ret = this.Operate.Execute();
-        return ret;
     }
 
     protected virtual Node ExecuteIndexLimitOneOperand(NodeKind kind, Index index, Limit limit, Range range)
