@@ -3067,6 +3067,7 @@ public class Create : ClassCreate
                 itemEnd = itemRange.End;
 
                 nodeState.Arg = this.Range(this.RangeA, itemStart, itemEnd);
+
                 nodeState.Execute();
 
                 Node item;
