@@ -3047,6 +3047,7 @@ public class Create : ClassCreate
 
             bool b;
             b = (itemRange == null);
+
             if (b)
             {
                 this.Error(this.ErrorKind.ItemUnvalid, index, end);
