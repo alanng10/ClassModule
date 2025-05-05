@@ -3054,8 +3054,6 @@ public class Create : ClassCreate
 
                 this.Operate.ExecuteListItemSet(list, count, null);
 
-                count = count + 1;
-
                 index = end;
             }
 
@@ -3083,10 +3081,10 @@ public class Create : ClassCreate
 
                 this.Operate.ExecuteListItemSet(list, count, item);
 
-                count = count + 1;
-
                 index = itemEnd;
             }
+
+            count = count + 1;
         }
 
         this.Operate.ExecuteListCount(list, count);
