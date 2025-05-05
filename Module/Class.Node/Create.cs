@@ -3024,8 +3024,10 @@ public class Create : ClassCreate
 
         long count;
         count = 0;
+
         long index;
         index = start;
+
         while (index < end)
         {
             RangeStateArg arg;
