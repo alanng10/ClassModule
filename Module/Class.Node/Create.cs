@@ -2997,7 +2997,7 @@ public class Create : ClassCreate
         end = range.End;
 
         Array value;
-        value = this.ExecuteListValueComma(rangeState, nodeState, this.Range(this.RangeA, start, end));
+        value = this.ExecuteListValuePause(rangeState, nodeState, this.Range(this.RangeA, start, end));
         if (value == null)
         {
             return null;
@@ -3096,7 +3096,7 @@ public class Create : ClassCreate
         return array;
     }
 
-    protected virtual Array ExecuteListValueComma(RangeState rangeState, NodeState nodeState, Range range)
+    protected virtual Array ExecuteListValuePause(RangeState rangeState, NodeState nodeState, Range range)
     {
         long start;
         long end;
