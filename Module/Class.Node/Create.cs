@@ -3035,6 +3035,7 @@ public class Create : ClassCreate
 
             arg.Result = this.RangeB;
             arg.Range = this.Range(this.RangeA, index, end);
+
             rangeState.Execute();
 
             Range itemRange;
