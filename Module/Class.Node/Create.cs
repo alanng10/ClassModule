@@ -3630,9 +3630,9 @@ public class Create : ClassCreate
         return a;
     }
 
-    protected virtual bool ValidName(TokenToken token)
+    protected virtual bool ValidName(long index)
     {
-        return this.NameValid.Name(this.TAToken(token));
+        return this.NameValid.Name(this.TextToken(this.TextA, this.TokenToken(index)));
     }
 
     public virtual bool NodeInfo(Node node, long start, long end)
