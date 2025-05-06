@@ -3250,6 +3250,7 @@ public class Create : ClassCreate
 
         Range a;
         a = null;
+
         if (a == null)
         {
             a = this.ExecuteFieldRange(result, this.Range(this.RangeA, start, end));
