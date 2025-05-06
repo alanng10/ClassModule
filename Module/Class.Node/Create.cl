@@ -3377,5 +3377,15 @@ class Create : ClassCreate
         {
             return null;
         }
+
+        var Token signAre;
+        signAre : this.TokenFrontSkip(this.TokenB, this.Limit.Are.Text, this.Range(this.RangeA, start, signExecute.Range.Start));
+        inf (signAre = null)
+        {
+            return null;
+        }
+
+        this.Range(result, start, signExecute.Range.End);
+        return result;
     }
 }
