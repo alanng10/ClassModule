@@ -1731,6 +1731,7 @@ public class Create : ClassCreate
         long markEnd;
         markStart = start;
         markEnd = signAre.Range.Start;
+
         long valueStart;
         long valueEnd;
         valueStart = signAre.Range.End;
@@ -2030,6 +2031,7 @@ public class Create : ClassCreate
         long classEnd;
         classStart = castToken.Range.End;
         classEnd = braceRoundLite.Range.Start;
+
         long anyStart;
         long anyEnd;
         anyStart = braceRoundLite.Range.End;

@@ -1699,6 +1699,7 @@ class Create : ClassCreate
         var Int markEnd;
         markStart : start;
         markEnd : signAre.Range.Start;
+
         var Int valueStart;
         var Int valueEnd;
         valueStart : signAre.Range.End;
@@ -1997,6 +1998,7 @@ class Create : ClassCreate
         var Int classEnd;
         classStart : castToken.Range.End;
         classEnd : braceRoundLite.Range.Start;
+
         var Int anyStart;
         var Int anyEnd;
         anyStart : braceRoundLite.Range.End;
