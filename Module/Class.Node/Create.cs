@@ -3440,15 +3440,15 @@ public class Create : ClassCreate
 
     public virtual Range ExecuteParamItemRange(Range result, Range range)
     {
-        return this.ExecuteEndAtCommaRange(result, range);
+        return this.ExecutePauseRange(result, range);
     }
 
     public virtual Range ExecuteArgueItemRange(Range result, Range range)
     {
-        return this.ExecuteEndAtCommaRange(result, range);
+        return this.ExecutePauseRange(result, range);
     }
 
-    protected virtual Range ExecuteEndAtCommaRange(Range result, Range range)
+    protected virtual Range ExecutePauseRange(Range result, Range range)
     {
         long start;
         long end;
