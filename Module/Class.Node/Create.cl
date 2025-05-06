@@ -3219,4 +3219,34 @@ class Create : ClassCreate
 
         return a;
     }
+
+    maide prusate Range ExecuteReturnExecuteRange(var Range result, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        inf (start = end)
+        {
+            return null;
+        }
+
+        var Token returnToken;
+        returnToken : this.Token(this.TokenA, this.Index.Return.Text, this.IndexRange(this.RangeA, start));
+        inf (returnToken = null)
+        {
+            return null;
+        }
+
+        var Token signExecute;
+        signExecute : this.TokenFrontSkip(this.TokenB, this.Limit.Execute.Text, this.Range(this.RangeA, returnToken.Range.End, end));
+        inf (signExecute = null)
+        {
+            return null;
+        }
+
+        this.Range(result, start, signExecute.Range.End);
+        return result;
+    }
 }
