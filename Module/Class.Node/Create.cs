@@ -3284,15 +3284,15 @@ public class Create : ClassCreate
 
     public virtual Range ExecuteInfExecuteRange(Range result, Range range)
     {
-        return this.ExecuteIndexBracketRange(result, this.Index.Inf, range);
+        return this.ExecuteIndexBraceBodyRange(result, this.Index.Inf, range);
     }
 
     public virtual Range ExecuteWhileExecuteRange(Range result, Range range)
     {
-        return this.ExecuteIndexBracketRange(result, this.Index.While, range);
+        return this.ExecuteIndexBraceBodyRange(result, this.Index.While, range);
     }
 
-    protected virtual Range ExecuteIndexBracketRange(Range result, Index index, Range range)
+    protected virtual Range ExecuteIndexBraceBodyRange(Range result, Index index, Range range)
     {
         long start;
         long end;
