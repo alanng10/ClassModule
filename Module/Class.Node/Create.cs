@@ -3402,21 +3402,21 @@ public class Create : ClassCreate
             return null;
         }
 
-        Token semicolon;
-        semicolon = this.TokenFrontSkip(this.TokenA, this.Limit.Execute.Text, this.Range(this.RangeA, start, end));
-        if (semicolon == null)
+        Token signExecute;
+        signExecute = this.TokenFrontSkip(this.TokenA, this.Limit.Execute.Text, this.Range(this.RangeA, start, end));
+        if (signExecute == null)
         {
             return null;
         }
 
-        Token colon;
-        colon = this.TokenFrontSkip(this.TokenB, this.Limit.Are.Text, this.Range(this.RangeA, start, semicolon.Range.Start));
-        if (colon == null)
+        Token signAre;
+        signAre = this.TokenFrontSkip(this.TokenB, this.Limit.Are.Text, this.Range(this.RangeA, start, signExecute.Range.Start));
+        if (signAre == null)
         {
             return null;
         }
 
-        this.Range(result, start, semicolon.Range.End);
+        this.Range(result, start, signExecute.Range.End);
         return result;
     }
 
