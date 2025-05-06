@@ -3115,7 +3115,7 @@ public class Create : ClassCreate
         while (index < end)
         {
             RangeStateArg arg;
-            arg = (RangeStateArg)rangeState.Arg;
+            arg = rangeState.Arg as RangeStateArg;
 
             arg.Result = this.RangeB;
             arg.Range = this.Range(this.RangeA, index, end);
@@ -3123,11 +3123,11 @@ public class Create : ClassCreate
             rangeState.Execute();
 
             Range itemRange;
-            itemRange = (Range)rangeState.Result;
+            itemRange = rangeState.Result as Range;
 
             rangeState.Result = null;
-            arg.Result = null;
             arg.Range = null;
+            arg.Result = null;
 
             long itemStart;
             long itemEnd;
