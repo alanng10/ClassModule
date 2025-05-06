@@ -3146,5 +3146,20 @@ class Create : ClassCreate
 
             count : count + 1;
         }
+
+        inf (hasNext)
+        {
+            this.Error(this.ErrorKind.ItemUnvalid, index, index);
+
+            this.Operate.ExecuteListItemSet(list, count, null);
+
+            count : count + 1;
+        }
+
+        this.Operate.ExecuteListCount(list, count);
+
+        var Array array;
+        array : this.Operate.ExecuteListGet(list);
+        return array;
     }
 }
