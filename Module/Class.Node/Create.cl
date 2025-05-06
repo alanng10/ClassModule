@@ -630,11 +630,14 @@ class Create : ClassCreate
         var Int nameEnd;
         nameStart : classToken.Range.End;
         nameEnd : signAre.Range.Start;
+
         var Int baseStart;
         var Int baseEnd;
         baseStart : signAre.Range.End;
         baseEnd : braceCurveLite.Range.Start;
+
         var Int partStart;
+        var Int partEnd;
         partStart : braceCurveLite.Range.End;
         partEnd : braceCurveRite.Range.Start;
 
@@ -997,6 +1000,7 @@ class Create : ClassCreate
         var Int paramEnd;
         paramStart : braceRoundLite.Range.End;
         paramEnd : braceRoundRite.Range.Start;
+
         var Int callStart;
         var Int callEnd;
         callStart : braceCurveLite.Range.End;
