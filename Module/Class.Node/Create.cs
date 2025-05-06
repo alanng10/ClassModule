@@ -3438,6 +3438,16 @@ public class Create : ClassCreate
         return result;
     }
 
+    public virtual Range ExecutePartItemRange(Range result, Range range)
+    {
+        return this.ExecuteCompRange(result, range);
+    }
+
+    public virtual Range ExecuteStateItemRange(Range result, Range range)
+    {
+        return this.ExecuteExecuteRange(result, range);
+    }
+
     public virtual Range ExecuteParamItemRange(Range result, Range range)
     {
         return this.ExecutePauseRange(result, range);
