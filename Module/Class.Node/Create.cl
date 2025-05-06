@@ -3232,6 +3232,43 @@ class Create : ClassCreate
         return a;
     }
 
+    maide prusate Range ExecuteFieldRange(var Range result, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        inf (start = end)
+        {
+            return null;
+        }
+
+        var Token fieldToken;
+        fieldToken : this.Token(this.TokenA, this.Index.Field.Text, this.IndexRange(this.RangeA, start));
+        inf (fieldToken = null)
+        {
+            return null;
+        }
+
+        var Token braceCurveLite;
+        braceCurveLite : this.TokenFront(this.TokenB, this.Limit.BraceCurveLite.Text, this.Range(this.RangeA, fieldToken.Range.End, end));
+        inf (braceCurveLite = null)
+        {
+            return null;
+        }
+
+        var Token braceCurveRite;
+        braceCurveRite : this.TokenBraceCurveRite(this.TokenC, this.Range(this.RangeA, braceCurveLite.Range.End, end));
+        inf (braceCurveRite = null)
+        {
+            return null;
+        }
+
+        this.Range(result, start, braceCurveRite.Range.End);
+        return result;
+    }
+
     maide prusate Range ExecuteExecuteRange(var Range result, var Range range)
     {
         var Int start;
