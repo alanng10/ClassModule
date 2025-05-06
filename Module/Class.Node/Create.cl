@@ -3196,5 +3196,27 @@ class Create : ClassCreate
         {
             a : this.ExecuteReturnExecuteRange(result, this.Range(this.RangeA, start, end));
         }
+        inf (a = null)
+        {
+            a : this.ExecuteInfExecuteRange(result, this.Range(this.RangeA, start, end));
+        }
+        inf (a = null)
+        {
+            a : this.ExecuteWhileExecuteRange(result, this.Range(this.RangeA, start, end));
+        }
+        inf (a = null)
+        {
+            a : this.ExecuteReferExecuteRange(result, this.Range(this.RangeA, start, end));
+        }
+        inf (a = null)
+        {
+            a : this.ExecuteAreExecuteRange(result, this.Range(this.RangeA, start, end));
+        }
+        inf (a = null)
+        {
+            a : this.ExecuteOperateExecuteRange(result, this.Range(this.RangeA, start, end));
+        }
+
+        return a;
     }
 }
