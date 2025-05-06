@@ -3598,7 +3598,7 @@ public class Create : ClassCreate
         start = range.Start;
         end = range.End;
 
-        if (!((start + 1) == end))
+        if (!(this.Count(start, end) == 1))
         {
             return null;
         }
