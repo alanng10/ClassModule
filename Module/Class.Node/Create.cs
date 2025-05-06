@@ -3206,7 +3206,7 @@ public class Create : ClassCreate
             return null;
         }
 
-        if (!this.ValidName(this.TokenToken(start)))
+        if (!this.ValidName(start))
         {
             return null;
         }
