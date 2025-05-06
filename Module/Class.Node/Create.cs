@@ -3303,6 +3303,7 @@ public class Create : ClassCreate
         {
             return null;
         }
+
         Token indexToken;
         indexToken = this.Token(this.TokenA, index.Text, this.IndexRange(this.RangeA, start));
         if (indexToken == null)
@@ -3314,6 +3315,7 @@ public class Create : ClassCreate
         {
             return null;
         }
+
         Token braceRoundLite;
         braceRoundLite = this.Token(this.TokenB, this.Limit.BraceRoundLite.Text, this.IndexRange(this.RangeA, indexToken.Range.End));
         if (braceRoundLite == null)
@@ -3332,6 +3334,7 @@ public class Create : ClassCreate
         {
             return null;
         }
+
         Token braceCurveLite;
         braceCurveLite = this.Token(this.TokenD, this.Limit.BraceCurveLite.Text, this.IndexRange(this.RangeA, braceRoundRite.Range.End));
         if (braceCurveLite == null)
