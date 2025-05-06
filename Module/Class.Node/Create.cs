@@ -3206,10 +3206,11 @@ public class Create : ClassCreate
             return null;
         }
 
-        if (!this.IsName(this.TokenToken(start)))
+        if (!this.ValidName(this.TokenToken(start)))
         {
             return null;
         }
+
         return this.IndexRange(result, start);
     }
 
@@ -3629,7 +3630,7 @@ public class Create : ClassCreate
         return a;
     }
 
-    protected virtual bool IsName(TokenToken token)
+    protected virtual bool ValidName(TokenToken token)
     {
         return this.NameValid.Name(this.TAToken(token));
     }
