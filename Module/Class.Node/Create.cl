@@ -3191,6 +3191,26 @@ class Create : ClassCreate
         return this.IndexRange(result, start);
     }
 
+    maide prusate Range ExecutePartItemRange(var Range result, var Range range)
+    {
+        return this.ExecuteCompRange(result, range);
+    }
+
+    maide prusate Range ExecuteStateItemRange(var Range result, var Range range)
+    {
+        return this.ExecuteExecuteRange(result, range);
+    }
+
+    maide prusate Range ExecuteParamItemRange(var Range result, var Range range)
+    {
+        return this.ExecutePauseRange(result, range);
+    }
+
+    maide prusate Range ExecuteArgueItemRange(var Range result, var Range range)
+    {
+        return this.ExecutePauseRange(result, range);
+    }
+
     maide prusate Range ExecuteExecuteRange(var Range result, var Range range)
     {
         var Int start;
