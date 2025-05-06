@@ -644,10 +644,12 @@ public class Create : ClassCreate
         long nameEnd;
         nameStart = classToken.Range.End;
         nameEnd = signAre.Range.Start;
+
         long baseStart;
         long baseEnd;
         baseStart = signAre.Range.End;
         baseEnd = braceCurveLite.Range.Start;
+
         long partStart;
         long partEnd;
         partStart = braceCurveLite.Range.End;
@@ -1020,6 +1022,7 @@ public class Create : ClassCreate
         long paramEnd;
         paramStart = braceRoundLite.Range.End;
         paramEnd = braceRoundRite.Range.Start;
+
         long callStart;
         long callEnd;
         callStart = braceCurveLite.Range.End;
