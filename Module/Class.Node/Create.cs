@@ -2297,6 +2297,7 @@ public class Create : ClassCreate
         long condEnd;
         condStart = braceRoundLite.Range.End;
         condEnd = braceRoundRite.Range.Start;
+
         long bodyStart;
         long bodyEnd;
         bodyStart = braceCurveLite.Range.End;
@@ -2409,6 +2410,7 @@ public class Create : ClassCreate
         long thisEnd;
         thisStart = start;
         thisEnd = signStop.Range.Start;
+
         long fieldStart;
         long fieldEnd;
         fieldStart = signStop.Range.End;

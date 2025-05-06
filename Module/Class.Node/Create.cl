@@ -2268,6 +2268,7 @@ class Create : ClassCreate
         var Int condEnd;
         condStart : braceRoundLite.Range.End;
         condEnd : braceRoundRite.Range.Start;
+
         var Int bodyStart;
         var Int bodyEnd;
         bodyStart : braceCurveLite.Range.End;
@@ -2380,6 +2381,7 @@ class Create : ClassCreate
         var Int thisEnd;
         thisStart : start;
         thisEnd : signStop.Range.Start;
+
         var Int fieldStart;
         var Int fieldEnd;
         fieldStart : signStop.Range.End;
