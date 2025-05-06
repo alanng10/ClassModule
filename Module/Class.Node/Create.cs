@@ -3580,13 +3580,14 @@ public class Create : ClassCreate
         start = range.Start;
         end = range.End;
 
-        Token comma;
-        comma = this.TokenFrontSkip(this.TokenA, this.Limit.Pause.Text, this.Range(this.RangeA, start, end));
-        if (comma == null)
+        Token signPause;
+        signPause = this.TokenFrontSkip(this.TokenA, this.Limit.Pause.Text, this.Range(this.RangeA, start, end));
+        if (signPause == null)
         {
             return null;
         }
-        this.Range(result, start, comma.Range.Start);
+
+        this.Range(result, start, signPause.Range.Start);
         return result;
     }
 
