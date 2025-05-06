@@ -3173,7 +3173,7 @@ public class Create : ClassCreate
                 this.Error(this.ErrorKind.ItemUnvalid, itemStart, itemEnd);
             }
 
-            this.Operate.ExecuteListSetItem(list, count, item);
+            this.Operate.ExecuteListItemSet(list, count, item);
 
             count = count + 1;
         }
@@ -3182,7 +3182,7 @@ public class Create : ClassCreate
         {
             this.Error(this.ErrorKind.ItemUnvalid, index, index);
 
-            this.Operate.ExecuteListSetItem(list, count, null);
+            this.Operate.ExecuteListItemSet(list, count, null);
 
             count = count + 1;
         }
