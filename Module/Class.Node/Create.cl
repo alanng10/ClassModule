@@ -3062,4 +3062,89 @@ class Create : ClassCreate
         array : this.Operate.ExecuteListGet(list);
         return array;
     }
+
+    maide precate Array ExecuteListValuePause(var RangeState rangeState, var NodeState nodeState, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        var Int list;
+        list : this.Operate.ExecuteListNew();
+
+        var Int count;
+        count : 0;
+
+        var Bool hasNext;
+        hasNext : false;
+
+        var Int index;
+        index : start;
+
+        while (index < end)
+        {
+            var RangeStateArg arg;
+            arg : cast RangeStateArg(rangeState.Arg);
+
+            arg.Result : this.RangeB;
+            arg.Range : this.Range(this.RangeA, index, end);
+
+            rangeState.Execute();
+
+            var Range itemRange;
+            itemRange : cast Range(rangeState.Result);
+
+            rangeState.Result : null;
+            arg.Range : null;
+            arg.Result : null;
+
+            var Int itemStart;
+            var Int itemEnd;
+            itemStart : 0;
+            itemEnd : 0;
+
+            var Bool b;
+            b : itemRange = null;
+
+            inf (b)
+            {
+                itemStart : index;
+                itemEnd : end;
+
+                index : itemEnd;
+
+                hasNext : false;
+            }
+
+            inf (~b)
+            {
+                itemStart : itemRange.Start;
+                itemEnd : itemRange.End;
+
+                index : itemEnd + 1;
+
+                hasNext : true;
+            }
+
+            nodeState.Arg : this.Range(this.RangeA, itemStart, itemEnd);
+
+            nodeState.Execute();
+
+            var Node item;
+            item : cast Node(nodeState.Result);
+
+            nodeState.Result : null;
+            nodeState.Arg : null;
+
+            inf (item = null)
+            {
+                this.Error(this.ErrorKind.ItemUnvalid, itemStart, itemEnd);
+            }
+
+            this.Operate.ExecuteListItemSet(list, count, item);
+
+            count : count + 1;
+        }
+    }
 }
