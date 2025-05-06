@@ -3427,14 +3427,14 @@ public class Create : ClassCreate
         start = range.Start;
         end = range.End;
 
-        Token semicolon;
-        semicolon = this.TokenFrontSkip(this.TokenA, this.Limit.Execute.Text, this.Range(this.RangeA, start, end));
-        if (semicolon == null)
+        Token signExecute;
+        signExecute = this.TokenFrontSkip(this.TokenA, this.Limit.Execute.Text, this.Range(this.RangeA, start, end));
+        if (signExecute == null)
         {
             return null;
         }
 
-        this.Range(result, start, semicolon.Range.End);
+        this.Range(result, start, signExecute.Range.End);
         return result;
     }
 
