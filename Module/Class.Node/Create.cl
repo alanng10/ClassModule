@@ -3249,4 +3249,14 @@ class Create : ClassCreate
         this.Range(result, start, signExecute.Range.End);
         return result;
     }
+
+    maide prusate Range ExecuteInfExecuteRange(var Range result, var Range range)
+    {
+        return this.ExecuteIndexBraceBodyRange(result, this.Index.Inf, range);
+    }
+
+    maide prusate Range ExecuteWhileExecuteRange(var Range result, var Range range)
+    {
+        return this.ExecuteIndexBraceBodyRange(result, this.Index.While, range);
+    }
 }
