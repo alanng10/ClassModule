@@ -3259,4 +3259,17 @@ class Create : ClassCreate
     {
         return this.ExecuteIndexBraceBodyRange(result, this.Index.While, range);
     }
+
+    maide precate Range ExecuteIndexBraceBodyRange(var Range result, var Index index, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        inf (start = end)
+        {
+            return null;
+        }
+    }
 }
