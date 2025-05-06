@@ -3194,7 +3194,7 @@ public class Create : ClassCreate
         return array;
     }
 
-    protected virtual Range ExecuteNameRange(Range result, Range range)
+    public virtual Range ExecuteNameRange(Range result, Range range)
     {
         long start;
         long end;
@@ -3250,7 +3250,7 @@ public class Create : ClassCreate
         return a;
     }
 
-    protected virtual Range ExecuteReturnExecuteRange(Range result, Range range)
+    public virtual Range ExecuteReturnExecuteRange(Range result, Range range)
     {
         long start;
         long end;
@@ -3279,12 +3279,12 @@ public class Create : ClassCreate
         return result;
     }
 
-    protected virtual Range ExecuteInfExecuteRange(Range result, Range range)
+    public virtual Range ExecuteInfExecuteRange(Range result, Range range)
     {
         return this.ExecuteIndexBracketRange(result, this.Index.Inf, range);
     }
 
-    protected virtual Range ExecuteWhileExecuteRange(Range result, Range range)
+    public virtual Range ExecuteWhileExecuteRange(Range result, Range range)
     {
         return this.ExecuteIndexBracketRange(result, this.Index.While, range);
     }
@@ -3347,7 +3347,7 @@ public class Create : ClassCreate
         return result;
     }
 
-    protected virtual Range ExecuteReferExecuteRange(Range result, Range range)
+    public virtual Range ExecuteReferExecuteRange(Range result, Range range)
     {
         long start;
         long end;
@@ -3377,7 +3377,7 @@ public class Create : ClassCreate
         return result;
     }
 
-    protected virtual Range ExecuteAreExecuteRange(Range result, Range range)
+    public virtual Range ExecuteAreExecuteRange(Range result, Range range)
     {
         long start;
         long end;
@@ -3407,7 +3407,7 @@ public class Create : ClassCreate
         return result;
     }
 
-    protected virtual Range ExecuteOperateExecuteRange(Range result, Range range)
+    public virtual Range ExecuteOperateExecuteRange(Range result, Range range)
     {
         long start;
         long end;
@@ -3472,7 +3472,7 @@ public class Create : ClassCreate
         return a;
     }
 
-    protected virtual Range ExecuteFieldRange(Range result, Range range)
+    public virtual Range ExecuteFieldRange(Range result, Range range)
     {
         long start;
         long end;
@@ -3509,7 +3509,7 @@ public class Create : ClassCreate
         return result;
     }
 
-    protected virtual Range ExecuteMaideRange(Range result, Range range)
+    public virtual Range ExecuteMaideRange(Range result, Range range)
     {
         long start;
         long end;
@@ -3647,7 +3647,7 @@ public class Create : ClassCreate
         token = this.TokenToken(index);
 
         bool b;
-        b = this.TextSame(this.TAToken(token), this.TB(value));
+        b = this.TextSame(this.TextToken(this.TextA, token), this.TB(value));
         bool a;
         a = b;
         return a;
