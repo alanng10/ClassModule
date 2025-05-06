@@ -3182,4 +3182,19 @@ class Create : ClassCreate
 
         return this.IndexRange(result, start);
     }
+
+    maide prusate Range ExecuteExecuteRange(var Range result, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        var Range a;
+
+        inf (a = null)
+        {
+            a : this.ExecuteReturnExecuteRange(result, this.Range(this.RangeA, start, end));
+        }
+    }
 }
