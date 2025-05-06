@@ -3211,6 +3211,27 @@ class Create : ClassCreate
         return this.ExecutePauseRange(result, range);
     }
 
+    maide prusate Range ExecuteCompRange(var Range result, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        var Range a;
+
+        inf (a = null)
+        {
+            a : this.ExecuteFieldRange(result, this.Range(this.RangeA, start, end));
+        }
+        inf (a = null)
+        {
+            a : this.ExecuteMaideRange(result, this.Range(this.RangeA, start, end));
+        }
+
+        return a;
+    }
+
     maide prusate Range ExecuteExecuteRange(var Range result, var Range range)
     {
         var Int start;
