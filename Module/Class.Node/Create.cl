@@ -3162,4 +3162,24 @@ class Create : ClassCreate
         array : this.Operate.ExecuteListGet(list);
         return array;
     }
+
+    maide precate Range ExecuteNameRange(var Range result, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        inf (start = end)
+        {
+            return null;
+        }
+
+        inf (~this.ValidName(start))
+        {
+            return null;
+        }
+
+        return this.IndexRange(result, start);
+    }
 }
