@@ -3223,6 +3223,7 @@ public class Create : ClassCreate
 
         Range a;
         a = null;
+
         if (a == null)
         {
             a = this.ExecuteReturnExecuteRange(result, this.Range(this.RangeA, start, end));
@@ -3247,6 +3248,7 @@ public class Create : ClassCreate
         {
             a = this.ExecuteOperateExecuteRange(result, this.Range(this.RangeA, start, end));
         }
+
         return a;
     }
 
