@@ -3221,6 +3221,26 @@ public class Create : ClassCreate
         return this.IndexRange(result, start);
     }
 
+    public virtual Range ExecutePartItemRange(Range result, Range range)
+    {
+        return this.ExecuteCompRange(result, range);
+    }
+
+    public virtual Range ExecuteStateItemRange(Range result, Range range)
+    {
+        return this.ExecuteExecuteRange(result, range);
+    }
+
+    public virtual Range ExecuteParamItemRange(Range result, Range range)
+    {
+        return this.ExecutePauseRange(result, range);
+    }
+
+    public virtual Range ExecuteArgueItemRange(Range result, Range range)
+    {
+        return this.ExecutePauseRange(result, range);
+    }
+
     public virtual Range ExecuteCompRange(Range result, Range range)
     {
         long start;
@@ -3549,26 +3569,6 @@ public class Create : ClassCreate
 
         this.Range(result, start, signExecute.Range.End);
         return result;
-    }
-
-    public virtual Range ExecutePartItemRange(Range result, Range range)
-    {
-        return this.ExecuteCompRange(result, range);
-    }
-
-    public virtual Range ExecuteStateItemRange(Range result, Range range)
-    {
-        return this.ExecuteExecuteRange(result, range);
-    }
-
-    public virtual Range ExecuteParamItemRange(Range result, Range range)
-    {
-        return this.ExecutePauseRange(result, range);
-    }
-
-    public virtual Range ExecuteArgueItemRange(Range result, Range range)
-    {
-        return this.ExecutePauseRange(result, range);
     }
 
     protected virtual Range ExecutePauseRange(Range result, Range range)
