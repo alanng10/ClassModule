@@ -3324,5 +3324,8 @@ class Create : ClassCreate
         {
             return null;
         }
+
+        this.Range(result, start, braceCurveRite.Range.End);
+        return result;
     }
 }
