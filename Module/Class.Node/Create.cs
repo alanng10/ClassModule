@@ -3112,6 +3112,7 @@ public class Create : ClassCreate
 
         long index;
         index = start;
+
         while (index < end)
         {
             RangeStateArg arg;
@@ -3136,6 +3137,7 @@ public class Create : ClassCreate
 
             bool b;
             b = (itemRange == null);
+
             if (b)
             {
                 itemStart = index;
@@ -3166,10 +3168,7 @@ public class Create : ClassCreate
             nodeState.Result = null;
             nodeState.Arg = null;
 
-            bool ba;
-            ba = (item == null);
-
-            if (ba)
+            if (item == null)
             {
                 this.Error(this.ErrorKind.ItemUnvalid, itemStart, itemEnd);
             }
