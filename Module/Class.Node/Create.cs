@@ -3101,8 +3101,8 @@ public class Create : ClassCreate
         start = range.Start;
         end = range.End;
 
-        long listIndex;
-        listIndex = this.Operate.ExecuteListNew();
+        long list;
+        list = this.Operate.ExecuteListNew();
 
         long count;
         count = 0;
@@ -3174,7 +3174,7 @@ public class Create : ClassCreate
                 this.Error(this.ErrorKind.ItemUnvalid, itemStart, itemEnd);
             }
 
-            this.Operate.ExecuteListSetItem(listIndex, count, item);
+            this.Operate.ExecuteListSetItem(list, count, item);
 
             count = count + 1;
         }
@@ -3183,15 +3183,15 @@ public class Create : ClassCreate
         {
             this.Error(this.ErrorKind.ItemUnvalid, index, index);
 
-            this.Operate.ExecuteListSetItem(listIndex, count, null);
+            this.Operate.ExecuteListSetItem(list, count, null);
 
             count = count + 1;
         }
 
-        this.Operate.ExecuteListCount(listIndex, count);
+        this.Operate.ExecuteListCount(list, count);
 
         Array array;
-        array = this.Operate.ExecuteListGet(listIndex);
+        array = this.Operate.ExecuteListGet(list);
         return array;
     }
 
