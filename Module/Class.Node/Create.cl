@@ -3328,4 +3328,34 @@ class Create : ClassCreate
         this.Range(result, start, braceCurveRite.Range.End);
         return result;
     }
+
+    maide prusate Range ExecuteReferExecuteRange(var Range result, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        inf (start = end)
+        {
+            return null;
+        }
+
+        var Token varToken;
+        varToken : this.Token(this.TokenA, this.Index.Var.Text, this.IndexRange(this.RangeA, start));
+        inf (varToken = null)
+        {
+            return null;
+        }
+
+        var Token signExecute;
+        signExecute : this.TokenFrontSkip(this.TokenB, this.Limit.Execute.Text, this.Range(this.RangeA, varToken.Range.End, end));
+        inf (signExecute = null)
+        {
+            return null;
+        }
+
+        this.Range(result, start, signExecute.Range.End);
+        return result;
+    }
 }
