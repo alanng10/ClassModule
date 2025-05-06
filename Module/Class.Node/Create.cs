@@ -3607,7 +3607,7 @@ public class Create : ClassCreate
         token = this.TokenToken(start);
 
         Text text;
-        text = this.TAToken(token);
+        text = this.TextToken(this.TextA, token);
 
         String a;
         a = this.Operate.ExecuteNameValue(text);
