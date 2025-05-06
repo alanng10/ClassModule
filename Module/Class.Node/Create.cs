@@ -3263,6 +3263,7 @@ public class Create : ClassCreate
         {
             return null;
         }
+
         Token returnToken;
         returnToken = this.Token(this.TokenA, this.Index.Return.Text, this.IndexRange(this.RangeA, start));
         if (returnToken == null)
@@ -3270,14 +3271,14 @@ public class Create : ClassCreate
             return null;
         }
 
-        Token semicolon;
-        semicolon = this.TokenFrontSkip(this.TokenB, this.Limit.Execute.Text, this.Range(this.RangeA, returnToken.Range.End, end));
-        if (semicolon == null)
+        Token signExecute;
+        signExecute = this.TokenFrontSkip(this.TokenB, this.Limit.Execute.Text, this.Range(this.RangeA, returnToken.Range.End, end));
+        if (signExecute == null)
         {
             return null;
         }
 
-        this.Range(result, start, semicolon.Range.End);
+        this.Range(result, start, signExecute.Range.End);
         return result;
     }
 
