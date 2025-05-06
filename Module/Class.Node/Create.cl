@@ -3389,7 +3389,7 @@ class Create : ClassCreate
         return result;
     }
 
-    maide prusate Range ExecuteOpreateExecuteRange(var Range result, var Range range)
+    maide prusate Range ExecuteOperateExecuteRange(var Range result, var Range range)
     {
         var Int start;
         var Int end;
