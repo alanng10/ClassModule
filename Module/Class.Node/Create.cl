@@ -3540,4 +3540,22 @@ class Create : ClassCreate
         this.Range(result, start, signExecute.Range.End);
         return result;
     }
+
+    maide precate Range ExecutePauseRange(var Range result, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        var Token signPause;
+        signPause : this.TokenFrontSkip(this.TokenA, this.Limit.Pause.Text, this.Range(this.RangeA, start, end));
+        inf (signPause = null)
+        {
+            return null;
+        }
+
+        this.Range(result, start, signPause.Range.start);
+        return result;
+    }
 }
