@@ -3221,6 +3221,118 @@ public class Create : ClassCreate
         return this.IndexRange(result, start);
     }
 
+    public virtual Range ExecuteCompRange(Range result, Range range)
+    {
+        long start;
+        long end;
+        start = range.Start;
+        end = range.End;
+
+        Range a;
+        a = null;
+        if (a == null)
+        {
+            a = this.ExecuteFieldRange(result, this.Range(this.RangeA, start, end));
+        }
+        if (a == null)
+        {
+            a = this.ExecuteMaideRange(result, this.Range(this.RangeA, start, end));
+        }
+        return a;
+    }
+
+    public virtual Range ExecuteFieldRange(Range result, Range range)
+    {
+        long start;
+        long end;
+        start = range.Start;
+        end = range.End;
+
+        if (start == end)
+        {
+            return null;
+        }
+
+        Token fieldToken;
+        fieldToken = this.Token(this.TokenA, this.Index.Field.Text, this.IndexRange(this.RangeA, start));
+        if (fieldToken == null)
+        {
+            return null;
+        }
+
+        Token braceCurveLite;
+        braceCurveLite = this.TokenFront(this.TokenB, this.Limit.BraceCurveLite.Text, this.Range(this.RangeA, fieldToken.Range.End, end));
+        if (braceCurveLite == null)
+        {
+            return null;
+        }
+
+        Token braceCurveRite;
+        braceCurveRite = this.TokenBraceCurveRite(this.TokenC, this.Range(this.RangeA, braceCurveLite.Range.End, end));
+        if (braceCurveRite == null)
+        {
+            return null;
+        }
+
+        this.Range(result, start, braceCurveRite.Range.End);
+        return result;
+    }
+
+    public virtual Range ExecuteMaideRange(Range result, Range range)
+    {
+        long start;
+        long end;
+        start = range.Start;
+        end = range.End;
+
+        if (start == end)
+        {
+            return null;
+        }
+
+        Token maideToken;
+        maideToken = this.Token(this.TokenA, this.Index.Maide.Text, this.IndexRange(this.RangeA, start));
+        if (maideToken == null)
+        {
+            return null;
+        }
+
+        Token braceRoundLite;
+        braceRoundLite = this.TokenFront(this.TokenB, this.Limit.BraceRoundLite.Text, this.Range(this.RangeA, maideToken.Range.End, end));
+        if (braceRoundLite == null)
+        {
+            return null;
+        }
+
+        Token braceRoundRite;
+        braceRoundRite = this.TokenBraceRoundRite(this.TokenC, this.Range(this.RangeA, braceRoundLite.Range.End, end));
+        if (braceRoundRite == null)
+        {
+            return null;
+        }
+
+        if (braceRoundRite.Range.End == end)
+        {
+            return null;
+        }
+        Token braceCurveLite;
+        braceCurveLite = this.Token(this.TokenD, this.Limit.BraceCurveLite.Text, this.IndexRange(this.RangeA, braceRoundRite.Range.End));
+        if (braceCurveLite == null)
+        {
+            return null;
+        }
+
+        Token braceCurveRite;
+        braceCurveRite = this.TokenBraceCurveRite(this.TokenE, this.Range(this.RangeA, braceCurveLite.Range.End, end));
+        if (braceCurveRite == null)
+        {
+            return null;
+        }
+
+        this.Range(result, start, braceCurveRite.Range.End);
+        return result;
+    }
+
     public virtual Range ExecuteExecuteRange(Range result, Range range)
     {
         long start;
@@ -3472,118 +3584,6 @@ public class Create : ClassCreate
             return null;
         }
         this.Range(result, start, comma.Range.Start);
-        return result;
-    }
-
-    public virtual Range ExecuteCompRange(Range result, Range range)
-    {
-        long start;
-        long end;
-        start = range.Start;
-        end = range.End;
-
-        Range a;
-        a = null;
-        if (a == null)
-        {
-            a = this.ExecuteFieldRange(result, this.Range(this.RangeA, start, end));
-        }
-        if (a == null)
-        {
-            a = this.ExecuteMaideRange(result, this.Range(this.RangeA, start, end));
-        }
-        return a;
-    }
-
-    public virtual Range ExecuteFieldRange(Range result, Range range)
-    {
-        long start;
-        long end;
-        start = range.Start;
-        end = range.End;
-
-        if (start == end)
-        {
-            return null;
-        }
-
-        Token fieldToken;
-        fieldToken = this.Token(this.TokenA, this.Index.Field.Text, this.IndexRange(this.RangeA, start));
-        if (fieldToken == null)
-        {
-            return null;
-        }
-
-        Token braceCurveLite;
-        braceCurveLite = this.TokenFront(this.TokenB, this.Limit.BraceCurveLite.Text, this.Range(this.RangeA, fieldToken.Range.End, end));
-        if (braceCurveLite == null)
-        {
-            return null;
-        }
-
-        Token braceCurveRite;
-        braceCurveRite = this.TokenBraceCurveRite(this.TokenC, this.Range(this.RangeA, braceCurveLite.Range.End, end));
-        if (braceCurveRite == null)
-        {
-            return null;
-        }
-
-        this.Range(result, start, braceCurveRite.Range.End);
-        return result;
-    }
-
-    public virtual Range ExecuteMaideRange(Range result, Range range)
-    {
-        long start;
-        long end;
-        start = range.Start;
-        end = range.End;
-
-        if (start == end)
-        {
-            return null;
-        }
-
-        Token maideToken;
-        maideToken = this.Token(this.TokenA, this.Index.Maide.Text, this.IndexRange(this.RangeA, start));
-        if (maideToken == null)
-        {
-            return null;
-        }
-
-        Token braceRoundLite;
-        braceRoundLite = this.TokenFront(this.TokenB, this.Limit.BraceRoundLite.Text, this.Range(this.RangeA, maideToken.Range.End, end));
-        if (braceRoundLite == null)
-        {
-            return null;
-        }
-
-        Token braceRoundRite;
-        braceRoundRite = this.TokenBraceRoundRite(this.TokenC, this.Range(this.RangeA, braceRoundLite.Range.End, end));
-        if (braceRoundRite == null)
-        {
-            return null;
-        }
-
-        if (braceRoundRite.Range.End == end)
-        {
-            return null;
-        }
-        Token braceCurveLite;
-        braceCurveLite = this.Token(this.TokenD, this.Limit.BraceCurveLite.Text, this.IndexRange(this.RangeA, braceRoundRite.Range.End));
-        if (braceCurveLite == null)
-        {
-            return null;
-        }
-
-        Token braceCurveRite;
-        braceCurveRite = this.TokenBraceCurveRite(this.TokenE, this.Range(this.RangeA, braceCurveLite.Range.End, end));
-        if (braceCurveRite == null)
-        {
-            return null;
-        }
-
-        this.Range(result, start, braceCurveRite.Range.End);
         return result;
     }
 
