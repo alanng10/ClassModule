@@ -3388,4 +3388,22 @@ class Create : ClassCreate
         this.Range(result, start, signExecute.Range.End);
         return result;
     }
+
+    maide prusate Range ExecuteOpreateExecuteRange(var Range result, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        var Token signExecute;
+        signExecute : this.TokenFrontSkip(this.TokenA, this.Limit.Execute.Text, this.Range(this.RangeA, start, end));
+        inf (signExecute = null)
+        {
+            return null;
+        }
+
+        this.Range(result, start, signExecute.Range.End);
+        return result;
+    }
 }
