@@ -3337,6 +3337,7 @@ public class Create : ClassCreate
         {
             return null;
         }
+
         Token braceCurveLite;
         braceCurveLite = this.Token(this.TokenD, this.Limit.BraceCurveLite.Text, this.IndexRange(this.RangeA, braceRoundRite.Range.End));
         if (braceCurveLite == null)
