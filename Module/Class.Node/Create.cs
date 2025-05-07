@@ -3224,6 +3224,12 @@ public class Create : ClassCreate
         return array;
     }
 
+    protected virtual bool Error(ErrorKind kind, long start, long end)
+    {
+        this.Operate.ExecuteError(kind, start, end);
+        return true;
+    }
+
     public virtual Range ExecuteNameRange(Range result, Range range)
     {
         long start;
@@ -3701,12 +3707,6 @@ public class Create : ClassCreate
         Source a;
         a = this.Source.GetAt(this.SourceIndex) as Source;
         return a;
-    }
-
-    protected virtual bool Error(ErrorKind kind, long start, long end)
-    {
-        this.Operate.ExecuteError(kind, start, end);
-        return true;
     }
 
     protected virtual Token Token(Token result, String value, Range range)
