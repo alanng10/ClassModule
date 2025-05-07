@@ -3714,5 +3714,31 @@ class Create : ClassCreate
         var String braceCurveRite;
         braceCurveLite : this.Limit.BraceCurveLite.Text;
         braceCurveRite : this.Limit.BraceCurveRite.Text;
+
+        var Int index;
+
+        var Int i;
+        i : start;
+
+        var Bool loop;
+        loop : i < end;
+
+        while (loop)
+        {
+            var Bool b;
+            b : this.TokenSame(i, value);
+
+            inf (b)
+            {
+                index : i;
+                loop : false;
+            }
+
+            inf (~b)
+            {
+                var Bool ba;
+                ba : this.TokenSame(i, braceRoundLite) | this.TokenSame(i, braceRoundRite) | this.TokenSame(i, braceCurveLite) | this.TokenSame(i, braceCurveRite);
+            }
+        }
     }
 }
