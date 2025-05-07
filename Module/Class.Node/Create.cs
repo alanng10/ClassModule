@@ -3882,10 +3882,10 @@ public class Create : ClassCreate
         long i;
         i = start;
 
-        bool varContinue;
-        varContinue = (i < end);
+        bool loop;
+        loop = (i < end);
 
-        while (varContinue)
+        while (loop)
         {
             bool b;
             b = this.TokenSame(i, value);
@@ -3893,7 +3893,7 @@ public class Create : ClassCreate
             if (b)
             {
                 index = i;
-                varContinue = false;
+                loop = false;
             }
 
             if (!b)
@@ -3917,7 +3917,7 @@ public class Create : ClassCreate
 
             if (!(i < end))
             {
-                varContinue = false;
+                loop = false;
             }
         }
 
