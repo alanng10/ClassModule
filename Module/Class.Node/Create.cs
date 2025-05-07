@@ -3614,6 +3614,17 @@ public class Create : ClassCreate
         return result;
     }
 
+    protected virtual bool ValidName(long index)
+    {
+        TokenToken token;
+        token = this.TokenToken(index);
+
+        Text text;
+        text = this.TextToken(this.TextA, token);
+
+        return this.NameValid.Name(text);
+    }
+
     protected virtual long Count(long start, long end)
     {
         return this.ClassInfra.Count(start, end);
@@ -3655,17 +3666,6 @@ public class Create : ClassCreate
         Source a;
         a = this.Source.GetAt(this.SourceIndex) as Source;
         return a;
-    }
-
-    protected virtual bool ValidName(long index)
-    {
-        TokenToken token;
-        token = this.TokenToken(index);
-
-        Text text;
-        text = this.TextToken(this.TextA, token);
-
-        return this.NameValid.Name(text);
     }
 
     public virtual bool NodeInfo(Node node, long start, long end)
