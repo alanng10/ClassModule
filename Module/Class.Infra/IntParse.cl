@@ -2,6 +2,7 @@ class IntParse : TextAdd
 {
     maide prusate Bool Init()
     {
+        base.Init();
         this.ClassInfra : share Infra;
         return true;
     }
