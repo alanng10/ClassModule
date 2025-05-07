@@ -3582,6 +3582,12 @@ class Create : ClassCreate
         return result;
     }
 
+    maide prusate Bool NodeInfo(var Node node, var Int start, var Int end)
+    {
+        this.Range(node.Range, start, end);
+        return true;
+    }
+
     maide precate Bool ValidName(var Int index)
     {
         var TokenToken token;
