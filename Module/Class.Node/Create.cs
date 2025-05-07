@@ -3751,16 +3751,16 @@ public class Create : ClassCreate
         i = start;
         long index;
         index = -1;
-        bool varContinue;
-        varContinue = (i < end);
-        while (varContinue)
+        bool loop;
+        loop = (i < end);
+        while (loop)
         {
             bool b;
             b = this.TokenSame(i, value);
             if (b)
             {
                 index = i;
-                varContinue = false;
+                loop = false;
             }
             if (!b)
             {
@@ -3768,7 +3768,7 @@ public class Create : ClassCreate
                 ba = (this.TokenSame(i, braceRoundLite) | this.TokenSame(i, braceRoundRite) | this.TokenSame(i, braceCurveLite) | this.TokenSame(i, braceCurveRite));
                 if (ba)
                 {
-                    varContinue = false;
+                    loop = false;
                 }
                 if (!ba)
                 {
@@ -3777,7 +3777,7 @@ public class Create : ClassCreate
             }
             if (!(i < end))
             {
-                varContinue = false;
+                loop = false;
             }
         }
         if (index == -1)
