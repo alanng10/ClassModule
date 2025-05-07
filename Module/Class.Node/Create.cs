@@ -3655,7 +3655,7 @@ public class Create : ClassCreate
         return range;
     }
 
-    protected virtual bool TokenSame(String value, long index)
+    protected virtual bool TokenSame(long index, String value)
     {
         TokenToken token;
         token = this.TokenToken(index);
