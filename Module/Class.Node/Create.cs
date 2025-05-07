@@ -4095,10 +4095,10 @@ public class Create : ClassCreate
         long i;
         i = start;
 
-        bool varContinue;
-        varContinue = (i < end);
+        bool loop;
+        loop = (i < end);
 
-        while (varContinue)
+        while (loop)
         {
             TokenToken token;
             token = this.TokenToken(i);
@@ -4113,7 +4113,7 @@ public class Create : ClassCreate
                 if (openCount == 0)
                 {
                     index = i;
-                    varContinue = false;
+                    loop = false;
                 }
             }
 
@@ -4128,7 +4128,7 @@ public class Create : ClassCreate
 
                 if (!(i < end))
                 {
-                    varContinue = false;
+                    loop = false;
                 }
             }
         }
