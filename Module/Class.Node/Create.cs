@@ -3614,6 +3614,12 @@ public class Create : ClassCreate
         return result;
     }
 
+    public virtual bool NodeInfo(Node node, long start, long end)
+    {
+        this.Range(node.Range, start, end);
+        return true;
+    }
+
     protected virtual bool ValidName(long index)
     {
         TokenToken token;
@@ -3679,12 +3685,6 @@ public class Create : ClassCreate
         Source a;
         a = this.Source.GetAt(this.SourceIndex) as Source;
         return a;
-    }
-
-    public virtual bool NodeInfo(Node node, long start, long end)
-    {
-        this.Range(node.Range, start, end);
-        return true;
     }
 
     protected virtual bool IsText(String value, long index)
