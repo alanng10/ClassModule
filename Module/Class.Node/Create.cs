@@ -3687,7 +3687,7 @@ public class Create : ClassCreate
         return a;
     }
 
-    protected virtual bool IsText(String value, long index)
+    protected virtual bool TokenValue(String value, long index)
     {
         TokenToken token;
         token = this.TokenToken(index);
@@ -3717,7 +3717,7 @@ public class Create : ClassCreate
             return null;
         }
 
-        if (!this.IsText(value, start))
+        if (!this.TokenValue(value, start))
         {
             return null;
         }
@@ -3749,7 +3749,7 @@ public class Create : ClassCreate
         while (varContinue)
         {
             bool b;
-            b = this.IsText(value, i);
+            b = this.TokenValue(value, i);
             if (b)
             {
                 index = i;
@@ -3758,7 +3758,7 @@ public class Create : ClassCreate
             if (!b)
             {
                 bool ba;
-                ba = (this.IsText(braceRoundLite, i) | this.IsText(braceRoundRite, i) | this.IsText(braceCurveLite, i) | this.IsText(braceCurveRite, i));
+                ba = (this.TokenValue(braceRoundLite, i) | this.TokenValue(braceRoundRite, i) | this.TokenValue(braceCurveLite, i) | this.TokenValue(braceCurveRite, i));
                 if (ba)
                 {
                     varContinue = false;
@@ -3807,7 +3807,7 @@ public class Create : ClassCreate
             long j;
             j = i - 1;
             bool b;
-            b = this.IsText(value, j);
+            b = this.TokenValue(value, j);
             if (b)
             {
                 index = j;
@@ -3816,7 +3816,7 @@ public class Create : ClassCreate
             if (!b)
             {
                 bool ba;
-                ba = (this.IsText(braceRoundLite, j) | this.IsText(braceRoundRite, j) | this.IsText(braceCurveLite, j) | this.IsText(braceCurveRite, j));
+                ba = (this.TokenValue(braceRoundLite, j) | this.TokenValue(braceRoundRite, j) | this.TokenValue(braceCurveLite, j) | this.TokenValue(braceCurveRite, j));
                 if (ba)
                 {
                     varContinue = false;
@@ -3856,7 +3856,7 @@ public class Create : ClassCreate
         while (varContinue)
         {
             bool b;
-            b = this.IsText(value, i);
+            b = this.TokenValue(value, i);
             if (b)
             {
                 index = i;
@@ -3909,7 +3909,7 @@ public class Create : ClassCreate
             long j;
             j = i - 1;
             bool b;
-            b = this.IsText(value, j);
+            b = this.TokenValue(value, j);
             if (b)
             {
                 index = j;
