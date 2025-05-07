@@ -4059,16 +4059,6 @@ public class Create : ClassCreate
         return ret;
     }
 
-    protected virtual Token TokenBraceCurveRite(Token result, Range range)
-    {
-        return this.TokenRiteToken(result, this.Limit.BraceCurveLite.Text, this.Limit.BraceCurveRite.Text, range);
-    }
-
-    protected virtual Token TokenBraceCurveLite(Token result, Range range)
-    {
-        return this.TokenLiteToken(result, this.Limit.BraceCurveLite.Text, this.Limit.BraceCurveRite.Text, range);
-    }
-
     protected virtual Token TokenBraceRoundRite(Token result, Range range)
     {
         return this.TokenRiteToken(result, this.Limit.BraceRoundLite.Text, this.Limit.BraceRoundRite.Text, range);
@@ -4077,6 +4067,16 @@ public class Create : ClassCreate
     protected virtual Token TokenBraceRoundLite(Token result, Range range)
     {
         return this.TokenLiteToken(result, this.Limit.BraceRoundLite.Text, this.Limit.BraceRoundRite.Text, range);
+    }
+
+    protected virtual Token TokenBraceCurveRite(Token result, Range range)
+    {
+        return this.TokenRiteToken(result, this.Limit.BraceCurveLite.Text, this.Limit.BraceCurveRite.Text, range);
+    }
+
+    protected virtual Token TokenBraceCurveLite(Token result, Range range)
+    {
+        return this.TokenLiteToken(result, this.Limit.BraceCurveLite.Text, this.Limit.BraceCurveRite.Text, range);
     }
 
     protected virtual Token TokenRiteToken(Token result, String liteToken, String riteToken, Range range)
