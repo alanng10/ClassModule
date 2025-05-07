@@ -3582,6 +3582,17 @@ class Create : ClassCreate
         return result;
     }
 
+    maide precate Bool ValidName(var Int index)
+    {
+        var TokenToken token;
+        token : this.TokenToken(index);
+
+        var Text text;
+        text : this.TextToken(this.TextA, token);
+
+        return this.NameValid.Name(text);
+    }
+
     maide precate Int Count(var Int start, var Int end)
     {
         return this.ClassInfra.Count(start, end);
