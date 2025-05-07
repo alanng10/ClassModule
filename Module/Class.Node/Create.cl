@@ -3194,6 +3194,12 @@ class Create : ClassCreate
         return array;
     }
 
+    maide precate Bool Error(var ErrorKind kind, var Int start, var Int end)
+    {
+        this.Operate.ExecuteError(kind, start, end);
+        return true;
+    }
+
     maide precate Range ExecuteNameRange(var Range result, var Range range)
     {
         var Int start;
