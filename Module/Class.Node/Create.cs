@@ -3649,6 +3649,18 @@ public class Create : ClassCreate
         return range;
     }
 
+    protected virtual bool TokenSame(String value, long index)
+    {
+        TokenToken token;
+        token = this.TokenToken(index);
+
+        bool b;
+        b = this.TextSame(this.TextToken(this.TextA, token), this.TB(value));
+        bool a;
+        a = b;
+        return a;
+    }
+
     protected virtual TokenToken TokenToken(long index)
     {
         Code code;
@@ -3684,18 +3696,6 @@ public class Create : ClassCreate
     {
         Source a;
         a = this.Source.GetAt(this.SourceIndex) as Source;
-        return a;
-    }
-
-    protected virtual bool TokenSame(String value, long index)
-    {
-        TokenToken token;
-        token = this.TokenToken(index);
-
-        bool b;
-        b = this.TextSame(this.TextToken(this.TextA, token), this.TB(value));
-        bool a;
-        a = b;
         return a;
     }
 
