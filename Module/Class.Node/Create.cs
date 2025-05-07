@@ -3614,6 +3614,11 @@ public class Create : ClassCreate
         return result;
     }
 
+    protected virtual long Count(long start, long end)
+    {
+        return this.ClassInfra.Count(start, end);
+    }
+
     protected virtual TokenToken TokenToken(long index)
     {
         Code code;
@@ -3622,11 +3627,6 @@ public class Create : ClassCreate
         TokenToken token;
         token = code.Token.GetAt(index) as TokenToken;
         return token;
-    }
-
-    protected virtual long Count(long start, long end)
-    {
-        return this.ClassInfra.Count(start, end);
     }
 
     protected virtual Text TextToken(Text text, TokenToken token)
