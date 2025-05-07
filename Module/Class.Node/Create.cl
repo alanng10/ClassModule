@@ -4030,4 +4030,14 @@ class Create : ClassCreate
     {
         return this.TokenLiteToken(result, this.Limit.BraceRoundLite.Text, this.Limit.BraceRoundRite.Text, range);
     }
+
+    maide precate Token TokenBraceCurveRite(var Token result, var Range range)
+    {
+        return this.TokenRiteToken(result, this.Limit.BraceCurveLite.Text, this.Limit.BraceCurveRite.Text, range);
+    }
+
+    maide precate Token TokenBraceCurveLite(var Token result, var Range range)
+    {
+        return this.TokenLiteToken(result, this.Limit.BraceCurveLite.Text, this.Limit.BraceCurveRite.Text, range);
+    }
 }
