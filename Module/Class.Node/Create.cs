@@ -2605,6 +2605,29 @@ public class Create : ClassCreate
         return ret;
     }
 
+    protected virtual String ExecuteNameValue(Range range)
+    {
+        long start;
+        long end;
+        start = range.Start;
+        end = range.End;
+
+        if (!(this.Count(start, end) == 1))
+        {
+            return null;
+        }
+
+        TokenToken token;
+        token = this.TokenToken(start);
+
+        Text text;
+        text = this.TextToken(this.TextA, token);
+
+        String a;
+        a = this.Operate.ExecuteNameValue(text);
+        return a;
+    }
+
     protected virtual Node ExecuteLimitTwoOperand(NodeKind kind, Limit limit, Range range)
     {
         long start;
@@ -3589,29 +3612,6 @@ public class Create : ClassCreate
 
         this.Range(result, start, signPause.Range.Start);
         return result;
-    }
-
-    protected virtual String ExecuteNameValue(Range range)
-    {
-        long start;
-        long end;
-        start = range.Start;
-        end = range.End;
-
-        if (!(this.Count(start, end) == 1))
-        {
-            return null;
-        }
-
-        TokenToken token;
-        token = this.TokenToken(start);
-
-        Text text;
-        text = this.TextToken(this.TextA, token);
-
-        String a;
-        a = this.Operate.ExecuteNameValue(text);
-        return a;
     }
 
     protected virtual TokenToken TokenToken(long index)
