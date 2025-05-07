@@ -3687,7 +3687,7 @@ public class Create : ClassCreate
         return a;
     }
 
-    protected virtual bool TokenValue(String value, long index)
+    protected virtual bool TokenSame(String value, long index)
     {
         TokenToken token;
         token = this.TokenToken(index);
@@ -3717,7 +3717,7 @@ public class Create : ClassCreate
             return null;
         }
 
-        if (!this.TokenValue(value, start))
+        if (!this.TokenSame(value, start))
         {
             return null;
         }
@@ -3749,7 +3749,7 @@ public class Create : ClassCreate
         while (varContinue)
         {
             bool b;
-            b = this.TokenValue(value, i);
+            b = this.TokenSame(value, i);
             if (b)
             {
                 index = i;
@@ -3758,7 +3758,7 @@ public class Create : ClassCreate
             if (!b)
             {
                 bool ba;
-                ba = (this.TokenValue(braceRoundLite, i) | this.TokenValue(braceRoundRite, i) | this.TokenValue(braceCurveLite, i) | this.TokenValue(braceCurveRite, i));
+                ba = (this.TokenSame(braceRoundLite, i) | this.TokenSame(braceRoundRite, i) | this.TokenSame(braceCurveLite, i) | this.TokenSame(braceCurveRite, i));
                 if (ba)
                 {
                     varContinue = false;
@@ -3807,7 +3807,7 @@ public class Create : ClassCreate
             long j;
             j = i - 1;
             bool b;
-            b = this.TokenValue(value, j);
+            b = this.TokenSame(value, j);
             if (b)
             {
                 index = j;
@@ -3816,7 +3816,7 @@ public class Create : ClassCreate
             if (!b)
             {
                 bool ba;
-                ba = (this.TokenValue(braceRoundLite, j) | this.TokenValue(braceRoundRite, j) | this.TokenValue(braceCurveLite, j) | this.TokenValue(braceCurveRite, j));
+                ba = (this.TokenSame(braceRoundLite, j) | this.TokenSame(braceRoundRite, j) | this.TokenSame(braceCurveLite, j) | this.TokenSame(braceCurveRite, j));
                 if (ba)
                 {
                     varContinue = false;
@@ -3856,7 +3856,7 @@ public class Create : ClassCreate
         while (varContinue)
         {
             bool b;
-            b = this.TokenValue(value, i);
+            b = this.TokenSame(value, i);
             if (b)
             {
                 index = i;
@@ -3909,7 +3909,7 @@ public class Create : ClassCreate
             long j;
             j = i - 1;
             bool b;
-            b = this.TokenValue(value, j);
+            b = this.TokenSame(value, j);
             if (b)
             {
                 index = j;
