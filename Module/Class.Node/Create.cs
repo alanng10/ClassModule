@@ -3721,7 +3721,7 @@ public class Create : ClassCreate
             return null;
         }
 
-        if (!this.TokenSame(value, start))
+        if (!this.TokenSame(start, value))
         {
             return null;
         }
@@ -3753,7 +3753,7 @@ public class Create : ClassCreate
         while (varContinue)
         {
             bool b;
-            b = this.TokenSame(value, i);
+            b = this.TokenSame(i, value);
             if (b)
             {
                 index = i;
@@ -3762,7 +3762,7 @@ public class Create : ClassCreate
             if (!b)
             {
                 bool ba;
-                ba = (this.TokenSame(braceRoundLite, i) | this.TokenSame(braceRoundRite, i) | this.TokenSame(braceCurveLite, i) | this.TokenSame(braceCurveRite, i));
+                ba = (this.TokenSame(i, braceRoundLite) | this.TokenSame(i, braceRoundRite) | this.TokenSame(i, braceCurveLite) | this.TokenSame(i, braceCurveRite));
                 if (ba)
                 {
                     varContinue = false;
