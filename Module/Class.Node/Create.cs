@@ -3630,6 +3630,19 @@ public class Create : ClassCreate
         return this.ClassInfra.Count(start, end);
     }
 
+    protected virtual Range Range(Range range, long start, long end)
+    {
+        range.Start = start;
+        range.End = end;
+        return range;
+    }
+
+    protected virtual Range IndexRange(Range range, long index)
+    {
+        this.ClassInfra.IndexRange(range, index);
+        return range;
+    }
+
     protected virtual TokenToken TokenToken(long index)
     {
         Code code;
@@ -3684,19 +3697,6 @@ public class Create : ClassCreate
         bool a;
         a = b;
         return a;
-    }
-
-    protected virtual Range Range(Range range, long start, long end)
-    {
-        range.Start = start;
-        range.End = end;
-        return range;
-    }
-
-    protected virtual Range IndexRange(Range range, long index)
-    {
-        this.ClassInfra.IndexRange(range, index);
-        return range;
     }
 
     protected virtual bool Error(ErrorKind kind, long start, long end)
