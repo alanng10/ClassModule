@@ -3581,4 +3581,19 @@ class Create : ClassCreate
         this.Range(result, start, signPause.Range.start);
         return result;
     }
+
+    maide precate Int Count(var Int start, var Int end)
+    {
+        return this.ClassInfra.Count(start, end);
+    }
+
+    maide precate TokenToken TokenToken(var Int index)
+    {
+        var Code code;
+        code : cast Code(this.Code.Get(this.SourceIndex));
+
+        var TokenToken token;
+        token : cast TokenToken(code.Token.Get(index));
+        return token;
+    }
 }
