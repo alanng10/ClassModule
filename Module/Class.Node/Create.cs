@@ -4002,7 +4002,7 @@ public class Create : ClassCreate
         TokenToken token;
         token = this.TokenToken(index);
 
-        if (this.TextSame(this.TAToken(token), this.TB(this.Limit.BraceRoundLite.Text)))
+        if (this.TextSame(this.TextToken(this.TextA, token), this.TB(this.Limit.BraceRoundLite.Text)))
         {
             Token braceRoundRite;
             braceRoundRite = this.TokenBraceRoundRite(this.TokenA, this.Range(this.RangeA, index + 1, end));
@@ -4012,7 +4012,7 @@ public class Create : ClassCreate
             }
         }
 
-        if (this.TextSame(this.TAToken(token), this.TB(this.Limit.BraceCurveLite.Text)))
+        if (this.TextSame(this.TextToken(this.TextA, token), this.TB(this.Limit.BraceCurveLite.Text)))
         {
             Token braceCurveRite;
             braceCurveRite = this.TokenBraceCurveRite(this.TokenA, this.Range(this.RangeA, index + 1, end));
