@@ -4086,14 +4086,18 @@ public class Create : ClassCreate
         start = range.Start;
         end = range.End;
 
-        long openCount;
-        openCount = 1;
         long index;
         index = -1;
+
+        long openCount;
+        openCount = 1;
+
         long i;
         i = start;
+
         bool varContinue;
         varContinue = (i < end);
+
         while (varContinue)
         {
             TokenToken token;
@@ -4105,6 +4109,7 @@ public class Create : ClassCreate
             if (this.TextSame(ka, this.TB(riteToken)))
             {
                 openCount = openCount - 1;
+
                 if (openCount == 0)
                 {
                     index = i;
@@ -4120,12 +4125,14 @@ public class Create : ClassCreate
             if (index == -1)
             {
                 i = i + 1;
+
                 if (!(i < end))
                 {
                     varContinue = false;
                 }
             }
         }
+
         if (index == -1)
         {
             return null;
