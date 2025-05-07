@@ -3755,6 +3755,7 @@ public class Create : ClassCreate
 
         bool loop;
         loop = (i < end);
+
         while (loop)
         {
             bool b;
