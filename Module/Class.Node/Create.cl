@@ -3974,5 +3974,17 @@ class Create : ClassCreate
                 ret : braceRoundRite.Range.End;
             }
         }
+
+        inf (this.TextSame(this.TextToken(this.TextA, token), this.TB(this.Limit.BraceCurveLite.Text)))
+        {
+            var Token braceCurveRite;
+            braceCurveRite : this.TokenBraceCurveRite(this.TokenA, this.Range(this.RangeA, index + 1, end));
+            inf (~(braceCurveRite = null))
+            {
+                ret : braceCurveRite.Range.End;
+            }
+        }
+
+        return ret;
     }
 }
