@@ -3738,7 +3738,30 @@ class Create : ClassCreate
             {
                 var Bool ba;
                 ba : this.TokenSame(i, braceRoundLite) | this.TokenSame(i, braceRoundRite) | this.TokenSame(i, braceCurveLite) | this.TokenSame(i, braceCurveRite);
+
+                inf (ba)
+                {
+                    loop : false;
+                }
+
+                inf (~ba)
+                {
+                    i : i + 1;
+                }
+            }
+
+            inf (~(i < end))
+            {
+                loop : false;
             }
         }
+
+        inf (index = null)
+        {
+            return null;
+        }
+
+        this.IndexRange(result.Range, index);
+        return result;
     }
 }
