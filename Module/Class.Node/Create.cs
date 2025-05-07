@@ -3747,39 +3747,47 @@ public class Create : ClassCreate
         braceCurveLite = this.Limit.BraceCurveLite.Text;
         braceCurveRite = this.Limit.BraceCurveRite.Text;
 
-        long i;
-        i = start;
         long index;
         index = -1;
+
+        long i;
+        i = start;
+
         bool loop;
         loop = (i < end);
         while (loop)
         {
             bool b;
             b = this.TokenSame(i, value);
+
             if (b)
             {
                 index = i;
                 loop = false;
             }
+
             if (!b)
             {
                 bool ba;
                 ba = (this.TokenSame(i, braceRoundLite) | this.TokenSame(i, braceRoundRite) | this.TokenSame(i, braceCurveLite) | this.TokenSame(i, braceCurveRite));
+
                 if (ba)
                 {
                     loop = false;
                 }
+
                 if (!ba)
                 {
                     i = i + 1;
                 }
             }
+
             if (!(i < end))
             {
                 loop = false;
             }
         }
+
         if (index == -1)
         {
             return null;
