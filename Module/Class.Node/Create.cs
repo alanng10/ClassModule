@@ -4159,7 +4159,7 @@ public class Create : ClassCreate
         i = end;
 
         bool loop;
-        loop = (i > start);
+        loop = (start < i);
 
         while (loop)
         {
@@ -4192,7 +4192,7 @@ public class Create : ClassCreate
             {
                 i = i - 1;
 
-                if (!(i > start))
+                if (!(start < i))
                 {
                     loop = false;
                 }
