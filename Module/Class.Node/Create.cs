@@ -3640,7 +3640,7 @@ public class Create : ClassCreate
         return text;
     }
 
-    protected virtual TextLine(long row)
+    protected virtual Text TextLine(long row)
     {
         Source source;
         source = this.SourceItem();
