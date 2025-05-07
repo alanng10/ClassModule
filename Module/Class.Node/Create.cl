@@ -3987,4 +3987,37 @@ class Create : ClassCreate
 
         return ret;
     }
+
+    maide precate Int FrontSkipBrace(var Int index, var Int start)
+    {
+        var Int ret;
+
+        var Int t;
+        t : index - 1;
+
+        var TokenToken token;
+        token : this.TokenToken(t);
+
+        inf (this.TextSame(this.TextToken(this.TextA, token), this.TB(this.Limit.BraceRoundRite.Text)))
+        {
+            var Token braceRoundLite;
+            braceRoundLite : this.TokenBraceRoundLite(this.TokenA, this.Range(this.RangeA, start, t));
+            inf (~(braceRoundLite = null))
+            {
+                ret : braceRoundLite.Range.Start;
+            }
+        }
+
+        inf (this.TextSame(this.TextToken(this.TextA, token), this.TB(this.Limit.BraceCurveRite.Text)))
+        {
+            var Token braceCurveLite;
+            braceCurveLite : this.TokenBraceCurveLite(this.TokenA, this.Range(this.RangeA, start, t));
+            inf (~(braceCurveLite = null))
+            {
+                ret : braceCurveLite.Range.Start;
+            }
+        }
+
+        return ret;
+    }
 }
