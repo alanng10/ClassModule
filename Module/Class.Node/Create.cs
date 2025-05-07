@@ -3736,14 +3736,17 @@ public class Create : ClassCreate
         long end;
         start = range.Start;
         end = range.End;
+
         String braceRoundLite;
         String braceRoundRite;
         braceRoundLite = this.Limit.BraceRoundLite.Text;
         braceRoundRite = this.Limit.BraceRoundRite.Text;
+
         String braceCurveLite;
         String braceCurveRite;
         braceCurveLite = this.Limit.BraceCurveLite.Text;
         braceCurveRite = this.Limit.BraceCurveRite.Text;
+
         long i;
         i = start;
         long index;
