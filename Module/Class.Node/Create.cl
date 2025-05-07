@@ -3676,4 +3676,25 @@ class Create : ClassCreate
         a : cast Source(this.Source.Get(this.SourceIndex));
         return a;
     }
+
+    maide precate Token Token(var Token result, var String value, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        inf (~(this.Count(start, end) = 1))
+        {
+            return null;
+        }
+
+        inf (~this.TokenSame(start, value))
+        {
+            return null;
+        }
+
+        this.Range(result.Range, start, end);
+        return result;
+    }
 }
