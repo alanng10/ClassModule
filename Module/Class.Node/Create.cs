@@ -3659,7 +3659,13 @@ public class Create : ClassCreate
 
     protected virtual bool ValidName(long index)
     {
-        return this.NameValid.Name(this.TextToken(this.TextA, this.TokenToken(index)));
+        TokenToken token;
+        token = this.TokenToken(index);
+
+        Text text;
+        text = this.TextToken(this.TextA, token);
+
+        return this.NameValid.Name(text);
     }
 
     public virtual bool NodeInfo(Node node, long start, long end)
