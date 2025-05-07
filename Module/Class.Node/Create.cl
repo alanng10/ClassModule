@@ -3988,7 +3988,7 @@ class Create : ClassCreate
         return ret;
     }
 
-    maide precate Int FrontSkipBrace(var Int index, var Int start)
+    maide precate Int BackSkipBrace(var Int index, var Int start)
     {
         var Int ret;
 
