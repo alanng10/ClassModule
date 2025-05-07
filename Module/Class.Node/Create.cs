@@ -4158,10 +4158,10 @@ public class Create : ClassCreate
         long i;
         i = end;
 
-        bool varContinue;
-        varContinue = (i > start);
+        bool loop;
+        loop = (i > start);
 
-        while (varContinue)
+        while (loop)
         {
             long t;
             t = i - 1;
@@ -4179,7 +4179,7 @@ public class Create : ClassCreate
                 if (openCount == 0)
                 {
                     index = t;
-                    varContinue = false;
+                    loop = false;
                 }
             }
 
@@ -4194,7 +4194,7 @@ public class Create : ClassCreate
 
                 if (!(i > start))
                 {
-                    varContinue = false;
+                    loop = false;
                 }
             }
         }
