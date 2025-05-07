@@ -4103,10 +4103,10 @@ public class Create : ClassCreate
             TokenToken token;
             token = this.TokenToken(i);
 
-            Text ka;
-            ka = this.TAToken(token);
+            Text text;
+            text = this.TextToken(this.TextA, token);
             
-            if (this.TextSame(ka, this.TB(riteToken)))
+            if (this.TextSame(text, this.TB(riteToken)))
             {
                 openCount = openCount - 1;
 
@@ -4117,7 +4117,7 @@ public class Create : ClassCreate
                 }
             }
 
-            if (this.TextSame(ka, this.TB(liteToken)))
+            if (this.TextSame(text, this.TB(liteToken)))
             {
                 openCount = openCount + 1;
             }
