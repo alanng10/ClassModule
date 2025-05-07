@@ -3196,7 +3196,9 @@ class Create : ClassCreate
 
     maide precate Bool Error(var ErrorKind kind, var Int start, var Int end)
     {
-        this.Operate.ExecuteError(kind, start, end);
+        this.Range(this.RangeC, start, end);
+
+        this.Operate.ExecuteError(kind, this.RangeC);
         return true;
     }
 
