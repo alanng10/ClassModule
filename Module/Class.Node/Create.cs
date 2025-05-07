@@ -3654,8 +3654,12 @@ public class Create : ClassCreate
         TokenToken token;
         token = this.TokenToken(index);
 
+        Text text;
+        text = this.TextToken(this.TextA, token);
+
         bool b;
-        b = this.TextSame(this.TextToken(this.TextA, token), this.TB(value));
+        b = this.TextSame(text, this.TB(value));
+
         bool a;
         a = b;
         return a;
