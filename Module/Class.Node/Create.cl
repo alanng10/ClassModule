@@ -3764,4 +3764,74 @@ class Create : ClassCreate
         this.IndexRange(result.Range, index);
         return result;
     }
+
+    maide precate Token TokenBack(var Token result, var String value, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        var String braceRoundLite;
+        var String braceRoundRite;
+        braceRoundLite : this.Limit.BraceRoundLite.Text;
+        braceRoundRite : this.Limit.BraceRoundRite.Text;
+
+        var String braceCurveLite;
+        var String braceCurveRite;
+        braceCurveLite : this.Limit.BraceCurveLite.Text;
+        braceCurveRite : this.Limit.BraceCurveRite.Text;
+
+        var Int index;
+
+        var Int i;
+        i : end;
+
+        var Bool loop;
+        loop : start < i;
+
+        while (loop)
+        {
+            var Int j;
+            j : i - 1;
+
+            var Bool b;
+            b : this.TokenSame(j, value);
+
+            inf (b)
+            {
+                index : j;
+                loop : false;
+            }
+
+            inf (~b)
+            {
+                var Bool ba;
+                ba : this.TokenSame(j, braceRoundLite) | this.TokenSame(j, braceRoundRite) | this.TokenSame(j, braceCurveLite) | this.TokenSame(j, braceCurveRite);
+
+                inf (ba)
+                {
+                    loop : false;
+                }
+
+                inf (~ba)
+                {
+                    i : i - 1;
+                }
+            }
+
+            inf (~(start < i))
+            {
+                loop : false;
+            }
+        }
+
+        inf (index = null)
+        {
+            return null;
+        }
+
+        this.IndexRange(result.Range, index);
+        return result;
+    }
 }
