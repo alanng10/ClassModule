@@ -3898,15 +3898,15 @@ public class Create : ClassCreate
 
             if (!b)
             {
-                long skipBracketIndex;
-                skipBracketIndex = this.FrontSkipBrace(i, end);
+                long skipIndex;
+                skipIndex = this.FrontSkipBrace(i, end);
 
                 bool ba;
-                ba = (skipBracketIndex == -1);
+                ba = (skipIndex == -1);
 
                 if (!ba)
                 {
-                    i = skipBracketIndex;
+                    i = skipIndex;
                 }
 
                 if (ba)
