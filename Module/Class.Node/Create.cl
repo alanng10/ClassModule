@@ -3596,4 +3596,15 @@ class Create : ClassCreate
         token : cast TokenToken(code.Token.Get(index));
         return token;
     }
+
+    maide precate Text TextToken(var Text text, var TokenToken token)
+    {
+        var Text line;
+        line : this.TextLine(token.Row);
+
+        text.Data : line.Data;
+        text.Range.Index : line.Range.Index + token.Range.Index;
+        text.Range.Count : token.Range.Count;
+        return text;
+    }
 }
