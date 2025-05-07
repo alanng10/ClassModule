@@ -3697,4 +3697,22 @@ class Create : ClassCreate
         this.Range(result.Range, start, end);
         return result;
     }
+
+    maide precate Token TokenFront(var Token result, var String value, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        var String braceRoundLite;
+        var String braceRoundRite;
+        braceRoundLite : this.Limit.BraceRoundLite.Text;
+        braceRoundRite : this.Limit.BraceRoundRite.Text;
+
+        var String braceCurveLite;
+        var String braceCurveRite;
+        braceCurveLite : this.Limit.BraceCurveLite.Text;
+        braceCurveRite : this.Limit.BraceCurveRite.Text;
+    }
 }
