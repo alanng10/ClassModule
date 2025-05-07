@@ -4029,6 +4029,7 @@ public class Create : ClassCreate
     {
         long ret;
         ret = -1;
+
         long t;
         t = index - 1;
 
@@ -4054,6 +4055,7 @@ public class Create : ClassCreate
                 ret = braceCurveLite.Range.Start;
             }
         }
+
         return ret;
     }
 
