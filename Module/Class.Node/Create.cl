@@ -4040,4 +4040,48 @@ class Create : ClassCreate
     {
         return this.TokenLiteToken(result, this.Limit.BraceCurveLite.Text, this.Limit.BraceCurveRite.Text, range);
     }
+
+    maide precate Token TokenRiteToken(var Token result, var String liteToken, var String riteToken, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        var Int index;
+
+        var Int openCount;
+        openCount : 1;
+
+        var Int i;
+        i : start;
+
+        var Bool loop;
+        loop : i < end;
+
+        while (loop)
+        {
+            var TokenToken token;
+            token : this.TokenToken(i);
+
+            var Text text;
+            text : this.TextToken(this.TextA, token);
+
+            inf (this.TextSame(text, this.TB(riteToken)))
+            {
+                openCount : openCount - 1;
+
+                inf (openCount = 0)
+                {
+                    index : i;
+                    loop : false;
+                }
+            }
+
+            inf (this.TextSame(text, this.TB(liteToken)))
+            {
+                openCount : openCount + 1;
+            }
+        }
+    }
 }
