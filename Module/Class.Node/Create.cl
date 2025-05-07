@@ -4102,4 +4102,69 @@ class Create : ClassCreate
         this.IndexRange(result.Range, index);
         return result;
     }
+
+    maide precate Token TokenLiteToken(var Token result, var String liteToken, var String riteToken, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        var Int index;
+
+        var Int openCount;
+        openCount : 1;
+
+        var Int i;
+        i : end;
+
+        var Bool loop;
+        loop : start < i;
+
+        while (loop)
+        {
+            var Int t;
+            t : i - 1;
+
+            var TokenToken token;
+            token : this.TokenToken(t);
+
+            var Text text;
+            text : this.TextToken(this.TextA, token);
+
+            inf (this.TextSame(text, this.TB(liteToken)))
+            {
+                openCount : openCount - 1;
+
+                inf (openCount = 0)
+                {
+                    index : t;
+                    loop : false;
+                }
+            }
+
+            inf (this.TextSame(text, this.TB(riteToken)))
+            {
+                openCount : openCount + 1;
+            }
+
+            inf (index = null)
+            {
+                i : i - 1;
+
+                inf (~(start < i))
+                {
+                    loop : false;
+                }
+            }
+        }
+
+        inf (index = null)
+        {
+            return null;
+        }
+
+        this.IndexRange(result.Range, index);
+        return result;
+    }
 }
