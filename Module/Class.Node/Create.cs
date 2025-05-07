@@ -3821,10 +3821,10 @@ public class Create : ClassCreate
         long i;
         i = end;
 
-        bool varContinue;
-        varContinue = (start < i);
+        bool loop;
+        loop = (start < i);
 
-        while (varContinue)
+        while (loop)
         {
             long j;
             j = i - 1;
@@ -3833,7 +3833,7 @@ public class Create : ClassCreate
             if (b)
             {
                 index = j;
-                varContinue = false;
+                loop = false;
             }
             if (!b)
             {
@@ -3841,7 +3841,7 @@ public class Create : ClassCreate
                 ba = (this.TokenSame(j, braceRoundLite) | this.TokenSame(j, braceRoundRite) | this.TokenSame(j, braceCurveLite) | this.TokenSame(j, braceCurveRite));
                 if (ba)
                 {
-                    varContinue = false;
+                    loop = false;
                 }
                 if (!ba)
                 {
@@ -3850,7 +3850,7 @@ public class Create : ClassCreate
             }
             if (!(start < i))
             {
-                varContinue = false;
+                loop = false;
             }
         }
         if (index == -1)
