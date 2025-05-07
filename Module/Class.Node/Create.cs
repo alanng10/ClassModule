@@ -3632,7 +3632,7 @@ public class Create : ClassCreate
     protected virtual Text TextToken(Text text, TokenToken token)
     {
         Text line;
-        line = this.TextLine(token.Row);
+        line = this.TextLineRow(token.Row);
 
         text.Data = line.Data;
         text.Range.Index = line.Range.Index + token.Range.Index;
@@ -3640,7 +3640,7 @@ public class Create : ClassCreate
         return text;
     }
 
-    protected virtual Text TextLine(long row)
+    protected virtual Text TextLineRow(long row)
     {
         Source source;
         source = this.SourceItem();
