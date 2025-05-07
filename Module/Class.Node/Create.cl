@@ -3597,6 +3597,19 @@ class Create : ClassCreate
     {
         return this.ClassInfra.Count(start, end);
     }
+    
+    maide precate Range Range(var Range range, var Int start, var Int end)
+    {
+        range.Start : start;
+        range.End : end;
+        return range;
+    }
+
+    maide precate Range IndexRange(var Range range, var Int index)
+    {
+        this.ClassInfra.IndexRange(range, index);
+        return range;
+    }
 
     maide precate TokenToken TokenToken(var Int index)
     {
