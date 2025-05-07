@@ -3894,4 +3894,67 @@ class Create : ClassCreate
         this.IndexRange(result.Range, index);
         return result;
     }
+
+    maide precate Token TokenBackSkip(var Token result, var String value, var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        var Int index;
+
+        var Int i;
+        i : end;
+
+        var Bool loop;
+        loop : start < i;
+
+        while (loop)
+        {
+            var Int j;
+            j : i - 1;
+
+            var Bool b;
+            b : this.TokenSame(j, value);
+
+            inf (b)
+            {
+                index : j;
+                loop : false;
+            }
+
+            inf (~b)
+            {
+                var Int skipIndex;
+                skipIndex : this.BackSkipBrace(i, start);
+
+                var Bool ba;
+                ba : skipIndex = null;
+
+                inf (~ba)
+                {
+                    i : skipIndex;
+                }
+
+                inf (ba)
+                {
+                    i : i - 1;
+                }
+            }
+
+            inf (~(start < i))
+            {
+                loop : false;
+            }
+        }
+
+        inf (index = null)
+        {
+            return null;
+        }
+
+        this.IndexRange(result.Range, index);
+        return result;
+    }
 }
