@@ -3828,31 +3828,38 @@ public class Create : ClassCreate
         {
             long j;
             j = i - 1;
+
             bool b;
             b = this.TokenSame(j, value);
+
             if (b)
             {
                 index = j;
                 loop = false;
             }
+
             if (!b)
             {
                 bool ba;
                 ba = (this.TokenSame(j, braceRoundLite) | this.TokenSame(j, braceRoundRite) | this.TokenSame(j, braceCurveLite) | this.TokenSame(j, braceCurveRite));
+
                 if (ba)
                 {
                     loop = false;
                 }
+
                 if (!ba)
                 {
                     i = i - 1;
                 }
             }
+
             if (!(start < i))
             {
                 loop = false;
             }
         }
+
         if (index == -1)
         {
             return null;
