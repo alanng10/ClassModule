@@ -669,7 +669,7 @@ class Create : ClassCreate
         this.SetArg.Field01 : varBase;
         this.SetArg.Field02 : part;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -907,7 +907,7 @@ class Create : ClassCreate
         this.SetArg.Field03 : varGet;
         this.SetArg.Field04 : varSet;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -1050,7 +1050,7 @@ class Create : ClassCreate
         this.SetArg.Field03 : param;
         this.SetArg.Field04 : call;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -1111,7 +1111,7 @@ class Create : ClassCreate
         this.SetArg.Field00 : varClass;
         this.SetArg.Field01 : name;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -1287,7 +1287,7 @@ class Create : ClassCreate
         this.SetArg.Range.End : end;
         this.SetArg.Field00 : value;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -1322,7 +1322,7 @@ class Create : ClassCreate
         this.SetArg.Range.End : end;
         this.SetArg.Field00 : value;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -1357,7 +1357,7 @@ class Create : ClassCreate
         this.SetArg.Range.End : end;
         this.SetArg.Field00 : value;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -1392,7 +1392,7 @@ class Create : ClassCreate
         this.SetArg.Range.End : end;
         this.SetArg.Field00 : value;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -1427,7 +1427,7 @@ class Create : ClassCreate
         this.SetArg.Range.End : end;
         this.SetArg.Field00 : value;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -1464,7 +1464,7 @@ class Create : ClassCreate
         this.SetArg.Range.End : end;
         this.SetArg.Field00 : value;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -1611,7 +1611,7 @@ class Create : ClassCreate
         this.SetArg.Range.End : end;
         this.SetArg.Field00 : result;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -1666,7 +1666,7 @@ class Create : ClassCreate
         this.SetArg.Range.End : end;
         this.SetArg.Field00 : varVar;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -1729,7 +1729,7 @@ class Create : ClassCreate
         this.SetArg.Field00 : mark;
         this.SetArg.Field01 : value;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -1772,7 +1772,7 @@ class Create : ClassCreate
         this.SetArg.Range.End : end;
         this.SetArg.Field00 : any;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -2028,7 +2028,7 @@ class Create : ClassCreate
         this.SetArg.Field00 : varClass;
         this.SetArg.Field01 : any;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -2080,7 +2080,7 @@ class Create : ClassCreate
         this.SetArg.Range.End : end;
         this.SetArg.Field00 : any;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -2108,7 +2108,7 @@ class Create : ClassCreate
         this.SetArg.Range.End : end;
         this.SetArg.Field00 : value;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -2294,7 +2294,7 @@ class Create : ClassCreate
         this.SetArg.Field00 : cond;
         this.SetArg.Field01 : body;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -2316,7 +2316,7 @@ class Create : ClassCreate
         this.SetArg.Range.Start : start;
         this.SetArg.Range.End : end;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -2359,7 +2359,7 @@ class Create : ClassCreate
         this.SetArg.Range.End : end;
         this.SetArg.Field00 : varClass;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -2407,7 +2407,7 @@ class Create : ClassCreate
         this.SetArg.Field00 : varThis;
         this.SetArg.Field01 : varField;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -2490,7 +2490,7 @@ class Create : ClassCreate
         this.SetArg.Field01 : varMaide;
         this.SetArg.Field02 : argue;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -2513,7 +2513,7 @@ class Create : ClassCreate
         this.SetArg.Range.End : end;
         this.SetArg.Field00 : varVar;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -2571,7 +2571,7 @@ class Create : ClassCreate
         this.SetArg.Range.End : end;
         this.SetArg.Field00 : value;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -2642,7 +2642,7 @@ class Create : ClassCreate
         this.SetArg.Field00 : lite;
         this.SetArg.Field01 : rite;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -2682,7 +2682,7 @@ class Create : ClassCreate
         this.SetArg.Range.End : end;
         this.SetArg.Field00 : value;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -2778,7 +2778,7 @@ class Create : ClassCreate
         this.SetArg.Field00 : lite;
         this.SetArg.Field01 : rite;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -2854,7 +2854,7 @@ class Create : ClassCreate
         this.SetArg.Range.End : end;
         this.SetArg.Field00 : value;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -2962,7 +2962,7 @@ class Create : ClassCreate
         this.SetArg.Field00 : lite;
         this.SetArg.Field01 : rite;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -2985,7 +2985,7 @@ class Create : ClassCreate
         this.SetArg.Range.End : end;
         this.SetArg.Field00 : value;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
@@ -3008,7 +3008,7 @@ class Create : ClassCreate
         this.SetArg.Range.End : end;
         this.SetArg.Field00 : value;
         var Node ret;
-        ret : this.Operate.Execute();
+        ret : this.Operate.ExecuteNode();
         return ret;
     }
 
