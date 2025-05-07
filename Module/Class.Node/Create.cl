@@ -2575,6 +2575,29 @@ class Create : ClassCreate
         return ret;
     }
 
+    maide precate String ExecuteNameValue(var Range range)
+    {
+        var Int start;
+        var Int end;
+        start : range.Start;
+        end : range.End;
+
+        inf (~(this.Count(start, end) = 1))
+        {
+            return null;
+        }
+
+        var TokenToken token;
+        token : this.TokenToken(start);
+
+        var Text text;
+        text : this.TextToken(this.TextA, token);
+
+        var String a;
+        a : this.Operate.ExecuteNameValue(text);
+        return a;
+    }
+
     maide precate Node ExecuteLimitTwoOperand(var NodeKind kind, var Limit limit, var Range range)
     {
         var Int start;
