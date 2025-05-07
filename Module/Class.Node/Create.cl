@@ -3600,11 +3600,28 @@ class Create : ClassCreate
     maide precate Text TextToken(var Text text, var TokenToken token)
     {
         var Text line;
-        line : this.TextLine(token.Row);
+        line : this.TextLineRow(token.Row);
 
         text.Data : line.Data;
         text.Range.Index : line.Range.Index + token.Range.Index;
         text.Range.Count : token.Range.Count;
         return text;
+    }
+
+    maide precate Text TextLineRow(var Int row)
+    {
+        var Source source;
+        source : this.SourceItem();
+
+        var Text a;
+        a : cast Text(source.Text.Get(row));
+        return a;
+    }
+
+    maide precate Source SourceItem()
+    {
+        var Source a;
+        a : cast Source(this.Source.Get(this.SourceIndex));
+        return a;
     }
 }
