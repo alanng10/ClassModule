@@ -4021,6 +4021,7 @@ public class Create : ClassCreate
                 ret = braceCurveRite.Range.End;
             }
         }
+
         return ret;
     }
 
