@@ -3957,4 +3957,22 @@ class Create : ClassCreate
         this.IndexRange(result.Range, index);
         return result;
     }
+
+    maide precate Int FrontSkipBrace(var Int index, var Int end)
+    {
+        var Int ret;
+
+        var TokenToken token;
+        token : this.TokenToken(index);
+
+        inf (this.TextSame(this.TextToken(this.TextA, token), this.TB(this.Limit.BraceRoundLite.Text)))
+        {
+            var Token braceRoundRite;
+            braceRoundRite : this.TokenBraceRoundRite(this.TokenA, this.Range(this.RangeA, index + 1, end));
+            inf (~(braceRoundRite = null))
+            {
+                ret : braceRoundRite.Range.End;
+            }
+        }
+    }
 }
