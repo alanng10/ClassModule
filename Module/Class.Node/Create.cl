@@ -4082,6 +4082,24 @@ class Create : ClassCreate
             {
                 openCount : openCount + 1;
             }
+
+            inf (index = null)
+            {
+                i : i + 1;
+
+                inf (~(i < end))
+                {
+                    loop : false;
+                }
+            }
         }
+
+        inf (index = null)
+        {
+            return null;
+        }
+
+        this.IndexRange(result.Range, index);
+        return result;
     }
 }
