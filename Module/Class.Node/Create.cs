@@ -3937,43 +3937,54 @@ public class Create : ClassCreate
         start = range.Start;
         end = range.End;
 
-        long i;
-        i = end;
         long index;
         index = -1;
+
+        long i;
+        i = end;
+
         bool varContinue;
         varContinue = (start < i);
+
         while (varContinue)
         {
             long j;
             j = i - 1;
+
             bool b;
             b = this.TokenSame(j, value);
+
             if (b)
             {
                 index = j;
                 varContinue = false;
             }
+
             if (!b)
             {
                 long skipBracketIndex;
                 skipBracketIndex = this.BackSkipBrace(i, start);
+
                 bool ba;
                 ba = (skipBracketIndex == -1);
+
                 if (!ba)
                 {
                     i = skipBracketIndex;
                 }
+
                 if (ba)
                 {
                     i = i - 1;
                 }
             }
+
             if (!(start < i))
             {
                 varContinue = false;
             }
         }
+
         if (index == -1)
         {
             return null;
