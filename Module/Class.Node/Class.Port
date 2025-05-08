@@ -20,6 +20,8 @@ System.List
 System.Text
     Text Text
     StringComp StringComp
+Text.Text:0.00.00
+    TextAdd Add
 Class.Infra
     ClassCreate Create
     IndexList IndexList
