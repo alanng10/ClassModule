@@ -407,7 +407,7 @@ class Create : ClassCreate
         data : arg.ListData;
 
         var Int count;
-        conut : array.Count;
+        count : array.Count;
         var Int i;
         i : 0;
         while (i < count)
