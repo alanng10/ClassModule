@@ -28,6 +28,7 @@ Class.Infra
     Index Index
     LimitList LimitList
     Limit Limit
+    NameValid NameValid
     IntParse IntParse
     StringWrite StringWrite
     Error Error
