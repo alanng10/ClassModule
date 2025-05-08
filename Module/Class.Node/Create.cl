@@ -3596,7 +3596,7 @@ class Create : ClassCreate
             return null;
         }
 
-        this.Range(result, start, signPause.Range.start);
+        this.Range(result, start, signPause.Range.Start);
         return result;
     }
 
