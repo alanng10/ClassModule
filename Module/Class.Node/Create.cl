@@ -3635,7 +3635,7 @@ class Create : ClassCreate
         return range;
     }
 
-    maide precate Bool TokenSame(var String value, var Int index)
+    maide precate Bool TokenSame(var Int index, var String value)
     {
         var TokenToken token;
         token : this.TokenToken(index);
