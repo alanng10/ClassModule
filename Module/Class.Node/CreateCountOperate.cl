@@ -1,4 +1,4 @@
-class CreateCountOperate : Any
+class CreateCountOperate : CreateOperate
 {
     maide prusate Bool Init()
     {
