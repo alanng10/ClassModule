@@ -16,6 +16,7 @@ class Create : ClassCreate
         this.SetOperate : this.CreateSetOperate();
         this.SetArg : this.CreateSetArg();
         this.NameValid : this.CreateNameValid();
+        this.ClassIntParse : this.CreateClassIntParse();
         this.StringWrite : this.CreateStringWrite();
         this.RangeA : this.CreateClassRange();
         this.RangeB : this.CreateClassRange();
@@ -81,6 +82,14 @@ class Create : ClassCreate
         return a;
     }
 
+    maide precate IntParse CreateClassIntParse()
+    {
+        var IntParse a;
+        a : new IntParse;
+        a.Init();
+        return a;
+    }
+
     maide precate StringWrite CreateStringWrite()
     {
         var StringWrite a;
@@ -138,6 +147,7 @@ class Create : ClassCreate
     field precate NodeState ParamItemNodeState { get { return data; } set { data : value; } }
     field precate NodeState ArgueItemNodeState { get { return data; } set { data : value; } }
     field precate NameValid NameValid { get { return data; } set { data : value; } }
+    field precate IntParse ClassIntParse { get { return data; } set { data : value; } }
     field precate StringWrite StringWrite { get { return data; } set { data : value; } }
     field precate Range RangeA { get { return data; } set { data : value; } }
     field precate Range RangeB { get { return data; } set { data : value; } }
