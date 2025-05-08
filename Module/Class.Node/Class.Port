@@ -34,6 +34,7 @@ Class.Infra
     Error Error
     ErrorKind ErrorKind
     Range Range
+    ClassInfra Infra
 Class.Token
     TokenToken Token
 
