@@ -318,7 +318,7 @@ class Create : ClassCreate
         var Int a;
         a : write.Arg.Index;
 
-        write.Operate : null
+        write.Operate : null;
         write.Text : null;
         return a;
     }
