@@ -1195,7 +1195,7 @@ class Create : ClassCreate
 
     maide prusate Node ExecuteVarMark(var Range range)
     {
-        return this.ExecuteVarNameResult(this.NodeKind.VarMark, range);
+        return this.ExecuteVarNameNode(this.NodeKind.VarMark, range);
     }
 
     maide prusate Node ExecuteSetMark(var Range range)
@@ -2086,7 +2086,7 @@ class Create : ClassCreate
 
     maide prusate Node ExecuteVarOperate(var Range range)
     {
-        return this.ExecuteVarNameResult(this.NodeKind.VarOperate, range);
+        return this.ExecuteVarNameNode(this.NodeKind.VarOperate, range);
     }
 
     maide prusate Node ExecuteValueOperate(var Range range)
