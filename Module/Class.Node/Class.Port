@@ -23,7 +23,9 @@ System.Text
 Class.Infra
     ClassCreate Create
     IndexList IndexList
+    Index Index
     LimitList LimitList
+    Limit Limit
     IntParse IntParse
     StringWrite StringWrite
     Error Error
