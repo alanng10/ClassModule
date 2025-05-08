@@ -2868,7 +2868,7 @@ class Create : ClassCreate
         return ret;
     }
 
-    maide precate Node ExecutIndexTwoLimitTwoOperand(var NodeKind kind, var Index index, var Limit limitA, var Limit limitB, var Range range)
+    maide precate Node ExecuteIndexTwoLimitTwoOperand(var NodeKind kind, var Index index, var Limit limitA, var Limit limitB, var Range range)
     {
         var Int start;
         var Int end;
