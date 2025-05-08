@@ -27,6 +27,8 @@ Class.Infra
     Error Error
     ErrorKind ErrorKind
     Range Range
+Class.Token
+    TokenToken Token
 
 [Export]
 
