@@ -24,16 +24,17 @@ Text.Text:0.00.00
     TextAdd Add
 Class.Infra
     ClassCreate Create
-    IndexList IndexList
+    Source Source
+    Range Range
+    Error Error
+    ErrorKind ErrorKind
     Index Index
-    LimitList LimitList
+    IndexList IndexList
     Limit Limit
+    LimitList LimitList
     NameValid NameValid
     IntParse IntParse
     StringWrite StringWrite
-    Error Error
-    ErrorKind ErrorKind
-    Range Range
     ClassInfra Infra
 Class.Token
     TokenToken Token
