@@ -339,7 +339,7 @@ class Create : ClassCreate
 
         write.Arg.Data : null;
         write.Arg.Index : 0;
-        write.Operate : null
+        write.Operate : null;
         write.Text : null;
         return true;
     }
