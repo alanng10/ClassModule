@@ -3600,9 +3600,9 @@ class Create : ClassCreate
         return result;
     }
 
-    maide prusate Bool NodeInfo(var Node node, var Int start, var Int end)
+    maide prusate Bool NodeInfo(var Node node, var Range range)
     {
-        this.Range(node.Range, start, end);
+        this.Range(node.Range, range.Start, range.End);
         return true;
     }
 
