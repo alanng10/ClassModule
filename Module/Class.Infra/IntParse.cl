@@ -40,7 +40,7 @@ class IntParse : TextAdd
         var Int kaa;
         kaa : this.TextInfra.DataCharGet(data, index + 3);
 
-        var Bool negate
+        var Bool negate;
         negate : this.Sign(kaa);
 
         inf (negate = null)
@@ -75,7 +75,7 @@ class IntParse : TextAdd
     {
         var Int index;
         var Int count;
-        index : text.Range.Index
+        index : text.Range.Index;
         count : text.Range.Count;
 
         inf (count < 3)
@@ -122,7 +122,7 @@ class IntParse : TextAdd
     {
         var Int index;
         var Int count;
-        index : text.Range.Index
+        index : text.Range.Index;
         count : text.Range.Count;
 
         inf (count < 4)
@@ -145,7 +145,7 @@ class IntParse : TextAdd
         var Int kaa;
         kaa : this.TextInfra.DataCharGet(data, index + 2);
 
-        var Bool negate
+        var Bool negate;
         negate : this.Sign(kaa);
 
         inf (negate = null)
