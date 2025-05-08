@@ -213,7 +213,7 @@ class IntParse : TextAdd
             max : this.ClassInfra.IntSignNegateMax;
         }
 
-        inf (max < k)
+        inf (max < value)
         {
             return null;
         }
@@ -222,11 +222,11 @@ class IntParse : TextAdd
 
         inf (~negate)
         {
-            a : k;
+            a : value;
         }
         inf (negate)
         {
-            a : 0 - k;
+            a : 0 - value;
         }
         return a;
     }

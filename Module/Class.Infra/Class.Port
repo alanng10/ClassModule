@@ -24,7 +24,6 @@ System.Text
     TextLess Less
     Format Format
     FormatArg FormatArg
-    IntParse IntParse
     StringComp StringComp
     StringAdd StringAdd
     StringData StringData
