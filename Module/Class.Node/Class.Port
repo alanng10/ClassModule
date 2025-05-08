@@ -36,6 +36,7 @@ Class.Infra
     NameValid NameValid
     IntParse IntParse
     StringWrite StringWrite
+    StringWriteArg StringWriteArg
     ClassInfra Infra
 Class.Token
     TokenToken Token
