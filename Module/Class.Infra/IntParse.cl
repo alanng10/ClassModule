@@ -13,7 +13,7 @@ class IntParse : TextAdd
     {
         var Int index;
         var Int count;
-        index : text.Range.Index
+        index : text.Range.Index;
         count : text.Range.Count;
 
         inf (count < 5)
