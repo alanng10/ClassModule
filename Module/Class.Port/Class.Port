@@ -1,5 +1,5 @@
 [Module]
-Class.Port
+Class.Port:0.00.00
 
 [Import]
 System.Infra
@@ -20,7 +20,7 @@ System.Text
     TextInfra Infra
 Text.Text:0.00.00
     TextAdd Add
-Class.Infra
+Class.Infra:0.00.00
     ModuleRef ModuleRef
     ClassInfra Infra
 

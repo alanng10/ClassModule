@@ -1,5 +1,5 @@
 [Module]
-Class.Node
+Class.Node:0.00.00
 
 [Import]
 System.Infra
@@ -23,7 +23,7 @@ System.Text
     TextInfra Infra
 Text.Text:0.00.00
     TextAdd Add
-Class.Infra
+Class.Infra:0.00.00
     ClassCreate Create
     Source Source
     Range Range
@@ -38,7 +38,7 @@ Class.Infra
     StringWrite StringWrite
     StringWriteArg StringWriteArg
     ClassInfra Infra
-Class.Token
+Class.Token:0.00.00
     TokenToken Token
     Code Code
 

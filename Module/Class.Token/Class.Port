@@ -1,5 +1,5 @@
 [Module]
-Class.Token
+Class.Token:0.00.00
 
 [Import]
 System.Infra
@@ -17,7 +17,7 @@ System.Text
     Text Text
     TextForm Form
     TextInfra Infra
-Class.Infra
+Class.Infra:0.00.00
     ClassCreate Create
     Source Source
     ClassInfra Infra
