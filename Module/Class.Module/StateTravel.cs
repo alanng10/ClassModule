@@ -10,7 +10,7 @@ public class StateTravel : Travel
         this.ClassInfra = ClassInfra.This;
         this.TextStringValue = TextStringValue.This;
 
-        this.System = this.Create.SystemClass;
+        this.System = this.Create.System;
         this.NullClass = this.Create.NullClass;
 
         this.VarStack = new Stack();
@@ -31,7 +31,7 @@ public class StateTravel : Travel
     protected virtual ListInfra ListInfra { get; set; }
     protected virtual ClassInfra ClassInfra { get; set; }
     protected virtual TextStringValue TextStringValue { get; set; }
-    protected virtual SystemClass System { get; set; }
+    protected virtual System System { get; set; }
     protected virtual ClassClass NullClass { get; set; }
     protected virtual ClassClass ThisClass { get; set; }
     protected virtual ClassClass ThisResultClass { get; set; }
@@ -103,7 +103,7 @@ public class StateTravel : Travel
         Table o;
         o = this.ClassInfra.TableCreateStringLess();
 
-        
+
         this.ListInfra.TableAdd(o, dataVar.Name, dataVar);
 
         this.VarStack.Push(o);
@@ -148,7 +148,7 @@ public class StateTravel : Travel
 
         Table o;
         o = this.ClassInfra.TableCreateStringLess();
-        
+
         this.ListInfra.TableAdd(o, dataVar.Name, dataVar);
         this.ListInfra.TableAdd(o, valueVar.Name, valueVar);
 
