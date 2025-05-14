@@ -1,4 +1,4 @@
-class SystemClass : Any
+class System : Any
 {
     field prusate Class Any { get { return data; } set { data : value; } }
     field prusate Class Bool { get { return data; } set { data : value; } }
