@@ -310,6 +310,24 @@ class Infra : Any
         return varField;
     }
 
+    maide prusate Maide MaideTrigg(var Class varClass, var String name, var Class thisClass, var Class anyClass, var Class nullClass)
+    {
+        inf (varClass = nullClass)
+        {
+            return null;
+        }
+
+        var Maide varMaide;
+        varMaide : this.Maide(varClass, name, anyClass);
+
+        inf (~this.ValidCount(thisClass, varClass, varMaide.Parent, varMaide.Count, anyClass, nullClass))
+        {
+            return null;
+        }
+
+        return varMaide;
+    }
+
     maide prusate Bool ValidClass(var Class varClass, var Class requireClass, var Class anyClass, var Class nullClass)
     {
         var Class k;
