@@ -244,6 +244,32 @@ class Infra : Any
         return null;
     }
 
+    maide prusate Any Comp(var Class varClass, var String name, var Class anyClass)
+    {
+        var Class k;
+        k : varClass;
+
+        while (~(k = null))
+        {
+            var Any kk;
+            kk : this.CompDefine(k, name);
+
+            inf (~(kk = null))
+            {
+                return kk;
+            }
+
+            var Class kd;
+            inf (~(k = anyClass))
+            {
+                kd : k.Base;
+            }
+            k : kd;
+        }
+
+        return null;
+    }
+
     maide prusate Bool ValidClass(var Class varClass, var Class requireClass, var Class anyClass, var Class nullClass)
     {
         var Class k;
