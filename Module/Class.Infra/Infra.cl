@@ -292,6 +292,11 @@ class Infra : Any
         return k;
     }
 
+    maide prusate Field FieldTrigg(var Class varClass, var String name, var Class thisClass, var Class anyClass, var Class nullClass)
+    {
+        
+    }
+
     maide prusate Bool ValidClass(var Class varClass, var Class requireClass, var Class anyClass, var Class nullClass)
     {
         var Class k;
