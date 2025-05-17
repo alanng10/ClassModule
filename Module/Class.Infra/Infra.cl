@@ -270,6 +270,17 @@ class Infra : Any
         return null;
     }
 
+    maide prusate Field Field(var Class varClass, var String name, var Class anyClass)
+    {
+        var Any kk;
+        kk : this.Comp(varClass, name, anyClass);
+
+        var Field k;
+        k : cast Field(kk);
+
+        return k;
+    }
+
     maide prusate Bool ValidClass(var Class varClass, var Class requireClass, var Class anyClass, var Class nullClass)
     {
         var Class k;
