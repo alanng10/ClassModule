@@ -302,6 +302,11 @@ class Infra : Any
         var Field varField;
         varField : this.Field(varClass, name, anyClass);
 
+        inf (varField = null)
+        {
+            return null;
+        }
+
         inf (~this.ValidCount(thisClass, varClass, varField.Parent, varField.Count, anyClass, nullClass))
         {
             return null;
@@ -319,6 +324,11 @@ class Infra : Any
 
         var Maide varMaide;
         varMaide : this.Maide(varClass, name, anyClass);
+
+        inf (varMaide = null)
+        {
+            return null;
+        }
 
         inf (~this.ValidCount(thisClass, varClass, varMaide.Parent, varMaide.Count, anyClass, nullClass))
         {
