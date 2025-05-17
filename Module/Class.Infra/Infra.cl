@@ -404,7 +404,7 @@ class Infra : Any
 
         inf (count = countList.Private)
         {
-            inf (thisClass = triggClass)
+            inf (thisClass = triggClass & triggClass = varClass)
             {
                 return true;
             }
