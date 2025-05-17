@@ -281,6 +281,17 @@ class Infra : Any
         return k;
     }
 
+    maide prusate Maide Maide(var Class varClass, var String name, var Class anyClass)
+    {
+        var Any kk;
+        kk : this.Comp(varClass, name, anyClass);
+
+        var Maide k;
+        k : cast Maide(kk);
+
+        return k;
+    }
+
     maide prusate Bool ValidClass(var Class varClass, var Class requireClass, var Class anyClass, var Class nullClass)
     {
         var Class k;
