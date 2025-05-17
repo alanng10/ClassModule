@@ -294,7 +294,20 @@ class Infra : Any
 
     maide prusate Field FieldTrigg(var Class varClass, var String name, var Class thisClass, var Class anyClass, var Class nullClass)
     {
-        
+        inf (varClass = nullClass)
+        {
+            return null;
+        }
+
+        var Field varField;
+        varField : this.Field(varClass, name, anyClass);
+
+        inf (~this.ValidCount(thisClass, varClass, varField.Parent, varField.Count, anyClass, nullClass))
+        {
+            return null;
+        }
+
+        return varField;
     }
 
     maide prusate Bool ValidClass(var Class varClass, var Class requireClass, var Class anyClass, var Class nullClass)
