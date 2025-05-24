@@ -479,6 +479,80 @@ class Infra : Any
         return true;
     }
 
+    maide prusate Bool VirtualMaide(var Maide a, var Class anyClass, var Iter iterA, var Iter iterB)
+    {
+        var Class varClass;
+        varClass : a.Parent;
+
+        inf (varClass = anyClass)
+        {
+            return true;
+        }
+
+        var Any ka;
+        ka : this.Comp(varClass.Base, a.Name, anyClass);
+
+        inf (ka = null)
+        {
+            return true;
+        }
+
+        var Maide k;
+        k : cast Maide(ka);
+
+        inf (k = null)
+        {
+            return false;
+        }
+
+        inf (!this.VirtualCount(varClass.Module, k.Count, k.Parent.Module))
+        {
+            return false;
+        }
+
+        var Bool b;
+        b : false;
+
+        inf (~b)
+        {
+            inf (~(a.Class = k.Class))
+            {
+                b : true;
+            }
+        }
+
+        inf (~b)
+        {
+            inf (~(a.Count = k.Count))
+            {
+                b : true;
+            }
+        }
+
+        inf (~b)
+        {
+            inf (~this.VirtualParam(a.Param, k.Param, iterA, iterB))
+            {
+                b : true;
+            }
+        }
+
+        inf (b)
+        {
+            return false;
+        }
+
+        var Maide kd;
+        kd : k;
+        inf (~(k.Virtual = null))
+        {
+            kd : k.Virtual;
+        }
+
+        a.Virtual : kd;
+        return true;
+    }
+
     maide private Infra Add(var StringAdd k, var String a)
     {
         this.TextInfra.AddString(k, a);
