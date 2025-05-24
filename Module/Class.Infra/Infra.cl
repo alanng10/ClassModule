@@ -612,6 +612,11 @@ class Infra : Any
         return true;
     }
 
+    maide prusate String ClassModulePath(var String classPath)
+    {
+        return classPath;
+    }
+
     maide private Infra Add(var StringAdd k, var String a)
     {
         this.TextInfra.AddString(k, a);
