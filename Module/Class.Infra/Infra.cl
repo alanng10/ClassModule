@@ -413,6 +413,38 @@ class Infra : Any
         return true;
     }
 
+    maide prusate Bool VirtualField(var Field a, var Class anyClass)
+    {
+        var Class varClass;
+        varClass : a.Parent;
+
+        inf (varClass = anyClass)
+        {
+            return true;
+        }
+
+        var Any ka;
+        ka : this.Comp(varClass.Base, a.Name, anyClass);
+
+        inf (ka = null)
+        {
+            return true;
+        }
+
+        var Field k;
+        k : cast Field(ka);
+
+        inf (k = null)
+        {
+            return false;
+        }
+
+        inf (!this.VirtualCount(varClass.Module, k.Count, k.Parent.Module))
+        {
+            return false;
+        }
+    }
+
     maide private Infra Add(var StringAdd k, var String a)
     {
         this.TextInfra.AddString(k, a);
