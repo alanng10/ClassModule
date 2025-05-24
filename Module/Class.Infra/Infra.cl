@@ -553,6 +553,24 @@ class Infra : Any
         return true;
     }
 
+    maide prusate Bool VirtualCount(var Module thisModule, var Count count, var Module module)
+    {
+        inf (count = this.CountList.Pronate)
+        {
+            inf (~(thisModule = module))
+            {
+                return false;
+            }
+        }
+
+        inf (count = this.CountList.Private)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
     maide private Infra Add(var StringAdd k, var String a)
     {
         this.TextInfra.AddString(k, a);
