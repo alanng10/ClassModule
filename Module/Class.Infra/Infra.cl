@@ -571,6 +571,47 @@ class Infra : Any
         return true;
     }
 
+    maide prusate Bool VirtualParam(var Table varA, var Table varB, var Iter iterA, var Iter iterB)
+    {
+        inf (~(varA.Count = varB.Count))
+        {
+            return false;
+        }
+
+        varA.IterSet(iterA);
+
+        varB.IterSet(iterB);
+
+        var Int count;
+        count : varA.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            iterA.Next();
+            iterB.Next();
+
+            var Var ka;
+            var Var kb;
+            ka : cast Var(iterA.Value);
+            kb : cast Var(iterB.Value);
+
+            var Bool b;
+            b : (ka.Class = kb.Class);
+            inf (~b)
+            {
+                return false;
+            }
+
+            i : i + 1;
+        }
+
+        iterA.Clear();
+        iterB.Clear();
+
+        return true;
+    }
+
     maide private Infra Add(var StringAdd k, var String a)
     {
         this.TextInfra.AddString(k, a);
