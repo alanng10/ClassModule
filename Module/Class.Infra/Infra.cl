@@ -443,6 +443,40 @@ class Infra : Any
         {
             return false;
         }
+
+        var Bool b;
+        b : false;
+
+        inf (~b)
+        {
+            inf (~(a.Class = k.Class))
+            {
+                b : true;
+            }
+        }
+
+        inf (~b)
+        {
+            inf (~(a.Count = k.Count))
+            {
+                b : true;
+            }
+        }
+
+        inf (b)
+        {
+            return false;
+        }
+
+        var Field kd;
+        kd : k;
+        inf (~(k.Virtual = null))
+        {
+            kd : k.Virtual;
+        }
+
+        a.Virtual : kd;
+        return true;
     }
 
     maide private Infra Add(var StringAdd k, var String a)
