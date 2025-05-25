@@ -52,4 +52,22 @@ class Create : ClassCreate
         a.Init();
         return a;
     }
+
+    maide precate CompTravel CreateCompTravel()
+    {
+        var CompTravel a;
+        a : new CompTravel;
+        a.Create : this;
+        a.Init();
+        return a;
+    }
+
+    maide precate StateTravel CreateStateTravel()
+    {
+        var StateTravel a;
+        a : new StateTravel;
+        a.Create : this;
+        a.Init();
+        return a;
+    }
 }
