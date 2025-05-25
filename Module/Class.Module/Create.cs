@@ -7,19 +7,85 @@ public class Create : ClassCreate
         base.Init();
         this.ListInfra = ListInfra.This;
         this.ClassInfra = ClassInfra.This;
+        this.Count = CountList.This;
+        this.ErrorKind = ErrorKindList.This;
 
-        this.ErrorKind = this.CreateErrorKindList();
-        this.Count = this.CreateCountList();
+        this.System = this.CreateSystem();
+        this.NullClass = this.CreateNullClass();
+        this.InitTravel = this.CreateInitTravel();
+        this.ClassTravel = this.CreateClassTravel();
+        this.CompTravel = this.CreateCompTravel();
+        this.StateTravel = this.CreateStateTravel();
+        this.ModuleRef = this.CreateModuleRef();
 
-        this.System = new System();
-        this.System.Init();
-
-        this.ModuleRef = this.ClassInfra.ModuleRefCreate(null, 0);
-
-        this.InitNullClass();
+        this.SourceIndex = -1;
 
         this.SSystemInfra = this.S("System.Infra");
+        this.SAny = this.S("Any");
+        this.SBool = this.S("Bool");
+        this.SInt = this.S("Int");
+        this.SString = this.S("String");
+        this.SSystemEntry = this.S("System.Entry");
+        this.SEntry = this.S("Entry");
         return true;
+    }
+
+    protected virtual System CreateSystem()
+    {
+        System a;
+        a = new System();
+        a.Init();
+        return a;
+    }
+
+    protected virtual ClassClass CreateNullClass()
+    {
+        ClassClass a;
+        a = new ClassClass();
+        a.Init();
+        a.Name = this.S("_");
+        return a;
+    }
+
+    protected virtual InitTravel CreateInitTravel()
+    {
+        InitTravel a;
+        a = new InitTravel();
+        a.Create = this;
+        a.Init();
+        return a;
+    }
+
+    protected virtual ClassTravel CreateClassTravel()
+    {
+        ClassTravel a;
+        a = new ClassTravel();
+        a.Create = this;
+        a.Init();
+        return a;
+    }
+
+    protected virtual CompTravel CreateCompTravel()
+    {
+        CompTravel a;
+        a = new CompTravel();
+        a.Create = this;
+        a.Init();
+        return a;
+    }
+
+    protected virtual StateTravel CreateStateTravel()
+    {
+        StateTravel a;
+        a = new StateTravel();
+        a.Create = this;
+        a.Init();
+        return a;
+    }
+
+    protected virtual ModuleRef CreateModuleRef()
+    {
+        return this.ClassInfra.ModuleRefCreate(null, 0);
     }
 
     public virtual Array Source { get; set; }
@@ -28,29 +94,30 @@ public class Create : ClassCreate
     public virtual Table ModuleTable { get; set; }
     public virtual Table ImportClass { get; set; }
     public virtual Result Result { get; set; }
+    public virtual long SourceIndex { get; set; }
     public virtual System System { get; set; }
-    public virtual ErrorKindList ErrorKind { get; set; }
-    public virtual CountList Count { get; set; }
     public virtual ClassClass NullClass { get; set; }
     protected virtual ListInfra ListInfra { get; set; }
     protected virtual ClassInfra ClassInfra { get; set; }
+    protected virtual CountList Count { get; set; }
+    protected virtual ErrorKindList ErrorKind { get; set; }
+    protected virtual InitTravel InitTravel { get; set; }
+    protected virtual ClassTravel ClassTravel { get; set; }
+    protected virtual CompTravel CompTravel { get; set; }
+    protected virtual StateTravel StateTravel { get; set; }
     protected virtual List ErrorList { get; set; }
     protected virtual Table BaseTable { get; set; }
+    protected virtual Table VirtualTable { get; set; }
     protected virtual Table RangeTable { get; set; }
-    protected virtual Table ClassVirtualTable { get; set; }
     protected virtual ModuleRef ModuleRef { get; set; }
-    protected virtual bool SystemInfraModule { get; set; }
+    protected virtual bool SystemInfra { get; set; }
     protected virtual String SSystemInfra { get; set; }
-
-    protected virtual bool InitNullClass()
-    {
-        ClassClass a;
-        a = new ClassClass();
-        a.Init();
-        a.Name = this.S("_");
-        this.NullClass = a;
-        return true;
-    }
+    protected virtual String SAny { get; set; }
+    protected virtual String SBool { get; set; }
+    protected virtual String SInt { get; set; }
+    protected virtual String SString { get; set; }
+    protected virtual String SSystemEntry { get; set; }
+    protected virtual String SEntry { get; set; }
 
     public override bool Execute()
     {
@@ -60,7 +127,7 @@ public class Create : ClassCreate
         this.ErrorList = new List();
         this.ErrorList.Init();
 
-        this.SystemInfraModule = this.IsSystemInfraModule();
+        this.SystemInfra = this.ModuleSystemInfra();
 
         this.ExecuteInit();
         this.ExecuteClass();
@@ -77,104 +144,65 @@ public class Create : ClassCreate
         return true;
     }
 
-    protected virtual bool SystemClassSet()
+    protected virtual bool SystemSet()
     {
-        ClassModule d;
-        d = null;
+        ClassModule k;
+        k = null;
 
-        if (this.SystemInfraModule)
+        if (this.SystemInfra)
         {
-            d = this.Module;
+            k = this.Module;
         }
-        if (!this.SystemInfraModule)
+        if (!this.SystemInfra)
         {
-            d = this.ModuleGet(this.SSystemInfra);
+            k = this.ModuleGet(this.SSystemInfra);
         }
 
-        this.System.Any = this.ModuleClassGet(d, this.S("Any"));
-        this.System.Bool = this.ModuleClassGet(d, this.S("Bool"));
-        this.System.Int = this.ModuleClassGet(d, this.S("Int"));
-        this.System.String = this.ModuleClassGet(d, this.S("String"));
+        this.System.Any = this.ModuleClassGet(k, this.SAny);
+        this.System.Bool = this.ModuleClassGet(k, this.SBool);
+        this.System.Int = this.ModuleClassGet(k, this.SInt);
+        this.System.String = this.ModuleClassGet(k, this.SString);
         return true;
     }
 
     protected virtual ClassModule ModuleGet(String moduleName)
     {
         this.ModuleRef.Name = moduleName;
+
         ClassModule a;
-        a = (ClassModule)this.ModuleTable.Get(this.ModuleRef);
+        a = this.ModuleTable.Get(this.ModuleRef) as ClassModule;
         return a;
     }
 
     protected virtual ClassClass ModuleClassGet(ClassModule module, String className)
     {
-        return (ClassClass)module.Class.Get(className);
+        return module.Class.Get(className) as ClassClass;
     }
 
-    protected virtual bool IsSystemInfraModule()
+    protected virtual bool ModuleSystemInfra()
     {
         return this.TextSame(this.TA(this.Module.Ref.Name), this.TB(this.SSystemInfra));
     }
 
-    protected virtual ErrorKindList CreateErrorKindList()
-    {
-        return ErrorKindList.This;
-    }
-
-    protected virtual CountList CreateCountList()
-    {
-        return CountList.This;
-    }
-
-    public virtual Info CreateInfo()
-    {
-        Info a;
-        a = new Info();
-        a.Init();
-        return a;
-    }
-
     protected virtual bool ExecuteInit()
     {
-        Travel travel;
-        travel = this.InitTravel();
-        this.ExecuteRootTravel(travel);
+        this.ExecuteTravel(this.InitTravel);
         return true;
-    }
-
-    protected virtual Travel InitTravel()
-    {
-        InitTravel a;
-        a = new InitTravel();
-        a.Create = this;
-        a.Init();
-        return a;
     }
 
     protected virtual bool ExecuteClass()
     {
-        Travel travel;
-        travel = this.ClassTravel();
-        this.ExecuteRootTravel(travel);
+        this.ExecuteTravel(this.ClassTravel);
 
-        this.SystemClassSet();
+        this.SystemSet();
         return true;
-    }
-
-    protected virtual Travel ClassTravel()
-    {
-        ClassTravel a;
-        a = new ClassTravel();
-        a.Create = this;
-        a.Init();
-        return a;
     }
 
     protected virtual bool ExecuteBase()
     {
-        this.SetBaseTable();
+        this.BaseTableSet();
 
-        this.AddBaseList();
+        this.BaseClassSet();
 
         this.BaseTable = null;
 
@@ -182,26 +210,7 @@ public class Create : ClassCreate
         return true;
     }
 
-    protected virtual bool BaseCountSet()
-    {
-        Iter iter;
-        iter = this.Module.Class.IterCreate();
-        this.Module.Class.IterSet(iter);
-        while (iter.Next())
-        {
-            ClassClass ca;
-            ca = (ClassClass)iter.Value;
-
-            long ka;
-            ka = this.ClassInfra.BaseCount(ca, this.System.Any);
-
-            ca.BaseCount = ka;
-        }
-
-        return true;
-    }
-
-    protected virtual bool SetBaseTable()
+    protected virtual bool BaseTableSet()
     {
         this.BaseTable = this.ClassInfra.TableCreateRefLess();
 
@@ -211,16 +220,16 @@ public class Create : ClassCreate
         while (iter.Next())
         {
             ClassClass varClass;
-            varClass = (ClassClass)iter.Value;
-            this.BaseMapAdd(varClass);
+            varClass = iter.Value as ClassClass;
+            this.BaseTableAdd(varClass);
         }
         return true;
     }
 
-    protected virtual bool BaseMapAdd(ClassClass varClass)
+    protected virtual bool BaseTableAdd(ClassClass varClass)
     {
         NodeClass nodeClass;
-        nodeClass = (NodeClass)varClass.Any;
+        nodeClass = varClass.Any as NodeClass;
 
         ClassName nodeBase;
         nodeBase = nodeClass.Base;
@@ -246,15 +255,15 @@ public class Create : ClassCreate
         ba = (varBase == null);
         if (ba)
         {
-            this.Error(this.ErrorKind.BaseUndefine, nodeClass, this.SourceGet(varClass.Index));
+            this.Error(this.ErrorKind.BaseUndefine, nodeClass, varClass.Index);
             b = true;
         }
 
         if (!ba)
         {
-            if (!this.ValidBase(varBase))
+            if (!this.BaseValidClass(varBase))
             {
-                this.Error(this.ErrorKind.BaseUndefine, nodeClass, this.SourceGet(varClass.Index));
+                this.Error(this.ErrorKind.BaseUndefine, nodeClass, varClass.Index);
                 b = true;
             }
         }
@@ -271,19 +280,19 @@ public class Create : ClassCreate
         return true;
     }
 
-    protected virtual bool ValidBase(ClassClass varClass)
+    protected virtual bool BaseValidClass(ClassClass varClass)
     {
-        System d;
-        d = this.System;
+        System k;
+        k = this.System;
 
-        if (varClass == d.Bool | varClass == d.Int | varClass == d.String)
+        if (varClass == k.Bool | varClass == k.Int | varClass == k.String)
         {
             return false;
         }
         return true;
     }
 
-    protected virtual bool AddBaseList()
+    protected virtual bool BaseClassSet()
     {
         ClassClass anyClass;
         anyClass = this.System.Any;
@@ -310,7 +319,7 @@ public class Create : ClassCreate
 
             if (!ba)
             {
-                b = this.ValidClassDepend(varClass);
+                b = this.BaseValidDepend(varClass);
             }
 
             ClassClass a;
@@ -321,33 +330,24 @@ public class Create : ClassCreate
                 NodeClass nodeClass;
                 nodeClass = varClass.Any as NodeClass;
 
-                this.Error(this.ErrorKind.BaseUndefine, nodeClass, this.SourceGet(varClass.Index));
+                this.Error(this.ErrorKind.BaseUndefine, nodeClass, varClass.Index);
 
                 a = anyClass;
             }
+
             if (b)
             {
                 a = iter.Value as ClassClass;
             }
+
             varClass.Base = a;
         }
+
         return true;
     }
 
-    protected virtual bool ValidClassDepend(ClassClass varClass)
+    protected virtual bool BaseValidDepend(ClassClass varClass)
     {
-        ListInfra listInfra;
-        listInfra = this.ListInfra;
-
-        ClassModule module;
-        module = this.Module;
-
-        Table baseTable;
-        baseTable = this.BaseTable;
-
-        ClassClass anyClass;
-        anyClass = this.System.Any;
-
         Table table;
         table = this.ClassInfra.TableCreateRefLess();
 
@@ -356,7 +356,7 @@ public class Create : ClassCreate
 
         while (!(a == null))
         {
-            if (!(a.Module == module))
+            if (!(a.Module == this.Module))
             {
                 return true;
             }
@@ -366,41 +366,59 @@ public class Create : ClassCreate
                 return false;
             }
 
-            listInfra.TableAdd(table, a, a);
+            this.ListInfra.TableAdd(table, a, a);
 
             ClassClass ka;
             ka = null;
-            if (!(a == anyClass))
+            if (!(a == this.System.Any))
             {
-                ka = baseTable.Get(a) as ClassClass;
+                ka = this.BaseTable.Get(a) as ClassClass;
             }
             a = ka;
         }
+
+        return true;
+    }
+
+    protected virtual bool BaseCountSet()
+    {
+        Iter iter;
+        iter = this.Module.Class.IterCreate();
+        this.Module.Class.IterSet(iter);
+        while (iter.Next())
+        {
+            ClassClass k;
+            k = iter.Value as ClassClass;
+
+            long ka;
+            ka = this.ClassInfra.BaseCount(k, this.System.Any);
+
+            k.BaseCount = ka;
+        }
+
         return true;
     }
 
     protected virtual bool ExecuteComp()
     {
-        Travel travel;
-        travel = this.CompTravel();
-        this.ExecuteClassTravel(travel);
+        this.ExecuteTravel(this.CompTravel);
         return true;
     }
 
     protected virtual bool ExecuteVirtual()
     {
-        this.ClassVirtualSet();
+        this.VirtualSet();
 
-        this.ClassRangeSet();
+        this.VirtualRange();
         return true;
     }
 
-    protected virtual bool ClassVirtualSet()
+    protected virtual bool VirtualSet()
     {
         Table table;
         table = this.Module.Class;
 
-        this.ClassVirtualTable = this.ClassInfra.TableCreateRefLess();
+        this.VirtualTable = this.ClassInfra.TableCreateRefLess();
 
         Iter iter;
         iter = table.IterCreate();
@@ -408,22 +426,19 @@ public class Create : ClassCreate
         while (iter.Next())
         {
             ClassClass a;
-            a = (ClassClass)iter.Value;
+            a = iter.Value as ClassClass;
 
-            this.ClassVirtualSetClass(a);
+            this.VirtualSetClass(a);
         }
 
-        this.ClassVirtualTable = null;
+        this.VirtualTable = null;
 
         return true;
     }
 
-    protected virtual bool ClassVirtualSetClass(ClassClass varClass)
+    protected virtual bool VirtualSetClass(ClassClass varClass)
     {
-        Table k;
-        k = this.ClassVirtualTable;
-
-        if (k.Valid(varClass))
+        if (this.VirtualTable.Valid(varClass))
         {
             return true;
         }
@@ -436,26 +451,22 @@ public class Create : ClassCreate
         bool b;
         b = (varClass == this.System.Any);
 
-        if (b)
-        {
-            this.ClassVirtualSetClassComp(varClass);
-        }
         if (!b)
         {
             ClassClass baseClass;
             baseClass = varClass.Base;
 
-            this.ClassVirtualSetClass(baseClass);
-
-            this.ClassVirtualSetClassComp(varClass);
+            this.VirtualSetClass(baseClass);
         }
 
-        this.ListInfra.TableAdd(k, varClass, varClass);
+        this.VirtualSetClassComp(varClass);
+
+        this.ListInfra.TableAdd(this.VirtualTable, varClass, varClass);
 
         return true;
     }
 
-    protected virtual bool ClassVirtualSetClassComp(ClassClass varClass)
+    protected virtual bool VirtualSetClassComp(ClassClass varClass)
     {
         Table fieldTable;
         fieldTable = this.ClassInfra.TableCreateStringLess();
@@ -469,17 +480,17 @@ public class Create : ClassCreate
         while (iter.Next())
         {
             Field field;
-            field = (Field)iter.Value;
+            field = iter.Value as Field;
 
             bool ba;
-            ba = this.VirtualField(field);
+            ba = this.ClassInfra.VirtualField(field, this.System.Any);
 
             NodeField node;
-            node = (NodeField)field.Any;
+            node = field.Any as NodeField;
 
             if (!ba)
             {
-                this.Error(this.ErrorKind.FieldUndefine, node, this.SourceGet(varClass.Index));
+                this.Error(this.ErrorKind.FieldUndefine, node, varClass.Index);
             }
 
             if (ba)
@@ -492,22 +503,30 @@ public class Create : ClassCreate
             }
         }
 
+        Iter iterA;
+        iterA = new TableIter();
+        iterA.Init();
+
+        Iter iterB;
+        iterB = new TableIter();
+        iterB.Init();
+
         iter = varClass.Maide.IterCreate();
         varClass.Maide.IterSet(iter);
         while (iter.Next())
         {
             Maide maide;
-            maide = (Maide)iter.Value;
+            maide = iter.Value as Maide;
 
             bool bb;
-            bb = this.VirtualMaide(maide);
+            bb = this.ClassInfra.VirtualMaide(maide, this.System.Any, iterA, iterB);
 
             NodeMaide node;
-            node = (NodeMaide)maide.Any;
+            node = maide.Any as NodeMaide;
 
             if (!bb)
             {
-                this.Error(this.ErrorKind.MaideUndefine, node, this.SourceGet(varClass.Index));
+                this.Error(this.ErrorKind.MaideUndefine, node, varClass.Index);
             }
 
             if (bb)
@@ -527,19 +546,10 @@ public class Create : ClassCreate
 
     public virtual Info Info(NodeNode node)
     {
-        return (Info)node.NodeAny;
+        return node.NodeAny as Info;
     }
 
-    protected virtual Travel CompTravel()
-    {
-        CompTravel a;
-        a = new CompTravel();
-        a.Create = this;
-        a.Init();
-        return a;
-    }
-
-    protected virtual bool ClassRangeSet()
+    protected virtual bool VirtualRange()
     {
         Table table;
         table = this.Module.Class;
@@ -552,21 +562,18 @@ public class Create : ClassCreate
         while (iter.Next())
         {
             ClassClass a;
-            a = (ClassClass)iter.Value;
+            a = iter.Value as ClassClass;
 
-            this.ClassRangeSetClass(a);
+            this.VirtualRangeClass(a);
         }
 
         this.RangeTable = null;
         return true;
     }
 
-    protected virtual bool ClassRangeSetClass(ClassClass varClass)
+    protected virtual bool VirtualRangeClass(ClassClass varClass)
     {
-        Table k;
-        k = this.RangeTable;
-
-        if (k.Valid(varClass))
+        if (this.RangeTable.Valid(varClass))
         {
             return true;
         }
@@ -590,205 +597,22 @@ public class Create : ClassCreate
             ClassClass baseClass;
             baseClass = varClass.Base;
 
-            this.ClassRangeSetClass(baseClass);
+            this.VirtualRangeClass(baseClass);
 
             varClass.FieldStart = baseClass.FieldStart + baseClass.Field.Count;
 
             varClass.MaideStart = baseClass.MaideStart + baseClass.Maide.Count;
         }
 
-        this.ListInfra.TableAdd(k, varClass, varClass);
-
-        return true;
-    }
-
-    public virtual bool VirtualField(Field a)
-    {
-        ClassClass varClass;
-        varClass = a.Parent;
-
-        if (varClass == this.System.Any)
-        {
-            return true;
-        }
-
-        object ka;
-        ka = this.CompDefined(varClass.Base, a.Name);
-
-        if (ka == null)
-        {
-            return true;
-        }
-
-        if (ka is Maide)
-        {
-            return false;
-        }
-
-        Field k;
-        k = (Field)ka;
-
-        bool b;
-        b = false;
-
-        if (!b)
-        {
-            if (!(a.Class == k.Class))
-            {
-                b = true;
-            }
-        }
-
-        if (!b)
-        {
-            if (!(a.Count == k.Count))
-            {
-                b = true;
-            }
-        }
-
-        if (b)
-        {
-            return false;
-        }
-
-        Field h;
-        h = k;
-        if (!(k.Virtual == null))
-        {
-            h = k.Virtual;
-        }
-
-        a.Virtual = h;
-        return true;
-    }
-
-    public virtual bool VirtualMaide(Maide a)
-    {
-        ClassClass varClass;
-        varClass = a.Parent;
-
-        if (varClass == this.System.Any)
-        {
-            return true;
-        }
-
-        object ka;
-        ka = this.CompDefined(varClass.Base, a.Name);
-
-        if (ka == null)
-        {
-            return true;
-        }
-
-        if (ka is Field)
-        {
-            return false;
-        }
-
-        Maide k;
-        k = (Maide)ka;
-
-        bool b;
-        b = false;
-
-        if (!b)
-        {
-            if (!(a.Class == k.Class))
-            {
-                b = true;
-            }
-        }
-
-        if (!b)
-        {
-            if (!(a.Count == k.Count))
-            {
-                b = true;
-            }
-        }
-
-        if (!b)
-        {
-            if (!this.VarSameClass(a.Param, k.Param))
-            {
-                b = true;
-            }
-        }
-
-        if (b)
-        {
-            return false;
-        }
-
-        Maide h;
-        h = k;
-        if (!(k.Virtual == null))
-        {
-            h = k.Virtual;
-        }
-
-        a.Virtual = h;
-        return true;
-    }
-
-    protected virtual bool VarSameClass(Table varA, Table varB)
-    {
-        if (!(varA.Count == varB.Count))
-        {
-            return false;
-        }
-
-        Iter iterA;
-        iterA = varA.IterCreate();
-        varA.IterSet(iterA);
-
-        Iter iterB;
-        iterB = varB.IterCreate();
-        varB.IterSet(iterB);
-
-        long count;
-        count = varA.Count;
-        long i;
-        i = 0;
-        while (i < count)
-        {
-            iterA.Next();
-            iterB.Next();
-
-            Var aa;
-            Var ab;
-            aa = (Var)iterA.Value;
-            ab = (Var)iterB.Value;
-
-            bool b;
-            b = (aa.Class == ab.Class);
-            if (!b)
-            {
-                return false;
-            }
-
-            i = i + 1;
-        }
+        this.ListInfra.TableAdd(this.RangeTable, varClass, varClass);
 
         return true;
     }
 
     protected virtual bool ExecuteState()
     {
-        Travel travel;
-        travel = this.StateTravel();
-        this.ExecuteClassTravel(travel);
+        this.ExecuteTravel(this.StateTravel);
         return true;
-    }
-
-    protected virtual Travel StateTravel()
-    {
-        StateTravel a;
-        a = new StateTravel();
-        a.Create = this;
-        a.Init();
-        return a;
     }
 
     protected virtual bool ExecuteExport()
@@ -797,10 +621,8 @@ public class Create : ClassCreate
         list = new List();
         list.Init();
 
-        ClassModule module;
-        module = this.Module;
         Table table;
-        table = module.Export;
+        table = this.Module.Export;
 
         Iter iter;
         iter = table.IterCreate();
@@ -811,7 +633,7 @@ public class Create : ClassCreate
             name = iter.Index as String;
 
             ClassClass varClass;
-            varClass = this.ModuleClassGet(module, name);
+            varClass = this.ModuleClassGet(this.Module, name);
 
             bool b;
             b = (varClass == null);
@@ -821,7 +643,7 @@ public class Create : ClassCreate
             }
             if (!b)
             {
-                this.ValidExport(varClass);
+                this.ExportValidSet(varClass);
 
                 list.Add(varClass);
             }
@@ -831,23 +653,21 @@ public class Create : ClassCreate
         list.IterSet(iter);
         while (iter.Next())
         {
-            ClassClass d;
-            d = iter.Value as ClassClass;
-            table.Set(d.Name, d);
+            ClassClass kk;
+            kk = iter.Value as ClassClass;
+
+            table.Set(kk.Name, kk);
         }
         return true;
     }
 
-    protected virtual bool ValidExport(ClassClass varClass)
+    protected virtual bool ExportValidSet(ClassClass varClass)
     {
-        Source source;
-        source = this.SourceGet(varClass.Index);
-
-        if (!this.ValidIsExport(varClass.Base))
+        if (!this.ExportValidClass(varClass.Base))
         {
-            NodeClass aa;
-            aa = varClass.Any as NodeClass;
-            this.Error(this.ErrorKind.ClassUnexport, aa, source);
+            NodeClass ka;
+            ka = varClass.Any as NodeClass;
+            this.Error(this.ErrorKind.ClassUnexport, ka, varClass.Index);
         }
 
         Iter iter;
@@ -857,13 +677,13 @@ public class Create : ClassCreate
         {
             Field field;
             field = iter.Value as Field;
-            if (this.CountExport(field.Count))
+            if (this.ExportValidCount(field.Count))
             {
-                if (!this.ValidIsExport(field.Class))
+                if (!this.ExportValidClass(field.Class))
                 {
-                    NodeField ab;
-                    ab = field.Any as NodeField;
-                    this.Error(this.ErrorKind.FieldUnexport, ab, source);
+                    NodeField kb;
+                    kb = field.Any as NodeField;
+                    this.Error(this.ErrorKind.FieldUnexport, kb, varClass.Index);
                 }
             }
         }
@@ -874,11 +694,11 @@ public class Create : ClassCreate
         {
             Maide maide;
             maide = iter.Value as Maide;
-            if (this.CountExport(maide.Count))
+            if (this.ExportValidCount(maide.Count))
             {
                 bool b;
                 b = false;
-                if (!this.ValidIsExport(maide.Class))
+                if (!this.ExportValidClass(maide.Class))
                 {
                     b = true;
                 }
@@ -891,7 +711,7 @@ public class Create : ClassCreate
                     {
                         Var varVar;
                         varVar = iterA.Value as Var;
-                        if (!this.ValidIsExport(varVar.Class))
+                        if (!this.ExportValidClass(varVar.Class))
                         {
                             b = true;
                         }
@@ -899,16 +719,16 @@ public class Create : ClassCreate
                 }
                 if (b)
                 {
-                    NodeMaide ac;
-                    ac = maide.Any as NodeMaide;
-                    this.Error(this.ErrorKind.MaideUnexport, ac, source);
+                    NodeMaide kc;
+                    kc = maide.Any as NodeMaide;
+                    this.Error(this.ErrorKind.MaideUnexport, kc, varClass.Index);
                 }
             }
         }
         return true;
     }
 
-    protected virtual bool CountExport(Count count)
+    protected virtual bool ExportValidCount(Count count)
     {
         if (count == this.Count.Prusate | count == this.Count.Precate)
         {
@@ -917,18 +737,15 @@ public class Create : ClassCreate
         return false;
     }
 
-    protected virtual bool ValidIsExport(ClassClass varClass)
+    protected virtual bool ExportValidClass(ClassClass varClass)
     {
-        ClassModule module;
-        module = this.Module;
-
-        if (!(varClass.Module == module))
+        if (!(varClass.Module == this.Module))
         {
             return true;
         }
 
         bool a;
-        a = module.Export.Valid(varClass.Name);
+        a = this.Module.Export.Valid(varClass.Name);
         return a;
     }
 
@@ -952,20 +769,20 @@ public class Create : ClassCreate
             return true;
         }
 
-
         bool b;
         b = false;
 
-        ClassModule h;
-        h = null;
+        ClassModule ka;
+        ka = null;
+
         ClassClass entryClass;
         entryClass = null;
 
         if (!b)
         {
-            h = this.ModuleGet(this.S("System.Entry"));
+            ka = this.ModuleGet(this.SSystemEntry);
 
-            if (h == null)
+            if (ka == null)
             {
                 b = true;
             }
@@ -973,7 +790,7 @@ public class Create : ClassCreate
 
         if (!b)
         {
-            entryClass = this.ModuleClassGet(h, this.S("Entry"));
+            entryClass = this.ModuleClassGet(ka, this.SEntry);
 
             if (entryClass == null)
             {
@@ -993,12 +810,14 @@ public class Create : ClassCreate
         {
             NodeClass k;
             k = varClass.Any as NodeClass;
-            this.Error(this.ErrorKind.EntryUnachieve, k, this.SourceGet(varClass.Index));
+
+            this.Error(this.ErrorKind.EntryUnachieve, k, varClass.Index);
         }
+
         return true;
     }
 
-    protected virtual bool ExecuteRootTravel(Travel travel)
+    protected virtual bool ExecuteTravel(Travel travel)
     {
         long count;
         count = this.Source.Count;
@@ -1009,45 +828,17 @@ public class Create : ClassCreate
             NodeNode root;
             root = this.RootNode.GetAt(i) as NodeNode;
 
-            Source source;
-            source = this.SourceGet(i);
+            NodeClass nodeClass;
+            nodeClass = root as NodeClass;
 
-            if (!(root == null))
-            {
-                NodeClass nodeClass;
-                nodeClass = root as NodeClass;
-                this.ExecuteTravel(travel, nodeClass, source);
-            }
+            this.SourceIndex = i;
+
+            travel.ExecuteClass(nodeClass);
+
+            this.SourceIndex = -1;
+
             i = i + 1;
         }
-        return true;
-    }
-
-    protected virtual bool ExecuteClassTravel(Travel travel)
-    {
-        Table table;
-        table = this.Module.Class;
-        Iter iter;
-        iter = table.IterCreate();
-        table.IterSet(iter);
-        while (iter.Next())
-        {
-            ClassClass varClass;
-            varClass = iter.Value as ClassClass;
-            Source source;
-            source = this.SourceGet(varClass.Index);
-            NodeClass nodeClass;
-            nodeClass = varClass.Any as NodeClass;
-
-            this.ExecuteTravel(travel, nodeClass, source);
-        }
-        return true;
-    }
-
-    protected virtual bool ExecuteTravel(Travel travel, NodeClass nodeClass, Source source)
-    {
-        travel.Source = source;
-        travel.ExecuteClass(nodeClass);
         return true;
     }
 
@@ -1064,29 +855,7 @@ public class Create : ClassCreate
         return a;
     }
 
-    public virtual bool MemberNameDefined(ClassClass varClass, String name)
-    {
-        bool ba;
-        ba = varClass.Field.Valid(name);
-        bool bb;
-        bb = varClass.Maide.Valid(name);
-
-        bool a;
-        a = ba | bb;
-        return a;
-    }
-
-    public virtual object CompDefined(ClassClass varClass, String name)
-    {
-        return this.ClassInfra.CompDefine(varClass, name, this.Module, this.System.Any);
-    }
-
-    protected virtual Source SourceGet(long index)
-    {
-        return this.Source.GetAt(index) as Source;
-    }
-
-    public virtual bool Error(ErrorKind kind, NodeNode node, Source source)
+    public virtual bool Error(ErrorKind kind, NodeNode node, long source)
     {
         Error a;
         a = new Error();
@@ -1094,7 +863,7 @@ public class Create : ClassCreate
         a.Stage = this.Stage;
         a.Kind = kind;
         a.Range = node.Range;
-        a.Source = source.Index;
+        a.Source = source;
 
         this.ErrorList.Add(a);
         return true;
