@@ -25,4 +25,13 @@ class Create : ClassCreate
         a.Init();
         return a;
     }
+
+    maide precate Class CreateNullClass()
+    {
+        var Class a;
+        a : new Class;
+        a.Init();
+        a.Name : "_";
+        return a;
+    }
 }
