@@ -75,4 +75,14 @@ class Create : ClassCreate
     {
         return this.ClassInfra.ModuleRefCreate(null, 0);
     }
+
+    field prusate Array Source { get { return data; } set { data : value; } }
+    field prusate Array RootNode { get { return data; } set { data : value; } }
+    field prusate Module Module { get { return data; } set { data : value; } }
+    field prusate Table ModuleTable { get { return data; } set { data : value; } }
+    field prusate Table ImportClass { get { return data; } set { data : value; } }
+    field prusate Result Result { get { return data; } set { data : value; } }
+    field prusate Int SourceIndex { get { return data; } set { data : value; } }
+    field prusate System System { get { return data; } set { data : value; } }
+    field prusate Class NullClass { get { return data; } set { data : value; } }
 }
