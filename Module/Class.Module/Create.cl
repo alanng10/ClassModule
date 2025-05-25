@@ -89,4 +89,8 @@ class Create : ClassCreate
     field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
     field precate CountList Count { get { return data; } set { data : value; } }
     field precate ErrorKindList ErrorKind { get { return data; } set { data : value; } }
+    field precate InitTravel InitTravel { get { return data; } set { data : value; } }
+    field precate ClassTravel ClassTravel { get { return data; } set { data : value; } }
+    field precate CompTravel CompTravel { get { return data; } set { data : value; } }
+    field precate StateTravel StateTravel { get { return data; } set { data : value; } }
 }
