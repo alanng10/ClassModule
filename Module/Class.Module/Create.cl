@@ -17,4 +17,12 @@ class Create : ClassCreate
         this.ModuleRef : this.CreateModuleRef();
         return true;
     }
+
+    maide precate System CreateSystem()
+    {
+        var System a;
+        a : new System;
+        a.Init();
+        return a;
+    }
 }
