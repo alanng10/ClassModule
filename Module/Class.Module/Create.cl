@@ -85,4 +85,8 @@ class Create : ClassCreate
     field prusate Int SourceIndex { get { return data; } set { data : value; } }
     field prusate System System { get { return data; } set { data : value; } }
     field prusate Class NullClass { get { return data; } set { data : value; } }
+    field precate ListInfra ListInfra { get { return data; } set { data : value; } }
+    field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
+    field precate CountList CountList { get { return data; } set { data : value; } }
+    field precate ErrorKindList ErrorKindList { get { return data; } set { data : value; } }
 }
