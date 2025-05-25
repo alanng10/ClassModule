@@ -439,7 +439,7 @@ class Infra : Any
             return false;
         }
 
-        inf (!this.VirtualCount(varClass.Module, k.Count, k.Parent.Module))
+        inf (~this.VirtualCount(varClass.Module, k.Count, k.Parent.Module))
         {
             return false;
         }
@@ -505,7 +505,7 @@ class Infra : Any
             return false;
         }
 
-        inf (!this.VirtualCount(varClass.Module, k.Count, k.Parent.Module))
+        inf (~this.VirtualCount(varClass.Module, k.Count, k.Parent.Module))
         {
             return false;
         }
