@@ -34,4 +34,22 @@ class Create : ClassCreate
         a.Name : "_";
         return a;
     }
+
+    maide precate InitTravel CreateInitTravel()
+    {
+        var InitTravel a;
+        a : new InitTravel;
+        a.Create : this;
+        a.Init();
+        return a;
+    }
+
+    maide precate ClassTravel CreateClassTravel()
+    {
+        var ClassTravel a;
+        a : new ClassTravel;
+        a.Create : this;
+        a.Init();
+        return a;
+    }
 }
