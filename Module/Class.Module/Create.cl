@@ -70,4 +70,9 @@ class Create : ClassCreate
         a.Init();
         return a;
     }
+
+    maide precate ModuleRef CreateModuleRef()
+    {
+        return this.ClassInfra.ModuleRefCreate(null, 0);
+    }
 }
