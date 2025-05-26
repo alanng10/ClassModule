@@ -540,4 +540,27 @@ class Create : ClassCreate
         this.RangeTable : null;
         return true;
     }
+
+    maide precate Bool VirtualRangeClass(var Class varClass)
+    {
+        inf (this.RangeTable.Valid(varClass))
+        {
+            return true;
+        }
+
+        inf (~(varClass.Module = this.Module))
+        {
+            return true;
+        }
+
+        var Bool b;
+        b : varClass = this.System.Any;
+
+        inf (b)
+        {
+            varClass.FieldStart : 0;
+
+            varClass.MaideStart : 0;
+        }
+    }
 }
