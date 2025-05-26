@@ -516,4 +516,9 @@ class Create : ClassCreate
         varClass.Maide : maideTable;
         return true;
     }
+
+    maide prusate Info Info(var Node node)
+    {
+        return cast Info(node.NodeAny);
+    }
 }
