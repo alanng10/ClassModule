@@ -93,4 +93,10 @@ class Create : ClassCreate
     field precate ClassTravel ClassTravel { get { return data; } set { data : value; } }
     field precate CompTravel CompTravel { get { return data; } set { data : value; } }
     field precate StateTravel StateTravel { get { return data; } set { data : value; } }
+    field precate List ErrorList { get { return data; } set { data : value; } }
+    field precate Table BaseTable { get { return data; } set { data : value; } }
+    field precate Table VirtualTable { get { return data; } set { data : value; } }
+    field precate Table RangeTable { get { return data; } set { data : value; } }
+    field precate ModuleRef ModuleRef { get { return data; } set { data : value; } }
+    field precate Bool SystemInfra { get { return data; } set { data : value; } }
 }
