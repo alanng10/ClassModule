@@ -257,4 +257,16 @@ class Create : ClassCreate
         this.ListInfra.TableAdd(this.BaseTable, varClass, a);
         return true;
     }
+
+    maide precate Bool BaseValidClass(var Class varClass)
+    {
+        var System k;
+        k : this.System;
+
+        inf (varClass = k.Bool | varClass = k.Int | varClass = k.String)
+        {
+            return false;
+        }
+        return true;
+    }
 }
