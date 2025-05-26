@@ -475,5 +475,45 @@ class Create : ClassCreate
                 this.ListInfra.TableAdd(fieldTable, varField.Name, varField);
             }
         }
+
+        var Iter iterA;
+        iterA : new TableIter;
+        iterA.Init();
+
+        var Iter iterB;
+        iterB : new TableIter;
+        iterB.Init();
+
+        iter : varClass.Maide.IterCreate();
+        varClass.Maide.IterSet(iter);
+        while (iter.Next())
+        {
+            var Maide varMaide;
+            varMaide : cast Maide(iter.Value);
+
+            var Bool bb;
+            bb : this.ClassInfra.VirtualMaide(varMaide, this.System.Any, iterA, iterB);
+
+            var NodeMaide node;
+            node : cast NodeMaide(varMaide.Any);
+
+            inf (~bb)
+            {
+                this.Error(this.ErrorKind.MaideUndefine, node, varClass.Index);
+            }
+
+            inf (bb)
+            {
+                varMaide.Index : maideTable.Count;
+
+                this.Info(node).Maide : varMaide;
+
+                this.ListInfra.TableAdd(maideTable, varMaide.Name, varMaide);
+            }
+        }
+
+        varClass.Field : fieldTable;
+        varClass.Maide : maideTable;
+        return true;
     }
 }
