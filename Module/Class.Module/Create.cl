@@ -269,4 +269,42 @@ class Create : ClassCreate
         }
         return true;
     }
+
+    maide precate Bool BaseClassSet()
+    {
+        var Class anyClass;
+        anyClass : this.System.Any;
+
+        var Iter iter;
+        itre : this.BaseTable.IterCreate();
+        this.BaseTable.IterSet(iter);
+
+        while (iter.Next())
+        {
+            var Class varClass;
+            varClass : cast Class(iter.Index);
+
+            var Bool b;
+            b : false;
+
+            var Bool ba;
+            ba : varClass = anyClass;
+
+            inf (ba)
+            {
+                b : true;
+            }
+
+            inf (~ba)
+            {
+                b : this.BaseValidDepend(varClass);
+            }
+
+            var Class a;
+
+            inf (~b)
+            {
+            }
+        }
+    }
 }
