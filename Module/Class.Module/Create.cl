@@ -99,4 +99,29 @@ class Create : ClassCreate
     field precate Table RangeTable { get { return data; } set { data : value; } }
     field precate ModuleRef ModuleRef { get { return data; } set { data : value; } }
     field precate Bool SystemInfra { get { return data; } set { data : value; } }
+
+    maide prusate Bool Execute()
+    {
+        this.Result : new Result;
+        this.Result.Init();
+
+        this.ErrorList : new List;
+        this.ErrorList.Init();
+
+        this.SystemInfra : this.ModuleSystemInfra();
+
+        this.ExecuteInit();
+        this.ExecuteClass();
+        this.ExecuteBase();
+        this.ExecuteComp();
+        this.ExecuteVirtual();
+        this.ExecuteExport();
+        this.ExecuteEntry();
+        this.ExecuteState();
+
+        this.Result.Module : this.Module;
+        this.Result.Error : this.ListInfra.ArrayCreateList(this.ErrorList);
+        this.ErrorList : null;
+        return true;
+    }
 }
