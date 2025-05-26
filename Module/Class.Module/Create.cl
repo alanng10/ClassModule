@@ -322,4 +322,37 @@ class Create : ClassCreate
 
         return true;
     }
+
+    maide precate Bool BaseValidDepend(var Class varClass)
+    {
+        var Table table;
+        table : this.ClassInfra.TableCreateRefLess();
+
+        var Class a;
+        a : varClass;
+
+        while (~(a = null))
+        {
+            inf (~(a.Module = this.Module))
+            {
+                return true;
+            }
+
+            inf (table.Valid(a))
+            {
+                return false;
+            }
+
+            this.ListInfra.TableAdd(table, a, a);
+
+            var Class ka;
+            inf (~(a = this.System.Any))
+            {
+                ka : cast Class(this.BaseTable.Get(a));
+            }
+            a : ka;
+        }
+
+        return true;
+    }
 }
