@@ -163,4 +163,18 @@ class Create : ClassCreate
     {
         return this.TextSame(this.TA(this.Module.Ref.Name), this.TB("System.Infra"));
     }
+
+    maide precate Bool ExecuteInit()
+    {
+        this.ExecuteTravel(this.InitTravel);
+        return true;
+    }
+
+    maide precate Bool ExecuteClass()
+    {
+        this.ExecuteTravel(this.ClassTravel);
+
+        this.SystemSet();
+        return true;
+    }
 }
