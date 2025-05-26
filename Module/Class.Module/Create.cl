@@ -205,4 +205,45 @@ class Create : ClassCreate
         }
         return true;
     }
+
+    maide precate Bool BaseTableAdd(var Class varClass)
+    {
+        var NodeClass nodeClass;
+        nodeClass : cast NodeClass(varClass.Any);
+
+        var ClassName nodeBase;
+        nodeBase : nodeClass.Base;
+
+        var String baseName;
+        inf (~(nodeBase = null))
+        {
+            baseName : nodeBase.Value;
+        }
+
+        var Class varBase;
+        inf (~(baseName = null))
+        {
+            varBase : this.Class(baseName);
+        }
+
+        var Bool b;
+        b : false;
+
+        var Bool ba;
+        ba : (varBase = null);
+        inf (ba)
+        {
+            this.Error(this.ErrorKind.BaseUndefine, nodeClass, varClass.Index);
+            b : true;
+        }
+
+        inf (~ba)
+        {
+            inf (~this.BaseValidClass(varBase))
+            {
+                this.Error(this.ErrorKind.BaseUndefine, nodeClass, varClass.Index);
+                b : true;
+            }
+        }
+    }
 }
