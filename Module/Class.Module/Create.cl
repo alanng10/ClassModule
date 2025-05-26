@@ -189,4 +189,20 @@ class Create : ClassCreate
         this.BaseCountSet();
         return true;
     }
+
+    maide precate Bool BaseTableSet()
+    {
+        this.BaseTable : this.ClassInfra.TableCreateRefLess();
+
+        var Iter iter;
+        iter : this.Module.Class.IterCreate();
+        this.Module.Class.IterSet(iter);
+        while (iter.Next())
+        {
+            var Class varClass;
+            varClass : cast Class(iter.Value);
+            this.BaseTableAdd(varClass);
+        }
+        return true;
+    }
 }
