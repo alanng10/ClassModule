@@ -603,12 +603,6 @@ public class Create : ClassCreate
         return true;
     }
 
-    protected virtual bool ExecuteState()
-    {
-        this.ExecuteTravel(this.StateTravel);
-        return true;
-    }
-
     protected virtual bool ExecuteExport()
     {
         List list;
@@ -808,6 +802,12 @@ public class Create : ClassCreate
             this.Error(this.ErrorKind.EntryUnachieve, k, varClass.Index);
         }
 
+        return true;
+    }
+
+    protected virtual bool ExecuteState()
+    {
+        this.ExecuteTravel(this.StateTravel);
         return true;
     }
 
