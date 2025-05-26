@@ -124,4 +124,24 @@ class Create : ClassCreate
         this.ErrorList : null;
         return true;
     }
+
+    maide precate Bool SystemSet()
+    {
+        var Module k;
+
+        inf (this.SystemInfra)
+        {
+            k : this.Module;
+        }
+        inf (~this.SystemInfra)
+        {
+            k : this.ModuleGet("System.Infra");
+        }
+
+        this.System.Any : this.ModuleClassGet(k, "Any");
+        this.System.Bool : this.ModuleClassGet(k, "Bool");
+        this.System.Int : this.ModuleClassGet(k, "Int");
+        this.System.String : this.ModuleClassGet(k, "String");
+        return true;
+    }
 }
