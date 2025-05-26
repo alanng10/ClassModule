@@ -177,4 +177,16 @@ class Create : ClassCreate
         this.SystemSet();
         return true;
     }
+
+    maide precate Bool ExecuteBase()
+    {
+        this.BaseTableSet();
+
+        this.BaseClassSet();
+
+        this.BaseTable : null;
+
+        this.BaseCountSet();
+        return true;
+    }
 }
