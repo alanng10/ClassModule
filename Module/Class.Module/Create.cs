@@ -609,12 +609,9 @@ public class Create : ClassCreate
         list = new List();
         list.Init();
 
-        Table table;
-        table = this.Module.Export;
-
         Iter iter;
-        iter = table.IterCreate();
-        table.IterSet(iter);
+        iter = this.Module.Export.IterCreate();
+        this.Module.Export.IterSet(iter);
         while (iter.Next())
         {
             String name;
@@ -644,7 +641,7 @@ public class Create : ClassCreate
             Class kk;
             kk = iter.Value as Class;
 
-            table.Set(kk.Name, kk);
+            this.Module.Export.Set(kk.Name, kk);
         }
         return true;
     }
