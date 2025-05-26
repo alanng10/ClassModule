@@ -438,4 +438,42 @@ class Create : ClassCreate
 
         return true;
     }
+
+    maide precate Bool VirtualSetClassComp(var Class varClass)
+    {
+        var Table fieldTable;
+        fieldTable : this.ClassInfra.TableCreateStringLess();
+
+        var Table maideTable;
+        maideTable : this.ClassInfra.TableCreateStringLess();
+
+        var Iter iter;
+        iter : varClass.Field.IterCreate();
+        varClass.Field.IterSet(iter);
+        while (iter.Next())
+        {
+            var Field varField;
+            varField : cast Field(iter.Value);
+
+            var Bool ba;
+            ba : this.ClassInfra.VirtualField(varField, this.System.Any);
+
+            var NodeField node;
+            node : cast NodeField(varField.Any);
+
+            inf (~ba)
+            {
+                this.Error(this.ErrorKind.FieldUndefine, node, varClass.Index);
+            }
+
+            inf (ba)
+            {
+                varField.Index : fieldTable.Count;
+
+                this.Info(node).Field : varField;
+
+                this.ListInfra.TableAdd(fieldTable, varField.Name, varField);
+            }
+        }
+    }
 }
