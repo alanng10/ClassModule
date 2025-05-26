@@ -548,14 +548,11 @@ public class Create : ClassCreate
 
     protected virtual bool VirtualRange()
     {
-        Table table;
-        table = this.Module.Class;
-
         this.RangeTable = this.ClassInfra.TableCreateRefLess();
 
         Iter iter;
-        iter = table.IterCreate();
-        table.IterSet(iter);
+        iter = this.Module.Class.IterCreate();
+        this.Module.Class.IterSet(iter);
         while (iter.Next())
         {
             Class a;
