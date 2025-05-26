@@ -374,4 +374,10 @@ class Create : ClassCreate
 
         return true;
     }
+
+    maide precate Bool ExecuteComp()
+    {
+        this.ExecuteTravel(this.CompTravel);
+        return true;
+    }
 }
