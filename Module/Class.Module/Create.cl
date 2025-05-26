@@ -304,7 +304,22 @@ class Create : ClassCreate
 
             inf (~b)
             {
+                var NodeClass nodeClass;
+                nodeClass : cast NodeClass(varClass.Any);
+
+                this.Error(this.ErrorKind.BaseUndefine, nodeClass, varClass.Index);
+
+                a : anyClass;
             }
+
+            inf (b)
+            {
+                a : cast Class(iter.Value);
+            }
+
+            varClass.Base : a;
         }
+
+        return true;
     }
 }
