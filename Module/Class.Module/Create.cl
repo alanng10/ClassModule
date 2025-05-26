@@ -388,4 +388,24 @@ class Create : ClassCreate
         this.VirtualRange();
         return true;
     }
+
+    maide precate Bool VirtualSet()
+    {
+        this.VirtualTable : this.ClassInfra.TableCreateRefLess();
+
+        var Iter iter;
+        iter : this.Module.Class.IterCreate();
+        this.Module.Class.IterSet(iter);
+        while (iter.Next())
+        {
+            var Class a;
+            a : cast Class(iter.Value);
+
+            this.VirtualSetClass(a);
+        }
+
+        this.VirtualTable : null;
+
+        return true;
+    }
 }
