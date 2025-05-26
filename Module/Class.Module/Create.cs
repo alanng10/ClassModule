@@ -512,14 +512,14 @@ public class Create : ClassCreate
         varClass.Maide.IterSet(iter);
         while (iter.Next())
         {
-            Maide maide;
-            maide = iter.Value as Maide;
+            Maide varMaide;
+            varMaide = iter.Value as Maide;
 
             bool bb;
-            bb = this.ClassInfra.VirtualMaide(maide, this.System.Any, iterA, iterB);
+            bb = this.ClassInfra.VirtualMaide(varMaide, this.System.Any, iterA, iterB);
 
             NodeMaide node;
-            node = maide.Any as NodeMaide;
+            node = varMaide.Any as NodeMaide;
 
             if (!bb)
             {
@@ -528,11 +528,11 @@ public class Create : ClassCreate
 
             if (bb)
             {
-                maide.Index = maideTable.Count;
+                varMaide.Index = maideTable.Count;
 
-                this.Info(node).Maide = maide;
+                this.Info(node).Maide = varMaide;
 
-                this.ListInfra.TableAdd(maideTable, maide.Name, maide);
+                this.ListInfra.TableAdd(maideTable, varMaide.Name, varMaide);
             }
         }
 
