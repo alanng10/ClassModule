@@ -144,4 +144,18 @@ class Create : ClassCreate
         this.System.String : this.ModuleClassGet(k, "String");
         return true;
     }
+
+    maide precate Module ModuleGet(var String moduleName)
+    {
+        this.ModuleRef.Name : moduleName;
+
+        var Module a;
+        a : cast Module(this.ModuleTable.Get(this.ModuleRef));
+        return a;
+    }
+
+    maide precate Class ModuleClassGet(var Module module, var String className)
+    {
+        return cast Class(module.Class.Get(className));
+    }
 }
