@@ -476,14 +476,14 @@ public class Create : ClassCreate
         varClass.Field.IterSet(iter);
         while (iter.Next())
         {
-            Field field;
-            field = iter.Value as Field;
+            Field varField;
+            varField = iter.Value as Field;
 
             bool ba;
-            ba = this.ClassInfra.VirtualField(field, this.System.Any);
+            ba = this.ClassInfra.VirtualField(varField, this.System.Any);
 
             NodeField node;
-            node = field.Any as NodeField;
+            node = varField.Any as NodeField;
 
             if (!ba)
             {
@@ -492,11 +492,11 @@ public class Create : ClassCreate
 
             if (ba)
             {
-                field.Index = fieldTable.Count;
+                varField.Index = fieldTable.Count;
 
-                this.Info(node).Field = field;
+                this.Info(node).Field = varField;
 
-                this.ListInfra.TableAdd(fieldTable, field.Name, field);
+                this.ListInfra.TableAdd(fieldTable, varField.Name, varField);
             }
         }
 
