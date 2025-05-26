@@ -521,4 +521,23 @@ class Create : ClassCreate
     {
         return cast Info(node.NodeAny);
     }
+
+    maide precate Bool VirtualRange()
+    {
+        this.RangeTable : this.ClassInfra.TableCreateRefLess();
+
+        var Iter iter;
+        iter : this.Module.Class.IterCreate();
+        this.Module.Class.IterSet(iter);
+        while (iter.Next())
+        {
+            var Class a;
+            a : cast Class(iter.Value);
+
+            this.VirtualRangeClass(a);
+        }
+
+        this.RangeTable : null;
+        return true;
+    }
 }
