@@ -158,4 +158,9 @@ class Create : ClassCreate
     {
         return cast Class(module.Class.Get(className));
     }
+
+    maide precate Bool ModuleSystemInfra()
+    {
+        return this.TextSame(this.TA(this.Module.Ref.Name), this.TB("System.Infra"));
+    }
 }
