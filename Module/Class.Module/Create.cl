@@ -245,5 +245,16 @@ class Create : ClassCreate
                 b : true;
             }
         }
+
+        var Class a;
+        a : varBase;
+
+        inf (b)
+        {
+            a : this.System.Any;
+        }
+
+        this.ListInfra.TableAdd(this.BaseTable, varClass, a);
+        return true;
     }
 }
