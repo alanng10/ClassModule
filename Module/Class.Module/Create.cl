@@ -562,5 +562,20 @@ class Create : ClassCreate
 
             varClass.MaideStart : 0;
         }
+        inf (~b)
+        {
+            var Class baseClass;
+            baseClass : varClass.Base;
+
+            this.VirtualRangeClass(baseClass);
+
+            varClass.FieldStart : baseClass.FieldStart + baseClass.Field.Count;
+
+            varClass.MaideStart : baseClass.MaideStart + baseClass.Maide.Count;
+        }
+
+        this.ListInfra.TableAdd(this.RangeTable, varClass, varClass);
+
+        return true;
     }
 }
