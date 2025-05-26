@@ -408,4 +408,34 @@ class Create : ClassCreate
 
         return true;
     }
+
+    maide precate Bool VirtualSetClass(var Class varClass)
+    {
+        inf (this.VirtualTable.Valid(varClass))
+        {
+            return true;
+        }
+
+        inf (~(varClass.Module = this.Module))
+        {
+            return true;
+        }
+
+        var Bool b;
+        b : varClass = this.System.Any;
+
+        inf (~b)
+        {
+            var Class baseClass;
+            baseClass : varClass.Base;
+
+            this.VirtualSetClass(baseClass);
+        }
+
+        this.VirtualSetClassComp(varClass);
+
+        this.ListInfra.TableAdd(this.VirtualTable, varClass, varClass);
+
+        return true;
+    }
 }
