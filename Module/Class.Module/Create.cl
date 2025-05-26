@@ -355,4 +355,23 @@ class Create : ClassCreate
 
         return true;
     }
+
+    maide precate Bool BaseCountSet()
+    {
+        var Iter iter;
+        iter : this.Module.Class.IterCreate();
+        this.Module.Class.IterSet(iter);
+        while (iter.Next())
+        {
+            var Class k;
+            k : cast Class(iter.Value);
+
+            var Int ka;
+            ka : this.ClassInfra.BaseCount(k, this.System.Any);
+
+            k.BaseCount : ka;
+        }
+
+        return true;
+    }
 }
