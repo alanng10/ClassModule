@@ -380,4 +380,12 @@ class Create : ClassCreate
         this.ExecuteTravel(this.CompTravel);
         return true;
     }
+
+    maide precate Bool ExecuteVirtual()
+    {
+        this.VirtualSet();
+
+        this.VirtualRange();
+        return true;
+    }
 }
