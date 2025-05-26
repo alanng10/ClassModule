@@ -578,4 +578,47 @@ class Create : ClassCreate
 
         return true;
     }
+
+    maide precate Bool ExecuteExport()
+    {
+        var List list;
+        list : new List;
+        list.Init();
+
+        var Iter iter;
+        iter : this.Module.Export.IterCreate();
+        this.Module.Export.IterSet(iter);
+        while (iter.Next())
+        {
+            var String name;
+            name : cast String(iter.Index);
+
+            var Class varClass;
+            varClass : this.ModuleClassGet(this.Module, name);
+
+            var Bool b;
+            b : varClass = null;
+            inf (b)
+            {
+                this.ErrorModule(this.ErrorKind.ExportUndefine, name);
+            }
+            inf (~b)
+            {
+                this.ExportValidSet(varClass);
+
+                list.Add(varClass);
+            }
+        }
+
+        iter : list.IterCreate();
+        list.IterSet(iter);
+        while (iter.Next())
+        {
+            var Class kk;
+            kk : cast Class(iter.Value);
+
+            this.Module.Export.Set(kk.Name, kk);
+        }
+        return true;
+    }
 }
