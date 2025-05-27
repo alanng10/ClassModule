@@ -67,5 +67,17 @@ class CompTravel : Travel
                 return true;
             }
         }
+
+        var Class varClass;
+
+        inf (~(className = null))
+        {
+            varClass : this.Class(className);
+            inf (varClass = null)
+            {
+                this.Error(this.ErrorKind.ClassUndefine, nodeField);
+                return true;
+            }
+        }
     }
 }
