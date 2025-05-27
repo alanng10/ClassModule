@@ -803,4 +803,17 @@ class Create : ClassCreate
         }
         return true;
     }
+
+    maide prusate Class Class(var String name)
+    {
+        var Class a;
+        a : cast Class(this.ImportClass.Get(name));
+        inf (~(a = null))
+        {
+            return a;
+        }
+
+        a : cast Class(this.Module.Class.Get(name));
+        return a;
+    }
 }
