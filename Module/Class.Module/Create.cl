@@ -772,4 +772,10 @@ class Create : ClassCreate
 
         return true;
     }
+
+    maide precate Bool ExecuteState()
+    {
+        this.ExecuteTravel(this.StateTravel);
+        return true;
+    }
 }
