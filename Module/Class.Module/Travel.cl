@@ -16,4 +16,11 @@ class Travel : NodeTravel
     {
         return this.Create.Info(node);
     }
+
+    maide precate Class Class(var String name)
+    {
+        var Class a;
+        a : this.Create.Class(name);
+        return a;
+    }
 }
