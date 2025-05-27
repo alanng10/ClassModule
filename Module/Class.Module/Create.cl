@@ -709,4 +709,67 @@ class Create : ClassCreate
         a : this.Module.Export.Valid(varClass.Name);
         return a;
     }
+
+    maide precate Bool ExecuteEntry()
+    {
+        var String entry;
+        entry : this.Module.Entry;
+        inf (entry = null)
+        {
+            return true;
+        }
+
+        var Class varClass;
+        varClass : this.ModuleClassGet(this.Module, entry);
+        inf (varClass = null)
+        {
+            this.ErrorModule(this.ErrorKind.EntryUndefine, null);
+            return true;
+        }
+
+        var Bool b;
+        b : false;
+
+        var Moduke ka;
+
+        var Class entryClass;
+        
+        inf (~b)
+        {
+            ka : this.ModuleGet("System.Entry");
+
+            inf (ka = null)
+            {
+                b : true;
+            }
+        }
+
+        inf (~b)
+        {
+            entryClass = this.ModuleClassGet(ka, "Entry");
+
+            inf (entryClass = null)
+            {
+                b : true;
+            }
+        }
+
+        inf (~b)
+        {
+            inf (~(this.ClassInfra.ValidClass(varClass, entryClass, this.System.Any, this.NullClass)))
+            {
+                b : true;
+            }
+        }
+
+        inf (b)
+        {
+            var NodeClass k;
+            k : cast NodeClass(varClass.Any);
+
+            this.Error(this.ErrorKind.EntryUnachieve, k, varClass.Index);
+        }
+
+        return true;
+    }
 }
