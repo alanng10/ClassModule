@@ -23,4 +23,16 @@ class Travel : NodeTravel
         a : this.Create.Class(name);
         return a;
     }
+
+    maide precate Bool ErrorUnique(var ErrorKind kind, var Node node, var Bool did)
+    {
+        inf (~did)
+        {
+            this.Error(kind, node);
+
+            did : true;
+        }
+
+        return did;
+    }
 }
