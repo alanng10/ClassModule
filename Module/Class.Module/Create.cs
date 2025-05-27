@@ -660,14 +660,14 @@ public class Create : ClassCreate
         varClass.Field.IterSet(iter);
         while (iter.Next())
         {
-            Field field;
-            field = iter.Value as Field;
-            if (this.ExportValidCount(field.Count))
+            Field varField;
+            varField = iter.Value as Field;
+            if (this.ExportValidCount(varField.Count))
             {
-                if (!this.ExportValidClass(field.Class))
+                if (!this.ExportValidClass(varField.Class))
                 {
                     NodeField kb;
-                    kb = field.Any as NodeField;
+                    kb = varField.Any as NodeField;
                     this.Error(this.ErrorKind.FieldUnexport, kb, varClass.Index);
                 }
             }
