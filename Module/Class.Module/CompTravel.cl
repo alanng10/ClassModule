@@ -226,5 +226,18 @@ class CompTravel : Travel
                 return true;
             }
         }
+
+        var Var a;
+        a : new Var;
+        a.Init();
+        a.Name : varName;
+        a.Class : varClass;
+        a.Index : this.ParamVar.Count;
+        a.Any : nodeVar;
+
+        this.ListInfra.TableAdd(this.ParamVar, a.Name, a);
+
+        this.Info(nodeVar).Var : a;
+        return true;
     }
 }
