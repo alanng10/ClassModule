@@ -201,20 +201,20 @@ public class StateTravel : Travel
         State call;
         call = nodeMaide.Call;
 
-        Maide maide;
-        maide = this.Info(nodeMaide).Maide;
-        if (maide == null)
+        Maide varMaide;
+        varMaide = this.Info(nodeMaide).Maide;
+        if (varMaide == null)
         {
             return true;
         }
 
-        this.ThisResultClass = maide.Class;
+        this.ThisResultClass = varMaide.Class;
 
-        this.StateVar = maide.Call;
+        this.StateVar = varMaide.Call;
 
-        this.VarTableAdd(this.StateVar, maide.Param);
+        this.VarTableAdd(this.StateVar, varMaide.Param);
 
-        this.VarStack.Push(maide.Param);
+        this.VarStack.Push(varMaide.Param);
 
         this.ExecuteState(call);
 
@@ -535,24 +535,24 @@ public class StateTravel : Travel
             maideName = nodeMaide.Value;
         }
 
-        Maide maide;
-        maide = null;
+        Maide varMaide;
+        varMaide = null;
 
         if (!(thisClass == null))
         {
             if (!(maideName == null))
             {
-                maide = this.Maide(thisClass, maideName);
-                if (maide == null)
+                varMaide = this.Maide(thisClass, maideName);
+                if (varMaide == null)
                 {
                     this.Error(this.ErrorKind.MaideUndefine, callOperate);
                 }
             }
         }
 
-        if (!(maide == null))
+        if (!(varMaide == null))
         {
-            if (!this.ValidArgue(maide, argue))
+            if (!this.ValidArgue(varMaide, argue))
             {
                 this.Error(this.ErrorKind.ArgueUnassign, callOperate);
             }
@@ -560,12 +560,12 @@ public class StateTravel : Travel
 
         Class operateClass;
         operateClass = null;
-        if (!(maide == null))
+        if (!(varMaide == null))
         {
-            operateClass = maide.Class;
+            operateClass = varMaide.Class;
         }
 
-        this.Info(callOperate).CallMaide = maide;
+        this.Info(callOperate).CallMaide = varMaide;
         this.Info(callOperate).OperateClass = operateClass;
         return true;
     }
