@@ -621,4 +621,21 @@ class Create : ClassCreate
         }
         return true;
     }
+
+    maide precate Bool ExportValidSet(var Class varClass)
+    {
+        inf (~this.ExportValidClass(varClass.Base))
+        {
+            var NodeClass ka;
+            ka : cast NodeClass(varClass.Any);
+            this.Error(this.ErrorKind.ClassUnexport, ka, varClass.Index);
+        }
+
+        var Iter iter;
+        iter : varClass.Field.IterCreate();
+        varClass.Field.IterSet(iter);
+        while (iter.Next())
+        {
+        }
+    }
 }
