@@ -176,6 +176,8 @@ class CompTravel : Travel
         a.Parent : this.ThisClass;
         a.Any : nodeMaide;
 
+        this.ParamVar : null;
+
         this.ListInfra.TableAdd(this.ThisClass.Maide, a.Name, a);
         return true;
     }
