@@ -648,5 +648,44 @@ class Create : ClassCreate
                 }
             }
         }
+
+        iter : varClass.Maide.IterCreate();
+        varClass.Maide.IterSet(iter);
+        while (iter.Next())
+        {
+            var Maide varMaide;
+            varMaide : cast Maide(iter.Value);
+            inf (this.ExportValidCount(varMaide.Count))
+            {
+                var Bool b;
+                b : false;
+                inf (~this.ExportValidClass(varMaide.Class))
+                {
+                    b : true;
+                }
+                inf (~b)
+                {
+                    var Iter iterA;
+                    iterA : varMaide.Param.IterCreate();
+                    varMaide.Param.IterSet(iterA);
+                    while (~b & iterA.Next())
+                    {
+                        var Var varVar;
+                        varVar : cast Var(iterA.Value);
+                        inf (~this.ExportValidClass(varVar.Class))
+                        {
+                            b : true;
+                        }
+                    }
+                }
+                inf (b)
+                {
+                    var NodeMaide kc;
+                    kc : cast NodeMaide(varMaide.Any);
+                    this.Error(this.ErrorKind.MaideUnexport, kc, varClass.Index);
+                }
+            }
+        }
+        return true;
     }
 }
