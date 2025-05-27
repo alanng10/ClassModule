@@ -816,4 +816,18 @@ class Create : ClassCreate
         a : cast Class(this.Module.Class.Get(name));
         return a;
     }
+
+    maide prusate Bool Error(var ErrorKind kind, var Node node, var Int source)
+    {
+        var Error a;
+        a : new Error;
+        a.Init();
+        a.Stage : this.Stage;
+        a.Kind : kind;
+        a.Range : node.Range;
+        a.Source : source;
+
+        this.ErrorList.Add(a);
+        return true;
+    }
 }
