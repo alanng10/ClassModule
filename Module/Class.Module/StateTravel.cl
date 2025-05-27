@@ -47,4 +47,11 @@ class StateTravel : Travel
         a.Init();
         return a;
     }
+
+    field precate ListInfra ListInfra { get { return data; } set { data : value; } }
+    field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
+    field precate System System { get { return data; } set { data : value; } }
+    field precate Class NullClass { get { return data; } set { data : value; } }
+    field precate Class ThisClass { get { return data; } set { data : value; } }
+    field precate Class ThisResultClass { get { return data; } set { data : value; } }
 }
