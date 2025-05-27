@@ -677,21 +677,21 @@ public class Create : ClassCreate
         varClass.Maide.IterSet(iter);
         while (iter.Next())
         {
-            Maide maide;
-            maide = iter.Value as Maide;
-            if (this.ExportValidCount(maide.Count))
+            Maide varMaide;
+            varMaide = iter.Value as Maide;
+            if (this.ExportValidCount(varMaide.Count))
             {
                 bool b;
                 b = false;
-                if (!this.ExportValidClass(maide.Class))
+                if (!this.ExportValidClass(varMaide.Class))
                 {
                     b = true;
                 }
                 if (!b)
                 {
                     Iter iterA;
-                    iterA = maide.Param.IterCreate();
-                    maide.Param.IterSet(iterA);
+                    iterA = varMaide.Param.IterCreate();
+                    varMaide.Param.IterSet(iterA);
                     while (!b & iterA.Next())
                     {
                         Var varVar;
