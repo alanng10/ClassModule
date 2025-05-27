@@ -1277,9 +1277,9 @@ public class StateTravel : Travel
         return this.ClassInfra.MaideTrigg(varClass, name, this.ThisClass, this.System.Any, this.NullClass);
     }
 
-    protected virtual bool ValidClass(Class varClass, Class requiredClass)
+    protected virtual bool ValidClass(Class varClass, Class requireClass)
     {
-        return this.ClassInfra.ValidClass(varClass, requiredClass, this.System.Any, this.NullClass);
+        return this.ClassInfra.ValidClass(varClass, requireClass, this.System.Any, this.NullClass);
     }
 
     protected virtual bool ArgueMatch(Maide varMaide, Argue argue)
