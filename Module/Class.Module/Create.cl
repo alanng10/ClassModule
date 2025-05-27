@@ -778,4 +778,29 @@ class Create : ClassCreate
         this.ExecuteTravel(this.StateTravel);
         return true;
     }
+
+    maide precate Bool ExecuteTravel(var Travel travel)
+    {
+        var Int count;
+        count : this.Source.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Node root;
+            root : cast Node(this.RootNode.Get(i));
+
+            var NodeClass nodeClass;
+            nodeClass : cast NodeClass(root);
+
+            this.SourceIndex : i;
+
+            travel.ExecuteClass(nodeClass);
+
+            this.SourceIndex : null;
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
