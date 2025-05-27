@@ -636,6 +636,17 @@ class Create : ClassCreate
         varClass.Field.IterSet(iter);
         while (iter.Next())
         {
+            var Field varField;
+            varField : cast Field(iter.Value);
+            inf (this.ExportValidCount(varField.Count))
+            {
+                inf (~this.ExportValidClass(varField.Class))
+                {
+                    var NodeField kb;
+                    kb : cast NodeField(varField.Any);
+                    this.Error(this.ErrorKind.FieldUnexport, kb, varClass.Index);
+                }
+            }
         }
     }
 }
