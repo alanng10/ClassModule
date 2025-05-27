@@ -35,4 +35,10 @@ class Travel : NodeTravel
 
         return did;
     }
+
+    maide precate Bool Error(var ErrorKind kind, var Node node)
+    {
+        this.Create.Error(kind, node, this.Create.SourceIndex);
+        return true;
+    }
 }
