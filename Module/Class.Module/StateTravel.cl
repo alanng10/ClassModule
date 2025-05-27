@@ -15,4 +15,12 @@ class StateTravel : Travel
         this.ArgueIter : this.CreateArgueIter();
         return true;
     }
+
+    maide precate Stack CreateVarStack()
+    {
+        var Stack a;
+        a : new Stack;
+        a.Init();
+        return a;
+    }
 }
