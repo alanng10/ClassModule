@@ -94,5 +94,9 @@ class StateTravel : Travel
         {
             return true;
         }
+
+        this.FieldGet(varField, nodeGet);
+        this.FieldSet(varField, nodeSet);
+        return true;
     }
 }
