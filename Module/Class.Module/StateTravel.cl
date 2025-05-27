@@ -75,4 +75,24 @@ class StateTravel : Travel
 
         return true;
     }
+
+    maide prusate Bool ExecuteField(var NodeField nodeField)
+    {
+        inf (nodeField = null)
+        {
+            return true;
+        }
+
+        var State nodeGet;
+        nodeGet : nodeField.Get;
+        var State nodeSet;
+        nodeSet : nodeField.Set;
+
+        var Field varField;
+        varField : this.Info(nodeField).Field;
+        inf (varField = null)
+        {
+            return true;
+        }
+    }
 }
