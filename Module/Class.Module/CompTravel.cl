@@ -158,24 +158,25 @@ class CompTravel : Travel
         var Count count;
         count : this.CountGet(nodeCount);
 
-        var Table varGet;
-        varGet : this.ClassInfra.TableCreateStringLess();
+        this.ParamVar : this.ClassInfra.TableCreateStringLess();
 
-        var Table varSet;
-        varSet : this.ClassInfra.TableCreateStringLess();
+        var Table callVar;
+        callVar : this.ClassInfra.TableCreateStringLess();
 
-        var Field a;
-        a : new Field;
+        this.ExecuteParam(param);
+
+        var Maide a;
+        a : new Maide;
         a.Init();
-        a.Name : fieldName;
+        a.Name : maideName;
         a.Class : varClass;
         a.Count : count;
-        a.Get : varGet;
-        a.Set : varSet;
+        a.Param : this.ParamVar;
+        a.Call : callVar;
         a.Parent : this.ThisClass;
-        a.Any : nodeField;
+        a.Any : nodeMaide;
 
-        this.ListInfra.TableAdd(this.ThisClass.Field, a.Name, a);
+        this.ListInfra.TableAdd(this.ThisClass.Maide, a.Name, a);
         return true;
     }
 }
