@@ -95,15 +95,15 @@ public class StateTravel : Travel
         State nodeSet;
         nodeSet = nodeField.Set;
 
-        Field field;
-        field = this.Info(nodeField).Field;
-        if (field == null)
+        Field varField;
+        varField = this.Info(nodeField).Field;
+        if (varField == null)
         {
             return true;
         }
 
-        this.FieldGet(field, nodeGet);
-        this.FieldSet(field, nodeSet);
+        this.FieldGet(varField, nodeGet);
+        this.FieldSet(varField, nodeSet);
         return true;
     }
 
@@ -457,17 +457,17 @@ public class StateTravel : Travel
 
         base.ExecuteSetMark(setTarget);
 
-        Field field;
-        field = this.ExecuteThisFieldNode(setTarget, varThis, nodeField);
+        Field varField;
+        varField = this.ExecuteThisFieldNode(setTarget, varThis, nodeField);
 
         Class fieldClass;
         fieldClass = null;
-        if (!(field == null))
+        if (!(varField == null))
         {
-            fieldClass = field.Class;
+            fieldClass = varField.Class;
         }
 
-        this.Info(setTarget).SetField = field;
+        this.Info(setTarget).SetField = varField;
         this.Info(setTarget).MarkClass = fieldClass;
         return true;
     }
@@ -486,17 +486,17 @@ public class StateTravel : Travel
 
         base.ExecuteGetOperate(getOperate);
 
-        Field field;
-        field = this.ExecuteThisFieldNode(getOperate, varThis, nodeField);
+        Field varField;
+        varField = this.ExecuteThisFieldNode(getOperate, varThis, nodeField);
 
         Class fieldClass;
         fieldClass = null;
-        if (!(field == null))
+        if (!(varField == null))
         {
-            fieldClass = field.Class;
+            fieldClass = varField.Class;
         }
 
-        this.Info(getOperate).GetField = field;
+        this.Info(getOperate).GetField = varField;
         this.Info(getOperate).OperateClass = fieldClass;
         return true;
     }
@@ -1251,20 +1251,20 @@ public class StateTravel : Travel
             fieldName = nodeField.Value;
         }
 
-        Field field;
-        field = null;
+        Field varField;
+        varField = null;
         if (!(thisClass == null))
         {
             if (!(fieldName == null))
             {
-                field = this.Field(thisClass, fieldName);
-                if (field == null)
+                varField = this.Field(thisClass, fieldName);
+                if (varField == null)
                 {
                     this.Error(this.ErrorKind.FieldUndefine, node);
                 }
             }
         }
-        return field;
+        return varField;
     }
 
     protected virtual Field Field(Class varClass, String name)
