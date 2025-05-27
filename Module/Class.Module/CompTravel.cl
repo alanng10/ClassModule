@@ -46,5 +46,26 @@ class CompTravel : Travel
         nodeGet : nodeField.Get;
         var State nodeSet;
         nodeSet : nodeField.Set;
+
+        var String fieldName;
+        inf (~(name = null))
+        {
+            fieldName : name.Value;
+        }
+
+        var String className;
+        inf (~(nodeClass = null))
+        {
+            className : nodeClass.Value;
+        }
+
+        inf (~(fieldName = null))
+        {
+            inf (~(this.ClassInfra.CompDefine(this.ThisClass, fieldName) = null))
+            {
+                this.Error(this.ErrorKind.NameUnavail, nodeField);
+                return true;
+            }
+        }
     }
 }
