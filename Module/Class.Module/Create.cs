@@ -705,7 +705,7 @@ public class Create : ClassCreate
                 if (b)
                 {
                     NodeMaide kc;
-                    kc = maide.Any as NodeMaide;
+                    kc = varMaide.Any as NodeMaide;
                     this.Error(this.ErrorKind.MaideUnexport, kc, varClass.Index);
                 }
             }
