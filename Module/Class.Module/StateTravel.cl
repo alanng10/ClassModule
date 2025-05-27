@@ -54,4 +54,9 @@ class StateTravel : Travel
     field precate Class NullClass { get { return data; } set { data : value; } }
     field precate Class ThisClass { get { return data; } set { data : value; } }
     field precate Class ThisResultClass { get { return data; } set { data : value; } }
+    field precate Table StateVar { get { return data; } set { data : value; } }
+    field precate Stack VarStack { get { return data; } set { data : value; } }
+    field precate Iter VarStackIter { get { return data; } set { data : value; } }
+    field precate Iter ParamIter { get { return data; } set { data : value; } }
+    field precate Iter ArgueIter { get { return data; } set { data : value; } }
 }
