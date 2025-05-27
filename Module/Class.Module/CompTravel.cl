@@ -103,4 +103,79 @@ class CompTravel : Travel
         this.ListInfra.TableAdd(this.ThisClass.Field, a.Name, a);
         return true;
     }
+
+    maide prusate Bool ExecuteMaide(var NodeMaide nodeMaide)
+    {
+        inf (nodeMaide = null)
+        {
+            return true;
+        }
+
+        var MaideName name;
+        name : nodeMaide.Name;
+        var ClassName nodeClass;
+        nodeClass : nodeMaide.Class;
+        var NodeCount nodeCount;
+        nodeCount : nodeMaide.Count;
+        var Param param;
+        param : nodeMaide.Param;
+        var State call;
+        call : nodeMaide.Call;
+
+        var String maideName;
+        inf (~(name = null))
+        {
+            maideName : name.Value;
+        }
+
+        var String className;
+        inf (~(nodeClass = null))
+        {
+            className : nodeClass.Value;
+        }
+
+        inf (~(maideName = null))
+        {
+            inf (~(this.ClassInfra.CompDefine(this.ThisClass, maideName) = null))
+            {
+                this.Error(this.ErrorKind.NameUnavail, nodeMaide);
+                return true;
+            }
+        }
+
+        var Class varClass;
+
+        inf (~(className = null))
+        {
+            varClass : this.Class(className);
+            inf (varClass = null)
+            {
+                this.Error(this.ErrorKind.ClassUndefine, nodeMaide);
+                return true;
+            }
+        }
+
+        var Count count;
+        count : this.CountGet(nodeCount);
+
+        var Table varGet;
+        varGet : this.ClassInfra.TableCreateStringLess();
+
+        var Table varSet;
+        varSet : this.ClassInfra.TableCreateStringLess();
+
+        var Field a;
+        a : new Field;
+        a.Init();
+        a.Name : fieldName;
+        a.Class : varClass;
+        a.Count : count;
+        a.Get : varGet;
+        a.Set : varSet;
+        a.Parent : this.ThisClass;
+        a.Any : nodeField;
+
+        this.ListInfra.TableAdd(this.ThisClass.Field, a.Name, a);
+        return true;
+    }
 }
