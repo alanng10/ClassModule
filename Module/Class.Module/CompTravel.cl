@@ -28,4 +28,23 @@ class CompTravel : Travel
 
         return true;
     }
+
+    maide prusate Bool ExecuteField(var NodeField nodeField)
+    {
+        inf (nodeField = null)
+        {
+            return true;
+        }
+
+        var FieldName name;
+        name : nodeField.Name;
+        var ClassName nodeClass;
+        nodeClass : nodeField.Class;
+        var NodeCount nodeCount;
+        nodeCount : nodeField.Count;
+        var State nodeGet;
+        nodeGet : nodeField.Get;
+        var State nodeSet;
+        nodeSet : nodeField.Set;
+    }
 }
