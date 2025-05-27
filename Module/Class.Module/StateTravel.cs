@@ -552,7 +552,7 @@ public class StateTravel : Travel
 
         if (!(maide == null))
         {
-            if (!this.ArgueMatch(maide, argue))
+            if (!this.ValidArgue(maide, argue))
             {
                 this.Error(this.ErrorKind.ArgueUnassign, callOperate);
             }
@@ -1282,7 +1282,7 @@ public class StateTravel : Travel
         return this.ClassInfra.ValidClass(varClass, requireClass, this.System.Any, this.NullClass);
     }
 
-    protected virtual bool ArgueMatch(Maide varMaide, Argue argue)
+    protected virtual bool ValidArgue(Maide varMaide, Argue argue)
     {
         long count;
         count = varMaide.Param.Count;
