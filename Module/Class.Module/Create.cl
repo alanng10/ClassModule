@@ -830,4 +830,17 @@ class Create : ClassCreate
         this.ErrorList.Add(a);
         return true;
     }
+
+    maide prusate Bool ErrorModule(var ErrorKind kind, var String name)
+    {
+        var Error a;
+        a : new Error;
+        a.Init();
+        a.Stage : this.Stage;
+        a.Kind : kind;
+        a.Name : name;
+
+        this.ErrorList.Add(a);
+        return true;
+    }
 }
