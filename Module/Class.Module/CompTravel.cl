@@ -79,5 +79,28 @@ class CompTravel : Travel
                 return true;
             }
         }
+
+        var Count count;
+        count : this.CountGet(nodeCount);
+
+        var Table varGet;
+        varGet : this.ClassInfra.TableCreateStringLess();
+
+        var Table varSet;
+        varSet : this.ClassInfra.TableCreateStringLess();
+
+        var Field a;
+        a : new Field;
+        a.Init();
+        a.Name : fieldName;
+        a.Class : varClass;
+        a.Count : count;
+        a.Get : varGet;
+        a.Set : varSet;
+        a.Parent : this.ThisClass;
+        a.Any : nodeField;
+
+        this.ListInfra.TableAdd(this.ThisClass.Field, a.Name, a);
+        return true;
     }
 }
