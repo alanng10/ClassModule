@@ -240,4 +240,45 @@ class CompTravel : Travel
         this.Info(nodeVar).Var : a;
         return true;
     }
+
+    maide precate Count CountGet(var NodeCount nodeCount)
+    {
+        var Count a;
+
+        var NodeCount k;
+
+        inf (a = null)
+        {
+            k : cast PrusateCount(nodeCount);
+            inf (~(k = null))
+            {
+                a : this.Count.Prusate;
+            }
+        }
+        inf (a = null)
+        {
+            k : cast PrecateCount(nodeCount);
+            inf (~(k = null))
+            {
+                a : this.Count.Precate;
+            }
+        }
+        inf (a = null)
+        {
+            k : cast PronateCount(nodeCount);
+            inf (~(k = null))
+            {
+                a : this.Count.Pronate;
+            }
+        }
+        inf (a = null)
+        {
+            k : cast PrivateCount(nodeCount);
+            inf (~(k = null))
+            {
+                a : this.Count.Private;
+            }
+        }
+        return a;
+    }
 }
