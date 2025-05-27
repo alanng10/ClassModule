@@ -5,43 +5,42 @@ public class Travel : NodeTravel
     public override bool Init()
     {
         base.Init();
-        this.Count = this.Create.Count;
-        this.ErrorKind = this.Create.ErrorKind;
-        this.Module = this.Create.Module;
+        this.Count = CountList.This;
+        this.ErrorKind = ErrorKindList.This;
         return true;
     }
 
     public virtual Create Create { get; set; }
-    public virtual Source Source { get; set; }
     protected virtual CountList Count { get; set; }
     protected virtual ErrorKindList ErrorKind { get; set; }
-    protected virtual ClassModule Module { get; set; }
 
     protected virtual Info Info(NodeNode node)
     {
         return this.Create.Info(node);
     }
 
-    protected virtual ClassClass Class(String name)
+    protected virtual Class Class(String name)
     {
-        ClassClass a;
+        Class a;
         a = this.Create.Class(name);
         return a;
     }
 
-    protected virtual bool UniqueError(ErrorKind kind, NodeNode node, bool hasAdded)
+    protected virtual bool ErrorUnique(ErrorKind kind, NodeNode node, bool did)
     {
-        if (!hasAdded)
+        if (!did)
         {
             this.Error(kind, node);
-            hasAdded = true;
+
+            did = true;
         }
-        return hasAdded;
+
+        return did;
     }
 
     protected virtual bool Error(ErrorKind kind, NodeNode node)
     {
-        this.Create.Error(kind, node, this.Source);
+        this.Create.Error(kind, node, this.Create.SourceIndex);
         return true;
     }
 }
