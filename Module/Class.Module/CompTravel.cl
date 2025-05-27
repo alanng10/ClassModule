@@ -181,4 +181,29 @@ class CompTravel : Travel
         this.ListInfra.TableAdd(this.ThisClass.Maide, a.Name, a);
         return true;
     }
+
+    maide prusate Bool ExecuteVar(var NodeVar nodeVar)
+    {
+        inf (nodeVar = null)
+        {
+            return true;
+        }
+
+        var VarName name;
+        name : nodeVar.Name;
+        var ClassName nodeClass;
+        nodeClass : nodeVar.Class;
+
+        var String varName;
+        inf (~(name = null))
+        {
+            varName : name.Value;
+        }
+
+        var String className;
+        inf (~(nodeClass = null))
+        {
+            className : nodeClass.Value;
+        }
+    }
 }
