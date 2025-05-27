@@ -688,4 +688,25 @@ class Create : ClassCreate
         }
         return true;
     }
+
+    maide precate Bool ExportValidCount(var Count count)
+    {
+        inf (count = this.Count.Prusate | count = this.Count.Precate)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    maide precate Bool ExportValidClass(var Class varClass)
+    {
+        inf (~(varClass.Module = this.Module))
+        {
+            return true;
+        }
+
+        var Bool a;
+        a : this.Module.Export.Valid(varClass.Name);
+        return a;
+    }
 }
