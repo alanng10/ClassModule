@@ -39,5 +39,21 @@ class ClassTravel : Travel
             this.Error(this.ErrorKind.NameUnavail, nodeClass);
             return true;
         }
+
+        var Class k;
+        k : new Class;
+        k.Init();
+        k.Name : className;
+        k.Base : null;
+        k.Field : this.ClassInfra.TableCreateStringLess();
+        k.Maide : this.ClassInfra.TableCreateStringLess();
+        k.Module : this.Create.Module;
+        k.Index : this.Create.SourceIndex;
+        k.Any : nodeClass;
+
+        this.ListInfra.TableAdd(this.Create.Module.Class, k.Name, k);
+
+        this.Info(nodeClass).Class : k;
+        return true;
     }
 }
