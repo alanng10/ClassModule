@@ -736,18 +736,15 @@ public class Create : ClassCreate
 
     protected virtual bool ExecuteEntry()
     {
-        ClassModule module;
-        module = this.Module;
-
         String entry;
-        entry = module.Entry;
+        entry = this.Module.Entry;
         if (entry == null)
         {
             return true;
         }
 
         Class varClass;
-        varClass = this.ModuleClassGet(module, entry);
+        varClass = this.ModuleClassGet(this.Module, entry);
         if (varClass == null)
         {
             this.ErrorModule(this.ErrorKind.EntryUndefine, null);
