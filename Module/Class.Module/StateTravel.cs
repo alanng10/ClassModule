@@ -614,7 +614,7 @@ public class StateTravel : Travel
         ClassName nodeClass;
         nodeClass = newOperate.Class;
 
-        this.WordClassOperate(newOperate, nodeClass);
+        this.ExecuteWordClassOperate(newOperate, nodeClass);
         return true;
     }
 
@@ -628,7 +628,7 @@ public class StateTravel : Travel
         ClassName nodeClass;
         nodeClass = shareOperate.Class;
 
-        this.WordClassOperate(shareOperate, nodeClass);
+        this.ExecuteWordClassOperate(shareOperate, nodeClass);
         return true;
     }
 
@@ -1183,7 +1183,7 @@ public class StateTravel : Travel
         return true;
     }
 
-    protected virtual bool WordClassOperate(Operate operate, ClassName nodeClass)
+    protected virtual bool ExecuteWordClassOperate(Operate operate, ClassName nodeClass)
     {
         String className;
         className = null;
