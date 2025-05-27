@@ -59,4 +59,20 @@ class StateTravel : Travel
     field precate Iter VarStackIter { get { return data; } set { data : value; } }
     field precate Iter ParamIter { get { return data; } set { data : value; } }
     field precate Iter ArgueIter { get { return data; } set { data : value; } }
+
+    maide prusate Bool ExecuteClass(var NodeClass varClass)
+    {
+        inf (varClass = null)
+        {
+            return true;
+        }
+
+        this.ThisClass : this.Info(varClass).Class;
+
+        base.ExecuteClass(varClass);
+
+        this.ThisClass : null;
+
+        return true;
+    }
 }
