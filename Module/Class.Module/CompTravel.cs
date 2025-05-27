@@ -10,7 +10,7 @@ public class CompTravel : Travel
         return true;
     }
 
-    public virtual ClassClass ThisClass { get; set; }
+    public virtual Class ThisClass { get; set; }
     protected virtual ListInfra ListInfra { get; set; }
     protected virtual ClassInfra ClassInfra { get; set; }
     protected virtual Table ParamVar { get; set; }
@@ -25,6 +25,9 @@ public class CompTravel : Travel
         this.ThisClass = this.Info(nodeClass).Class;
 
         base.ExecuteClass(nodeClass);
+
+        this.ThisClass = null;
+
         return true;
     }
 
@@ -62,14 +65,14 @@ public class CompTravel : Travel
 
         if (!(fieldName == null))
         {
-            if (this.Create.MemberNameDefined(this.ThisClass, fieldName))
+            if (!(this.ClassInfra.CompDefine(this.ThisClass, fieldName) == null))
             {
                 this.Error(this.ErrorKind.NameUnavail, nodeField);
                 return true;
             }
         }
 
-        ClassClass varClass;
+        Class varClass;
         varClass = null;
 
         if (!(className == null))
@@ -83,7 +86,7 @@ public class CompTravel : Travel
         }
 
         Count count;
-        count = this.GetCount(nodeCount);
+        count = this.CountGet(nodeCount);
 
         Table varGet;
         varGet = this.ClassInfra.TableCreateStringLess();
@@ -140,14 +143,14 @@ public class CompTravel : Travel
 
         if (!(maideName == null))
         {
-            if (this.Create.MemberNameDefined(this.ThisClass, maideName))
+            if (!(this.ClassInfra.CompDefine(this.ThisClass, maideName) == null))
             {
                 this.Error(this.ErrorKind.NameUnavail, nodeMaide);
                 return true;
             }
         }
 
-        ClassClass varClass;
+        Class varClass;
         varClass = null;
 
         if (!(className == null))
@@ -161,7 +164,7 @@ public class CompTravel : Travel
         }
 
         Count count;
-        count = this.GetCount(nodeCount);
+        count = this.CountGet(nodeCount);
 
         this.ParamVar = this.ClassInfra.TableCreateStringLess();
 
@@ -222,7 +225,7 @@ public class CompTravel : Travel
             }
         }
 
-        ClassClass varClass;
+        Class varClass;
         varClass = null;
 
         if (!(className == null))
@@ -240,7 +243,7 @@ public class CompTravel : Travel
         a.Init();
         a.Name = varName;
         a.Class = varClass;
-        a.Index =  this.ParamVar.Count;
+        a.Index = this.ParamVar.Count;
         a.Any = nodeVar;
 
         this.ListInfra.TableAdd(this.ParamVar, a.Name, a);
@@ -249,35 +252,42 @@ public class CompTravel : Travel
         return true;
     }
 
-    protected virtual Count GetCount(NodeCount nodeCount)
+    protected virtual Count CountGet(NodeCount nodeCount)
     {
         Count a;
         a = null;
 
+        NodeCount k;
+        k = null;
+
         if (a == null)
         {
-            if (nodeCount is PrusateCount)
+            k = nodeCount as PrusateCount;
+            if (!(k == null))
             {
                 a = this.Count.Prusate;
             }
         }
         if (a == null)
         {
-            if (nodeCount is PrecateCount)
+            k = nodeCount as PrecateCount;
+            if (!(k == null))
             {
                 a = this.Count.Precate;
             }
         }
         if (a == null)
         {
-            if (nodeCount is PronateCount)
+            k = nodeCount as PronateCount;
+            if (!(k == null))
             {
                 a = this.Count.Pronate;
             }
         }
         if (a == null)
         {
-            if (nodeCount is PrivateCount)
+            k = nodeCount as PrivateCount;
+            if (!(k == null))
             {
                 a = this.Count.Private;
             }
