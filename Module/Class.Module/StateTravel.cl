@@ -23,4 +23,28 @@ class StateTravel : Travel
         a.Init();
         return a;
     }
+
+    maide precate Iter CreateVarStackIter()
+    {
+        var Iter a;
+        a : new Iter;
+        a.Init();
+        return a;
+    }
+
+    maide precate TableIter CreateParamIter()
+    {
+        var TableIter a;
+        a : new TableIter;
+        a.Init();
+        return a;
+    }
+
+    maide precate ArrayIter CreateArgueIter()
+    {
+        var ArrayIter a;
+        a : new ArrayIter;
+        a.Init();
+        return a;
+    }
 }
