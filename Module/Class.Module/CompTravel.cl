@@ -205,5 +205,26 @@ class CompTravel : Travel
         {
             className : nodeClass.Value;
         }
+
+        inf (~(varName = null))
+        {
+            inf (this.ParamVar.Valid(varName))
+            {
+                this.Error(this.ErrorKind.NameUnavail, nodeVar);
+                return true;
+            }
+        }
+
+        var Class varClass;
+
+        inf (~(className = null))
+        {
+            varClass : this.Class(className);
+            inf (varClass = null)
+            {
+                this.Error(this.ErrorKind.ClassUndefine, nodeVar);
+                return true;
+            }
+        }
     }
 }
