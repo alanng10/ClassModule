@@ -319,4 +319,22 @@ class StateTravel : Travel
         this.ExecuteCondBodyExecute(infExecute, cond);
         return true;
     }
+
+    maide prusate Bool ExecuteWhileExecute(var WhileExecute whileExecute)
+    {
+        inf (whileExecute = null)
+        {
+            return true;
+        }
+
+        var Operate cond;
+        cond : whileExecute.Cond;
+        var State loop;
+        loop : whileExecute.Loop;
+
+        base.ExecuteWhileExecute(whileExecute);
+
+        this.ExecuteCondBodyExecute(whileExecute, loop);
+        return true;
+    }
 }
