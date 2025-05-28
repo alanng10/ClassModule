@@ -334,7 +334,7 @@ class StateTravel : Travel
 
         base.ExecuteWhileExecute(whileExecute);
 
-        this.ExecuteCondBodyExecute(whileExecute, loop);
+        this.ExecuteCondBodyExecute(whileExecute, cond);
         return true;
     }
 }
