@@ -135,4 +135,50 @@ class StateTravel : Travel
         this.ThisResultClass : null;
         return true;
     }
+
+    maide precate Bool FieldSet(var Field varField, var State nodeSet)
+    {
+        inf (nodeSet = null)
+        {
+            return true;
+        }
+
+        this.ThisResultClass : this.System.Bool;
+
+        this.StateVar : varField.Set;
+
+        var Var dataVar;
+        dataVar : new Var;
+        dataVar.Init();
+        dataVar.Name : "data";
+        dataVar.Class : varField.Class;
+        dataVar.Index : this.StateVar.Count;
+
+        this.ListInfra.TableAdd(this.StateVar, dataVar.Name, dataVar);
+
+        var Var valueVar;
+        valueVar : new Var;
+        valueVar.Init();
+        valueVar.Name : "value";
+        valueVar.Class : varField.Class;
+        valueVar.Index : this.StateVar.Count;
+
+        this.ListInfra.TableAdd(this.StateVar, valueVar.Name, valueVar);
+
+        var Table k;
+        k : this.ClassInfra.TableCreateStringLess();
+
+        this.ListInfra.TableAdd(k, dataVar.Name, dataVar);
+        this.ListInfra.TableAdd(k, valueVar.Name, valueVar);
+
+        this.VarStack.Push(k);
+
+        this.ExecuteState(nodeSet);
+
+        this.VarStack.Pop();
+
+        this.StackVar : null;
+        this.ThisResultClass : null;
+        return true;
+    }
 }
