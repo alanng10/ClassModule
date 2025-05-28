@@ -387,6 +387,11 @@ class StateTravel : Travel
         var Class markClass;
         inf (~(mark = null))
         {
+            markClass : this.Info(mark).MarkClass;
+            inf (markClass = null)
+            {
+                this.Error(this.ErrorKind.MarkUndefine, areExecute);
+            }
         }
     }
 }
