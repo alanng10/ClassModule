@@ -298,16 +298,17 @@ public class StateTravel : Travel
             return true;
         }
 
-        Table h;
-        h = this.ClassInfra.TableCreateStringLess();
+        Table k;
+        k = this.ClassInfra.TableCreateStringLess();
 
-        this.VarStack.Push(h);
+        this.VarStack.Push(k);
 
         base.ExecuteState(state);
 
-        this.Info(state).StateVar = h;
-
         this.VarStack.Pop();
+
+        this.Info(state).StateVar = k;
+
         return true;
     }
 
