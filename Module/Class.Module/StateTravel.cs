@@ -172,13 +172,13 @@ public class StateTravel : Travel
 
         this.ListInfra.TableAdd(this.StateVar, valueVar.Name, valueVar);
 
-        Table o;
-        o = this.ClassInfra.TableCreateStringLess();
+        Table k;
+        k = this.ClassInfra.TableCreateStringLess();
 
-        this.ListInfra.TableAdd(o, dataVar.Name, dataVar);
-        this.ListInfra.TableAdd(o, valueVar.Name, valueVar);
+        this.ListInfra.TableAdd(k, dataVar.Name, dataVar);
+        this.ListInfra.TableAdd(k, valueVar.Name, valueVar);
 
-        this.VarStack.Push(o);
+        this.VarStack.Push(k);
 
         this.ExecuteState(nodeSet);
 
