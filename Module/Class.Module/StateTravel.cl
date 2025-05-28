@@ -181,4 +181,40 @@ class StateTravel : Travel
         this.ThisResultClass : null;
         return true;
     }
+
+    maide prusate Bool ExecuteMaide(var NodeMaide nodeMaide)
+    {
+        inf (nodeMaide = null)
+        {
+            return true;
+        }
+
+        var Param param;
+        param : nodeMaide.Param;
+        var State call;
+        call : nodeMaide.Call;
+
+        var Maide varMaide;
+        varMaide : this.Info(nodeMaide).Maide;
+        inf (varMaide = null)
+        {
+            return true;
+        }
+
+        this.ThisResultClass : varMaide.Class;
+
+        this.StateVar : varMaide.Call;
+
+        this.VarTableAdd(this.StateVar, varMaide.Param);
+
+        this.VarStack.Push(varMaide.Param);
+
+        this.ExecuteState(call);
+
+        this.VarStack.Pop();
+
+        this.StateVar : null;
+        this.ThisResultClass : null;
+        return true;
+    }
 }
