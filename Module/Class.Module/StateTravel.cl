@@ -217,4 +217,50 @@ class StateTravel : Travel
         this.ThisResultClass : null;
         return true;
     }
+
+    maide prusate Bool ExecuteVar(var NodeVar nodeVar)
+    {
+        inf (nodeVar = null)
+        {
+            return true;
+        }
+
+        var VarName name;
+        name : nodeVar.Name;
+        var ClassName nodeClass;
+        nodeClass : nodeVar.Class;
+
+        var String varName;
+        inf (~(name = null))
+        {
+            varName : name.Value;
+        }
+
+        var String className;
+        inf (~(nodeClass = null))
+        {
+            className : nodeClass.Value;
+        }
+
+        inf (~(varName = null))
+        {
+            inf (this.StateVar.Valid(varName))
+            {
+                this.Error(this.ErrorKind.NameUnavail, nodeVar);
+                return true;
+            }
+        }
+
+        var Class varClass;
+
+        inf (~(className = null))
+        {
+            varClass : this.Class(className);
+            inf (varClass = null)
+            {
+                this.Error(this.ErrorKind.ClassUndefine, nodeVar);
+                return true;
+            }
+        }
+    }
 }
