@@ -393,5 +393,24 @@ class StateTravel : Travel
                 this.Error(this.ErrorKind.MarkUndefine, areExecute);
             }
         }
+
+        var Class valueClass;
+        inf (~(value = null))
+        {
+            valueClass : this.Info(value).OperateClass;
+            inf (valueClass = null)
+            {
+                this.Error(this.ErrorKind.ValueUndefine, areExecute);
+            }
+        }
+
+        inf (~(markClass = null) & ~(valueClass = null))
+        {
+            inf (~this.ValidClass(valueClass, markClass))
+            {
+                this.Error(this.ErrorKind.ValueUnassign, areExecute);
+            }
+        }
+        return true;
     }
 }
