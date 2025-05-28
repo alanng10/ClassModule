@@ -369,4 +369,24 @@ class StateTravel : Travel
         }
         return true;
     }
+
+    maide prusate Bool ExecuteAreExecute(var AreExecute areExecute)
+    {
+        inf (areExecute = null)
+        {
+            return true;
+        }
+
+        var Mark mark;
+        mark : areExecute.Mark;
+        var Operate value;
+        value : areExecute.Value;
+
+        base.ExecuteAreExecute(areExecute);
+
+        var Class markClass;
+        inf (~(mark = null))
+        {
+        }
+    }
 }
