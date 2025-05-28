@@ -280,4 +280,25 @@ class StateTravel : Travel
         this.Info(nodeVar).Var : a;
         return true;
     }
+
+    maide prusate Bool ExecuteState(var State state)
+    {
+        inf (state = null)
+        {
+            return true;
+        }
+
+        var Table k;
+        k : this.ClassInfra.TableCreateStringLess();
+
+        this.VarStack.Push(k);
+
+        base.ExecuteState(state);
+
+        this.VarStack.Pop();
+
+        this.Info(state).StateVar : k;
+
+        return true;
+    }
 }
