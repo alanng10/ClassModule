@@ -301,4 +301,22 @@ class StateTravel : Travel
 
         return true;
     }
+
+    maide prusate Bool ExecuteInfExecute(var InfExecute infExecute)
+    {
+        inf (infExecute = null)
+        {
+            return true;
+        }
+
+        var Operate cond;
+        cond : infExecute.Cond;
+        var State then;
+        then : infExecute.Then;
+
+        base.ExecuteInfExecute(infExecute);
+
+        this.ExecuteCondBodyExecute(infExecute, cond);
+        return true;
+    }
 }
