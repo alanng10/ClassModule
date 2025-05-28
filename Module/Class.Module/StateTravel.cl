@@ -99,4 +99,40 @@ class StateTravel : Travel
         this.FieldSet(varField, nodeSet);
         return true;
     }
+
+    maide precate Bool FieldGet(var Field varField, var State nodeGet)
+    {
+        inf (nodeGet = null)
+        {
+            return true;
+        }
+
+        this.ThisResultClass : varField.Class;
+
+        this.StateVar : varField.Get;
+
+        var Var dataVar;
+        dataVar : new Var;
+        dataVar.Init();
+        dataVar.Name : "data";
+        dataVar.Class : varField.Class;
+        dataVar.Index : this.StateVar.Count;
+
+        this.ListInfra.TableAdd(this.StateVar, dataVar.Name, dataVar);
+
+        var Table k;
+        k : this.ClassInfra.TableCreateStringLess();
+
+        this.ListInfra.TableAdd(k, dataVar.Name, dataVar);
+
+        this.VarStack.Push(k);
+
+        this.ExecuteState(nodeGet);
+
+        this.VarStack.Pop();
+
+        this.StackVar : null;
+        this.ThisResultClass : null;
+        return true;
+    }
 }
