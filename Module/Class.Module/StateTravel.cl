@@ -262,5 +262,22 @@ class StateTravel : Travel
                 return true;
             }
         }
+
+        var Var a;
+        a : new Var;
+        a.Init();
+        a.Name : varName;
+        a.Class : varClass;
+        a.Index : this.StateVar.Count;
+        a.Any : nodeVar;
+
+        var Table k;
+        k : cast Table(this.VarStack.Top);
+
+        this.ListInfra.TableAdd(k, a.Name, a);
+        this.ListInfra.TableAdd(this.StateVar, a.Name, a);
+
+        this.Info(nodeVar).Var : a;
+        return true;
     }
 }
