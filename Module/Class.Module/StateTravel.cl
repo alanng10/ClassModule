@@ -337,4 +337,36 @@ class StateTravel : Travel
         this.ExecuteCondBodyExecute(whileExecute, cond);
         return true;
     }
+
+    maide prusate Bool ExecuteReturnExecute(var ReturnExecute returnExecute)
+    {
+        inf (returnExecute = null)
+        {
+            return true;
+        }
+
+        var Operate result;
+        result : returnExecute.Result;
+
+        base.ExecuteReturnExecute(returnExecute);
+
+        var Class resultClass;
+        inf (~(result = null))
+        {
+            resultClass : this.Info(result).OperateClass;
+            inf (resultClass = null)
+            {
+                this.Error(this.ErrorKind.ResultUndefine, returnExecute);
+            }
+        }
+
+        inf (~(resultClass = null))
+        {
+            inf (~this.ValidClass(resultClass, this.ThisResultClass))
+            {
+                this.Error(this.ErrorKind.ResultUnassign, returnExecute);
+            }
+        }
+        return true;
+    }
 }
