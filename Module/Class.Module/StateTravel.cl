@@ -413,4 +413,21 @@ class StateTravel : Travel
         }
         return true;
     }
+
+    maide prusate Bool ExecuteVarMark(var VarMark varTarget)
+    {
+        inf (varTarget = null)
+        {
+            return true;
+        }
+
+        var VarName name;
+        name : varTarget.Var;
+
+        var Class varClass;
+        varClass : this.ExecuteVarNameNode(varTarget, name);
+
+        this.Info(varTarget).MarkClass : varClass;
+        return true;
+    }
 }
