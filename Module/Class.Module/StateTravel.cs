@@ -444,22 +444,22 @@ public class StateTravel : Travel
         return true;
     }
 
-    public override bool ExecuteSetMark(SetMark setTarget)
+    public override bool ExecuteSetMark(SetMark setMark)
     {
-        if (setTarget == null)
+        if (setMark == null)
         {
             return true;
         }
 
         Operate varThis;
-        varThis = setTarget.This;
+        varThis = setMark.This;
         FieldName nodeField;
-        nodeField = setTarget.Field;
+        nodeField = setMark.Field;
 
-        base.ExecuteSetMark(setTarget);
+        base.ExecuteSetMark(setMark);
 
         Field varField;
-        varField = this.ExecuteThisFieldNode(setTarget, varThis, nodeField);
+        varField = this.ExecuteThisFieldNode(setMark, varThis, nodeField);
 
         Class fieldClass;
         fieldClass = null;
@@ -468,8 +468,8 @@ public class StateTravel : Travel
             fieldClass = varField.Class;
         }
 
-        this.Info(setTarget).SetField = varField;
-        this.Info(setTarget).MarkClass = fieldClass;
+        this.Info(setMark).SetField = varField;
+        this.Info(setMark).MarkClass = fieldClass;
         return true;
     }
 
