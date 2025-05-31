@@ -414,20 +414,48 @@ class StateTravel : Travel
         return true;
     }
 
-    maide prusate Bool ExecuteVarMark(var VarMark varTarget)
+    maide prusate Bool ExecuteVarMark(var VarMark varMark)
     {
-        inf (varTarget = null)
+        inf (varMark = null)
         {
             return true;
         }
 
         var VarName name;
-        name : varTarget.Var;
+        name : varMark.Var;
 
         var Class varClass;
-        varClass : this.ExecuteVarNameNode(varTarget, name);
+        varClass : this.ExecuteVarNameNode(varMark, name);
 
-        this.Info(varTarget).MarkClass : varClass;
+        this.Info(varMark).MarkClass : varClass;
+        return true;
+    }
+
+    maide prusate Bool ExecuteSetMark(var SetMark setTarget)
+    {
+        inf (setTarget = null)
+        {
+            return true;
+        }
+
+        var Operate varThis;
+        varThis : setTarget.This;
+        var FieldName nodeField;
+        nodeField : setTarget.Field;
+
+        base.ExecuteSetMark(setTarget);
+
+        var Field varField;
+        varField : this.ExecuteThisFieldNode(setTarget, varThis, nodeField);
+
+        var Class fieldClass;
+        inf (~(varField = null))
+        {
+            fieldClass : varField.Class;
+        }
+
+        this.Info(setTarget).SetField : varField;
+        this.Info(setTarget).MarkClass : fieldClass;
         return true;
     }
 }
