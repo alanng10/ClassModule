@@ -431,22 +431,22 @@ class StateTravel : Travel
         return true;
     }
 
-    maide prusate Bool ExecuteSetMark(var SetMark setTarget)
+    maide prusate Bool ExecuteSetMark(var SetMark setMark)
     {
-        inf (setTarget = null)
+        inf (setMark = null)
         {
             return true;
         }
 
         var Operate varThis;
-        varThis : setTarget.This;
+        varThis : setMark.This;
         var FieldName nodeField;
-        nodeField : setTarget.Field;
+        nodeField : setMark.Field;
 
-        base.ExecuteSetMark(setTarget);
+        base.ExecuteSetMark(setMark);
 
         var Field varField;
-        varField : this.ExecuteThisFieldNode(setTarget, varThis, nodeField);
+        varField : this.ExecuteThisFieldNode(setMark, varThis, nodeField);
 
         var Class fieldClass;
         inf (~(varField = null))
@@ -454,8 +454,8 @@ class StateTravel : Travel
             fieldClass : varField.Class;
         }
 
-        this.Info(setTarget).SetField : varField;
-        this.Info(setTarget).MarkClass : fieldClass;
+        this.Info(setMark).SetField : varField;
+        this.Info(setMark).MarkClass : fieldClass;
         return true;
     }
 }
