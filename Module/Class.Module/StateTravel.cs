@@ -427,20 +427,20 @@ public class StateTravel : Travel
         return true;
     }
 
-    public override bool ExecuteVarMark(VarMark varTarget)
+    public override bool ExecuteVarMark(VarMark varMark)
     {
-        if (varTarget == null)
+        if (varMark == null)
         {
             return true;
         }
 
         VarName name;
-        name = varTarget.Var;
+        name = varMark.Var;
 
         Class varClass;
-        varClass = this.ExecuteVarNameNode(varTarget, name);
+        varClass = this.ExecuteVarNameNode(varMark, name);
 
-        this.Info(varTarget).MarkClass = varClass;
+        this.Info(varMark).MarkClass = varClass;
         return true;
     }
 
