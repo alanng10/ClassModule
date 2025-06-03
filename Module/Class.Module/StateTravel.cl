@@ -744,4 +744,17 @@ class StateTravel : Travel
         this.Info(braceOperate).OperateClass : anyClass;
         return true;
     }
+    
+    maide prusate Bool ExecuteSameOperate(var SameOperate sameOperate)
+    {
+        inf (sameOperate = null)
+        {
+            return true;
+        }
+
+        base.ExecuteSameOperate(sameOperate);
+
+        this.Info(sameOperate).OperateClass : this.System.Bool;
+        return true;
+    }
 }
