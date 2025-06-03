@@ -710,5 +710,12 @@ class StateTravel : Travel
         {
             valueClass : this.System.Int;
         }
+        inf (~(cast StringValue(value) = null))
+        {
+            valueClass : this.System.String;
+        }
+
+        this.Info(valueOperate).OperateClass : valueClass;
+        return true;
     }
 }
