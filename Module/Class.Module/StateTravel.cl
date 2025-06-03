@@ -512,5 +512,25 @@ class StateTravel : Travel
                 this.Error(this.ErrorKind.ThisUndefine, callOperate);
             }
         }
+
+        var String maideName;
+        inf (~(nodeMaide = null))
+        {
+            maideName : nodeMaide.Value;
+        }
+
+        var Maide varMaide;
+
+        inf (~(thisClass = null))
+        {
+            inf (~(maideName = null))
+            {
+                varMaide : this.Maide(thisClass, maideName);
+                inf (varMaide = null)
+                {
+                    this.Error(this.ErrorKind.MaideUndefine, callOperate);
+                }
+            }
+        }
     }
 }
