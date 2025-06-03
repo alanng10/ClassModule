@@ -687,4 +687,28 @@ class StateTravel : Travel
         this.Info(varOperate).OperateClass : varClass;
         return true;
     }
+
+    maide prusate Bool ExecuteValueOperate(var ValueOperate valueOperate)
+    {
+        inf (valueOperate = null)
+        {
+            return true;
+        }
+
+        var Value value;
+        value : valueOperate.Value;
+
+        base.ExecuteValueOperate(valueOperate);
+
+        var Class valueClass;
+
+        inf (~(cast BoolValue(value) = null))
+        {
+            valueClass : this.System.Bool;
+        }
+        inf (~(cast IntValue(value) = null) | ~(cast IntSignValue(value) = null) | ~(cast IntHexValue(value) = null) | ~(cast IntHexSignValue(value) = null))
+        {
+            valueClass : this.System.Int;
+        }
+    }
 }
