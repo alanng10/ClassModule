@@ -598,4 +598,18 @@ class StateTravel : Travel
         this.ExecuteWordClassOperate(newOperate, nodeClass);
         return true;
     }
+
+    maide prusate Bool ExecuteShareOperate(var ShareOperate shareOperate)
+    {
+        inf (shareOperate = null)
+        {
+            return true;
+        }
+
+        var ClassName nodeClass;
+        nodeClass : shareOperate.Class;
+
+        this.ExecuteWordClassOperate(shareOperate, nodeClass);
+        return true;
+    }
 }
