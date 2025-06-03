@@ -612,4 +612,62 @@ class StateTravel : Travel
         this.ExecuteWordClassOperate(shareOperate, nodeClass);
         return true;
     }
+
+    maide prusate Bool ExecuteCastOperate(var CastOperate castOperate)
+    {
+        inf (castOperate = null)
+        {
+            return true;
+        }
+
+        var ClassName nodeClass;
+        nodeClass : castOperate.Class;
+        var Operate any;
+        any : castOperate.Any;
+
+        base.ExecuteCastOperate(castOperate);
+
+        var Class anyClass;
+        inf (~(any = null))
+        {
+            anyClass : this.Info(any).OperateClass;
+            inf (anyClass = null)
+            {
+                this.Error(this.ErrorKind.AnyUndefine, castOperate);
+            }
+        }
+
+        var String className;
+        inf (~(nodeClass = null))
+        {
+            className : nodeClass.Value;
+        }
+
+        var Class varClass;
+        inf (~(className = null))
+        {
+            varClass : this.Class(className);
+            inf (varClass = null)
+            {
+                this.Error(this.ErrorKind.ClassUndefine, castOperate);
+            }
+        }
+
+        inf (~(anyClass = null))
+        {
+            inf (~(varClass = null))
+            {
+                inf (~this.ValidClass(anyClass, varClass))
+                {
+                    inf (~this.ValidClass(varClass, anyClass))
+                    {
+                        this.Error(this.ErrorKind.CastUnachieve, castOperate);
+                    }
+                }
+            }
+        }
+
+        this.Info(castOperate).OperateClass : varClass;
+        return true;
+    }
 }
