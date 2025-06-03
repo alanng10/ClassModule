@@ -573,4 +573,15 @@ class StateTravel : Travel
         this.Info(baseOperate).OperateClass : this.ThisClass.Base;
         return true;
     }
+
+    maide prusate Bool ExecuteNullOperate(var NullOperate nullOperate)
+    {
+        inf (nullOperate = null)
+        {
+            return true;
+        }
+
+        this.Info(nullOperate).OperateClass : this.NullClass;
+        return true;
+    }
 }
