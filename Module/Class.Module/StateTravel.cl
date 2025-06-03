@@ -670,4 +670,21 @@ class StateTravel : Travel
         this.Info(castOperate).OperateClass : varClass;
         return true;
     }
+
+    maide prusate Bool ExecuteVarOperate(var VarOperate varOperate)
+    {
+        inf (varOperate = null)
+        {
+            return true;
+        }
+
+        var VarName name;
+        name : varOperate.Var;
+
+        var Class varClass;
+        varClass : this.ExecuteVarNameNode(varOperate, name);
+
+        this.Info(varOperate).OperateClass : varClass;
+        return true;
+    }
 }
