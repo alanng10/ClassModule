@@ -532,5 +532,23 @@ class StateTravel : Travel
                 }
             }
         }
+
+        inf (~(varMaide = null))
+        {
+            inf (~this.ValidArgue(varMaide, argue))
+            {
+                this.Error(this.ErrorKind.ArgueUnassign, callOperate);
+            }
+        }
+
+        var Class operateClass;
+        inf (~(varMaide = null))
+        {
+            operateClass : varMaide.Class;
+        }
+
+        this.Info(callOperate).CallMaide : varMaide;
+        this.Info(callOperate).OperateClass : operateClass;
+        return true;
     }
 }
