@@ -584,4 +584,18 @@ class StateTravel : Travel
         this.Info(nullOperate).OperateClass : this.NullClass;
         return true;
     }
+
+    maide prusate Bool ExecuteNewOperate(var NewOperate newOperate)
+    {
+        inf (newOperate = null)
+        {
+            return true;
+        }
+
+        var ClassName nodeClass;
+        nodeClass : newOperate.Class;
+
+        this.ExecuteWordClassOperate(newOperate, nodeClass);
+        return true;
+    }
 }
