@@ -718,4 +718,30 @@ class StateTravel : Travel
         this.Info(valueOperate).OperateClass : valueClass;
         return true;
     }
+
+    maide prusate Bool ExecuteBraceOperate(var BraceOperate braceOperate)
+    {
+        inf (braceOperate = null)
+        {
+            return true;
+        }
+
+        var Operate any;
+        any : braceOperate.Any;
+
+        base.ExecuteBraceOperate(braceOperate);
+
+        var Class anyClass;
+        inf (~(any = null))
+        {
+            anyClass : this.Info(any).OperateClass;
+            inf (anyClass = null)
+            {
+                this.Error(this.ErrorKind.AnyUndefine, braceOperate);
+            }
+        }
+
+        this.Info(braceOperate).OperateClass : anyClass;
+        return true;
+    }
 }
