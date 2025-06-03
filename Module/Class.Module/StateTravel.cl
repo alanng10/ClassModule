@@ -458,4 +458,32 @@ class StateTravel : Travel
         this.Info(setMark).MarkClass : fieldClass;
         return true;
     }
+
+    maide prusate Bool ExecuteGetOperate(var GetOperate getOperate)
+    {
+        inf (getOperate = null)
+        {
+            return true;
+        }
+
+        var Operate varThis;
+        varThis : getOperate.This;
+        var FieldName nodeField;
+        nodeField : getOperate.Field;
+
+        base.ExecuteGetOperate(getOperate);
+
+        var Field varField;
+        varField : this.ExecuteThisFieldNode(getOperate, varThis, nodeField);
+
+        var Class fieldClass;
+        inf (~(varField = null))
+        {
+            fieldClass : varField.Class;
+        }
+
+        this.Info(getOperate).GetField : varField;
+        this.Info(getOperate).OperateClass : fieldClass;
+        return true;
+    }
 }
