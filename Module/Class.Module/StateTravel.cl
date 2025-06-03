@@ -486,4 +486,31 @@ class StateTravel : Travel
         this.Info(getOperate).OperateClass : fieldClass;
         return true;
     }
+
+    maide prusate Bool ExecuteCallOperate(var CallOperate callOperate)
+    {
+        inf (callOperate = null)
+        {
+            return true;
+        }
+
+        var Operate varThis;
+        varThis : callOperate.This;
+        var MaideName nodeMaide;
+        nodeMaide : callOperate.Maide;
+        var Argue argue;
+        argue : callOperate.Argue;
+
+        base.ExecuteCallOperate(callOperate);
+
+        var Class thisClass;
+        inf (~(varThis = null))
+        {
+            thisClass : this.Info(varThis).OperateClass;
+            inf (thisClass = null)
+            {
+                this.Error(this.ErrorKind.ThisUndefine, callOperate);
+            }
+        }
+    }
 }
