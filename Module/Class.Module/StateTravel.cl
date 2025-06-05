@@ -881,4 +881,22 @@ class StateTravel : Travel
         this.ExecuteTwoOperandOperate(mulOperate, lite, rite, this.System.Int, this.System.Int);
         return true;
     }
+
+    maide prusate Bool ExecuteDivOperate(var DivOperate divOperate)
+    {
+        inf (divOperate = null)
+        {
+            return true;
+        }
+
+        var Operate lite;
+        lite : divOperate.Lite;
+        var Operate rite;
+        rite : divOperate.Rite;
+
+        base.ExecuteDivOperate(divOperate);
+
+        this.ExecuteTwoOperandOperate(divOperate, lite, rite, this.System.Int, this.System.Int);
+        return true;
+    }
 }
