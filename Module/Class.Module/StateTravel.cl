@@ -1023,4 +1023,22 @@ class StateTravel : Travel
         this.ExecuteTwoOperandOperate(bitLiteOperate, value, count, this.System.Int, this.System.Int);
         return true;
     }
+
+    maide prusate Bool ExecuteBitRiteOperate(var BitRiteOperate bitRiteOperate)
+    {
+        inf (bitRiteOperate = null)
+        {
+            return true;
+        }
+
+        var Operate value;
+        value : bitRiteOperate.Value;
+        var Operate count;
+        count : bitRiteOperate.Count;
+
+        base.ExecuteBitRiteOperate(bitRiteOperate);
+
+        this.ExecuteTwoOperandOperate(bitRiteOperate, value, count, this.System.Int, this.System.Int);
+        return true;
+    }
 }
