@@ -1302,36 +1302,54 @@ public class StateTravel : Travel
         argueIter = this.ArgueIter;
         argue.Value.IterSet(argueIter);
 
+        bool b;
+        b = false;
+
         long i;
         i = 0;
-        while (i < count)
+        while (!b & i < count)
         {
             paramIter.Next();
             argueIter.Next();
 
             Var varVar;
-            varVar = paramIter.Value as Var;
-
+            varVar = null;
             Operate operate;
-            operate = argueIter.Value as Operate;
-            if (operate == null)
+            operate = null;
+
+            if (!b)
             {
-                return false;
+                varVar = paramIter.Value as Var;
+
+                operate = argueIter.Value as Operate;
+                if (operate == null)
+                {
+                    b = true;
+                }
             }
 
             Class varClass;
-            varClass = varVar.Class;
-
+            varClass = null;
             Class operateClass;
-            operateClass = this.Info(operate).OperateClass;
-            if (operateClass == null)
+            operateClass = null;
+
+            if (!b)
             {
-                return false;
+                varClass = varVar.Class;
+
+                operateClass = this.Info(operate).OperateClass;
+                if (operateClass == null)
+                {
+                    b = true;
+                }
             }
 
-            if (!this.ValidClass(operateClass, varClass))
+            if (!b)
             {
-                return false;
+                if (!this.ValidClass(operateClass, varClass))
+                {
+                    b = true;
+                }
             }
             i = i + 1;
         }
@@ -1340,7 +1358,9 @@ public class StateTravel : Travel
 
         argueIter.Clear();
 
-        return true;
+        bool ret;
+        ret = !b;
+        return ret;
     }
 
     protected virtual bool VarTableAdd(Table varTable, Table other)
