@@ -1231,4 +1231,14 @@ class StateTravel : Travel
         }
         return varField;
     }
+
+    maide precate Field Field(var Class varClass, var String name)
+    {
+        return this.ClassInfra.FieldTrigg(varClass, name, this.ThisClass, this.System.Any, this.NullClass);
+    }
+
+    maide precate Maide Maide(var Class varClass, var String name)
+    {
+        return this.ClassInfra.MaideTrigg(varClass, name, this.ThisClass, this.System.Any, this.NullClass);
+    }
 }
