@@ -1267,6 +1267,9 @@ class StateTravel : Travel
         argueIter : this.ArgueIter;
         argue.Value.IterSet(argueIter);
 
+        var Bool b;
+        b : false;
+
         var Int i;
         i : 0;
         while (i < count)
@@ -1275,28 +1278,39 @@ class StateTravel : Travel
             argueIter.Next();
 
             var Var varVar;
-            varVar : cast Var(paramIter.Value);
-
             var Operate operate;
-            operate : cast Operate(argueIter.Value);
-            inf (operate = null)
+
+            inf (~b)
             {
-                return false;
+                varVar : cast Var(paramIter.Value);
+
+                operate : cast Operate(argueIter.Value);
+                inf (operate = null)
+                {
+                    b : true;
+                }
             }
 
             var Class varClass;
-            varClass : varVar.Class;
-
             var Class operateClass;
-            operateClass : this.Info(operate).OperateClass;
-            inf (operateClass = null)
+
+            inf (~b)
             {
-                return false;
+                varClass : varVar.Class;
+
+                operateClass : this.Info(operate).OperateClass;
+                inf (operateClass = null)
+                {
+                    b : true;
+                }
             }
 
-            inf (~this.ValidClass(operateClass, varClass))
+            inf (~b)
             {
-                return false;
+                inf (~this.ValidClass(operateClass, varClass))
+                {
+                    b : true;
+                }
             }
             i : i + 1;
         }
@@ -1305,7 +1319,9 @@ class StateTravel : Travel
 
         argueIter.Clear();
 
-        return true;
+        var Bool ret;
+        ret : ~b;
+        return ret;
     }
 
     maide precate Bool VarTableAdd(var Table varTable, var Table other)
