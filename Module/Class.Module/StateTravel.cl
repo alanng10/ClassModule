@@ -1307,4 +1307,19 @@ class StateTravel : Travel
 
         return true;
     }
+
+    maide precate Bool VarTableAdd(var Table varTable, var Table other)
+    {
+        var Iter iter;
+        iter : other.IterCreate();
+        other.IterSet(iter);
+        while (iter.Next())
+        {
+            var Var a;
+            a : cast Var(iter.Value);
+
+            this.ListInfra.TableAdd(varTable, a.Name, a);
+        }
+        return true;
+    }
 }
