@@ -1246,4 +1246,25 @@ class StateTravel : Travel
     {
         return this.ClassInfra.ValidClass(varClass, requireClass, this.System.Any, this.NullClass);
     }
+
+    maide precate Bool ValidArgue(var Maide varMaide, var Argue argue)
+    {
+        var Int count;
+        count : varMaide.Param.Count;
+
+        var Bool countSame;
+        countSame : count = argue.Value.Count;
+        inf (~countSame)
+        {
+            return false;
+        }
+
+        var Iter paramIter;
+        paramIter : this.ParamIter;
+        varMaide.Param.IterSet(paramIter);
+
+        var Iter argueIter;
+        argueIter : this.ArgueIter;
+        argue.Value.IterSet(argueIter);
+    }
 }
