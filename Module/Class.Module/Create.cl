@@ -730,7 +730,7 @@ class Create : ClassCreate
         var Bool b;
         b : false;
 
-        var Moduke ka;
+        var Module ka;
 
         var Class entryClass;
         
