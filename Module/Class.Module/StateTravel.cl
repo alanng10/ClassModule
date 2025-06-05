@@ -775,4 +775,22 @@ class StateTravel : Travel
         this.ExecuteTwoOperandOperate(andOperate, lite, rite, this.System.Bool, this.System.Bool);
         return true;
     }
+
+    maide prusate Bool ExecuteOrnOperate(var OrnOperate ornOperate)
+    {
+        inf (ornOperate = null)
+        {
+            return true;
+        }
+
+        var Operate lite;
+        lite : ornOperate.Lite;
+        var Operate rite;
+        rite : ornOperate.Rite;
+
+        base.ExecuteOrnOperate(ornOperate);
+
+        this.ExecuteTwoOperandOperate(ornOperate, lite, rite, this.System.Bool, this.System.Bool);
+        return true;
+    }
 }
