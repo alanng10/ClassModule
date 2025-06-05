@@ -1266,5 +1266,23 @@ class StateTravel : Travel
         var Iter argueIter;
         argueIter : this.ArgueIter;
         argue.Value.IterSet(argueIter);
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            paramIter.Next();
+            argueIter.Next();
+
+            var Var varVar;
+            varVar : cast Var(paramIter.Value);
+
+            var Operate operate;
+            operate : cast Operate(argueIter.Value);
+            inf (operate = null)
+            {
+                return false;
+            }
+        }
     }
 }
