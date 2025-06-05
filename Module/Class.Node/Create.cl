@@ -31,6 +31,8 @@ class Create : ClassCreate
         this.TokenG : this.CreateToken();
         this.TokenH : this.CreateToken();
         this.TokenI : this.CreateToken();
+        this.TokenJ : this.CreateToken();
+        this.TokenK : this.CreateToken();
 
         this.InitListItemState();
         this.InitNodeState();
@@ -162,6 +164,8 @@ class Create : ClassCreate
     field precate Token TokenG { get { return data; } set { data : value; } }
     field precate Token TokenH { get { return data; } set { data : value; } }
     field precate Token TokenI { get { return data; } set { data : value; } }
+    field precate Token TokenJ { get { return data; } set { data : value; } }
+    field precate Token TokenK { get { return data; } set { data : value; } }
 
     maide precate Bool InitListItemState()
     {
@@ -3980,7 +3984,7 @@ class Create : ClassCreate
         inf (this.TextSame(this.TextToken(this.TextA, token), this.TB(this.Limit.BraceRoundLite.Text)))
         {
             var Token braceRoundRite;
-            braceRoundRite : this.TokenBraceRoundRite(this.TokenA, this.Range(this.RangeA, index + 1, end));
+            braceRoundRite : this.TokenBraceRoundRite(this.TokenJ, this.Range(this.RangeA, index + 1, end));
             inf (~(braceRoundRite = null))
             {
                 ret : braceRoundRite.Range.End;
@@ -3990,7 +3994,7 @@ class Create : ClassCreate
         inf (this.TextSame(this.TextToken(this.TextA, token), this.TB(this.Limit.BraceCurveLite.Text)))
         {
             var Token braceCurveRite;
-            braceCurveRite : this.TokenBraceCurveRite(this.TokenA, this.Range(this.RangeA, index + 1, end));
+            braceCurveRite : this.TokenBraceCurveRite(this.TokenK, this.Range(this.RangeA, index + 1, end));
             inf (~(braceCurveRite = null))
             {
                 ret : braceCurveRite.Range.End;
@@ -4013,7 +4017,7 @@ class Create : ClassCreate
         inf (this.TextSame(this.TextToken(this.TextA, token), this.TB(this.Limit.BraceRoundRite.Text)))
         {
             var Token braceRoundLite;
-            braceRoundLite : this.TokenBraceRoundLite(this.TokenA, this.Range(this.RangeA, start, t));
+            braceRoundLite : this.TokenBraceRoundLite(this.TokenJ, this.Range(this.RangeA, start, t));
             inf (~(braceRoundLite = null))
             {
                 ret : braceRoundLite.Range.Start;
@@ -4023,7 +4027,7 @@ class Create : ClassCreate
         inf (this.TextSame(this.TextToken(this.TextA, token), this.TB(this.Limit.BraceCurveRite.Text)))
         {
             var Token braceCurveLite;
-            braceCurveLite : this.TokenBraceCurveLite(this.TokenA, this.Range(this.RangeA, start, t));
+            braceCurveLite : this.TokenBraceCurveLite(this.TokenK, this.Range(this.RangeA, start, t));
             inf (~(braceCurveLite = null))
             {
                 ret : braceCurveLite.Range.Start;
