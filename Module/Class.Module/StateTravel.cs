@@ -1112,11 +1112,11 @@ public class StateTravel : Travel
 
     protected virtual bool ExecuteTwoOperandOperate(Operate operate, Operate lite, Operate rite, Class resultClass, Class operandClass)
     {
-        bool hasOperandUndefine;
-        hasOperandUndefine = false;
+        bool operandUndefine;
+        operandUndefine = false;
 
-        bool hasOperandUnassign;
-        hasOperandUnassign = false;
+        bool operandUnassign;
+        operandUnassign = false;
 
         Class leftClass;
         leftClass = null;
@@ -1125,7 +1125,7 @@ public class StateTravel : Travel
             leftClass = this.Info(lite).OperateClass;
             if (leftClass == null)
             {
-                hasOperandUndefine = this.ErrorUnique(this.ErrorKind.OperandUndefine, operate, hasOperandUndefine);
+                operandUndefine = this.ErrorUnique(this.ErrorKind.OperandUndefine, operate, operandUndefine);
             }
         }
 
@@ -1133,7 +1133,7 @@ public class StateTravel : Travel
         {
             if (!this.ValidClass(leftClass, operandClass))
             {
-                hasOperandUnassign = this.ErrorUnique(this.ErrorKind.OperandUnassign, operate, hasOperandUnassign);
+                operandUnassign = this.ErrorUnique(this.ErrorKind.OperandUnassign, operate, operandUnassign);
             }
         }
 
@@ -1144,7 +1144,7 @@ public class StateTravel : Travel
             rightClass = this.Info(rite).OperateClass;
             if (rightClass == null)
             {
-                hasOperandUndefine = this.ErrorUnique(this.ErrorKind.OperandUndefine, operate, hasOperandUndefine);
+                operandUndefine = this.ErrorUnique(this.ErrorKind.OperandUndefine, operate, operandUndefine);
             }
         }
 
@@ -1152,7 +1152,7 @@ public class StateTravel : Travel
         {
             if (!this.ValidClass(rightClass, operandClass))
             {
-                hasOperandUnassign = this.ErrorUnique(this.ErrorKind.OperandUnassign, operate, hasOperandUnassign);
+                operandUnassign = this.ErrorUnique(this.ErrorKind.OperandUnassign, operate, operandUnassign);
             }
         }
 
