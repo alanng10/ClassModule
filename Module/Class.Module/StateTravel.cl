@@ -1345,7 +1345,12 @@ class StateTravel : Travel
         iter : this.VarStackIter;
         this.VarStack.IterSet(iter);
 
-        while (iter.Next())
+        var Var ret;
+
+        var Bool b;
+        b : false;
+
+        while (~b & iter.Next())
         {
             var Table varTable;
             varTable : cast Table(iter.Value);
@@ -1354,12 +1359,13 @@ class StateTravel : Travel
             varVar : cast Var(varTable.Get(name));
             inf (~(varVar = null))
             {
-                return varVar;
+                ret : varVar;
+                b : true;
             }
         }
 
         iter.Clear();
 
-        return null;
+        return ret;
     }
 }
