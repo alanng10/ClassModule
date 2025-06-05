@@ -1059,4 +1059,28 @@ class StateTravel : Travel
         this.ExecuteTwoOperandOperate(bitSignRiteOperate, value, count, this.System.Int, this.System.Int);
         return true;
     }
+
+    maide precate Bool ExecuteOneOperandOperate(var Operate operate, var Operate value, var Class resultClass, var Class operandClass)
+    {
+        var Class valueClass;
+        inf (~(value = null))
+        {
+            valueClass : this.Info(value).OperateClass;
+            inf (valueClass = null)
+            {
+                this.Error(this.ErrorKind.OperandUndefine, operate);
+            }
+        }
+
+        inf (~(valueClass = null))
+        {
+            inf (~this.ValidClass(valueClass, operandClass))
+            {
+                this.Error(this.ErrorKind.OperandUnassign, operate);
+            }
+        }
+
+        this.Info(operate).OperateClass : resultClass;
+        return true;
+    }
 }
