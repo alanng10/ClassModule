@@ -38,6 +38,24 @@ Class.Infra:0.00.00
     ErrorKind ErrorKind
     ClassInfra Infra
 Class.Node:0.00.00
+    NodeClass Class
+    NodeField Field
+    NodeMaide Maide
+    NodeVar Var
+    Comp Comp
+    Part Part
+    NodeCount Count
+    Param Param
+    ClassName ClassName
+    FieldName FieldName
+    MaideName MaideName
+    VarName VarName
+    PrusateCount PrusateCount
+    PrecateCount PrecateCount
+    PronateCount PronateCount
+    PrivateCount PrivateCount
+    State State
+    Execute Execute
 
 [Export]
 
