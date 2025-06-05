@@ -1283,6 +1283,28 @@ class StateTravel : Travel
             {
                 return false;
             }
+
+            var Class varClass;
+            varClass : varVar.Class;
+
+            var Class operateClass;
+            operateClass : this.Info(operate).OperateClass;
+            inf (operateClass = null)
+            {
+                return false;
+            }
+
+            inf (~this.ValidClass(operateClass, varClass))
+            {
+                return false;
+            }
+            i : i + 1;
         }
+
+        paramIter.Clear();
+
+        argueIter.Clear();
+
+        return true;
     }
 }
