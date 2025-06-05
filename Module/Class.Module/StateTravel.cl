@@ -971,4 +971,22 @@ class StateTravel : Travel
         this.ExecuteTwoOperandOperate(bitAndOperate, lite, rite, this.System.Int, this.System.Int);
         return true;
     }
+
+    maide prusate Bool ExecuteBitOrnOperate(var BitOrnOperate bitOrnOperate)
+    {
+        inf (bitOrnOperate = null)
+        {
+            return true;
+        }
+
+        var Operate lite;
+        lite : bitOrnOperate.Lite;
+        var Operate rite;
+        rite : bitOrnOperate.Rite;
+
+        base.ExecuteBitOrnOperate(bitOrnOperate);
+
+        this.ExecuteTwoOperandOperate(bitOrnOperate, lite, rite, this.System.Int, this.System.Int);
+        return true;
+    }
 }
