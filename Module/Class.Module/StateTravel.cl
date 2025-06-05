@@ -1084,7 +1084,7 @@ class StateTravel : Travel
         return true;
     }
 
-    maide precate Bool ExecuteTwoOperandOperate(var Operate operate, var Operate lite, var Operand rite, var Class resultClass, var Class operandClass)
+    maide precate Bool ExecuteTwoOperandOperate(var Operate operate, var Operate lite, var Operate rite, var Class resultClass, var Class operandClass)
     {
         var Bool operandUndefine;
         operandUndefine : false;
