@@ -131,7 +131,7 @@ class StateTravel : Travel
 
         this.VarStack.Pop();
 
-        this.StackVar : null;
+        this.StateVar : null;
         this.ThisResultClass : null;
         return true;
     }
@@ -177,7 +177,7 @@ class StateTravel : Travel
 
         this.VarStack.Pop();
 
-        this.StackVar : null;
+        this.StateVar : null;
         this.ThisResultClass : null;
         return true;
     }
