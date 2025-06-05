@@ -1322,4 +1322,28 @@ class StateTravel : Travel
         }
         return true;
     }
+
+    maide precate Var VarStackVar(var String name)
+    {
+        var Iter iter;
+        iter : this.VarStackIter;
+        this.VarStack.IterSet(iter);
+
+        while (iter.Next())
+        {
+            var Table varTable;
+            varTable : cast Table(iter.Value);
+
+            var Var varVar;
+            varVar : cast Var(varTable.Get(name));
+            inf (~(varVar = null))
+            {
+                return varVar;
+            }
+        }
+
+        iter.Clear();
+
+        return null;
+    }
 }
