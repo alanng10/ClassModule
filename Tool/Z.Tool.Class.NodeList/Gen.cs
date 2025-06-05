@@ -66,4 +66,29 @@ public class Gen : ClassGen
         nodeKindListGen.Execute();
         return true;
     }
+
+    protected virtual PortGen CreatePortGen()
+    {
+        PortGen a;
+        a = new PortGen();
+        a.Init();
+        return a;
+    }
+
+    public override long Execute()
+    {
+        long k;
+        k = base.Execute();
+
+        if (!(k == 0))
+        {
+            return k;
+        }
+
+        PortGen portGen;
+        portGen = this.CreatePortGen();
+        portGen.ClassTable = this.ClassTable;
+        portGen.Execute();
+        return 0;
+    }
 }
