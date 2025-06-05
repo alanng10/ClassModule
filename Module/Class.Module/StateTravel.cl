@@ -935,4 +935,22 @@ class StateTravel : Travel
         this.ExecuteTwoOperandOperate(signMulOperate, lite, rite, this.System.Int, this.System.Int);
         return true;
     }
+
+    maide prusate Bool ExecuteSignDivOperate(var SignDivOperate signDivOperate)
+    {
+        inf (signDivOperate = null)
+        {
+            return true;
+        }
+
+        var Operate lite;
+        lite : signDivOperate.Lite;
+        var Operate rite;
+        rite : signDivOperate.Rite;
+
+        base.ExecuteSignDivOperate(signDivOperate);
+
+        this.ExecuteTwoOperandOperate(signDivOperate, lite, rite, this.System.Int, this.System.Int);
+        return true;
+    }
 }
