@@ -809,4 +809,22 @@ class StateTravel : Travel
         this.ExecuteOneOperandOperate(notOperate, value, this.System.Bool, this.System.Bool);
         return true;
     }
+
+    maide prusate Bool ExecuteLessOperate(var LessOperate lessOperate)
+    {
+        inf (lessOperate = null)
+        {
+            return true;
+        }
+
+        var Operate lite;
+        lite : lessOperate.Lite;
+        var Operate rite;
+        rite : lessOperate.Rite;
+
+        base.ExecuteLessOperate(lessOperate);
+
+        this.ExecuteTwoOperandOperate(lessOperate, lite, rite, this.System.Bool, this.System.Int);
+        return true;
+    }
 }
