@@ -95,6 +95,15 @@ Class.Node:0.00.00
     BitLiteOperate BitLiteOperate
     BitRiteOperate BitRiteOperate
     BitSignRiteOperate BitSignRiteOperate
+    Value Value
+    BoolValue BoolValue
+    IntValue IntValue
+    IntSignValue IntSignValue
+    IntHexValue IntHexValue
+    IntHexSignValue IntHexSignValue
+    StringValue StringValue
+    Node Node
+    NodeTravel Travel
 
 [Export]
 
