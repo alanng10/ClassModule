@@ -899,4 +899,22 @@ class StateTravel : Travel
         this.ExecuteTwoOperandOperate(divOperate, lite, rite, this.System.Int, this.System.Int);
         return true;
     }
+
+    maide prusate Bool ExecuteSignLessOperate(var SignLessOperate signLessOperate)
+    {
+        inf (signLessOperate = null)
+        {
+            return true;
+        }
+
+        var Operate lite;
+        lite : signLessOperate.Lite;
+        var Operate rite;
+        rite : signLessOperate.Rite;
+
+        base.ExecuteSignLessOperate(signLessOperate);
+
+        this.ExecuteTwoOperandOperate(signLessOperate, lite, rite, this.System.Int, this.System.Int);
+        return true;
+    }
 }
