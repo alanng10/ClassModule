@@ -1131,4 +1131,26 @@ class StateTravel : Travel
         this.Info(operate).OperateClass : resultClass;
         return true;
     }
+
+    maide precate Bool ExecuteCondBodyExecute(var Execute execute, var Operate cond)
+    {
+        var Class condClass;
+        inf (~(cond = null))
+        {
+            condClass : this.Info(cond).OperateClass;
+            inf (condClass = null)
+            {
+                this.Error(this.ErrorKind.CondUndefine, execute);
+            }
+        }
+
+        inf (~(condClass = null))
+        {
+            inf (~this.ValidClass(condClass, this.System.Bool))
+            {
+                this.Error(this.ErrorKind.CondUnassign, execute);
+            }
+        }
+        return true;
+    }
 }
