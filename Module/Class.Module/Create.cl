@@ -276,7 +276,7 @@ class Create : ClassCreate
         anyClass : this.System.Any;
 
         var Iter iter;
-        itre : this.BaseTable.IterCreate();
+        iter : this.BaseTable.IterCreate();
         this.BaseTable.IterSet(iter);
 
         while (iter.Next())
