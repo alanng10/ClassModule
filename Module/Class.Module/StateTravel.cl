@@ -914,7 +914,7 @@ class StateTravel : Travel
 
         base.ExecuteSignLessOperate(signLessOperate);
 
-        this.ExecuteTwoOperandOperate(signLessOperate, lite, rite, this.System.Int, this.System.Int);
+        this.ExecuteTwoOperandOperate(signLessOperate, lite, rite, this.System.Bool, this.System.Int);
         return true;
     }
 }
