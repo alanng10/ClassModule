@@ -61,7 +61,7 @@ Class.Node:0.00.00
     ReturnExecute ReturnExecute
     ReferExecute ReferExecute
     AreExecute AreExecute
-    OperateExecute OperateExecute    
+    OperateExecute OperateExecute
     Argue Argue
     Mark Mark
     VarMark VarMark
