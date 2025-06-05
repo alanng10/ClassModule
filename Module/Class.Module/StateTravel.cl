@@ -1241,4 +1241,9 @@ class StateTravel : Travel
     {
         return this.ClassInfra.MaideTrigg(varClass, name, this.ThisClass, this.System.Any, this.NullClass);
     }
+
+    maide precate Bool ValidClass(var Class varClass, var Class requireClass)
+    {
+        return this.ClassInfra.ValidClass(varClass, requireClass, this.System.Any, this.NullClass);
+    }
 }
