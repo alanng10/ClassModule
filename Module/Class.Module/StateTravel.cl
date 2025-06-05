@@ -1083,4 +1083,52 @@ class StateTravel : Travel
         this.Info(operate).OperateClass : resultClass;
         return true;
     }
+
+    maide precate Bool ExecuteTwoOperandOperate(var Operate operate, var Operate lite, var Operand rite, var Class resultClass, var Class operandClass)
+    {
+        var Bool operandUndefine;
+        operandUndefine : false;
+
+        var Bool operandUnassign;
+        operandUnassign : false;
+
+        var Class liteClass;
+        inf (~(lite = null))
+        {
+            liteClass : this.Info(lite).OperateClass;
+            inf (liteClass = null)
+            {
+                operandUndefine : this.ErrorUnique(this.ErrorKind.OperandUndefine, operate, operandUndefine);
+            }
+        }
+
+        inf (~(liteClass = null))
+        {
+            inf (~this.ValidClass(liteClass, operandClass))
+            {
+                operandUnassign : this.ErrorUnique(this.ErrorKind.OperandUnassign, operate, operandUnassign);
+            }
+        }
+
+        var Class riteClass;
+        inf (~(rite = null))
+        {
+            riteClass : this.Info(rite).OperateClass;
+            inf (riteClass = null)
+            {
+                operandUndefine : this.ErrorUnique(this.ErrorKind.OperandUndefine, operate, operandUndefine);
+            }
+        }
+
+        inf (~(riteClass = null))
+        {
+            inf (~this.ValidClass(riteClass, operandClass))
+            {
+                operandUnassign : this.ErrorUnique(this.ErrorKind.OperandUnassign, operate, operandUnassign);
+            }
+        }
+
+        this.Info(operate).OperateClass : resultClass;
+        return true;
+    }
 }
