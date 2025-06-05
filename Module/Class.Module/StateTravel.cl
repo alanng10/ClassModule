@@ -1175,4 +1175,27 @@ class StateTravel : Travel
         this.Info(operate).OperateClass : varClass;
         return true;
     }
+
+    maide precate Class ExecuteVarNameNode(var Node node, var VarName name)
+    {
+        var String varName;
+        varName : name.Value;
+
+        var Var varVar;
+        varVar : this.VarStackVar(varName);
+        inf (varVar = null)
+        {
+            this.Error(this.ErrorKind.VarUndefine, node);
+        }
+
+        var Class a;
+        inf (~(varVar = null))
+        {
+            a : varVar.Class;
+        }
+
+        this.Info(node).Var : varVar;
+
+        return a;
+    }
 }
