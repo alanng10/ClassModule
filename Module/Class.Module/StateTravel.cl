@@ -1153,4 +1153,26 @@ class StateTravel : Travel
         }
         return true;
     }
+
+    maide precate Bool ExecuteWordClassOperate(var Operate operate, var ClassName nodeClass)
+    {
+        var String className;
+        inf (~(nodeClass = null))
+        {
+            className : nodeClass.Value;
+        }
+
+        var Class varClass;
+        inf (~(className = null))
+        {
+            varClass : this.Class(className);
+            inf (varClass = null)
+            {
+                this.Error(this.ErrorKind.ClassUndefine, operate);
+            }
+        }
+
+        this.Info(operate).OperateClass : varClass;
+        return true;
+    }
 }
