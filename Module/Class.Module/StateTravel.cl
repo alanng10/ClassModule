@@ -793,4 +793,20 @@ class StateTravel : Travel
         this.ExecuteTwoOperandOperate(ornOperate, lite, rite, this.System.Bool, this.System.Bool);
         return true;
     }
+
+    maide prusate Bool ExecuteNotOperate(var NotOperate notOperate)
+    {
+        inf (notOperate = null)
+        {
+            return true;
+        }
+
+        var Operate value;
+        value : notOperate.Value;
+
+        base.ExecuteNotOperate(notOperate);
+
+        this.ExecuteOneOperandOperate(notOperate, value, this.System.Bool, this.System.Bool);
+        return true;
+    }
 }
