@@ -458,19 +458,19 @@ class Create : ClassCreate
             var Bool ba;
             ba : this.ClassInfra.VirtualField(varField, this.System.Any);
 
-            var NodeField node;
-            node : cast NodeField(varField.Any);
+            var NodeField nodeField;
+            nodeField : cast NodeField(varField.Any);
 
             inf (~ba)
             {
-                this.Error(this.ErrorKind.FieldUndefine, node, varClass.Index);
+                this.Error(this.ErrorKind.FieldUndefine, nodeField, varClass.Index);
             }
 
             inf (ba)
             {
                 varField.Index : fieldTable.Count;
 
-                this.Info(node).Field : varField;
+                this.Info(nodeField).Field : varField;
 
                 this.ListInfra.TableAdd(fieldTable, varField.Name, varField);
             }
@@ -494,19 +494,19 @@ class Create : ClassCreate
             var Bool bb;
             bb : this.ClassInfra.VirtualMaide(varMaide, this.System.Any, iterA, iterB);
 
-            var NodeMaide node;
-            node : cast NodeMaide(varMaide.Any);
+            var NodeMaide nodeMaide;
+            nodeMaide : cast NodeMaide(varMaide.Any);
 
             inf (~bb)
             {
-                this.Error(this.ErrorKind.MaideUndefine, node, varClass.Index);
+                this.Error(this.ErrorKind.MaideUndefine, nodeMaide, varClass.Index);
             }
 
             inf (bb)
             {
                 varMaide.Index : maideTable.Count;
 
-                this.Info(node).Maide : varMaide;
+                this.Info(nodeMaide).Maide : varMaide;
 
                 this.ListInfra.TableAdd(maideTable, varMaide.Name, varMaide);
             }
