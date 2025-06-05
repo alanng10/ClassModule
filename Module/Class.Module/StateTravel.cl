@@ -1198,4 +1198,37 @@ class StateTravel : Travel
 
         return a;
     }
+
+    maide precate Field ExecuteThisFieldNode(var Node node, var Operate varThis, var FieldName nodeField)
+    {
+        var Class thisClass;
+        inf (~(varThis = null))
+        {
+            thisClass : this.Info(varThis).OperateClass;
+            inf (thisClass = null)
+            {
+                this.Error(this.ErrorKind.ThisUndefine, node);
+            }
+        }
+
+        var String fieldName;
+        inf (~(nodeField = null))
+        {
+            fieldName : nodeField.Value;
+        }
+
+        var Field varField;
+        inf (~(thisClass = null))
+        {
+            inf (~(fieldName = null))
+            {
+                varField : this.Field(thisClass, fieldName);
+                inf (varField = null)
+                {
+                    this.Error(this.ErrorKind.FieldUndefine, node);
+                }
+            }
+        }
+        return varField;
+    }
 }
