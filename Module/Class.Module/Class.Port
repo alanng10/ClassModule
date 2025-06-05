@@ -66,6 +66,7 @@ Class.Node:0.00.00
     Mark Mark
     VarMark VarMark
     SetMark SetMark
+    Operate Operate
     GetOperate GetOperate
     CallOperate CallOperate
     ThisOperate ThisOperate
