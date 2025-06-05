@@ -1118,39 +1118,39 @@ public class StateTravel : Travel
         bool operandUnassign;
         operandUnassign = false;
 
-        Class leftClass;
-        leftClass = null;
+        Class liteClass;
+        liteClass = null;
         if (!(lite == null))
         {
-            leftClass = this.Info(lite).OperateClass;
-            if (leftClass == null)
+            liteClass = this.Info(lite).OperateClass;
+            if (liteClass == null)
             {
                 operandUndefine = this.ErrorUnique(this.ErrorKind.OperandUndefine, operate, operandUndefine);
             }
         }
 
-        if (!(leftClass == null))
+        if (!(liteClass == null))
         {
-            if (!this.ValidClass(leftClass, operandClass))
+            if (!this.ValidClass(liteClass, operandClass))
             {
                 operandUnassign = this.ErrorUnique(this.ErrorKind.OperandUnassign, operate, operandUnassign);
             }
         }
 
-        Class rightClass;
-        rightClass = null;
+        Class riteClass;
+        riteClass = null;
         if (!(rite == null))
         {
-            rightClass = this.Info(rite).OperateClass;
-            if (rightClass == null)
+            riteClass = this.Info(rite).OperateClass;
+            if (riteClass == null)
             {
                 operandUndefine = this.ErrorUnique(this.ErrorKind.OperandUndefine, operate, operandUndefine);
             }
         }
 
-        if (!(rightClass == null))
+        if (!(riteClass == null))
         {
-            if (!this.ValidClass(rightClass, operandClass))
+            if (!this.ValidClass(riteClass, operandClass))
             {
                 operandUnassign = this.ErrorUnique(this.ErrorKind.OperandUnassign, operate, operandUnassign);
             }
