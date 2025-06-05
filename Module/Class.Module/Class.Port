@@ -1,0 +1,46 @@
+[Module]
+Class.Module:0.00.00
+
+[Import]
+System.Infra
+    Any Any
+    Bool Bool
+    Int Int
+    String String
+    Range Range
+    RefLess RefLess
+System.List
+    List List
+    Array Array
+    Table Table
+    Iter Iter
+    ArrayIter ArrayIter
+    TableIter TableIter
+    ListInfra Infra
+System.Text
+    TextInfra Infra
+List.List:0.00.00
+    Stack Stack
+Text.Text:0.00.00
+    TextAdd Add
+Class.Infra:0.00.00
+    ClassCreate Create
+    Source Source
+    Class Class
+    Field Field
+    Maide Maide
+    Var Var
+    Module Module
+    ModuleRef ModuleRef
+    Count Count
+    CountList CountList
+    Error Error
+    ErrorKind ErrorKind
+    ClassInfra Infra
+Class.Node:0.00.00
+
+[Export]
+
+[Storage]
+
+[Entry]
