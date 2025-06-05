@@ -1164,7 +1164,6 @@ public class StateTravel : Travel
     {
         Class condClass;
         condClass = null;
-
         if (!(cond == null))
         {
             condClass = this.Info(cond).OperateClass;
