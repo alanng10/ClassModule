@@ -1,0 +1,49 @@
+[Module]
+Class.Node:0.00.00
+
+[Import]
+System.Infra
+    Any Any
+    Bool Bool
+    Int Int
+    String String
+    InfraRange Range
+    Data Data
+    InfraState State
+    IntLess IntLess
+    InfraInfra Infra
+System.List
+    Array Array
+    Table Table
+    Iter Iter
+    ListInfra Infra
+System.Text
+    Text Text
+    StringComp StringComp
+    TextInfra Infra
+Text.Text:0.00.00
+    TextAdd Add
+Class.Infra:0.00.00
+    ClassCreate Create
+    Source Source
+    Range Range
+    Error Error
+    ErrorKind ErrorKind
+    Index Index
+    IndexList IndexList
+    Limit Limit
+    LimitList LimitList
+    NameValid NameValid
+    IntParse IntParse
+    StringWrite StringWrite
+    StringWriteArg StringWriteArg
+    ClassInfra Infra
+Class.Token:0.00.00
+    TokenToken Token
+    Code Code
+
+[Export]
+#Export#
+[Storage]
+
+[Entry]
