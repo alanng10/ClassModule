@@ -1287,9 +1287,9 @@ public class StateTravel : Travel
         long count;
         count = varMaide.Param.Count;
 
-        bool countEqual;
-        countEqual = (count == argue.Value.Count);
-        if (!countEqual)
+        bool countSame;
+        countSame = (count == argue.Value.Count);
+        if (!countSame)
         {
             return false;
         }
