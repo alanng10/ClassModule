@@ -27,6 +27,18 @@ class InfoTravel : Travel
 
     maide prusate Bool ExecutePart(var Part part)
     {
+        inf (part = null)
+        {
+            this.Null();
+            return true;
+        }
+
+        this.StartArray();
+
+        base.ExecutePart(part);
+
+        this.EndArray();
+        return true;
     }
 
     maide prusate Bool ExecuteClassName(var ClassName className)
@@ -60,6 +72,22 @@ class InfoTravel : Travel
         this.Space : this.Space - 4;
 
         this.AddSpace().Add("}").Add(",").AddLine();
+        return true;
+    }
+
+    maide precate Bool StartArray()
+    {
+        this.AddSpace().Add("[").AddLine();
+
+        this.Space : this.Space + 4;
+        return true;
+    }
+
+    maide precate Bool EndArray()
+    {
+        this.Space : this.Space - 4;
+
+        this.AddSpace().Add("]").Add(",").AddLine();
         return true;
     }
 
