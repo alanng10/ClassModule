@@ -109,15 +109,22 @@ class InfoTravel : Travel
         return true;
     }
 
-    maide precate Bool AddStringValue(var String value)
+    maide precate Bool AddBoolValue(var Bool value)
     {
-        this.Add("\"").Add(value).Add("\"").Add(",").AddLine();
+        this.AddStringBool(value).Add(",").AddLine();
         return true;
     }
 
     maide precate Bool AddIntValue(var Int value)
     {
         this.Add("0h").AddStringIntHex(value).Add(",").AddLine();
+        return true;
+    }
+
+    maide precate Bool AddStringValue(var String value)
+    {
+        this.Add("\"").Add(value).Add("\"").Add(",").AddLine();
+        return true;
     }
 
     maide precate Bool AddSpace()
