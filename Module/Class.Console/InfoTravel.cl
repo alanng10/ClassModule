@@ -12,6 +12,9 @@ class InfoTravel : Travel
 
         this.Start("Class");
         
+        this.Field("Name");
+        this.ExecuteClassName(nodeClass.Name);
+
         this.Field("Base");
         this.ExecuteClassName(nodeClass.Base);
 
@@ -20,6 +23,10 @@ class InfoTravel : Travel
 
         this.End();
         return true;
+    }
+
+    maide prusate Bool ExecutePart(var Part part)
+    {
     }
 
     maide prusate Bool ExecuteClassName(var ClassName className)
