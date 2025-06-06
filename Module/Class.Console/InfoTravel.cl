@@ -41,6 +41,18 @@ class InfoTravel : Travel
         return true;
     }
 
+    maide prusate Bool ExecuteComp(var Comp comp)
+    {
+        inf (comp = null)
+        {
+            this.Null();
+            return true;
+        }
+
+        base.ExecuteComp(comp);
+        return true;
+    }
+
     maide prusate Bool ExecuteClassName(var ClassName className)
     {
         inf (className = null)
