@@ -31,7 +31,7 @@ class InfoTravel : Travel
     {
         this.Space : this.Space - 4;
 
-        this.AddSpace().Add("}").AddLine();
+        this.AddSpace().Add("}").Add(",").AddLine();
         return true;
     }
 
@@ -59,7 +59,7 @@ class InfoTravel : Travel
 
     maide precate Bool Null()
     {
-        this.Add("null");
+        this.Add("null").Add(",").AddLine();
         return true;
     }
 }
