@@ -111,8 +111,13 @@ class InfoTravel : Travel
 
     maide precate Bool AddStringValue(var String value)
     {
-        this.Add("\"").Add(value).Add("\"").Add(",");
+        this.Add("\"").Add(value).Add("\"").Add(",").AddLine();
         return true;
+    }
+
+    maide precate Bool AddIntValue(var Int value)
+    {
+        this.Add("0h").AddStringIntHex(value).Add(",").AddLine();
     }
 
     maide precate Bool AddSpace()
