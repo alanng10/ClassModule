@@ -6,13 +6,16 @@ class InfoTravel : Travel
     {
         inf (nodeClass = null)
         {
-            this.AddNull();
+            this.Null();
             return true;
         }
 
         this.Start("Class");
         
+        this.Field("Base");
         this.ExecuteClassName(nodeClass.Base);
+
+        this.End();
     }
 
     maide precate Bool Start(var String name)
@@ -21,6 +24,20 @@ class InfoTravel : Travel
         this.AddSpace().Add("{").AddLine();
 
         this.Space : this.Space + 4;
+        return true;
+    }
+
+    maide precate Bool End()
+    {
+        this.Space : this.Space - 4;
+
+        this.AddSpace().Add("}").AddLine();
+        return true;
+    }
+
+    maide precate Bool Field(var String name)
+    {
+        this.AddSpace().Add(name).Add(" : ");
         return true;
     }
 
@@ -40,7 +57,7 @@ class InfoTravel : Travel
         return true;
     }
 
-    maide precate Bool AddNull()
+    maide precate Bool Null()
     {
         this.Add("null");
         return true;
