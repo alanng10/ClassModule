@@ -4,6 +4,12 @@ class InfoTravel : Travel
 
     maide prusate Bool Execute(var Node node)
     {
+        inf (node = null)
+        {
+            this.Null();
+            return true;
+        }
+
         var Class nodeClass;
         nodeClass : cast Class(node);
         inf (~(nodeClass = null))
