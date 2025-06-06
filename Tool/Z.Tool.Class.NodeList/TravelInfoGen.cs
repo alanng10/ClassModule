@@ -229,4 +229,9 @@ public class TravelInfoGen : ClassTravelGen
 
         return className;
     }
+
+    protected override String GetPathName(String name)
+    {
+        return this.AddClear().AddS("ToolData/Class/TravelInfo").Add(name).AddResult();
+    }
 }
