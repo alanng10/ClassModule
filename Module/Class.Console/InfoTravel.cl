@@ -111,7 +111,7 @@ class InfoTravel : Travel
 
     maide precate Bool AddStringValue(var String value)
     {
-        this.Add("\"").Add(value).Add("\"");
+        this.Add("\"").Add(value).Add("\"").Add(",");
         return true;
     }
 
