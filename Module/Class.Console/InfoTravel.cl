@@ -123,7 +123,46 @@ class InfoTravel : Travel
 
     maide precate Bool AddStringValue(var String value)
     {
-        this.Add("\"").Add(value).Add("\"").Add(",").AddLine();
+        this.Add("\"");
+
+        var Int count;
+        count : this.StringCount(value);
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Int n;
+            n : this.StringComp.Char(value, i);
+
+            var Bool b;
+            b : false;
+
+            inf (~b)
+            {
+                inf (n = this.Char("\""))
+                {
+                    this.Add("\\\"");
+                    b : true;
+                }
+            }
+            inf (~b)
+            {
+                inf (n = this.Char("\n"))
+                {
+                    this.Add("\\n");
+                    b : true;
+                }
+            }
+            inf (~b)
+            {
+                this.AddChar(n);
+            }
+
+            i : i + 1;
+        }
+
+        this.Add("\"").Add(",").AddLine();
         return true;
     }
 
