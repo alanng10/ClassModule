@@ -1,0 +1,5 @@
+        this.StartArray();
+
+        base.ExecutePart(part);
+
+        this.EndArray();
