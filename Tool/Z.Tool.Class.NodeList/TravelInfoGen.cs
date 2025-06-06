@@ -7,6 +7,11 @@ public class TravelInfoGen : TravelGen
         base.Init();
         this.PathOutput = this.S("../../Module/Class.Console/InfoTravel.cl");
         this.PathSource = this.GetPathName(this.S("InfoSource.cl"));
+        this.PathNode = this.GetPath(this.S("InfoNode"));
+        this.PathDerive = this.GetPath(this.S("InfoDerive"));
+        this.PathExecuteNode = this.GetPath(this.S("InfoExecuteNode"));
+        this.PathArray = this.GetPath(this.S("InfoArray"));
+        this.PathField = this.GetPath(this.S("InfoField"));
         return true;
     }
 
