@@ -1,0 +1,11 @@
+    maide prusate Bool Execute#ClassName#(var #ClassName# #VarName#)
+    {
+        inf (#VarName# = null)
+        {
+            this.Null();
+            return true;
+        }
+
+        base.Execute#ClassName#(#VarName#);
+        return true;
+    }
