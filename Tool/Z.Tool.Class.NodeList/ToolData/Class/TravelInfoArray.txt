@@ -1,5 +1,5 @@
         this.StartArray();
 
-        base.ExecutePart(part);
+        base.Execute#ClassName#(#VarName#);
 
         this.EndArray();
