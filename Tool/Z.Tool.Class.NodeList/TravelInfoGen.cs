@@ -100,6 +100,68 @@ public class TravelInfoGen : ClassTravelGen
         return a;
     }
 
+    protected override String FieldState(GenClass varClass, String varName)
+    {
+        StringAdd h;
+        h = new StringAdd();
+        h.Init();
+
+        StringAdd hh;
+        hh = this.StringAdd;
+
+        this.StringAdd = h;
+
+        this.AddClear();
+
+        String ka;
+        ka = this.ExecuteNode(varName);
+
+        this.Add(ka);
+
+        this.AddLine();
+        this.AddIndent(2).AddS("this.Start(\"").Add(varClass.Name).AddS("\");").AddLine();
+
+        bool ba;
+        ba = false;
+
+        Table table;
+        table = varClass.Field;
+
+        Iter iter;
+        iter = table.IterCreate();
+        table.IterSet(iter);
+
+        while (iter.Next())
+        {
+            Field aa;
+            aa = iter.Value as Field;
+
+            if (!aa.AnyBool)
+            {
+                String k;
+                k = this.Field(aa, varName);
+
+                if (!ba)
+                {
+                    this.AddLine();
+                    ba = true;
+                }
+
+                this.Add(k);
+            }
+        }
+
+        this.AddLine();
+        this.AddIndent(2).AddS("this.End();").AddLine();
+
+        String a;
+        a = this.AddResult();
+
+        this.StringAdd = hh;
+
+        return a;
+    }
+
     protected override String DeclareClassName(String className)
     {
         Text k;
