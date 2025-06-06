@@ -32,13 +32,10 @@ public class TravelInfoGen : ClassTravelGen
             String className;
             className = aa.Name;
 
-            String declareClassName;
-            declareClassName = this.DeclareClassName(className);
-
             Text k;
             k = this.TextCreate(this.TextDerive);
             k = this.Place(k, "#VarName#", varName);
-            k = this.Place(k, "#DeclareClassName#", declareClassName);
+            k = this.Place(k, "#ClassName#", className);
 
             String ka;
             ka = this.StringCreate(k);
