@@ -2,6 +2,17 @@ class InfoTravel : Travel
 {
     field precate Int Space { get { return data; } set { data : value; } }
 
+    maide prusate Bool Execute(var Node node)
+    {
+        var Class nodeClass;
+        nodeClass : cast Class(node);
+        inf (~(nodeClass = null))
+        {
+            this.ExecuteClass(nodeClass);
+        }
+        return true;
+    }
+
     maide prusate Bool ExecuteClass(var NodeClass nodeClass)
     {
         inf (nodeClass = null)
