@@ -15,7 +15,28 @@ class InfoTravel : Travel
         this.Field("Base");
         this.ExecuteClassName(nodeClass.Base);
 
+        this.Field("Part");
+        this.ExecutePart(nodeClass.Part);
+
         this.End();
+        return true;
+    }
+
+    maide prusate Bool ExecuteClassName(var ClassName className)
+    {
+        inf (className = null)
+        {
+            this.Null();
+            return true;
+        }
+
+        this.Start("ClassName");
+        
+        this.Field("Value");
+        this.AddStringValue(className.Value);
+
+        this.End();
+        return true;
     }
 
     maide precate Bool Start(var String name)
@@ -38,6 +59,12 @@ class InfoTravel : Travel
     maide precate Bool Field(var String name)
     {
         this.AddSpace().Add(name).Add(" : ");
+        return true;
+    }
+
+    maide precate Bool AddStringValue(var String value)
+    {
+        this.Add("\"").Add(value).Add("\"");
         return true;
     }
 
