@@ -1,4 +1,4 @@
-    maide prusate Bool Execute#ClassName#(var #ClassName# #VarName#)
+    maide prusate Bool Execute#ClassName#(var #DeclareClassName# #VarName#)
     {
         inf (#VarName# = null)
         {
