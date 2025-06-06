@@ -1,7 +1,14 @@
 namespace Z.Tool.Class.NodeList;
 
-public class TravelInfoGen : ClassTravelGen
+public class TravelInfoGen : TravelGen
 {
+    public override bool Init()
+    {
+        base.Init();
+        this.PathSource = this.GetPathName(this.S("InfoSource.cl"));
+        return true;
+    }
+
     protected override String DeriveState(GenClass varClass, String varName)
     {
         StringAdd h;
@@ -228,10 +235,5 @@ public class TravelInfoGen : ClassTravelGen
         }
 
         return className;
-    }
-
-    protected override String GetPathName(String name)
-    {
-        return this.AddClear().AddS("ToolData/Class/TravelInfo").Add(name).AddResult();
     }
 }
