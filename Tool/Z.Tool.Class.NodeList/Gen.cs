@@ -75,6 +75,14 @@ public class Gen : ClassGen
         return a;
     }
 
+    protected virtual TravelInfoGen CreateTravelInfoGen()
+    {
+        TravelInfoGen a;
+        a = new TravelInfoGen();
+        a.Init();
+        return a;
+    }
+
     public override long Execute()
     {
         long k;
@@ -89,6 +97,11 @@ public class Gen : ClassGen
         portGen = this.CreatePortGen();
         portGen.ClassTable = this.ClassTable;
         portGen.Execute();
+
+        TravelInfoGen travelInfoGen;
+        travelInfoGen = this.CreateTravelInfoGen();
+        travelInfoGen.ClassTable = this.ClassTable;
+        travelInfoGen.Execute();
         return 0;
     }
 }
