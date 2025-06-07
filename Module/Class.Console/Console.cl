@@ -12,11 +12,7 @@ class Console : TextAdd
         this.ErrorWrite : true;
 
         this.ErrorString : this.CreateErrorString();
-
         this.Create : this.CreateCreate();
-
-        this.ModuleRefLess : this.CreateModuleRefLess();
-
         this.StorageTextLess : this.CreateStorageTextLess();
         return true;
     }
@@ -38,6 +34,21 @@ class Console : TextAdd
         return a;
     }
 
+    maide precate TextLess CreateStorageTextLess()
+    {
+        var TextForm nameForm;
+        nameForm : new StorageNameForm;
+        nameForm.Init();
+
+        var TextLess a;
+        a : new TextLess;
+        a.LiteForm : nameForm;
+        a.RiteForm : nameForm;
+        a.CharLess : this.ILess;
+        a.Init();
+        return a;
+    }
+
     field prusate Int Status { get { return data; } set { data : value; } }
     field prusate Array Arg { get { return data; } set { data : value; } }
     field prusate Task Task { get { return data; } set { data : value; } }
@@ -54,4 +65,5 @@ class Console : TextAdd
     field precate StorageComp StorageComp { get { return data; } set { data : value; } }
     field precate Out Out { get { return data; } set { data : value; } }
     field precate Out Err { get { return data; } set { data : value; } }
+    field precate TextLess StorageTextLess { get { return data; } set { data : value; } }
 }
