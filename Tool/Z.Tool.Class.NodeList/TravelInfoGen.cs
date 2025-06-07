@@ -12,7 +12,96 @@ public class TravelInfoGen : TravelGen
         this.PathExecuteNode = this.GetPath(this.S("InfoExecuteNode"));
         this.PathArray = this.GetPath(this.S("InfoArray"));
         this.PathField = this.GetPath(this.S("InfoField"));
+        this.PathExecute = this.GetPath(this.S("InfoExecute"));
         return true;
+    }
+
+    protected virtual String PathExecute { get; set; }
+    protected virtual String TextExecute { get; set; }
+
+    public override bool Execute()
+    {
+        this.TextSource = this.StorageTextRead(this.PathSource);
+        this.TextNode = this.StorageTextRead(this.PathNode);
+        this.TextDerive = this.StorageTextRead(this.PathDerive);
+        this.TextExecuteNode = this.StorageTextRead(this.PathExecuteNode);
+        this.TextArray = this.StorageTextRead(this.PathArray);
+        this.TextField = this.StorageTextRead(this.PathField);
+        this.TextExecute = this.StorageTextRead(this.PathExecute);
+
+        this.TextVirtual = this.Virtual();
+
+        String executeList;
+        executeList = this.ExecuteList();
+
+        String nodeList;
+        nodeList = this.NodeList();
+
+        Text k;
+        k = this.TextCreate(this.TextSource);
+        k = this.Place(k, "#NodeList#", nodeList);
+        k = this.Place(k, "#ExecuteList#", executeList);
+
+        String a;
+        a = this.StringCreate(k);
+
+        this.StorageTextWrite(this.PathOutput, a);
+        return true;
+    }
+
+    protected virtual String ExecuteList()
+    {
+        StringAdd h;
+        h = new StringAdd();
+        h.Init();
+
+        StringAdd hh;
+        hh = this.StringAdd;
+
+        this.StringAdd = h;
+
+        Table table;
+        table = this.ClassTable;
+
+        Iter iter;
+        iter = table.IterCreate();
+        table.IterSet(iter);
+
+        while (iter.Next())
+        {
+            GenClass varClass;
+            varClass = iter.Value as GenClass;
+
+            String ka;
+            ka = this.ExecuteOne(varClass);
+
+            this.Add(ka);
+        }
+
+        String a;
+        a = this.AddResult();
+
+        this.StringAdd = hh;
+
+        return a;
+    }
+
+    protected virtual String ExecuteOne(GenClass varClass)
+    {
+        String className;
+        className = varClass.Name;
+
+        String declareClassName;
+        declareClassName = this.DeclareClassName(className);
+
+        Text k;
+        k = this.TextCreate(this.TextExecute);
+        k = this.Place(k, "#ClassName#", className);
+        k = this.Place(k, "#DeclareClassName#", declareClassName);
+
+        String a;
+        a = this.StringCreate(k);
+        return a;
     }
 
     protected override String DeriveState(GenClass varClass, String varName)
