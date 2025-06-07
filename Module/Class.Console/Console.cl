@@ -21,6 +21,23 @@ class Console : TextAdd
         return true;
     }
 
+    maide precate ErrorString CreateErrorString()
+    {
+        var ErrorString a;
+        a : new ErrorString;
+        a.Init();
+        return a;
+    }
+
+    maide precate Create CreateCreate()
+    {
+        var Create a;
+        a : new Create;
+        a.Console : this;
+        a.Init();
+        return a;
+    }
+
     field prusate Int Status { get { return data; } set { data : value; } }
     field prusate Array Arg { get { return data; } set { data : value; } }
     field prusate Task Task { get { return data; } set { data : value; } }
