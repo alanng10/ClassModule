@@ -235,13 +235,13 @@ public class TravelInfoGen : TravelGen
 
         while (iter.Next())
         {
-            Field aa;
-            aa = iter.Value as Field;
+            Field kb;
+            kb = iter.Value as Field;
 
-            if (!aa.AnyBool)
+            if (!kb.AnyBool)
             {
                 String k;
-                k = this.Field(aa, varName);
+                k = this.Field(kb, varName);
 
                 if (!ba)
                 {
@@ -250,6 +250,19 @@ public class TravelInfoGen : TravelGen
                 }
 
                 this.Add(k);
+            }
+
+            if (kb.AnyBool)
+            {
+                if (!ba)
+                {
+                    this.AddLine();
+                    ba = true;
+                }
+
+                this.AddIndent(2).AddS("this.Field(\"").Add(kb.Name).AddS("\");").AddLine();
+
+                this.AddIndent(2).AddS("this.Add").Add(kb.Class).AddS("Value(").Add(varName).AddS(".").Add(kb.Name).AddS(");").AddLine();
             }
         }
 
