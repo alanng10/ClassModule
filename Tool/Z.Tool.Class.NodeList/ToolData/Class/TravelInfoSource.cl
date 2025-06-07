@@ -38,6 +38,7 @@ class InfoTravel : Travel
     maide precate Bool Field(var String name)
     {
         this.AddSpace().Add(name).Add(" : ");
+        this.Space : this.Space + this.StringCount(name) + 3;
         return true;
     }
 
