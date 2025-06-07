@@ -66,4 +66,35 @@ class Console : TextAdd
     field precate Out Out { get { return data; } set { data : value; } }
     field precate Out Err { get { return data; } set { data : value; } }
     field precate TextLess StorageTextLess { get { return data; } set { data : value; } }
+
+    maide prusate Bool Execute()
+    {
+        this.Status : 0;
+
+        inf (this.Task = null)
+        {
+            this.Status : 1000;
+            return false;
+        }
+
+        this.Out : this.Task.Out;
+        this.Err : this.Task.Err;
+
+        var TaskKindList kindList;
+        kindList : this.TaskKind;
+        var TaskKind kind;
+        kind : this.Task.Kind;
+
+        var Bool ba;
+        ba : kind = kindList.Token | kind = kindList.Node;
+
+        var Bool fileExtend;
+        fileExtend : false;
+        var Array sourceNameList;
+        inf (ba)
+        {
+            var String file;
+            file : this.Task.Source;
+        }
+    }
 }
