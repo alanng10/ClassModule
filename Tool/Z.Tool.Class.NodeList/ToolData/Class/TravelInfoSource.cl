@@ -121,7 +121,7 @@ class InfoTravel : Travel
         return true;
     }
 
-    maide prusate Bool Execute(var Node node)
+    maide prusate String Execute(var Node node)
     {
         this.AddClear();
 
@@ -132,7 +132,9 @@ class InfoTravel : Travel
         }
 
 #ExecuteList#
-        return true;
+        var String a;
+        a : this.AddResult();
+        return a;
     }
 
 #NodeList#}
