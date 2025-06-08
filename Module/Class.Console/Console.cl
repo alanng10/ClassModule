@@ -95,6 +95,26 @@ class Console : TextAdd
         {
             var String file;
             file : this.Task.Source;
+
+            var Int combineIndex;
+            combineIndex : this.StorageInfra.EntryPathNameCombine(this.TA(file), this.TLess);
+
+            var String fileName;
+
+            var Bool baaa;
+            baaa : combineIndex = null;
+
+            inf (baaa)
+            {
+                fileName : file;
+
+                this.SourceFold : ".";
+            }
+
+            sourceNameList : new Array;
+            sourceNameList.Count : 1;
+            sourceNameList.Init();
+            sourceNameList.Set(0, fileName);
         }
     }
 }
