@@ -123,6 +123,8 @@ class InfoTravel : Travel
 
     maide prusate Bool Execute(var Node node)
     {
+        this.AddClear();
+
         inf (node = null)
         {
             this.Null();
