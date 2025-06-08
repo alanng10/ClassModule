@@ -264,4 +264,46 @@ class Console : TextAdd
         this.Source : array;
         return true;
     }
+
+    maide precate Bool ReadSourceText(var Bool fileExtend)
+    {
+        var Array array;
+        array : this.Source;
+        var String sourceFold;
+        sourceFold : this.SourceFold;
+
+        var String combine;
+        combine : this.TextInfra.PathCombine;
+
+        var Int count;
+        count : array.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Source a;
+            a : cast Source(array.Get(i));
+
+            var String k;
+            k : this.TextInfra.Zero;
+            inf (fileExtend)
+            {
+                k : ".cl";
+            }
+
+            var String filePath;
+            filePath : this.AddClear().Add(sourceFold).Add(combine).Add(a.Name).Add(k).AddResult();
+
+            var String kk;
+            kk : this.StorageInfra.TextRead(filePath);
+
+            var Array text;
+            text : this.TextLine(this.TextCreate(kk));
+
+            a.Text : text;
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
