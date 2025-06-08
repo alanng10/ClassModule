@@ -140,4 +140,48 @@ class Console : TextAdd
         }
         return true;
     }
+
+    maide prusate Bool ExecuteCreate()
+    {
+        this.Create.Execute();
+
+        this.Result : this.Create.Result;
+
+        this.Create.Result : null;
+        return true;
+    }
+
+    maide precate Bool WriteAllError()
+    {
+        inf (~this.ErrorWrite)
+        {
+            return true;
+        }
+
+        var TaskKindList kindList;
+        kindList : this.TaskKind;
+
+        var TaskKind kind;
+        kind : this.Task.Kind;
+
+        var Bool kindConsole;
+        kindConsole : kind = kindList.Console;
+
+        inf (kindConsole | kind = kindList.Token)
+        {
+            inf (~(this.Result.Token = null))
+            {
+                this.WriteErrorList(this.Result.Token.Error);
+            }
+        }
+
+        inf (kindConsole | kind = kindList.Node)
+        {
+            inf (~(this.Result.Node = null))
+            {
+                this.WriteErrorList(this.Result.Node.Error);
+            }
+        }
+        return true;
+    }
 }
