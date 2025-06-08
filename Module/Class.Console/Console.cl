@@ -231,4 +231,37 @@ class Console : TextAdd
         }
         return true;
     }
+
+    maide precate Array FileList(var String foldPath)
+    {
+        var Array a;
+        a : this.StorageComp.EntryList(foldPath, false);
+
+        return a;
+    }
+
+    maide precate Bool SetSource(var Array array)
+    {
+        var Int count;
+        count : array.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Strign name;
+            name : cast String(array.Get(i));
+
+            var Source a;
+            a : new Source;
+            a.Init();
+            a.Index : i;
+            a.Name : name;
+
+            array.Set(i, a);
+            i : i + 1;
+        }
+
+        this.Source : array;
+        return true;
+    }
 }
