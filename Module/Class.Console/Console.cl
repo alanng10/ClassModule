@@ -116,5 +116,28 @@ class Console : TextAdd
             sourceNameList.Init();
             sourceNameList.Set(0, fileName);
         }
+
+        this.SetSource(sourceNameList);
+
+        this.ReadSourceText(fileExtend);
+
+        this.ExecuteCreate();
+
+        this.ErrorString.SourceArray : this.Source;
+
+        this.WriteAllError();
+
+        inf (this.Task.Print)
+        {
+            inf (kind = kindList.Token)
+            {
+                this.PrintTokenResult();
+            }
+            inf (kind = kindList.Node)
+            {
+                this.PrintNodeResult();
+            }
+        }
+        return true;
     }
 }
