@@ -208,4 +208,29 @@ class Console : TextAdd
         this.Err.Write(a);
         return true;
     }
+
+    maide precate Bool PrintNodeResult()
+    {
+        var InfoTravel infoTravel;
+        infoTravel : new InfoTravel;
+        infoTravel.Init();
+
+        var Iter rootIter;
+        rootIter : this.Result.Node.Root.IterCreate();
+        this.Result.Node.Root.IterSet(rootIter);
+
+        while (rootIter.Next())
+        {
+            var Node root;
+            root : cast Node(rootIter.Value);
+
+            infoTravel.Execute(root);
+
+            var String a;
+            a : infoTravel.AddResult();
+
+            this.Out.Write(a);
+        }
+        return true;
+    }
 }
