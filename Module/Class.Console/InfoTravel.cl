@@ -121,7 +121,7 @@ class InfoTravel : Travel
         return true;
     }
 
-    maide prusate Bool Execute(var Node node)
+    maide prusate String Execute(var Node node)
     {
         this.AddClear();
 
@@ -392,7 +392,9 @@ class InfoTravel : Travel
             this.ExecuteBitSignRiteOperate(cast BitSignRiteOperate(node));
         }
 
-        return true;
+        var String a;
+        a : this.AddResult();
+        return a;
     }
 
     maide prusate Bool ExecuteClass(var NodeClass varClass)
