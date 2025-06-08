@@ -184,4 +184,28 @@ class Console : TextAdd
         }
         return true;
     }
+
+    maide precate Bool WriteErrorList(var Array errorList)
+    {
+        var Int count;
+        count : errorList.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Error a;
+            a : cast Error(errorList.Get(i));
+            this.WriteError(a);
+            i : i + 1;
+        }
+        return true;
+    }
+
+    maide precate Bool WriteError(var Error error)
+    {
+        var String a;
+        a : this.ErrorString.Execute(error);
+        this.Err.Write(a);
+        return true;
+    }
 }
