@@ -224,10 +224,8 @@ class Console : TextAdd
             var Node root;
             root : cast Node(rootIter.Value);
 
-            infoTravel.Execute(root);
-
             var String a;
-            a : infoTravel.AddResult();
+            a : infoTravel.Execute(root);
 
             this.Out.Write(a);
         }
