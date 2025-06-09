@@ -180,4 +180,30 @@ class InfoTokenString : TextAdd
         this.End();
         return true;
     }
+
+    maide prusate Bool ExecuteToken(var Token token)
+    {
+        inf (token = null)
+        {
+            this.Null();
+            return true;
+        }
+
+        this.Start("Token");
+
+        this.FieldStart("Row");
+
+        this.ExecuteInt(token.Row);
+
+        this.FieldEnd("Row");
+
+        this.FieldStart("Range");
+
+        this.ExecuteRange(token.Range);
+
+        this.FieldEnd("Range");
+
+        this.End();
+        return true;
+    }
 }
