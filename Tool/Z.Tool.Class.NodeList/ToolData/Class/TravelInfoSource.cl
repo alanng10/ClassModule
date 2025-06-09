@@ -127,6 +127,39 @@ class InfoTravel : Travel
         return true;
     }
 
+    maide precate Bool ExecuteBool(var Bool value)
+    {
+        inf (value = null)
+        {
+            this.Null();
+            return true;
+        }
+        this.AddBoolValue(value);
+        return true;
+    }
+
+    maide precate Bool ExecuteInt(var Int value)
+    {
+        inf (value = null)
+        {
+            this.Null();
+            return true;
+        }
+        this.AddIntValue(value);
+        return true;
+    }
+
+    maide precate Bool ExecuteString(var String value)
+    {
+        inf (value = null)
+        {
+            this.Null();
+            return true;
+        }
+        this.AddStringValue(value);
+        return true;
+    }
+
     maide prusate String Execute(var Node node)
     {
         this.AddClear();
