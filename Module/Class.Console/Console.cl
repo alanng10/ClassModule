@@ -111,9 +111,7 @@ class Console : TextAdd
                 this.SourceFold : ".";
             }
 
-            sourceNameList : new Array;
-            sourceNameList.Count : 1;
-            sourceNameList.Init();
+            sourceNameList : this.ListInfra.ArrayCreate(1);
             sourceNameList.Set(0, fileName);
         }
 
