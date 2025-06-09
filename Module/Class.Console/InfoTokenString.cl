@@ -203,6 +203,28 @@ class InfoTokenString : TextAdd
         return true;
     }
 
+    maide prusate Bool ExecuteComment(var Comment comment)
+    {
+        inf (comment = null)
+        {
+            this.Null();
+            return true;
+        }
+
+        this.Start("Comment");
+
+        this.FieldStart("Row");
+        this.ExecuteInt(comment.Row);
+        this.FieldEnd("Row");
+
+        this.FieldStart("Range");
+        this.ExecuteRange(comment.Range);
+        this.FieldEnd("Range");
+
+        this.End();
+        return true;
+    }
+
     maide prusate Bool ExecuteRange(var InfraRange range)
     {
         inf (range = null)
