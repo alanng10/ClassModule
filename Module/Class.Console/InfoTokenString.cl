@@ -126,4 +126,58 @@ class InfoTokenString : TextAdd
         this.Add("null").Add(",").AddLine();
         return true;
     }
+
+    maide prusate Bool ExecuteCode(var Code code)
+    {
+        inf (code = null)
+        {
+            this.Null();
+            return true;
+        }
+
+        this.Start("Code");
+
+        this.FieldStart("Token");
+
+        this.StartArray();
+
+        var Int count;
+        count : code.Token.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Token token;
+            token : cast Token(code.Token.Get(i));
+
+            this.ExecuteToken(token);
+
+            i : i + 1;
+        }
+        this.EndArray();
+
+        this.FieldEnd("Token");
+
+        this.FieldStart("Comment");
+
+        this.StartArray();
+
+        count : code.Comment.Count;
+        i : 0;
+        while (i < count)
+        {
+            var Comment comment;
+            comment : cast Comment(code.Comment.Get(i));
+
+            this.ExecuteComment(comment);
+
+            i : i + 1;
+        }
+        this.EndArray();
+
+        this.FieldEnd("Comment");
+
+        this.End();
+        return true;
+    }
 }
