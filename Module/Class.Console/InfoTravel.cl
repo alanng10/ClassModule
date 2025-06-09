@@ -35,10 +35,16 @@ class InfoTravel : Travel
         return true;
     }
 
-    maide precate Bool Field(var String name)
+    maide precate Bool FieldStart(var String name)
     {
         this.AddSpace().Add(name).Add(" : ");
         this.Space : this.Space + this.StringCount(name) + 3;
+        return true;
+    }
+
+    maide precate Bool FieldEnd(var String name)
+    {
+        this.Space : this.Space - (this.StringCount(name) + 3);
         return true;
     }
 
@@ -408,12 +414,15 @@ class InfoTravel : Travel
 
         this.Start("Class");
 
-        this.Field("Name");
+        this.FieldStart("Name");
         this.ExecuteClassName(varClass.Name);
-        this.Field("Base");
+        this.FieldEnd("Name");
+        this.FieldStart("Base");
         this.ExecuteClassName(varClass.Base);
-        this.Field("Part");
+        this.FieldEnd("Base");
+        this.FieldStart("Part");
         this.ExecutePart(varClass.Part);
+        this.FieldEnd("Part");
 
         this.End();
         return true;
@@ -453,16 +462,21 @@ class InfoTravel : Travel
 
         this.Start("Field");
 
-        this.Field("Class");
+        this.FieldStart("Class");
         this.ExecuteClassName(varField.Class);
-        this.Field("Name");
+        this.FieldEnd("Class");
+        this.FieldStart("Name");
         this.ExecuteFieldName(varField.Name);
-        this.Field("Count");
+        this.FieldEnd("Name");
+        this.FieldStart("Count");
         this.ExecuteCount(varField.Count);
-        this.Field("Get");
+        this.FieldEnd("Count");
+        this.FieldStart("Get");
         this.ExecuteState(varField.Get);
-        this.Field("Set");
+        this.FieldEnd("Get");
+        this.FieldStart("Set");
         this.ExecuteState(varField.Set);
+        this.FieldEnd("Set");
 
         this.End();
         return true;
@@ -479,16 +493,21 @@ class InfoTravel : Travel
 
         this.Start("Maide");
 
-        this.Field("Class");
+        this.FieldStart("Class");
         this.ExecuteClassName(varMaide.Class);
-        this.Field("Name");
+        this.FieldEnd("Class");
+        this.FieldStart("Name");
         this.ExecuteMaideName(varMaide.Name);
-        this.Field("Count");
+        this.FieldEnd("Name");
+        this.FieldStart("Count");
         this.ExecuteCount(varMaide.Count);
-        this.Field("Param");
+        this.FieldEnd("Count");
+        this.FieldStart("Param");
         this.ExecuteParam(varMaide.Param);
-        this.Field("Call");
+        this.FieldEnd("Param");
+        this.FieldStart("Call");
         this.ExecuteState(varMaide.Call);
+        this.FieldEnd("Call");
 
         this.End();
         return true;
@@ -516,10 +535,12 @@ class InfoTravel : Travel
 
         this.Start("Var");
 
-        this.Field("Class");
+        this.FieldStart("Class");
         this.ExecuteClassName(varVar.Class);
-        this.Field("Name");
+        this.FieldEnd("Class");
+        this.FieldStart("Name");
         this.ExecuteVarName(varVar.Name);
+        this.FieldEnd("Name");
 
         this.End();
         return true;
@@ -631,10 +652,12 @@ class InfoTravel : Travel
 
         this.Start("InfExecute");
 
-        this.Field("Cond");
+        this.FieldStart("Cond");
         this.ExecuteOperate(infExecute.Cond);
-        this.Field("Then");
+        this.FieldEnd("Cond");
+        this.FieldStart("Then");
         this.ExecuteState(infExecute.Then);
+        this.FieldEnd("Then");
 
         this.End();
         return true;
@@ -651,10 +674,12 @@ class InfoTravel : Travel
 
         this.Start("WhileExecute");
 
-        this.Field("Cond");
+        this.FieldStart("Cond");
         this.ExecuteOperate(whileExecute.Cond);
-        this.Field("Loop");
+        this.FieldEnd("Cond");
+        this.FieldStart("Loop");
         this.ExecuteState(whileExecute.Loop);
+        this.FieldEnd("Loop");
 
         this.End();
         return true;
@@ -671,8 +696,9 @@ class InfoTravel : Travel
 
         this.Start("ReturnExecute");
 
-        this.Field("Result");
+        this.FieldStart("Result");
         this.ExecuteOperate(returnExecute.Result);
+        this.FieldEnd("Result");
 
         this.End();
         return true;
@@ -689,8 +715,9 @@ class InfoTravel : Travel
 
         this.Start("ReferExecute");
 
-        this.Field("Var");
+        this.FieldStart("Var");
         this.ExecuteVar(referExecute.Var);
+        this.FieldEnd("Var");
 
         this.End();
         return true;
@@ -707,10 +734,12 @@ class InfoTravel : Travel
 
         this.Start("AreExecute");
 
-        this.Field("Mark");
+        this.FieldStart("Mark");
         this.ExecuteMark(areExecute.Mark);
-        this.Field("Value");
+        this.FieldEnd("Mark");
+        this.FieldStart("Value");
         this.ExecuteOperate(areExecute.Value);
+        this.FieldEnd("Value");
 
         this.End();
         return true;
@@ -727,8 +756,9 @@ class InfoTravel : Travel
 
         this.Start("OperateExecute");
 
-        this.Field("Any");
+        this.FieldStart("Any");
         this.ExecuteOperate(operateExecute.Any);
+        this.FieldEnd("Any");
 
         this.End();
         return true;
@@ -768,8 +798,9 @@ class InfoTravel : Travel
 
         this.Start("VarMark");
 
-        this.Field("Var");
+        this.FieldStart("Var");
         this.ExecuteVarName(varMark.Var);
+        this.FieldEnd("Var");
 
         this.End();
         return true;
@@ -786,10 +817,12 @@ class InfoTravel : Travel
 
         this.Start("SetMark");
 
-        this.Field("This");
+        this.FieldStart("This");
         this.ExecuteOperate(setMark.This);
-        this.Field("Field");
+        this.FieldEnd("This");
+        this.FieldStart("Field");
         this.ExecuteFieldName(setMark.Field);
+        this.FieldEnd("Field");
 
         this.End();
         return true;
@@ -818,10 +851,12 @@ class InfoTravel : Travel
 
         this.Start("GetOperate");
 
-        this.Field("This");
+        this.FieldStart("This");
         this.ExecuteOperate(getOperate.This);
-        this.Field("Field");
+        this.FieldEnd("This");
+        this.FieldStart("Field");
         this.ExecuteFieldName(getOperate.Field);
+        this.FieldEnd("Field");
 
         this.End();
         return true;
@@ -838,12 +873,15 @@ class InfoTravel : Travel
 
         this.Start("CallOperate");
 
-        this.Field("This");
+        this.FieldStart("This");
         this.ExecuteOperate(callOperate.This);
-        this.Field("Maide");
+        this.FieldEnd("This");
+        this.FieldStart("Maide");
         this.ExecuteMaideName(callOperate.Maide);
-        this.Field("Argue");
+        this.FieldEnd("Maide");
+        this.FieldStart("Argue");
         this.ExecuteArgue(callOperate.Argue);
+        this.FieldEnd("Argue");
 
         this.End();
         return true;
@@ -905,8 +943,9 @@ class InfoTravel : Travel
 
         this.Start("NewOperate");
 
-        this.Field("Class");
+        this.FieldStart("Class");
         this.ExecuteClassName(newOperate.Class);
+        this.FieldEnd("Class");
 
         this.End();
         return true;
@@ -923,8 +962,9 @@ class InfoTravel : Travel
 
         this.Start("ShareOperate");
 
-        this.Field("Class");
+        this.FieldStart("Class");
         this.ExecuteClassName(shareOperate.Class);
+        this.FieldEnd("Class");
 
         this.End();
         return true;
@@ -941,10 +981,12 @@ class InfoTravel : Travel
 
         this.Start("CastOperate");
 
-        this.Field("Class");
+        this.FieldStart("Class");
         this.ExecuteClassName(castOperate.Class);
-        this.Field("Any");
+        this.FieldEnd("Class");
+        this.FieldStart("Any");
         this.ExecuteOperate(castOperate.Any);
+        this.FieldEnd("Any");
 
         this.End();
         return true;
@@ -961,8 +1003,9 @@ class InfoTravel : Travel
 
         this.Start("VarOperate");
 
-        this.Field("Var");
+        this.FieldStart("Var");
         this.ExecuteVarName(varOperate.Var);
+        this.FieldEnd("Var");
 
         this.End();
         return true;
@@ -979,8 +1022,9 @@ class InfoTravel : Travel
 
         this.Start("ValueOperate");
 
-        this.Field("Value");
+        this.FieldStart("Value");
         this.ExecuteValue(valueOperate.Value);
+        this.FieldEnd("Value");
 
         this.End();
         return true;
@@ -997,8 +1041,9 @@ class InfoTravel : Travel
 
         this.Start("BraceOperate");
 
-        this.Field("Any");
+        this.FieldStart("Any");
         this.ExecuteOperate(braceOperate.Any);
+        this.FieldEnd("Any");
 
         this.End();
         return true;
@@ -1027,8 +1072,9 @@ class InfoTravel : Travel
 
         this.Start("BoolValue");
 
-        this.Field("Value");
+        this.FieldStart("Value");
         this.AddBoolValue(boolValue.Value);
+        this.FieldEnd("Value");
 
         this.End();
         return true;
@@ -1045,8 +1091,9 @@ class InfoTravel : Travel
 
         this.Start("IntValue");
 
-        this.Field("Value");
+        this.FieldStart("Value");
         this.AddIntValue(intValue.Value);
+        this.FieldEnd("Value");
 
         this.End();
         return true;
@@ -1063,8 +1110,9 @@ class InfoTravel : Travel
 
         this.Start("IntSignValue");
 
-        this.Field("Value");
+        this.FieldStart("Value");
         this.AddIntValue(intSignValue.Value);
+        this.FieldEnd("Value");
 
         this.End();
         return true;
@@ -1081,8 +1129,9 @@ class InfoTravel : Travel
 
         this.Start("IntHexValue");
 
-        this.Field("Value");
+        this.FieldStart("Value");
         this.AddIntValue(intHexValue.Value);
+        this.FieldEnd("Value");
 
         this.End();
         return true;
@@ -1099,8 +1148,9 @@ class InfoTravel : Travel
 
         this.Start("IntHexSignValue");
 
-        this.Field("Value");
+        this.FieldStart("Value");
         this.AddIntValue(intHexSignValue.Value);
+        this.FieldEnd("Value");
 
         this.End();
         return true;
@@ -1117,8 +1167,9 @@ class InfoTravel : Travel
 
         this.Start("StringValue");
 
-        this.Field("Value");
+        this.FieldStart("Value");
         this.AddStringValue(stringValue.Value);
+        this.FieldEnd("Value");
 
         this.End();
         return true;
@@ -1135,8 +1186,9 @@ class InfoTravel : Travel
 
         this.Start("ClassName");
 
-        this.Field("Value");
+        this.FieldStart("Value");
         this.AddStringValue(className.Value);
+        this.FieldEnd("Value");
 
         this.End();
         return true;
@@ -1153,8 +1205,9 @@ class InfoTravel : Travel
 
         this.Start("FieldName");
 
-        this.Field("Value");
+        this.FieldStart("Value");
         this.AddStringValue(fieldName.Value);
+        this.FieldEnd("Value");
 
         this.End();
         return true;
@@ -1171,8 +1224,9 @@ class InfoTravel : Travel
 
         this.Start("MaideName");
 
-        this.Field("Value");
+        this.FieldStart("Value");
         this.AddStringValue(maideName.Value);
+        this.FieldEnd("Value");
 
         this.End();
         return true;
@@ -1189,8 +1243,9 @@ class InfoTravel : Travel
 
         this.Start("VarName");
 
-        this.Field("Value");
+        this.FieldStart("Value");
         this.AddStringValue(varName.Value);
+        this.FieldEnd("Value");
 
         this.End();
         return true;
@@ -1207,10 +1262,12 @@ class InfoTravel : Travel
 
         this.Start("SameOperate");
 
-        this.Field("Lite");
+        this.FieldStart("Lite");
         this.ExecuteOperate(sameOperate.Lite);
-        this.Field("Rite");
+        this.FieldEnd("Lite");
+        this.FieldStart("Rite");
         this.ExecuteOperate(sameOperate.Rite);
+        this.FieldEnd("Rite");
 
         this.End();
         return true;
@@ -1227,10 +1284,12 @@ class InfoTravel : Travel
 
         this.Start("AndOperate");
 
-        this.Field("Lite");
+        this.FieldStart("Lite");
         this.ExecuteOperate(andOperate.Lite);
-        this.Field("Rite");
+        this.FieldEnd("Lite");
+        this.FieldStart("Rite");
         this.ExecuteOperate(andOperate.Rite);
+        this.FieldEnd("Rite");
 
         this.End();
         return true;
@@ -1247,10 +1306,12 @@ class InfoTravel : Travel
 
         this.Start("OrnOperate");
 
-        this.Field("Lite");
+        this.FieldStart("Lite");
         this.ExecuteOperate(ornOperate.Lite);
-        this.Field("Rite");
+        this.FieldEnd("Lite");
+        this.FieldStart("Rite");
         this.ExecuteOperate(ornOperate.Rite);
+        this.FieldEnd("Rite");
 
         this.End();
         return true;
@@ -1267,8 +1328,9 @@ class InfoTravel : Travel
 
         this.Start("NotOperate");
 
-        this.Field("Value");
+        this.FieldStart("Value");
         this.ExecuteOperate(notOperate.Value);
+        this.FieldEnd("Value");
 
         this.End();
         return true;
@@ -1285,10 +1347,12 @@ class InfoTravel : Travel
 
         this.Start("LessOperate");
 
-        this.Field("Lite");
+        this.FieldStart("Lite");
         this.ExecuteOperate(lessOperate.Lite);
-        this.Field("Rite");
+        this.FieldEnd("Lite");
+        this.FieldStart("Rite");
         this.ExecuteOperate(lessOperate.Rite);
+        this.FieldEnd("Rite");
 
         this.End();
         return true;
@@ -1305,10 +1369,12 @@ class InfoTravel : Travel
 
         this.Start("AddOperate");
 
-        this.Field("Lite");
+        this.FieldStart("Lite");
         this.ExecuteOperate(addOperate.Lite);
-        this.Field("Rite");
+        this.FieldEnd("Lite");
+        this.FieldStart("Rite");
         this.ExecuteOperate(addOperate.Rite);
+        this.FieldEnd("Rite");
 
         this.End();
         return true;
@@ -1325,10 +1391,12 @@ class InfoTravel : Travel
 
         this.Start("SubOperate");
 
-        this.Field("Lite");
+        this.FieldStart("Lite");
         this.ExecuteOperate(subOperate.Lite);
-        this.Field("Rite");
+        this.FieldEnd("Lite");
+        this.FieldStart("Rite");
         this.ExecuteOperate(subOperate.Rite);
+        this.FieldEnd("Rite");
 
         this.End();
         return true;
@@ -1345,10 +1413,12 @@ class InfoTravel : Travel
 
         this.Start("MulOperate");
 
-        this.Field("Lite");
+        this.FieldStart("Lite");
         this.ExecuteOperate(mulOperate.Lite);
-        this.Field("Rite");
+        this.FieldEnd("Lite");
+        this.FieldStart("Rite");
         this.ExecuteOperate(mulOperate.Rite);
+        this.FieldEnd("Rite");
 
         this.End();
         return true;
@@ -1365,10 +1435,12 @@ class InfoTravel : Travel
 
         this.Start("DivOperate");
 
-        this.Field("Lite");
+        this.FieldStart("Lite");
         this.ExecuteOperate(divOperate.Lite);
-        this.Field("Rite");
+        this.FieldEnd("Lite");
+        this.FieldStart("Rite");
         this.ExecuteOperate(divOperate.Rite);
+        this.FieldEnd("Rite");
 
         this.End();
         return true;
@@ -1385,10 +1457,12 @@ class InfoTravel : Travel
 
         this.Start("SignMulOperate");
 
-        this.Field("Lite");
+        this.FieldStart("Lite");
         this.ExecuteOperate(signMulOperate.Lite);
-        this.Field("Rite");
+        this.FieldEnd("Lite");
+        this.FieldStart("Rite");
         this.ExecuteOperate(signMulOperate.Rite);
+        this.FieldEnd("Rite");
 
         this.End();
         return true;
@@ -1405,10 +1479,12 @@ class InfoTravel : Travel
 
         this.Start("SignDivOperate");
 
-        this.Field("Lite");
+        this.FieldStart("Lite");
         this.ExecuteOperate(signDivOperate.Lite);
-        this.Field("Rite");
+        this.FieldEnd("Lite");
+        this.FieldStart("Rite");
         this.ExecuteOperate(signDivOperate.Rite);
+        this.FieldEnd("Rite");
 
         this.End();
         return true;
@@ -1425,10 +1501,12 @@ class InfoTravel : Travel
 
         this.Start("SignLessOperate");
 
-        this.Field("Lite");
+        this.FieldStart("Lite");
         this.ExecuteOperate(signLessOperate.Lite);
-        this.Field("Rite");
+        this.FieldEnd("Lite");
+        this.FieldStart("Rite");
         this.ExecuteOperate(signLessOperate.Rite);
+        this.FieldEnd("Rite");
 
         this.End();
         return true;
@@ -1445,10 +1523,12 @@ class InfoTravel : Travel
 
         this.Start("BitAndOperate");
 
-        this.Field("Lite");
+        this.FieldStart("Lite");
         this.ExecuteOperate(bitAndOperate.Lite);
-        this.Field("Rite");
+        this.FieldEnd("Lite");
+        this.FieldStart("Rite");
         this.ExecuteOperate(bitAndOperate.Rite);
+        this.FieldEnd("Rite");
 
         this.End();
         return true;
@@ -1465,10 +1545,12 @@ class InfoTravel : Travel
 
         this.Start("BitOrnOperate");
 
-        this.Field("Lite");
+        this.FieldStart("Lite");
         this.ExecuteOperate(bitOrnOperate.Lite);
-        this.Field("Rite");
+        this.FieldEnd("Lite");
+        this.FieldStart("Rite");
         this.ExecuteOperate(bitOrnOperate.Rite);
+        this.FieldEnd("Rite");
 
         this.End();
         return true;
@@ -1485,8 +1567,9 @@ class InfoTravel : Travel
 
         this.Start("BitNotOperate");
 
-        this.Field("Value");
+        this.FieldStart("Value");
         this.ExecuteOperate(bitNotOperate.Value);
+        this.FieldEnd("Value");
 
         this.End();
         return true;
@@ -1503,10 +1586,12 @@ class InfoTravel : Travel
 
         this.Start("BitLiteOperate");
 
-        this.Field("Value");
+        this.FieldStart("Value");
         this.ExecuteOperate(bitLiteOperate.Value);
-        this.Field("Count");
+        this.FieldEnd("Value");
+        this.FieldStart("Count");
         this.ExecuteOperate(bitLiteOperate.Count);
+        this.FieldEnd("Count");
 
         this.End();
         return true;
@@ -1523,10 +1608,12 @@ class InfoTravel : Travel
 
         this.Start("BitRiteOperate");
 
-        this.Field("Value");
+        this.FieldStart("Value");
         this.ExecuteOperate(bitRiteOperate.Value);
-        this.Field("Count");
+        this.FieldEnd("Value");
+        this.FieldStart("Count");
         this.ExecuteOperate(bitRiteOperate.Count);
+        this.FieldEnd("Count");
 
         this.End();
         return true;
@@ -1543,10 +1630,12 @@ class InfoTravel : Travel
 
         this.Start("BitSignRiteOperate");
 
-        this.Field("Value");
+        this.FieldStart("Value");
         this.ExecuteOperate(bitSignRiteOperate.Value);
-        this.Field("Count");
+        this.FieldEnd("Value");
+        this.FieldStart("Count");
         this.ExecuteOperate(bitSignRiteOperate.Count);
+        this.FieldEnd("Count");
 
         this.End();
         return true;
