@@ -215,14 +215,14 @@ class Console : TextAdd
         infoTravel : new InfoTravel;
         infoTravel.Init();
 
-        var Iter rootIter;
-        rootIter : this.Result.Node.Root.IterCreate();
-        this.Result.Node.Root.IterSet(rootIter);
+        var Iter iter;
+        iter : this.Result.Node.Root.IterCreate();
+        this.Result.Node.Root.IterSet(iter);
 
-        while (rootIter.Next())
+        while (iter.Next())
         {
             var Node root;
-            root : cast Node(rootIter.Value);
+            root : cast Node(iter.Value);
 
             var String a;
             a : infoTravel.Execute(root);
