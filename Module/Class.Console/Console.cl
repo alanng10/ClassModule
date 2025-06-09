@@ -207,6 +207,29 @@ class Console : TextAdd
         return true;
     }
 
+    maide precate Bool PrintTokenResult()
+    {
+        var InfoTokenString infoTokenString;
+        infoTokenString : new InfoTokenString;
+        infoTokenString.Init();
+
+        var Iter iter;
+        iter : this.Result.Token.Code.IterCreate();
+        this.Result.Token.Code.IterSet(iter);
+
+        while (iter.Next())
+        {
+            var Code code;
+            code : cast Code(iter.Value);
+
+            var String a;
+            a : infoTokenString.Execute(code);
+
+            this.Out.Write(a);
+        }
+        return true;
+    }
+
     maide precate Bool PrintNodeResult()
     {
         var InfoTravel infoTravel;
