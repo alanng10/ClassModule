@@ -127,7 +127,7 @@ class InfoTravel : Travel
         return true;
     }
 
-    maide precate Bool ExecuteBool(var Bool value)
+    maide prusate Bool ExecuteBool(var Bool value)
     {
         inf (value = null)
         {
@@ -138,7 +138,7 @@ class InfoTravel : Travel
         return true;
     }
 
-    maide precate Bool ExecuteInt(var Int value)
+    maide prusate Bool ExecuteInt(var Int value)
     {
         inf (value = null)
         {
@@ -149,7 +149,7 @@ class InfoTravel : Travel
         return true;
     }
 
-    maide precate Bool ExecuteString(var String value)
+    maide prusate Bool ExecuteString(var String value)
     {
         inf (value = null)
         {
