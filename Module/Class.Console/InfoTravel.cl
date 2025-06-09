@@ -127,6 +127,39 @@ class InfoTravel : Travel
         return true;
     }
 
+    maide precate Bool ExecuteBool(var Bool value)
+    {
+        inf (value = null)
+        {
+            this.Null();
+            return true;
+        }
+        this.AddBoolValue(value);
+        return true;
+    }
+
+    maide precate Bool ExecuteInt(var Int value)
+    {
+        inf (value = null)
+        {
+            this.Null();
+            return true;
+        }
+        this.AddIntValue(value);
+        return true;
+    }
+
+    maide precate Bool ExecuteString(var String value)
+    {
+        inf (value = null)
+        {
+            this.Null();
+            return true;
+        }
+        this.AddStringValue(value);
+        return true;
+    }
+
     maide prusate String Execute(var Node node)
     {
         this.AddClear();
@@ -1073,7 +1106,7 @@ class InfoTravel : Travel
         this.Start("BoolValue");
 
         this.FieldStart("Value");
-        this.AddBoolValue(boolValue.Value);
+        this.ExecuteBool(boolValue.Value);
         this.FieldEnd("Value");
 
         this.End();
@@ -1092,7 +1125,7 @@ class InfoTravel : Travel
         this.Start("IntValue");
 
         this.FieldStart("Value");
-        this.AddIntValue(intValue.Value);
+        this.ExecuteInt(intValue.Value);
         this.FieldEnd("Value");
 
         this.End();
@@ -1111,7 +1144,7 @@ class InfoTravel : Travel
         this.Start("IntSignValue");
 
         this.FieldStart("Value");
-        this.AddIntValue(intSignValue.Value);
+        this.ExecuteInt(intSignValue.Value);
         this.FieldEnd("Value");
 
         this.End();
@@ -1130,7 +1163,7 @@ class InfoTravel : Travel
         this.Start("IntHexValue");
 
         this.FieldStart("Value");
-        this.AddIntValue(intHexValue.Value);
+        this.ExecuteInt(intHexValue.Value);
         this.FieldEnd("Value");
 
         this.End();
@@ -1149,7 +1182,7 @@ class InfoTravel : Travel
         this.Start("IntHexSignValue");
 
         this.FieldStart("Value");
-        this.AddIntValue(intHexSignValue.Value);
+        this.ExecuteInt(intHexSignValue.Value);
         this.FieldEnd("Value");
 
         this.End();
@@ -1168,7 +1201,7 @@ class InfoTravel : Travel
         this.Start("StringValue");
 
         this.FieldStart("Value");
-        this.AddStringValue(stringValue.Value);
+        this.ExecuteString(stringValue.Value);
         this.FieldEnd("Value");
 
         this.End();
@@ -1187,7 +1220,7 @@ class InfoTravel : Travel
         this.Start("ClassName");
 
         this.FieldStart("Value");
-        this.AddStringValue(className.Value);
+        this.ExecuteString(className.Value);
         this.FieldEnd("Value");
 
         this.End();
@@ -1206,7 +1239,7 @@ class InfoTravel : Travel
         this.Start("FieldName");
 
         this.FieldStart("Value");
-        this.AddStringValue(fieldName.Value);
+        this.ExecuteString(fieldName.Value);
         this.FieldEnd("Value");
 
         this.End();
@@ -1225,7 +1258,7 @@ class InfoTravel : Travel
         this.Start("MaideName");
 
         this.FieldStart("Value");
-        this.AddStringValue(maideName.Value);
+        this.ExecuteString(maideName.Value);
         this.FieldEnd("Value");
 
         this.End();
@@ -1244,7 +1277,7 @@ class InfoTravel : Travel
         this.Start("VarName");
 
         this.FieldStart("Value");
-        this.AddStringValue(varName.Value);
+        this.ExecuteString(varName.Value);
         this.FieldEnd("Value");
 
         this.End();
