@@ -35,10 +35,16 @@ class InfoTokenString : TextAdd
         return true;
     }
 
-    maide precate Bool Field(var String name)
+    maide precate Bool FieldStart(var String name)
     {
         this.AddSpace().Add(name).Add(" : ");
         this.Space : this.Space + this.StringCount(name) + 3;
+        return true;
+    }
+
+    maide precate Bool FieldEnd(var String name)
+    {
+        this.Space : this.Space - (this.StringCount(name) + 3);
         return true;
     }
 
