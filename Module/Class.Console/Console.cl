@@ -269,11 +269,6 @@ class Console : TextAdd
     {
         var Array array;
         array : this.Source;
-        var String sourceFold;
-        sourceFold : this.SourceFold;
-
-        var String combine;
-        combine : this.TextInfra.PathCombine;
 
         var Int count;
         count : array.Count;
@@ -292,7 +287,7 @@ class Console : TextAdd
             }
 
             var String filePath;
-            filePath : this.AddClear().Add(sourceFold).Add(combine).Add(a.Name).Add(k).AddResult();
+            filePath : this.AddClear().Add(this.SourceFold).Add(this.TextInfra.PathCombine).Add(a.Name).Add(k).AddResult();
 
             var String kk;
             kk : this.StorageInfra.TextRead(filePath);
