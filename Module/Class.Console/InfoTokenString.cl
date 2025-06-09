@@ -192,16 +192,34 @@ class InfoTokenString : TextAdd
         this.Start("Token");
 
         this.FieldStart("Row");
-
         this.ExecuteInt(token.Row);
-
         this.FieldEnd("Row");
 
         this.FieldStart("Range");
-
         this.ExecuteRange(token.Range);
-
         this.FieldEnd("Range");
+
+        this.End();
+        return true;
+    }
+
+    maide prusate Bool ExecuteRange(var InfraRange range)
+    {
+        inf (range = null)
+        {
+            this.Null();
+            return true;
+        }
+
+        this.Start("Range");
+
+        this.FieldStart("Index");
+        this.ExecuteInt(range.Index);
+        this.FieldEnd("Index");
+
+        this.FieldStart("Count");
+        this.ExecuteInt(range.Count);
+        this.FieldEnd("Count");
 
         this.End();
         return true;
