@@ -244,9 +244,11 @@ public class TravelInfoGen : TravelGen
                     ba = true;
                 }
 
-                this.AddIndent(2).AddS("this.Field(\"").Add(kb.Name).AddS("\");").AddLine();
+                this.AddIndent(2).AddS("this.FieldStart(\"").Add(kb.Name).AddS("\");").AddLine();
 
                 this.AddIndent(2).AddS("this.Add").Add(kb.Class).AddS("Value(").Add(varName).AddS(".").Add(kb.Name).AddS(");").AddLine();
+
+                this.AddIndent(2).AddS("this.FieldEnd(\"").Add(kb.Name).AddS("\");").AddLine();
             }
         }
 
