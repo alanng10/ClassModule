@@ -160,6 +160,17 @@ class InfoTokenString : TextAdd
         return true;
     }
 
+    maide prusate String Execute(var Code code)
+    {
+        this.AddClear();
+
+        this.ExecuteCode(code);
+
+        var String a;
+        a : this.AddResult();
+        return a;
+    }
+
     maide prusate Bool ExecuteCode(var Code code)
     {
         inf (code = null)
