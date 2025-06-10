@@ -17,6 +17,7 @@ System.Text
     Text Text
     TextForm Form
     TextLess Less
+    StringAdd StringAdd
     TextInfra Infra
 System.Storage
     StorageComp Comp
