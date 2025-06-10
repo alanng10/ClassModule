@@ -170,6 +170,24 @@ class Test : TextAdd
         {
             var String kind;
             kind : cast String(kindIter.Value);
+
+            var String kindFold;
+            kindFold : this.AddClear().Add(setFold).Add(combine).Add(kind).AddResult();
+
+            var Array unitList;
+            unitList : this.FoldList(kindFold);
+
+            var Iter unitIter;
+            unitIter : unitList.IterCreate();
+            unitList.IterSet(unitIter);
+            while (unitIter.Next())
+            {
+                var String unit;
+                unit : cast String(unitIter.Value);
+
+                var String unitFold;
+                unitFold : this.AddClear().Add(kindFold).Add(combine).Add(unit).AddResult();
+            }
         }
     }
 }
