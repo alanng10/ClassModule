@@ -107,4 +107,41 @@ class ErrorString : TextAdd
         a : error.Kind.Text;
         return a;
     }
+
+    maide precate String RangeString(var Error error)
+    {
+        var StringAdd kk;
+        kk : this.StringAdd;
+
+        var Range range;
+        range : error.Range;
+
+        var StringAdd k;
+        k : new StringAdd;
+        k.Init();
+
+        this.StringAdd : k;
+
+        var String ka;
+        ka : this.StringInt(range.Start);
+
+        var String kb;
+        kb : this.StringInt(range.End);
+
+        this.AddClear();
+
+        this.Add("(");
+        this.Add(ka);
+        this.Add(",");
+        this.Add(" ");
+        this.Add(kb);
+        this.Add(")");
+
+        var String a;
+        a : this.AddResult();
+
+        this.StringAdd : kk;
+
+        return a;
+    }
 }
