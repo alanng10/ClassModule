@@ -20,6 +20,14 @@ class Test : TextAdd
         return true;
     }
 
+    maide precate ClassConsole CreateConsole()
+    {
+        var ClassConsole a;
+        a : new ClassConsole;
+        a.Init();
+        return a;
+    }
+
     maide precate Table CreateSetTable()
     {
         return this.ClassInfra.TableCreateStringLess();
