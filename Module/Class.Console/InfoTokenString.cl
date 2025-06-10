@@ -105,7 +105,7 @@ class InfoTokenString : TextAdd
         return true;
     }
 
-    maide precate Bool AddSpace()
+    maide precate InfoTokenString AddSpace()
     {
         var Int count;
         count : this.Space;
@@ -118,7 +118,7 @@ class InfoTokenString : TextAdd
             i : i + 1;
         }
 
-        return true;
+        return this;
     }
 
     maide precate Bool Null()
