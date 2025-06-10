@@ -64,4 +64,19 @@ class Create : Any
         this.Token.Source : null;
         return true;
     }
+
+    maide prusate Bool ExecuteNode()
+    {
+        this.Node.Source : this.Console.Source;
+        this.Node.Task : this.Console.Task.Node;
+        this.Node.Code : this.Result.Token.Code;
+        this.Node.Execute();
+        this.Result.Node : this.Node.Result;
+
+        this.Node.Result : null;
+        this.Node.Code : null;
+        this.Node.Task : null;
+        this.Node.Source : null;
+        return true;
+    }
 }
