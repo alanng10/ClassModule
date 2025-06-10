@@ -6,8 +6,8 @@ class Test : TextAdd
         this.ListInfra : share ListInfra;
         this.StorageInfra : share StorageInfra;
         this.ClassInfra : share ClassInfra;
-        this.SystemConsole : share Console;
         this.StorageComp : share StorageComp;
+        this.SystemConsole : share Console;
         this.TaskKindList : share TaskKindList;
 
         this.Console : this.CreateConsole();
@@ -44,4 +44,10 @@ class Test : TextAdd
     }
 
     field precate ListInfra ListInfra { get { return data; } set { data : value; } }
+    field precate StorageInfra StorageInfra { get { return data; } set { data : value; } }
+    field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
+    field precate StorageComp StorageComp { get { return data; } set { data : value; } }
+    field precate Console SystemConsole { get { return data; } set { data : value; } }
+    field precate TaskKindList TaskKindList { get { return data; } set { data : value; } }
+    field precate String LangName { get { return data; } set { data : value; } }
 }
