@@ -7,11 +7,9 @@ System.Infra
     Bool Bool
     Int Int
     String String
-    Range Range
     InfraInfra Infra
 System.List
     Array Array
-    Table Table
     ListInfra Infra
 System.Text
     Text Text
@@ -27,6 +25,8 @@ Text.Text:0.00.00
 Storage.Storage:0.00.00
     StorageNameForm NameForm
 Class.Infra:0.00.00
+    Range Range
+    Pos Pos
     Error Error
     ClassInfra Infra
 Class.Token:0.00.00
