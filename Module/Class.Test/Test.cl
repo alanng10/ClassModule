@@ -74,4 +74,27 @@ class Test : TextAdd
     {
         return "../../Saber/SaberTest/Test";
     }
+
+    maide precate Bool AddSetList()
+    {
+        this.AddSet("Token", this.TaskKindList.Token, false, false, false);
+
+        this.AddSet("Node", this.TaskKindList.Node, true, false, false);
+        return true;
+    }
+
+    maide precate Bool AddSet(var String name, var TaskKind taskKind, var Bool addKindAfterTaskArg, var Bool addPathAfterTaskArg, var Bool sourceFold)
+    {
+        var Set k;
+        k : new Set;
+        k.Init();
+        k.Name : name;
+        k.TaskKind : taskKind;
+        k.AddKindAfterTaskArg : addKindAfterTaskArg;
+        k.AddPathAfterTaskArg : addPathAfterTaskArg;
+        k.SourceFold : sourceFold;
+
+        this.ListInfra.TableAdd(this.SetTable, k.name, k);
+        return true;
+    }
 }
