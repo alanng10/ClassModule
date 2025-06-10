@@ -69,7 +69,7 @@ class ErrorString : TextAdd
             var String kaa;
             inf (ba)
             {
-                kaa : this.RangePosString(error);
+                #kaa : this.RangePosString(error);
             }
             inf (~ba)
             {
