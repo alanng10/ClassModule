@@ -105,7 +105,7 @@ class InfoTravel : Travel
         return true;
     }
 
-    maide precate Bool AddSpace()
+    maide precate InfoTravel AddSpace()
     {
         var Int count;
         count : this.Space;
@@ -118,7 +118,7 @@ class InfoTravel : Travel
             i : i + 1;
         }
 
-        return true;
+        return this;
     }
 
     maide precate Bool Null()
