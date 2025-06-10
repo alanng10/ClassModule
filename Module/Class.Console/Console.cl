@@ -229,10 +229,6 @@ class Console : TextAdd
 
     maide precate Bool PrintTokenResult()
     {
-        var InfoTokenString infoTokenString;
-        infoTokenString : new InfoTokenString;
-        infoTokenString.Init();
-
         var Iter iter;
         iter : this.Result.Token.Code.IterCreate();
         this.Result.Token.Code.IterSet(iter);
@@ -243,7 +239,7 @@ class Console : TextAdd
             code : cast Code(iter.Value);
 
             var String a;
-            a : infoTokenString.Execute(code);
+            a : this.InfoTokenString.Execute(code);
 
             this.Out.Write(a);
         }
@@ -252,10 +248,6 @@ class Console : TextAdd
 
     maide precate Bool PrintNodeResult()
     {
-        var InfoTravel infoTravel;
-        infoTravel : new InfoTravel;
-        infoTravel.Init();
-
         var Iter iter;
         iter : this.Result.Node.Root.IterCreate();
         this.Result.Node.Root.IterSet(iter);
@@ -266,7 +258,7 @@ class Console : TextAdd
             root : cast Node(iter.Value);
 
             var String a;
-            a : infoTravel.Execute(root);
+            a : this.InfoTravel.Execute(root);
 
             this.Out.Write(a);
         }
