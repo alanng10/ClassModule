@@ -65,4 +65,8 @@ class Test : TextAdd
     field precate String UnitFold { get { return data; } set { data : value; } }
     field precate StringOut Out { get { return data; } set { data : value; } }
     field precate StringOut Err { get { return data; } set { data : value; } }
+    field precate String InitThisFold { get { return data; } set { data : value; } }
+    field precate String ResultSpace { get { return data; } set { data : value; } }
+    field precate Int UnitIndex { get { return data; } set { data : value; } }
+    field precate Bool UnitPass { get { return data; } set { data : value; } }
 }
