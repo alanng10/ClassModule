@@ -266,5 +266,17 @@ class Test : TextAdd
         this.Console.Execute();
 
         this.StorageComp.ThisFoldSet(this.InitThisFold);
+
+        var String actual;
+        var String actualOut;
+        var String actualErr;
+
+        actualOut : this.Out.Result();
+        actualErr : this.Err.Result();
+
+        actual : this.AddClear().Add(actualErr).Add(actualOut).AddResult();
+
+        var String actualFile;
+        actualFile : this.AddClear().Add(this.UnitFold).Add(combine).Add("Actual").AddResult();
     }
 }
