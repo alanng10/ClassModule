@@ -11,10 +11,21 @@ class Console : TextAdd
 
         this.ErrorWrite : true;
 
-        this.ErrorString : this.CreateErrorString();
         this.Create : this.CreateCreate();
+        this.ErrorString : this.CreateErrorString();
+        this.InfoTokenString : this.CreateInfoTokenString();
+        this.InfoTravel : this.CreateInfoTravel();
         this.StorageTextLess : this.CreateStorageTextLess();
         return true;
+    }
+
+    maide precate Create CreateCreate()
+    {
+        var Create a;
+        a : new Create;
+        a.Console : this;
+        a.Init();
+        return a;
     }
 
     maide precate ErrorString CreateErrorString()
@@ -25,11 +36,18 @@ class Console : TextAdd
         return a;
     }
 
-    maide precate Create CreateCreate()
+    maide precate InfoTokenString CreateInfoTokenString()
     {
-        var Create a;
-        a : new Create;
-        a.Console : this;
+        var InfoTokenString a;
+        a : new InfoTokenString;
+        a.Init();
+        return a;
+    }
+
+    maide precate InfoTravel CreateInfoTravel()
+    {
+        var InfoTravel a;
+        a : new InfoTravel;
         a.Init();
         return a;
     }
@@ -65,6 +83,8 @@ class Console : TextAdd
     field precate StorageComp StorageComp { get { return data; } set { data : value; } }
     field precate Out Out { get { return data; } set { data : value; } }
     field precate Out Err { get { return data; } set { data : value; } }
+    field precate InfoTokenString InfoTokenString { get { return data; } set { data : value; } }
+    field precate InfoTravel InfoTravel { get { return data; } set { data : value; } }
     field precate TextLess StorageTextLess { get { return data; } set { data : value; } }
 
     maide prusate Bool Execute()
