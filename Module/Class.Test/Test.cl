@@ -278,5 +278,15 @@ class Test : TextAdd
 
         var String actualFile;
         actualFile : this.AddClear().Add(this.UnitFold).Add(combine).Add("Actual").AddResult();
+
+        this.StorageInfra.TextWrite(actualFile, actual);
+
+        this.Unit.Actual : actual;
+
+        var Bool pass;
+        pass : this.TextSame(this.TA(this.Unit.Actual), this.TB(this.Unit.Expect));
+
+        this.UnitPass : pass;
+        return true;
     }
 }
