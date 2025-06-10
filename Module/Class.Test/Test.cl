@@ -289,4 +289,10 @@ class Test : TextAdd
         this.UnitPass : pass;
         return true;
     }
+
+    maide precate Bool WriteUnitResult()
+    {
+        this.WriteResultLine(this.UnitPass, this.Unit.Set.Name, this.Unit.Kind, this.Unit.Name)
+        return true;
+    }
 }
