@@ -167,7 +167,7 @@ class InfoTravel : Travel
         inf (node = null)
         {
             this.Null();
-            return true;
+            return this.AddResult();
         }
 
         inf (~(cast NodeClass(node) = null))
