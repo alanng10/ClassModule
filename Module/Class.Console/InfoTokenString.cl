@@ -50,13 +50,13 @@ class InfoTokenString : TextAdd
 
     maide precate Bool AddBoolValue(var Bool value)
     {
-        this.AddStringBool(value).Add(",").AddLine();
+        this.AddBool(value).Add(",").AddLine();
         return true;
     }
 
     maide precate Bool AddIntValue(var Int value)
     {
-        this.Add("0h").AddStringIntHex(value).Add(",").AddLine();
+        this.Add("0h").AddIntHex(value).Add(",").AddLine();
         return true;
     }
 
