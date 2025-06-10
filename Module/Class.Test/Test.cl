@@ -9,14 +9,27 @@ class Test : TextAdd
         this.Console : share Console;
         this.StorageComp : share StorageComp;
 
-        this.DataFold : this.ClassInfra.TextDot;
-
-        this.ResultSpace : this.StringComp.CreateChar(this.Char(" "), 4);
-
         this.LangName : this.CreateLangName();
-
-        this.SetTable : this.ClassInfra.TableCreateStringLess();
+        this.SetTable : this.CreateSetTable();
+        this.DataFold : this.CreateDataFold();
+        this.ResultSpace : this.CreateResultSpace();
 
         this.AddSetList();
+        return true;
+    }
+
+    maide precate Table CreateSetTable()
+    {
+        return this.ClassInfra.TableCreateStringLess();
+    }
+
+    maide precate String CreateDataFold()
+    {
+        return this.ClassInfra.TextDot;
+    }
+
+    maide precate String CreateResultSpace()
+    {
+        return this.StringComp.CreateChar(this.Char(" "), 4);
     }
 }
