@@ -1,14 +1,9 @@
 
-        var Int k;
-        k : this.Index;
-
-        var Array array;
-        array : #VarName#.Value;
-        inf (~this.InfraInfra.ValidIndex(array.Count, k))
+        inf (~this.InfraInfra.ValidIndex(#VarName#.Value.Count, this.FieldIndex))
         {
             return true;
         }
 
         var #ItemDeclareClassName# item;
-        item : cast #ItemDeclareClassName#(array.Get(k));
+        item : cast #ItemDeclareClassName#(#VarName#.Value.Get(this.FieldIndex));
         this.Execute#ItemClassName#(item);
