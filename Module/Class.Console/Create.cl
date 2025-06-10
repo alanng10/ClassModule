@@ -53,4 +53,15 @@ class Create : Any
 
         return true;
     }
+
+    maide prusate Bool ExecuteToken()
+    {
+        this.Token.Source : this.Console.Source;
+        this.Token.Execute();
+        this.Result.Token : this.Token.Result;
+
+        this.Token.Result : null;
+        this.Token.Source : null;
+        return true;
+    }
 }
