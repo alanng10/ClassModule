@@ -28,6 +28,11 @@ class Test : TextAdd
         return a;
     }
 
+    maide precate String CreateLangName()
+    {
+        return "Class";
+    }
+
     maide precate Table CreateSetTable()
     {
         return this.ClassInfra.TableCreateStringLess();
