@@ -32,4 +32,11 @@ class ErrorString : TextAdd
     {
         return this.StringComp.CreateChar(this.Char("-"), 50);
     }
+
+    field prusate Bool RangePos { get { return data; } set { data : value; } }
+    field prusate Array CodeArray { get { return data; } set { data : value; } }
+    field prusate Array SourceArray { get { return data; } set { data : value; } }
+    field precate Pos StartPos { get { return data; } set { data : value; } }
+    field precate Pos EndPos { get { return data; } set { data : value; } }
+    field precate String BordLine { get { return data; } set { data : value; } }
 }
