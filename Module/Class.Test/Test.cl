@@ -114,4 +114,17 @@ class Test : TextAdd
         this.InitThisFold : this.StorageComp.ThisFoldGet();
         return true;
     }
+
+    maide prusate Int Execute()
+    {
+        var Bool b;
+        b : this.SetWorkFold();
+        inf (~b)
+        {
+            return 700;
+        }
+
+        this.ExecuteSetList();
+        return 0;
+    }
 }
