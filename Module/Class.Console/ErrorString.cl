@@ -88,4 +88,16 @@ class ErrorString : TextAdd
         
         return a;
     }
+
+    maide precate Bool AddBord()
+    {
+        this.Add(this.Bord).AddLine();
+        return true;
+    }
+
+    maide precate Bool AddField(var String index, var String value)
+    {
+        this.Add(index).Add(":").Add(" ").Add(value).AddLine();
+        return true;
+    }
 }
