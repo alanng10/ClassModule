@@ -144,4 +144,14 @@ class ErrorString : TextAdd
 
         return a;
     }
+
+    maide precate String SourceString(var Error error)
+    {
+        var Source k;
+        k : cast Source(this.SourceArray.Get(error.Source));
+
+        var String a;
+        a : k.Name;
+        return a;
+    }
 }
