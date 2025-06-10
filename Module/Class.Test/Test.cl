@@ -209,4 +209,36 @@ class Test : TextAdd
         }
         return true;
     }
+
+    maide precate Bool ExecuteSet()
+    {
+        this.WriteHead(this.Set.Name);
+
+        this.PassCount : 0;
+        this.UnitIndex : 0;
+
+        var Iter iter;
+        iter : this.UnitList.IterCreate();
+        this.UnitList.IterSet(iter);
+        while (iter.Next())
+        {
+            this.Unit : cast Unit(iter.Value);
+
+            this.ExecuteUnit();
+
+            this.WriteUnitResult();
+
+            this.Unit : null;
+
+            this.UnitIndex : this.UnitIndex + 1;
+
+            inf (this.UnitPass)
+            {
+                this.PassCount : this.PassCount + 1;
+            }
+        }
+
+        this.WriteTotalResult();
+        return true;
+    }
 }
