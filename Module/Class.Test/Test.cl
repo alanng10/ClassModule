@@ -325,5 +325,15 @@ class Test : TextAdd
 
         var String p;
         p : this.StringIntFormat(n, 10, false, 3, null, this.Char("0"));
+
+        var String t;
+        t : this.ResultSpace;
+
+        var String s;
+        s : this.AddClear().Add(p).Add(t).Add(a).Add(t).Add(u).Add(t)
+            .Add(k).Add(" ").Add(j).AddLine().AddResult();
+
+        this.SystemConsole.Out.Write(s);
+        return true;
     }
 }
