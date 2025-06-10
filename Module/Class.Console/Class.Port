@@ -29,6 +29,7 @@ Class.Infra:0.00.00
     TaskKind TaskKind
     Range Range
     Pos Pos
+    Source Source
     Error Error
     ClassInfra Infra
 Class.Token:0.00.00
