@@ -69,4 +69,9 @@ class Test : TextAdd
     field precate String ResultSpace { get { return data; } set { data : value; } }
     field precate Int UnitIndex { get { return data; } set { data : value; } }
     field precate Bool UnitPass { get { return data; } set { data : value; } }
+
+    maide precate String DataRootFold()
+    {
+        return "../../Saber/SaberTest/Test";
+    }
 }
