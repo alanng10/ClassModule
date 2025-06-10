@@ -251,5 +251,20 @@ class Test : TextAdd
             .Add(this.Unit.Set.Name).Add(combine)
             .Add(this.Unit.Kind).Add(combine)
             .Add(this.Unit.Name).AddResult();
+
+        this.Out : new StringOut;
+        this.Out.Init();
+        this.Err : new StringOut;
+        this.Err.Init();
+
+        this.StorageComp.ThisFoldSet(this.UnitFold);
+
+        var Task task;
+        task : this.CreateTask();
+        this.Console.Task : task;
+
+        this.Console.Execute();
+
+        this.StorageComp.ThisFoldSet(this.InitThisFold);
     }
 }
