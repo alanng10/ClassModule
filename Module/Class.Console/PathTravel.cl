@@ -223,18 +223,13 @@ class PathTravel : Travel
             return true;
         }
 
-        var Int k;
-        k : this.Index;
-
-        var Array array;
-        array : part.Value;
-        inf (~this.InfraInfra.ValidIndex(array.Count, k))
+        inf (~this.InfraInfra.ValidIndex(part.Value.Count, this.FieldIndex))
         {
             return true;
         }
 
         var Comp item;
-        item : cast Comp(array.Get(k));
+        item : cast Comp(part.Value.Get(this.FieldIndex));
         this.ExecuteComp(item);
         return true;
     }
@@ -328,18 +323,13 @@ class PathTravel : Travel
             return true;
         }
 
-        var Int k;
-        k : this.Index;
-
-        var Array array;
-        array : param.Value;
-        inf (~this.InfraInfra.ValidIndex(array.Count, k))
+        inf (~this.InfraInfra.ValidIndex(param.Value.Count, this.FieldIndex))
         {
             return true;
         }
 
         var NodeVar item;
-        item : cast NodeVar(array.Get(k));
+        item : cast NodeVar(param.Value.Get(this.FieldIndex));
         this.ExecuteVar(item);
         return true;
     }
@@ -437,18 +427,13 @@ class PathTravel : Travel
             return true;
         }
 
-        var Int k;
-        k : this.Index;
-
-        var Array array;
-        array : state.Value;
-        inf (~this.InfraInfra.ValidIndex(array.Count, k))
+        inf (~this.InfraInfra.ValidIndex(state.Value.Count, this.FieldIndex))
         {
             return true;
         }
 
         var Execute item;
-        item : cast Execute(array.Get(k));
+        item : cast Execute(state.Value.Get(this.FieldIndex));
         this.ExecuteExecute(item);
         return true;
     }
@@ -601,18 +586,13 @@ class PathTravel : Travel
             return true;
         }
 
-        var Int k;
-        k : this.Index;
-
-        var Array array;
-        array : argue.Value;
-        inf (~this.InfraInfra.ValidIndex(array.Count, k))
+        inf (~this.InfraInfra.ValidIndex(argue.Value.Count, this.FieldIndex))
         {
             return true;
         }
 
         var Operate item;
-        item : cast Operate(array.Get(k));
+        item : cast Operate(argue.Value.Get(this.FieldIndex));
         this.ExecuteOperate(item);
         return true;
     }
