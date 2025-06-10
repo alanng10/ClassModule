@@ -55,4 +55,14 @@ class Test : TextAdd
     field precate Console SystemConsole { get { return data; } set { data : value; } }
     field precate TaskKindList TaskKindList { get { return data; } set { data : value; } }
     field precate String LangName { get { return data; } set { data : value; } }
+    field precate String DataFold { get { return data; } set { data : value; } }
+    field precate List UnitList { get { return data; } set { data : value; } }
+    field precate Table SetTable { get { return data; } set { data : value; } }
+    field precate Set Set { get { return data; } set { data : value; } }
+    field precate Unit Unit { get { return data; } set { data : value; } }
+    field precate Int PassCount { get { return data; } set { data : value; } }
+    field precate ClassConsole Console { get { return data; } set { data : value; } }
+    field precate String UnitFold { get { return data; } set { data : value; } }
+    field precate StringOut Out { get { return data; } set { data : value; } }
+    field precate StringOut Err { get { return data; } set { data : value; } }
 }
