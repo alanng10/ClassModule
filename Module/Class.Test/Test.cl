@@ -295,4 +295,35 @@ class Test : TextAdd
         this.WriteResultLine(this.UnitPass, this.Unit.Set.Name, this.Unit.Kind, this.Unit.Name)
         return true;
     }
+
+    maide precate Bool WriteResultLine(var Bool pass, var String varSet, var String kind, var String unit)
+    {
+        var String a;
+
+        var Bool b;
+        b : pass;
+        inf (b)
+        {
+            a : "Pass";
+        }
+        inf (~b)
+        {
+            a : "Fail";
+        }
+
+        var String u;
+        u : this.StringTextFormat(this.TA(varSet), true, 8, null, this.Char(" "));
+
+        var String k;
+        k : this.StringTextFormat(this.TA(kind), true, 24, null, this.Char(" "));
+
+        var String j;
+        j : unit;
+
+        var Int n;
+        n : this.UnitIndex;
+
+        var String p;
+        p : this.StringIntFormat(n, 10, false, 3, null, this.Char("0"));
+    }
 }
