@@ -32,8 +32,10 @@ Class.Infra:0.00.00
     ClassInfra Infra
 Class.Token:0.00.00
     TokenCreate Create
+    TokenResult Result
 Class.Node:0.00.00
     NodeCreate Create
+    NodeResult Result
     Travel Travel
     NodeClass Class
     NodeField Field
