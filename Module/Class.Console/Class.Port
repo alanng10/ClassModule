@@ -25,6 +25,7 @@ Text.Text:0.00.00
 Storage.Storage:0.00.00
     StorageNameForm NameForm
 Class.Infra:0.00.00
+    TaskKind TaskKind
     Range Range
     Pos Pos
     Error Error
