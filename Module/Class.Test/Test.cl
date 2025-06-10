@@ -241,4 +241,15 @@ class Test : TextAdd
         this.WriteTotalResult();
         return true;
     }
+
+    maide precate Bool ExecuteUnit()
+    {
+        var String combine;
+        combine : this.TextInfra.PathCombine;
+
+        this.UnitFold : this.AddClear().Add(this.DataFold).Add(combine)
+            .Add(this.Unit.Set.Name).Add(combine)
+            .Add(this.Unit.Kind).Add(combine)
+            .Add(this.Unit.Name).AddResult();
+    }
 }
