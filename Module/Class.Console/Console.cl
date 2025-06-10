@@ -289,7 +289,7 @@ class Console : TextAdd
         i : 0;
         while (i < count)
         {
-            var Strign name;
+            var String name;
             name : cast String(array.Get(i));
 
             var Source a;
