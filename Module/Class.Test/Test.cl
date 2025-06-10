@@ -187,7 +187,26 @@ class Test : TextAdd
 
                 var String unitFold;
                 unitFold : this.AddClear().Add(kindFold).Add(combine).Add(unit).AddResult();
+
+                var String expectFile;
+                expectFile : this.AddClear().Add(unitFold).Add(combine).Add("Expect").AddResult();
+
+                var String expect;
+                expect : this.StorageInfra.TextRead(expectFile);
+
+                var String path;
+
+                var Unit a;
+                a : new Unit;
+                a.Init();
+                a.Set : this.Set;
+                a.Kind : kind;
+                a.Name : unit;
+                a.Expect : expect;
+                a.Path : path;
+                this.UnitList.Add(a);
             }
         }
+        return true;
     }
 }
