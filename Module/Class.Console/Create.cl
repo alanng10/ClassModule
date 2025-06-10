@@ -28,4 +28,29 @@ class Create : Any
     field prusate Result Result { get { return data; } set { data : value; } }
     field prusate TokenCreate Token { get { return data; } set { data : value; } }
     field prusate NodeCreate Node { get { return data; } set { data : value; } }
+
+    maide prusate Bool Execute()
+    {
+        this.Result : new Result;
+        this.Result.Init();
+
+        var TaskKindList kindList;
+        kindList : this.Console.TaskKind;
+        var TaskKind kind;
+        kind : this.Console.Task.Kind;
+
+        inf (kind = kindList.Node |
+            kind = kindList.Token
+        )
+        {
+            this.ExecuteToken();
+        }
+
+        inf (kind = kindList.Node)
+        {
+            this.ExecuteNode();
+        }
+
+        return true;
+    }
 }
