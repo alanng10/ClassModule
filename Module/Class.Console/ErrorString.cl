@@ -100,4 +100,11 @@ class ErrorString : TextAdd
         this.Add(index).Add(":").Add(" ").Add(value).AddLine();
         return true;
     }
+
+    maide precate String KindString(var Error error)
+    {
+        var String a;
+        a : error.Kind.Text;
+        return a;
+    }
 }
