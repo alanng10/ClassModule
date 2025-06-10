@@ -20,10 +20,14 @@ System.Text
 System.Storage
     StorageComp Comp
     StorageInfra Infra
+System.Console
+    Out Out
 Text.Text:0.00.00
     TextAdd Add
+Storage.Storage:0.00.00
+    StorageNameForm NameForm
 Class.Infra:0.00.00
-    ModuleRef ModuleRef
+    Error Error
     ClassInfra Infra
 
 [Export]
