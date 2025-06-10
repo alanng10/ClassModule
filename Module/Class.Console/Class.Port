@@ -110,6 +110,8 @@ Class.Node:0.00.00
 
 [Export]
 Console
+Task
+TaskKind
 TaskKindList
 InfoTokenString
 InfoTravel
