@@ -145,4 +145,31 @@ class Test : TextAdd
         }
         return true;
     }
+
+    maide precate Bool AddSetUnitList()
+    {
+        this.UnitList : new List;
+        this.UnitList.Init();
+
+        var String combine;
+        combine : this.TextInfra.PathCombine;
+
+        var String varSet;
+        varSet : this.Set.Name;
+
+        var String setFold;
+        setFold : this.AddClear().Add(this.DataFold).Add(combine).Add(varSet).AddResult();
+
+        var Array kindList;
+        kindList : this.FoldList(setFold);
+
+        var Iter kindIter;
+        kindIter : kindList.IterCreate();
+        kindList.IterSet(kindIter);
+        while (kindIter.Next())
+        {
+            var String kind;
+            kind : cast String(kindIter.Value);
+        }
+    }
 }
