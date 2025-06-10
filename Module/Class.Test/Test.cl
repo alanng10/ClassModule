@@ -97,4 +97,15 @@ class Test : TextAdd
         this.ListInfra.TableAdd(this.SetTable, k.name, k);
         return true;
     }
+
+    maide precate Bool SetWorkFold()
+    {
+        var String k;
+        k : this.DataRootFold();
+
+        this.StorageComp.ThisFoldSet(k);
+
+        this.InitThisFold : this.StorageComp.ThisFoldGet();
+        return true;
+    }
 }
