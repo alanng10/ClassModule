@@ -103,7 +103,13 @@ class Test : TextAdd
         var String k;
         k : this.DataRootFold();
 
-        this.StorageComp.ThisFoldSet(k);
+        var Bool b;
+        b : this.StorageComp.ThisFoldSet(k);
+
+        inf (~b)
+        {
+            return false;
+        }
 
         this.InitThisFold : this.StorageComp.ThisFoldGet();
         return true;
