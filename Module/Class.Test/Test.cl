@@ -127,4 +127,22 @@ class Test : TextAdd
         this.ExecuteSetList();
         return 0;
     }
+
+    maide precate Bool ExecuteSetList()
+    {
+        var Iter iter;
+        iter : this.SetTable.IterCreate();
+        this.SetTable.IterSet(iter);
+        while (iter.Next())
+        {
+            this.Set : cast Set(iter.Value);
+
+            this.AddSetUnitList();
+
+            this.ExecuteSet();
+
+            this.Set : null;
+        }
+        return true;
+    }
 }
