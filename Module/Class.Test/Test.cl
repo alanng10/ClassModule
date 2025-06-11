@@ -336,4 +336,29 @@ class Test : TextAdd
         this.SystemConsole.Out.Write(s);
         return true;
     }
+
+    maide precate Bool WriteTotalResult()
+    {
+        var String k;
+
+        var Int unitCount;
+        unitCount : this.UnitIndex;
+
+        var Bool b;
+        b : this.PassCount = unitCount;
+        inf (b)
+        {
+            k : "All";
+        }
+        inf (~b)
+        {
+            k : this.StringInt(this.PassCount);
+        }
+
+        var String a;
+        a : this.AddClear().Add(k).Add(" ").Add("Pass").AddLine().AddResult();
+
+        this.SystemConsole.Out.Write(a);
+        return true;
+    }
 }
