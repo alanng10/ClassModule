@@ -5,7 +5,9 @@ class Entry : EntryEntry
         var Test k;
         k : new Test;
         k.Init();
-        k.Execute();
-        return 0;
+
+        var Int a;
+        a : k.Execute();
+        return a;
     }
 }
