@@ -21,7 +21,7 @@ class InfoTravel : Travel
 
     maide precate Bool StartArray()
     {
-        this.AddSpace().Add("[").AddLine();
+        this.Add("[").AddLine();
 
         this.Space : this.Space + 4;
         return true;
