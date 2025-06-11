@@ -361,4 +361,16 @@ class Test : TextAdd
         this.SystemConsole.Out.Write(a);
         return true;
     }
+
+    maide precate Bool WriteHead(var String setName)
+    {
+        var String s;
+        s : this.StringCreate(this.TextAlphaNite(this.TA(this.LangName)));
+
+        var String k;
+        k : this.StringCreate(this.TextAlphaNite(this.TA(setName)));
+
+        var String line;
+        line : "==============================";
+    }
 }
