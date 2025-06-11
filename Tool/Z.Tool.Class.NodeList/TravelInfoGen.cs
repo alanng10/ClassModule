@@ -88,6 +88,11 @@ public class TravelInfoGen : TravelGen
 
     protected virtual String ExecuteOne(GenClass varClass)
     {
+        if (varClass.AnyInt == 1)
+        {
+            return this.TextInfra.Zero;
+        }
+
         String className;
         className = varClass.Name;
 
