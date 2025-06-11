@@ -372,5 +372,16 @@ class Test : TextAdd
 
         var String line;
         line : "==============================";
+
+        var String a;
+        a : this.AddClear()
+            .Add(line)
+            .Add(" ").Add(s).Add(" ").Add(k).Add(" ").Add("TEST").Add(" ")
+            .Add(line)
+            .AddLine()
+            .AddResult();
+
+        this.SystemConsole.Out.Write(a);
+        return true;
     }
 }
