@@ -508,6 +508,10 @@ class InfoTravel : Travel
         }
         this.ExecuteNode(part);
 
+        this.Start("Part");
+
+        this.FieldStart("Value");
+        
         this.StartArray();
 
         var Int count;
@@ -526,6 +530,10 @@ class InfoTravel : Travel
         }
 
         this.EndArray();
+
+        this.FieldEnd("Value");
+
+        this.End();
         return true;
     }
 
@@ -612,6 +620,10 @@ class InfoTravel : Travel
         }
         this.ExecuteNode(param);
 
+        this.Start("Param");
+
+        this.FieldStart("Value");
+        
         this.StartArray();
 
         var Int count;
@@ -630,6 +642,10 @@ class InfoTravel : Travel
         }
 
         this.EndArray();
+
+        this.FieldEnd("Value");
+
+        this.End();
         return true;
     }
 
@@ -736,6 +752,10 @@ class InfoTravel : Travel
         }
         this.ExecuteNode(state);
 
+        this.Start("State");
+
+        this.FieldStart("Value");
+        
         this.StartArray();
 
         var Int count;
@@ -754,6 +774,10 @@ class InfoTravel : Travel
         }
 
         this.EndArray();
+
+        this.FieldEnd("Value");
+
+        this.End();
         return true;
     }
 
@@ -901,6 +925,10 @@ class InfoTravel : Travel
         }
         this.ExecuteNode(argue);
 
+        this.Start("Argue");
+
+        this.FieldStart("Value");
+        
         this.StartArray();
 
         var Int count;
@@ -919,6 +947,10 @@ class InfoTravel : Travel
         }
 
         this.EndArray();
+
+        this.FieldEnd("Value");
+
+        this.End();
         return true;
     }
 
