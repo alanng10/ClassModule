@@ -1,4 +1,5 @@
-        inf (~(cast #DeclareClassName#(node) = null))
+        inf (~b & ~(cast #DeclareClassName#(node) = null))
         {
             this.Execute#ClassName#(cast #DeclareClassName#(node));
+            b : true;
         }
