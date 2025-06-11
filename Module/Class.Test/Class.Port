@@ -18,6 +18,8 @@ System.Storage
 System.Console
     Console Console
     StringOut StringOut
+System.Entry
+    EntryEntry Entry
 Text.Text:0.00.00
     TextAdd Add
 Class.Infra:0.00.00
@@ -36,3 +38,4 @@ Unit
 [Storage]
 
 [Entry]
+Entry
