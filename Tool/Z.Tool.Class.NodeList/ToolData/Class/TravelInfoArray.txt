@@ -1,5 +1,7 @@
         this.StartArray();
 
+        this.AddSpace();
+
         base.Execute#ClassName#(#VarName#);
 
         this.EndArray();
