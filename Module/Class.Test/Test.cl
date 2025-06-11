@@ -94,7 +94,7 @@ class Test : TextAdd
         k.AddPathAfterTaskArg : addPathAfterTaskArg;
         k.SourceFold : sourceFold;
 
-        this.ListInfra.TableAdd(this.SetTable, k.name, k);
+        this.ListInfra.TableAdd(this.SetTable, k.Name, k);
         return true;
     }
 
