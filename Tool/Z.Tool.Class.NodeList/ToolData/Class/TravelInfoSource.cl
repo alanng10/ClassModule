@@ -170,6 +170,9 @@ class InfoTravel : Travel
             return this.AddResult();
         }
 
+        var Bool b;
+        b : false;
+
 #ExecuteList#
         var String a;
         a : this.AddResult();
