@@ -1,0 +1,31 @@
+[Module]
+Class.Test:0.00.00
+
+[Import]
+System.Infra
+    Bool Bool
+    Int Int
+    String String
+    InfraInfra Infra
+System.List
+    Array Array
+    ListInfra Infra
+System.Storage
+    StorageComp Comp
+    StorageInfra Infra
+System.Console
+    SystemConsole Console
+    StringOut StringOut
+Class.Infra:0.00.00
+    ClassInfra Infra
+Class.Console:0.00.00
+    Console Console
+
+[Export]
+Test
+Set
+Unit
+
+[Storage]
+
+[Entry]
