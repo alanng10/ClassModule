@@ -14,12 +14,12 @@ System.Storage
     StorageComp Comp
     StorageInfra Infra
 System.Console
-    SystemConsole Console
+    Console Console
     StringOut StringOut
 Class.Infra:0.00.00
     ClassInfra Infra
 Class.Console:0.00.00
-    Console Console
+    ClassConsole Console
     Task Task
     TaskKind TaskKind
     TaskKindList TaskKindList
