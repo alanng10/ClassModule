@@ -384,4 +384,46 @@ class Test : TextAdd
         this.SystemConsole.Out.Write(a);
         return true;
     }
+
+    maide precate Task CreateTask()
+    {
+        var Task task;
+        task : new Task;
+        task.Init();
+        task.Kind : this.Unit.Set.TaskKind;
+
+        var Bool ba;
+        ba : this.Set.AddKindAfterTaskArg;
+        inf (ba)
+        {
+            task.Node : this.Unit.Kind;
+        }
+        inf (~ba)
+        {
+            task.Node : "Class";
+        }
+
+        task.Print : true;
+
+        var String source;
+        
+        var Bool b;
+        b : this.Set.SourceFold;
+        inf (b)
+        {
+            source : "Source";
+        }
+        inf (~b)
+        {
+            source : "Code";
+        }
+        task.Source : source;
+
+        task.Out : this.Out;
+        task.Err : this.Err;
+
+        var Task ret;
+        ret : task;
+        return ret;
+    }
 }
