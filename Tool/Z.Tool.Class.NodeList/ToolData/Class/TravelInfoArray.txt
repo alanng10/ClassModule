@@ -1,7 +1,18 @@
         this.StartArray();
 
-        this.AddSpace();
+        var Int count;
+        count : #VarName#.Value.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            this.AddSpace();
 
-        base.Execute#ClassName#(#VarName#);
+            var #ItemDeclareClassName# item;
+            item : cast #ItemDeclareClassName#(#VarName#.Value.Get(i));
+            this.Execute#ItemClassName#(item);
+
+            i : i + 1;
+        }
 
         this.EndArray();
