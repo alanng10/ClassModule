@@ -176,6 +176,7 @@ public class TravelInfoGen : TravelGen
         Text k;
         k = this.TextCreate(this.TextArray);
         k = this.Place(k, "#VarName#", varName);
+        k = this.Place(k, "#ClassName#", varClass.Name);
         k = this.Place(k, "#ItemClassName#", itemClassName);
         k = this.Place(k, "#ItemDeclareClassName#", itemDeclareClassName);
 
