@@ -426,4 +426,11 @@ class Test : TextAdd
         ret : task;
         return ret;
     }
+
+    maide precate Array FoldList(var String foldPath)
+    {
+        var Array a;
+        a : this.StorageComp.EntryList(foldPath, true);
+        return a;
+    }
 }
