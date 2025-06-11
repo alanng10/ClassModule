@@ -155,33 +155,20 @@ public class TravelInfoGen : TravelGen
 
         this.AddClear();
 
+        String ka;
+        ka = this.ExecuteNode(varName);
+
+        Text k;
+        k = this.TextCreate(this.TextArray);
+        k = this.Place(k, "#VarName#", varName);
+        k = this.Place(k, "#ClassName#", varClass.Name);
+
+        String ke;
+        ke = this.StringCreate(k);
+
+        this.Add(ka);
         this.AddLine();
-
-        Table table;
-        table = varClass.Derive;
-
-        Iter iter;
-        iter = table.IterCreate();
-        table.IterSet(iter);
-
-        while (iter.Next())
-        {
-            GenClass aa;
-            aa = iter.Value as GenClass;
-
-            String className;
-            className = aa.Name;
-
-            Text k;
-            k = this.TextCreate(this.TextArray);
-            k = this.Place(k, "#VarName#", varName);
-            k = this.Place(k, "#ClassName#", className);
-
-            String ka;
-            ka = this.StringCreate(k);
-
-            this.Add(ka);
-        }
+        this.Add(ke);
 
         String a;
         a = this.AddResult();
