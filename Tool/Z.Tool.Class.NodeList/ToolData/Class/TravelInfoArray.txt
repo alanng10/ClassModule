@@ -1,3 +1,7 @@
+        this.Start("#ClassName#");
+
+        this.FieldStart("Value");
+        
         this.StartArray();
 
         var Int count;
@@ -16,3 +20,7 @@
         }
 
         this.EndArray();
+
+        this.FieldEnd("Value");
+
+        this.End();
