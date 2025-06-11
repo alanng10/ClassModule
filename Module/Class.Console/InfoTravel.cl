@@ -21,7 +21,7 @@ class InfoTravel : Travel
 
     maide precate Bool StartArray()
     {
-        this.AddSpace().Add("[").AddLine();
+        this.Add("[").AddLine();
 
         this.Space : this.Space + 4;
         return true;
@@ -506,7 +506,15 @@ class InfoTravel : Travel
             this.Null();
             return true;
         }
+        this.ExecuteNode(part);
 
+        this.StartArray();
+
+        this.AddSpace();
+
+        base.ExecutePart(part);
+
+        this.EndArray();
         return true;
     }
 
@@ -591,7 +599,15 @@ class InfoTravel : Travel
             this.Null();
             return true;
         }
+        this.ExecuteNode(param);
 
+        this.StartArray();
+
+        this.AddSpace();
+
+        base.ExecuteParam(param);
+
+        this.EndArray();
         return true;
     }
 
@@ -696,7 +712,15 @@ class InfoTravel : Travel
             this.Null();
             return true;
         }
+        this.ExecuteNode(state);
 
+        this.StartArray();
+
+        this.AddSpace();
+
+        base.ExecuteState(state);
+
+        this.EndArray();
         return true;
     }
 
@@ -842,7 +866,15 @@ class InfoTravel : Travel
             this.Null();
             return true;
         }
+        this.ExecuteNode(argue);
 
+        this.StartArray();
+
+        this.AddSpace();
+
+        base.ExecuteArgue(argue);
+
+        this.EndArray();
         return true;
     }
 
