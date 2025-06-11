@@ -510,9 +510,20 @@ class InfoTravel : Travel
 
         this.StartArray();
 
-        this.AddSpace();
+        var Int count;
+        count : part.Value.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            this.AddSpace();
 
-        base.ExecutePart(part);
+            var Comp item;
+            item : cast Comp(part.Value.Get(i));
+            this.ExecuteComp(item);
+
+            i : i + 1;
+        }
 
         this.EndArray();
         return true;
@@ -603,9 +614,20 @@ class InfoTravel : Travel
 
         this.StartArray();
 
-        this.AddSpace();
+        var Int count;
+        count : param.Value.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            this.AddSpace();
 
-        base.ExecuteParam(param);
+            var NodeVar item;
+            item : cast NodeVar(param.Value.Get(i));
+            this.ExecuteVar(item);
+
+            i : i + 1;
+        }
 
         this.EndArray();
         return true;
@@ -716,9 +738,20 @@ class InfoTravel : Travel
 
         this.StartArray();
 
-        this.AddSpace();
+        var Int count;
+        count : state.Value.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            this.AddSpace();
 
-        base.ExecuteState(state);
+            var Execute item;
+            item : cast Execute(state.Value.Get(i));
+            this.ExecuteExecute(item);
+
+            i : i + 1;
+        }
 
         this.EndArray();
         return true;
@@ -870,9 +903,20 @@ class InfoTravel : Travel
 
         this.StartArray();
 
-        this.AddSpace();
+        var Int count;
+        count : argue.Value.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            this.AddSpace();
 
-        base.ExecuteArgue(argue);
+            var Operate item;
+            item : cast Operate(argue.Value.Get(i));
+            this.ExecuteOperate(item);
+
+            i : i + 1;
+        }
 
         this.EndArray();
         return true;
