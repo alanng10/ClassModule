@@ -20,6 +20,9 @@ Class.Infra:0.00.00
     ClassInfra Infra
 Class.Console:0.00.00
     Console Console
+    Task Task
+    TaskKind TaskKind
+    TaskKindList TaskKindList
 
 [Export]
 Test
