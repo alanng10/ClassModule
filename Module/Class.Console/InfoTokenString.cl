@@ -194,6 +194,7 @@ class InfoTokenString : TextAdd
             var Token token;
             token : cast Token(code.Token.Get(i));
 
+            this.AddSpace();
             this.ExecuteToken(token);
 
             i : i + 1;
@@ -213,6 +214,7 @@ class InfoTokenString : TextAdd
             var Comment comment;
             comment : cast Comment(code.Comment.Get(i));
 
+            this.AddSpace();
             this.ExecuteComment(comment);
 
             i : i + 1;
