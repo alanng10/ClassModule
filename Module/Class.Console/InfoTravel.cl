@@ -170,265 +170,303 @@ class InfoTravel : Travel
             return this.AddResult();
         }
 
-        inf (~(cast NodeClass(node) = null))
+        var Bool b;
+        b : false;
+
+        inf (~b & ~(cast NodeClass(node) = null))
         {
             this.ExecuteClass(cast NodeClass(node));
+            b : true;
         }
-        inf (~(cast Part(node) = null))
+        inf (~b & ~(cast Part(node) = null))
         {
             this.ExecutePart(cast Part(node));
+            b : true;
         }
-        inf (~(cast Comp(node) = null))
-        {
-            this.ExecuteComp(cast Comp(node));
-        }
-        inf (~(cast NodeField(node) = null))
+        inf (~b & ~(cast NodeField(node) = null))
         {
             this.ExecuteField(cast NodeField(node));
+            b : true;
         }
-        inf (~(cast NodeMaide(node) = null))
+        inf (~b & ~(cast NodeMaide(node) = null))
         {
             this.ExecuteMaide(cast NodeMaide(node));
+            b : true;
         }
-        inf (~(cast Param(node) = null))
+        inf (~b & ~(cast Param(node) = null))
         {
             this.ExecuteParam(cast Param(node));
+            b : true;
         }
-        inf (~(cast NodeVar(node) = null))
+        inf (~b & ~(cast NodeVar(node) = null))
         {
             this.ExecuteVar(cast NodeVar(node));
+            b : true;
         }
-        inf (~(cast NodeCount(node) = null))
-        {
-            this.ExecuteCount(cast NodeCount(node));
-        }
-        inf (~(cast PrusateCount(node) = null))
+        inf (~b & ~(cast PrusateCount(node) = null))
         {
             this.ExecutePrusateCount(cast PrusateCount(node));
+            b : true;
         }
-        inf (~(cast PrecateCount(node) = null))
+        inf (~b & ~(cast PrecateCount(node) = null))
         {
             this.ExecutePrecateCount(cast PrecateCount(node));
+            b : true;
         }
-        inf (~(cast PronateCount(node) = null))
+        inf (~b & ~(cast PronateCount(node) = null))
         {
             this.ExecutePronateCount(cast PronateCount(node));
+            b : true;
         }
-        inf (~(cast PrivateCount(node) = null))
+        inf (~b & ~(cast PrivateCount(node) = null))
         {
             this.ExecutePrivateCount(cast PrivateCount(node));
+            b : true;
         }
-        inf (~(cast State(node) = null))
+        inf (~b & ~(cast State(node) = null))
         {
             this.ExecuteState(cast State(node));
+            b : true;
         }
-        inf (~(cast Execute(node) = null))
-        {
-            this.ExecuteExecute(cast Execute(node));
-        }
-        inf (~(cast InfExecute(node) = null))
+        inf (~b & ~(cast InfExecute(node) = null))
         {
             this.ExecuteInfExecute(cast InfExecute(node));
+            b : true;
         }
-        inf (~(cast WhileExecute(node) = null))
+        inf (~b & ~(cast WhileExecute(node) = null))
         {
             this.ExecuteWhileExecute(cast WhileExecute(node));
+            b : true;
         }
-        inf (~(cast ReturnExecute(node) = null))
+        inf (~b & ~(cast ReturnExecute(node) = null))
         {
             this.ExecuteReturnExecute(cast ReturnExecute(node));
+            b : true;
         }
-        inf (~(cast ReferExecute(node) = null))
+        inf (~b & ~(cast ReferExecute(node) = null))
         {
             this.ExecuteReferExecute(cast ReferExecute(node));
+            b : true;
         }
-        inf (~(cast AreExecute(node) = null))
+        inf (~b & ~(cast AreExecute(node) = null))
         {
             this.ExecuteAreExecute(cast AreExecute(node));
+            b : true;
         }
-        inf (~(cast OperateExecute(node) = null))
+        inf (~b & ~(cast OperateExecute(node) = null))
         {
             this.ExecuteOperateExecute(cast OperateExecute(node));
+            b : true;
         }
-        inf (~(cast Argue(node) = null))
+        inf (~b & ~(cast Argue(node) = null))
         {
             this.ExecuteArgue(cast Argue(node));
+            b : true;
         }
-        inf (~(cast Mark(node) = null))
-        {
-            this.ExecuteMark(cast Mark(node));
-        }
-        inf (~(cast VarMark(node) = null))
+        inf (~b & ~(cast VarMark(node) = null))
         {
             this.ExecuteVarMark(cast VarMark(node));
+            b : true;
         }
-        inf (~(cast SetMark(node) = null))
+        inf (~b & ~(cast SetMark(node) = null))
         {
             this.ExecuteSetMark(cast SetMark(node));
+            b : true;
         }
-        inf (~(cast Operate(node) = null))
-        {
-            this.ExecuteOperate(cast Operate(node));
-        }
-        inf (~(cast GetOperate(node) = null))
+        inf (~b & ~(cast GetOperate(node) = null))
         {
             this.ExecuteGetOperate(cast GetOperate(node));
+            b : true;
         }
-        inf (~(cast CallOperate(node) = null))
+        inf (~b & ~(cast CallOperate(node) = null))
         {
             this.ExecuteCallOperate(cast CallOperate(node));
+            b : true;
         }
-        inf (~(cast ThisOperate(node) = null))
+        inf (~b & ~(cast ThisOperate(node) = null))
         {
             this.ExecuteThisOperate(cast ThisOperate(node));
+            b : true;
         }
-        inf (~(cast BaseOperate(node) = null))
+        inf (~b & ~(cast BaseOperate(node) = null))
         {
             this.ExecuteBaseOperate(cast BaseOperate(node));
+            b : true;
         }
-        inf (~(cast NullOperate(node) = null))
+        inf (~b & ~(cast NullOperate(node) = null))
         {
             this.ExecuteNullOperate(cast NullOperate(node));
+            b : true;
         }
-        inf (~(cast NewOperate(node) = null))
+        inf (~b & ~(cast NewOperate(node) = null))
         {
             this.ExecuteNewOperate(cast NewOperate(node));
+            b : true;
         }
-        inf (~(cast ShareOperate(node) = null))
+        inf (~b & ~(cast ShareOperate(node) = null))
         {
             this.ExecuteShareOperate(cast ShareOperate(node));
+            b : true;
         }
-        inf (~(cast CastOperate(node) = null))
+        inf (~b & ~(cast CastOperate(node) = null))
         {
             this.ExecuteCastOperate(cast CastOperate(node));
+            b : true;
         }
-        inf (~(cast VarOperate(node) = null))
+        inf (~b & ~(cast VarOperate(node) = null))
         {
             this.ExecuteVarOperate(cast VarOperate(node));
+            b : true;
         }
-        inf (~(cast ValueOperate(node) = null))
+        inf (~b & ~(cast ValueOperate(node) = null))
         {
             this.ExecuteValueOperate(cast ValueOperate(node));
+            b : true;
         }
-        inf (~(cast BraceOperate(node) = null))
+        inf (~b & ~(cast BraceOperate(node) = null))
         {
             this.ExecuteBraceOperate(cast BraceOperate(node));
+            b : true;
         }
-        inf (~(cast Value(node) = null))
-        {
-            this.ExecuteValue(cast Value(node));
-        }
-        inf (~(cast BoolValue(node) = null))
+        inf (~b & ~(cast BoolValue(node) = null))
         {
             this.ExecuteBoolValue(cast BoolValue(node));
+            b : true;
         }
-        inf (~(cast IntValue(node) = null))
+        inf (~b & ~(cast IntValue(node) = null))
         {
             this.ExecuteIntValue(cast IntValue(node));
+            b : true;
         }
-        inf (~(cast IntSignValue(node) = null))
+        inf (~b & ~(cast IntSignValue(node) = null))
         {
             this.ExecuteIntSignValue(cast IntSignValue(node));
+            b : true;
         }
-        inf (~(cast IntHexValue(node) = null))
+        inf (~b & ~(cast IntHexValue(node) = null))
         {
             this.ExecuteIntHexValue(cast IntHexValue(node));
+            b : true;
         }
-        inf (~(cast IntHexSignValue(node) = null))
+        inf (~b & ~(cast IntHexSignValue(node) = null))
         {
             this.ExecuteIntHexSignValue(cast IntHexSignValue(node));
+            b : true;
         }
-        inf (~(cast StringValue(node) = null))
+        inf (~b & ~(cast StringValue(node) = null))
         {
             this.ExecuteStringValue(cast StringValue(node));
+            b : true;
         }
-        inf (~(cast ClassName(node) = null))
+        inf (~b & ~(cast ClassName(node) = null))
         {
             this.ExecuteClassName(cast ClassName(node));
+            b : true;
         }
-        inf (~(cast FieldName(node) = null))
+        inf (~b & ~(cast FieldName(node) = null))
         {
             this.ExecuteFieldName(cast FieldName(node));
+            b : true;
         }
-        inf (~(cast MaideName(node) = null))
+        inf (~b & ~(cast MaideName(node) = null))
         {
             this.ExecuteMaideName(cast MaideName(node));
+            b : true;
         }
-        inf (~(cast VarName(node) = null))
+        inf (~b & ~(cast VarName(node) = null))
         {
             this.ExecuteVarName(cast VarName(node));
+            b : true;
         }
-        inf (~(cast SameOperate(node) = null))
+        inf (~b & ~(cast SameOperate(node) = null))
         {
             this.ExecuteSameOperate(cast SameOperate(node));
+            b : true;
         }
-        inf (~(cast AndOperate(node) = null))
+        inf (~b & ~(cast AndOperate(node) = null))
         {
             this.ExecuteAndOperate(cast AndOperate(node));
+            b : true;
         }
-        inf (~(cast OrnOperate(node) = null))
+        inf (~b & ~(cast OrnOperate(node) = null))
         {
             this.ExecuteOrnOperate(cast OrnOperate(node));
+            b : true;
         }
-        inf (~(cast NotOperate(node) = null))
+        inf (~b & ~(cast NotOperate(node) = null))
         {
             this.ExecuteNotOperate(cast NotOperate(node));
+            b : true;
         }
-        inf (~(cast LessOperate(node) = null))
+        inf (~b & ~(cast LessOperate(node) = null))
         {
             this.ExecuteLessOperate(cast LessOperate(node));
+            b : true;
         }
-        inf (~(cast AddOperate(node) = null))
+        inf (~b & ~(cast AddOperate(node) = null))
         {
             this.ExecuteAddOperate(cast AddOperate(node));
+            b : true;
         }
-        inf (~(cast SubOperate(node) = null))
+        inf (~b & ~(cast SubOperate(node) = null))
         {
             this.ExecuteSubOperate(cast SubOperate(node));
+            b : true;
         }
-        inf (~(cast MulOperate(node) = null))
+        inf (~b & ~(cast MulOperate(node) = null))
         {
             this.ExecuteMulOperate(cast MulOperate(node));
+            b : true;
         }
-        inf (~(cast DivOperate(node) = null))
+        inf (~b & ~(cast DivOperate(node) = null))
         {
             this.ExecuteDivOperate(cast DivOperate(node));
+            b : true;
         }
-        inf (~(cast SignMulOperate(node) = null))
+        inf (~b & ~(cast SignMulOperate(node) = null))
         {
             this.ExecuteSignMulOperate(cast SignMulOperate(node));
+            b : true;
         }
-        inf (~(cast SignDivOperate(node) = null))
+        inf (~b & ~(cast SignDivOperate(node) = null))
         {
             this.ExecuteSignDivOperate(cast SignDivOperate(node));
+            b : true;
         }
-        inf (~(cast SignLessOperate(node) = null))
+        inf (~b & ~(cast SignLessOperate(node) = null))
         {
             this.ExecuteSignLessOperate(cast SignLessOperate(node));
+            b : true;
         }
-        inf (~(cast BitAndOperate(node) = null))
+        inf (~b & ~(cast BitAndOperate(node) = null))
         {
             this.ExecuteBitAndOperate(cast BitAndOperate(node));
+            b : true;
         }
-        inf (~(cast BitOrnOperate(node) = null))
+        inf (~b & ~(cast BitOrnOperate(node) = null))
         {
             this.ExecuteBitOrnOperate(cast BitOrnOperate(node));
+            b : true;
         }
-        inf (~(cast BitNotOperate(node) = null))
+        inf (~b & ~(cast BitNotOperate(node) = null))
         {
             this.ExecuteBitNotOperate(cast BitNotOperate(node));
+            b : true;
         }
-        inf (~(cast BitLiteOperate(node) = null))
+        inf (~b & ~(cast BitLiteOperate(node) = null))
         {
             this.ExecuteBitLiteOperate(cast BitLiteOperate(node));
+            b : true;
         }
-        inf (~(cast BitRiteOperate(node) = null))
+        inf (~b & ~(cast BitRiteOperate(node) = null))
         {
             this.ExecuteBitRiteOperate(cast BitRiteOperate(node));
+            b : true;
         }
-        inf (~(cast BitSignRiteOperate(node) = null))
+        inf (~b & ~(cast BitSignRiteOperate(node) = null))
         {
             this.ExecuteBitSignRiteOperate(cast BitSignRiteOperate(node));
+            b : true;
         }
 
         var String a;
