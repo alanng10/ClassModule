@@ -198,11 +198,6 @@ class IntParse : TextAdd
 
     maide precate Int Negate(var Bool negate, var Int value)
     {
-        inf (sign <(value, 0))
-        {
-            return null;
-        }
-
         var Int max;
         inf (~negate)
         {
