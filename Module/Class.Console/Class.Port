@@ -33,6 +33,7 @@ Class.Infra:0.00.00
     Pos Pos
     Source Source
     Error Error
+    PrintChar PrintChar
     ClassInfra Infra
 Class.Token:0.00.00
     TokenCreate Create
