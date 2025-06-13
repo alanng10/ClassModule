@@ -21,6 +21,11 @@ class IntParse : TextAdd
             return null;
         }
 
+        inf (19 < count)
+        {
+            return null;
+        }
+
         var Data data;
         data : text.Data;
 
@@ -79,6 +84,11 @@ class IntParse : TextAdd
         count : text.Range.Count;
 
         inf (count < 3)
+        {
+            return null;
+        }
+
+        inf (17 < count)
         {
             return null;
         }
