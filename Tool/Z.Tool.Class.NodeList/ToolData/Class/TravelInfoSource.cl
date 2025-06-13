@@ -1,5 +1,21 @@
 class InfoTravel : Travel
 {
+    maide prusate Bool Init()
+    {
+        base.Init();
+        this.PrintChar : this.CreatePrintChar();
+        return true;
+    }
+
+    maide precate PrintChar CreatePrintChar()
+    {
+        var PrintChar a;
+        a : new PrintChar;
+        a.Init();
+        return a;
+    }
+
+    field precate PrintChar PrintChar { get { return data; } set { data : value; } }
     field precate Int Space { get { return data; } set { data : value; } }
 
     maide precate Bool Start(var String name)
