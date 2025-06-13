@@ -1,5 +1,21 @@
 class InfoTravel : Travel
 {
+    maide prusate Bool Init()
+    {
+        base.Init();
+        this.PrintChar : this.CreatePrintChar();
+        return true;
+    }
+
+    maide precate PrintChar CreatePrintChar()
+    {
+        var PrintChar a;
+        a : new PrintChar;
+        a.Init();
+        return a;
+    }
+
+    field precate PrintChar PrintChar { get { return data; } set { data : value; } }
     field precate Int Space { get { return data; } set { data : value; } }
 
     maide precate Bool Start(var String name)
@@ -90,6 +106,40 @@ class InfoTravel : Travel
                 inf (n = this.Char("\n"))
                 {
                     this.Add("\\n");
+                    b : true;
+                }
+            }
+            inf (~b)
+            {
+                inf (~this.PrintChar.Get(n))
+                {
+                    this.Add("\\u");
+
+                    var Int letterStart;
+                    letterStart : this.Char("a");
+
+                    var Int countA;
+                    countA : 8;
+                    var Int iA;
+                    iA : 0;
+                    while (iA < countA)
+                    {
+                        var Int shift;
+                        shift : (countA - 1) - iA;
+                        shift : shift * 4;
+
+                        var Int ka;
+                        ka : bit >(n, shift);
+                        ka : bit &(ka, 0hf);
+
+                        var Int ke;
+                        ke : this.TextInfra.DigitChar(ka, letterStart);
+                        
+                        this.AddChar(ke);
+
+                        iA : iA + 1;
+                    }
+
                     b : true;
                 }
             }
