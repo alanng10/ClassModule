@@ -58,6 +58,7 @@ ErrorKind
 Create
 Stage
 PrintChar
+IntParse
 NameValid
 StoragePathValid
 StringWrite
