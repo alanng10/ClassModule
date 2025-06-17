@@ -8,13 +8,13 @@ public class Read : Any
         this.InfraInfra = InfraInfra.This;
         this.ListInfra = ListInfra.This;
         this.TextInfra = TextInfra.This;
-        this.CountOperate = new CountReadOperate();
+        this.CountOperate = new ReadCountOperate();
         this.CountOperate.Read = this;
         this.CountOperate.Init();
-        this.StringOperate = new StringReadOperate();
+        this.StringOperate = new ReadStringOperate();
         this.StringOperate.Read = this;
         this.StringOperate.Init();
-        this.SetOperate = new SetReadOperate();
+        this.SetOperate = new ReadSetOperate();
         this.SetOperate.Read = this;
         this.SetOperate.Init();
 
@@ -31,9 +31,9 @@ public class Read : Any
     protected virtual ListInfra ListInfra { get; set; }
     protected virtual TextInfra TextInfra { get; set; }
     protected virtual ReadOperate Operate { get; set; }
-    protected virtual CountReadOperate CountOperate { get; set; }
-    protected virtual StringReadOperate StringOperate { get; set; }
-    protected virtual SetReadOperate SetOperate { get; set; }
+    protected virtual ReadCountOperate CountOperate { get; set; }
+    protected virtual ReadStringOperate StringOperate { get; set; }
+    protected virtual ReadSetOperate SetOperate { get; set; }
 
     public virtual bool Execute()
     {
