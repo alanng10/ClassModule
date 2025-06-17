@@ -1,6 +1,6 @@
 namespace Saber.Binary;
 
-public class SetWriteOperate : WriteOperate
+public class WriteSetOperate : WriteOperate
 {
     public override bool Init()
     {
