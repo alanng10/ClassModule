@@ -4,10 +4,13 @@ public class WriteCountOperate : WriteOperate
 {
     public override bool ExecuteByte(long value)
     {
+        WriteArg arg;
+        arg = this.Write.Arg;
+
         long index;
-        index = this.Write.Index;
+        index = arg.Index;
         index = index + 1;
-        this.Write.Index = index;
+        arg.Index = index;
         return true;
     }
 }
