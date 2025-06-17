@@ -4,13 +4,16 @@ public class WriteSetOperate : WriteOperate
 {
     public override bool ExecuteByte(long value)
     {
+        WriteArg arg;
+        arg = this.Write.Arg;
+
         long index;
-        index = this.Write.Index;
-        Data data;
-        data = this.Write.Data;
-        data.Set(index, value);
+        index = arg.Index;
+
+        arg.Data.Set(index, value);
+
         index = index + 1;
-        this.Write.Index = index;
+        arg.Index = index;
         return true;
     }
 }
