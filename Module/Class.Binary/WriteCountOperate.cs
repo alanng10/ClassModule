@@ -2,8 +2,6 @@ namespace Saber.Binary;
 
 public class WriteCountOperate : WriteOperate
 {
-    public virtual Write Write { get; set; }
-
     public override bool ExecuteByte(long value)
     {
         long index;

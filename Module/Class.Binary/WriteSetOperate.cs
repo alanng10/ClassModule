@@ -2,16 +2,6 @@ namespace Saber.Binary;
 
 public class WriteSetOperate : WriteOperate
 {
-    public override bool Init()
-    {
-        base.Init();
-        this.InfraInfra = InfraInfra.This;
-        return true;
-    }
-
-    public virtual Write Write { get; set; }
-    protected virtual InfraInfra InfraInfra { get; set; }
-
     public override bool ExecuteByte(long value)
     {
         long index;
