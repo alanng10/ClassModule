@@ -1,6 +1,6 @@
 namespace Saber.Binary;
 
-public class CountWriteOperate : WriteOperate
+public class WriteCountOperate : WriteOperate
 {
     public virtual Write Write { get; set; }
 
