@@ -1,6 +1,6 @@
 namespace Saber.Binary;
 
-public class SetReadOperate : ReadOperate
+public class ReadSetOperate : ReadOperate
 {
     public virtual Read Read { get; set; }
 
