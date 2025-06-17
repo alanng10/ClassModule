@@ -1,6 +1,6 @@
 namespace Saber.Binary;
 
-public class StringReadOperate : ReadOperate
+public class ReadStringOperate : ReadOperate
 {
     public override bool Init()
     {
