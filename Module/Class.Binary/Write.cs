@@ -6,10 +6,10 @@ public class Write : Any
     {
         base.Init();
         this.StringComp = StringComp.This;
-        this.CountOperate = new CountWriteOperate();
+        this.CountOperate = new WriteCountOperate();
         this.CountOperate.Write = this;
         this.CountOperate.Init();
-        this.SetOperate = new SetWriteOperate();
+        this.SetOperate = new WriteSetOperate();
         this.SetOperate.Write = this;
         this.SetOperate.Init();
         return true;
@@ -19,8 +19,8 @@ public class Write : Any
     public virtual Data Data { get; set; }
     public virtual long Index { get; set; }
     protected virtual StringComp StringComp { get; set; }
-    protected virtual CountWriteOperate CountOperate { get; set; }
-    protected virtual SetWriteOperate SetOperate { get; set; }
+    protected virtual WriteCountOperate CountOperate { get; set; }
+    protected virtual WriteSetOperate SetOperate { get; set; }
     protected virtual WriteOperate Operate { get; set; }
 
     public virtual bool Execute()
