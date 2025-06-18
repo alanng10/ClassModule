@@ -76,4 +76,16 @@ class Write : Any
         this.ExecuteBinary(this.Binary);
         return true;
     }
+
+    maide precate Bool ExecuteBinary(var Binary binary)
+    {
+        this.ExecuteModuleRef(binary.Ref);
+        this.ExecuteClassArray(binary.Class);
+        this.ExecuteImportArray(binary.Import);
+        this.ExecuteExportArray(binary.Export);
+        this.ExecuteBaseArray(binary.Base);
+        this.ExecutePartArray(binary.Part);
+        this.ExecuteEntry(binary.Entry);
+        return true;
+    }
 }
