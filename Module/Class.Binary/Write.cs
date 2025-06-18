@@ -202,14 +202,18 @@ public class Write : Any
     {
         long count;
         count = array.Count;
+
         this.ExecuteCount(count);
+
         long i;
         i = 0;
         while (i < count)
         {
             Field field;
-            field = (Field)array.GetAt(i);
+            field = array.GetAt(i) as Field;
+
             this.ExecuteField(field);
+
             i = i + 1;
         }
         return true;
