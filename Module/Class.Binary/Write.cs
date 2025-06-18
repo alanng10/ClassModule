@@ -118,14 +118,18 @@ public class Write : Any
     {
         long count;
         count = array.Count;
+
         this.ExecuteCount(count);
+
         long i;
         i = 0;
         while (i < count)
         {
             Import import;
-            import = (Import)array.GetAt(i);
+            import = array.GetAt(i) as Import;
+
             this.ExecuteImport(import);
+
             i = i + 1;
         }
         return true;
