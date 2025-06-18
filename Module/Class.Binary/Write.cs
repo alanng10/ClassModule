@@ -253,14 +253,18 @@ public class Write : Any
     {
         long count;
         count = array.Count;
+
         this.ExecuteCount(count);
+
         long i;
         i = 0;
         while (i < count)
         {
             Var varVar;
-            varVar = (Var)array.GetAt(i);
+            varVar = array.GetAt(i) as Var;
+
             this.ExecuteVar(varVar);
+
             i = i + 1;
         }
         return true;
