@@ -192,7 +192,7 @@ public class Write : Any
     {
         this.ExecuteIndex(part.FieldStart);
         this.ExecuteIndex(part.MaideStart);
-        
+
         this.ExecuteFieldArray(part.Field);
         this.ExecuteMaideArray(part.Maide);
         return true;
