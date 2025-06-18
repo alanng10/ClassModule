@@ -6,18 +6,32 @@ public class Write : Any
     {
         base.Init();
         this.StringComp = StringComp.This;
-        this.CountOperate = new WriteCountOperate();
-        this.CountOperate.Write = this;
-        this.CountOperate.Init();
-        this.SetOperate = new WriteSetOperate();
-        this.SetOperate.Write = this;
-        this.SetOperate.Init();
+        this.CountOperate = this.CreateCountOperate();
+        this.SetOperate = this.CreateSetOperate();
         return true;
     }
 
+    protected virtual WriteCountOperate CreateCountOperate()
+    {
+        WriteCountOperate a;
+        a = new WriteCountOperate();
+        a.Write = this;
+        a.Init();
+        return a;
+    }
+
+    protected virtual WriteSetOperate CreateSetOperate()
+    {
+        WriteSetOperate a;
+        a = new WriteSetOperate();
+        a.Write = this;
+        a.Init();
+        return a;
+    }
+
     public virtual Binary Binary { get; set; }
-    public virtual Data Data { get; set; }
-    public virtual long Index { get; set; }
+    public virtual Data Result { get; set; }
+    public virtual WriteArg Arg { get; set; }
     protected virtual StringComp StringComp { get; set; }
     protected virtual WriteCountOperate CountOperate { get; set; }
     protected virtual WriteSetOperate SetOperate { get; set; }
