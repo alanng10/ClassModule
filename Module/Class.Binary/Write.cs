@@ -151,33 +151,6 @@ public class Write : Any
         return this.ExecuteClassIndexArray(array);
     }
 
-    protected virtual bool ExecuteClassIndexArray(Array array)
-    {
-        long count;
-        count = array.Count;
-
-        this.ExecuteCount(count);
-
-        long i;
-        i = 0;
-        while (i < count)
-        {
-            Value classIndex;
-            classIndex = array.GetAt(i) as Value;
-
-            this.ExecuteClassIndex(classIndex);
-
-            i = i + 1;
-        }
-        return true;
-    }
-
-    protected virtual bool ExecuteClassIndex(Value classIndex)
-    {
-        this.ExecuteIndex(classIndex.Int);
-        return true;
-    }
-
     protected virtual bool ExecuteBaseArray(Array array)
     {
         return this.ExecuteClassIndexArray(array);
@@ -316,6 +289,33 @@ public class Write : Any
     {
         this.ExecuteName(varRef.Name);
         this.ExecuteInt(varRef.Ver);
+        return true;
+    }
+
+    protected virtual bool ExecuteClassIndexArray(Array array)
+    {
+        long count;
+        count = array.Count;
+
+        this.ExecuteCount(count);
+
+        long i;
+        i = 0;
+        while (i < count)
+        {
+            Value classIndex;
+            classIndex = array.GetAt(i) as Value;
+
+            this.ExecuteClassIndex(classIndex);
+
+            i = i + 1;
+        }
+        return true;
+    }
+
+    protected virtual bool ExecuteClassIndex(Value classIndex)
+    {
+        this.ExecuteIndex(classIndex.Int);
         return true;
     }
 
