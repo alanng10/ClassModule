@@ -227,14 +227,18 @@ public class Write : Any
     {
         long count;
         count = array.Count;
+
         this.ExecuteCount(count);
+
         long i;
         i = 0;
         while (i < count)
         {
             Maide maide;
-            maide = (Maide)array.GetAt(i);
+            maide = array.GetAt(i) as Maide;
+
             this.ExecuteMaide(maide);
+
             i = i + 1;
         }
         return true;
