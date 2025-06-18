@@ -95,14 +95,18 @@ public class Write : Any
     {
         long count;
         count = array.Count;
+
         this.ExecuteCount(count);
+
         long i;
         i = 0;
         while (i < count)
         {
             Class varClass;
-            varClass = (Class)array.GetAt(i);
+            varClass = array.GetAt(i) as Class;
+
             this.ExecuteClass(varClass);
+
             i = i + 1;
         }
         return true;
