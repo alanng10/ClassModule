@@ -143,4 +143,16 @@ class Write : Any
         this.ExecuteClassIndexArray(import.Class);
         return true;
     }
+
+    maide precate Bool ExecuteExportArray(var Array array)
+    {
+        this.ExecuteClassIndexArray(array);
+        return true;
+    }
+
+    maide precate Bool ExecuteBaseArray(var Array array)
+    {
+        this.ExecuteClassIndexArray(array);
+        return true;
+    }
 }
