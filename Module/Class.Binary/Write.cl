@@ -155,4 +155,25 @@ class Write : Any
         this.ExecuteClassIndexArray(array);
         return true;
     }
+
+    maide precate Bool ExecutePartArray(var Array array)
+    {
+        var Int count;
+        count : array.Count;
+
+        this.ExecuteCount(count);
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Part part;
+            part : cast Part(array.Get(i));
+
+            this.ExecutePart(part);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
