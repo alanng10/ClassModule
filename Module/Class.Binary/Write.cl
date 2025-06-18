@@ -36,4 +36,32 @@ class Write : Any
     field prusate WriteSetOperate SetOperate { get { return data; } set { data : value; } }
     field precate InfraInfra InfraInfra { get { return data; } set { data : value; } }
     field precate StringComp StringComp { get { return data; } set { data : value; } }
+
+    maide prusate Bool Execute()
+    {
+        this.Arg : new WriteArg;
+        this.Arg.Init();
+
+        this.Operate : this.CountOperate;
+
+        this.ResetStage();
+        this.ExecuteStage();
+
+        var Int count;
+        count : this.Index;
+        this.Arg.Data : new Data;
+        this.Arg.Data.Count : count;
+        this.Arg.Data.Init();
+
+        this.Operate : this.CountOperate;
+
+        this.ResetStage();
+        this.ExecuteStage();
+
+        this.Result : this.Arg.Data;
+
+        this.Operate : null;
+        this.Arg : null;
+        return true;
+    }
 }
