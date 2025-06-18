@@ -115,4 +115,25 @@ class Write : Any
         this.ExecuteName(varClass.Name);
         return true;
     }
+
+    maide precate Bool ExecuteImportArray(var Array array)
+    {
+        var Int count;
+        count : array.Count;
+
+        this.ExecuteCount(count);
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Import import;
+            import : cast Import(array.Get(i));
+
+            this.ExecuteImport(import);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
