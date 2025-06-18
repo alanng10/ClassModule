@@ -39,29 +39,39 @@ public class Write : Any
 
     public virtual bool Execute()
     {
-        this.Operate = this.CountOperate;
-        this.Index = 0;
+        this.Arg = new WriteArg();
+        this.Arg.Init();
 
+        this.Operate = this.CountOperate;
+
+        this.ResetStage();
         this.ExecuteStage();
 
         long count;
         count = this.Index;
-        this.Data = new Data();
-        this.Data.Count = count;
-        this.Data.Init();
+        this.Arg.Data = new Data();
+        this.Arg.Data.Count = count;
+        this.Arg.Data.Init();
 
         this.Operate = this.SetOperate;
-        this.Index = 0;
 
+        this.ResetStage();
         this.ExecuteStage();
 
-        this.Operate = null;
-        this.Index = 0;
+        this.Result = this.Arg.Data;
 
+        this.Operate = null;
+        this.Arg = null;
         return true;
     }
 
-    protected virtual bool ExecuteStage()
+    public virtual bool ResetStage()
+    {
+        this.Arg.Index = 0;
+        return true;
+    }
+
+    public virtual bool ExecuteStage()
     {
         this.ExecuteBinary(this.Binary);
         return true;
