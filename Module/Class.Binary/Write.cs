@@ -33,11 +33,11 @@ public class Write : Any
     public virtual Binary Binary { get; set; }
     public virtual Data Result { get; set; }
     public virtual WriteArg Arg { get; set; }
+    public virtual WriteOperate Operate { get; set; }
+    public virtual WriteCountOperate CountOperate { get; set; }
+    public virtual WriteSetOperate SetOperate { get; set; }
     protected virtual InfraInfra InfraInfra { get; set; }
     protected virtual StringComp StringComp { get; set; }
-    protected virtual WriteCountOperate CountOperate { get; set; }
-    protected virtual WriteSetOperate SetOperate { get; set; }
-    protected virtual WriteOperate Operate { get; set; }
 
     public virtual bool Execute()
     {
