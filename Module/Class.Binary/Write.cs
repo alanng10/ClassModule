@@ -298,20 +298,20 @@ public class Write : Any
 
     protected virtual bool ExecuteString(String value)
     {
-        StringComp stringComp;
-        stringComp = this.StringComp;
-
         long count;
-        count = stringComp.Count(value);
+        count = this.StringComp.Count(value);
+
         this.ExecuteCount(count);
-        int i;
+
+        long i;
         i = 0;
         while (i < count)
         {
-            long oc;
-            oc = stringComp.Char(value, i);
+            long ka;
+            ka = this.StringComp.Char(value, i);
 
-            this.ExecuteByte(oc);
+            this.ExecuteByte(ka);
+
             i = i + 1;
         }
         return true;
