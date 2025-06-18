@@ -175,14 +175,18 @@ public class Write : Any
     {
         long count;
         count = array.Count;
+
         this.ExecuteCount(count);
+
         long i;
         i = 0;
         while (i < count)
         {
             Part part;
-            part = (Part)array.GetAt(i);
+            part = array.GetAt(i) as Part;
+
             this.ExecutePart(part);
+
             i = i + 1;
         }
         return true;
