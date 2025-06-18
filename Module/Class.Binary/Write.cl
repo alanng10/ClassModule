@@ -27,4 +27,13 @@ class Write : Any
         a.Init();
         return a;
     }
+
+    field prusate Binary Binary { get { return data; } set { data : value; } }
+    field prusate Data Result { get { return data; } set { data : value; } }
+    field prusate WriteArg Arg { get { return data; } set { data : value; } }
+    field prusate WriteOperate Operate { get { return data; } set { data : value; } }
+    field prusate WriteCountOperate CountOperate { get { return data; } set { data : value; } }
+    field prusate WriteSetOperate SetOperate { get { return data; } set { data : value; } }
+    field precate InfraInfra InfraInfra { get { return data; } set { data : value; } }
+    field precate StringComp StringComp { get { return data; } set { data : value; } }
 }
