@@ -147,14 +147,18 @@ public class Write : Any
     {
         long count;
         count = array.Count;
+
         this.ExecuteCount(count);
+
         long i;
         i = 0;
         while (i < count)
         {
             Value classIndex;
-            classIndex = (Value)array.GetAt(i);
+            classIndex = array.GetAt(i) as Value;
+
             this.ExecuteClassIndex(classIndex);
+
             i = i + 1;
         }
         return true;
