@@ -5,6 +5,7 @@ public class Write : Any
     public override bool Init()
     {
         base.Init();
+        this.InfraInfra = InfraInfra.This;
         this.StringComp = StringComp.This;
         this.CountOperate = this.CreateCountOperate();
         this.SetOperate = this.CreateSetOperate();
@@ -32,6 +33,7 @@ public class Write : Any
     public virtual Binary Binary { get; set; }
     public virtual Data Result { get; set; }
     public virtual WriteArg Arg { get; set; }
+    protected virtual InfraInfra InfraInfra { get; set; }
     protected virtual StringComp StringComp { get; set; }
     protected virtual WriteCountOperate CountOperate { get; set; }
     protected virtual WriteSetOperate SetOperate { get; set; }
@@ -327,13 +329,13 @@ public class Write : Any
 
     protected virtual bool ExecuteInt(long value)
     {
-        ulong k;
-        k = (ulong)value;
-        k = k << 4;
-        k = k >> 4;
+        long k;
+        k = value;
+        k = k & (this.InfraInfra.IntCapValue - 1);
 
         long count;
-        count = sizeof(ulong);
+        count = sizeof(long);
+
         long i;
         i = 0;
         while (i < count)
@@ -341,13 +343,10 @@ public class Write : Any
             int shiftCount;
             shiftCount = (int)(i * 8);
 
-            ulong ka;
+            long ka;
             ka = (k >> shiftCount) & 0xff;
 
-            byte a;
-            a = (byte)ka;
-
-            this.ExecuteByte(a);
+            this.ExecuteByte(ka);
 
             i = i + 1;
         }
