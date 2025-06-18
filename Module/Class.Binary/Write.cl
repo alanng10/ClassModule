@@ -136,4 +136,11 @@ class Write : Any
         }
         return true;
     }
+
+    maide precate Bool ExecuteImport(var Import import)
+    {
+        this.ExecuteModuleRef(import.Module);
+        this.ExecuteClassIndexArray(import.Class);
+        return true;
+    }
 }
