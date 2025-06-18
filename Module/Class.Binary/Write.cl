@@ -64,4 +64,16 @@ class Write : Any
         this.Arg : null;
         return true;
     }
+
+    maide prusate Bool ResetStage()
+    {
+        this.Arg.Index : 0;
+        return true;
+    }
+
+    maide prusate Bool ExecuteStage()
+    {
+        this.ExecuteBinary(this.Binary);
+        return true;
+    }
 }
