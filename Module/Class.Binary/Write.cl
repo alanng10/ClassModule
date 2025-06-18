@@ -88,4 +88,25 @@ class Write : Any
         this.ExecuteEntry(binary.Entry);
         return true;
     }
+
+    maide precate Bool ExecuteClassArray(var Array array)
+    {
+        var Int count;
+        count : array.Count;
+
+        this.ExecuteCount(count);
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Class varClass;
+            varClass : cast Class(array.Get(i));
+
+            this.ExecuteClass(varClass);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
