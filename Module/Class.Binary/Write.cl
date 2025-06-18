@@ -109,4 +109,10 @@ class Write : Any
         }
         return true;
     }
+
+    maide precate Bool ExecuteClass(var Class varClass)
+    {
+        this.ExecuteName(varClass.Name);
+        return true;
+    }
 }
