@@ -236,4 +236,13 @@ class Write : Any
         }
         return true;
     }
+
+    maide precate Bool ExecuteMaide(var Maide varMaide)
+    {
+        this.ExecuteIndex(varMaide.Class);
+        this.ExecuteByte(varMaide.Count);
+        this.ExecuteName(varMaide.Name);
+        this.ExecuteVarArray(varMaide.Param);
+        return true;
+    }
 }
