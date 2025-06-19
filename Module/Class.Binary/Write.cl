@@ -245,4 +245,25 @@ class Write : Any
         this.ExecuteVarArray(varMaide.Param);
         return true;
     }
+
+    maide precate Bool ExecuteVarArray(var Array array)
+    {
+        var Int count;
+        count : array.Count;
+
+        this.ExecuteCount(count);
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Var varVar;
+            varVar : cast Var(array.Get(i));
+
+            this.ExecuteVar(varVar);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
