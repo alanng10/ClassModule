@@ -273,4 +273,15 @@ class Write : Any
         this.ExecuteName(varVar.Name);
         return true;
     }
+
+    maide precate Bool ExecuteEntry(var Int entry)
+    {
+        inf (entry = null)
+        {
+            return true;
+        }
+
+        this.ExecuteIndex(entry);
+        return true;
+    }
 }
