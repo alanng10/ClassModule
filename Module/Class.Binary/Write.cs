@@ -198,10 +198,10 @@ public class Write : Any
         i = 0;
         while (i < count)
         {
-            Field field;
-            field = array.GetAt(i) as Field;
+            Field varField;
+            varField = array.GetAt(i) as Field;
 
-            this.ExecuteField(field);
+            this.ExecuteField(varField);
 
             i = i + 1;
         }
