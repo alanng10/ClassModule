@@ -227,10 +227,10 @@ public class Write : Any
         i = 0;
         while (i < count)
         {
-            Maide maide;
-            maide = array.GetAt(i) as Maide;
+            Maide varMaide;
+            varMaide = array.GetAt(i) as Maide;
 
-            this.ExecuteMaide(maide);
+            this.ExecuteMaide(varMaide);
 
             i = i + 1;
         }
