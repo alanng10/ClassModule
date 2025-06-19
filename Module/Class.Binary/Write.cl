@@ -284,4 +284,11 @@ class Write : Any
         this.ExecuteIndex(entry);
         return true;
     }
+
+    maide precate Bool ExecuteModuleRef(var ModuleRef ref)
+    {
+        this.ExecuteName(ref.Name);
+        this.ExecuteInt(ref.Ver);
+        return true;
+    }
 }
