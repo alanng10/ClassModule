@@ -207,4 +207,12 @@ class Write : Any
         }
         return true;
     }
+
+    maide precate Bool ExecuteField(var Field varField)
+    {
+        this.ExecuteIndex(varField.Class);
+        this.ExecuteByte(varField.Count);
+        this.ExecuteName(varField.Name);
+        return true;
+    }
 }
