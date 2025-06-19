@@ -176,4 +176,14 @@ class Write : Any
         }
         return true;
     }
+
+    maide precate Bool ExecutePart(var Part part)
+    {
+        this.ExecuteIndex(part.FieldStart);
+        this.ExecuteIndex(part.MaideStart);
+
+        this.ExecuteFieldArray(part.Field);
+        this.ExecuteMaideArray(part.Maide);
+        return true;
+    }
 }
