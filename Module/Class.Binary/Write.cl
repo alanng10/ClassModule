@@ -215,4 +215,25 @@ class Write : Any
         this.ExecuteName(varField.Name);
         return true;
     }
+
+    maide precate Bool ExecuteMaideArray(var Array array)
+    {
+        var Int count;
+        count : array.Count;
+
+        this.ExecuteCount(count);
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Maide varMaide;
+            varMaide : cast Maide(array.Get(i));
+
+            this.ExecuteMaide(varMaide);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
