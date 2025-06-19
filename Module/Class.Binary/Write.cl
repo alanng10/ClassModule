@@ -186,4 +186,25 @@ class Write : Any
         this.ExecuteMaideArray(part.Maide);
         return true;
     }
+
+    maide precate Bool ExecuteFieldArray(var Array array)
+    {
+        var Int count;
+        count : array.Count;
+
+        this.ExecuteCount(count);
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Field varField;
+            varField : cast Field(array.Get(i));
+
+            this.ExecuteField(varField);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
