@@ -266,4 +266,11 @@ class Write : Any
         }
         return true;
     }
+
+    maide precate Bool ExecuteVar(var Var varVar)
+    {
+        this.ExecuteIndex(varVar.Class);
+        this.ExecuteName(varVar.Name);
+        return true;
+    }
 }
