@@ -368,11 +368,11 @@ public class Write : Any
         i = 0;
         while (i < count)
         {
-            int shiftCount;
-            shiftCount = (int)(i * 8);
+            int shift;
+            shift = (int)(i * 8);
 
             long ka;
-            ka = (k >> shiftCount) & 0xff;
+            ka = (k >> shift) & 0xff;
 
             this.ExecuteByte(ka);
 
