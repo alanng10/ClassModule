@@ -291,4 +291,25 @@ class Write : Any
         this.ExecuteInt(ref.Ver);
         return true;
     }
+
+    maide precate Bool ExecuteClassIndexArray(var Array array)
+    {
+        var Int count;
+        count : array.Count;
+
+        this.ExecuteCount(count);
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Int classIndex;
+            classIndex : cast Int(array.Get(i));
+
+            this.ExecuteClassIndex(classIndex);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
