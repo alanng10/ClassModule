@@ -3,7 +3,6 @@ class Write : Any
     maide prusate Bool Init()
     {
         base.Init();
-        this.InfraInfra : share InfraInfra;
         this.StringComp : share StringComp;
         this.CountOperate : this.CreateCountOperate();
         this.SetOperate : this.CreateSetOperate();
@@ -34,7 +33,6 @@ class Write : Any
     field prusate WriteOperate Operate { get { return data; } set { data : value; } }
     field prusate WriteCountOperate CountOperate { get { return data; } set { data : value; } }
     field prusate WriteSetOperate SetOperate { get { return data; } set { data : value; } }
-    field precate InfraInfra InfraInfra { get { return data; } set { data : value; } }
     field precate StringComp StringComp { get { return data; } set { data : value; } }
 
     maide prusate Bool Execute()
