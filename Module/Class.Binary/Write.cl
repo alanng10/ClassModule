@@ -312,4 +312,10 @@ class Write : Any
         }
         return true;
     }
+
+    maide precate Bool ExecuteClassIndex(var Int classIndex)
+    {
+        this.ExecuteIndex(classIndex);
+        return true;
+    }
 }
