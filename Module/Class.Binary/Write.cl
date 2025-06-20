@@ -344,4 +344,14 @@ class Write : Any
         }
         return true;
     }
+
+    maide precate Bool ExecuteIndex(var Int value)
+    {
+        return this.ExecuteInt(value);
+    }
+
+    maide precate Bool ExecuteCount(var Int value)
+    {
+        return this.ExecuteInt(value);
+    }
 }
