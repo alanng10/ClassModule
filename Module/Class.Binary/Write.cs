@@ -345,12 +345,12 @@ public class Write : Any
         return true;
     }
 
-    protected virtual bool ExecuteCount(long value)
+    protected virtual bool ExecuteIndex(long value)
     {
         return this.ExecuteInt(value);
     }
 
-    protected virtual bool ExecuteIndex(long value)
+    protected virtual bool ExecuteCount(long value)
     {
         return this.ExecuteInt(value);
     }
