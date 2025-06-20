@@ -354,4 +354,27 @@ class Write : Any
     {
         return this.ExecuteInt(value);
     }
+
+    maide precate Bool ExecuteInt(var Int value)
+    {
+        var Int count;
+        count : 8;
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Int shift;
+            shift : i * 8;
+
+            var Int ka
+            ka : bit >(value, shift);
+            ka : bit &(ka, 0hff);
+
+            this.ExecuteByte(ka);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
