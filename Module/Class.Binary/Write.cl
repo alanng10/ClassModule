@@ -318,4 +318,9 @@ class Write : Any
         this.ExecuteIndex(classIndex);
         return true;
     }
+
+    maide precate Bool ExecuteName(var String name)
+    {
+        return this.ExecuteString(name);
+    }
 }
