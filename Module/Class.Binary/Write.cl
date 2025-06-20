@@ -377,4 +377,10 @@ class Write : Any
         }
         return true;
     }
+
+    maide precate Bool ExecuteByte(var Int value)
+    {
+        this.Operate.ExecuteByte(value);
+        return true;
+    }
 }
