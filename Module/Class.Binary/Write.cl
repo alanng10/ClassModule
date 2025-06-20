@@ -323,4 +323,25 @@ class Write : Any
     {
         return this.ExecuteString(name);
     }
+
+    maide precate Bool ExecuteString(var String value)
+    {
+        var Int count;
+        count : this.StringComp.Count(value);
+
+        this.ExecuteCount(count);
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Int ka;
+            ka : this.StringComp.Char(value, i);
+
+            this.ExecuteByte(ka);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
