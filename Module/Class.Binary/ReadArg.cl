@@ -19,4 +19,12 @@ class ReadArg : Any
     field prusate Array ClassIndexArray { get { return data; } set { data : value; } }
     field prusate Int ModuleRefIndex { get { return data; } set { data : value; } }
     field prusate Array ModuleRefArray { get { return data; } set { data : value; } }
+    field prusate Int StringIndex { get { return data; } set { data : value; } }
+    field prusate Data StringCountData { get { return data; } set { data : value; } }
+    field prusate Int StringTextIndex { get { return data; } set { data : value; } }
+    field prusate Data StringTextData { get { return data; } set { data : value; } }
+    field prusate Array StringArray { get { return data; } set { data : value; } }
+    field prusate Int ArrayIndex { get { return data; } set { data : value; } }
+    field prusate Data ArrayCountData { get { return data; } set { data : value; } }
+    field prusate Array ArrayArray { get { return data; } set { data : value; } }
 }
