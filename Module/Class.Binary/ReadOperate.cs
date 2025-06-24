@@ -39,11 +39,6 @@ public class ReadOperate : Any
         return null;
     }
 
-    public virtual Value ExecuteClassIndex()
-    {
-        return null;
-    }
-
     public virtual ModuleRef ExecuteModuleRef()
     {
         return null;
