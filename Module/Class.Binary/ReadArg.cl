@@ -15,8 +15,6 @@ class ReadArg : Any
     field prusate Array MaideArray { get { return data; } set { data : value; } }
     field prusate Int VarIndex { get { return data; } set { data : value; } }
     field prusate Array VarArray { get { return data; } set { data : value; } }
-    field prusate Int ClassIndexIndex { get { return data; } set { data : value; } }
-    field prusate Array ClassIndexArray { get { return data; } set { data : value; } }
     field prusate Int ModuleRefIndex { get { return data; } set { data : value; } }
     field prusate Array ModuleRefArray { get { return data; } set { data : value; } }
     field prusate Int StringIndex { get { return data; } set { data : value; } }
