@@ -80,7 +80,7 @@ public class ReadCountOperate : ReadOperate
 
     protected virtual ModuleRef CreateModuleRef()
     {
-        return this.ClassInfra.ModuleRefCreate(null, null);
+        return this.ClassInfra.ModuleRefCreate(null, -1);
     }
 
     protected virtual ListInfra ListInfra { get; set; }
