@@ -333,14 +333,17 @@ public class Read : Any
 
         long count;
         count = array.Count;
+
         long i;
         i = 0;
         while (i < count)
         {
-            Maide o;
-            o = new Maide();
-            o.Init();
-            array.SetAt(i, o);
+            Maide k;
+            k = new Maide();
+            k.Init();
+
+            array.SetAt(i, k);
+
             i = i + 1;
         }
         return true;
