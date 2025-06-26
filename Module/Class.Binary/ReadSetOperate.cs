@@ -57,7 +57,7 @@ public class ReadSetOperate : ReadOperate
         long index;
         index = arg.FieldIndex;
         Field a;
-        a = (Field)arg.FieldArray.GetAt(index);
+        a = arg.FieldArray.GetAt(index) as Field;
         arg.FieldIndex = index + 1;
         return a;
     }
