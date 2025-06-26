@@ -19,4 +19,20 @@ class ReadCountOperate : ReadOperate
         this.Array : this.CreateArray();
         return true;
     }
+
+    maide precate Binary CreateBinary()
+    {
+        var Binary a;
+        a : new Binary;
+        a.Init();
+        return a;
+    }
+
+    maide precate Class CreateClass()
+    {
+        var Class a;
+        a : new Class;
+        a.Init();
+        return a;
+    }
 }
