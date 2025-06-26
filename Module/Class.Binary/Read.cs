@@ -397,7 +397,7 @@ public class Read : Any
 
     public virtual bool ExecuteStage()
     {
-        this.Binary = this.ExecuteBinary();
+        this.Result = this.ExecuteBinary();
         return true;
     }
 
