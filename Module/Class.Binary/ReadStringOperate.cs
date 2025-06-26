@@ -203,10 +203,10 @@ public class ReadStringOperate : ReadOperate
         long stringIndex;
         stringIndex = arg.StringIndex;
 
-        long nn;
-        nn = stringIndex;
-        nn = nn * sizeof(ulong);
-        this.InfraInfra.DataIntSet(arg.StringCountData, nn, count);
+        long kd;
+        kd = stringIndex;
+        kd = kd * sizeof(long);
+        this.InfraInfra.DataIntSet(arg.StringCountData, kd, count);
 
         Data data;
         data = read.Data;
