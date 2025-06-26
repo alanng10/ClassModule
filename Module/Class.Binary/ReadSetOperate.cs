@@ -132,7 +132,7 @@ public class ReadSetOperate : ReadOperate
         long index;
         index = arg.ArrayIndex;
         Array a;
-        a = (Array)arg.ArrayArray.GetAt(index);
+        a = arg.ArrayArray.GetAt(index) as Array;
         arg.ArrayIndex = index + 1;
         return a;
     }
