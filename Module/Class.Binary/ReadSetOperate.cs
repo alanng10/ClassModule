@@ -69,7 +69,7 @@ public class ReadSetOperate : ReadOperate
         long index;
         index = arg.MaideIndex;
         Maide a;
-        a = (Maide)arg.MaideArray.GetAt(index);
+        a = arg.MaideArray.GetAt(index) as Maide;
         arg.MaideIndex = index + 1;
         return a;
     }
