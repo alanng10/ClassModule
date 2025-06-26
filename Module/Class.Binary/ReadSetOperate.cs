@@ -81,7 +81,7 @@ public class ReadSetOperate : ReadOperate
         long index;
         index = arg.VarIndex;
         Var a;
-        a = (Var)arg.VarArray.GetAt(index);
+        a = arg.VarArray.GetAt(index) as Var;
         arg.VarIndex = index + 1;
         return a;
     }
