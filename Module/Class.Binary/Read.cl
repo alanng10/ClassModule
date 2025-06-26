@@ -153,4 +153,27 @@ class Read : Any
         }
         return true;
     }
+
+    maide precate Bool ExecuteCreateClass()
+    {
+        var Array array;
+        array : this.Arg.ClassArray;
+
+        var Int count;
+        count : array.Count;
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Class k;
+            k : new Class;
+            k.Init();
+
+            array.Set(i, k);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
