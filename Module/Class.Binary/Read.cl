@@ -111,4 +111,23 @@ class Read : Any
         this.Arg : null;
         return true;
     }
+
+    maide prusate Bool ResetStage()
+    {
+        var ReadArg a;
+        a : this.Arg;
+        a.Index : 0;
+        a.BinaryIndex : 0;
+        a.ClassIndex : 0;
+        a.ImportIndex : 0;
+        a.PartIndex : 0;
+        a.FieldIndex : 0;
+        a.MaideIndex : 0;
+        a.VarIndex : 0;
+        a.ModuleRefIndex : 0;
+        a.StringIndex : 0;
+        a.StringTextIndex : 0;
+        a.ArrayIndex : 0;
+        return true;
+    }
 }
