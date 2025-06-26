@@ -114,13 +114,13 @@ public class ReadSetOperate : ReadOperate
     {
         ReadArg arg;
         arg = this.Read.Arg;
-        long oa;
-        oa = arg.StringIndex;
+        long index;
+        index = arg.StringIndex;
         String a;
-        a = (String)arg.StringArray.GetAt(oa);
-        
+        a = arg.StringArray.GetAt(index) as String;
+
         arg.Index = arg.Index + count;
-        arg.StringIndex = oa + 1;
+        arg.StringIndex = index + 1;
         arg.StringTextIndex = arg.StringTextIndex + count;
         return a;
     }
