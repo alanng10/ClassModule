@@ -181,20 +181,15 @@ public class Read : Any
 
     protected virtual bool ExecuteCreateArray()
     {
-        InfraInfra infraInfra;
-        infraInfra = this.InfraInfra;
-        ListInfra listInfra;
-        listInfra = this.ListInfra;
-
         ReadArg arg;
         arg = this.Arg;
+
         Array array;
         array = arg.ArrayArray;
-        Data countData;
-        countData = arg.ArrayCountData;
 
         long count;
         count = array.Count;
+
         long i;
         i = 0;
         while (i < count)
@@ -204,11 +199,13 @@ public class Read : Any
             index = index * sizeof(ulong);
 
             long oa;
-            oa = infraInfra.DataIntGet(countData, index);
+            oa = this.InfraInfra.DataIntGet(arg.ArrayCountData, index);
 
             Array o;
-            o = listInfra.ArrayCreate(oa);
+            o = this.ListInfra.ArrayCreate(oa);
+
             array.SetAt(i, o);
+
             i = i + 1;
         }
         return true;
