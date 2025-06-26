@@ -9,8 +9,7 @@ public class ReadCountOperate : ReadOperate
         this.TextInfra = TextInfra.This;
         this.Binary = this.CreateBinary();
         this.Class = this.CreateClass();
-        this.Import = new Import();
-        this.Import.Init();
+        this.Import = this.CreateImport();
         this.Part = new Part();
         this.Part.Init();
         this.Field = new Field();
@@ -40,6 +39,14 @@ public class ReadCountOperate : ReadOperate
     {
         Class a;
         a = new Class();
+        a.Init();
+        return a;
+    }
+
+    protected virtual Import CreateImport()
+    {
+        Import a;
+        a = new Import();
         a.Init();
         return a;
     }
