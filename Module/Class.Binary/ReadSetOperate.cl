@@ -122,4 +122,10 @@ class ReadSetOperate : ReadOperate
         arg.ArrayIndex : index + 1;
         return a;
     }
+
+    maide prusate Bool ExecuteArrayItemSet(var Array array, var Int index, var Any value)
+    {
+        array.Set(index, value);
+        return true;
+    }
 }
