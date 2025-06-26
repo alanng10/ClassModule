@@ -33,7 +33,7 @@ public class ReadSetOperate : ReadOperate
         long index;
         index = arg.ImportIndex;
         Import a;
-        a = (Import)arg.ImportArray.GetAt(index);
+        a = arg.ImportArray.GetAt(index) as Import;
         arg.ImportIndex = index + 1;
         return a;
     }
