@@ -59,4 +59,16 @@ class ReadSetOperate : ReadOperate
         arg.FieldIndex : index + 1;
         return a;
     }
+
+    maide prusate Maide ExecuteMaide()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        var Int index;
+        index : arg.MaideIndex;
+        var Maide a;
+        a : cast Maide(arg.MaideArray.Get(index));
+        arg.MaideIndex : index + 1;
+        return a;
+    }
 }
