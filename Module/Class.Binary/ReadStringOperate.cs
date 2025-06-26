@@ -203,19 +203,14 @@ public class ReadStringOperate : ReadOperate
         kd = kd * sizeof(long);
         this.InfraInfra.DataIntSet(arg.StringCountData, kd, count);
 
-        Data data;
-        data = read.Data;
-        Data stringTextData;
-        stringTextData = arg.StringTextData;
-
         long i;
         i = 0;
         while (i < count)
         {
             long ka;
-            ka = data.Get(arg.Index + i);
+            ka = read.Data.Get(arg.Index + i);
 
-            this.TextInfra.DataCharSet(stringTextData, arg.StringTextIndex + i, ka);
+            this.TextInfra.DataCharSet(arg.StringTextData, arg.StringTextIndex + i, ka);
             i = i + 1;
         }
         
