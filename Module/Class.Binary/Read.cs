@@ -1028,7 +1028,7 @@ public class Read : Any
         return a;
     }
 
-    protected virtual bool CheckCount(long count)
+    protected virtual bool ValidCount(long count)
     {
         Range range;
         range = this.Range;
