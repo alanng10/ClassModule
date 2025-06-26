@@ -19,7 +19,7 @@ public class ReadCountOperate : ReadOperate
         this.ClassIndex = this.CreateClassIndex();
         this.ModuleRef = this.CreateModuleRef();
         this.String = this.CreateString();
-        this.Array = this.ListInfra.ArrayCreate(0);
+        this.Array = this.CreateArray();
         return true;
     }
 
@@ -95,6 +95,11 @@ public class ReadCountOperate : ReadOperate
     protected virtual String CreateString()
     {
         return this.TextInfra.Zero;
+    }
+
+    protected virtual Array CreateArray()
+    {
+        return this.ListInfra.ArrayCreate(0);
     }
 
     protected virtual ListInfra ListInfra { get; set; }
