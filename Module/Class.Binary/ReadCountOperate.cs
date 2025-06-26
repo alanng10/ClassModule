@@ -30,7 +30,6 @@ public class ReadCountOperate : ReadOperate
         return true;
     }
 
-    public virtual Read Read { get; set; }
     protected virtual ListInfra ListInfra { get; set; }
     protected virtual TextInfra TextInfra { get; set; }
     protected virtual Binary Binary { get; set; }
