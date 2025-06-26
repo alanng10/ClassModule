@@ -1030,22 +1030,6 @@ public class Read : Any
 
     protected virtual bool ValidCount(long count)
     {
-        Range range;
-        range = this.Range;
-        long index;
-        long countA;
-        index = range.Index;
-        countA = range.Count;
-
-        long kk;
-        kk = index + countA;
-        
-        long ka;
-        ka = index + this.Arg.Index;
-
-        long kb;
-        kb = ka + count;
-
-        return !(kk < kb);
+        return this.InfraInfra.ValidRange(this.Data.Count, this.Arg.Index, count);
     }
 }
