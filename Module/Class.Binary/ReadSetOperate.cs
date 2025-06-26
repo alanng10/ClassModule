@@ -21,7 +21,7 @@ public class ReadSetOperate : ReadOperate
         long index;
         index = arg.ClassIndex;
         Class a;
-        a = (Class)arg.ClassArray.GetAt(index);
+        a = arg.ClassArray.GetAt(index) as Class;
         arg.ClassIndex = index + 1;
         return a;
     }
