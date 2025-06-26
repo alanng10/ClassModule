@@ -402,14 +402,17 @@ public class Read : Any
 
         long count;
         count = array.Count;
+
         long i;
         i = 0;
         while (i < count)
         {
-            ModuleRef o;
-            o = new ModuleRef();
-            o.Init();
-            array.SetAt(i, o);
+            ModuleRef k;
+            k = new ModuleRef();
+            k.Init();
+
+            array.SetAt(i, k);
+
             i = i + 1;
         }
         return true;
