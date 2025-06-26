@@ -195,16 +195,15 @@ public class Read : Any
         while (i < count)
         {
             long index;
-            index = i;
-            index = index * sizeof(ulong);
+            index = i * sizeof(long);
 
-            long oa;
-            oa = this.InfraInfra.DataIntGet(arg.ArrayCountData, index);
+            long ka;
+            ka = this.InfraInfra.DataIntGet(arg.ArrayCountData, index);
 
-            Array o;
-            o = this.ListInfra.ArrayCreate(oa);
+            Array k;
+            k = this.ListInfra.ArrayCreate(ka);
 
-            array.SetAt(i, o);
+            array.SetAt(i, k);
 
             i = i + 1;
         }
