@@ -640,22 +640,19 @@ public class Read : Any
 
     protected virtual Part ExecutePart()
     {
-        long u;
-        u = this.ExecuteIndex();
-        if (u == -1)
-        {
-            return null;
-        }
         long fieldStart;
-        fieldStart = u;
-
-        u = this.ExecuteIndex();
-        if (u == -1)
+        fieldStart = this.ExecuteIndex();
+        if (fieldStart == -1)
         {
             return null;
         }
+
         long maideStart;
-        maideStart = u;
+        maideStart = this.ExecuteIndex();
+        if (maideStart == -1)
+        {
+            return null;
+        }
 
         Array field;
         field = this.ExecuteFieldArray();
