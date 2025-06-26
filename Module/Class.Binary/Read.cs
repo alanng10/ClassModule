@@ -269,11 +269,11 @@ public class Read : Any
         i = 0;
         while (i < count)
         {
-            Import o;
-            o = new Import();
-            o.Init();
+            Import k;
+            k = new Import();
+            k.Init();
 
-            array.SetAt(i, o);
+            array.SetAt(i, k);
 
             i = i + 1;
         }
