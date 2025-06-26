@@ -209,6 +209,7 @@ public class ReadStringOperate : ReadOperate
             ka = this.Read.Data.Get(arg.Index + i);
 
             this.TextInfra.DataCharSet(arg.StringTextData, arg.StringTextIndex + i, ka);
+
             i = i + 1;
         }
         
