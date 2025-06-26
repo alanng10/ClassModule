@@ -101,5 +101,14 @@ class Read : Any
         this.ExecuteCreateModuleRef();
         this.ExecuteCreateString();
         this.ExecuteCreateArray();
+
+        this.Operate : this.SetOperate;
+
+        this.ResetStage();
+        this.ExecuteStage();
+
+        this.Operate : null;
+        this.Arg : null;
+        return true;
     }
 }
