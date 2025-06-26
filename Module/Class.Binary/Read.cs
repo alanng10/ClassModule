@@ -874,11 +874,11 @@ public class Read : Any
 
     protected virtual long ExecuteEntry()
     {
-        long u;
-        u = this.ExecuteInt();
+        long k;
+        k = this.ExecuteInt();
 
         long a;
-        a = u;
+        a = k;
         return a;
     }
 
