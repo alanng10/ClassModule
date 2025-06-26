@@ -51,4 +51,28 @@ class ReadCountOperate : ReadOperate
         a.Init();
         return a;
     }
+
+    maide precate Field CreateField()
+    {
+        var Field a;
+        a : new Field;
+        a.Init();
+        return a;
+    }
+
+    maide precate Maide CreateMaide()
+    {
+        var Maide a;
+        a : new Maide;
+        a.Init();
+        return a;
+    }
+
+    maide precate Var CreateVar()
+    {
+        var Var a;
+        a : new Var;
+        a.Init();
+        return a;
+    }
 }
