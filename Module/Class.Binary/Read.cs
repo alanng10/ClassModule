@@ -713,22 +713,19 @@ public class Read : Any
 
     protected virtual Field ExecuteField()
     {
-        long u;
-        u = this.ExecuteIndex();
-        if (u == -1)
-        {
-            return null;
-        }
         long varClass;
-        varClass = u;
-
-        u = this.ExecuteByte();
-        if (u == -1)
+        varClass = this.ExecuteIndex();
+        if (varClass == -1)
         {
             return null;
         }
+
         long count;
-        count = u;
+        count = this.ExecuteByte();
+        if (count == -1)
+        {
+            return null;
+        }
 
         String name;
         name = this.ExecuteString();
