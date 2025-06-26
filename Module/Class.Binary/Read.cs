@@ -241,14 +241,18 @@ public class Read : Any
 
         long count;
         count = array.Count;
+
         long i;
         i = 0;
+
         while (i < count)
         {
-            Class o;
-            o = new Class();
-            o.Init();
-            array.SetAt(i, o);
+            Class k;
+            k = new Class();
+            k.Init();
+
+            array.SetAt(i, k);
+
             i = i + 1;
         }
         return true;
