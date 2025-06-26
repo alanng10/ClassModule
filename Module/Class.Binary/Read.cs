@@ -744,14 +744,12 @@ public class Read : Any
 
     protected virtual Array ExecuteMaideArray()
     {
-        long o;
-        o = this.ExecuteCount();
-        if (o == -1)
+        long count;
+        count = this.ExecuteCount();
+        if (count == -1)
         {
             return null;
         }
-        long count;
-        count = o;
 
         Array array;
         array = this.ExecuteArray(count);
@@ -770,7 +768,9 @@ public class Read : Any
             {
                 return null;
             }
+
             this.Operate.ExecuteArrayItemSet(array, i, a);
+
             i = i + 1;
         }
         return array;
