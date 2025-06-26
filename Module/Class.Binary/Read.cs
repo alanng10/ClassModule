@@ -940,19 +940,17 @@ public class Read : Any
             return null;
         }
 
-        long u;
-        u = this.ExecuteInt();
-        if (u == -1)
+        long ver;
+        ver = this.ExecuteInt();
+        if (ver == -1)
         {
             return null;
         }
-        long version;
-        version = u;
 
         ModuleRef a;
         a = this.Operate.ExecuteModuleRef();
         a.Name = name;
-        a.Ver = version;
+        a.Ver = ver;
         return a;
     }
 
