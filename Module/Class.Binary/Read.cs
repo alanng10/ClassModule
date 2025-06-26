@@ -136,17 +136,10 @@ public class Read : Any
 
     protected virtual bool ExecuteCreateString()
     {
-        InfraInfra infraInfra;
-        infraInfra = this.InfraInfra;
-        TextInfra textInfra;
-        textInfra = this.TextInfra;
-
         ReadArg arg;
         arg = this.Arg;
         Array array;
         array = arg.StringArray;
-        Data countData;
-        countData = arg.StringCountData;
 
         Text text;
         text = new Text();
@@ -154,6 +147,7 @@ public class Read : Any
         text.Range = new Range();
         text.Range.Init();
         text.Data = arg.StringTextData;
+
         long total;
         total = 0;
 
@@ -163,17 +157,16 @@ public class Read : Any
         i = 0;
         while (i < count)
         {
-            long index;
-            index = i;
-            index = index * sizeof(ulong);
+            long ka;
+            ka = i * sizeof(long);
 
             long oa;
-            oa = infraInfra.DataIntGet(countData, index);
+            oa = this.InfraInfra.DataIntGet(arg.StringCountData, ka);
 
             text.Range.Index = total;
             text.Range.Count = oa;
             String oo;
-            oo = textInfra.StringCreate(text);
+            oo = this.TextInfra.StringCreate(text);
             array.SetAt(i, oo);
             total = total + oa;
             i = i + 1;
