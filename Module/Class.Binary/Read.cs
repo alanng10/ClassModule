@@ -287,14 +287,17 @@ public class Read : Any
 
         long count;
         count = array.Count;
+
         long i;
         i = 0;
         while (i < count)
         {
-            Part o;
-            o = new Part();
-            o.Init();
-            array.SetAt(i, o);
+            Part k;
+            k = new Part();
+            k.Init();
+
+            array.SetAt(i, k);
+
             i = i + 1;
         }
         return true;
