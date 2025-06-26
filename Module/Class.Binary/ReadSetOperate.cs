@@ -2,8 +2,6 @@ namespace Saber.Binary;
 
 public class ReadSetOperate : ReadOperate
 {
-    public virtual Read Read { get; set; }
-
     public override Binary ExecuteBinary()
     {
         ReadArg arg;
