@@ -52,4 +52,19 @@ class Read : Any
     field precate ListInfra ListInfra { get { return data; } set { data : value; } }
     field precate TextInfra TextInfra { get { return data; } set { data : value; } }
     field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
+
+    maide prusate Bool Execute()
+    {
+        this.Arg : new ReadArg;
+        this.Arg.Init();
+
+        this.Operate : this.CountOperate;
+
+        this.ResetStage();
+        this.ExecuteStage();
+
+        arg.StringCountData : new Data;
+        arg.StringCountData.Count : arg.StringIndex * 8;
+        arg.StringCountData.Init();
+    }
 }
