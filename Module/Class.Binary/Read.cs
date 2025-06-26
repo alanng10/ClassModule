@@ -11,9 +11,7 @@ public class Read : Any
 
         this.CountOperate = this.CreateCountOperate();
         this.StringOperate = this.CreateStringOperate();
-        this.SetOperate = new ReadSetOperate();
-        this.SetOperate.Read = this;
-        this.SetOperate.Init();
+        this.SetOperate = this.CreateSetOperate();
 
         this.Arg = new ReadArg();
         this.Arg.Init();
@@ -33,6 +31,15 @@ public class Read : Any
     {
         ReadStringOperate a;
         a = new ReadStringOperate();
+        a.Read = this;
+        a.Init();
+        return a;
+    }
+
+    protected virtual ReadSetOperate CreateSetOperate()
+    {
+        ReadSetOperate a;
+        a = new ReadSetOperate();
         a.Read = this;
         a.Init();
         return a;
