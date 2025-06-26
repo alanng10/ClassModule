@@ -138,6 +138,7 @@ public class Read : Any
     {
         ReadArg arg;
         arg = this.Arg;
+
         Array array;
         array = arg.StringArray;
 
