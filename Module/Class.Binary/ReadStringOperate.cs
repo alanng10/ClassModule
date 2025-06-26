@@ -213,25 +213,23 @@ public class ReadStringOperate : ReadOperate
         Data stringTextData;
         stringTextData = arg.StringTextData;
 
-        long oa;
-        oa = arg.StringTextIndex;
+        long textIndex;
+        textIndex = arg.StringTextIndex;
+
         long i;
         i = 0;
         while (i < count)
         {
-            long oo;
-            oo = data.Get(index + i);
-            byte ooa;
-            ooa = (byte)oo;
-            long oob;
-            oob = ooa;
-            this.TextInfra.DataCharSet(stringTextData, oa + i, oob);
+            long ka;
+            ka = data.Get(index + i);
+
+            this.TextInfra.DataCharSet(stringTextData, textIndex + i, ka);
             i = i + 1;
         }
         
         arg.Index = index + count;
         arg.StringIndex = stringIndex + 1;
-        arg.StringTextIndex = oa + count;
+        arg.StringTextIndex = textIndex + count;
         return this.String;
     }
 
