@@ -83,4 +83,16 @@ class ReadSetOperate : ReadOperate
         arg.VarIndex : index + 1;
         return a;
     }
+
+    maide prusate ModuleRef ExecuteModuleRef()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        var Int index;
+        index : arg.ModuleRefIndex;
+        var ModuleRef a;
+        a : cast ModuleRef(arg.ModuleRefArray.Get(index));
+        arg.ModuleRefIndex : index + 1;
+        return a;
+    }
 }
