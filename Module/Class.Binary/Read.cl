@@ -22,4 +22,22 @@ class Read : Any
         a.Init();
         return a;
     }
+
+    maide precate ReadStringOperate CreateStringOperate()
+    {
+        var ReadStringOperate a;
+        a : new ReadStringOperate;
+        a.Read : this;
+        a.Init();
+        return a;
+    }
+
+    maide precate ReadSetOperate CreateSetOperate()
+    {
+        var ReadSetOperate a;
+        a : new ReadSetOperate;
+        a.Read : this;
+        a.Init();
+        return a;
+    }
 }
