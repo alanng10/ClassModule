@@ -9,7 +9,7 @@ public class ReadSetOperate : ReadOperate
         long index;
         index = arg.BinaryIndex;
         Binary a;
-        a = (Binary)arg.BinaryArray.GetAt(index);
+        a = arg.BinaryArray.GetAt(index) as Binary;
         arg.BinaryIndex = index + 1;
         return a;
     }
