@@ -106,4 +106,68 @@ class ReadStringOperate : ReadOperate
     field precate ModuleRef ModuleRef { get { return data; } set { data : value; } }
     field precate String String { get { return data; } set { data : value; } }
     field precate Array Array { get { return data; } set { data : value; } }
+
+    maide prusate Binary ExecuteBinary()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.BinaryIndex : arg.BinaryIndex + 1;
+        return this.Binary;
+    }
+
+    maide prusate Class ExecuteClass()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.ClassIndex : arg.ClassIndex + 1;
+        return this.Class;
+    }
+
+    maide prusate Import ExecuteImport()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.ImportIndex : arg.ImportIndex + 1;
+        return this.Import;
+    }
+
+    maide prusate Part ExecutePart()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.PartIndex : arg.PartIndex + 1;
+        return this.Part;
+    }
+
+    maide prusate Field ExecuteField()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.FieldIndex : arg.FieldIndex + 1;
+        return this.Field;
+    }
+
+    maide prusate Maide ExecuteMaide()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.MaideIndex : arg.MaideIndex + 1;
+        return this.Maide;
+    }
+
+    maide prusate Var ExecuteVar()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.VarIndex : arg.VarIndex + 1;
+        return this.Var;
+    }
+
+    maide prusate ModuleRef ExecuteModuleRef()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.ModuleRefIndex : arg.ModuleRefIndex + 1;
+        return this.ModuleRef;
+    }
 }
