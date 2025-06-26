@@ -11,8 +11,7 @@ public class ReadCountOperate : ReadOperate
         this.Class = this.CreateClass();
         this.Import = this.CreateImport();
         this.Part = this.CreatePart();
-        this.Field = new Field();
-        this.Field.Init();
+        this.Field = this.CreateField();
         this.Maide = new Maide();
         this.Maide.Init();
         this.Var = new Var();
@@ -54,6 +53,14 @@ public class ReadCountOperate : ReadOperate
     {
         Part a;
         a = new Part();
+        a.Init();
+        return a;
+    }
+
+    protected virtual Field CreateField()
+    {
+        Field a;
+        a = new Field();
         a.Init();
         return a;
     }
