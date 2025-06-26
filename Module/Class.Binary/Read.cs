@@ -8,9 +8,8 @@ public class Read : Any
         this.InfraInfra = InfraInfra.This;
         this.ListInfra = ListInfra.This;
         this.TextInfra = TextInfra.This;
-        this.CountOperate = new ReadCountOperate();
-        this.CountOperate.Read = this;
-        this.CountOperate.Init();
+
+        this.CountOperate = this.CreateCountOperate();
         this.StringOperate = new ReadStringOperate();
         this.StringOperate.Read = this;
         this.StringOperate.Init();
@@ -21,6 +20,15 @@ public class Read : Any
         this.Arg = new ReadArg();
         this.Arg.Init();
         return true;
+    }
+
+    protected virtual ReadCountOperate CreateCountOperate()
+    {
+        ReadCountOperate a;
+        a = new ReadCountOperate();
+        a.Read = this;
+        a.Init();
+        return a;
     }
 
     public virtual Data Data { get; set; }
