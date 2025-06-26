@@ -60,7 +60,7 @@ public class Read : Any
 
         this.Operate = this.CountOperate;
 
-        this.ResetStageIndex();
+        this.ResetStage();
         this.ExecuteStage();
 
         arg.StringCountData = new Data();
@@ -77,7 +77,7 @@ public class Read : Any
 
         this.Operate = this.StringOperate;
 
-        this.ResetStageIndex();
+        this.ResetStage();
         this.ExecuteStage();
 
         arg.BinaryArray = this.ListInfra.ArrayCreate(arg.BinaryIndex);
@@ -106,14 +106,14 @@ public class Read : Any
 
         this.Operate = this.SetOperate;
 
-        this.ResetStageIndex();
+        this.ResetStage();
         this.ExecuteStage();
 
         this.Arg = null;
         return true;
     }
 
-    public virtual bool ResetStageIndex()
+    public virtual bool ResetStage()
     {
         ReadArg a;
         a = this.Arg;
