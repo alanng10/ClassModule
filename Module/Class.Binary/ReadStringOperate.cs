@@ -198,8 +198,6 @@ public class ReadStringOperate : ReadOperate
         ReadArg arg;
         arg = read.Arg;
 
-        long index;
-        index = arg.Index;
         long stringIndex;
         stringIndex = arg.StringIndex;
 
@@ -221,13 +219,13 @@ public class ReadStringOperate : ReadOperate
         while (i < count)
         {
             long ka;
-            ka = data.Get(index + i);
+            ka = data.Get(arg.Index + i);
 
             this.TextInfra.DataCharSet(stringTextData, textIndex + i, ka);
             i = i + 1;
         }
         
-        arg.Index = index + count;
+        arg.Index = arg.Index + count;
         arg.StringIndex = stringIndex + 1;
         arg.StringTextIndex = textIndex + count;
         return this.String;
