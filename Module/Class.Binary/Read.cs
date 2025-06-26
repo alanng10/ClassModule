@@ -918,14 +918,13 @@ public class Read : Any
 
     protected virtual Value ExecuteClassIndex()
     {
-        long u;
-        u = this.ExecuteIndex();
-        if (u == -1)
+        long value;
+        value = this.ExecuteIndex();
+        if (value == -1)
         {
             return null;
         }
-        long value;
-        value = u;
+
         Value a;
         a = this.Operate.ExecuteClassIndex();
         a.Int = value;
