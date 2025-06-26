@@ -193,10 +193,8 @@ public class ReadStringOperate : ReadOperate
 
     public override String ExecuteString(long count)
     {
-        Read read;
-        read = this.Read;
         ReadArg arg;
-        arg = read.Arg;
+        arg = this.Read.Arg;
 
         long kd;
         kd = arg.StringIndex;
@@ -208,7 +206,7 @@ public class ReadStringOperate : ReadOperate
         while (i < count)
         {
             long ka;
-            ka = read.Data.Get(arg.Index + i);
+            ka = this.Read.Data.Get(arg.Index + i);
 
             this.TextInfra.DataCharSet(arg.StringTextData, arg.StringTextIndex + i, ka);
             i = i + 1;
