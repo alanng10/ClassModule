@@ -112,4 +112,12 @@ class ReadCountOperate : ReadOperate
         arg.BinaryIndex : arg.BinaryIndex + 1;
         return this.Binary;
     }
+
+    maide prusate Class ExecuteClass()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.ClassIndex : arg.ClassIndex + 1;
+        return this.Class;
+    }
 }
