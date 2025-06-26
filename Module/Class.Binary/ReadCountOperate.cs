@@ -10,8 +10,7 @@ public class ReadCountOperate : ReadOperate
         this.Binary = this.CreateBinary();
         this.Class = this.CreateClass();
         this.Import = this.CreateImport();
-        this.Part = new Part();
-        this.Part.Init();
+        this.Part = this.CreatePart();
         this.Field = new Field();
         this.Field.Init();
         this.Maide = new Maide();
@@ -47,6 +46,14 @@ public class ReadCountOperate : ReadOperate
     {
         Import a;
         a = new Import();
+        a.Init();
+        return a;
+    }
+
+    protected virtual Part CreatePart()
+    {
+        Part a;
+        a = new Part();
         a.Init();
         return a;
     }
