@@ -198,11 +198,8 @@ public class ReadStringOperate : ReadOperate
         ReadArg arg;
         arg = read.Arg;
 
-        long stringIndex;
-        stringIndex = arg.StringIndex;
-
         long kd;
-        kd = stringIndex;
+        kd = arg.StringIndex;
         kd = kd * sizeof(long);
         this.InfraInfra.DataIntSet(arg.StringCountData, kd, count);
 
@@ -226,7 +223,7 @@ public class ReadStringOperate : ReadOperate
         }
         
         arg.Index = arg.Index + count;
-        arg.StringIndex = stringIndex + 1;
+        arg.StringIndex = arg.StringIndex + 1;
         arg.StringTextIndex = textIndex + count;
         return this.String;
     }
