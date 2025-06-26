@@ -12,9 +12,6 @@ public class Read : Any
         this.CountOperate = this.CreateCountOperate();
         this.StringOperate = this.CreateStringOperate();
         this.SetOperate = this.CreateSetOperate();
-
-        this.Arg = new ReadArg();
-        this.Arg.Init();
         return true;
     }
 
@@ -58,21 +55,8 @@ public class Read : Any
 
     public virtual bool Execute()
     {
-        ListInfra listInfra;
-        listInfra = this.ListInfra;
-
-        int dataCount;
-        dataCount = (int)this.Data.Count;
-        Range range;
-        range = this.Range;
-        if (!this.InfraInfra.ValidRange(dataCount, range.Index, range.Count))
-        {
-            return false;
-        }
-
-        ReadArg arg;
-        arg = new ReadArg();
-        this.Arg = arg;
+        this.Arg = new ReadArg();
+        this.Arg.Init();
 
         this.Operate = this.CountOperate;
 
@@ -96,17 +80,17 @@ public class Read : Any
         this.ResetStageIndex();
         this.ExecuteStage();
 
-        arg.BinaryArray = listInfra.ArrayCreate(arg.BinaryIndex);
-        arg.ClassArray = listInfra.ArrayCreate(arg.ClassIndex);
-        arg.ImportArray = listInfra.ArrayCreate(arg.ImportIndex);
-        arg.PartArray = listInfra.ArrayCreate(arg.PartIndex);
-        arg.FieldArray = listInfra.ArrayCreate(arg.FieldIndex);
-        arg.MaideArray = listInfra.ArrayCreate(arg.MaideIndex);
-        arg.VarArray = listInfra.ArrayCreate(arg.VarIndex);
-        arg.ClassIndexArray = listInfra.ArrayCreate(arg.ClassIndexIndex);
-        arg.ModuleRefArray = listInfra.ArrayCreate(arg.ModuleRefIndex);
-        arg.StringArray = listInfra.ArrayCreate(arg.StringIndex);
-        arg.ArrayArray = listInfra.ArrayCreate(arg.ArrayIndex);
+        arg.BinaryArray = this.ListInfra.ArrayCreate(arg.BinaryIndex);
+        arg.ClassArray = this.ListInfra.ArrayCreate(arg.ClassIndex);
+        arg.ImportArray = this.ListInfra.ArrayCreate(arg.ImportIndex);
+        arg.PartArray = this.ListInfra.ArrayCreate(arg.PartIndex);
+        arg.FieldArray = this.ListInfra.ArrayCreate(arg.FieldIndex);
+        arg.MaideArray = this.ListInfra.ArrayCreate(arg.MaideIndex);
+        arg.VarArray = this.ListInfra.ArrayCreate(arg.VarIndex);
+        arg.ClassIndexArray = this.ListInfra.ArrayCreate(arg.ClassIndexIndex);
+        arg.ModuleRefArray = this.ListInfra.ArrayCreate(arg.ModuleRefIndex);
+        arg.StringArray = this.ListInfra.ArrayCreate(arg.StringIndex);
+        arg.ArrayArray = this.ListInfra.ArrayCreate(arg.ArrayIndex);
 
         this.ExecuteCreateBinary();
         this.ExecuteCreateClass();
