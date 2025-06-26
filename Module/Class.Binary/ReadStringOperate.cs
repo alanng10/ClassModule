@@ -35,6 +35,7 @@ public class ReadStringOperate : ReadOperate
     protected virtual InfraInfra InfraInfra { get; set; }
     protected virtual ListInfra ListInfra { get; set; }
     protected virtual TextInfra TextInfra { get; set; }
+    protected virtual ClassInfra ClassInfra { get; set; }
     protected virtual Binary Binary { get; set; }
     protected virtual Class Class { get; set; }
     protected virtual Import Import { get; set; }
