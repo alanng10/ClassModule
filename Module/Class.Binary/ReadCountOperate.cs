@@ -13,8 +13,7 @@ public class ReadCountOperate : ReadOperate
         this.Part = this.CreatePart();
         this.Field = this.CreateField();
         this.Maide = this.CreateMaide();
-        this.Var = new Var();
-        this.Var.Init();
+        this.Var = this.CreateVar();
         this.ClassIndex = new Value();
         this.ClassIndex.Init();
         this.ModuleRef = new ModuleRef();
@@ -68,6 +67,14 @@ public class ReadCountOperate : ReadOperate
     {
         Maide a;
         a = new Maide();
+        a.Init();
+        return a;
+    }
+
+    protected virtual Var CreateVar()
+    {
+        Var a;
+        a = new Var();
         a.Init();
         return a;
     }
