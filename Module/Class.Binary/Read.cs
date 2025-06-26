@@ -24,16 +24,15 @@ public class Read : Any
     }
 
     public virtual Data Data { get; set; }
-    public virtual Range Range { get; set; }
-    public virtual Binary Binary { get; set; }
+    public virtual Binary Result { get; set; }
     public virtual ReadArg Arg { get; set; }
+    public virtual ReadOperate Operate { get; set; }
+    public virtual ReadCountOperate CountOperate { get; set; }
+    public virtual ReadStringOperate StringOperate { get; set; }
+    public virtual ReadSetOperate SetOperate { get; set; }
     protected virtual InfraInfra InfraInfra { get; set; }
     protected virtual ListInfra ListInfra { get; set; }
     protected virtual TextInfra TextInfra { get; set; }
-    protected virtual ReadOperate Operate { get; set; }
-    protected virtual ReadCountOperate CountOperate { get; set; }
-    protected virtual ReadStringOperate StringOperate { get; set; }
-    protected virtual ReadSetOperate SetOperate { get; set; }
 
     public virtual bool Execute()
     {
