@@ -157,11 +157,11 @@ public class Read : Any
         i = 0;
         while (i < count)
         {
-            long ka;
-            ka = i * sizeof(long);
+            long kaa;
+            kaa = i * sizeof(long);
 
             long oa;
-            oa = this.InfraInfra.DataIntGet(arg.StringCountData, ka);
+            oa = this.InfraInfra.DataIntGet(arg.StringCountData, kaa);
 
             text.Range.Index = total;
             text.Range.Count = oa;
