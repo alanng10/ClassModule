@@ -961,16 +961,14 @@ public class Read : Any
 
     protected virtual String ExecuteString()
     {
-        long o;
-        o = this.ExecuteCount();
-        if (o == -1)
+        long count;
+        count = this.ExecuteCount();
+        if (count == -1)
         {
             return null;
         }
-        long count;
-        count = o;
-        
-        if (!this.CheckCount(count))
+
+        if (!this.ValidCount(count))
         {
             return null;
         }
