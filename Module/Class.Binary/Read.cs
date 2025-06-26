@@ -160,15 +160,19 @@ public class Read : Any
             long kaa;
             kaa = i * sizeof(long);
 
-            long oa;
-            oa = this.InfraInfra.DataIntGet(arg.StringCountData, kaa);
+            long ka;
+            ka = this.InfraInfra.DataIntGet(arg.StringCountData, kaa);
 
             text.Range.Index = total;
-            text.Range.Count = oa;
-            String oo;
-            oo = this.TextInfra.StringCreate(text);
-            array.SetAt(i, oo);
-            total = total + oa;
+            text.Range.Count = ka;
+
+            String k;
+            k = this.TextInfra.StringCreate(text);
+
+            array.SetAt(i, k);
+
+            total = total + ka;
+
             i = i + 1;
         }
         return true;
