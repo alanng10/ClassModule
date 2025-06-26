@@ -104,4 +104,12 @@ class ReadCountOperate : ReadOperate
     field precate ModuleRef ModuleRef { get { return data; } set { data : value; } }
     field precate String String { get { return data; } set { data : value; } }
     field precate Array Array { get { return data; } set { data : value; } }
+
+    maide prusate Binary ExecuteBinary()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.BinaryIndex : arg.BinaryIndex + 1;
+        return this.Binary;
+    }
 }
