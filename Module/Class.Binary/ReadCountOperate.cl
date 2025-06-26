@@ -35,4 +35,20 @@ class ReadCountOperate : ReadOperate
         a.Init();
         return a;
     }
+
+    maide precate Import CreateImport()
+    {
+        var Import a;
+        a : new Import;
+        a.Init();
+        return a;
+    }
+
+    maide precate Part CreatePart()
+    {
+        var Part a;
+        a : new Part;
+        a.Init();
+        return a;
+    }
 }
