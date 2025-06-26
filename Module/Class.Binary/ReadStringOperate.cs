@@ -235,20 +235,15 @@ public class ReadStringOperate : ReadOperate
 
     public override Array ExecuteArray(long count)
     {
-        Read read;
-        read = this.Read;
         ReadArg arg;
-        arg = read.Arg;
+        arg = this.Read.Arg;
 
-        long arrayIndex;
-        arrayIndex = arg.ArrayIndex;
+        long kd;
+        kd = arg.ArrayIndex;
+        kd = kd * sizeof(long);
+        this.InfraInfra.DataIntSet(arg.ArrayCountData, kd, count);
 
-        long nn;
-        nn = arrayIndex;
-        nn = nn * sizeof(ulong);
-        this.InfraInfra.DataIntSet(arg.ArrayCountData, nn, count);
-
-        arg.ArrayIndex = arrayIndex + 1;
+        arg.ArrayIndex = arg.ArrayIndex + 1;
         return this.Array;
     }
 
