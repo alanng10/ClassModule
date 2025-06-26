@@ -90,5 +90,16 @@ class Read : Any
         arg.ModuleRefArray : this.ListInfra.ArrayCreate(arg.ModuleRefIndex);
         arg.StringArray : this.ListInfra.ArrayCreate(arg.StringIndex);
         arg.ArrayArray : this.ListInfra.ArrayCreate(arg.ArrayIndex);
+
+        this.ExecuteCreateBinary();
+        this.ExecuteCreateClass();
+        this.ExecuteCreateImport();
+        this.ExecuteCreatePart();
+        this.ExecuteCreateField();
+        this.ExecuteCreateMaide();
+        this.ExecuteCreateVar();
+        this.ExecuteCreateModuleRef();
+        this.ExecuteCreateString();
+        this.ExecuteCreateArray();
     }
 }
