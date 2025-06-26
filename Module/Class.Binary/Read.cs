@@ -990,21 +990,20 @@ public class Read : Any
 
     public virtual long ExecuteInt()
     {
-        int count;
-        count = sizeof(ulong);
-        if (!this.CheckCount(count))
+        long count;
+        count = sizeof(long);
+        if (!this.ValidCount(count))
         {
             return -1;
         }
-        InfraInfra infraInfra;
-        infraInfra = this.InfraInfra;
+
         ReadArg arg;
         arg = this.Arg;
         long index;
         index = arg.Index;
 
         long a;
-        a = infraInfra.DataIntGet(this.Data, index);
+        a = this.InfraInfra.DataIntGet(this.Data, index);
 
         index = index + count;
         arg.Index = index;
