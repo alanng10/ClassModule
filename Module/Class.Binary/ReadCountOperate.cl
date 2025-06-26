@@ -90,4 +90,18 @@ class ReadCountOperate : ReadOperate
     {
         return this.ListInfra.ArrayCreate(0);
     }
+
+    field precate ListInfra ListInfra { get { return data; } set { data : value; } }
+    field precate TextInfra TextInfra { get { return data; } set { data : value; } }
+    field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
+    field precate Binary Binary { get { return data; } set { data : value; } }
+    field precate Class Class { get { return data; } set { data : value; } }
+    field precate Import Import { get { return data; } set { data : value; } }
+    field precate Part Part { get { return data; } set { data : value; } }
+    field precate Field Field { get { return data; } set { data : value; } }
+    field precate Maide Maide { get { return data; } set { data : value; } }
+    field precate Var Var { get { return data; } set { data : value; } }
+    field precate ModuleRef ModuleRef { get { return data; } set { data : value; } }
+    field precate String String { get { return data; } set { data : value; } }
+    field precate Array Array { get { return data; } set { data : value; } }
 }
