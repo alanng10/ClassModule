@@ -154,6 +154,7 @@ public class Read : Any
 
         long count;
         count = array.Count;
+
         long i;
         i = 0;
         while (i < count)
@@ -220,7 +221,6 @@ public class Read : Any
 
         long i;
         i = 0;
-
         while (i < count)
         {
             Binary k;
@@ -244,7 +244,6 @@ public class Read : Any
 
         long i;
         i = 0;
-
         while (i < count)
         {
             Class k;
@@ -265,6 +264,7 @@ public class Read : Any
 
         long count;
         count = array.Count;
+
         long i;
         i = 0;
         while (i < count)
@@ -272,7 +272,9 @@ public class Read : Any
             Import o;
             o = new Import();
             o.Init();
+
             array.SetAt(i, o);
+
             i = i + 1;
         }
         return true;
