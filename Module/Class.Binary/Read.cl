@@ -74,5 +74,21 @@ class Read : Any
         arg.ArrayCountData : new Data;
         arg.ArrayCountData.Count : arg.ArrayIndex * 8;
         arg.ArrayCountData.Init();
+
+        this.Operate : this.StringOperate;
+
+        this.ResetStage();
+        this.ExecuteStage();
+
+        arg.BinaryArray : this.ListInfra.ArrayCreate(arg.BinaryIndex);
+        arg.ClassArray : this.ListInfra.ArrayCreate(arg.ClassIndex);
+        arg.ImportArray : this.ListInfra.ArrayCreate(arg.ImportIndex);
+        arg.PartArray : this.ListInfra.ArrayCreate(arg.PartIndex);
+        arg.FieldArray : this.ListInfra.ArrayCreate(arg.FieldIndex);
+        arg.MaideArray : this.ListInfra.ArrayCreate(arg.MaideIndex);
+        arg.VarArray : this.ListInfra.ArrayCreate(arg.VarIndex);
+        arg.ModuleRefArray : this.ListInfra.ArrayCreate(arg.ModuleRefIndex);
+        arg.StringArray : this.ListInfra.ArrayCreate(arg.StringIndex);
+        arg.ArrayArray : this.ListInfra.ArrayCreate(arg.ArrayIndex);
     }
 }
