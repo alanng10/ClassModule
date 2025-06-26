@@ -217,14 +217,18 @@ public class Read : Any
 
         long count;
         count = array.Count;
+
         long i;
         i = 0;
+
         while (i < count)
         {
-            Binary o;
-            o = new Binary();
-            o.Init();
-            array.SetAt(i, o);
+            Binary k;
+            k = new Binary();
+            k.Init();
+
+            array.SetAt(i, k);
+
             i = i + 1;
         }
         return true;
