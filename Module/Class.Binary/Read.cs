@@ -1012,10 +1012,11 @@ public class Read : Any
 
     public virtual long ExecuteByte()
     {
-        if (!(this.CheckCount(1)))
+        if (!(this.ValidCount(1)))
         {
             return -1;
         }
+
         ReadArg arg;
         arg = this.Arg;
         long index;
