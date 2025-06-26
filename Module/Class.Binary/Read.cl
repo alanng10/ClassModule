@@ -48,4 +48,8 @@ class Read : Any
     field prusate ReadCountOperate CountOperate { get { return data; } set { data : value; } }
     field prusate ReadStringOperate StringOperate { get { return data; } set { data : value; } }
     field prusate ReadSetOperate SetOperate { get { return data; } set { data : value; } }
+    field precate InfraInfra InfraInfra { get { return data; } set { data : value; } }
+    field precate ListInfra ListInfra { get { return data; } set { data : value; } }
+    field precate TextInfra TextInfra { get { return data; } set { data : value; } }
+    field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
 }
