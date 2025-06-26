@@ -128,4 +128,12 @@ class ReadCountOperate : ReadOperate
         arg.ImportIndex : arg.ImportIndex + 1;
         return this.Import;
     }
+
+    maide prusate Part ExecutePart()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.PartIndex : arg.PartIndex + 1;
+        return this.Part;
+    }
 }
