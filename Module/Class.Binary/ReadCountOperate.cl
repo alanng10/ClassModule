@@ -144,4 +144,12 @@ class ReadCountOperate : ReadOperate
         arg.FieldIndex : arg.FieldIndex + 1;
         return this.Field;
     }
+
+    maide prusate Maide ExecuteMaide()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.MaideIndex : arg.MaideIndex + 1;
+        return this.Maide;
+    }
 }
