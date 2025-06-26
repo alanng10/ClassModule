@@ -8,6 +8,7 @@ public class Read : Any
         this.InfraInfra = InfraInfra.This;
         this.ListInfra = ListInfra.This;
         this.TextInfra = TextInfra.This;
+        this.ClassInfra = ClassInfra.This;
 
         this.CountOperate = this.CreateCountOperate();
         this.StringOperate = this.CreateStringOperate();
@@ -52,6 +53,7 @@ public class Read : Any
     protected virtual InfraInfra InfraInfra { get; set; }
     protected virtual ListInfra ListInfra { get; set; }
     protected virtual TextInfra TextInfra { get; set; }
+    protected virtual ClassInfra ClassInfra { get; set; }
 
     public virtual bool Execute()
     {
@@ -408,8 +410,7 @@ public class Read : Any
         while (i < count)
         {
             ModuleRef k;
-            k = new ModuleRef();
-            k.Init();
+            k = this.ClassInfra.ModuleRefCreate(null, -1);
 
             array.SetAt(i, k);
 
