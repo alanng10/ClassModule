@@ -356,14 +356,17 @@ public class Read : Any
 
         long count;
         count = array.Count;
+
         long i;
         i = 0;
         while (i < count)
         {
-            Var o;
-            o = new Var();
-            o.Init();
-            array.SetAt(i, o);
+            Var k;
+            k = new Var();
+            k.Init();
+
+            array.SetAt(i, k);
+
             i = i + 1;
         }
         return true;
