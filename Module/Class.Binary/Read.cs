@@ -1012,7 +1012,7 @@ public class Read : Any
 
     public virtual long ExecuteByte()
     {
-        if (!(this.ValidCount(1)))
+        if (!this.ValidCount(1))
         {
             return -1;
         }
