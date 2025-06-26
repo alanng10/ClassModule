@@ -13,4 +13,13 @@ class Read : Any
         this.SetOperate : this.CreateSetOperate();
         return true;
     }
+
+    maide precate ReadCountOperate CreateCountOperate()
+    {
+        var ReadCountOperate a;
+        a : new ReadCountOperate;
+        a.Read : this;
+        a.Init();
+        return a;
+    }
 }
