@@ -310,14 +310,17 @@ public class Read : Any
 
         long count;
         count = array.Count;
+
         long i;
         i = 0;
         while (i < count)
         {
-            Field o;
-            o = new Field();
-            o.Init();
-            array.SetAt(i, o);
+            Field k;
+            k = new Field();
+            k.Init();
+
+            array.SetAt(i, k);
+
             i = i + 1;
         }
         return true;
