@@ -212,4 +212,9 @@ class ReadStringOperate : ReadOperate
         arg.ArrayIndex : arg.ArrayIndex + 1;
         return this.Array;
     }
+
+    maide prusate Bool ExecuteArrayItemSet(var Array array, var Int index, var Any value)
+    {
+        return true;
+    }
 }
