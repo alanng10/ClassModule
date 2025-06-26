@@ -160,4 +160,12 @@ class ReadCountOperate : ReadOperate
         arg.VarIndex : arg.VarIndex + 1;
         return this.Var;
     }
+
+    maide prusate ModuleRef ExecuteModuleRef()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.ModuleRefIndex : arg.ModuleRefIndex + 1;
+        return this.ModuleRef;
+    }
 }
