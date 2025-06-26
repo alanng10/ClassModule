@@ -105,7 +105,7 @@ public class ReadSetOperate : ReadOperate
         long index;
         index = arg.ModuleRefIndex;
         ModuleRef a;
-        a = (ModuleRef)arg.ModuleRefArray.GetAt(index);
+        a = arg.ModuleRefArray.GetAt(index) as ModuleRef;
         arg.ModuleRefIndex = index + 1;
         return a;
     }
