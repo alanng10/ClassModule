@@ -152,4 +152,12 @@ class ReadCountOperate : ReadOperate
         arg.MaideIndex : arg.MaideIndex + 1;
         return this.Maide;
     }
+
+    maide prusate Var ExecuteVar()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.VarIndex : arg.VarIndex + 1;
+        return this.Var;
+    }
 }
