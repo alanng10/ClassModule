@@ -16,6 +16,7 @@ public class ReadCountOperate : ReadOperate
         this.Field = this.CreateField();
         this.Maide = this.CreateMaide();
         this.Var = this.CreateVar();
+        this.ClassIndex = this.CreateClassIndex();
         this.ModuleRef = this.CreateModuleRef();
         this.String = this.TextInfra.Zero;
         this.Array = this.ListInfra.ArrayCreate(0);
@@ -74,6 +75,14 @@ public class ReadCountOperate : ReadOperate
     {
         Var a;
         a = new Var();
+        a.Init();
+        return a;
+    }
+
+    protected virtual Value CreateClassIndex()
+    {
+        Value a;
+        a = new Value();
         a.Init();
         return a;
     }
