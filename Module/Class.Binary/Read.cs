@@ -136,83 +136,6 @@ public class Read : Any
         return true;
     }
 
-    protected virtual bool ExecuteCreateString()
-    {
-        ReadArg arg;
-        arg = this.Arg;
-
-        Array array;
-        array = arg.StringArray;
-
-        Text text;
-        text = new Text();
-        text.Init();
-        text.Range = new Range();
-        text.Range.Init();
-        text.Data = arg.StringTextData;
-
-        long total;
-        total = 0;
-
-        long count;
-        count = array.Count;
-
-        long i;
-        i = 0;
-        while (i < count)
-        {
-            long kaa;
-            kaa = i * sizeof(long);
-
-            long ka;
-            ka = this.InfraInfra.DataIntGet(arg.StringCountData, kaa);
-
-            text.Range.Index = total;
-            text.Range.Count = ka;
-
-            String k;
-            k = this.TextInfra.StringCreate(text);
-
-            array.SetAt(i, k);
-
-            total = total + ka;
-
-            i = i + 1;
-        }
-        return true;
-    }
-
-    protected virtual bool ExecuteCreateArray()
-    {
-        ReadArg arg;
-        arg = this.Arg;
-
-        Array array;
-        array = arg.ArrayArray;
-
-        long count;
-        count = array.Count;
-
-        long i;
-        i = 0;
-        while (i < count)
-        {
-            long index;
-            index = i * sizeof(long);
-
-            long ka;
-            ka = this.InfraInfra.DataIntGet(arg.ArrayCountData, index);
-
-            Array k;
-            k = this.ListInfra.ArrayCreate(ka);
-
-            array.SetAt(i, k);
-
-            i = i + 1;
-        }
-        return true;
-    }
-
     protected virtual bool ExecuteCreateBinary()
     {
         Array array;
@@ -411,6 +334,83 @@ public class Read : Any
         {
             ModuleRef k;
             k = this.ClassInfra.ModuleRefCreate(null, -1);
+
+            array.SetAt(i, k);
+
+            i = i + 1;
+        }
+        return true;
+    }
+
+    protected virtual bool ExecuteCreateString()
+    {
+        ReadArg arg;
+        arg = this.Arg;
+
+        Array array;
+        array = arg.StringArray;
+
+        Text text;
+        text = new Text();
+        text.Init();
+        text.Range = new Range();
+        text.Range.Init();
+        text.Data = arg.StringTextData;
+
+        long total;
+        total = 0;
+
+        long count;
+        count = array.Count;
+
+        long i;
+        i = 0;
+        while (i < count)
+        {
+            long kaa;
+            kaa = i * sizeof(long);
+
+            long ka;
+            ka = this.InfraInfra.DataIntGet(arg.StringCountData, kaa);
+
+            text.Range.Index = total;
+            text.Range.Count = ka;
+
+            String k;
+            k = this.TextInfra.StringCreate(text);
+
+            array.SetAt(i, k);
+
+            total = total + ka;
+
+            i = i + 1;
+        }
+        return true;
+    }
+
+    protected virtual bool ExecuteCreateArray()
+    {
+        ReadArg arg;
+        arg = this.Arg;
+
+        Array array;
+        array = arg.ArrayArray;
+
+        long count;
+        count = array.Count;
+
+        long i;
+        i = 0;
+        while (i < count)
+        {
+            long index;
+            index = i * sizeof(long);
+
+            long ka;
+            ka = this.InfraInfra.DataIntGet(arg.ArrayCountData, index);
+
+            Array k;
+            k = this.ListInfra.ArrayCreate(ka);
 
             array.SetAt(i, k);
 
