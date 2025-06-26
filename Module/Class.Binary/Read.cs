@@ -10,9 +10,7 @@ public class Read : Any
         this.TextInfra = TextInfra.This;
 
         this.CountOperate = this.CreateCountOperate();
-        this.StringOperate = new ReadStringOperate();
-        this.StringOperate.Read = this;
-        this.StringOperate.Init();
+        this.StringOperate = this.CreateStringOperate();
         this.SetOperate = new ReadSetOperate();
         this.SetOperate.Read = this;
         this.SetOperate.Init();
@@ -26,6 +24,15 @@ public class Read : Any
     {
         ReadCountOperate a;
         a = new ReadCountOperate();
+        a.Read = this;
+        a.Init();
+        return a;
+    }
+
+    protected virtual ReadStringOperate CreateStringOperate()
+    {
+        ReadStringOperate a;
+        a = new ReadStringOperate();
         a.Read = this;
         a.Init();
         return a;
