@@ -31,7 +31,6 @@ public class ReadStringOperate : ReadOperate
         return true;
     }
 
-    public virtual Read Read { get; set; }
     protected virtual InfraInfra InfraInfra { get; set; }
     protected virtual ListInfra ListInfra { get; set; }
     protected virtual TextInfra TextInfra { get; set; }
