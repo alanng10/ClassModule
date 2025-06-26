@@ -40,4 +40,12 @@ class Read : Any
         a.Init();
         return a;
     }
+
+    field prusate Data Data { get { return data; } set { data : value; } }
+    field prusate Binary Result { get { return data; } set { data : value; } }
+    field prusate ReadArg Arg { get { return data; } set { data : value; } }
+    field prusate ReadOperate Operate { get { return data; } set { data : value; } }
+    field prusate ReadCountOperate CountOperate { get { return data; } set { data : value; } }
+    field prusate ReadStringOperate StringOperate { get { return data; } set { data : value; } }
+    field prusate ReadSetOperate SetOperate { get { return data; } set { data : value; } }
 }
