@@ -35,4 +35,16 @@ class ReadSetOperate : ReadOperate
         arg.ImportIndex : index + 1;
         return a;
     }
+
+    maide prusate Part ExecutePart()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        var Int index;
+        index : arg.PartIndex;
+        var Part a;
+        a : cast Part(arg.PartArray.Get(index));
+        arg.PartIndex : index + 1;
+        return a;
+    }
 }
