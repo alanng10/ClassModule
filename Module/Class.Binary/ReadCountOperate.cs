@@ -8,8 +8,7 @@ public class ReadCountOperate : ReadOperate
         this.ListInfra = ListInfra.This;
         this.TextInfra = TextInfra.This;
         this.Binary = this.CreateBinary();
-        this.Class = new Class();
-        this.Class.Init();
+        this.Class = this.CreateClass();
         this.Import = new Import();
         this.Import.Init();
         this.Part = new Part();
@@ -33,6 +32,14 @@ public class ReadCountOperate : ReadOperate
     {
         Binary a;
         a = new Binary();
+        a.Init();
+        return a;
+    }
+
+    protected virtual Class CreateClass()
+    {
+        Class a;
+        a = new Class();
         a.Init();
         return a;
     }
