@@ -130,4 +130,27 @@ class Read : Any
         a.ArrayIndex : 0;
         return true;
     }
+
+    maide precate Bool ExecuteCreateBinary()
+    {
+        var Array array;
+        array : this.Arg.BinaryArray;
+
+        var Int count;
+        count : array.Count;
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Binary k;
+            k : new Binary;
+            k.Init();
+
+            array.Set(i, k);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
