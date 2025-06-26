@@ -178,4 +178,17 @@ class ReadCountOperate : ReadOperate
         arg.StringTextIndex : arg.StringTextIndex + count;
         return this.String;
     }
+
+    maide prusate Array ExecuteArray(var Int count)
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.ArrayIndex : arg.ArrayIndex + 1;
+        return this.Array;
+    }
+
+    maide prusate Bool ExecuteArrayItemSet(var Array array, var Int index, var Any value)
+    {
+        return true;
+    }
 }
