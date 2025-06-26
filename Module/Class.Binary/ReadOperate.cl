@@ -33,4 +33,16 @@ class ReadOperate : Any
     maide prusate ModuleRef ExecuteModuleRef()
     {
     }
+
+    maide prusate String ExecuteString(var Int count)
+    {
+    }
+
+    maide prusate Array ExecuteArray(var Int count)
+    {
+    }
+
+    maide prusate Bool ExecuteArrayItemSet(var Array array, var Int index, var Any value)
+    {
+    }
 }
