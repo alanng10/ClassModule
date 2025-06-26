@@ -198,9 +198,6 @@ public class ReadStringOperate : ReadOperate
         ReadArg arg;
         arg = read.Arg;
 
-        TextInfra textInfra;
-        textInfra = this.TextInfra;
-
         long index;
         index = arg.Index;
         long stringIndex;
@@ -228,7 +225,7 @@ public class ReadStringOperate : ReadOperate
             ooa = (byte)oo;
             long oob;
             oob = ooa;
-            textInfra.DataCharSet(stringTextData, oa + i, oob);
+            this.TextInfra.DataCharSet(stringTextData, oa + i, oob);
             i = i + 1;
         }
         
