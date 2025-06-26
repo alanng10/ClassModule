@@ -978,12 +978,12 @@ public class Read : Any
         return a;
     }
 
-    public virtual long ExecuteCount()
+    public virtual long ExecuteIndex()
     {
         return this.ExecuteInt();
     }
 
-    public virtual long ExecuteIndex()
+    public virtual long ExecuteCount()
     {
         return this.ExecuteInt();
     }
