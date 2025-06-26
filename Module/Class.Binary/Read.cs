@@ -851,14 +851,12 @@ public class Read : Any
 
     protected virtual Var ExecuteVar()
     {
-        long u;
-        u = this.ExecuteIndex();
-        if (u == -1)
+        long varClass;
+        varClass = this.ExecuteIndex();
+        if (varClass == -1)
         {
             return null;
         }
-        long varClass;
-        varClass = u;
 
         String name;
         name = this.ExecuteString();
