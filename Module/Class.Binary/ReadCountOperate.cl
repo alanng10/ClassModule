@@ -75,4 +75,19 @@ class ReadCountOperate : ReadOperate
         a.Init();
         return a;
     }
+
+    maide precate ModuleRef CreateModuleRef()
+    {
+        return this.ClassInfra.ModuleRefCreate(null, null);
+    }
+
+    maide precate String CreateString()
+    {
+        return this.TextInfra.Zero;
+    }
+
+    maide precate Array CreateArray()
+    {
+        return this.ListInfra.ArrayCreate(0);
+    }
 }
