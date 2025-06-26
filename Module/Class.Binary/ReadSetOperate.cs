@@ -45,7 +45,7 @@ public class ReadSetOperate : ReadOperate
         long index;
         index = arg.PartIndex;
         Part a;
-        a = (Part)arg.PartArray.GetAt(index);
+        a = arg.PartArray.GetAt(index) as Part;
         arg.PartIndex = index + 1;
         return a;
     }
