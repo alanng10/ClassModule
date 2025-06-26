@@ -93,7 +93,7 @@ public class ReadSetOperate : ReadOperate
         long index;
         index = arg.ClassIndexIndex;
         Value a;
-        a = (Value)arg.ClassIndexArray.GetAt(index);
+        a = arg.ClassIndexArray.GetAt(index) as Value;
         arg.ClassIndexIndex = index + 1;
         return a;
     }
