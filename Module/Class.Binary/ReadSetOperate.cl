@@ -11,4 +11,16 @@ class ReadSetOperate : ReadOperate
         arg.BinaryIndex : index + 1;
         return a;
     }
+
+    maide prusate Class ExecuteClass()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        var Int index;
+        index : arg.ClassIndex;
+        var Class a;
+        a : cast Class(arg.ClassArray.Get(index));
+        arg.ClassIndex : index + 1;
+        return a;
+    }
 }
