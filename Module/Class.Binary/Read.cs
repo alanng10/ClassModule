@@ -785,13 +785,12 @@ public class Read : Any
             return null;
         }
 
-        u = this.ExecuteByte();
-        if (u == -1)
+        long count;
+        count = this.ExecuteByte();
+        if (count == -1)
         {
             return null;
         }
-        long count;
-        count = u;
 
         String name;
         name = this.ExecuteString();
