@@ -66,5 +66,13 @@ class Read : Any
         arg.StringCountData : new Data;
         arg.StringCountData.Count : arg.StringIndex * 8;
         arg.StringCountData.Init();
+
+        arg.StringTextData : new Data;
+        arg.StringTextData.Count : arg.StringTextIndex * 4;
+        arg.StringTextData.Init();
+
+        arg.ArrayCountData : new Data;
+        arg.ArrayCountData.Count : arg.ArrayIndex * 8;
+        arg.ArrayCountData.Init();
     }
 }
