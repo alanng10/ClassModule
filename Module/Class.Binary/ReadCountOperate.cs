@@ -14,8 +14,6 @@ public class ReadCountOperate : ReadOperate
         this.Field = this.CreateField();
         this.Maide = this.CreateMaide();
         this.Var = this.CreateVar();
-        this.ClassIndex = new Value();
-        this.ClassIndex.Init();
         this.ModuleRef = new ModuleRef();
         this.ModuleRef.Init();
         this.String = this.TextInfra.Zero;
