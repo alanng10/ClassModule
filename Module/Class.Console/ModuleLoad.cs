@@ -108,7 +108,7 @@ public class ModuleLoad : TextAdd
             return false;
         }
 
-        b = this.SetEntry();
+        b = this.ExecuteEntry();
         if (!b)
         {
             return false;
@@ -766,7 +766,7 @@ public class ModuleLoad : TextAdd
         return true;
     }
 
-    protected virtual bool SetEntry()
+    protected virtual bool ExecuteEntry()
     {
         String entry;
         entry = null;
