@@ -821,4 +821,27 @@ class Read : Any
         }
         return array;
     }
+
+    maide precate Var ExecuteVar()
+    {
+        var Int varClass;
+        varClass : this.ExecuteIndex();
+        inf (varClass = null)
+        {
+            return null;
+        }
+
+        var String name;
+        name : this.ExecuteString();
+        inf (name = null)
+        {
+            return null;
+        }
+
+        var Var a;
+        a : this.Operate.ExecuteVar();
+        a.Class : varClass;
+        a.Name : name;
+        return a;
+    }
 }
