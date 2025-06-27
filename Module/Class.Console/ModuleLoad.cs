@@ -25,7 +25,7 @@ public class ModuleLoad : TextAdd
     protected virtual BinaryBinary Binary { get; set; }
     protected virtual Array ClassArray { get; set; }
     protected virtual Array ImportArray { get; set; }
-    protected virtual Table VirtualClassTable { get; set; }
+    protected virtual Table VirtualTable { get; set; }
     protected virtual ClassClass AnyClass { get; set; }
     protected virtual String SSystemDotInfra { get; set; }
     protected virtual String SAny { get; set; }
@@ -52,8 +52,8 @@ public class ModuleLoad : TextAdd
     {
         this.Status = 0;
 
-        ModuleRef o;
-        o = this.ModuleRef;
+        ModuleRef ka;
+        ka = this.ModuleRef;
 
         if (this.ModuleTable.Valid(o))
         {
@@ -64,7 +64,7 @@ public class ModuleLoad : TextAdd
         ClassModule a;
         a = new ClassModule();
         a.Init();
-        a.Ref = this.ClassInfra.ModuleRefCreate(o.Name, o.Ver);
+        a.Ref = this.ClassInfra.ModuleRefCreate(ka.Name, ka.Ver);
 
         this.Module = a;
 
