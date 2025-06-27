@@ -78,7 +78,7 @@ public class ModuleLoad : TextAdd
             return false;
         }
 
-        b = this.ExecuteImportList();
+        b = this.ExecuteImport();
         if (!b)
         {
             return false;
@@ -199,7 +199,7 @@ public class ModuleLoad : TextAdd
         return true;
     }
 
-    protected virtual bool ExecuteImportList()
+    protected virtual bool ExecuteImport()
     {
         ListInfra listInfra;
         listInfra = this.ListInfra;
