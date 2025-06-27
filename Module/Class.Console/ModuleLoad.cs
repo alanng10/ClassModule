@@ -119,18 +119,14 @@ public class ModuleLoad : TextAdd
 
     protected virtual bool ExecuteClass()
     {
-        ListInfra listInfra;
-        listInfra = this.ListInfra;
-
-        Table classTable;
-        classTable = this.ClassInfra.TableCreateStringLess();
-
-        this.Module.Class = classTable;
+        this.Module.Class = this.ClassInfra.TableCreateStringLess();
 
         Array array;
         array = this.Binary.Class;
+
         long count;
         count = array.Count;
+
         long i;
         i = 0;
         while (i < count)
@@ -141,7 +137,7 @@ public class ModuleLoad : TextAdd
             String name;
             name = o.Name;
 
-            if (classTable.Valid(name))
+            if (this.Module.Class.Valid(name))
             {
                 this.Status = 11;
                 return false;
@@ -150,11 +146,11 @@ public class ModuleLoad : TextAdd
             ClassClass a;
             a = new ClassClass();
             a.Init();
-            a.Index = classTable.Count;
+            a.Index = this.Module.Class.Count;
             a.Name = name;
             a.Module = this.Module;
 
-            listInfra.TableAdd(classTable, name, a);
+            this.ListInfra.TableAdd(this.Module.Class, name, a);
 
             i = i + 1;
         }
@@ -162,7 +158,7 @@ public class ModuleLoad : TextAdd
         if (this.TextSame(this.TA(this.Module.Ref.Name), this.TB(this.SSystemDotInfra)))
         {
             ClassClass oo;
-            oo = classTable.Get(this.SAny) as ClassClass;
+            oo = this.Module.Class.Get(this.SAny) as ClassClass;
             if (oo == null)
             {
                 this.Status = 12;
@@ -172,11 +168,11 @@ public class ModuleLoad : TextAdd
         }
 
         Array classArray;
-        classArray = listInfra.ArrayCreate(classTable.Count);
+        classArray = this.ListInfra.ArrayCreate(this.Module.Class.Count);
 
         Iter iter;
-        iter = classTable.IterCreate();
-        classTable.IterSet(iter);
+        iter = this.Module.Class.IterCreate();
+        this.Module.Class.IterSet(iter);
 
         count = classArray.Count;
         i = 0;
