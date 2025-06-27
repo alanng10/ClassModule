@@ -561,4 +561,19 @@ class Read : Any
         a.Class : varClass;
         return a;
     }
+
+    maide precate Array ExecuteImportClassArray()
+    {
+        return this.ExecuteClassIndexArray();
+    }
+
+    maide precate Array ExecuteExportArray()
+    {
+        return this.ExecuteClassIndexArray();
+    }
+
+    maide precate Array ExecuteBaseArray()
+    {
+        return this.ExecuteClassIndexArray();
+    }
 }
