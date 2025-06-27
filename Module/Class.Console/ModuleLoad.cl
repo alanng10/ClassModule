@@ -83,5 +83,30 @@ class ModuleLoad : TextAdd
             return false;
         }
 
+        b : this.ExecuteBase();
+        inf (~b)
+        {
+            return false;
+        }
+
+        b : this.ExecutePart();
+        inf (~b)
+        {
+            return false;
+        }
+
+        b : this.ExecuteVirtual();
+        inf (~b)
+        {
+            return false;
+        }
+
+        b : this.ExecuteEntry();
+        inf (~b)
+        {
+            return false;
+        }
+
+        return true;
     }
 }
