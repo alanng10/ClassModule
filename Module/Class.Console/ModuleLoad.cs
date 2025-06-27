@@ -96,7 +96,7 @@ public class ModuleLoad : TextAdd
             return false;
         }
 
-        b = this.SetPartList();
+        b = this.ExecutePart();
         if (!b)
         {
             return false;
@@ -438,7 +438,7 @@ public class ModuleLoad : TextAdd
         return true;
     }
 
-    protected virtual bool SetPartList()
+    protected virtual bool ExecutePart()
     {
         Array array;
         array = this.Binary.Part;
