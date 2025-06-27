@@ -13,7 +13,7 @@ class Console : TextAdd
 
         this.Create : this.CreateCreate();
         this.ErrorString : this.CreateErrorString();
-        this.InfoTokenString : this.CreateInfoTokenString();
+        this.InfoToken : this.CreateInfoToken();
         this.InfoTravel : this.CreateInfoTravel();
         this.StorageTextLess : this.CreateStorageTextLess();
         return true;
@@ -36,10 +36,10 @@ class Console : TextAdd
         return a;
     }
 
-    maide precate InfoTokenString CreateInfoTokenString()
+    maide precate InfoToken CreateInfoToken()
     {
-        var InfoTokenString a;
-        a : new InfoTokenString;
+        var InfoToken a;
+        a : new InfoToken;
         a.Init();
         return a;
     }
@@ -83,7 +83,7 @@ class Console : TextAdd
     field precate StorageComp StorageComp { get { return data; } set { data : value; } }
     field precate Out Out { get { return data; } set { data : value; } }
     field precate Out Err { get { return data; } set { data : value; } }
-    field precate InfoTokenString InfoTokenString { get { return data; } set { data : value; } }
+    field precate InfoToken InfoToken { get { return data; } set { data : value; } }
     field precate InfoTravel InfoTravel { get { return data; } set { data : value; } }
     field precate TextLess StorageTextLess { get { return data; } set { data : value; } }
 
@@ -239,7 +239,7 @@ class Console : TextAdd
             code : cast Code(iter.Value);
 
             var String a;
-            a : this.InfoTokenString.Execute(code);
+            a : this.InfoToken.Execute(code);
 
             this.Out.Write(a);
         }
