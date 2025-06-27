@@ -65,19 +65,19 @@ class ModuleLoad : TextAdd
 
         var Bool b;
         
-        b : this.SetClassList();
+        b : this.ExecuteClass();
         inf (~b)
         {
             return false;
         }
 
-        b : this.SetImportList();
+        b : this.ExecuteImport();
         inf (~b)
         {
             return false;
         }
 
-        b : this.SetExportList();
+        b : this.ExecuteExport();
         inf (~b)
         {
             return false;
