@@ -359,4 +359,35 @@ class Read : Any
         }
         return true;
     }
+
+    maide precate Bool ExecuteCreateArray()
+    {
+        var ReadArg arg;
+        arg : this.Arg;
+
+        var Array array;
+        array : arg.ArrayArray;
+
+        var Int count;
+        count : array.Count;
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Int index;
+            index : i * 8;
+
+            var Int ka;
+            ka : this.InfraInfra.DataIntGet(arg.ArrayCountData, index);
+
+            var Array k;
+            k : this.ListInfra.ArrayCreate(ka);
+
+            array.Set(i, k);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
