@@ -683,4 +683,35 @@ class Read : Any
         }
         return array;
     }
+
+    maide precate Field ExecuteField()
+    {
+        var Int varClass;
+        varClass : this.ExecuteIndex();
+        inf (varClass = null)
+        {
+            return null;
+        }
+
+        var Int count;
+        count : this.ExecuteByte();
+        inf (count = null)
+        {
+            return null;
+        }
+
+        var String name;
+        name : this.ExecuteString();
+        inf (name = null)
+        {
+            return null;
+        }
+
+        var Field a;
+        a : this.Operate.ExecuteField();
+        a.Class : varClass;
+        a.Count : count;
+        a.Name : name;
+        return a;
+    }
 }
