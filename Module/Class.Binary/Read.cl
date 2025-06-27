@@ -854,4 +854,38 @@ class Read : Any
         a : k;
         return a;
     }
+
+    maide precate Array ExecuteClassIndexArray()
+    {
+        var Int count;
+        count : this.ExecuteCount();
+        inf (count = null)
+        {
+            return null;
+        }
+
+        var Array array;
+        array : this.ExecuteArray(count);
+        inf (array = null)
+        {
+            return null;
+        }
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Int a;
+            a : this.ExecuteClassIndex();
+            inf (a = null)
+            {
+                return null;
+            }
+
+            this.Operate.ExecuteArrayItemSet(array, i, a);
+
+            i : i + 1;
+        }
+        return array;
+    }
 }
