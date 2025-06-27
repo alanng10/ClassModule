@@ -390,4 +390,55 @@ class Read : Any
         }
         return true;
     }
+
+    maide prusate Bool ExecuteStage()
+    {
+        this.Result : this.ExecuteBinary();
+        return true;
+    }
+
+    maide precate Binary ExecuteBinary()
+    {
+        var ModuleRef ref;
+        ref : this.ExecuteModuleRef();
+        inf (ref = null)
+        {
+            return null;
+        }
+
+        var Array varClass;
+        varClass : this.ExecuteClassArray();
+        inf (varClass = null)
+        {
+            return null;
+        }
+
+        var Array import;
+        import : this.ExecuteImportArray();
+        inf (import = null)
+        {
+            return null;
+        }
+
+        var Array export;
+        export : this.ExecuteExportArray();
+        inf (export = null)
+        {
+            return null;
+        }
+
+        var Array varBase;
+        varBase : this.ExecuteBaseArray();
+        inf (varBase = null)
+        {
+            return null;
+        }
+
+        var Array part;
+        part : this.ExecutePartArray();
+        inf (part = null)
+        {
+            return null;
+        }
+    }
 }
