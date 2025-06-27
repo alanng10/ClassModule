@@ -748,4 +748,43 @@ class Read : Any
         }
         return array;
     }
+
+    maide precate Maide ExecuteMaide()
+    {
+        var Int varClass;
+        varClass : this.ExecuteIndex();
+        inf (varClass = null)
+        {
+            return null;
+        }
+
+        var Int count;
+        count : this.ExecuteByte();
+        inf (count = null)
+        {
+            return null;
+        }
+
+        var String name;
+        name : this.ExecuteString();
+        inf (name = null)
+        {
+            return null;
+        }
+
+        var Array param;
+        param : this.ExecuteVarArray();
+        inf (param = null)
+        {
+            return null;
+        }
+
+        var Maide a;
+        a : this.Operate.ExecuteMaide();
+        a.Class : varClass;
+        a.Count : count;
+        a.Name : name;
+        a.Param : param;
+        return a;
+    }
 }
