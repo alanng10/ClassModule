@@ -655,16 +655,16 @@ public class Read : Any
             return null;
         }
 
-        Array field;
-        field = this.ExecuteFieldArray();
-        if (field == null)
+        Array varField;
+        varField = this.ExecuteFieldArray();
+        if (varField == null)
         {
             return null;
         }
 
-        Array maide;
-        maide = this.ExecuteMaideArray();
-        if (maide == null)
+        Array varMaide;
+        varMaide = this.ExecuteMaideArray();
+        if (varMaide == null)
         {
             return null;
         }
@@ -673,8 +673,8 @@ public class Read : Any
         a = this.Operate.ExecutePart();
         a.FieldStart = fieldStart;
         a.MaideStart = maideStart;
-        a.Field = field;
-        a.Maide = maide;
+        a.Field = varField;
+        a.Maide = varMaide;
         return a;
     }
 
