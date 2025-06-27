@@ -222,4 +222,27 @@ class Read : Any
         }
         return true;
     }
+
+    maide precate Bool ExecuteCreateField()
+    {
+        var Array array;
+        array : this.Arg.FieldArray;
+
+        var Int count;
+        count : array.Count;
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Field k;
+            k : new Field;
+            k.Init();
+
+            array.Set(i, k);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
