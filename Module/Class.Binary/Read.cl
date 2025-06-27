@@ -844,4 +844,14 @@ class Read : Any
         a.Name : name;
         return a;
     }
+
+    maide precate Int ExecuteEntry()
+    {
+        var Int k;
+        k : this.ExecuteInt();
+
+        var Int a;
+        a : k;
+        return a;
+    }
 }
