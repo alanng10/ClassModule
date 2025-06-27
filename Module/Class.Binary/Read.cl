@@ -972,4 +972,22 @@ class Read : Any
         arg.Index : index;
         return a;
     }
+
+    maide precate Int ExecuteByte()
+    {
+        inf (~this.ValidCount(1))
+        {
+            return null;
+        }
+
+        var ReadArg arg;
+        arg : this.Arg;
+        var Int index;
+        index : arg.Index;
+        var Int a;
+        a : this.Data.Get(index);
+        index : index + 1;
+        arg.Index : index;
+        return a;
+    }
 }
