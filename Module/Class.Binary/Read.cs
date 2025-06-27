@@ -979,17 +979,17 @@ public class Read : Any
         return a;
     }
 
-    public virtual long ExecuteIndex()
+    protected virtual long ExecuteIndex()
     {
         return this.ExecuteInt();
     }
 
-    public virtual long ExecuteCount()
+    protected virtual long ExecuteCount()
     {
         return this.ExecuteInt();
     }
 
-    public virtual long ExecuteInt()
+    protected virtual long ExecuteInt()
     {
         long count;
         count = sizeof(long);
@@ -1011,7 +1011,7 @@ public class Read : Any
         return a;
     }
 
-    public virtual long ExecuteByte()
+    protected virtual long ExecuteByte()
     {
         if (!this.ValidCount(1))
         {
