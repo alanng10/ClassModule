@@ -893,4 +893,27 @@ class Read : Any
     {
         return this.ExecuteIndex();
     }
+
+    maide precate ModuleRef ExecuteModuleRef()
+    {
+        var String name;
+        name : this.ExecuteString();
+        inf (name = null)
+        {
+            return null;
+        }
+
+        var Int ver;
+        ver : this.ExecuteInt();
+        inf (ver = null)
+        {
+            return null;
+        }
+
+        var ModuleRef a;
+        a : this.Operate.ExecuteModuleRef();
+        a.Name : name;
+        a.Ver : ver;
+        return a;
+    }
 }
