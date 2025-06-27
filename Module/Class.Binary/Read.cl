@@ -940,4 +940,36 @@ class Read : Any
         a : this.Operate.ExecuteString(count);
         return a;
     }
+
+    maide precate Int ExecuteIndex()
+    {
+        return this.ExecuteInt();
+    }
+
+    maide precate Int ExecuteCount()
+    {
+        return this.ExecuteInt();
+    }
+
+    maide precate Int ExecuteInt()
+    {
+        var Int count;
+        count : 8;
+        inf (~this.ValidCount(count))
+        {
+            return null;
+        }
+
+        var ReadArg arg;
+        arg : this.Arg;
+        var Int index;
+        index : arg.Index;
+
+        var Int a;
+        a : this.InfraInfra.DataIntGet(this.Data, index);
+
+        index : index + count;
+        arg.Index : index;
+        return a;
+    }
 }
