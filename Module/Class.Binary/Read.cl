@@ -291,4 +291,26 @@ class Read : Any
         }
         return true;
     }
+
+    maide precate Bool ExecuteCreateModuleRef()
+    {
+        var Array array;
+        array : this.Arg.ModuleRefArray;
+
+        var Int count;
+        count : array.Count;
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var ModuleRef k;
+            k : this.ClassInfra.ModuleRefCreate(null, null);
+
+            array.Set(i, k);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
