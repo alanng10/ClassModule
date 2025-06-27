@@ -40,4 +40,48 @@ class ModuleLoad : TextAdd
 
         return true;
     }
+
+    maide precate Bool ExecuteAll()
+    {
+        this.Status : 0;
+
+        var ModuleRef ka;
+        ka : this.ModuleRef;
+
+        inf (this.ModuleTable.Valid(ka))
+        {
+            this.Status : 1;
+            return false;
+        }
+
+        var Module a;
+        a : new Module;
+        a.Init();
+        a.Ref : this.ClassInfra.ModuleRefCreate(ka.Name, ka.Ver);
+
+        this.Module : a;
+
+        this.Binary : cast Binary(this.BinaryTable.Get(this.Module.Ref));
+
+        var Bool b;
+        
+        b : this.SetClassList();
+        inf (~b)
+        {
+            return false;
+        }
+
+        b : this.SetImportList();
+        inf (~b)
+        {
+            return false;
+        }
+
+        b : this.SetExportList();
+        inf (~b)
+        {
+            return false;
+        }
+
+    }
 }
