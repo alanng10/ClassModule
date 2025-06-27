@@ -440,5 +440,19 @@ class Read : Any
         {
             return null;
         }
+
+        var Int entry;
+        entry : this.ExecuteEntry();
+
+        var Binary a;
+        a : this.Operate.ExecuteBinary();
+        a.Ref : ref;
+        a.Class : varClass;
+        a.Import : import;
+        a.Export : export;
+        a.Base : varBase;
+        a.Part : part;
+        a.Entry : entry;
+        return a;
     }
 }
