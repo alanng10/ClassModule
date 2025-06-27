@@ -313,4 +313,26 @@ class Read : Any
         }
         return true;
     }
+
+    maide precate Bool ExecuteCreateString()
+    {
+        var ReadArg arg;
+        arg : this.Arg;
+
+        var Array array;
+        array : arg.StringArray;
+
+        var Text text;
+        text : new Text;
+        text.Init();
+        text.Range : new Range;
+        text.Range.Init();
+        text.Data : arg.StringTextData;
+
+        var Int total;
+        total : 0;
+
+        var Int count;
+        count : array.Count;
+    }
 }
