@@ -371,6 +371,14 @@ public class ModuleLoad : TextAdd
         return true;
     }
 
+    protected virtual bool ExecuteBase()
+    {
+        this.SetBaseList();
+
+        this.SetBaseCount();
+        return true;
+    }
+
     protected virtual bool SetBaseList()
     {
         Array array;
