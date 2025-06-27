@@ -102,7 +102,7 @@ public class ModuleLoad : TextAdd
             return false;
         }
 
-        b = this.SetVirtualList();
+        b = this.ExecuteVirtual();
         if (!b)
         {
             return false;
@@ -637,7 +637,7 @@ public class ModuleLoad : TextAdd
         return true;
     }
 
-    protected virtual bool SetVirtualList()
+    protected virtual bool ExecuteVirtual()
     {
         this.VirtualClassTable = this.ClassInfra.TableCreateRefLess();
 
