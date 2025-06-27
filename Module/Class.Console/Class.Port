@@ -119,7 +119,7 @@ Result
 Task
 TaskKind
 TaskKindList
-InfoTokenString
+InfoToken
 InfoTravel
 PathTravel
 ErrorString
