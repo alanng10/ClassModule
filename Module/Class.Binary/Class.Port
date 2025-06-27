@@ -1,0 +1,45 @@
+[Module]
+Class.Binary:0.00.00
+
+[Import]
+System.Infra
+    Any Any
+    Bool Bool
+    Int Int
+    String String
+    Data Data
+    InfraInfra Infra
+System.List
+    Array Array
+    ListInfra Infra
+System.Text
+    Text Text
+    StringData StringData
+    TextInfra Infra
+Class.Infra:0.00.00
+    ModuleRef ModuleRef
+    ClassInfra Infra
+
+[Export]
+Binary
+Class
+Import
+Part
+Field
+Maide
+Var
+Read
+ReadArg
+ReadOperate
+ReadCountOperate
+ReadStringOperate
+ReadSetOperate
+Write
+WriteArg
+WriteOperate
+WriteCountOperate
+WriteSetOperate
+
+[Storage]
+
+[Entry]
