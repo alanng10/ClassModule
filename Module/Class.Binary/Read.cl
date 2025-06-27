@@ -888,4 +888,9 @@ class Read : Any
         }
         return array;
     }
+
+    maide precate Int ExecuteClassIndex()
+    {
+        return this.ExecuteIndex();
+    }
 }
