@@ -268,4 +268,27 @@ class Read : Any
         }
         return true;
     }
+
+    maide precate Bool ExecuteCreateVar()
+    {
+        var Array array;
+        array : this.Arg.VarArray;
+
+        var Int count;
+        count : array.Count;
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Var k;
+            k : new Var;
+            k.Init();
+
+            array.Set(i, k);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
