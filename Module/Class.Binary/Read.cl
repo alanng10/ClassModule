@@ -489,4 +489,19 @@ class Read : Any
         }
         return array;
     }
+
+    maide precate Class ExecuteClass()
+    {
+        var String name;
+        name : this.ExecuteString();
+        inf (name = null)
+        {
+            return null;
+        }
+
+        var Class a;
+        a : this.Operate.ExecuteClass();
+        a.Name : name;
+        return a;
+    }
 }
