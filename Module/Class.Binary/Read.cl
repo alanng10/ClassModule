@@ -538,4 +538,27 @@ class Read : Any
         }
         return array;
     }
+
+    maide precate Import ExecuteImport()
+    {
+        var ModuleRef module;
+        module : this.ExecuteModuleRef();
+        inf (module = null)
+        {
+            return null;
+        }
+
+        var Array varClass;
+        varClass : this.ExecuteImportClassArray();
+        inf (varClass = null)
+        {
+            return null;
+        }
+
+        var Import a;
+        a : this.Operate.ExecuteImport();
+        a.Module : module;
+        a.Class : varClass;
+        return a;
+    }
 }
