@@ -55,7 +55,7 @@ public class ModuleLoad : TextAdd
         ModuleRef ka;
         ka = this.ModuleRef;
 
-        if (this.ModuleTable.Valid(o))
+        if (this.ModuleTable.Valid(ka))
         {
             this.Status = 1;
             return false;
