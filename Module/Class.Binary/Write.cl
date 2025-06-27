@@ -46,7 +46,7 @@ class Write : Any
         this.ExecuteStage();
 
         var Int count;
-        count : this.Index;
+        count : this.Arg.Index;
         this.Arg.Data : new Data;
         this.Arg.Data.Count : count;
         this.Arg.Data.Init();
