@@ -64,7 +64,7 @@ class ModuleLoad : TextAdd
         this.Binary : cast Binary(this.BinaryTable.Get(this.Module.Ref));
 
         var Bool b;
-        
+
         b : this.ExecuteClass();
         inf (~b)
         {
