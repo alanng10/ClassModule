@@ -334,5 +334,29 @@ class Read : Any
 
         var Int count;
         count : array.Count;
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Int kaa;
+            kaa : i * 8;
+
+            var Int ka;
+            ka : this.InfraInfra.DataIntGet(arg.StringCountData, kaa);
+
+            text.Range.Index : total;
+            text.Range.Count : ka;
+
+            var String k;
+            k : this.TextInfra.StringCreate(text);
+
+            array.Set(i, k);
+
+            total : total + ka;
+
+            i : i + 1;
+        }
+        return true;
     }
 }
