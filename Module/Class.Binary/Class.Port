@@ -14,7 +14,7 @@ System.List
     ListInfra Infra
 System.Text
     Text Text
-    StringData StringData
+    StringComp StringComp
     TextInfra Infra
 Class.Infra:0.00.00
     ModuleRef ModuleRef
