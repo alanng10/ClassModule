@@ -610,4 +610,43 @@ class Read : Any
         }
         return array;
     }
+
+    maide precate Part ExecutePart()
+    {
+        var Int fieldStart;
+        fieldStart : this.ExecuteIndex();
+        inf (fieldStart = null)
+        {
+            return null;
+        }
+
+        var Int maideStart;
+        maideStart : this.ExecuteIndex();
+        inf (maideStart = null)
+        {
+            return null;
+        }
+
+        var Array varField;
+        varField : this.ExecuteFieldArray();
+        inf (varField = null)
+        {
+            return null;
+        }
+
+        var Array varMaide;
+        varMaide : this.ExecuteMaideArray();
+        inf (varMaide = null)
+        {
+            return null;
+        }
+
+        var Part a;
+        a : this.Operate.ExecutePart();
+        a.FieldStart : fieldStart;
+        a.MaideStart : maideStart;
+        a.Field : varField;
+        a.Maide : varMaide;
+        return a;
+    }
 }
