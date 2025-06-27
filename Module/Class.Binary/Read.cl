@@ -199,4 +199,27 @@ class Read : Any
         }
         return true;
     }
+
+    maide precate Bool ExecuteCreatePart()
+    {
+        var Array array;
+        array : this.Arg.PartArray;
+
+        var Int count;
+        count : array.Count;
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Part k;
+            k : new Part;
+            k.Init();
+
+            array.Set(i, k);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
