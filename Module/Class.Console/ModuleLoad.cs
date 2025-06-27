@@ -90,13 +90,7 @@ public class ModuleLoad : TextAdd
             return false;
         }
 
-        b = this.SetBaseList();
-        if (!b)
-        {
-            return false;
-        }
-
-        b = this.SetBaseCount();
+        b = this.ExecuteBase();
         if (!b)
         {
             return false;
