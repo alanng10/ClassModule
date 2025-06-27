@@ -167,14 +167,13 @@ public class ModuleLoad : TextAdd
             this.AnyClass = oo;
         }
 
-        Array classArray;
-        classArray = this.ListInfra.ArrayCreate(this.Module.Class.Count);
+        this.ClassArray = this.ListInfra.ArrayCreate(this.Module.Class.Count);
 
         Iter iter;
         iter = this.Module.Class.IterCreate();
         this.Module.Class.IterSet(iter);
 
-        count = classArray.Count;
+        count = this.ClassArray.Count;
         i = 0;
         while (i < count)
         {
@@ -182,11 +181,9 @@ public class ModuleLoad : TextAdd
             ClassClass oa;
             oa = iter.Value as ClassClass;
 
-            classArray.SetAt(i, oa);
+            this.ClassArray.SetAt(i, oa);
             i = i + 1;
         }
-
-        this.ClassArray = classArray;
         return true;
     }
 
