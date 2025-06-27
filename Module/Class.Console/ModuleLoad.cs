@@ -72,7 +72,7 @@ public class ModuleLoad : TextAdd
 
         bool b;
 
-        b = this.SetClassList();
+        b = this.ExecuteClassList();
         if (!b)
         {
             return false;
@@ -122,7 +122,7 @@ public class ModuleLoad : TextAdd
         return true;
     }
 
-    protected virtual bool SetClassList()
+    protected virtual bool ExecuteClassList()
     {
         ListInfra listInfra;
         listInfra = this.ListInfra;
