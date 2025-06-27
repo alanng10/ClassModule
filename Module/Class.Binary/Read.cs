@@ -876,7 +876,7 @@ public class Read : Any
     protected virtual long ExecuteEntry()
     {
         long k;
-        k = this.ExecuteInt();
+        k = this.ExecuteIndex();
 
         long a;
         a = k;
