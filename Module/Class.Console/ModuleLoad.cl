@@ -22,4 +22,22 @@ class ModuleLoad : TextAdd
     field precate Array ImportArray { get { return data; } set { data : value; } }
     field precate Table VirtualTable { get { return data; } set { data : value; } }
     field precate Class AnyClass { get { return data; } set { data : value; } }
+
+    maide prusate Bool Execute()
+    {
+        var Bool b;
+        b : this.ExecuteAll();
+
+        this.Binary : null;
+        this.ClassArray : null;
+        this.ImportArray : null;
+
+        inf (~b)
+        {
+            this.Module : null;
+            return false;
+        }
+
+        return true;
+    }
 }
