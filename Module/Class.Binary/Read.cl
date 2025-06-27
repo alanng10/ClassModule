@@ -576,4 +576,38 @@ class Read : Any
     {
         return this.ExecuteClassIndexArray();
     }
+
+    maide precate Array ExecutePartArray()
+    {
+        var Int count;
+        count : this.ExecuteCount();
+        inf (count = null)
+        {
+            return null;
+        }
+
+        var Array array;
+        array : this.ExecuteArray(count);
+        inf (array = null)
+        {
+            return null;
+        }
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Part a;
+            a : this.ExecutePart();
+            inf (a = null)
+            {
+                return null;
+            }
+
+            this.Operate.ExecuteArrayItemSet(array, i, a);
+
+            i : i + 1;
+        }
+        return array;
+    }
 }
