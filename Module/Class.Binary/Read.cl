@@ -990,4 +990,9 @@ class Read : Any
         arg.Index : index;
         return a;
     }
+
+    maide precate Bool ValidCount(var Int count)
+    {
+        return this.InfraInfra.ValidRange(this.Data.Count, this.Arg.Index, count);
+    }
 }
