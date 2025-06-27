@@ -1,4 +1,4 @@
-class InfoTokenString : TextAdd
+class InfoToken : TextAdd
 {
     maide prusate Bool Init()
     {
@@ -155,7 +155,7 @@ class InfoTokenString : TextAdd
         return true;
     }
 
-    maide precate InfoTokenString AddSpace()
+    maide precate InfoToken AddSpace()
     {
         var Int count;
         count : this.Space;
