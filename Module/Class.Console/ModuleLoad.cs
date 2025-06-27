@@ -84,7 +84,7 @@ public class ModuleLoad : TextAdd
             return false;
         }
 
-        b = this.SetExportList();
+        b = this.ExecuteExport();
         if (!b)
         {
             return false;
@@ -336,7 +336,7 @@ public class ModuleLoad : TextAdd
         return true;
     }
 
-    protected virtual bool SetExportList()
+    protected virtual bool ExecuteExport()
     {
         this.Module.Export = this.ClassInfra.TableCreateStringLess();
 
