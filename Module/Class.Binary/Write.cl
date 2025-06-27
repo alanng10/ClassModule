@@ -365,7 +365,7 @@ class Write : Any
             var Int shift;
             shift : i * 8;
 
-            var Int ka
+            var Int ka;
             ka : bit >(value, shift);
             ka : bit &(ka, 0hff);
 
