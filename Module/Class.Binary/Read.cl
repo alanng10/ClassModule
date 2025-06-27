@@ -916,4 +916,28 @@ class Read : Any
         a.Ver : ver;
         return a;
     }
+
+    maide precate Array ExecuteArray(var Int count)
+    {
+        return this.Operate.ExecuteArray(count);
+    }
+
+    maide precate String ExecuteString()
+    {
+        var Int count;
+        count : this.ExecuteCount();
+        inf (count = null)
+        {
+            return null;
+        }
+
+        inf (~this.ValidCount(count))
+        {
+            return null;
+        }
+
+        var String a;
+        a : this.Operate.ExecuteString(count);
+        return a;
+    }
 }
