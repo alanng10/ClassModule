@@ -848,7 +848,7 @@ class Read : Any
     maide precate Int ExecuteEntry()
     {
         var Int k;
-        k : this.ExecuteInt();
+        k : this.ExecuteClassIndex();
 
         var Int a;
         a : k;
