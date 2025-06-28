@@ -178,10 +178,12 @@ public class ModuleLoad : TextAdd
         while (i < count)
         {
             iter.Next();
+
             ClassClass varClass;
             varClass = iter.Value as ClassClass;
 
             this.ClassArray.SetAt(i, varClass);
+
             i = i + 1;
         }
         return true;
