@@ -131,11 +131,11 @@ public class ModuleLoad : TextAdd
         i = 0;
         while (i < count)
         {
-            BinaryClass o;
-            o = array.GetAt(i) as BinaryClass;
+            BinaryClass binaryClass;
+            binaryClass = array.GetAt(i) as BinaryClass;
 
             String name;
-            name = o.Name;
+            name = binaryClass.Name;
 
             if (this.Module.Class.Valid(name))
             {
@@ -157,14 +157,14 @@ public class ModuleLoad : TextAdd
 
         if (this.TextSame(this.TA(this.Module.Ref.Name), this.TB(this.SSystemDotInfra)))
         {
-            ClassClass oo;
-            oo = this.Module.Class.Get(this.SAny) as ClassClass;
-            if (oo == null)
+            ClassClass ka;
+            ka = this.Module.Class.Get(this.SAny) as ClassClass;
+            if (ka == null)
             {
                 this.Status = 12;
                 return false;
             }
-            this.AnyClass = oo;
+            this.AnyClass = ka;
         }
 
         this.ClassArray = this.ListInfra.ArrayCreate(this.Module.Class.Count);
@@ -178,10 +178,10 @@ public class ModuleLoad : TextAdd
         while (i < count)
         {
             iter.Next();
-            ClassClass oa;
-            oa = iter.Value as ClassClass;
+            ClassClass varClass;
+            varClass = iter.Value as ClassClass;
 
-            this.ClassArray.SetAt(i, oa);
+            this.ClassArray.SetAt(i, varClass);
             i = i + 1;
         }
         return true;
