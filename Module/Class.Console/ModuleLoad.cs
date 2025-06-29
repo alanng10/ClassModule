@@ -217,7 +217,7 @@ public class ModuleLoad : TextAdd
         while (i < count)
         {
             BinaryImport o;
-            o = (BinaryImport)array.GetAt(i);
+            o = array.GetAt(i) as BinaryImport;
 
             ModuleRef moduleRef;
             moduleRef = o.Module;
