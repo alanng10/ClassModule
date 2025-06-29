@@ -191,16 +191,11 @@ public class ModuleLoad : TextAdd
 
     protected virtual bool ExecuteImport()
     {
-        ListInfra listInfra;
-        listInfra = this.ListInfra;
-        ClassInfra classInfra;
-        classInfra = this.ClassInfra;
-
         Table binaryTable;
         binaryTable = this.BinaryTable;
 
         Table importTable;
-        importTable = classInfra.TableCreateModuleRefLess();
+        importTable = this.ClassInfra.TableCreateModuleRefLess();
 
         this.Module.Import = importTable;
 
@@ -229,9 +224,9 @@ public class ModuleLoad : TextAdd
             }
 
             Table classTable;
-            classTable = classInfra.TableCreateRefLess();
+            classTable = this.ClassInfra.TableCreateRefLess();
 
-            listInfra.TableAdd(importTable, moduleRef, classTable);
+            this.ListInfra.TableAdd(importTable, moduleRef, classTable);
 
             ClassModule module;
             module = this.ModuleGet(moduleRef);
@@ -285,7 +280,7 @@ public class ModuleLoad : TextAdd
                     return false;
                 }
 
-                listInfra.TableAdd(classTable, varClass, varClass);
+                this.ListInfra.TableAdd(classTable, varClass, varClass);
 
                 iA = iA + 1;
             }
@@ -296,7 +291,7 @@ public class ModuleLoad : TextAdd
         }
 
         Array importArray;
-        importArray = listInfra.ArrayCreate(importTotal);
+        importArray = this.ListInfra.ArrayCreate(importTotal);
 
         long oi;
         oi = 0;
