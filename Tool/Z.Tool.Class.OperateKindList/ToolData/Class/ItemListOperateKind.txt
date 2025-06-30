@@ -1,3 +1,6 @@
+VarMark
+SetMark
+Are 1
 Get 1
 Call 2
 Same 0
