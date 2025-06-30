@@ -14,3 +14,9 @@ Div 0
 SignLess 0
 SignMul 0
 SignDiv 0
+BitAnd 0
+BitOrn 0
+BitNot 0
+BitLite 0
+BitRite 0
+BitSignRite 0
