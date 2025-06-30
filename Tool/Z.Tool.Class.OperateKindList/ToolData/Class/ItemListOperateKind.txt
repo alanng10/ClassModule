@@ -10,6 +10,7 @@ Are 2
 Get 1
 Set 0
 Call 2
+Var 1
 BoolValue 1
 IntValue 1
 StringValue 1
