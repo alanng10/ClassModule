@@ -1,6 +1,6 @@
 VarMark
 SetMark
-Are 1
+Are 2
 Get 1
 Call 2
 Same 0
