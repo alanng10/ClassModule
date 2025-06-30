@@ -18,7 +18,7 @@ public class Gen : SourceGen
         return true;
     }
 
-    protected override TableEntry GetItemEntry(String line)
+    protected override ListEntry GetItemEntry(String line)
     {
         Text kka;
         kka = this.TextCreate(this.S(" "));
@@ -37,16 +37,16 @@ public class Gen : SourceGen
         String index;
         index = this.StringCreate(ka);
 
-        String text;
-        text = this.StringCreate(kb);
+        long arg;
+        arg = this.IntText(kb, 10);
 
         Value value;
         value = new Value();
         value.Init();
-        value.Text = text;
+        value.Int = arg;
 
-        TableEntry entry;
-        entry = new TableEntry();
+        ListEntry entry;
+        entry = new ListEntry();
         entry.Init();
         entry.Index = index;
         entry.Value = value;
@@ -56,10 +56,11 @@ public class Gen : SourceGen
     protected override bool AddInitFieldAddItem(String index, object value)
     {
         Value a;
-        a = (Value)value;
+        a = value as Value;
+
         this.AddS("AddItem")
             .AddS("(")
-            .AddS("\"").Add(a.Text).AddS("\"")
+            .AddInt(a.Int)
             .AddS(")");
         return true;
     }
