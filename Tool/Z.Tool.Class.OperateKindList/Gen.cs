@@ -37,6 +37,11 @@ public class Gen : SourceGen
         String index;
         index = this.StringCreate(ka);
 
+        if (this.TextSame(this.TA(index), this.TB(this.S("Get"))))
+        {
+            index = this.AddClear().AddS("Item").Add(index).AddResult();
+        }
+
         long arg;
         arg = this.IntText(kb, 10);
 
