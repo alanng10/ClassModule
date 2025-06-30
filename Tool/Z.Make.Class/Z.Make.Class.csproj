@@ -11,6 +11,7 @@
         <ProjectReference Include="../Z.Tool.Class.IndexList/Z.Tool.Class.IndexList.csproj" />
         <ProjectReference Include="../Z.Tool.Class.LimitList/Z.Tool.Class.LimitList.csproj" />
         <ProjectReference Include="../Z.Tool.Class.NodeList/Z.Tool.Class.NodeList.csproj" />
+        <ProjectReference Include="../Z.Tool.Class.NodeList/Z.Tool.Class.OperateKindList.csproj" />
         <ProjectReference Include="../Z.Tool.Class.TaskKindList/Z.Tool.Class.TaskKindList.csproj" />
     </ItemGroup>
 
