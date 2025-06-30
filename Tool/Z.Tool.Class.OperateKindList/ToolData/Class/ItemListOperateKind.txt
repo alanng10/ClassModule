@@ -1,7 +1,9 @@
 End 0
 Ret 0
-Inf 0
-BlockEnd 0
+InfStart 0
+InfEnd 0
+WhileStart 0
+WhileEnd 0
 Are 2
 Get 1
 Set 0
