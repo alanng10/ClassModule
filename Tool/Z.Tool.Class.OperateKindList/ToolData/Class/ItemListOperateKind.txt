@@ -1,7 +1,6 @@
 End 0
 Ret 0
-Inf
-BlockStart 0
+Inf 0
 BlockEnd 0
 Are 2
 Get 1
