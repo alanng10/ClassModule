@@ -109,4 +109,43 @@ class ModuleLoad : TextAdd
 
         return true;
     }
+
+    maide precate Bool ExecuteClass()
+    {
+        this.Module.Class : this.ClassInfra.TableCreateStringLess();
+
+        var Array array;
+        array : this.Binary.Class;
+
+        var Int count;
+        count : array.Count;
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var BinaryClass binaryClass;
+            binaryClass : cast BinaryClass(array.Get(i));
+
+            var String name;
+            name : binaryClass.Name;
+
+            inf (this.Module.Class.Valid(name))
+            {
+                this.Status : 11;
+                return false;
+            }
+
+            var Class a;
+            a : new Class;
+            a.Init();
+            a.Name : name;
+            a.Module : this.Module;
+            a.Index : this.Module.Class.Count;
+
+            this.ListInfra.TableAdd(this.Module.Class, a.Name, a);
+
+            i : i + 1;
+        }
+    }
 }
