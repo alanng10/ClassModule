@@ -146,9 +146,9 @@ public class ModuleLoad : TextAdd
             ClassClass a;
             a = new ClassClass();
             a.Init();
-            a.Index = this.Module.Class.Count;
             a.Name = name;
             a.Module = this.Module;
+            a.Index = this.Module.Class.Count;
 
             this.ListInfra.TableAdd(this.Module.Class, a.Name, a);
 
