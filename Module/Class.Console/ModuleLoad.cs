@@ -150,7 +150,7 @@ public class ModuleLoad : TextAdd
             a.Name = name;
             a.Module = this.Module;
 
-            this.ListInfra.TableAdd(this.Module.Class, name, a);
+            this.ListInfra.TableAdd(this.Module.Class, a.Name, a);
 
             i = i + 1;
         }
