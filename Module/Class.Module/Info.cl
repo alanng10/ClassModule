@@ -9,5 +9,4 @@ class Info : Any
     field prusate Field GetField { get { return data; } set { data : value; } }
     field prusate Field SetField { get { return data; } set { data : value; } }
     field prusate Maide CallMaide { get { return data; } set { data : value; } }
-    field prusate Table StateVar { get { return data; } set { data : value; } }
 }
