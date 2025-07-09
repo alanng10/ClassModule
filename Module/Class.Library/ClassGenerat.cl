@@ -1,6 +1,6 @@
 class ClassGenerat : TextAdd
 {
-    maide prusate Bool OperateThis(var Operate operate)
+    maide prusate Bool ExecuteOperateThis(var Operate operate)
     {
         var String varA;
         varA : this.VarA;
