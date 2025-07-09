@@ -1,5 +1,11 @@
 class ClassGenerat : TextAdd
 {
+    maide prusate Bool ExecuteOperateEnd(var Operate operate)
+    {
+        this.EvalIndexPosSet(0sn1);
+        return true;
+    }
+
     maide prusate Bool ExecuteOperateThis(var Operate operate)
     {
         var String varA;
