@@ -15,4 +15,27 @@ class ClassGenerat : TextAdd
         this.EvalIndexPosSet(1);
         return true;
     }
+
+    maide prusate Bool ExecuteOperateBase(var Operate operate)
+    {
+        var String varA;
+        varA : this.VarA;
+
+        var Int k;
+        k : this.ParamCount;
+
+        var Int kk;
+        kk : this.ClassBaseMask(this.Class.BaseCount);
+
+        this.EvalFrameValueGet(0 - (k + 1), varA);
+
+        this.VarMaskClear(varA, this.BaseClearMask);
+
+        this.VarMaskSetInt(varA, kk);
+
+        this.EvalValueSet(0, varA);
+
+        this.EvalIndexPosSet(1);
+        return true;
+    }
 }
