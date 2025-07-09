@@ -6,7 +6,7 @@ class ClassGenerat : TextAdd
         varA : this.VarA;
 
         var Int k;
-        k : gen.ParamCount;
+        k : this.ParamCount;
 
         this.EvalFrameValueGet(0 - (k + 1), varA);
 
