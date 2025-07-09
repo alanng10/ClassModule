@@ -6,6 +6,24 @@ class ClassGenerat : TextAdd
         return true;
     }
 
+    maide prusate Bool ExecuteOperateRet(var Operate operate)
+    {
+        var String varA;
+        varA : this.VarA;
+
+        var Int k;
+        k : this.ParamCount;
+
+        this.EvalValueGet(1, varA);
+
+        this.EvalFrameValueSet(0 - (k + 1), varA);
+
+        this.EvalIndexFramePosSet(0 - k);
+
+        this.Return();
+        return true;
+    }
+
     maide prusate Bool ExecuteOperateThis(var Operate operate)
     {
         var String varA;
