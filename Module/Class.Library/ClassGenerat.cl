@@ -47,7 +47,7 @@ class ClassGenerat : TextAdd
 
         inf (maideIndex = 0)
         {
-            this.ExecuteAnyInitMaideThisCond(k);
+            this.ExecuteValueMaideCallThisCond(k);
         }
 
         this.ExecuteVirtualCall(k, this.StateKindCall, maideIndex);
