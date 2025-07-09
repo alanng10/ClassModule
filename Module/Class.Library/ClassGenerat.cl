@@ -50,7 +50,7 @@ class ClassGenerat : TextAdd
 
         inf (b)
         {
-            this.ExecuteValueMaideCallThisCond(k);
+            this.ExecuteAnyInitMaideCall();
         }
 
         inf (~b)
