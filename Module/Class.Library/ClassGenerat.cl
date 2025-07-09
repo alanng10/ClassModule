@@ -79,6 +79,30 @@ class ClassGenerat : TextAdd
         return true;
     }
 
+    maide prusate Bool ExecuteOperateShare(var Operate operate)
+    {
+        var Int classIndex;
+        classIndex : cast Int(operate.ArgA);
+
+        var Class ka;
+        ka : this.ClassGet(classIndex);
+
+        var Bool b;
+        b : (ka = this.System.Bool | ka = this.System.Int | ka = this.System.String);
+
+        inf (b)
+        {
+            this.ExecuteInternValue(ka);
+        }
+
+        inf (~b)
+        {
+            this.InternShare(ka);
+        }
+
+        return true;
+    }
+
     maide prusate Bool ExecuteOperateThis(var Operate operate)
     {
         var String varA;
