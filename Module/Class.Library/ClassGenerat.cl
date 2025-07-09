@@ -38,4 +38,17 @@ class ClassGenerat : TextAdd
         this.EvalIndexPosSet(1);
         return true;
     }
+
+    maide prusate Bool ExecuteOperateNull(var Operate operate)
+    {
+        var String varA;
+        varA : this.VarA;
+
+        this.VarSet(varA, this.Zero);
+
+        this.EvalValueSet(0, varA);
+
+        this.EvalIndexPosSet(1);
+        return true;
+    }
 }
