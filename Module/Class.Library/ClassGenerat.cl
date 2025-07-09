@@ -38,6 +38,14 @@ class ClassGenerat : TextAdd
 
     maide prusate Bool ExecuteOperateCall(var Operate operate)
     {
+        var Int maideIndex;
+        maideIndex : cast Int(operate.ArgA);
+
+        var Int k;
+        k : cast Int(operate.ArgB);
+        k : k + 1;
+
+        this.ExecuteVirtualCall(k, this.StateKindCall, maideIndex);
         return true;
     }
 
