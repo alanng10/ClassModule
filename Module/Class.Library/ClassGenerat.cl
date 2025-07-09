@@ -36,6 +36,11 @@ class ClassGenerat : TextAdd
         return true;
     }
 
+    maide prusate Bool ExecuteOperateCall(var Operate operate)
+    {
+        return true;
+    }
+
     maide prusate Bool ExecuteOperateThis(var Operate operate)
     {
         var String varA;
