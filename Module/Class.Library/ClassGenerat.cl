@@ -24,6 +24,18 @@ class ClassGenerat : TextAdd
         return true;
     }
 
+    maide prusate Bool ExecuteOperateGet(var Operate operate)
+    {
+        var Int fieldIndex;
+        fieldIndex : cast Int(operate.ArgA);
+
+        var Int k;
+        k : 1;
+
+        this.ExecuteVirtualCall(k, this.StateKindGet, fieldIndex);
+        return true;
+    }
+
     maide prusate Bool ExecuteOperateThis(var Operate operate)
     {
         var String varA;
