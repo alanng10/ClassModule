@@ -1,4 +1,4 @@
-class GeneratCountOperate : GeneratOperate
+class ClassGeneratCountOperate : ClassGeneratOperate
 {
     maide prusate Bool ExecuteChar(var Int value)
     {

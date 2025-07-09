@@ -1,4 +1,4 @@
-class GeneratSetOperate : GeneratOperate
+class ClassGeneratSetOperate : ClassGeneratOperate
 {
     maide prusate Bool Init()
     {
