@@ -45,7 +45,18 @@ class ClassGenerat : TextAdd
         k : cast Int(operate.ArgB);
         k : k + 1;
 
-        this.ExecuteVirtualCall(k, this.StateKindCall, maideIndex);
+        var Bool b;
+        b : maideIndex = 0;
+
+        inf (b)
+        {
+            this.ExecuteValueMaideCallThisCond(k);
+        }
+
+        inf (~b)
+        {
+            this.ExecuteVirtualCall(k, this.StateKindCall, maideIndex);
+        }
         return true;
     }
 
