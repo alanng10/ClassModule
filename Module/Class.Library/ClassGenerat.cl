@@ -223,4 +223,10 @@ class ClassGenerat : TextAdd
         this.ExecuteOperateLimitBool(this.LimitOrn);
         return true;
     }
+
+    maide prusate Bool ExecuteOperandNot(var Operate operate)
+    {
+        this.ExecuteOperateLimitBoolOne(this.LimitNot);
+        return true;
+    }
 }
