@@ -235,4 +235,10 @@ class ClassGenerat : TextAdd
         this.ExecuteOperateLimit(this.LimitAdd);
         return true;
     }
+
+    maide prusate Bool ExecuteOperandSub(var Operate operate)
+    {
+        this.ExecuteOperateLimit(this.LimitSub);
+        return true;
+    }
 }
