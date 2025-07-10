@@ -15,9 +15,10 @@ class OperateKindList : Any
         this.WhileStart : this.AddItem(0);
         this.While : this.AddItem(0);
         this.WhileEnd : this.AddItem(0);
-        this.Are : this.AddItem(2);
+        this.Are : this.AddItem(1);
+        this.VarMark : this.AddItem(1);
+        this.SetMark : this.AddItem(1);
         this.ItemGet : this.AddItem(1);
-        this.Set : this.AddItem(0);
         this.Call : this.AddItem(2);
         this.Var : this.AddItem(1);
         this.BoolValue : this.AddItem(1);
@@ -59,8 +60,9 @@ class OperateKindList : Any
     field prusate OperateKind While { get { return data; } set { data : value; } }
     field prusate OperateKind WhileEnd { get { return data; } set { data : value; } }
     field prusate OperateKind Are { get { return data; } set { data : value; } }
+    field prusate OperateKind VarMark { get { return data; } set { data : value; } }
+    field prusate OperateKind SetMark { get { return data; } set { data : value; } }
     field prusate OperateKind ItemGet { get { return data; } set { data : value; } }
-    field prusate OperateKind Set { get { return data; } set { data : value; } }
     field prusate OperateKind Call { get { return data; } set { data : value; } }
     field prusate OperateKind Var { get { return data; } set { data : value; } }
     field prusate OperateKind BoolValue { get { return data; } set { data : value; } }
@@ -113,7 +115,7 @@ class OperateKindList : Any
 
     field precate Array Array { get { return data; } set { data : value; } }
 
-    field precate Int ArrayCount { get { return 40; } set { } }
+    field precate Int ArrayCount { get { return 41; } set { } }
 
     field prusate Int Count { get { return data; } set { data : value; } }
 
