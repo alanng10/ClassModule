@@ -247,4 +247,10 @@ class ClassGenerat : TextAdd
         this.ExecuteOperateLimit(this.LimitMul);
         return true;
     }
+
+    maide prusate Bool ExecuteOperandDiv(var Operate operate)
+    {
+        this.ExecuteOperateLimitCond(this.LimitDiv);
+        return true;
+    }
 }
