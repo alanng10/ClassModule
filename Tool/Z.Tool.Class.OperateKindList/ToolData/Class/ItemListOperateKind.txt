@@ -6,9 +6,10 @@ InfEnd 0
 WhileStart 0
 While 0
 WhileEnd 0
-Are 2
+Are 1
+VarMark 1
+SetMark 1
 Get 1
-Set 0
 Call 2
 Var 1
 BoolValue 1
