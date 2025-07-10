@@ -211,4 +211,10 @@ class ClassGenerat : TextAdd
         this.EvalIndexPosSet(1);
         return true;
     }
+
+    maide prusate Bool ExecuteOperandAnd(var Operate operate)
+    {
+        this.ExecuteOperateLimitBool(this.LimitAnd);
+        return true;
+    }
 }
