@@ -73,7 +73,7 @@ class ClassGenerat : TextAdd
 
         inf (~b)
         {
-            this.InternNew(ka);
+            this.ExecuteInternNew(ka);
         }
 
         return true;
@@ -97,7 +97,7 @@ class ClassGenerat : TextAdd
 
         inf (~b)
         {
-            this.InternShare(ka);
+            this.ExecuteInternShare(ka);
         }
 
         return true;
