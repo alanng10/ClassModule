@@ -505,11 +505,9 @@ class ClassGenerat : TextAdd
     maide prusate Bool WhileEvalIndexStart(var Int whileIndex)
     {
         this.TextIndent();
-
         this.Text(this.ClassInt);
         this.Text(this.Space);
         this.WhileEvalIndex(whileIndex);
-
         this.Text(this.LimitSemicolon);
         this.Text(this.NewLine);
 
