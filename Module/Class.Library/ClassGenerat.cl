@@ -212,6 +212,27 @@ class ClassGenerat : TextAdd
         return true;
     }
 
+    maide prusate Bool ExecuteOperateSame(var Operate operate)
+    {
+        var String varA;
+        var String varB;
+        varA : this.VarA;
+        varB : this.VarB;
+
+        this.EvalValueGet(2, varA);
+        this.EvalValueGet(1, varB);
+
+        this.OperateLimitSame(varA, varA, varB);
+
+        this.VarMaskSet(varA, this.RefKindBoolMask);
+
+        this.EvalValueSet(2, varA);
+
+        this.EvalIndexPosSet(-1);
+
+        return true;
+    }
+
     maide prusate Bool ExecuteOperateAnd(var Operate operate)
     {
         this.ExecuteOperateLimitBool(this.LimitAnd);
