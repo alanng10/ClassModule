@@ -526,7 +526,7 @@ class ClassGenerat : TextAdd
         return true;
     }
 
-    maide prusate Bool InfEvalIndexEnd(var Int infIndex)
+    maide prusate Bool BlockEvalIndexEnd(var String word, var Int blockIndex)
     {
         this.TextIndent();
 
@@ -536,7 +536,7 @@ class ClassGenerat : TextAdd
         this.Text(this.LimitAre);
         this.Text(this.Space);
 
-        this.InfEvalIndex(infIndex);
+        this.BlockEvalIndex(word, blockIndex);
 
         this.Text(this.LimitSemicolon);
         this.Text(this.NewLine);
