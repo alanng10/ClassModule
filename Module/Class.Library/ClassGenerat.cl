@@ -212,43 +212,43 @@ class ClassGenerat : TextAdd
         return true;
     }
 
-    maide prusate Bool ExecuteOperandAnd(var Operate operate)
+    maide prusate Bool ExecuteOperateAnd(var Operate operate)
     {
         this.ExecuteOperateLimitBool(this.LimitAnd);
         return true;
     }
 
-    maide prusate Bool ExecuteOperandOrn(var Operate operate)
+    maide prusate Bool ExecuteOperateOrn(var Operate operate)
     {
         this.ExecuteOperateLimitBool(this.LimitOrn);
         return true;
     }
 
-    maide prusate Bool ExecuteOperandNot(var Operate operate)
+    maide prusate Bool ExecuteOperateNot(var Operate operate)
     {
         this.ExecuteOperateLimitBoolOne(this.LimitNot);
         return true;
     }
 
-    maide prusate Bool ExecuteOperandAdd(var Operate operate)
+    maide prusate Bool ExecuteOperateAdd(var Operate operate)
     {
         this.ExecuteOperateLimit(this.LimitAdd);
         return true;
     }
 
-    maide prusate Bool ExecuteOperandSub(var Operate operate)
+    maide prusate Bool ExecuteOperateSub(var Operate operate)
     {
         this.ExecuteOperateLimit(this.LimitSub);
         return true;
     }
 
-    maide prusate Bool ExecuteOperandMul(var Operate operate)
+    maide prusate Bool ExecuteOperateMul(var Operate operate)
     {
         this.ExecuteOperateLimit(this.LimitMul);
         return true;
     }
 
-    maide prusate Bool ExecuteOperandDiv(var Operate operate)
+    maide prusate Bool ExecuteOperateDiv(var Operate operate)
     {
         this.ExecuteOperateLimitCond(this.LimitDiv);
         return true;
