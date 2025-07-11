@@ -502,6 +502,47 @@ class ClassGenerat : TextAdd
         return true;
     }
 
+    maide prusate Bool InfEvalIndexStart(var Int infIndex)
+    {
+        this.TextIndent();
+        this.Text(this.ClassInt);
+        this.Text(this.Space);
+        this.InfEvalIndex(infIndex);
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+
+        this.TextIndent();
+
+        this.InfEvalIndex(infIndex);
+
+        this.Text(this.Space);
+        this.Text(this.LimitAre);
+        this.Text(this.Space);
+
+        this.EvalIndex();
+        
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
+    maide prusate Bool InfEvalIndexEnd(var Int infIndex)
+    {
+        this.TextIndent();
+
+        this.EvalIndex();
+
+        this.Text(this.Space);
+        this.Text(this.LimitAre);
+        this.Text(this.Space);
+
+        this.InfEvalIndex(infIndex);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
     maide prusate Bool WhileLabel(var Int whileIndex)
     {
         this.Text(this.WhilePre);
