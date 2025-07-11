@@ -9,7 +9,7 @@ class OperateKindList : Any
 
         this.End : this.AddItem(0);
         this.Ret : this.AddItem(0);
-        this.Refer : this.AddItem(0);
+        this.Refer : this.AddItem(1);
         this.InfStart : this.AddItem(0);
         this.InfEnd : this.AddItem(0);
         this.WhileStart : this.AddItem(0);
