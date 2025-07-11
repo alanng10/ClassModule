@@ -42,6 +42,13 @@ class ClassGenerat : TextAdd
         return true;
     }
 
+    maide prusate Bool ExecuteOperateInfEnd(var Operate operate)
+    {
+        this.BlockEnd();
+
+        return true;
+    }
+
     maide prusate Bool ExecuteOperateGet(var Operate operate)
     {
         var Int fieldIndex;
