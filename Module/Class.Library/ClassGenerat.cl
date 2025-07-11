@@ -504,6 +504,18 @@ class ClassGenerat : TextAdd
         return true;
     }
 
+    maide prusate Bool BlockLabelLine(var Int blockIndex)
+    {
+        this.TextIndent();
+
+        this.BlockLabel(blockIndex);
+
+        this.Text(this.LimitColon);
+
+        this.Text(this.NewLine);
+        return true;
+    }
+
     maide prusate Bool BlockEvalIndexStart(var Int blockIndex)
     {
         this.TextIndent();
