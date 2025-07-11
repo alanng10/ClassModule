@@ -480,9 +480,11 @@ class ClassGenerat : TextAdd
         return true;
     }
 
-    maide prusate Bool BlockLabel(var String word, var Int blockIndex)
+    maide prusate Bool BlockLabel(var Int blockIndex)
     {
-        this.Text(word);
+        this.Text(this.WordBlock);
+
+        this.Text(this.NameCombine);
 
         this.ClassIndex(this.Class.Index);
 
@@ -492,9 +494,9 @@ class ClassGenerat : TextAdd
         return true;
     }
 
-    maide prusate Bool BlockEvalIndex(var String word, var Int blockIndex)
+    maide prusate Bool BlockEvalIndex(var Int blockIndex)
     {
-        this.BlockLabel(word, blockIndex);
+        this.BlockLabel(blockIndex);
 
         this.Text(this.NameCombine);
 
@@ -502,18 +504,18 @@ class ClassGenerat : TextAdd
         return true;
     }
 
-    maide prusate Bool BlockEvalIndexStart(var String word, var Int blockIndex)
+    maide prusate Bool BlockEvalIndexStart(var Int blockIndex)
     {
         this.TextIndent();
         this.Text(this.ClassInt);
         this.Text(this.Space);
-        this.BlockEvalIndex(word, blockIndex);
+        this.BlockEvalIndex(blockIndex);
         this.Text(this.LimitSemicolon);
         this.Text(this.NewLine);
 
         this.TextIndent();
 
-        this.BlockEvalIndex(word, blockIndex);
+        this.BlockEvalIndex(blockIndex);
 
         this.Text(this.Space);
         this.Text(this.LimitAre);
@@ -526,7 +528,7 @@ class ClassGenerat : TextAdd
         return true;
     }
 
-    maide prusate Bool BlockEvalIndexEnd(var String word, var Int blockIndex)
+    maide prusate Bool BlockEvalIndexEnd(var Int blockIndex)
     {
         this.TextIndent();
 
@@ -536,7 +538,7 @@ class ClassGenerat : TextAdd
         this.Text(this.LimitAre);
         this.Text(this.Space);
 
-        this.BlockEvalIndex(word, blockIndex);
+        this.BlockEvalIndex(blockIndex);
 
         this.Text(this.LimitSemicolon);
         this.Text(this.NewLine);
