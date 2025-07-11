@@ -298,4 +298,36 @@ class ClassGenerat : TextAdd
         this.ExecuteOperateLimitCond(this.LimitDiv);
         return true;
     }
+
+    maide prusate Bool ExecuteOperateSignLess(var Operate operate)
+    {
+        var String varA;
+        var String varB;
+        varA : this.VarA;
+        varB : this.VarB;
+
+        var String varSA;
+        var String varSB;
+        varSA : this.VarSA;
+        varSB : this.VarSB;
+
+        this.EvalValueGet(2, varA);
+        this.EvalValueGet(1, varB);
+
+        this.VarSet(varSA, varA);
+        this.VarSet(varSB, varB);
+
+        this.SignExtend(varSA);
+        this.SignExtend(varSB);
+
+        this.OperateLimit(varA, varSA, varSB, this.LimitLess);
+
+        this.VarMaskSet(varA, this.RefKindBoolMask);
+
+        this.EvalValueSet(2, varA);
+
+        this.EvalIndexPosSet(0sn1);
+
+        return true;
+    }
 }
