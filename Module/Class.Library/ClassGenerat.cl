@@ -372,4 +372,10 @@ class ClassGenerat : TextAdd
 
         return true;
     }
+
+    maide prusate Bool ExecuteOperateBitLite(var Operate operate)
+    {
+        this.ExecuteOperateLimitAA(this.LimitBitLite);
+        return true;
+    }
 }
