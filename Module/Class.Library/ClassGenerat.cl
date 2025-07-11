@@ -354,4 +354,22 @@ class ClassGenerat : TextAdd
         this.ExecuteOperateLimitA(this.LimitOrn);
         return true;
     }
+
+    maide prusate Bool ExecuteOperateBitNot(var Operate operate)
+    {
+        var String varA;
+        varA : this.VarA;
+
+        this.EvalValueGet(1, varA);
+
+        this.OperateLimitOne(varA, varA, this.LimitBitNot);
+
+        this.VarMaskClear(varA, this.RefKindClearMask);
+
+        this.VarMaskSet(varA, this.RefKindIntMask);
+
+        this.EvalValueSet(1, varA);
+
+        return true;
+    }
 }
