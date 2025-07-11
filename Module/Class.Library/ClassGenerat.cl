@@ -491,4 +491,31 @@ class ClassGenerat : TextAdd
         this.Operate.ExecuteTextIntHex(whileIndex);
         return true;
     }
+
+    maide prusate Bool WhileEvalIndex(var Int whileIndex)
+    {
+        this.WhileLabel(whileIndex);
+
+        this.Text(this.NameCombine);
+
+        this.Text(this.WordIndex);
+        return true;
+    }
+
+    maide prusate Bool WhileEvalIndexStart(var Int whileIndex)
+    {
+        this.TextIndent();
+
+        this.WhileEvalIndex(whileIndex);
+
+        this.Text(this.Space);
+        this.Text(this.LimitAre);
+        this.Text(this.Space);
+
+        this.EvalIndex();
+        
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
 }
