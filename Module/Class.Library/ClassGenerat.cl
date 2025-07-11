@@ -342,4 +342,10 @@ class ClassGenerat : TextAdd
         this.ExecuteOperateLimitSignCond(this.LimitDiv);
         return true;
     }
+
+    maide prusate Bool ExecuteOperateBitAnd(var Operate operate)
+    {
+        this.ExecuteOperateLimitA(this.LimitAnd);
+        return true;
+    }
 }
