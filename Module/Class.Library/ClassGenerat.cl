@@ -30,9 +30,9 @@ class ClassGenerat : TextAdd
         varA : this.VarA;
 
         var Int ka;
-        ka : this.InfIndex;
+        ka : this.BlockIndex;
 
-        this.InfIndex : ka + 1;
+        this.BlockIndex : ka + 1;
 
         this.EvalValueGet(1, varA);
 
@@ -52,7 +52,7 @@ class ClassGenerat : TextAdd
     maide prusate Bool ExecuteOperateInfEnd(var Operate operate)
     {
         var Int ka;
-        ka : this.InfIndex;
+        ka : this.BlockIndex;
         ka : ka - 1;
 
         this.InfEvalIndexEnd(ka);
@@ -65,9 +65,9 @@ class ClassGenerat : TextAdd
     maide prusate Bool ExecuteOperateWhileStart(var Operate operate)
     {
         var Int ka;
-        ka : this.WhileIndex;
+        ka : this.BlockIndex;
 
-        this.WhileIndex : ka + 1;
+        this.BlockIndex : ka + 1;
 
         this.WhileLabelLine(ka);
 
@@ -80,7 +80,7 @@ class ClassGenerat : TextAdd
         varA : this.VarA;
 
         var Int ka;
-        ka : this.WhileIndex;
+        ka : this.BlockIndex;
         ka : ka - 1;
 
         this.EvalValueGet(1, varA);
@@ -101,7 +101,7 @@ class ClassGenerat : TextAdd
     maide prusate Bool ExecuteOperateWhileEnd(var Operate operate)
     {
         var Int ka;
-        ka : this.WhileIndex;
+        ka : this.BlockIndex;
         ka : ka - 1;
 
         this.WhileEvalIndexEnd(ka);
