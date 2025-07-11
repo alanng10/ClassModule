@@ -520,7 +520,7 @@ class ClassGenerat : TextAdd
         this.Text(this.Space);
 
         this.EvalIndex();
-        
+
         this.Text(this.LimitSemicolon);
         this.Text(this.NewLine);
         return true;
