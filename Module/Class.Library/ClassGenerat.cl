@@ -93,7 +93,7 @@ class ClassGenerat : TextAdd
 
         this.BlockStart();
 
-        this.WhileEvalIndexStart(ka);
+        this.BlockEvalIndexStart(ka);
 
         return true;
     }
@@ -104,9 +104,9 @@ class ClassGenerat : TextAdd
         ka : this.BlockIndex;
         ka : ka - 1;
 
-        this.WhileEvalIndexEnd(ka);
+        this.BlockEvalIndexEnd(ka);
 
-        this.GotoWhileLabel(ka);
+        this.GotoBlockLabel(ka);
 
         this.BlockEnd();
 
