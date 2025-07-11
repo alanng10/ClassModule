@@ -49,6 +49,18 @@ class ClassGenerat : TextAdd
         return true;
     }
 
+    maide prusate Bool ExecuteOperateWhileStart(var Operate operate)
+    {
+        var Int ka;
+        ka : this.WhileIndex;
+
+        this.WhileIndex : ka + 1;
+
+        this.WhileLabelLine(ka);
+
+        return true;
+    }
+
     maide prusate Bool ExecuteOperateGet(var Operate operate)
     {
         var Int fieldIndex;
