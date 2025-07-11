@@ -24,6 +24,11 @@ class ClassGenerat : TextAdd
         return true;
     }
 
+    maide prusate Bool ExecuteOperateRefer(var Operate operate)
+    {
+        return true;
+    }
+
     maide prusate Bool ExecuteOperateInfStart(var Operate operate)
     {
         var String varA;
