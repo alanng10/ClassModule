@@ -518,4 +518,21 @@ class ClassGenerat : TextAdd
         this.Text(this.NewLine);
         return true;
     }
+
+    maide prusate Bool WhileEvalIndexEnd(var Int whileIndex)
+    {
+        this.TextIndent();
+
+        this.EvalIndex();
+
+        this.Text(this.Space);
+        this.Text(this.LimitAre);
+        this.Text(this.Space);
+
+        this.WhileEvalIndex(whileIndex);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
 }
