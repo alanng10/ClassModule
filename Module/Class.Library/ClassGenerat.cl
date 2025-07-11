@@ -348,4 +348,10 @@ class ClassGenerat : TextAdd
         this.ExecuteOperateLimitA(this.LimitAnd);
         return true;
     }
+
+    maide prusate Bool ExecuteOperateBitOrn(var Operate operate)
+    {
+        this.ExecuteOperateLimitA(this.LimitOrn);
+        return true;
+    }
 }
