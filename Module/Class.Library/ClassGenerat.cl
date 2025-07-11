@@ -336,4 +336,10 @@ class ClassGenerat : TextAdd
         this.ExecuteOperateLimitSign(this.LimitMul);
         return true;
     }
+
+    maide prusate Bool ExecuteOperateSignDiv(var Operate operate)
+    {
+        this.ExecuteOperateLimitSignCond(this.LimitDiv);
+        return true;
+    }
 }
