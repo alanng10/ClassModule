@@ -131,7 +131,7 @@ class ClassGenerat : TextAdd
                 b : true;
             }
         }
-        
+
         inf (~b)
         {
             inf (ka = this.System.Int)
