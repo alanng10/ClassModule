@@ -79,6 +79,19 @@ class ClassGenerat : TextAdd
         return true;
     }
 
+    maide prusate Bool ExecuteOperateWhileEnd(var Operate operate)
+    {
+        var Int ka;
+        ka : this.WhileIndex;
+        ka : ka - 1;
+
+        this.GotoWhileLabel(ka);
+
+        this.BlockEnd();
+
+        return true;
+    }
+
     maide prusate Bool ExecuteOperateGet(var Operate operate)
     {
         var Int fieldIndex;
