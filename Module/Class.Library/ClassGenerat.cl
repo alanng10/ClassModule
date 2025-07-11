@@ -480,9 +480,31 @@ class ClassGenerat : TextAdd
         return true;
     }
 
+    maide prusate Bool InfLabel(var Int infIndex)
+    {
+        this.Text(this.InfPre);
+
+        this.ClassIndex(this.Class.Index);
+
+        this.Text(this.NameCombine);
+
+        this.Operate.ExecuteTextIntHex(infIndex);
+        return true;
+    }
+
+    maide prusate Bool InfEvalIndex(var Int infIndex)
+    {
+        this.InfLabel(infIndex);
+
+        this.Text(this.NameCombine);
+
+        this.Text(this.WordIndex);
+        return true;
+    }
+
     maide prusate Bool WhileLabel(var Int whileIndex)
     {
-        this.Text(this.WhileLabelPre);
+        this.Text(this.WhilePre);
 
         this.ClassIndex(this.Class.Index);
 
