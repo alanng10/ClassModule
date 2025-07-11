@@ -378,4 +378,10 @@ class ClassGenerat : TextAdd
         this.ExecuteOperateLimitAA(this.LimitBitLite);
         return true;
     }
+
+    maide prusate Bool ExecuteOperateBitRite(var Operate operate)
+    {
+        this.ExecuteOperateLimitAB(this.LimitBitRite);
+        return true;
+    }
 }
