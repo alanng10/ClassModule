@@ -24,6 +24,24 @@ class ClassGenerat : TextAdd
         return true;
     }
 
+    maide prusate Bool ExecuteOperateInfStart(var Operate operate)
+    {
+        var String varA;
+        varA : this.VarA;
+
+        this.EvalValueGet(1, varA);
+
+        this.EvalIndexPosSet(0sn1);
+
+        this.VarMaskClear(varA, this.RefKindClearMask);
+
+        this.InfStart(varA);
+
+        this.BlockStart();
+
+        return true;
+    }
+
     maide prusate Bool ExecuteOperateGet(var Operate operate)
     {
         var Int fieldIndex;
