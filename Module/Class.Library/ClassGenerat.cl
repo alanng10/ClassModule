@@ -516,6 +516,22 @@ class ClassGenerat : TextAdd
         return true;
     }
 
+    maide prusate Bool BlockLabelGone(var Int blockIndex)
+    {
+        this.TextIndent();
+
+        this.Text(this.IndexGoto);
+
+        this.Text(this.Space);
+
+        this.BlockLabel(blockIndex);
+
+        this.Text(this.LimitSemicolon);
+
+        this.Text(this.NewLine);
+        return true;
+    }
+
     maide prusate Bool BlockEvalIndexStart(var Int blockIndex)
     {
         this.TextIndent();
