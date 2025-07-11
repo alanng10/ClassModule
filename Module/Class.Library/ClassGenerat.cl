@@ -69,7 +69,7 @@ class ClassGenerat : TextAdd
 
         this.BlockIndex : ka + 1;
 
-        this.WhileLabelLine(ka);
+        this.BlockLabelLine(ka);
 
         return true;
     }
