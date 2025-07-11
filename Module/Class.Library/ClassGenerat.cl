@@ -44,7 +44,7 @@ class ClassGenerat : TextAdd
 
         this.BlockStart();
 
-        this.InfEvalIndexStart(ka);
+        this.BlockEvalIndexStart(ka);
 
         return true;
     }
@@ -55,7 +55,7 @@ class ClassGenerat : TextAdd
         ka : this.BlockIndex;
         ka : ka - 1;
 
-        this.InfEvalIndexEnd(ka);
+        this.BlockEvalIndexEnd(ka);
 
         this.BlockEnd();
 
