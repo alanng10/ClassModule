@@ -79,6 +79,10 @@ class ClassGenerat : TextAdd
         var String varA;
         varA : this.VarA;
 
+        var Int ka;
+        ka : this.WhileIndex;
+        ka : ka - 1;
+
         this.EvalValueGet(1, varA);
 
         this.EvalIndexPosSet(0sn1);
@@ -89,6 +93,8 @@ class ClassGenerat : TextAdd
 
         this.BlockStart();
 
+        this.WhileEvalIndexStart(ka);
+
         return true;
     }
 
@@ -97,6 +103,8 @@ class ClassGenerat : TextAdd
         var Int ka;
         ka : this.WhileIndex;
         ka : ka - 1;
+
+        this.WhileEvalIndexEnd(ka);
 
         this.GotoWhileLabel(ka);
 
