@@ -480,21 +480,21 @@ class ClassGenerat : TextAdd
         return true;
     }
 
-    maide prusate Bool InfLabel(var Int infIndex)
+    maide prusate Bool BlockLabel(var String word, var Int blockIndex)
     {
-        this.Text(this.InfPre);
+        this.Text(word);
 
         this.ClassIndex(this.Class.Index);
 
         this.Text(this.NameCombine);
 
-        this.Operate.ExecuteTextIntHex(infIndex);
+        this.Operate.ExecuteTextIntHex(blockIndex);
         return true;
     }
 
-    maide prusate Bool InfEvalIndex(var Int infIndex)
+    maide prusate Bool BlockEvalIndex(var String word, var Int blockIndex)
     {
-        this.InfLabel(infIndex);
+        this.BlockLabel(word, blockIndex);
 
         this.Text(this.NameCombine);
 
@@ -537,69 +537,6 @@ class ClassGenerat : TextAdd
         this.Text(this.Space);
 
         this.InfEvalIndex(infIndex);
-
-        this.Text(this.LimitSemicolon);
-        this.Text(this.NewLine);
-        return true;
-    }
-
-    maide prusate Bool WhileLabel(var Int whileIndex)
-    {
-        this.Text(this.WhilePre);
-
-        this.ClassIndex(this.Class.Index);
-
-        this.Text(this.NameCombine);
-
-        this.Operate.ExecuteTextIntHex(whileIndex);
-        return true;
-    }
-
-    maide prusate Bool WhileEvalIndex(var Int whileIndex)
-    {
-        this.WhileLabel(whileIndex);
-
-        this.Text(this.NameCombine);
-
-        this.Text(this.WordIndex);
-        return true;
-    }
-
-    maide prusate Bool WhileEvalIndexStart(var Int whileIndex)
-    {
-        this.TextIndent();
-        this.Text(this.ClassInt);
-        this.Text(this.Space);
-        this.WhileEvalIndex(whileIndex);
-        this.Text(this.LimitSemicolon);
-        this.Text(this.NewLine);
-
-        this.TextIndent();
-
-        this.WhileEvalIndex(whileIndex);
-
-        this.Text(this.Space);
-        this.Text(this.LimitAre);
-        this.Text(this.Space);
-
-        this.EvalIndex();
-        
-        this.Text(this.LimitSemicolon);
-        this.Text(this.NewLine);
-        return true;
-    }
-
-    maide prusate Bool WhileEvalIndexEnd(var Int whileIndex)
-    {
-        this.TextIndent();
-
-        this.EvalIndex();
-
-        this.Text(this.Space);
-        this.Text(this.LimitAre);
-        this.Text(this.Space);
-
-        this.WhileEvalIndex(whileIndex);
 
         this.Text(this.LimitSemicolon);
         this.Text(this.NewLine);
