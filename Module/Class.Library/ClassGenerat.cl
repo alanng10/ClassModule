@@ -330,4 +330,10 @@ class ClassGenerat : TextAdd
 
         return true;
     }
+
+    maide prusate Bool ExecuteOperateSignMul(var Operate operate)
+    {
+        this.ExecuteOperateLimitSign(this.LimitMul);
+        return true;
+    }
 }
