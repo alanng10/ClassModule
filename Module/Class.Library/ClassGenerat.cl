@@ -228,7 +228,7 @@ class ClassGenerat : TextAdd
 
         this.EvalValueSet(2, varA);
 
-        this.EvalIndexPosSet(-1);
+        this.EvalIndexPosSet(0sn1);
 
         return true;
     }
