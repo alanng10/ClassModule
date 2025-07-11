@@ -127,7 +127,7 @@ class ClassGenerat : TextAdd
             inf (ka = this.System.Bool)
             {
                 this.ExecuteCondRefKind(this.RefKindBool);
-        
+
                 b : true;
             }
         }
@@ -137,7 +137,7 @@ class ClassGenerat : TextAdd
             inf (ka = this.System.Int)
             {
                 this.ExecuteCondRefKind(this.RefKindInt);
-            
+
                 b : true;
             }
         }
@@ -147,7 +147,7 @@ class ClassGenerat : TextAdd
             inf (ka = this.System.String)
             {
                 this.ExecuteCondRefKindA(this.RefKindString, this.RefKindStringValue);
-            
+
                 b : true;
             }
         }
