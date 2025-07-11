@@ -479,4 +479,16 @@ class ClassGenerat : TextAdd
         this.ExecuteOperateLimitAC(this.LimitBitRite);
         return true;
     }
+
+    maide prusate Bool WhileLabel(var Int whileIndex)
+    {
+        this.Text(this.WhileLabelPre);
+
+        this.ClassIndex(this.Class.Index);
+
+        this.Text(this.NameCombine);
+
+        this.Operate.ExecuteTextIntHex(whileIndex);
+        return true;
+    }
 }
