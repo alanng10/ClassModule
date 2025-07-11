@@ -37,11 +37,6 @@ class ClassGenerat : TextAdd
         var String varA;
         varA : this.VarA;
 
-        var Int ka;
-        ka : this.BlockIndex;
-
-        this.BlockIndex : ka + 1;
-
         this.EvalValueGet(1, varA);
 
         this.EvalIndexPosSet(0sn1);
@@ -52,18 +47,18 @@ class ClassGenerat : TextAdd
 
         this.BlockStart();
 
-        this.BlockEvalIndexStart(ka);
+        this.BlockEvalIndexStart(this.BlockIndex);
+
+        this.BlockIndex : this.BlockIndex + 1;
 
         return true;
     }
 
     maide prusate Bool ExecuteOperateInfEnd(var Operate operate)
     {
-        var Int ka;
-        ka : this.BlockIndex;
-        ka : ka - 1;
+        this.BlockIndex : this.BlockIndex - 1;
 
-        this.BlockEvalIndexEnd(ka);
+        this.BlockEvalIndexEnd(this.BlockIndex);
 
         this.BlockEnd();
 
