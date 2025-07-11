@@ -384,4 +384,10 @@ class ClassGenerat : TextAdd
         this.ExecuteOperateLimitAB(this.LimitBitRite);
         return true;
     }
+
+    maide prusate Bool ExecuteOperateBitSignRite(var Operate operate)
+    {
+        this.ExecuteOperateLimitAC(this.LimitBitRite);
+        return true;
+    }
 }
