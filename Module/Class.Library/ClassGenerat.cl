@@ -506,6 +506,15 @@ class ClassGenerat : TextAdd
     {
         this.TextIndent();
 
+        this.Text(this.ClassInt);
+        this.Text(this.Space);
+        this.WhileEvalIndex(whileIndex);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+
+        this.TextIndent();
+
         this.WhileEvalIndex(whileIndex);
 
         this.Text(this.Space);
