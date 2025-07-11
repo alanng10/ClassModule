@@ -106,7 +106,7 @@ class ClassGenerat : TextAdd
 
         this.BlockEvalIndexEnd(ka);
 
-        this.GotoBlockLabel(ka);
+        this.BlockLabelGone(ka);
 
         this.BlockEnd();
 
