@@ -233,6 +233,30 @@ class ClassGenerat : TextAdd
         return true;
     }
 
+    maide prusate Bool ExecuteOperateLess(var Operate operate)
+    {
+        var String varA;
+        var String varB;
+        varA : this.VarA;
+        varB : this.VarB;
+
+        this.EvalValueGet(2, varA);
+        this.EvalValueGet(1, varB);
+
+        this.VarMaskClear(varA, this.RefKindClearMask);
+        this.VarMaskClear(varB, this.RefKindClearMask);
+
+        this.OperateLimit(varA, varA, varB, this.LimitLess);
+
+        this.VarMaskSet(varA, this.RefKindBoolMask);
+
+        this.EvalValueSet(2, varA);
+
+        this.EvalIndexPosSet(0sn1);
+
+        return true;
+    }
+
     maide prusate Bool ExecuteOperateAnd(var Operate operate)
     {
         this.ExecuteOperateLimitBool(this.LimitAnd);
