@@ -108,9 +108,10 @@ class ClassGenerat : TextAdd
 
     maide prusate Bool ExecuteOperateWhileEnd(var Operate operate)
     {
+        this.BlockIndex : this.BlockIndex - 1;
+
         var Int ka;
         ka : this.BlockIndex;
-        ka : ka - 1;
 
         this.BlockEvalIndexEnd(ka);
 
