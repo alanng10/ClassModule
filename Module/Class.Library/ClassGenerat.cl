@@ -26,7 +26,12 @@ class ClassGenerat : TextAdd
 
     maide prusate Bool ExecuteOperateRefer(var Operate operate)
     {
-        this.EvalValueSet(0, this.Zero);
+        var String varA;
+        varA : this.VarA;
+
+        this.VarSet(varA, this.Zero);
+
+        this.EvalValueSet(0, varA);
 
         this.EvalIndexPosSet(1);
         return true;
