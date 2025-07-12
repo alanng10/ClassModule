@@ -479,6 +479,26 @@ class ClassGenerat : TextAdd
         return true;
     }
 
+    maide prusate Bool BlockStart()
+    {
+        this.TextIndent();
+
+        this.Text(this.LimitBraceCurveLite);
+
+        this.Text(this.NewLine);
+        return true;
+    }
+
+    maide prusate Bool BlockEnd()
+    {
+        this.TextIndent();
+
+        this.Text(this.LimitBraceCurveRite);
+
+        this.Text(this.NewLine);
+        return true;
+    }
+
     maide prusate Bool BlockLabel(var Int blockIndex)
     {
         this.Text(this.WordBlock);
