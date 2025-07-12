@@ -486,11 +486,15 @@ class ClassGenerat : TextAdd
         this.Text(this.LimitBraceCurveLite);
 
         this.Text(this.NewLine);
+
+        this.IndentCount : this.IndentCount + 1;
         return true;
     }
 
     maide prusate Bool BlockEnd()
     {
+        this.IndentCount : this.IndentCount - 1;
+
         this.TextIndent();
 
         this.Text(this.LimitBraceCurveRite);
