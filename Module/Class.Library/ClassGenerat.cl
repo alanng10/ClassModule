@@ -14,7 +14,7 @@ class ClassGenerat : TextAdd
 
         this.CompStateEnd();
 
-        this.Text(gen.NewLine);
+        this.Text(this.NewLine);
 
         return true;
     }
