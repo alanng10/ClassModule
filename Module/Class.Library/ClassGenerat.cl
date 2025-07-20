@@ -1,6 +1,6 @@
 class ClassGenerat : TextAdd
 {
-    maide prusate Bool ExecuteMaide(var State state)
+    maide prusate Bool ExecuteMaide(var Maide varMaide, var State state)
     {
         this.CompStateKind : this.StateKindCall;
 
