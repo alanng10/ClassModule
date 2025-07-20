@@ -31,6 +31,13 @@ class ClassGenerat : TextAdd
             var Operate operate;
             operate : cast Operate(state.Operate.Get(i));
 
+            var OperateKind kind;
+            kind : this.OperateKind.Get(operate.Kind);
+
+            kind.Execute.Arg : operate;
+            kind.Execute.Execute();
+            kind.Execute.Arg : null;
+
             i : i + 1;
         }
         return true;
