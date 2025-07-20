@@ -1,16 +1,16 @@
 class ClassGenerat : TextAdd
 {
-    maide prusate Bool ExecuteMaide(var Maide varMaide, var State state)
+    maide prusate Bool ExecuteMaide(var Maide varMaide, var State call)
     {
         this.CompStateKind : this.StateKindCall;
 
-        this.ParamCount : state.Param;
+        this.ParamCount : call.Param;
 
-        this.LocalVarCount : state.Var - state.Param;
+        this.LocalVarCount : call.Var - call.Param;
 
         this.CompStateStart(this.Class, varMaide, this.StateKindCall, this.LocalVarCount);
 
-        this.ExecuteState(state);
+        this.ExecuteState(call);
 
         this.CompStateEnd();
 
