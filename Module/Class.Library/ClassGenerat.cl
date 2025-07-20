@@ -10,12 +10,17 @@ class ClassGenerat : TextAdd
 
         this.CompStateStart(this.Class, varMaide, this.StateKindCall, this.LocalVarCount);
 
-        base.ExecuteState(call);
+        this.ExecuteState(state);
 
         this.CompStateEnd();
 
         this.Text(this.NewLine);
 
+        return true;
+    }
+
+    maide prusate Bool ExecuteState(var State state)
+    {
         return true;
     }
 
