@@ -21,6 +21,18 @@ class ClassGenerat : TextAdd
 
     maide prusate Bool ExecuteState(var State state)
     {
+        var Int count;
+        count : state.Operate.Count;
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Operate operate;
+            operate : cast Operate(state.Operate.Get(i));
+
+            i : i + 1;
+        }
         return true;
     }
 
