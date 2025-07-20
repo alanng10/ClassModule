@@ -2,7 +2,7 @@ class ClassGenerat : TextAdd
 {
     field precate OperateKindList OperateKind { get { return data; } set { data : value; } }
 
-    maide prusate Bool ExecuteMaide(var Maide varMaide, var Int index, var State call)
+    maide prusate Bool ExecuteMaide(var Maide varMaide , var State call)
     {
         this.CompStateKind : this.StateKindCall;
 
@@ -10,7 +10,7 @@ class ClassGenerat : TextAdd
 
         this.LocalVarCount : call.Var - call.Param;
 
-        this.CompStateStart(this.Class, varMaide, index, this.StateKindCall);
+        this.CompStateStart(this.Class, varMaide, this.StateKindCall);
 
         this.ExecuteState(call);
 
