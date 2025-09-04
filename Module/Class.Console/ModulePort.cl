@@ -342,4 +342,43 @@ class ModulePort : TextAdd
         this.SetBaseCount();
         return true;
     }
+
+    maide precate Bool SetBaseList()
+    {
+        var Array array;
+        array : this.Binary.Base;
+
+        var Int count;
+        count : array.Count;
+        inf (~(count = this.ClassArray.Count))
+        {
+            this.Status : 40;
+            return false;
+        }
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Class varClass;
+            varClass : cast Class(this.ClassArray.Get(i));
+
+            var Int k;
+            k : cast Int(array.Get(i));
+
+            var Class baseClass;
+            baseClass : this.ClassGet(k);
+
+            inf (baseClass = null)
+            {
+                this.Status : 41;
+                return false;
+            }
+
+            varClass.Base : baseClass;
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
