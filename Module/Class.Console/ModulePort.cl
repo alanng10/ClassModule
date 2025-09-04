@@ -200,6 +200,25 @@ class ModulePort : TextAdd
 
             var ModuleRef moduleRef;
             moduleRef : binaryImport.Module;
+
+            inf (this.Module.Import.Valid(moduleRef))
+            {
+                this.Status : 20;
+                return false;
+            }
+
+            var Table classTable;
+            classTable : this.ClassInfra.TableCreateRefLess();
+
+            this.ListInfra.TableAdd(this.Module.Import, moduleRef, classTable);
+
+            var Module module;
+            module : this.ModuleGet(moduleRef);
+            inf (module = null)
+            {
+                this.Status : 21;
+                return false;
+            }
         }
     }
 }
