@@ -373,11 +373,11 @@ public class ModulePort : TextAdd
             ClassClass varClass;
             varClass = this.ClassArray.GetAt(i) as ClassClass;
 
-            InfraValue a;
-            a = array.GetAt(i) as InfraValue;
+            InfraValue k;
+            k = array.GetAt(i) as InfraValue;
 
             ClassClass baseClass;
-            baseClass = this.ClassGet(a.Int);
+            baseClass = this.ClassGet(k.Int);
 
             if (baseClass == null)
             {
