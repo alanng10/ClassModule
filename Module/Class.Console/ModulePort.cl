@@ -178,4 +178,15 @@ class ModulePort : TextAdd
         }
         return true;
     }
+
+    maide precate Bool ExecuteImport()
+    {
+        this.Module.Import : this.ClassInfra.TableCreateModuleRefLess();
+
+        var Int importTotal;
+        importTotal : 0;
+
+        var Array array;
+        array : this.Binary.Import;
+    }
 }
