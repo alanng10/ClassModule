@@ -433,7 +433,7 @@ public class ModulePort : TextAdd
         while (i < count)
         {
             ClassClass varClass;
-            varClass = (ClassClass)this.ClassArray.GetAt(i);
+            varClass = this.ClassArray.GetAt(i) as ClassClass;
 
             BinaryPart a;
             a = (BinaryPart)array.GetAt(i);
