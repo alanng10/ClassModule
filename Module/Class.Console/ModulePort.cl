@@ -188,5 +188,18 @@ class ModulePort : TextAdd
 
         var Array array;
         array : this.Binary.Import;
+
+        var Int count;
+        count : array.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var BinaryImport binaryImport;
+            binaryImport : cast BinaryImport(array.Get(i));
+
+            var ModuleRef moduleRef;
+            moduleRef : binaryImport.Module;
+        }
     }
 }
