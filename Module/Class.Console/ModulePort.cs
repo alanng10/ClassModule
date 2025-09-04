@@ -52,10 +52,7 @@ public class ModulePort : TextAdd
     {
         this.Status = 0;
 
-        ModuleRef ka;
-        ka = this.ModuleRef;
-
-        if (this.ModuleTable.Valid(ka))
+        if (this.ModuleTable.Valid(this.ModuleRef))
         {
             this.Status = 1;
             return false;
@@ -64,7 +61,7 @@ public class ModulePort : TextAdd
         ClassModule a;
         a = new ClassModule();
         a.Init();
-        a.Ref = this.ClassInfra.ModuleRefCreate(ka.Name, ka.Ver);
+        a.Ref = this.ClassInfra.ModuleRefCreate(this.ModuleRef.Name, this.ModuleRef.Ver);
 
         this.Module = a;
 
