@@ -219,6 +219,35 @@ class ModulePort : TextAdd
                 this.Status : 21;
                 return false;
             }
+
+            var Binary binary;
+            binary : cast Binary(this.BinaryTable.Get(moduleRef));
+            inf (binary = null)
+            {
+                this.Status : 22;
+                return false;
+            }
+
+            var Int countA;
+            countA : binaryImport.Class.Count;
+            var Int iA;
+            iA : 0;
+            while (iA < countA)
+            {
+                var Int ke;
+                ke : cast Int(binaryImport.Class.Get(iA));
+
+                var BinaryClass binaryClass;
+                binaryClass : cast BinaryClass(binary.Class.Get(ke));
+                inf (binaryClass = null)
+                {
+                    this.Status : 23;
+                    return false;
+                }
+
+                var String className;
+                className : binaryClass.Name;
+            }
         }
     }
 }
