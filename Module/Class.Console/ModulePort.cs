@@ -808,13 +808,4 @@ public class ModulePort : TextAdd
         a = module.Class.Get(className) as ClassClass;
         return a;
     }
-
-    protected virtual ClassClass ClassGet(ModuleRef moduleRef, String className)
-    {
-        ClassModule ae;
-        ae = this.ModuleGet(moduleRef);
-        ClassClass a;
-        a = this.ModuleClassGet(ae, className);
-        return a;
-    }
 }
