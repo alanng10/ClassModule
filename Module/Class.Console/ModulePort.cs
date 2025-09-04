@@ -202,11 +202,11 @@ public class ModulePort : TextAdd
         i = 0;
         while (i < count)
         {
-            BinaryImport o;
-            o = array.GetAt(i) as BinaryImport;
+            BinaryImport binaryImport;
+            binaryImport = array.GetAt(i) as BinaryImport;
 
             ModuleRef moduleRef;
-            moduleRef = o.Module;
+            moduleRef = binaryImport.Module;
 
             if (this.Module.Import.Valid(moduleRef))
             {
@@ -227,9 +227,9 @@ public class ModulePort : TextAdd
                 return false;
             }
 
-            BinaryBinary oo;
-            oo = this.BinaryTable.Get(moduleRef) as BinaryBinary;
-            if (oo == null)
+            BinaryBinary binary;
+            binary = this.BinaryTable.Get(moduleRef) as BinaryBinary;
+            if (binary == null)
             {
                 this.Status = 22;
                 return false;
@@ -247,7 +247,7 @@ public class ModulePort : TextAdd
                 oe = (InfraValue)oa.GetAt(iA);
 
                 BinaryClass of;
-                of = oo.Class.GetAt(oe.Int) as BinaryClass;
+                of = binary.Class.GetAt(oe.Int) as BinaryClass;
                 if (of == null)
                 {
                     this.Status = 23;
