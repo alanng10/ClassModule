@@ -241,19 +241,19 @@ public class ModulePort : TextAdd
             iA = 0;
             while (iA < countA)
             {
-                InfraValue oe;
-                oe = (InfraValue)binaryImport.Class.GetAt(iA);
+                InfraValue ke;
+                ke = (InfraValue)binaryImport.Class.GetAt(iA);
 
-                BinaryClass of;
-                of = binary.Class.GetAt(oe.Int) as BinaryClass;
-                if (of == null)
+                BinaryClass binaryClass;
+                binaryClass = binary.Class.GetAt(ke.Int) as BinaryClass;
+                if (binaryClass == null)
                 {
                     this.Status = 23;
                     return false;
                 }
 
                 String className;
-                className = of.Name;
+                className = binaryClass.Name;
 
                 ClassClass varClass;
                 varClass = this.ModuleClassGet(module, className);
