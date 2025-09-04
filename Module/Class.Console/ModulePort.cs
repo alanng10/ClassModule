@@ -290,7 +290,7 @@ public class ModulePort : TextAdd
         while (iter.Next())
         {
             Table ooo;
-            ooo = (Table)iter.Value;
+            ooo = iter.Value as Table;
 
             Iter iterA;
             iterA = ooo.IterCreate();
