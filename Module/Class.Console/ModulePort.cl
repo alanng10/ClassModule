@@ -156,5 +156,26 @@ class ModulePort : TextAdd
             }
             this.AnyClass : ka;
         }
+
+        this.ClassArray : this.ListInfra.ArrayCreate(this.Module.Class.Count);
+
+        var Iter iter;
+        iter : this.Module.Class.IterCreate();
+        this.Module.Class.IterSet(iter);
+
+        count : this.ClassArray.Count;
+        i : 0;
+        while (i < count)
+        {
+            iter.Next();
+
+            var Class varClass;
+            varClass : cast Class(iter.Value);
+
+            this.ClassArray.Set(i, varClass);
+
+            i : i + 1;
+        }
+        return true;
     }
 }
