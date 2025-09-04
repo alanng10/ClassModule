@@ -334,4 +334,12 @@ class ModulePort : TextAdd
         }
         return true;
     }
+
+    maide precate Bool ExecuteBase()
+    {
+        this.SetBaseList();
+
+        this.SetBaseCount();
+        return true;
+    }
 }
