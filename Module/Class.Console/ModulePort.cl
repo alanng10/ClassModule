@@ -144,5 +144,17 @@ class ModulePort : TextAdd
 
             i : i + 1;
         }
+
+        inf (this.TextSame(this.TA(this.Module.Ref.Name), this.TB("System.Infra")))
+        {
+            var Class ka;
+            ka : cast Class(this.Module.Class.Get("Any"));
+            inf (ka = null)
+            {
+                this.Status : 12;
+                return false;
+            }
+            this.AnyClass : ka;
+        }
     }
 }
