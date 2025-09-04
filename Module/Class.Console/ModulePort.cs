@@ -236,7 +236,7 @@ public class ModulePort : TextAdd
             }
 
             Array oa;
-            oa = o.Class;
+            oa = binaryImport.Class;
             long countA;
             countA = oa.Count;
             long iA;
