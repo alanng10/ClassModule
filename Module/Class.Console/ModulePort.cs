@@ -358,12 +358,9 @@ public class ModulePort : TextAdd
         Array array;
         array = this.Binary.Base;
 
-        Array classArray;
-        classArray = this.ClassArray;
-
         long count;
         count = array.Count;
-        if (!(count == classArray.Count))
+        if (!(count == this.ClassArray.Count))
         {
             this.Status = 40;
             return false;
@@ -374,7 +371,7 @@ public class ModulePort : TextAdd
         while (i < count)
         {
             ClassClass varClass;
-            varClass = classArray.GetAt(i) as ClassClass;
+            varClass = this.ClassArray.GetAt(i) as ClassClass;
 
             InfraValue a;
             a = array.GetAt(i) as InfraValue;
