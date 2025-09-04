@@ -188,9 +188,6 @@ public class ModulePort : TextAdd
 
     protected virtual bool ExecuteImport()
     {
-        Table binaryTable;
-        binaryTable = this.BinaryTable;
-
         Table importTable;
         importTable = this.ClassInfra.TableCreateModuleRefLess();
 
@@ -234,7 +231,7 @@ public class ModulePort : TextAdd
             }
 
             BinaryBinary oo;
-            oo = binaryTable.Get(moduleRef) as BinaryBinary;
+            oo = this.BinaryTable.Get(moduleRef) as BinaryBinary;
             if (oo == null)
             {
                 this.Status = 22;
