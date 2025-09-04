@@ -188,10 +188,7 @@ public class ModulePort : TextAdd
 
     protected virtual bool ExecuteImport()
     {
-        Table importTable;
-        importTable = this.ClassInfra.TableCreateModuleRefLess();
-
-        this.Module.Import = importTable;
+        this.Module.Import = this.ClassInfra.TableCreateModuleRefLess();
 
         long importTotal;
         importTotal = 0;
@@ -211,7 +208,7 @@ public class ModulePort : TextAdd
             ModuleRef moduleRef;
             moduleRef = o.Module;
 
-            if (importTable.Valid(moduleRef))
+            if (this.Module.Import.Valid(moduleRef))
             {
                 this.Status = 20;
                 return false;
@@ -220,7 +217,7 @@ public class ModulePort : TextAdd
             Table classTable;
             classTable = this.ClassInfra.TableCreateRefLess();
 
-            this.ListInfra.TableAdd(importTable, moduleRef, classTable);
+            this.ListInfra.TableAdd(this.Module.Import, moduleRef, classTable);
 
             ClassModule module;
             module = this.ModuleGet(moduleRef);
@@ -290,8 +287,8 @@ public class ModulePort : TextAdd
         long oi;
         oi = 0;
         Iter iter;
-        iter = importTable.IterCreate();
-        importTable.IterSet(iter);
+        iter = this.Module.Import.IterCreate();
+        this.Module.Import.IterSet(iter);
         while (iter.Next())
         {
             Table ooo;
