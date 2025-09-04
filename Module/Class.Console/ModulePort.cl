@@ -302,4 +302,36 @@ class ModulePort : TextAdd
 
         return true;
     }
+
+    maide precate Bool ExecuteExport()
+    {
+        this.Module.Export : this.ClassInfra.TableCreateStringLess();
+
+        var Array array;
+        array : this.Binary.Export;
+
+        var Int count;
+        count : array.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Int ka;
+            ka : cast Int(array.Get(i));
+
+            var Class varClass;
+            varClass : this.ClassGet(ka);
+
+            inf (varClass = null)
+            {
+                this.Status : 30;
+                return false;
+            }
+
+            this.ListInfra.TableAdd(this.Module.Export, varClass.Name, varClass);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
