@@ -436,7 +436,7 @@ public class ModulePort : TextAdd
             varClass = this.ClassArray.GetAt(i) as ClassClass;
 
             BinaryPart a;
-            a = (BinaryPart)array.GetAt(i);
+            a = array.GetAt(i) as BinaryPart;
 
             bool b;
             b = this.SetPart(varClass, a);
