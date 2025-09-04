@@ -330,7 +330,7 @@ public class ModulePort : TextAdd
             k = ka.Int;
 
             ClassClass varClass;
-            varClass = this.ClassGetIndex(k);
+            varClass = this.ClassGet(k);
 
             if (varClass == null)
             {
@@ -380,7 +380,7 @@ public class ModulePort : TextAdd
             a = array.GetAt(i) as InfraValue;
 
             ClassClass baseClass;
-            baseClass = this.ClassGetIndex(a.Int);
+            baseClass = this.ClassGet(a.Int);
 
             if (baseClass == null)
             {
@@ -498,7 +498,7 @@ public class ModulePort : TextAdd
             ua = (BinaryField)binaryField.GetAt(i);
 
             ClassClass c;
-            c = this.ClassGetIndex(ua.Class);
+            c = this.ClassGet(ua.Class);
             if (c == null)
             {
                 return false;
@@ -543,7 +543,7 @@ public class ModulePort : TextAdd
             ua = (BinaryMaide)binaryMaide.GetAt(i);
 
             ClassClass c;
-            c = this.ClassGetIndex(ua.Class);
+            c = this.ClassGet(ua.Class);
             if (c == null)
             {
                 return false;
@@ -595,7 +595,7 @@ public class ModulePort : TextAdd
             ua = (BinaryVar)binaryVar.GetAt(i);
 
             ClassClass c;
-            c = this.ClassGetIndex(ua.Class);
+            c = this.ClassGet(ua.Class);
             if (c == null)
             {
                 return false;
@@ -769,7 +769,7 @@ public class ModulePort : TextAdd
         return true;
     }
 
-    protected virtual ClassClass ClassGetIndex(long index)
+    protected virtual ClassClass ClassGet(long index)
     {
         Array classArray;
         classArray = this.ClassArray;
