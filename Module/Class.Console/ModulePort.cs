@@ -242,7 +242,7 @@ public class ModulePort : TextAdd
             while (iA < countA)
             {
                 InfraValue ke;
-                ke = (InfraValue)binaryImport.Class.GetAt(iA);
+                ke = binaryImport.Class.GetAt(iA) as InfraValue;
 
                 BinaryClass binaryClass;
                 binaryClass = binary.Class.GetAt(ke.Int) as BinaryClass;
