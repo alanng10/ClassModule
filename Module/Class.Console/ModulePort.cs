@@ -420,12 +420,9 @@ public class ModulePort : TextAdd
         Array array;
         array = this.Binary.Part;
 
-        Array classArray;
-        classArray = this.ClassArray;
-
         long count;
         count = array.Count;
-        if (!(count == classArray.Count))
+        if (!(count == this.ClassArray.Count))
         {
             this.Status = 50;
             return false;
@@ -436,7 +433,7 @@ public class ModulePort : TextAdd
         while (i < count)
         {
             ClassClass varClass;
-            varClass = (ClassClass)classArray.GetAt(i);
+            varClass = (ClassClass)this.ClassArray.GetAt(i);
 
             BinaryPart a;
             a = (BinaryPart)array.GetAt(i);
