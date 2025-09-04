@@ -282,27 +282,29 @@ public class ModulePort : TextAdd
         Array importArray;
         importArray = this.ListInfra.ArrayCreate(importTotal);
 
-        long oi;
-        oi = 0;
+        long importIndex;
+        importIndex = 0;
+
         Iter iter;
         iter = this.Module.Import.IterCreate();
         this.Module.Import.IterSet(iter);
+
         while (iter.Next())
         {
-            Table ooo;
-            ooo = iter.Value as Table;
+            Table kd;
+            kd = iter.Value as Table;
 
             Iter iterA;
-            iterA = ooo.IterCreate();
-            ooo.IterSet(iterA);
+            iterA = kd.IterCreate();
+            kd.IterSet(iterA);
             while (iterA.Next())
             {
                 ClassClass ka;
                 ka = iterA.Value as ClassClass;
 
-                importArray.SetAt(oi, ka);
+                importArray.SetAt(importIndex, ka);
 
-                oi = oi + 1;
+                importIndex = importIndex + 1;
             }
         }
 
