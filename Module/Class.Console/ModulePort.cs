@@ -235,16 +235,14 @@ public class ModulePort : TextAdd
                 return false;
             }
 
-            Array oa;
-            oa = binaryImport.Class;
             long countA;
-            countA = oa.Count;
+            countA = binaryImport.Class.Count;
             long iA;
             iA = 0;
             while (iA < countA)
             {
                 InfraValue oe;
-                oe = (InfraValue)oa.GetAt(iA);
+                oe = (InfraValue)binaryImport.Class.GetAt(iA);
 
                 BinaryClass of;
                 of = binary.Class.GetAt(oe.Int) as BinaryClass;
