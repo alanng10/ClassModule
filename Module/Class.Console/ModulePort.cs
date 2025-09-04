@@ -279,8 +279,7 @@ public class ModulePort : TextAdd
             i = i + 1;
         }
 
-        Array importArray;
-        importArray = this.ListInfra.ArrayCreate(importTotal);
+        this.ImportArray = this.ListInfra.ArrayCreate(importTotal);
 
         long importIndex;
         importIndex = 0;
@@ -302,13 +301,12 @@ public class ModulePort : TextAdd
                 ClassClass ka;
                 ka = iterA.Value as ClassClass;
 
-                importArray.SetAt(importIndex, ka);
+                this.ImportArray.SetAt(importIndex, ka);
 
                 importIndex = importIndex + 1;
             }
         }
 
-        this.ImportArray = importArray;
         return true;
     }
 
