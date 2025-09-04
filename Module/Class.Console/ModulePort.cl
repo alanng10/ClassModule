@@ -283,6 +283,23 @@ class ModulePort : TextAdd
 
         while (iter.Next())
         {
+            var Table kd;
+            kd : cast Table(iter.Value);
+
+            var Iter iterA;
+            iterA : kd.IterCreate();
+            kd.IterSet(iterA);
+            while (iterA.Next())
+            {
+                var Class ka;
+                ka : cast Class(iterA.Value);
+
+                this.ImportArray.Set(importIndex, ka);
+
+                importIndex : importIndex + 1;
+            }
         }
+
+        return true;
     }
 }
