@@ -247,7 +247,42 @@ class ModulePort : TextAdd
 
                 var String className;
                 className : binaryClass.Name;
+
+                var Class varClass;
+                varClass : this.ModuleClassGet(module, className);
+                inf (varClass = null)
+                {
+                    this.Status : 24;
+                    return false;
+                }
+
+                inf (classTable.Valid(varClass))
+                {
+                    this.Status : 25;
+                    return false;
+                }
+
+                this.ListInfra.TableAdd(classTable, varClass, varClass);
+
+                iA : iA + 1;
             }
+
+            importTotal : importTotal + countA;
+
+            i : i + 1;
+        }
+
+        this.ImportArray : this.ListInfra.ArrayCreate(importTotal);
+
+        var Int importIndex;
+        importIndex : 0;
+
+        var Iter iter;
+        iter : this.Module.Import.IterCreate();
+        this.Module.Import.IterSet(iter);
+
+        while (iter.Next())
+        {
         }
     }
 }
