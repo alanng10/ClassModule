@@ -381,4 +381,27 @@ class ModulePort : TextAdd
         }
         return true;
     }
+
+    maide precate Bool SetBaseCount()
+    {
+        var Array array;
+        array : this.ClassArray;
+
+        var Int count;
+        count : array.Count;
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Class varClass;
+            varClass : cast Class(array.Get(i));
+
+            varClass.BaseCount : this.ClassInfra.BaseCount(varClass, this.AnyClass);
+
+            i : i + 1;
+        }
+
+        return true;
+    }
 }
