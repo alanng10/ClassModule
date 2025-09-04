@@ -297,10 +297,10 @@ public class ModulePort : TextAdd
             ooo.IterSet(iterA);
             while (iterA.Next())
             {
-                ClassClass ooa;
-                ooa = iterA.Value as ClassClass;
+                ClassClass ka;
+                ka = iterA.Value as ClassClass;
 
-                importArray.SetAt(oi, ooa);
+                importArray.SetAt(oi, ka);
 
                 oi = oi + 1;
             }
