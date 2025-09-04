@@ -404,4 +404,39 @@ class ModulePort : TextAdd
 
         return true;
     }
+
+    maide precate Bool ExecutePart()
+    {
+        var Array array;
+        array : this.Binary.Part;
+
+        var Int count;
+        count : array.Count;
+        inf (~(count = this.ClassArray.Count))
+        {
+            this.Status : 50;
+            return false;
+        }
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Class varClass;
+            varClass : cast Class(this.ClassArray.Get(i));
+
+            var BinaryPart k;
+            k : cast BinaryPart(array.Get(i));
+
+            var Bool b;
+            b : this.SetPart(varClass, k);
+            inf (~b)
+            {
+                return false;
+            }
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
