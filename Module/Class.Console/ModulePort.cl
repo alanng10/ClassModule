@@ -573,4 +573,31 @@ class ModulePort : TextAdd
         }
         return true;
     }
+
+    maide precate Bool ExecuteVirtual()
+    {
+        this.VirtualClassTable : this.ClassInfra.TableCreateRefLess();
+
+        var Int count;
+        count : this.ClassArray.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Class varClass;
+            varClass : cast Class(this.ClassArray.Get(i));
+
+            var Bool b;
+            b : this.VirtualClassSet(varClass);
+            inf (~b)
+            {
+                return false;
+            }
+
+            i : i + 1;
+        }
+
+        this.VirtualClassTable : null;
+        return true;
+    }
 }
