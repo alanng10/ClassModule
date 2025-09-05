@@ -735,23 +735,20 @@ public class ModulePort : TextAdd
 
     protected virtual ClassClass ClassGet(long index)
     {
-        Array classArray;
-        classArray = this.ClassArray;
-
         ClassClass a;
         a = null;
 
         bool b;
-        b = classArray.ValidAt(index);
+        b = this.ClassArray.ValidAt(index);
 
         if (b)
         {
-            a = classArray.GetAt(index) as ClassClass;
+            a = this.ClassArray.GetAt(index) as ClassClass;
         }
         if (!b)
         {
             long ka;
-            ka = index - classArray.Count;
+            ka = index - this.ClassArray.Count;
             if (!this.ImportArray.ValidAt(ka))
             {
                 return null;
