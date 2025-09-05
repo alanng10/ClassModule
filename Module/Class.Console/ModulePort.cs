@@ -571,13 +571,10 @@ public class ModulePort : TextAdd
                 return false;
             }
 
-            String name;
-            name = ka.Name;
-
             Var a;
             a = new Var();
             a.Init();
-            a.Name = name;
+            a.Name = ka.Name;
             a.Class = k;
 
             this.ListInfra.TableAdd(varMaide.Param, a.Name, a);
