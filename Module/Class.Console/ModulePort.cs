@@ -510,13 +510,7 @@ public class ModulePort : TextAdd
 
     protected virtual bool SetPartMaide(ClassClass varClass, Array binaryMaide)
     {
-        ListInfra listInfra;
-        listInfra = this.ListInfra;
-
-        Table maideTable;
-        maideTable = this.ClassInfra.TableCreateStringLess();
-
-        varClass.Maide = maideTable;
+        varClass.Maide = this.ClassInfra.TableCreateStringLess();
 
         long count;
         count = binaryMaide.Count;
@@ -553,7 +547,7 @@ public class ModulePort : TextAdd
                 return false;
             }
 
-            listInfra.TableAdd(maideTable, a.Name, a);
+            this.ListInfra.TableAdd(varClass.Maide, a.Name, a);
 
             i = i + 1;
         }
