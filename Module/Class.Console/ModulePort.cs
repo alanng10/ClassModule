@@ -715,12 +715,12 @@ public class ModulePort : TextAdd
         String entry;
         entry = null;
 
-        long f;
-        f = this.Binary.Entry;
-        if (!(f == -1))
+        long k;
+        k = this.Binary.Entry;
+        if (!(k == -1))
         {
             ClassClass a;
-            a = this.ClassArray.GetAt(f) as ClassClass;
+            a = this.ClassArray.GetAt(k) as ClassClass;
             if (a == null)
             {
                 return false;
