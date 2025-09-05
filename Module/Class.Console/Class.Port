@@ -11,6 +11,7 @@ System.Infra
     InfraInfra Infra
 System.List
     Array Array
+    Table Table
     Iter Iter
     ListInfra Infra
 System.Text
@@ -118,6 +119,9 @@ Class.Node:0.00.00
     IntHexSignValue IntHexSignValue
     StringValue StringValue
     Node Node
+Class.Binary:0.00.00
+    Binary Binary
+    BinaryPart Part
 
 [Export]
 Console
