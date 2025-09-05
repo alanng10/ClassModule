@@ -474,13 +474,7 @@ public class ModulePort : TextAdd
 
     protected virtual bool SetPartField(ClassClass varClass, Array binaryField)
     {
-        ListInfra listInfra;
-        listInfra = this.ListInfra;
-
-        Table fieldTable;
-        fieldTable = this.ClassInfra.TableCreateStringLess();
-
-        varClass.Field = fieldTable;
+        varClass.Field = this.ClassInfra.TableCreateStringLess();
 
         long count;
         count = binaryField.Count;
@@ -510,7 +504,7 @@ public class ModulePort : TextAdd
             a.Count = this.CountList.Get(ua.Count);
             a.Parent = varClass;
 
-            listInfra.TableAdd(fieldTable, a.Name, a);
+            this.ListInfra.TableAdd(varClass.Field, a.Name, a);
 
             i = i + 1;
         }
