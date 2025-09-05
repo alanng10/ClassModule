@@ -1,4 +1,4 @@
-class ClassGena : TextAdd
+class Gena : TextAdd
 {
     field precate OperateKindList OperateKind { get { return data; } set { data : value; } }
 
