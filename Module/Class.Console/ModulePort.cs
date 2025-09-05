@@ -588,17 +588,14 @@ public class ModulePort : TextAdd
     {
         this.VirtualClassTable = this.ClassInfra.TableCreateRefLess();
 
-        Array classArray;
-        classArray = this.ClassArray;
-
         long count;
-        count = classArray.Count;
+        count = this.ClassArray.Count;
         long i;
         i = 0;
         while (i < count)
         {
             ClassClass varClass;
-            varClass = classArray.GetAt(i) as ClassClass;
+            varClass = this.ClassArray.GetAt(i) as ClassClass;
 
             bool b;
             b = this.VirtualClassSet(varClass);
