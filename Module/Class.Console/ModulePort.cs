@@ -553,13 +553,7 @@ public class ModulePort : TextAdd
 
     protected virtual bool SetPartParam(Maide varMaide, Array binaryVar)
     {
-        ListInfra listInfra;
-        listInfra = this.ListInfra;
-
-        Table varTable;
-        varTable = this.ClassInfra.TableCreateStringLess();
-
-        varMaide.Param = varTable;
+        varMaide.Param = this.ClassInfra.TableCreateStringLess();
 
         long count;
         count = binaryVar.Count;
@@ -586,7 +580,7 @@ public class ModulePort : TextAdd
             a.Name = name;
             a.Class = c;
 
-            listInfra.TableAdd(varTable, a.Name, a);
+            this.ListInfra.TableAdd(varMaide.Param, a.Name, a);
 
             i = i + 1;
         }
