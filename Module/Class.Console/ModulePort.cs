@@ -482,26 +482,23 @@ public class ModulePort : TextAdd
         i = 0;
         while (i < count)
         {
-            BinaryField ua;
-            ua = (BinaryField)binaryField.GetAt(i);
+            BinaryField ka;
+            ka = binaryField.GetAt(i) as BinaryField;
 
-            ClassClass c;
-            c = this.ClassGet(ua.Class);
-            if (c == null)
+            ClassClass k;
+            k = this.ClassGet(ka.Class);
+            if (k == null)
             {
                 return false;
             }
-
-            String name;
-            name = ua.Name;
 
             Field a;
             a = new Field();
             a.Init();
             a.Index = i;
-            a.Name = name;
-            a.Class = c;
-            a.Count = this.CountList.Get(ua.Count);
+            a.Name = ka.Name;
+            a.Class = k;
+            a.Count = this.CountList.Get(ka.Count);
             a.Parent = varClass;
 
             this.ListInfra.TableAdd(varClass.Field, a.Name, a);
