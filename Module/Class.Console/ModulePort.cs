@@ -521,9 +521,9 @@ public class ModulePort : TextAdd
             BinaryMaide ka;
             ka = binaryMaide.GetAt(i) as BinaryMaide;
 
-            ClassClass c;
-            c = this.ClassGet(ka.Class);
-            if (c == null)
+            ClassClass k;
+            k = this.ClassGet(ka.Class);
+            if (k == null)
             {
                 return false;
             }
@@ -533,7 +533,7 @@ public class ModulePort : TextAdd
             a.Init();
             a.Index = i;
             a.Name = ka.Name;
-            a.Class = c;
+            a.Class = k;
             a.Count = this.CountList.Get(ka.Count);
             a.Parent = varClass;
 
