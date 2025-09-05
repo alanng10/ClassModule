@@ -519,7 +519,7 @@ public class ModulePort : TextAdd
         while (i < count)
         {
             BinaryMaide ua;
-            ua = (BinaryMaide)binaryMaide.GetAt(i);
+            ua = binaryMaide.GetAt(i) as BinaryMaide;
 
             ClassClass c;
             c = this.ClassGet(ua.Class);
