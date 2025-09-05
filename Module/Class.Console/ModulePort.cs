@@ -564,9 +564,9 @@ public class ModulePort : TextAdd
             BinaryVar ka;
             ka = binaryVar.GetAt(i) as BinaryVar;
 
-            ClassClass c;
-            c = this.ClassGet(ka.Class);
-            if (c == null)
+            ClassClass k;
+            k = this.ClassGet(ka.Class);
+            if (k == null)
             {
                 return false;
             }
@@ -578,7 +578,7 @@ public class ModulePort : TextAdd
             a = new Var();
             a.Init();
             a.Name = name;
-            a.Class = c;
+            a.Class = k;
 
             this.ListInfra.TableAdd(varMaide.Param, a.Name, a);
 
