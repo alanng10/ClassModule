@@ -576,7 +576,7 @@ class ModulePort : TextAdd
 
     maide precate Bool ExecuteVirtual()
     {
-        this.VirtualClassTable : this.ClassInfra.TableCreateRefLess();
+        this.VirtualTable : this.ClassInfra.TableCreateRefLess();
 
         var Int count;
         count : this.ClassArray.Count;
@@ -597,13 +597,13 @@ class ModulePort : TextAdd
             i : i + 1;
         }
 
-        this.VirtualClassTable : null;
+        this.VirtualTable : null;
         return true;
     }
 
     maide precate Bool VirtualClassSet(var Class varClass)
     {
-        inf (this.VirtualClassTable.Valid(varClass))
+        inf (this.VirtualTable.Valid(varClass))
         {
             return true;
         }
@@ -638,7 +638,7 @@ class ModulePort : TextAdd
             return false;
         }
 
-        this.ListInfra.TableAdd(this.VirtualClassTable, varClass, varClass);
+        this.ListInfra.TableAdd(this.VirtualTable, varClass, varClass);
 
         return true;
     }
