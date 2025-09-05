@@ -48,7 +48,7 @@ class Gena : TextAdd
         stateIndex : this.Class.Field.Count * 2 + varMaide.Index;
 
         var State call;
-        call : array.Get(stateIndex);
+        call : cast State(array.Get(stateIndex));
 
         this.CompStateKind : this.StateKindCall;
 
