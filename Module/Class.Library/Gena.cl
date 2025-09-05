@@ -8,6 +8,29 @@ class Gena : TextAdd
 
     maide prusate Bool Execute()
     {
+        this.Arg : new GenaArg;
+        this.Arg.Init();
+
+        this.Operate : this.CountOperate;
+
+        this.ResetStage();
+        this.ExecuteStage();
+
+        var Int count;
+        count : this.Arg.Index;
+        this.Arg.Data : new Data;
+        this.Arg.Data.Count : count;
+        this.Arg.Data.Init();
+
+        this.Operate : this.CountOperate;
+
+        this.ResetStage();
+        this.ExecuteStage();
+
+        this.Result : this.Arg.Data;
+
+        this.Operate : null;
+        this.Arg : null;
         return true;
     }
 
