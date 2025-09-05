@@ -518,30 +518,27 @@ public class ModulePort : TextAdd
         i = 0;
         while (i < count)
         {
-            BinaryMaide ua;
-            ua = binaryMaide.GetAt(i) as BinaryMaide;
+            BinaryMaide ka;
+            ka = binaryMaide.GetAt(i) as BinaryMaide;
 
             ClassClass c;
-            c = this.ClassGet(ua.Class);
+            c = this.ClassGet(ka.Class);
             if (c == null)
             {
                 return false;
             }
 
-            String name;
-            name = ua.Name;
-
             Maide a;
             a = new Maide();
             a.Init();
             a.Index = i;
-            a.Name = name;
+            a.Name = ka.Name;
             a.Class = c;
-            a.Count = this.CountList.Get(ua.Count);
+            a.Count = this.CountList.Get(ka.Count);
             a.Parent = varClass;
 
             bool b;
-            b = this.SetPartParam(a, ua.Param);
+            b = this.SetPartParam(a, ka.Param);
             if (!b)
             {
                 return false;
