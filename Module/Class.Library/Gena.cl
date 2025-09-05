@@ -6,7 +6,7 @@ class Gena : TextAdd
     field precate GenaSetOperate SetOperate { get { return data; } set { data : value; } }
     field precate GenaArg Arg { get { return data; } set { data : value; } }
 
-    maide prusate Bool Execute()
+    maide prusate Bool ExecuteSource()
     {
         this.Arg : new GenaArg;
         this.Arg.Init();
