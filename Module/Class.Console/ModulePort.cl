@@ -600,4 +600,46 @@ class ModulePort : TextAdd
         this.VirtualClassTable : null;
         return true;
     }
+
+    maide precate Bool VirtualClassSet(var Class varClass)
+    {
+        inf (this.VirtualClassTable.Valid(varClass))
+        {
+            return true;
+        }
+
+        inf (~(varClass.Module = this.Module))
+        {
+            return true;
+        }
+
+        var Class ka;
+        inf (~(varClass = this.AnyClass))
+        {
+            ka : varClass.Base;
+        }
+
+        inf (~(ka = null))
+        {
+            var Bool ba;
+            ba : this.VirtualClassSet(ka);
+
+            inf (~ba)
+            {
+                return false;
+            }
+        }
+
+        var Bool b;
+        b : this.VirtualClassPartSet(varClass);
+
+        inf (~b)
+        {
+            return false;
+        }
+
+        this.ListInfra.TableAdd(this.VirtualClassTable, varClass, varClass);
+
+        return true;
+    }
 }
