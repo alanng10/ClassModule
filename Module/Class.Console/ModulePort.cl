@@ -720,4 +720,28 @@ class ModulePort : TextAdd
         this.Module.Entry : entry;
         return true;
     }
+
+    maide precate Class ClassGet(var Int index)
+    {
+        var Class a;
+
+        var Bool b;
+        b : this.ClassArray.Valid(index);
+
+        inf (b)
+        {
+            a : cast Class(this.ClassArray.Get(index));
+        }
+        inf (~b)
+        {
+            var Int ka;
+            ka : index - this.ClassArray.Count;
+            inf (~this.ImportArray.Valid(ka))
+            {
+                return null;
+            }
+            a : cast Class(this.ImportArray.Get(ka));
+        }
+        return a;
+    }
 }
