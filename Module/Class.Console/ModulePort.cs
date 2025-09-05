@@ -720,7 +720,7 @@ public class ModulePort : TextAdd
         if (!(f == -1))
         {
             ClassClass a;
-            a = (ClassClass)this.ClassArray.GetAt(f);
+            a = this.ClassArray.GetAt(f) as ClassClass;
             if (a == null)
             {
                 return false;
