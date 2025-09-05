@@ -1,3 +1,3 @@
-class Generat : TextAdd
+class Gena : TextAdd
 {
 }
