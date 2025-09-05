@@ -10,29 +10,28 @@ class Gena : TextAdd
     maide prusate Bool ExecuteStage()
     {
         var Iter iter;
-        iter : this.TableIter;
+        iter : this.TableIterA;
         this.Module.Class.IterSet(iter);
 
         while (iter.Next())
         {
-            var Class varClass;
-            varClass : cast Class(iter.Value);
+            this.Class : cast Class(iter.Value);
 
-            this.ExecuteClass(varClass);
+            this.ExecuteClass();
         }
         return true;
     }
 
-    maide prusate Bool ExecuteClass(var Class varClass)
+    maide prusate Bool ExecuteClass()
     {
         var Iter iter;
-        iter : this.TableIter;
-        varClass.Maide.IterSet(iter);
+        iter : this.TableIterB;
+        this.Class.Maide.IterSet(iter);
 
         while (iter.Next())
         {
             var Maide varMaide;
-            varMaide : cast Class(iter.Value);
+            varMaide : cast Maide(iter.Value);
 
             this.ExecuteMaide(varMaide);
         }
