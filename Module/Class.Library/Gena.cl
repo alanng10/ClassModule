@@ -69,7 +69,7 @@ class Gena : TextAdd
     maide prusate Bool ExecuteMaide(var Maide varMaide)
     {
         var Array array;
-        array : this.Binary.State.Get(this.Class.Index);
+        array : cast Array(this.Binary.State.Get(this.Class.Index));
 
         var Int stateIndex;
         stateIndex : this.Class.Field.Count * 2 + varMaide.Index;
