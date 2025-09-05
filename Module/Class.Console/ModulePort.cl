@@ -751,4 +751,11 @@ class ModulePort : TextAdd
         a : cast Module(this.ModuleTable.Get(moduleRef));
         return a;
     }
+
+    maide precate Class ModuleClassGet(var Module module, var String className)
+    {
+        var Class a;
+        a : cast Class(module.Class.Get(className));
+        return a;
+    }
 }
