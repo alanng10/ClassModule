@@ -461,4 +461,40 @@ class ModulePort : TextAdd
 
         return true;
     }
+
+    maide precate Bool SetPartField(var Class varClass, var Array binaryField)
+    {
+        varClass.Field : this.ClassInfra.TableCreateStringLess();
+
+        var Int count;
+        count : binaryField.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var BinaryField ka;
+            ka : cast BinaryField(binaryField.Get(i));
+
+            var Class k;
+            k : this.ClassGet(ka.Class);
+            inf (k = null)
+            {
+                return false;
+            }
+
+            var Field a;
+            a : new Field;
+            a.Init();
+            a.Index : i;
+            a.Name : ka.Name;
+            a.Class : k;
+            a.Count : this.CountList.Get(ka.Count);
+            a.Parent : varClass;
+
+            this.ListInfra.TableAdd(varClass.Field, a.Name, a);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
