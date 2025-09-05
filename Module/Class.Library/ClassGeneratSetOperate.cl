@@ -1,4 +1,4 @@
-class ClassGeneratSetOperate : ClassGeneratOperate
+class GenaSetOperate : GenaOperate
 {
     maide prusate Bool Init()
     {
@@ -11,8 +11,8 @@ class ClassGeneratSetOperate : ClassGeneratOperate
 
     maide prusate Bool ExecuteChar(var Int value)
     {
-        var GeneratArg arg;
-        arg : this.Generat.Arg;
+        var GenaArg arg;
+        arg : this.Gena.Arg;
 
         var Int index;
         index : arg.Index;
