@@ -1,6 +1,10 @@
 class Gena : TextAdd
 {
     field precate OperateKindList OperateKind { get { return data; } set { data : value; } }
+    field precate GenaOperate Operate { get { return data; } set { data : value; } }
+    field precate GenaCountOperate CountOperate { get { return data; } set { data : value; } }
+    field precate GenaSetOperate SetOperate { get { return data; } set { data : value; } }
+    field precate GenaArg Arg { get { return data; } set { data : value; } }
 
     maide prusate Bool Execute()
     {
