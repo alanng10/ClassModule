@@ -2,8 +2,55 @@ class Gena : TextAdd
 {
     field precate OperateKindList OperateKind { get { return data; } set { data : value; } }
 
-    maide prusate Bool ExecuteMaide(var Maide varMaide, var State call)
+    maide prusate Bool Execute()
     {
+        return true;
+    }
+
+    maide prusate Bool ExecuteStage()
+    {
+        var Iter iter;
+        iter : this.TableIter;
+        this.Module.Class.IterSet(iter);
+
+        while (iter.Next())
+        {
+            var Class varClass;
+            varClass : cast Class(iter.Value);
+
+            this.ExecuteClass(varClass);
+        }
+        return true;
+    }
+
+    maide prusate Bool ExecuteClass(var Class varClass)
+    {
+        var Iter iter;
+        iter : this.TableIter;
+        varClass.Maide.IterSet(iter);
+
+        while (iter.Next())
+        {
+            var Maide varMaide;
+            varMaide : cast Class(iter.Value);
+
+            this.ExecuteMaide(varMaide);
+        }
+
+        return true;
+    }
+
+    maide prusate Bool ExecuteMaide(var Maide varMaide)
+    {
+        var Array array;
+        array : this.Binary.State.Get(this.Class.Index);
+
+        var Int stateIndex;
+        stateIndex : this.Class.Field.Count * 2 + varMaide.Index;
+
+        var State call;
+        call : array.Get(stateIndex);
+
         this.CompStateKind : this.StateKindCall;
 
         this.ParamCount : call.Param;
