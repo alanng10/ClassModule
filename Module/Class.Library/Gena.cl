@@ -514,13 +514,13 @@ class Gena : TextAdd
 
     maide prusate Bool ExecuteOperateBitRite(var Operate operate)
     {
-        this.ExecuteOperateLimitAB(this.LimitBitRite);
+        this.ExecuteOperateLimitAA(this.LimitBitRite);
         return true;
     }
 
     maide prusate Bool ExecuteOperateBitSignRite(var Operate operate)
     {
-        this.ExecuteOperateLimitAC(this.LimitBitRite);
+        this.ExecuteOperateLimitAB(this.LimitBitRite);
         return true;
     }
 
