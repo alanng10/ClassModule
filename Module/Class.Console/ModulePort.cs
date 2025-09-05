@@ -742,7 +742,7 @@ public class ModulePort : TextAdd
         a = null;
 
         bool b;
-        b = (classArray.ValidAt(index));
+        b = classArray.ValidAt(index);
 
         if (b)
         {
