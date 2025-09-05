@@ -744,4 +744,11 @@ class ModulePort : TextAdd
         }
         return a;
     }
+
+    maide precate Module ModuleGet(var ModuleRef moduleRef)
+    {
+        var Module a;
+        a : cast Module(this.ModuleTable.Get(moduleRef));
+        return a;
+    }
 }
