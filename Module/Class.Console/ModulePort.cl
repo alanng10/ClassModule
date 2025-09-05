@@ -497,4 +497,47 @@ class ModulePort : TextAdd
         }
         return true;
     }
+
+    maide precate Bool SetPartMaide(var Class varClass, var Array binaryMaide)
+    {
+        varClass.Maide : this.ClassInfra.TableCreateStringLess();
+
+        var Int count;
+        count : binaryMaide.Count;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var BinaryMaide ka;
+            ka : cast BinaryMaide(binaryMaide.Get(i));
+
+            var Class k;
+            k : this.ClassGet(ka.Class);
+            inf (k = null)
+            {
+                return false;
+            }
+
+            var Maide a;
+            a : new Maide;
+            a.Init();
+            a.Index : i;
+            a.Name : ka.Name;
+            a.Class : k;
+            a.Count : this.CountList.Get(ka.Count);
+            a.Parent : varClass;
+
+            var Bool b;
+            b : this.SetPartParam(a, ka.Param);
+            inf (~b)
+            {
+                return false;
+            }
+
+            this.ListInfra.TableAdd(varClass.Maide, a.Name, a);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
