@@ -698,4 +698,26 @@ class ModulePort : TextAdd
         }
         return true;
     }
+
+    maide precate Bool ExecuteEntry()
+    {
+        var String entry;
+
+        var Int k;
+        k : this.Binary.Entry;
+        inf (~(k = null))
+        {
+            var Class a;
+            a : cast Class(this.ClassArray.Get(k));
+            inf (a = null)
+            {
+                return false;
+            }
+
+            entry : a.Name;
+        }
+
+        this.Module.Entry : entry;
+        return true;
+    }
 }
