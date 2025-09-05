@@ -740,21 +740,23 @@ public class ModulePort : TextAdd
 
         ClassClass a;
         a = null;
+
         bool b;
         b = (classArray.ValidAt(index));
+
         if (b)
         {
             a = classArray.GetAt(index) as ClassClass;
         }
         if (!b)
         {
-            long oa;
-            oa = index - classArray.Count;
-            if (!this.ImportArray.ValidAt(oa))
+            long ka;
+            ka = index - classArray.Count;
+            if (!this.ImportArray.ValidAt(ka))
             {
                 return null;
             }
-            a = this.ImportArray.GetAt(oa) as ClassClass;
+            a = this.ImportArray.GetAt(ka) as ClassClass;
         }
         return a;
     }
