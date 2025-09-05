@@ -29,10 +29,17 @@ Text.Text:0.00.00
 Storage.Storage:0.00.00
     StorageNameForm NameForm
 Class.Infra:0.00.00
+    Class Class
+    Field Field
+    Maide Maide
+    Var Var
+    Module Module
+    ModuleRef ModuleRef
     Range Range
     Pos Pos
     Source Source
     Error Error
+    CountList CountList
     PrintChar PrintChar
     ClassInfra Infra
 Class.Token:0.00.00
