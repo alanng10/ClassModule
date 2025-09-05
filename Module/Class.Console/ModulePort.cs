@@ -561,18 +561,18 @@ public class ModulePort : TextAdd
         i = 0;
         while (i < count)
         {
-            BinaryVar ua;
-            ua = binaryVar.GetAt(i) as BinaryVar;
+            BinaryVar ka;
+            ka = binaryVar.GetAt(i) as BinaryVar;
 
             ClassClass c;
-            c = this.ClassGet(ua.Class);
+            c = this.ClassGet(ka.Class);
             if (c == null)
             {
                 return false;
             }
 
             String name;
-            name = ua.Name;
+            name = ka.Name;
 
             Var a;
             a = new Var();
