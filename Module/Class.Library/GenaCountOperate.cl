@@ -1,8 +1,8 @@
-class GenaCountOperate : GenaOperate
+class ClassGenaCountOperate : ClassGenaOperate
 {
     maide prusate Bool ExecuteChar(var Int value)
     {
-        var GenaArg arg;
+        var ClassGenaArg arg;
         arg : this.Gena.Arg;
 
         var Int index;

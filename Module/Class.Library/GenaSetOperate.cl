@@ -1,4 +1,4 @@
-class GenaSetOperate : GenaOperate
+class ClassGenaSetOperate : ClassGenaOperate
 {
     maide prusate Bool Init()
     {
@@ -11,7 +11,7 @@ class GenaSetOperate : GenaOperate
 
     maide prusate Bool ExecuteChar(var Int value)
     {
-        var GenaArg arg;
+        var ClassGenaArg arg;
         arg : this.Gena.Arg;
 
         var Int index;

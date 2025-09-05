@@ -1,4 +1,4 @@
-class GenaOperate : Any
+class ClassGenaOperate : Any
 {
     field prusate Gena Gena { get { return data; } set { data : value; } }
 
