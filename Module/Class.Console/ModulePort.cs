@@ -562,7 +562,7 @@ public class ModulePort : TextAdd
         while (i < count)
         {
             BinaryVar ua;
-            ua = (BinaryVar)binaryVar.GetAt(i);
+            ua = binaryVar.GetAt(i) as BinaryVar;
 
             ClassClass c;
             c = this.ClassGet(ua.Class);
