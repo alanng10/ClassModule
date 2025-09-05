@@ -642,4 +642,20 @@ class ModulePort : TextAdd
 
         return true;
     }
+
+    maide precate Bool VirtualClassPartSet(var Class varClass)
+    {
+        var Bool b;
+        b : this.VirtualClassFieldSet(varClass);
+        inf (~b)
+        {
+            return false;
+        }
+        b : this.VirtualClassMaideSet(varClass);
+        inf (~b)
+        {
+            return false;
+        }
+        return true;
+    }
 }
