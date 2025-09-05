@@ -674,4 +674,28 @@ class ModulePort : TextAdd
         }
         return true;
     }
+
+    maide precate Bool VirtualClassMaideSet(var Class varClass)
+    {
+        var Iter iterA;
+        iterA : new TableIter;
+        iterA.Init();
+
+        var Iter iterB;
+        iterB : new TableIter;
+        iterB.Init();
+
+        var Iter iter;
+        iter : varClass.Maide.IterCreate();
+        varClass.Maide.IterSet(iter);
+
+        while (iter.Next())
+        {
+            var Maide a;
+            a : cast Maide(iter.Value);
+
+            this.ClassInfra.VirtualMaide(a, this.AnyClass, iterA, iterB);
+        }
+        return true;
+    }
 }
