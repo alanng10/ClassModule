@@ -13,6 +13,7 @@ System.List
     Array Array
     Table Table
     Iter Iter
+    TableIter TableIter
     ListInfra Infra
 System.Text
     Text Text
@@ -121,7 +122,12 @@ Class.Node:0.00.00
     Node Node
 Class.Binary:0.00.00
     Binary Binary
+    BinaryClass Class
+    BinaryImport Import
     BinaryPart Part
+    BinaryField Field
+    BinaryMaide Maide
+    BinaryVar Var
 
 [Export]
 Console
