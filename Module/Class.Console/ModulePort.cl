@@ -439,4 +439,26 @@ class ModulePort : TextAdd
         }
         return true;
     }
+
+    maide precate Bool SetPart(var Class varClass, var BinaryPart part)
+    {
+        varClass.FieldStart : part.FieldStart;
+
+        varClass.MaideStart : part.MaideStart;
+
+        var Bool b;
+
+        b : this.SetPartField(varClass, part.Field);
+        inf (~b)
+        {
+            return false;
+        }
+        b : this.SetPartMaide(varClass, part.Maide);
+        inf (~b)
+        {
+            return false;
+        }
+
+        return true;
+    }
 }
