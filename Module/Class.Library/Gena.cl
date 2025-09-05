@@ -1,14 +1,14 @@
-class Gena : TextAdd
+class ClassGena : TextAdd
 {
     field precate OperateKindList OperateKind { get { return data; } set { data : value; } }
-    field precate GenaOperate Operate { get { return data; } set { data : value; } }
-    field precate GenaCountOperate CountOperate { get { return data; } set { data : value; } }
-    field precate GenaSetOperate SetOperate { get { return data; } set { data : value; } }
-    field precate GenaArg Arg { get { return data; } set { data : value; } }
+    field precate ClassGenaOperate Operate { get { return data; } set { data : value; } }
+    field precate ClassGenaCountOperate CountOperate { get { return data; } set { data : value; } }
+    field precate ClassGenaSetOperate SetOperate { get { return data; } set { data : value; } }
+    field precate ClassGenaArg Arg { get { return data; } set { data : value; } }
 
     maide prusate Bool Execute()
     {
-        this.Arg : new GenaArg;
+        this.Arg : new ClassGenaArg;
         this.Arg.Init();
 
         this.Operate : this.CountOperate;
