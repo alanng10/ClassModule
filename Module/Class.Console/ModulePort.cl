@@ -658,4 +658,20 @@ class ModulePort : TextAdd
         }
         return true;
     }
+
+    maide precate Bool VirtualClassFieldSet(var Class varClass)
+    {
+        var Iter iter;
+        iter : varClass.Field.IterCreate();
+        varClass.Field.IterSet(iter);
+
+        while (iter.Next())
+        {
+            var Field a;
+            a : cast Field(iter.Value);
+
+            this.ClassInfra.VirtualField(a, this.AnyClass);
+        }
+        return true;
+    }
 }
