@@ -61,7 +61,7 @@ class ClassGenaCountOperate : ClassGenaOperate
         ka.FillChar : this.TextInfra.Char("0");
         ka.Value : value;
 
-        this.ExecuteArgCount(ka);
+        this.Format.ExecuteArgCount(ka);
 
         var Int count;
         count : ka.Count;
