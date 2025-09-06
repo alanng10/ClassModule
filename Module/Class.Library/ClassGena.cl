@@ -755,6 +755,20 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool TextInt(var Int value)
+    {
+        this.Operate.ExecuteTextInt(value);
+        return true;
+    }
+
+    maide prusate Bool TextIntHex(var Int value)
+    {
+        this.Text(this.IntValueHexPre);
+
+        this.Operate.ExecuteTextIntHex(value);
+        return true;
+    }
+
     maide prusate Bool TextIndent()
     {
         var String indent;
