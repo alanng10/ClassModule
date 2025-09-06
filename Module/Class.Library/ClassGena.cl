@@ -754,4 +754,22 @@ class ClassGena : TextAdd
         this.Text(this.NewLine);
         return true;
     }
+
+    maide prusate Bool Text(var String text)
+    {
+        var Int count;
+        count : this.StringCount(text);
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Int k;
+            k : this.StringChar(text, i);
+
+            this.ExecuteChar(k);
+
+            i : i + 1;
+        }
+        return true;
+    }
 }
