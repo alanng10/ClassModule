@@ -755,6 +755,30 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool TextPos(var Int value)
+    {
+        var Bool b;
+        b : sign <(value, 0);
+
+        var String ka;
+        ka : this.LimitAdd;
+
+        var Int k;
+        k : value;
+
+        inf (b)
+        {
+            k : 0 - k;
+
+            ka : this.LimitSub;
+        }
+
+        this.Text(ka);
+        this.Text(this.Space);
+        this.TextInt(k);
+        return true;
+    }
+
     maide prusate Bool TextInt(var Int value)
     {
         this.Operate.ExecuteTextInt(value);
