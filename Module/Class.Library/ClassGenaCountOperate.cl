@@ -41,4 +41,16 @@ class ClassGenaCountOperate : ClassGenaOperate
         arg.Index : index;
         return true;
     }
+
+    maide prusate Bool ExecuteTextIntHex(var Int value)
+    {
+        var ClassGenaArg arg;
+        arg : this.Gena.Arg;
+
+        var Int index;
+        index : arg.Index;
+        index : index + 15;
+        arg.Index : index;
+        return true;
+    }
 }
