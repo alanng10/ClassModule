@@ -95,8 +95,8 @@ class ClassGenaSetOperate : ClassGenaOperate
         ka.Value : null;
 
         kk.Data : null;
-        kk.Range.Index : 0;
-        kk.Range.Count : 0;
+        kk.Range.Index : null;
+        kk.Range.Count : null;
 
         index : index + count;
         arg.Index : index;
