@@ -755,6 +755,20 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool ModuleRef(var ModuleRef moduleRef)
+    {
+        this.Text(this.NamePre);
+
+        this.Text(this.NameCombine);
+
+        this.NameSymbolString(moduleRef.Name);
+
+        this.Text(this.NameCombine);
+
+        this.ModuleVer(moduleRef.Ver);
+        return true;
+    }
+
     maide prusate Bool ModuleVer(var Int ver)
     {
         this.Operate.ExecuteTextIntHex(ver);
