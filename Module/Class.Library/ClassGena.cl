@@ -755,6 +755,14 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool EvalIndex()
+    {
+        this.Text(this.EvalVar);
+        this.Text(this.LimitDotPointer);
+        this.Text(this.EvalIndexVar);
+        return true;
+    }
+
     maide prusate Bool ClassName(var Class varClass)
     {
         this.Text(this.NamePre);
