@@ -772,4 +772,9 @@ class ClassGena : TextAdd
         }
         return true;
     }
+
+    maide prusate Bool ExecuteChar(var Int n)
+    {
+        return this.Operate.ExecuteChar(n);
+    }
 }
