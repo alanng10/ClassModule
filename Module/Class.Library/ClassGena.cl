@@ -755,6 +755,23 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool EvalFrameValueSet(var Int pos, var String arg)
+    {
+        this.TextIndent();
+
+        this.EvalFrameValue(pos);
+
+        this.Text(this.Space);
+        this.Text(this.LimitAre);
+        this.Text(this.Space);
+
+        this.Text(arg);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
     maide prusate Bool EvalFrameValue(var Int pos)
     {
         this.EvalStack();
