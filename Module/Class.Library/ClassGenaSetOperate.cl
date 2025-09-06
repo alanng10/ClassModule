@@ -56,4 +56,50 @@ class ClassGenaSetOperate : ClassGenaOperate
         arg.Index : index;
         return true;
     }
+
+    maide prusate Bool ExecuteTextInt(var Int value)
+    {
+        var ClassGenaArg arg;
+        arg : this.Gena.Arg;
+
+        var Int index;
+        index : arg.Index;
+
+        var FormatArg ka;
+        ka : this.FormatArgInt;
+
+        var Text kk;
+        kk : this.Text;
+
+        ka.Kind : 1;
+        ka.AlignLeft : false;
+        ka.Base : 10;
+        ka.FieldWidth : 0;
+        ka.MaxWidth : null;
+        ka.FillChar : this.TextInfra.Char("0");
+        ka.Value : value;
+
+        this.Format.ExecuteArgCount(ka);
+
+        var Int count;
+        count : ka.Count;
+
+        kk.Data : arg.Data;
+        kk.Range.Index : index;
+        kk.Range.Count : count;
+
+        this.Format.ExecuteArgResult(ka, kk);
+
+        ka.Count : 0;
+        ka.ValueCount : 0;
+        ka.Value : null;
+
+        kk.Data : null;
+        kk.Range.Index : 0;
+        kk.Range.Count : 0;
+
+        index : index + count;
+        arg.Index : index;
+        return true;
+    }
 }
