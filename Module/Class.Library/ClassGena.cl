@@ -765,6 +765,18 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool StringValueRef(var Int index)
+    {
+        this.StringListName(this.Class);
+
+        this.Text(this.LimitBraceRightLite);
+
+        this.TextIntHex(index);
+
+        this.Text(this.LimitBraceRightRite);
+        return true;
+    }
+
     maide prusate Bool TextPos(var Int value)
     {
         var Bool b;
