@@ -7,6 +7,7 @@ class ClassGenaSetOperate : ClassGenaOperate
 
         this.Format : this.CreateFormat();
         this.FormatArgInt : this.CreateFormatArg();
+        this.Text : this.CreateText();
         return true;
     }
 
@@ -26,9 +27,20 @@ class ClassGenaSetOperate : ClassGenaOperate
         return a;
     }
 
+    maide precate Text CreateText()
+    {
+        var Text a;
+        a : new Text;
+        a.Init();
+        a.Range : new Range;
+        a.Range.Init();
+        return a;
+    }
+
     field precate TextInfra TextInfra { get { return data; } set { data : value; } }
     field precate Format Format { get { return data; } set { data : value; } }
     field precate FormatArg FormatArgInt { get { return data; } set { data : value; } }
+    field precate Text Text { get { return data; } set { data : value; } }
 
     maide prusate Bool ExecuteChar(var Int value)
     {
