@@ -755,6 +755,16 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool ClassName(var Class varClass)
+    {
+        this.Text(this.NamePre);
+
+        this.Text(this.NameCombine);
+
+        this.ClassIndex(varClass.Index);
+        return true;
+    }
+
     maide prusate Bool ClassIndex(var Int index)
     {
         this.Operate.ExecuteTextIntHex(index);
