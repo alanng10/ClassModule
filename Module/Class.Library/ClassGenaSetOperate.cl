@@ -4,6 +4,9 @@ class ClassGenaSetOperate : ClassGenaOperate
     {
         base.Init();
         this.TextInfra : share TextInfra;
+
+        this.Format : this.CreateFormat();
+        this.FormatArgInt : this.CreateFormatArg();
         return true;
     }
 
