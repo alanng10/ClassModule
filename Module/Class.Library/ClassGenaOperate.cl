@@ -5,4 +5,12 @@ class ClassGenaOperate : Any
     maide prusate Bool ExecuteChar(var Int value)
     {
     }
+
+    maide prusate Bool ExecuteTextInt(var Int value)
+    {
+    }
+
+    maide prusate Bool ExecuteTextIntHex(var Int value)
+    {
+    }
 }
