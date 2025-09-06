@@ -755,6 +755,23 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool VarSet(var String dest, var String value)
+    {
+        this.TextIndent();
+
+        this.Text(dest);
+
+        this.Text(this.Space);
+        this.Text(this.LimitAre);
+        this.Text(this.Space);
+
+        this.Text(value);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
     maide prusate Bool VarSetPre(var String dest)
     {
         this.TextIndent();
