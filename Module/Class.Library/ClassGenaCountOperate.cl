@@ -23,6 +23,12 @@ class ClassGenaCountOperate : ClassGenaOperate
         var FormatArg a;
         a : new FormatArg;
         a.Init();
+        a.Kind : 1;
+        a.Base : 10;
+        a.AlignLeft : false;
+        a.FieldWidth : 0;
+        a.MaxWidth : null;
+        a.FillChar : this.TextInfra.Char("0");
         return a;
     }
 
@@ -50,25 +56,16 @@ class ClassGenaCountOperate : ClassGenaOperate
         var Int index;
         index : arg.Index;
 
-        var FormatArg ka;
-        ka : this.FormatArgInt;
+        this.FormatArgInt.Value : value;
 
-        ka.Kind : 1;
-        ka.Base : 10;
-        ka.AlignLeft : false;
-        ka.FieldWidth : 0;
-        ka.MaxWidth : null;
-        ka.FillChar : this.TextInfra.Char("0");
-        ka.Value : value;
-
-        this.ExecuteArgCount(ka);
+        this.Format.ExecuteArgCount(this.FormatArgInt);
 
         var Int count;
-        count : ka.Count;
+        count : this.FormatArgInt.Count;
 
-        ka.Count : 0;
-        ka.ValueCount : 0;
-        ka.Value : null;
+        this.FormatArgInt.Count : 0;
+        this.FormatArgInt.ValueCount : 0;
+        this.FormatArgInt.Value : null;
 
         index : index + count;
 
