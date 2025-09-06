@@ -72,8 +72,8 @@ class ClassGenaSetOperate : ClassGenaOperate
         kk : this.Text;
 
         ka.Kind : 1;
-        ka.AlignLeft : false;
         ka.Base : 10;
+        ka.AlignLeft : false;
         ka.FieldWidth : 0;
         ka.MaxWidth : null;
         ka.FillChar : this.TextInfra.Char("0");
