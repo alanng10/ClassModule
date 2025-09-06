@@ -755,6 +755,23 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool BoolValueRef(var Bool value)
+    {
+        this.Text(this.IntValueHexPre);
+
+        this.Text(this.RefKindBool);
+
+        var Int k;
+        k : 0;
+        inf (value)
+        {
+            k : 1;
+        }
+
+        this.Operate.ExecuteTextIntHex(k);
+        return true;
+    }
+
     maide prusate Bool IntValueRef(var Int value)
     {
         this.Text(this.IntValueHexPre);
