@@ -755,6 +755,22 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool EvalFrameValue(var Int pos)
+    {
+        this.EvalStack();
+
+        this.Text(this.LimitBraceRightLite);
+
+        this.Text(this.EvalFrameVar);
+
+        this.Text(this.Space);
+
+        this.TextPos(pos);
+
+        this.Text(this.LimitBraceRightRite);
+        return true;
+    }
+
     maide prusate Bool EvalIndexPosSet(var Int pos)
     {
         this.TextIndent();
