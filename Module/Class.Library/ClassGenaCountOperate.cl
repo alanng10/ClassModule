@@ -42,6 +42,40 @@ class ClassGenaCountOperate : ClassGenaOperate
         return true;
     }
 
+    maide prusate Bool ExecuteTextInt(var Int value)
+    {
+        var ClassGenaArg arg;
+        arg : this.Gena.Arg;
+
+        var Int index;
+        index : arg.Index;
+
+        var FormatArg ka;
+        ka : this.FormatArgInt;
+
+        ka.Kind : 1;
+        ka.Base : 10;
+        ka.AlignLeft : false;
+        ka.FieldWidth : 0;
+        ka.MaxWidth : null;
+        ka.FillChar : this.TextInfra.Char("0");
+        ka.Value : value;
+
+        this.ExecuteArgCount(ka);
+
+        var Int count;
+        count : ka.Count;
+
+        ka.Count : 0;
+        ka.ValueCount : 0;
+        ka.Value : null;
+
+        index : index + count;
+
+        arg.Index : index;
+        return true;
+    }
+
     maide prusate Bool ExecuteTextIntHex(var Int value)
     {
         var ClassGenaArg arg;
