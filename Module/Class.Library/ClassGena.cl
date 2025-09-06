@@ -42,7 +42,7 @@ class ClassGena : TextAdd
     field prusate ClassGenaSetOperate SetOperate { get { return data; } set { data : value; } }
     field prusate ClassGenaArg Arg { get { return data; } set { data : value; } }
     field prusate TableIter ClassIter { get { return data; } set { data : value; } }
-    field precate OperateKindList OperateKind { get { return data; } set { data : value; } }
+    field precate OperateKindList OperateKindList { get { return data; } set { data : value; } }
 
     maide prusate Bool Execute()
     {
