@@ -1,5 +1,33 @@
 class ClassGena : TextAdd
 {
+    maide prusate Bool Init()
+    {
+        base.Init();
+        this.OperateKindList : share OperateKindList;
+
+        this.CountOperate : this.CreateCountOperate();
+        this.SetOperate : this.CreateSetOperate();
+        return true;
+    }
+
+    maide precate ClassGenaCountOperate CreateCountOperate()
+    {
+        var ClassGenaCountOperate a;
+        a : new ClassGenaCountOperate;
+        a.Gena : this;
+        a.Init();
+        return a;
+    }
+
+    maide precate ClassGenaSetOperate CreateSetOperate()
+    {
+        var ClassGenaSetOperate a;
+        a : new ClassGenaSetOperate;
+        a.Gena : this;
+        a.Init();
+        return a;
+    }
+
     field prusate ClassGenaOperate Operate { get { return data; } set { data : value; } }
     field prusate ClassGenaCountOperate CountOperate { get { return data; } set { data : value; } }
     field prusate ClassGenaSetOperate SetOperate { get { return data; } set { data : value; } }
