@@ -1,10 +1,10 @@
 class ClassGena : TextAdd
 {
+    field prusate ClassGenaOperate Operate { get { return data; } set { data : value; } }
+    field prusate ClassGenaCountOperate CountOperate { get { return data; } set { data : value; } }
+    field prusate ClassGenaSetOperate SetOperate { get { return data; } set { data : value; } }
+    field prusate ClassGenaArg Arg { get { return data; } set { data : value; } }
     field precate OperateKindList OperateKind { get { return data; } set { data : value; } }
-    field precate ClassGenaOperate Operate { get { return data; } set { data : value; } }
-    field precate ClassGenaCountOperate CountOperate { get { return data; } set { data : value; } }
-    field precate ClassGenaSetOperate SetOperate { get { return data; } set { data : value; } }
-    field precate ClassGenaArg Arg { get { return data; } set { data : value; } }
 
     maide prusate Bool Execute()
     {
