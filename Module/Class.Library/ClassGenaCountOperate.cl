@@ -6,7 +6,7 @@ class ClassGenaCountOperate : ClassGenaOperate
         this.TextInfra : share TextInfra;
 
         this.Format : this.CreateFormat();
-        this.FormatArg : this.CreateFormatArg();
+        this.FormatArgInt : this.CreateFormatArg();
         return true;
     }
 
