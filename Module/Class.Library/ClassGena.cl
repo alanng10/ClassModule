@@ -755,6 +755,13 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool VarSetPost()
+    {
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
     maide prusate Bool VarSetPos(var String dest, var String value, var Int pos)
     {
         this.TextIndent();
