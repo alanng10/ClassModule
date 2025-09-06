@@ -775,6 +775,43 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool NameSymbolString(var String name)
+    {
+        var Int alphaStart;
+        alphaStart : this.Char("a");
+
+        var Int count;
+        count : this.StringCount(name);
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Int kd;
+            kd : this.StringChar(name, i);
+
+            var Int k;
+            k : bit &(kd, 0hff);
+
+            var Int hex0;
+            hex0 : bit &(k, 0hf);
+
+            var Int hex1;
+            hex1 : bit >(k, 4);
+
+            var Int ka;
+            var Int kb;
+            ka : this.TextInfra.DigitChar(hex1, alphaStart);
+            kb : this.TextInfra.DigitChar(hex0, alphaStart);
+
+            this.ExecuteChar(ka);
+            this.ExecuteChar(kb);
+
+            i : i + 1;
+        }
+
+        return true;
+    }
+
     maide prusate Bool BoolValueRef(var Bool value)
     {
         this.Text(this.IntValueHexPre);
