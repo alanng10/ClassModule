@@ -755,6 +755,49 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool VarSetDerefVar(var String dest, var String value, var String varPos)
+    {
+        var String ka;
+        var String kb;
+        ka : this.LimitBraceRoundLite;
+        kb : this.LimitBraceRoundRite;
+
+        this.TextIndent();
+
+        this.Text(dest);
+
+        this.Text(this.Space);
+        this.Text(this.LimitAre);
+        this.Text(this.Space);
+
+        this.Text(this.LimitAsterisk);
+
+        this.Text(ka);
+
+        this.Text(ka);
+
+        this.Text(ka);
+        this.Text(this.ClassInt);
+        this.Text(this.LimitAsterisk);
+        this.Text(kb);
+
+        this.Text(value);
+
+        this.Text(kb);
+
+        this.Text(this.Space);
+        this.Text(this.LimitAdd);
+        this.Text(this.Space);
+
+        this.Text(varPos);
+
+        this.Text(kb);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
     maide prusate Bool VarDerefSet(var String dest, var String value)
     {
         var String ka;
