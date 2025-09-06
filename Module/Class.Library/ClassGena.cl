@@ -778,6 +778,29 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool VarMaskSet(var String varVar, var String mask)
+    {
+        this.TextIndent();
+
+        this.Text(varVar);
+
+        this.Text(this.Space);
+        this.Text(this.LimitAre);
+        this.Text(this.Space);
+
+        this.Text(varVar);
+
+        this.Text(this.Space);
+        this.Text(this.LimitOrn);
+        this.Text(this.Space);
+
+        this.Text(mask);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
     maide prusate Bool EvalValueGet(var Int index, var String varVar)
     {
         this.TextIndent();
