@@ -7,6 +7,7 @@ class ClassGena : TextAdd
 
         this.CountOperate : this.CreateCountOperate();
         this.SetOperate : this.CreateSetOperate();
+        this.ClassIter : this.CreateClassIter();
         return true;
     }
 
@@ -28,10 +29,19 @@ class ClassGena : TextAdd
         return a;
     }
 
+    maide precate TableIter CreateClassIter()
+    {
+        var TableIter a;
+        a : new TableIter;
+        a.Init();
+        return a;
+    }
+
     field prusate ClassGenaOperate Operate { get { return data; } set { data : value; } }
     field prusate ClassGenaCountOperate CountOperate { get { return data; } set { data : value; } }
     field prusate ClassGenaSetOperate SetOperate { get { return data; } set { data : value; } }
     field prusate ClassGenaArg Arg { get { return data; } set { data : value; } }
+    field prusate TableIter ClassIter { get { return data; } set { data : value; } }
     field precate OperateKindList OperateKind { get { return data; } set { data : value; } }
 
     maide prusate Bool Execute()
@@ -68,7 +78,7 @@ class ClassGena : TextAdd
     maide prusate Bool ExecuteStage()
     {
         var Iter iter;
-        iter : this.TableIterA;
+        iter : this.ClassIter;
         this.Module.Class.IterSet(iter);
 
         while (iter.Next())
@@ -83,7 +93,7 @@ class ClassGena : TextAdd
     maide prusate Bool ExecuteClass()
     {
         var Iter iter;
-        iter : this.TableIterB;
+        iter : this.TableIter;
         this.Class.Maide.IterSet(iter);
 
         while (iter.Next())
