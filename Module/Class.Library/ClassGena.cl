@@ -46,6 +46,7 @@ class ClassGena : TextAdd
 
         var Int count;
         count : this.Arg.Index;
+        count : count * 4;
         this.Arg.Data : new Data;
         this.Arg.Data.Count : count;
         this.Arg.Data.Init();
@@ -55,7 +56,9 @@ class ClassGena : TextAdd
         this.ResetStage();
         this.ExecuteStage();
 
-        this.Result : this.Arg.Data;
+        var String k;
+        k : this.StringComp.CreateData(this.Arg.Data, null);
+        this.Result = k;
 
         this.Operate : null;
         this.Arg : null;
