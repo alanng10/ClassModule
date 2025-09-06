@@ -755,6 +755,22 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool TextIndent()
+    {
+        var String indent;
+        indent : "    ";
+        var Int count;
+        count : this.IndentCount;
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            this.Text(indent);
+            i : i + 1;
+        }
+        return true;
+    }
+
     maide prusate Bool Text(var String text)
     {
         var Int count;
