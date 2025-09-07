@@ -2469,12 +2469,9 @@ public class ClassGen : TextAdd
         String varA;
         varA = this.VarA;
 
-        String ka;
-        ka = this.RefKindClearMask;
-
         this.EvalValueGet(1, varA);
 
-        this.VarMaskClear(varA, ka);
+        this.VarMaskClear(varA, this.RefKindClearMask);
 
         this.OperateLimitOne(varA, varA, limit);
 
