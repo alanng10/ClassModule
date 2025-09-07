@@ -2972,21 +2972,6 @@ public class ClassGen : TextAdd
         return true;
     }
 
-    public virtual bool DeclareVar(String varClass, String varVar)
-    {
-        this.TextIndent();
-
-        this.Text(varClass);
-
-        this.Text(this.Space);
-
-        this.Text(varVar);
-
-        this.Text(this.LimitSemicolon);
-        this.Text(this.NewLine);
-        return true;
-    }
-
     public virtual bool OperateLimit(String dest, String lite, String rite, String limit)
     {
         this.TextIndent();
@@ -3074,6 +3059,21 @@ public class ClassGen : TextAdd
         this.Text(this.Space);
 
         this.Text(value);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
+    public virtual bool DeclareVar(String varClass, String varVar)
+    {
+        this.TextIndent();
+
+        this.Text(varClass);
+
+        this.Text(this.Space);
+
+        this.Text(varVar);
 
         this.Text(this.LimitSemicolon);
         this.Text(this.NewLine);
