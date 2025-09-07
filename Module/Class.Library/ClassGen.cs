@@ -2530,22 +2530,19 @@ public class ClassGen : TextAdd
 
     public virtual bool OperateLimit(String dest, String lite, String rite, String limit)
     {
-        String space;
-        space = this.Space;
-
         this.TextIndent();
 
         this.Text(dest);
 
-        this.Text(space);
+        this.Text(this.Space);
         this.Text(this.LimitAre);
-        this.Text(space);
+        this.Text(this.Space);
 
         this.Text(lite);
 
-        this.Text(space);
+        this.Text(this.Space);
         this.Text(limit);
-        this.Text(space);
+        this.Text(this.Space);
 
         this.Text(rite);
 
