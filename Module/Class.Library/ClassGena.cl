@@ -967,6 +967,38 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool InternValue(var String dest, var Class varClass)
+    {
+        var String k;
+
+        inf (varClass = this.System.Bool)
+        {
+            k : this.InternValueBool;
+        }
+        inf (varClass = this.System.Int)
+        {
+            k : this.InternValueInt;
+        }
+        inf (varClass = this.System.String)
+        {
+            k : this.InternValueString;
+        }
+
+        this.TextIndent();
+        this.Text(dest);
+
+        this.Text(this.Space);
+        this.Text(this.LimitAre);
+        this.Text(this.Space);
+
+        this.Text(k);
+        this.Text(this.LimitBraceRoundLite);
+        this.Text(this.LimitBraceRoundRite);
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
     maide prusate Bool ExecuteVirtualCallThisCond(var Int thisEvalIndex)
     {
         var String varA;
