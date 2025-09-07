@@ -755,21 +755,6 @@ class ClassGena : TextAdd
         return true;
     }
 
-    maide prusate Bool DeclareVar(var String varClass, var String varVar)
-    {
-        this.TextIndent();
-
-        this.Text(varClass);
-
-        this.Text(this.Space);
-
-        this.Text(varVar);
-
-        this.Text(this.LimitSemicolon);
-        this.Text(this.NewLine);
-        return true;
-    }
-
     maide prusate Bool OperateLimit(var String dest, var String lite, var String rite, var String limit)
     {
         this.TextIndent();
@@ -857,6 +842,21 @@ class ClassGena : TextAdd
         this.Text(this.Space);
 
         this.Text(value);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
+    maide prusate Bool DeclareVar(var String varClass, var String varVar)
+    {
+        this.TextIndent();
+
+        this.Text(varClass);
+
+        this.Text(this.Space);
+
+        this.Text(varVar);
 
         this.Text(this.LimitSemicolon);
         this.Text(this.NewLine);
