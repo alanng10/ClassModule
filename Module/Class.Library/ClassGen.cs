@@ -2528,21 +2528,6 @@ public class ClassGen : TextAdd
         return true;
     }
 
-    public virtual bool Return()
-    {
-        this.TextIndent();
-
-        this.Text(this.IndexReturn);
-
-        this.Text(this.Space);
-
-        this.Text(this.Zero);
-
-        this.Text(this.LimitSemicolon);
-        this.Text(this.NewLine);
-        return true;
-    }
-
     public virtual bool CallCompState(String compState)
     {
         String ka;
@@ -2961,6 +2946,21 @@ public class ClassGen : TextAdd
         }
 
         this.EvalIndexFramePosSet(count);
+        return true;
+    }
+
+    public virtual bool Return()
+    {
+        this.TextIndent();
+
+        this.Text(this.IndexReturn);
+
+        this.Text(this.Space);
+
+        this.Text(this.Zero);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
         return true;
     }
 
