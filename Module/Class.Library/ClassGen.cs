@@ -1118,7 +1118,7 @@ public class ClassGen : TextAdd
         this.Text(this.LimitAre);
         this.Text(this.Space);
         this.Text(this.LimitAnd);
-        this.ModuleClassVarName(this.Class);
+        this.ModuleClass(this.Class);
         this.Text(this.LimitSemicolon);
         this.Text(this.NewLine);
 
@@ -1217,7 +1217,7 @@ public class ClassGen : TextAdd
         this.Text(this.Space);
 
         this.Text(this.LimitAnd);
-        this.ModuleClassVarName(this.Class.Base);
+        this.ModuleClass(this.Class.Base);
         this.Text(this.LimitComma);
         this.Text(this.Space);
 
@@ -1348,7 +1348,7 @@ public class ClassGen : TextAdd
 
         this.Text(this.LimitBraceRoundLite);
 
-        this.ModuleClassVarName(this.Class.Base);
+        this.ModuleClass(this.Class.Base);
         this.Text(this.LimitDot);
         this.Text(this.BaseWord);
         this.Text(this.ItemWord);
@@ -1762,7 +1762,7 @@ public class ClassGen : TextAdd
         return true;
     }
 
-    public virtual bool ModuleClassVarName(ClassClass varClass)
+    public virtual bool ModuleClass(ClassClass varClass)
     {
         this.ModuleStructName(varClass.Module.Ref);
         this.Text(this.LimitDot);
@@ -1776,7 +1776,7 @@ public class ClassGen : TextAdd
     public virtual bool ClassVar(ClassClass varClass)
     {
         this.Text(this.LimitBraceRoundLite);
-        this.ModuleClassVarName(varClass);
+        this.ModuleClass(varClass);
         this.Text(this.LimitDot);
         this.Text(this.VarWord);
         this.Text(this.LimitBraceRoundRite);
