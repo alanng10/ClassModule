@@ -2576,7 +2576,7 @@ public class ClassGen : TextAdd
         return true;
     }
 
-    public virtual bool ExecuteValueMaideCallThisCond(String refKind, long thisEvalIndex)
+    public virtual bool ExecuteValueMaideCallThisCond(long thisEvalIndex)
     {
         String varA;
         String varB;
@@ -2589,7 +2589,7 @@ public class ClassGen : TextAdd
 
         this.OperateLimit(varA, varC, this.RefKindBitRiteCount, this.LimitBitRite);
 
-        this.OperateLimitSame(varB, varA, refKind);
+        this.OperateLimitSame(varB, varA, this.RefKindAny);
 
         this.OperateLimitSame(varA, varA, this.Zero);
 
@@ -2598,24 +2598,6 @@ public class ClassGen : TextAdd
         this.CondSet(varC, varA, varC, this.InternValueRef);
 
         this.EvalValueSet(thisEvalIndex, varC);
-
-        return true;
-    }
-
-    public virtual bool ExecuteValueMaideCallThisCondA(long thisEvalIndex)
-    {
-        String varA;
-        String varB;
-        varA = this.VarA;
-        varB = this.VarB;
-
-        this.EvalValueGet(thisEvalIndex, varB);
-
-        this.OperateLimitSame(varA, varB, this.Zero);
-
-        this.CondSet(varB, varA, varB, this.InternValueRef);
-
-        this.EvalValueSet(thisEvalIndex, varB);
 
         return true;
     }
