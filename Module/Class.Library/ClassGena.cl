@@ -638,6 +638,40 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool CallCompState(var String compState)
+    {
+        var String ka;
+        var String kb;
+        ka : this.LimitBraceRoundLite;
+        kb : this.LimitBraceRoundRite;
+
+        this.TextIndent();
+
+        this.Text(ka);
+
+        this.Text(ka);
+        this.Text(this.ClassCompState);
+        this.Text(kb);
+
+        this.Text(compState);
+
+        this.Text(kb);
+
+        this.Text(ka);
+        this.Text(this.EvalVar);
+
+        this.Text(this.LimitComma);
+        this.Text(this.Space);
+
+        this.EvalIndex();
+
+        this.Text(kb);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
     maide prusate Bool BlockStart()
     {
         this.TextIndent();
