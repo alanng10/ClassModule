@@ -933,6 +933,27 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool InternShare(var Class varClass)
+    {
+        this.TextIndent();
+
+        this.Text(this.InternShareMaide);
+        this.Text(this.LimitBraceRoundLite);
+
+        this.ClassVar(varClass);
+
+        this.Text(this.LimitComma);
+        this.Text(this.Space);
+
+        this.Text(this.EvalVar);
+
+        this.Text(this.LimitBraceRoundRite);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
     maide prusate Bool ExecuteVirtualCallThisCond(var Int thisEvalIndex)
     {
         var String varA;
