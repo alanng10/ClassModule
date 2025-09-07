@@ -755,6 +755,14 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool SignExtend(var String varVar)
+    {
+        this.OperateLimit(varVar, varVar, this.RefBitCount, this.LimitBitLite);
+
+        this.OperateLimit(varVar, varVar, this.RefBitCount, this.LimitBitRite);
+        return true;
+    }
+
     maide prusate Bool OperateLimit(var String dest, var String lite, var String rite, var String limit)
     {
         this.TextIndent();
