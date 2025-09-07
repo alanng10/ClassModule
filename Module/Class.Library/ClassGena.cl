@@ -638,6 +638,29 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool OperateLimit(var String dest, var String lite, var String rite, var String limit)
+    {
+        this.TextIndent();
+
+        this.Text(dest);
+
+        this.Text(this.Space);
+        this.Text(this.LimitAre);
+        this.Text(this.Space);
+
+        this.Text(lite);
+
+        this.Text(this.Space);
+        this.Text(limit);
+        this.Text(this.Space);
+
+        this.Text(rite);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
     maide prusate Bool BlockStart()
     {
         this.TextIndent();
