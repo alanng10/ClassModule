@@ -755,6 +755,21 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool Return()
+    {
+        this.TextIndent();
+
+        this.Text(this.IndexReturn);
+
+        this.Text(this.Space);
+
+        this.Text(this.Zero);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
     maide prusate Bool SignExtend(var String varVar)
     {
         this.OperateLimit(varVar, varVar, this.RefBitCount, this.LimitBitLite);
