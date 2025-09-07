@@ -2528,14 +2528,6 @@ public class ClassGen : TextAdd
         return true;
     }
 
-    public virtual bool SignExtend(String varVar)
-    {
-        this.OperateLimit(varVar, varVar, this.RefBitCount, this.LimitBitLite);
-
-        this.OperateLimit(varVar, varVar, this.RefBitCount, this.LimitBitRite);
-        return true;
-    }
-
     public virtual bool Return()
     {
         this.TextIndent();
@@ -2969,6 +2961,14 @@ public class ClassGen : TextAdd
         }
 
         this.EvalIndexFramePosSet(count);
+        return true;
+    }
+
+    public virtual bool SignExtend(String varVar)
+    {
+        this.OperateLimit(varVar, varVar, this.RefBitCount, this.LimitBitLite);
+
+        this.OperateLimit(varVar, varVar, this.RefBitCount, this.LimitBitRite);
         return true;
     }
 
