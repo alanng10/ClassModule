@@ -2528,40 +2528,6 @@ public class ClassGen : TextAdd
         return true;
     }
 
-    public virtual bool CallCompState(String compState)
-    {
-        String ka;
-        String kb;
-        ka = this.LimitBraceRoundLite;
-        kb = this.LimitBraceRoundRite;
-
-        this.TextIndent();
-
-        this.Text(ka);
-
-        this.Text(ka);
-        this.Text(this.ClassCompState);
-        this.Text(kb);
-
-        this.Text(compState);
-
-        this.Text(kb);
-
-        this.Text(ka);
-        this.Text(this.EvalVar);
-
-        this.Text(this.LimitComma);
-        this.Text(this.Space);
-
-        this.EvalIndex();
-
-        this.Text(kb);
-
-        this.Text(this.LimitSemicolon);
-        this.Text(this.NewLine);
-        return true;
-    }
-
     public virtual bool InternNew(ClassClass varClass)
     {
         this.TextIndent();
@@ -2850,6 +2816,40 @@ public class ClassGen : TextAdd
         this.Text(falseValue);
 
         this.Text(this.LimitBraceRoundRite);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
+    public virtual bool CallCompState(String compState)
+    {
+        String ka;
+        String kb;
+        ka = this.LimitBraceRoundLite;
+        kb = this.LimitBraceRoundRite;
+
+        this.TextIndent();
+
+        this.Text(ka);
+
+        this.Text(ka);
+        this.Text(this.ClassCompState);
+        this.Text(kb);
+
+        this.Text(compState);
+
+        this.Text(kb);
+
+        this.Text(ka);
+        this.Text(this.EvalVar);
+
+        this.Text(this.LimitComma);
+        this.Text(this.Space);
+
+        this.EvalIndex();
+
+        this.Text(kb);
 
         this.Text(this.LimitSemicolon);
         this.Text(this.NewLine);
