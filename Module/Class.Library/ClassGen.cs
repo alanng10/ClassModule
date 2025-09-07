@@ -2528,99 +2528,6 @@ public class ClassGen : TextAdd
         return true;
     }
 
-    public virtual bool OperateLimit(String dest, String lite, String rite, String limit)
-    {
-        this.TextIndent();
-
-        this.Text(dest);
-
-        this.Text(this.Space);
-        this.Text(this.LimitAre);
-        this.Text(this.Space);
-
-        this.Text(lite);
-
-        this.Text(this.Space);
-        this.Text(limit);
-        this.Text(this.Space);
-
-        this.Text(rite);
-
-        this.Text(this.LimitSemicolon);
-        this.Text(this.NewLine);
-        return true;
-    }
-
-    public virtual bool OperateLimitSame(String dest, String lite, String rite)
-    {
-        this.TextIndent();
-
-        this.Text(dest);
-
-        this.Text(this.Space);
-        this.Text(this.LimitAre);
-        this.Text(this.Space);
-
-        this.Text(this.LimitBraceRoundLite);
-        this.Text(lite);
-
-        this.Text(this.Space);
-        this.Text(this.LimitSame);
-        this.Text(this.Space);
-
-        this.Text(rite);
-        this.Text(this.LimitBraceRoundRite);
-
-        this.Text(this.LimitSemicolon);
-        this.Text(this.NewLine);
-        return true;
-    }
-
-    public virtual bool OperateLimitSameClass(String dest, String lite, ClassClass varClass)
-    {
-        this.TextIndent();
-
-        this.Text(dest);
-
-        this.Text(this.Space);
-        this.Text(this.LimitAre);
-        this.Text(this.Space);
-
-        this.Text(this.LimitBraceRoundLite);
-        this.Text(lite);
-
-        this.Text(this.Space);
-        this.Text(this.LimitSame);
-        this.Text(this.Space);
-
-        this.ModuleClassVarClassName(varClass);
-        this.Text(this.LimitBraceRoundRite);
-
-        this.Text(this.LimitSemicolon);
-        this.Text(this.NewLine);
-        return true;
-    }
-
-    public virtual bool OperateLimitOne(String dest, String value, String limit)
-    {
-        this.TextIndent();
-
-        this.Text(dest);
-
-        this.Text(this.Space);
-        this.Text(this.LimitAre);
-        this.Text(this.Space);
-
-        this.Text(limit);
-        this.Text(this.Space);
-
-        this.Text(value);
-
-        this.Text(this.LimitSemicolon);
-        this.Text(this.NewLine);
-        return true;
-    }
-
     public virtual bool SignExtend(String varVar)
     {
         this.OperateLimit(varVar, varVar, this.RefBitCount, this.LimitBitLite);
@@ -3074,6 +2981,99 @@ public class ClassGen : TextAdd
         this.Text(this.Space);
 
         this.Text(varVar);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
+    public virtual bool OperateLimit(String dest, String lite, String rite, String limit)
+    {
+        this.TextIndent();
+
+        this.Text(dest);
+
+        this.Text(this.Space);
+        this.Text(this.LimitAre);
+        this.Text(this.Space);
+
+        this.Text(lite);
+
+        this.Text(this.Space);
+        this.Text(limit);
+        this.Text(this.Space);
+
+        this.Text(rite);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
+    public virtual bool OperateLimitSame(String dest, String lite, String rite)
+    {
+        this.TextIndent();
+
+        this.Text(dest);
+
+        this.Text(this.Space);
+        this.Text(this.LimitAre);
+        this.Text(this.Space);
+
+        this.Text(this.LimitBraceRoundLite);
+        this.Text(lite);
+
+        this.Text(this.Space);
+        this.Text(this.LimitSame);
+        this.Text(this.Space);
+
+        this.Text(rite);
+        this.Text(this.LimitBraceRoundRite);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
+    public virtual bool OperateLimitSameClass(String dest, String lite, ClassClass varClass)
+    {
+        this.TextIndent();
+
+        this.Text(dest);
+
+        this.Text(this.Space);
+        this.Text(this.LimitAre);
+        this.Text(this.Space);
+
+        this.Text(this.LimitBraceRoundLite);
+        this.Text(lite);
+
+        this.Text(this.Space);
+        this.Text(this.LimitSame);
+        this.Text(this.Space);
+
+        this.ModuleClassVarClassName(varClass);
+        this.Text(this.LimitBraceRoundRite);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
+    public virtual bool OperateLimitOne(String dest, String value, String limit)
+    {
+        this.TextIndent();
+
+        this.Text(dest);
+
+        this.Text(this.Space);
+        this.Text(this.LimitAre);
+        this.Text(this.Space);
+
+        this.Text(limit);
+        this.Text(this.Space);
+
+        this.Text(value);
 
         this.Text(this.LimitSemicolon);
         this.Text(this.NewLine);
