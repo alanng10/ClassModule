@@ -717,6 +717,65 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool ExecuteCast(var Class varClass)
+    {
+        var Int baseIndex;
+        baseIndex : varClass.BaseCount - 1;
+
+        var String varA;
+        var String varB;
+        var String varC;
+        var String varD;
+        varA : this.VarA;
+        varB : this.VarB;
+        varC : this.VarC;
+        varD : this.VarD;
+
+        this.EvalValueGet(1, varA);
+
+        this.VarSet(varB, varA);
+
+        this.OperateLimit(varB, varB, this.RefKindBitRiteCount, this.LimitBitRite);
+
+        this.OperateLimitSame(varB, varB, this.RefKindAny);
+
+        this.CondSet(varC, varB, varA, this.InternValueRef);
+
+        this.VarMaskClear(varC, this.MemoryIndexMask);
+
+        this.VarSetDeref(varC, varC, 0);
+
+        this.VarSet(varB, varC);
+
+        this.VarSetDeref(varC, varC, 1);
+
+        this.OperateLimit(varC, varC, this.BaseBitRiteCount, this.LimitBitRite);
+
+        this.VarSetPre(varD);
+        this.TextIntHex(baseIndex);
+        this.VarSetPost();
+
+        this.OperateLimit(varC, varC, varD, this.LimitLess);
+
+        this.CondSet(varD, varC, this.Zero, varD);
+
+        this.CondSet(varB, varC, this.InternValueClass, varB);
+
+        this.VarSetDeref(varC, varB, 0);
+
+        this.VarSetDerefVar(varC, varC, varD);
+
+        this.VarSetDeref(varC, varC, 0);
+
+        this.OperateLimitSameClass(varC, varC, varClass);
+
+        this.CondSet(varA, varC, varA, this.Zero);
+
+        this.EvalValueSet(1, varA);
+
+        return true;
+    }
+
     maide prusate Bool BlockStart()
     {
         this.TextIndent();
