@@ -776,6 +776,28 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool ExecuteCondRefKind(var String refKind)
+    {
+        var String varA;
+        var String varB;
+        varA : this.VarA;
+        varB : this.VarB;
+
+        this.EvalValueGet(1, varA);
+
+        this.VarSet(varB, varA);
+
+        this.OperateLimit(varB, varB, this.RefKindBitRiteCount, this.LimitBitRite);
+
+        this.OperateLimitSame(varB, varB, refKind);
+
+        this.CondSet(varA, varB, varA, this.Zero);
+
+        this.EvalValueSet(1, varA);
+
+        return true;
+    }
+
     maide prusate Bool BlockStart()
     {
         this.TextIndent();
