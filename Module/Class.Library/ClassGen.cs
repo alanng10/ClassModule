@@ -1773,7 +1773,7 @@ public class ClassGen : TextAdd
         return true;
     }
 
-    public virtual bool ModuleClassVarClassName(ClassClass varClass)
+    public virtual bool ClassVar(ClassClass varClass)
     {
         this.Text(this.LimitBraceRoundLite);
         this.ModuleClassVarName(varClass);
@@ -2496,7 +2496,7 @@ public class ClassGen : TextAdd
         this.Text(this.LimitComma);
         this.Text(this.Space);
 
-        this.ModuleClassVarClassName(varClass);
+        this.ClassVar(varClass);
 
         this.Text(this.LimitComma);
         this.Text(this.Space);
@@ -2517,7 +2517,7 @@ public class ClassGen : TextAdd
         this.Text(this.InternShareMaide);
         this.Text(this.LimitBraceRoundLite);
 
-        this.ModuleClassVarClassName(varClass);
+        this.ClassVar(varClass);
 
         this.Text(this.LimitComma);
         this.Text(this.Space);
@@ -3020,7 +3020,7 @@ public class ClassGen : TextAdd
         this.Text(this.LimitSame);
         this.Text(this.Space);
 
-        this.ModuleClassVarClassName(varClass);
+        this.ClassVar(varClass);
         this.Text(this.LimitBraceRoundRite);
 
         this.Text(this.LimitSemicolon);
