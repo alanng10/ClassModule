@@ -826,6 +826,54 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool CondSet(var String dest, var String cond, var String trueValue, var String falseValue)
+    {
+        this.TextIndent();
+
+        this.Text(dest);
+
+        this.Text(this.Space);
+        this.Text(this.LimitAre);
+        this.Text(this.Space);
+
+        this.Text(this.LimitBraceRoundLite);
+
+        this.Text(cond);
+
+        this.Text(this.Space);
+        this.Text(this.LimitMul);
+        this.Text(this.Space);
+
+        this.Text(trueValue);
+
+        this.Text(this.LimitBraceRoundRite);
+
+        this.Text(this.Space);
+        this.Text(this.LimitAdd);
+        this.Text(this.Space);
+
+        this.Text(this.LimitBraceRoundLite);
+
+        this.Text(this.LimitBraceRoundLite);
+
+        this.Text(this.LimitNot);
+        this.Text(cond);
+
+        this.Text(this.LimitBraceRoundRite);
+
+        this.Text(this.Space);
+        this.Text(this.LimitMul);
+        this.Text(this.Space);
+
+        this.Text(falseValue);
+
+        this.Text(this.LimitBraceRoundRite);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
     maide prusate Bool BlockStart()
     {
         this.TextIndent();
