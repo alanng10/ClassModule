@@ -312,20 +312,9 @@ public class ClassGenTravel : Travel
         ClassGen gen;
         gen = this.Gen;
 
-        ClassClass thisClass;
-        thisClass = this.Info(callOperate.This).OperateClass;
-
         if (varMaide == gen.InitMaide)
         {
-            if (thisClass == gen.System.Any)
-            {
-                gen.ExecuteValueMaideCallThisCond(gen.One, k);
-            }
-
-            if (thisClass == gen.System.Bool | thisClass == gen.System.Int | thisClass == gen.System.String)
-            {
-                gen.ExecuteValueMaideCallThisCondA(k);
-            }
+            gen.ExecuteValueMaideCallThisCond(gen.One, k);
         }
 
         gen.ExecuteVirtualCall(k, gen.StateKindCall, kk);
