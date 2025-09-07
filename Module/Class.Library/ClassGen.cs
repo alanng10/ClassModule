@@ -2576,7 +2576,7 @@ public class ClassGen : TextAdd
         return true;
     }
 
-    public virtual bool ExecuteValueMaideCallThisCond(long thisEvalIndex)
+    public virtual bool ExecuteVirtualCallThisCond(long thisEvalIndex)
     {
         String varA;
         String varB;
