@@ -828,6 +828,39 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool ExecuteOperateLimitAB(var String limit)
+    {
+        var String varA;
+        var String varB;
+        var String varSA;
+        varA : this.VarA;
+        varB : this.VarB;
+        varSA : this.VarSA;
+
+        this.EvalValueGet(2, varA);
+        this.EvalValueGet(1, varB);
+
+        this.VarSet(varSA, varA);
+
+        this.SignExtend(varSA);
+
+        this.VarMaskClear(varB, this.RefKindClearMask);
+
+        this.OperateLimit(varSA, varSA, varB, limit);
+
+        this.VarSet(varA, varSA);
+
+        this.VarMaskClear(varA, this.RefKindClearMask);
+
+        this.VarMaskSet(varA, this.RefKindIntMask);
+
+        this.EvalValueSet(2, varA);
+
+        this.EvalIndexPosSet(0sn1);
+
+        return true;
+    }
+
     maide prusate Bool ExecuteVirtualCallThisCond(var Int thisEvalIndex)
     {
         var String varA;
