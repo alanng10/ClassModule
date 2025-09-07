@@ -2576,26 +2576,6 @@ public class ClassGen : TextAdd
         return true;
     }
 
-    public virtual bool OperateLimitOne(String dest, String value, String limit)
-    {
-        this.TextIndent();
-
-        this.Text(dest);
-
-        this.Text(this.Space);
-        this.Text(this.LimitAre);
-        this.Text(this.Space);
-
-        this.Text(limit);
-        this.Text(this.Space);
-
-        this.Text(value);
-
-        this.Text(this.LimitSemicolon);
-        this.Text(this.NewLine);
-        return true;
-    }
-
     public virtual bool OperateLimitSameClass(String dest, String lite, ClassClass varClass)
     {
         this.TextIndent();
@@ -2615,6 +2595,26 @@ public class ClassGen : TextAdd
 
         this.ModuleClassVarClassName(varClass);
         this.Text(this.LimitBraceRoundRite);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
+    public virtual bool OperateLimitOne(String dest, String value, String limit)
+    {
+        this.TextIndent();
+
+        this.Text(dest);
+
+        this.Text(this.Space);
+        this.Text(this.LimitAre);
+        this.Text(this.Space);
+
+        this.Text(limit);
+        this.Text(this.Space);
+
+        this.Text(value);
 
         this.Text(this.LimitSemicolon);
         this.Text(this.NewLine);
