@@ -2356,6 +2356,29 @@ public class ClassGen : TextAdd
         return true;
     }
 
+    public virtual bool ExecuteOperateLimitA(String limit)
+    {
+        String varA;
+        String varB;
+        varA = this.VarA;
+        varB = this.VarB;
+
+        this.EvalValueGet(2, varA);
+        this.EvalValueGet(1, varB);
+
+        this.OperateLimit(varA, varA, varB, limit);
+
+        this.VarMaskClear(varA, this.RefKindClearMask);
+
+        this.VarMaskSet(varA, this.RefKindIntMask);
+
+        this.EvalValueSet(2, varA);
+
+        this.EvalIndexPosSet(-1);
+
+        return true;
+    }
+
     public virtual bool ExecuteOperateLimitAA(String limit)
     {
         String varA;
@@ -2406,29 +2429,6 @@ public class ClassGen : TextAdd
         this.OperateLimit(varSA, varSA, varB, limit);
 
         this.VarSet(varA, varSA);
-
-        this.VarMaskClear(varA, this.RefKindClearMask);
-
-        this.VarMaskSet(varA, this.RefKindIntMask);
-
-        this.EvalValueSet(2, varA);
-
-        this.EvalIndexPosSet(-1);
-
-        return true;
-    }
-
-    public virtual bool ExecuteOperateLimitA(String limit)
-    {
-        String varA;
-        String varB;
-        varA = this.VarA;
-        varB = this.VarB;
-
-        this.EvalValueGet(2, varA);
-        this.EvalValueGet(1, varB);
-
-        this.OperateLimit(varA, varA, varB, limit);
 
         this.VarMaskClear(varA, this.RefKindClearMask);
 
