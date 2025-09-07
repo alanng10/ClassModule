@@ -1852,51 +1852,6 @@ public class ClassGen : TextAdd
         return true;
     }
 
-    public virtual bool ExecuteVirtualCall(long thisEvalIndex, long stateKind, long stateIndex)
-    {
-        String varA;
-        String varB;
-        String varC;
-        String varD;
-        varA = this.VarA;
-        varB = this.VarB;
-        varC = this.VarC;
-        varD = this.VarD;
-
-        this.EvalValueGet(thisEvalIndex, varA);
-
-        this.VarSet(varB, varA);
-
-        this.VarMaskClear(varA, this.MemoryIndexMask);
-
-        this.VarSetDeref(varA, varA, 0);
-
-        this.VarSetDeref(varC, varA, 0);
-
-        this.VarSet(varD, varB);
-
-        this.VarMaskClear(varD, this.BaseMask);
-
-        this.OperateLimit(varD, varD, this.BaseBitRiteCount, this.LimitBitRite);
-
-        this.VarSetDerefVar(varC, varC, varD);
-
-        this.VarSetDeref(varC, varC, stateKind);
-
-        this.VarSetDeref(varC, varC, stateIndex);
-
-        this.VarSetDeref(varD, varA, 1);
-
-        this.VarMaskClear(varB, this.BaseClearMask);
-
-        this.VarMaskSet(varB, varD);
-
-        this.EvalValueSet(thisEvalIndex, varB);
-
-        this.CallCompState(varC);
-        return true;
-    }
-
     public virtual bool ExecuteVarGet(Var varVar)
     {
         String varA;
@@ -2819,6 +2774,51 @@ public class ClassGen : TextAdd
 
         this.Text(this.LimitSemicolon);
         this.Text(this.NewLine);
+        return true;
+    }
+
+    public virtual bool ExecuteVirtualCall(long thisEvalIndex, long stateKind, long stateIndex)
+    {
+        String varA;
+        String varB;
+        String varC;
+        String varD;
+        varA = this.VarA;
+        varB = this.VarB;
+        varC = this.VarC;
+        varD = this.VarD;
+
+        this.EvalValueGet(thisEvalIndex, varA);
+
+        this.VarSet(varB, varA);
+
+        this.VarMaskClear(varA, this.MemoryIndexMask);
+
+        this.VarSetDeref(varA, varA, 0);
+
+        this.VarSetDeref(varC, varA, 0);
+
+        this.VarSet(varD, varB);
+
+        this.VarMaskClear(varD, this.BaseMask);
+
+        this.OperateLimit(varD, varD, this.BaseBitRiteCount, this.LimitBitRite);
+
+        this.VarSetDerefVar(varC, varC, varD);
+
+        this.VarSetDeref(varC, varC, stateKind);
+
+        this.VarSetDeref(varC, varC, stateIndex);
+
+        this.VarSetDeref(varD, varA, 1);
+
+        this.VarMaskClear(varB, this.BaseClearMask);
+
+        this.VarMaskSet(varB, varD);
+
+        this.EvalValueSet(thisEvalIndex, varB);
+
+        this.CallCompState(varC);
         return true;
     }
 
