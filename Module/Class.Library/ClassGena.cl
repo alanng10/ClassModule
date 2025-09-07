@@ -954,6 +954,19 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool ExecuteInternValue(var Class varClass)
+    {
+        var String varA;
+        varA : this.VarA;
+
+        this.InternValue(varA, varClass);
+
+        this.EvalValueSet(0, varA);
+
+        this.EvalIndexPosSet(1);
+        return true;
+    }
+
     maide prusate Bool ExecuteVirtualCallThisCond(var Int thisEvalIndex)
     {
         var String varA;
