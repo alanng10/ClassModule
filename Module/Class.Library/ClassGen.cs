@@ -2556,23 +2556,20 @@ public class ClassGen : TextAdd
 
     public virtual bool OperateLimitSame(String dest, String lite, String rite)
     {
-        String space;
-        space = this.Space;
-
         this.TextIndent();
 
         this.Text(dest);
 
-        this.Text(space);
+        this.Text(this.Space);
         this.Text(this.LimitAre);
-        this.Text(space);
+        this.Text(this.Space);
 
         this.Text(this.LimitBraceRoundLite);
         this.Text(lite);
 
-        this.Text(space);
+        this.Text(this.Space);
         this.Text(this.LimitSame);
-        this.Text(space);
+        this.Text(this.Space);
 
         this.Text(rite);
         this.Text(this.LimitBraceRoundRite);
