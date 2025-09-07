@@ -661,6 +661,31 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool OperateLimitSame(var String dest, var String lite, var String rite)
+    {
+        this.TextIndent();
+
+        this.Text(dest);
+
+        this.Text(this.Space);
+        this.Text(this.LimitAre);
+        this.Text(this.Space);
+
+        this.Text(this.LimitBraceRoundLite);
+        this.Text(lite);
+
+        this.Text(this.Space);
+        this.Text(this.LimitSame);
+        this.Text(this.Space);
+
+        this.Text(rite);
+        this.Text(this.LimitBraceRoundRite);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
     maide prusate Bool BlockStart()
     {
         this.TextIndent();
