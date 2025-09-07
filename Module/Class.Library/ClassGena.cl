@@ -676,7 +676,7 @@ class ClassGena : TextAdd
         return true;
     }
 
-    maide prusate Bool BlockEvalIndex(var Int blockIndex)
+    maide prusate Bool BlockVar(var Int blockIndex)
     {
         this.BlockLabel(blockIndex);
 
@@ -719,13 +719,13 @@ class ClassGena : TextAdd
         this.TextIndent();
         this.Text(this.ClassInt);
         this.Text(this.Space);
-        this.BlockEvalIndex(blockIndex);
+        this.BlockVar(blockIndex);
         this.Text(this.LimitSemicolon);
         this.Text(this.NewLine);
 
         this.TextIndent();
 
-        this.BlockEvalIndex(blockIndex);
+        this.BlockVar(blockIndex);
 
         this.Text(this.Space);
         this.Text(this.LimitAre);
@@ -748,7 +748,7 @@ class ClassGena : TextAdd
         this.Text(this.LimitAre);
         this.Text(this.Space);
 
-        this.BlockEvalIndex(blockIndex);
+        this.BlockVar(blockIndex);
 
         this.Text(this.LimitSemicolon);
         this.Text(this.NewLine);
