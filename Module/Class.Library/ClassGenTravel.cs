@@ -314,7 +314,7 @@ public class ClassGenTravel : Travel
 
         if (varMaide == gen.InitMaide)
         {
-            gen.ExecuteValueMaideCallThisCond(k);
+            gen.ExecuteVirtualCallThisCond(k);
         }
 
         gen.ExecuteVirtualCall(k, gen.StateKindCall, kk);
