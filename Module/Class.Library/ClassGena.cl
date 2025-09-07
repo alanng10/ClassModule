@@ -735,6 +735,50 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool ExecuteOperateLimitSignCond(var String limit)
+    {
+        var String varA;
+        var String varB;
+        varA : this.VarA;
+        varB : this.VarB;
+
+        var String varSA;
+        var String varSB;
+        var String varSC;
+        varSA : this.VarSA;
+        varSB : this.VarSB;
+        varSC : this.VarSC;
+
+        this.EvalValueGet(2, varA);
+        this.EvalValueGet(1, varB);
+
+        this.VarSet(varSA, varA);
+        this.VarSet(varSB, varB);
+
+        this.SignExtend(varSA);
+        this.SignExtend(varSB);
+
+        this.OperateLimitSame(varSC, varSB, this.Zero);
+
+        this.OperateLimit(varSB, varSB, varSC, this.LimitAdd);
+
+        this.OperateLimit(varSA, varSA, varSB, limit);
+
+        this.CondSet(varSA, varSC, this.Zero, varSA);
+
+        this.VarSet(varA, varSA);
+
+        this.VarMaskClear(varA, this.RefKindClearMask);
+
+        this.VarMaskSet(varA, this.RefKindIntMask);
+
+        this.EvalValueSet(2, varA);
+
+        this.EvalIndexPosSet(0sn1);
+
+        return true;
+    }
+
     maide prusate Bool ExecuteVirtualCallThisCond(var Int thisEvalIndex)
     {
         var String varA;
