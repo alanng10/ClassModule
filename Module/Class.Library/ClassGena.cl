@@ -638,99 +638,6 @@ class ClassGena : TextAdd
         return true;
     }
 
-    maide prusate Bool OperateLimit(var String dest, var String lite, var String rite, var String limit)
-    {
-        this.TextIndent();
-
-        this.Text(dest);
-
-        this.Text(this.Space);
-        this.Text(this.LimitAre);
-        this.Text(this.Space);
-
-        this.Text(lite);
-
-        this.Text(this.Space);
-        this.Text(limit);
-        this.Text(this.Space);
-
-        this.Text(rite);
-
-        this.Text(this.LimitSemicolon);
-        this.Text(this.NewLine);
-        return true;
-    }
-
-    maide prusate Bool OperateLimitSame(var String dest, var String lite, var String rite)
-    {
-        this.TextIndent();
-
-        this.Text(dest);
-
-        this.Text(this.Space);
-        this.Text(this.LimitAre);
-        this.Text(this.Space);
-
-        this.Text(this.LimitBraceRoundLite);
-        this.Text(lite);
-
-        this.Text(this.Space);
-        this.Text(this.LimitSame);
-        this.Text(this.Space);
-
-        this.Text(rite);
-        this.Text(this.LimitBraceRoundRite);
-
-        this.Text(this.LimitSemicolon);
-        this.Text(this.NewLine);
-        return true;
-    }
-
-    maide prusate Bool OperateLimitSameClass(var String dest, var String lite, var Class varClass)
-    {
-        this.TextIndent();
-
-        this.Text(dest);
-
-        this.Text(this.Space);
-        this.Text(this.LimitAre);
-        this.Text(this.Space);
-
-        this.Text(this.LimitBraceRoundLite);
-        this.Text(lite);
-
-        this.Text(this.Space);
-        this.Text(this.LimitSame);
-        this.Text(this.Space);
-
-        this.ModuleClassVarClassName(varClass);
-        this.Text(this.LimitBraceRoundRite);
-
-        this.Text(this.LimitSemicolon);
-        this.Text(this.NewLine);
-        return true;
-    }
-
-    maide prusate Bool OperateLimitOne(var String dest, var String value, var String limit)
-    {
-        this.TextIndent();
-
-        this.Text(dest);
-
-        this.Text(this.Space);
-        this.Text(this.LimitAre);
-        this.Text(this.Space);
-
-        this.Text(limit);
-        this.Text(this.Space);
-
-        this.Text(value);
-
-        this.Text(this.LimitSemicolon);
-        this.Text(this.NewLine);
-        return true;
-    }
-
     maide prusate Bool BlockStart()
     {
         this.TextIndent();
@@ -857,6 +764,99 @@ class ClassGena : TextAdd
         this.Text(this.Space);
 
         this.Text(varVar);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
+    maide prusate Bool OperateLimit(var String dest, var String lite, var String rite, var String limit)
+    {
+        this.TextIndent();
+
+        this.Text(dest);
+
+        this.Text(this.Space);
+        this.Text(this.LimitAre);
+        this.Text(this.Space);
+
+        this.Text(lite);
+
+        this.Text(this.Space);
+        this.Text(limit);
+        this.Text(this.Space);
+
+        this.Text(rite);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
+    maide prusate Bool OperateLimitSame(var String dest, var String lite, var String rite)
+    {
+        this.TextIndent();
+
+        this.Text(dest);
+
+        this.Text(this.Space);
+        this.Text(this.LimitAre);
+        this.Text(this.Space);
+
+        this.Text(this.LimitBraceRoundLite);
+        this.Text(lite);
+
+        this.Text(this.Space);
+        this.Text(this.LimitSame);
+        this.Text(this.Space);
+
+        this.Text(rite);
+        this.Text(this.LimitBraceRoundRite);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
+    maide prusate Bool OperateLimitSameClass(var String dest, var String lite, var Class varClass)
+    {
+        this.TextIndent();
+
+        this.Text(dest);
+
+        this.Text(this.Space);
+        this.Text(this.LimitAre);
+        this.Text(this.Space);
+
+        this.Text(this.LimitBraceRoundLite);
+        this.Text(lite);
+
+        this.Text(this.Space);
+        this.Text(this.LimitSame);
+        this.Text(this.Space);
+
+        this.ModuleClassVarClassName(varClass);
+        this.Text(this.LimitBraceRoundRite);
+
+        this.Text(this.LimitSemicolon);
+        this.Text(this.NewLine);
+        return true;
+    }
+
+    maide prusate Bool OperateLimitOne(var String dest, var String value, var String limit)
+    {
+        this.TextIndent();
+
+        this.Text(dest);
+
+        this.Text(this.Space);
+        this.Text(this.LimitAre);
+        this.Text(this.Space);
+
+        this.Text(limit);
+        this.Text(this.Space);
+
+        this.Text(value);
 
         this.Text(this.LimitSemicolon);
         this.Text(this.NewLine);
