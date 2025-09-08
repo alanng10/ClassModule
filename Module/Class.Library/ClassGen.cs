@@ -2085,35 +2085,6 @@ public class ClassGen : TextAdd
         return true;
     }
 
-    public virtual long LocalVarFrameValueIndex(long varIndex)
-    {
-        long stateKind;
-        stateKind = this.CompStateKind;
-
-        long ka;
-        ka = 0;
-
-        if (stateKind == this.StateKindGet)
-        {
-            ka = varIndex - 1;
-        }
-
-        if (stateKind == this.StateKindSet)
-        {
-            ka = varIndex - 2;
-        }
-
-        if (stateKind == this.StateKindCall)
-        {
-            long k;
-            k = this.ParamCount;
-
-            ka = varIndex - k;
-        }
-
-        return ka;
-    }
-
     public virtual bool CompStateHead(ClassClass varClass, object comp, long stateKind)
     {
         this.Text(this.IndexStatic);
