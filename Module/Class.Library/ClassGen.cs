@@ -2213,6 +2213,95 @@ public class ClassGen : TextAdd
         return true;
     }
 
+    public virtual bool CompStateName(ClassClass varClass, object comp, long stateKind)
+    {
+        if (varClass == this.InternClass | varClass == this.ExternClass)
+        {
+            this.Text(this.InternWord);
+
+            this.Text(this.NameCombine);
+
+            String k;
+            k = this.InternWord;
+
+            if (varClass == this.ExternClass)
+            {
+                k = this.ExternWord;
+            }
+
+            this.Text(k);
+
+            this.Text(this.NameCombine);
+
+            Maide maide;
+            maide = comp as Maide;
+
+            String name;
+            name = maide.Name;
+
+            this.Text(name);
+
+            return true;
+        }
+
+        String kb;
+        kb = null;
+
+        long ka;
+        ka = 0;
+
+        long kk;
+        kk = 0;
+
+        if (stateKind == this.StateKindGet | stateKind == this.StateKindSet)
+        {
+            ka = varClass.FieldStart;
+
+            Field field;
+            field = comp as Field;
+
+            kk = field.Index;
+
+            bool ba;
+            ba = (stateKind == this.StateKindGet);
+
+            if (ba)
+            {
+                kb = this.StateGet;
+            }
+            if (!ba)
+            {
+                kb = this.StateSet;
+            }
+        }
+
+        if (stateKind == this.StateKindCall)
+        {
+            ka = varClass.MaideStart;
+
+            Maide maide;
+            maide = comp as Maide;
+
+            kk = maide.Index;
+
+            kb = this.StateCall;
+        }
+
+        long ke;
+        ke = ka + kk;
+
+        this.ClassName(varClass);
+
+        this.Text(this.NameCombine);
+
+        this.CompIndex(ke);
+
+        this.Text(this.NameCombine);
+
+        this.Text(kb);
+        return true;
+    }
+
     public virtual bool ExecuteOperateLimit(String limit)
     {
         String varA;
@@ -3475,95 +3564,6 @@ public class ClassGen : TextAdd
         this.Text(this.EvalVar);
         this.Text(this.LimitDotPointer);
         this.Text(this.EvalIndexVar);
-        return true;
-    }
-
-    public virtual bool CompStateName(ClassClass varClass, object comp, long stateKind)
-    {
-        if (varClass == this.InternClass | varClass == this.ExternClass)
-        {
-            this.Text(this.InternWord);
-
-            this.Text(this.NameCombine);
-
-            String k;
-            k = this.InternWord;
-
-            if (varClass == this.ExternClass)
-            {
-                k = this.ExternWord;
-            }
-
-            this.Text(k);
-
-            this.Text(this.NameCombine);
-
-            Maide maide;
-            maide = comp as Maide;
-
-            String name;
-            name = maide.Name;
-
-            this.Text(name);
-
-            return true;
-        }
-
-        String kb;
-        kb = null;
-
-        long ka;
-        ka = 0;
-
-        long kk;
-        kk = 0;
-
-        if (stateKind == this.StateKindGet | stateKind == this.StateKindSet)
-        {
-            ka = varClass.FieldStart;
-
-            Field field;
-            field = comp as Field;
-
-            kk = field.Index;
-
-            bool ba;
-            ba = (stateKind == this.StateKindGet);
-
-            if (ba)
-            {
-                kb = this.StateGet;
-            }
-            if (!ba)
-            {
-                kb = this.StateSet;
-            }
-        }
-
-        if (stateKind == this.StateKindCall)
-        {
-            ka = varClass.MaideStart;
-
-            Maide maide;
-            maide = comp as Maide;
-
-            kk = maide.Index;
-
-            kb = this.StateCall;
-        }
-
-        long ke;
-        ke = ka + kk;
-
-        this.ClassName(varClass);
-
-        this.Text(this.NameCombine);
-
-        this.CompIndex(ke);
-
-        this.Text(this.NameCombine);
-
-        this.Text(kb);
         return true;
     }
 
