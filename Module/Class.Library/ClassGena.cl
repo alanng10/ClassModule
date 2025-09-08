@@ -638,6 +638,34 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool CompStateStart(var Class varClass, var Any comp, var Int stateKind)
+    {
+        this.CompStateHead(varClass, comp, stateKind);
+
+        this.Text(this.NewLine);
+
+        this.Text(this.LimitBraceCurveLite);
+        this.Text(this.NewLine);
+
+        this.IndentCount = this.IndentCount + 1;
+
+        this.DeclareVar(this.ClassInt, this.VarA);
+        this.DeclareVar(this.ClassInt, this.VarB);
+        this.DeclareVar(this.ClassInt, this.VarC);
+        this.DeclareVar(this.ClassInt, this.VarD);
+        this.DeclareVar(this.ClassSInt, this.VarSA);
+        this.DeclareVar(this.ClassSInt, this.VarSB);
+        this.DeclareVar(this.ClassSInt, this.VarSC);
+        this.VarSet(this.VarA, this.Zero);
+        this.VarSet(this.VarB, this.Zero);
+        this.VarSet(this.VarC, this.Zero);
+        this.VarSet(this.VarD, this.Zero);
+        this.VarSet(this.VarSA, this.Zero);
+        this.VarSet(this.VarSB, this.Zero);
+        this.VarSet(this.VarSC, this.Zero);
+        return true;
+    }
+
     maide prusate Bool CompStateEnd()
     {
         var Int k;
