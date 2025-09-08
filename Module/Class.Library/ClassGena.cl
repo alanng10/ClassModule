@@ -294,7 +294,7 @@ class ClassGena : TextAdd
 
         inf (maideIndex = 0)
         {
-            this.ExecuteValueMaideCallThisCond(k);
+            this.ExecuteVirtualCallThisCond(k);
         }
 
         this.ExecuteVirtualCall(k, this.StateKindCall, maideIndex);
