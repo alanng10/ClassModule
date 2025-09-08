@@ -638,6 +638,36 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool ExecuteThisFieldData()
+    {
+        var String varA;
+        varA : this.VarA;
+
+        var Field varField;
+        varField : this.ThisField;
+
+        inf (~(varField.Virtual = null))
+        {
+            varField : varField.Virtual;
+        }
+
+        var Class varClass;
+        varClass : varField.Parent;
+
+        var Int k;
+        k : this.ParamCount;
+
+        var Int kk;
+        kk : varClass.FieldStart;
+        kk : kk + varField.Index;
+
+        this.EvalFrameValueGet(0 - (k + 1), varA);
+
+        this.ExecuteFieldData(varA, kk);
+
+        return true;
+    }
+
     maide prusate Bool ExecuteFieldData(var String varVar, var Int fieldIndex)
     {
         var Int kk;
