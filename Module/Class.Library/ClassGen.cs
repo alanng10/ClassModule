@@ -2257,10 +2257,10 @@ public class ClassGen : TextAdd
         {
             ka = varClass.FieldStart;
 
-            Field field;
-            field = comp as Field;
+            Field varField;
+            varField = comp as Field;
 
-            kk = field.Index;
+            kk = varField.Index;
 
             bool ba;
             ba = (stateKind == this.StateKindGet);
@@ -2279,10 +2279,10 @@ public class ClassGen : TextAdd
         {
             ka = varClass.MaideStart;
 
-            Maide maide;
-            maide = comp as Maide;
+            Maide varMaide;
+            varMaide = comp as Maide;
 
-            kk = maide.Index;
+            kk = varMaide.Index;
 
             kb = this.StateCall;
         }
