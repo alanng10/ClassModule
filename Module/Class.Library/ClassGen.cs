@@ -1987,12 +1987,12 @@ public class ClassGen : TextAdd
 
         if (stateKind == this.StateKindSet)
         {
-            bool bc;
-            bc = (kk == 0);
+            bool bb;
+            bb = (kk == 0);
             bool bd;
             bd = (kk == 1);
 
-            if (bc)
+            if (bb)
             {
                 this.ExecuteThisFieldData();
 
@@ -2007,7 +2007,7 @@ public class ClassGen : TextAdd
                 this.EvalFrameValueSet(posB, varB);
             }
 
-            if (!(bc | bd))
+            if (!(bb | bd))
             {
                 long posC;
                 posC = kk - 2;
