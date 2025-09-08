@@ -2018,23 +2018,10 @@ public class ClassGen : TextAdd
 
         if (stateKind == this.StateKindCall)
         {
-            bool b;
-            b = (kk < k);
-            if (b)
-            {
-                long posD;
-                posD = kk - k;
+            long posD;
+            posD = kk - k;
 
-                this.EvalFrameValueSet(posD, varB);
-            }
-
-            if (!b)
-            {
-                long posE;
-                posE = kk - k;
-
-                this.EvalFrameValueSet(posE, varB);
-            }
+            this.EvalFrameValueSet(posD, varB);
         }
 
         return true;
