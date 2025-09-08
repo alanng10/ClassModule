@@ -2221,23 +2221,23 @@ public class ClassGen : TextAdd
 
             this.Text(this.NameCombine);
 
-            String k;
-            k = this.InternWord;
+            String kaa;
+            kaa = this.InternWord;
 
             if (varClass == this.ExternClass)
             {
-                k = this.ExternWord;
+                kaa = this.ExternWord;
             }
 
-            this.Text(k);
+            this.Text(kaa);
 
             this.Text(this.NameCombine);
 
-            Maide maide;
-            maide = comp as Maide;
+            Maide maideA;
+            maideA = comp as Maide;
 
             String name;
-            name = maide.Name;
+            name = maideA.Name;
 
             this.Text(name);
 
