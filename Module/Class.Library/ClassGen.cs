@@ -1989,8 +1989,8 @@ public class ClassGen : TextAdd
         {
             bool bb;
             bb = (kk == 0);
-            bool bd;
-            bd = (kk == 1);
+            bool bc;
+            bc = (kk == 1);
 
             if (bb)
             {
@@ -1999,7 +1999,7 @@ public class ClassGen : TextAdd
                 this.VarDerefSet(varA, varB);
             }
 
-            if (bd)
+            if (bc)
             {
                 long posB;
                 posB = -1;
@@ -2007,7 +2007,7 @@ public class ClassGen : TextAdd
                 this.EvalFrameValueSet(posB, varB);
             }
 
-            if (!(bb | bd))
+            if (!(bb | bc))
             {
                 long posC;
                 posC = kk - 2;
