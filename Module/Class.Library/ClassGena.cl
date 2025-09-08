@@ -638,6 +638,36 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool CompStateHead(var Class varClass, var Any comp, var Int stateKind)
+    {
+        this.Text(this.IndexStatic);
+
+        this.Text(this.Space);
+
+        this.Text(this.ClassInt);
+
+        this.Text(this.Space);
+
+        this.CompStateName(varClass, comp, stateKind);
+
+        this.Text(this.LimitBraceRoundLite);
+
+        this.Text(this.ClassEval);
+        this.Text(this.LimitAsterisk);
+        this.Text(this.Space);
+        this.Text(this.EvalVar);
+
+        this.Text(this.LimitComma);
+        this.Text(this.Space);
+
+        this.Text(this.ClassInt);
+        this.Text(this.Space);
+        this.Text(this.EvalFrameVar);
+
+        this.Text(this.LimitBraceRoundRite);
+        return true;
+    }
+
     maide prusate Bool CompStateStart(var Class varClass, var Any comp, var Int stateKind)
     {
         this.CompStateHead(varClass, comp, stateKind);
