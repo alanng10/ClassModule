@@ -684,6 +684,63 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool CompStateName(var Class varClass, var Any comp, var Int stateKind)
+    {
+        var Int ka;
+
+        var Int kk;
+
+        var String kb;
+
+        inf (stateKind = this.StateKindGet | stateKind = this.StateKindSet)
+        {
+            ka : varClass.FieldStart;
+
+            var Field varField;
+            varField : cast Field(comp);
+
+            kk : varField.Index;
+
+            var Bool ba;
+            ba : (stateKind = this.StateKindGet);
+
+            inf (ba)
+            {
+                kb : this.StateGet;
+            }
+            inf (~ba)
+            {
+                kb : this.StateSet;
+            }
+        }
+
+        inf (stateKind = this.StateKindCall)
+        {
+            ka : varClass.MaideStart;
+
+            var Maide varMaide;
+            varMaide : cast Maide(comp);
+
+            kk : varMaide.Index;
+
+            kb : this.StateCall;
+        }
+
+        var Int ke;
+        ke : ka + kk;
+
+        this.ClassName(varClass);
+
+        this.Text(this.NameCombine);
+
+        this.CompIndex(ke);
+
+        this.Text(this.NameCombine);
+
+        this.Text(kb);
+        return true;
+    }
+
     maide prusate Bool ExecuteOperateLimit(var String limit)
     {
         var String varA;
