@@ -638,6 +638,21 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool ExecuteFieldData(var String varVar, var Int fieldIndex)
+    {
+        var Int kk;
+        kk : fieldIndex;
+        kk : kk + 1;
+
+        var Int pos;
+        pos : kk;
+
+        this.VarMaskClear(varVar, this.MemoryIndexMask);
+
+        this.VarSetPos(varVar, varVar, pos);
+        return true;
+    }
+
     maide prusate Bool CompStateHead(var Class varClass, var Any comp, var Int stateKind)
     {
         this.Text(this.IndexStatic);
