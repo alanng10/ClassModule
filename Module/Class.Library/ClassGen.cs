@@ -1427,7 +1427,7 @@ public class ClassGen : TextAdd
 
         this.Text(this.CastInt);
         this.Text(this.LimitBraceRoundLite);
-        this.CompStateMaideName(this.Class, comp, stateKind);
+        this.CompStateName(this.Class, comp, stateKind);
         this.Text(this.LimitBraceRoundRite);
 
         this.Text(this.LimitSemicolon);
@@ -2147,7 +2147,7 @@ public class ClassGen : TextAdd
 
         this.Text(this.Space);
 
-        this.CompStateMaideName(varClass, comp, stateKind);
+        this.CompStateName(varClass, comp, stateKind);
 
         this.Text(this.LimitBraceRoundLite);
 
@@ -3478,7 +3478,7 @@ public class ClassGen : TextAdd
         return true;
     }
 
-    public virtual bool CompStateMaideName(ClassClass varClass, object comp, long stateKind)
+    public virtual bool CompStateName(ClassClass varClass, object comp, long stateKind)
     {
         if (varClass == this.InternClass | varClass == this.ExternClass)
         {
