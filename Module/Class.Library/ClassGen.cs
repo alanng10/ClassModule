@@ -2114,29 +2114,6 @@ public class ClassGen : TextAdd
         return ka;
     }
 
-    public virtual bool TableVarLocalVarSetNull(Table table)
-    {
-        Iter iter;
-        iter = this.TableIter;
-
-        table.IterSet(iter);
-
-        while (iter.Next())
-        {
-            Var kk;
-            kk = iter.Value as Var;
-
-            long ka;
-            ka = this.LocalVarFrameValueIndex(kk.Index);
-
-            this.EvalFrameValueSet(ka, this.Zero);
-        }
-
-        iter.Clear();
-
-        return true;
-    }
-
     public virtual bool CompStateHead(ClassClass varClass, object comp, long stateKind)
     {
         this.Text(this.IndexStatic);
