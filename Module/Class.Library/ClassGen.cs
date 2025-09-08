@@ -2244,14 +2244,14 @@ public class ClassGen : TextAdd
             return true;
         }
 
-        String kb;
-        kb = null;
-
         long ka;
         ka = 0;
 
         long kk;
         kk = 0;
+
+        String kb;
+        kb = null;
 
         if (stateKind == this.StateKindGet | stateKind == this.StateKindSet)
         {
