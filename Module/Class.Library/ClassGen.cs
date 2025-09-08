@@ -2167,7 +2167,7 @@ public class ClassGen : TextAdd
         return true;
     }
 
-    public virtual bool CompStateStart(ClassClass varClass, object comp, long stateKind, long localVarCount)
+    public virtual bool CompStateStart(ClassClass varClass, object comp, long stateKind)
     {
         this.CompStateHead(varClass, comp, stateKind);
 
@@ -2192,8 +2192,6 @@ public class ClassGen : TextAdd
         this.VarSet(this.VarSA, this.Zero);
         this.VarSet(this.VarSB, this.Zero);
         this.VarSet(this.VarSC, this.Zero);
-
-        this.InitLocalVarList(localVarCount);
         return true;
     }
 
