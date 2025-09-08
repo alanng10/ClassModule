@@ -638,6 +638,24 @@ class ClassGena : TextAdd
         return true;
     }
 
+    maide prusate Bool CompStateEnd()
+    {
+        var Int k;
+        k : this.ParamCount;
+
+        this.EvalFrameValueSet(0 - (k + 1), this.Zero);
+
+        this.EvalIndexFramePosSet(0 - k);
+
+        this.Return();
+
+        this.IndentCount = this.IndentCount - 1;
+
+        this.Text(this.LimitBraceCurveRite);
+        this.Text(this.NewLine);
+        return true;
+    }
+
     maide prusate Bool ExecuteOperateLimit(var String limit)
     {
         var String varA;
