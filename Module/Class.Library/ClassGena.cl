@@ -68,7 +68,7 @@ class ClassGena : TextAdd
 
         var String k;
         k : this.StringComp.CreateData(this.Arg.Data, null);
-        this.Result = k;
+        this.Result : k;
 
         this.Operate : null;
         this.Arg : null;
@@ -692,7 +692,7 @@ class ClassGena : TextAdd
         this.Text(this.LimitBraceCurveLite);
         this.Text(this.NewLine);
 
-        this.IndentCount = this.IndentCount + 1;
+        this.IndentCount : this.IndentCount + 1;
 
         this.DeclareVar(this.ClassInt, this.VarA);
         this.DeclareVar(this.ClassInt, this.VarB);
@@ -722,7 +722,7 @@ class ClassGena : TextAdd
 
         this.Return();
 
-        this.IndentCount = this.IndentCount - 1;
+        this.IndentCount : this.IndentCount - 1;
 
         this.Text(this.LimitBraceCurveRite);
         this.Text(this.NewLine);
