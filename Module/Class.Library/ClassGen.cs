@@ -2018,8 +2018,8 @@ public class ClassGen : TextAdd
 
         if (stateKind == this.StateKindCall)
         {
-            long posD; 
-            posD = kk - k; 
+            long posD;
+            posD = kk - k;
 
             this.EvalFrameValueSet(posD, varB);
         }
