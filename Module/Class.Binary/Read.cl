@@ -299,6 +299,29 @@ class Read : Any
         return true;
     }
 
+    maide precate Bool ExecuteCreateState()
+    {
+        var Array array;
+        array : this.Arg.StateArray;
+
+        var Int count;
+        count : array.Count;
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var State k;
+            k : new State;
+            k.Init();
+
+            array.Set(i, k);
+
+            i : i + 1;
+        }
+        return true;
+    }
+
     maide precate Bool ExecuteCreateModuleRef()
     {
         var Array array;
