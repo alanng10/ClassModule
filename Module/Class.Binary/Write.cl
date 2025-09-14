@@ -319,6 +319,20 @@ class Write : Any
         return true;
     }
 
+    maide precate Bool ExecuteOperateArg(var Any arg)
+    {
+        var Bool b;
+        b : false;
+
+        var Bool ka;
+        ka : cast Bool(arg);
+        inf (~b & ~(ka = null))
+        {
+
+            b : true;
+        }
+    }
+
     maide precate Bool ExecuteModuleRef(var ModuleRef ref)
     {
         this.ExecuteName(ref.Name);
@@ -387,6 +401,20 @@ class Write : Any
     maide precate Bool ExecuteCount(var Int value)
     {
         return this.ExecuteInt(value);
+    }
+
+    maide precate Bool ExecuteBool(var Bool value)
+    {
+        var Int k;
+        k : 0;
+
+        inf (value)
+        {
+            k : 1;
+        }
+
+        this.ExecuteByte(k);
+        return true;
     }
 
     maide precate Bool ExecuteInt(var Int value)
