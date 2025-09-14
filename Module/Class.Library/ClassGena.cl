@@ -645,30 +645,30 @@ class ClassGena : TextAdd
         varA : this.VarA;
         varB : this.VarB;
 
-        long stateKind;
+        var Int stateKind;
         stateKind : this.CompStateKind;
 
-        long k;
+        var Int k;
         k : this.ParamCount;
 
-        long kk;
+        var Int kk;
         kk : varVar.Index;
 
         this.EvalValueGet(1, varB);
 
-        if (stateKind == this.StateKindGet)
+        inf (stateKind == this.StateKindGet)
         {
             bool ba;
             ba : (kk == 0);
 
-            if (ba)
+            inf (ba)
             {
                 this.ExecuteThisFieldData();
 
                 this.VarDerefSet(varA, varB);
             }
 
-            if (!ba)
+            inf (!ba)
             {
                 long posA;
                 posA : kk - 1;
@@ -677,21 +677,21 @@ class ClassGena : TextAdd
             }
         }
 
-        if (stateKind == this.StateKindSet)
+        inf (stateKind == this.StateKindSet)
         {
             bool bb;
             bb : (kk == 0);
             bool bc;
             bc : (kk == 1);
 
-            if (bb)
+            inf (bb)
             {
                 this.ExecuteThisFieldData();
 
                 this.VarDerefSet(varA, varB);
             }
 
-            if (bc)
+            inf (bc)
             {
                 long posB;
                 posB : -1;
@@ -699,7 +699,7 @@ class ClassGena : TextAdd
                 this.EvalFrameValueSet(posB, varB);
             }
 
-            if (!(bb | bc))
+            inf (!(bb | bc))
             {
                 long posC;
                 posC : kk - 2;
@@ -708,7 +708,7 @@ class ClassGena : TextAdd
             }
         }
 
-        if (stateKind == this.StateKindCall)
+        inf (stateKind == this.StateKindCall)
         {
             long posD;
             posD : kk - k;
