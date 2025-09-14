@@ -15,6 +15,8 @@ class ReadStringOperate : ReadOperate
         this.Field : this.CreateField();
         this.Maide : this.CreateMaide();
         this.Var : this.CreateVar();
+        this.State : this.CreateState();
+        this.Operate : this.CreateOperate();
         this.ModuleRef : this.CreateModuleRef();
         this.String : this.CreateString();
         this.Array : this.CreateArray();
