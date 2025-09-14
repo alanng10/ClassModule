@@ -316,6 +316,8 @@ class Write : Any
     maide precate Bool ExecuteOperate(var Operate operate)
     {
         this.ExecuteByte(operate.Kind);
+        this.ExecuteOperateArg(operate.ArgA);
+        this.ExecuteOperateArg(operate.ArgB);
         return true;
     }
 
