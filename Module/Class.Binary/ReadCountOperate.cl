@@ -181,6 +181,14 @@ class ReadCountOperate : ReadOperate
         return this.Var;
     }
 
+    maide prusate State ExecuteState()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.StateIndex : arg.StateIndex + 1;
+        return this.State;
+    }
+
     maide prusate ModuleRef ExecuteModuleRef()
     {
         var ReadArg arg;
