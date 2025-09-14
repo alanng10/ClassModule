@@ -244,6 +244,7 @@ class Write : Any
         this.ExecuteByte(varMaide.Count);
         this.ExecuteName(varMaide.Name);
         this.ExecuteVarArray(varMaide.Param);
+        this.ExecuteState(varMaide.Call);
         return true;
     }
 
