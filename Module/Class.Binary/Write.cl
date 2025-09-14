@@ -328,9 +328,27 @@ class Write : Any
         ka : cast Bool(arg);
         inf (~b & ~(ka = null))
         {
-
+            this.ExecuteBool(ka);
             b : true;
         }
+
+        var Int kb;
+        kb : cast Int(arg);
+        inf (~b & ~(kb = null))
+        {
+            this.ExecuteInt(kb);
+            b : true;
+        }
+
+        var String kc;
+        kc : cast String(arg);
+        inf (~b & ~(kc = null))
+        {
+            this.ExecuteString(kc);
+            b : true;
+        }
+
+        return true;
     }
 
     maide precate Bool ExecuteModuleRef(var ModuleRef ref)
