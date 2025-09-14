@@ -115,8 +115,8 @@ class InfoToken : TextAdd
                 {
                     this.Add("\\u");
 
-                    var Int letterStart;
-                    letterStart : this.Char("a");
+                    var Int alphaStart;
+                    alphaStart : this.Char("a");
 
                     var Int countA;
                     countA : 8;
@@ -133,7 +133,7 @@ class InfoToken : TextAdd
                         ka : bit &(ka, 0hf);
 
                         var Int ke;
-                        ke : this.TextInfra.DigitChar(ka, letterStart);
+                        ke : this.TextInfra.DigitChar(ka, alphaStart);
                         
                         this.AddChar(ke);
 
