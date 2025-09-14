@@ -84,6 +84,7 @@ class Write : Any
         this.ExecuteBaseArray(binary.Base);
         this.ExecutePartArray(binary.Part);
         this.ExecuteEntry(binary.Entry);
+        this.ExecuteStateArrayArray(binary.State);
         return true;
     }
 
