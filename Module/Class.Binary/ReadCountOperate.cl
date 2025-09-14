@@ -14,6 +14,8 @@ class ReadCountOperate : ReadOperate
         this.Field : this.CreateField();
         this.Maide : this.CreateMaide();
         this.Var : this.CreateVar();
+        this.State : this.CreateState();
+        this.Operate : this.CreateOperate();
         this.ModuleRef : this.CreateModuleRef();
         this.String : this.CreateString();
         this.Array : this.CreateArray();
@@ -117,6 +119,8 @@ class ReadCountOperate : ReadOperate
     field precate Field Field { get { return data; } set { data : value; } }
     field precate Maide Maide { get { return data; } set { data : value; } }
     field precate Var Var { get { return data; } set { data : value; } }
+    field precate State State { get { return data; } set { data : value; } }
+    field precate Operate Operate { get { return data; } set { data : value; } }
     field precate ModuleRef ModuleRef { get { return data; } set { data : value; } }
     field precate String String { get { return data; } set { data : value; } }
     field precate Array Array { get { return data; } set { data : value; } }
