@@ -90,6 +90,8 @@ class Read : Any
         arg.FieldArray : this.ListInfra.ArrayCreate(arg.FieldIndex);
         arg.MaideArray : this.ListInfra.ArrayCreate(arg.MaideIndex);
         arg.VarArray : this.ListInfra.ArrayCreate(arg.VarIndex);
+        arg.StateArray : this.ListInfra.ArrayCreate(arg.StateIndex);
+        arg.OperateArray : this.ListInfra.ArrayCreate(arg.OperateIndex);
         arg.ModuleRefArray : this.ListInfra.ArrayCreate(arg.ModuleRefIndex);
         arg.StringArray : this.ListInfra.ArrayCreate(arg.StringIndex);
         arg.ArrayArray : this.ListInfra.ArrayCreate(arg.ArrayIndex);
