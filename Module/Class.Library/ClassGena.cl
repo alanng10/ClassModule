@@ -668,7 +668,7 @@ class ClassGena : TextAdd
                 this.VarDerefSet(varA, varB);
             }
 
-            inf (!ba)
+            inf (~ba)
             {
                 var Int posA;
                 posA : kk - 1;
@@ -699,7 +699,7 @@ class ClassGena : TextAdd
                 this.EvalFrameValueSet(posB, varB);
             }
 
-            inf (!(bb | bc))
+            inf (~(bb | bc))
             {
                 var Int posC;
                 posC : kk - 2;
