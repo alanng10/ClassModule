@@ -694,7 +694,7 @@ class ClassGena : TextAdd
             inf (bc)
             {
                 var Int posB;
-                posB : -1;
+                posB : 0sn1;
 
                 this.EvalFrameValueSet(posB, varB);
             }
