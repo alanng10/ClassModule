@@ -77,6 +77,22 @@ class ReadStringOperate : ReadOperate
         return a;
     }
 
+    maide precate State CreateState()
+    {
+        var State a;
+        a : new State;
+        a.Init();
+        return a;
+    }
+
+    maide precate Operate CreateOperate()
+    {
+        var Operate a;
+        a : new Operate;
+        a.Init();
+        return a;
+    }
+
     maide precate ModuleRef CreateModuleRef()
     {
         return this.ClassInfra.ModuleRefCreate(null, null);
