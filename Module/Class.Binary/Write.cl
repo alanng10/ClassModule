@@ -286,6 +286,8 @@ class Write : Any
 
     maide precate Bool ExecuteState(var State state)
     {
+        this.ExecuteCount(state.Var);
+
         var Array array;
         array : state.Operate;
 
