@@ -659,7 +659,7 @@ class ClassGena : TextAdd
         inf (stateKind = this.StateKindGet)
         {
             var Bool ba;
-            ba : (kk = 0);
+            ba : kk = 0;
 
             inf (ba)
             {
@@ -680,9 +680,9 @@ class ClassGena : TextAdd
         inf (stateKind = this.StateKindSet)
         {
             var Bool bb;
-            bb : (kk = 0);
+            bb : kk = 0;
             var Bool bc;
-            bc : (kk = 1);
+            bc : kk = 1;
 
             inf (bb)
             {
