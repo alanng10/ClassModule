@@ -898,6 +898,29 @@ class Read : Any
         return a;
     }
 
+    maide precate State ExecuteState()
+    {
+        var Int varVar;
+        varVar : this.ExecuteCount();
+        inf (varVar = null)
+        {
+            return null;
+        }
+
+        var Array operate;
+        operate : this.ExecuteOperateArray();
+        inf (operate = null)
+        {
+            return null;
+        }
+
+        var State a;
+        a : this.Operate.ExecuteState();
+        a.Var : varVar;
+        a.Operate : operate;
+        return a;
+    }
+
     maide precate Int ExecuteEntry()
     {
         var Int k;
