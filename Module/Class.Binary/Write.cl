@@ -313,6 +313,12 @@ class Write : Any
         return true;
     }
 
+    maide precate Bool ExecuteOperate(var Operate operate)
+    {
+        this.ExecuteByte(operate.Kind);
+        return true;
+    }
+
     maide precate Bool ExecuteModuleRef(var ModuleRef ref)
     {
         this.ExecuteName(ref.Name);
