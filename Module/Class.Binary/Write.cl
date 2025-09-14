@@ -284,6 +284,27 @@ class Write : Any
         return true;
     }
 
+    maide precate Bool ExecuteStateArrayArray(var Array array)
+    {
+        var Int count;
+        count : array.Count;
+
+        this.ExecuteCount(count);
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Array stateArray;
+            stateArray : cast Array(array.Get(i));
+
+            this.ExecuteStateArray(stateArray);
+
+            i : i + 1;
+        }
+        return true;
+    }
+
     maide precate Bool ExecuteModuleRef(var ModuleRef ref)
     {
         this.ExecuteName(ref.Name);
