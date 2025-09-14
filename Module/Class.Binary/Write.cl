@@ -330,6 +330,8 @@ class Write : Any
         ka : cast Bool(arg);
         inf (~b & ~(ka = null))
         {
+            this.ExecuteByte(0);
+
             this.ExecuteBool(ka);
             b : true;
         }
@@ -338,6 +340,8 @@ class Write : Any
         kb : cast Int(arg);
         inf (~b & ~(kb = null))
         {
+            this.ExecuteByte(1);
+
             this.ExecuteInt(kb);
             b : true;
         }
@@ -346,6 +350,8 @@ class Write : Any
         kc : cast String(arg);
         inf (~b & ~(kc = null))
         {
+            this.ExecuteByte(2);
+
             this.ExecuteString(kc);
             b : true;
         }
