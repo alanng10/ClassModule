@@ -1057,25 +1057,6 @@ class Read : Any
         return a;
     }
 
-    maide precate String ExecuteString()
-    {
-        var Int count;
-        count : this.ExecuteCount();
-        inf (count = null)
-        {
-            return null;
-        }
-
-        inf (~this.ValidCount(count))
-        {
-            return null;
-        }
-
-        var String a;
-        a : this.Operate.ExecuteString(count);
-        return a;
-    }
-
     maide precate Int ExecuteIndex()
     {
         return this.ExecuteInt();
@@ -1084,21 +1065,6 @@ class Read : Any
     maide precate Int ExecuteCount()
     {
         return this.ExecuteInt();
-    }
-
-    maide precate Bool ExecuteBool()
-    {
-        var Int k;
-        k : this.ExecuteByte();
-
-        var Bool a;
-        a : ~(k = 0);
-        return a;
-    }
-
-    maide precate Int ExecuteMid()
-    {
-        return this.ExecuteIntCount(4);
     }
 
     maide precate Int ExecuteInt()
