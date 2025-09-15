@@ -84,6 +84,18 @@ class ReadSetOperate : ReadOperate
         return a;
     }
 
+    maide prusate Entry ExecuteEntry()
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        var Int index;
+        index : arg.EntryIndex;
+        var Var a;
+        a : cast Var(arg.EntryArray.Get(index));
+        arg.EntryIndex : index + 1;
+        return a;
+    }
+
     maide prusate ModuleRef ExecuteModuleRef()
     {
         var ReadArg arg;
@@ -141,9 +153,8 @@ class ReadSetOperate : ReadOperate
         return a;
     }
 
-    maide prusate Bool ExecuteDataItemSet(var Data data, var Int index, var Int value)
+    maide prusate Bool ExecuteDataSet(var Data data, var Int count)
     {
-        data.Set(index, value);
         return true;
     }
 }
