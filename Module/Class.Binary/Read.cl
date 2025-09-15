@@ -912,41 +912,6 @@ class Read : Any
         return a;
     }
 
-    maide precate Data ExecuteState()
-    {
-        var Int count;
-        count : this.ExecuteCount();
-        inf (count = null)
-        {
-            return null;
-        }
-
-        inf (~this.ValidCount(count))
-        {
-            return null;
-        }
-
-        var Data data;
-        data : this.ExecuteData(count);
-        inf (data = null)
-        {
-            return null;
-        }
-
-        var Int i;
-        i : 0;
-        while (i < count)
-        {
-            var Int a;
-            a : this.ExecuteByte();
-
-            this.Operate.ExecuteDataItemSet(data, i, a);
-
-            i : i + 1;
-        }
-        return data;
-    }
-
     maide precate Int ExecuteEntry()
     {
         var Int k;
@@ -1024,9 +989,39 @@ class Read : Any
         return this.Operate.ExecuteArray(count);
     }
 
-    maide precate Data ExecuteData(var Int count)
+    maide precate Data ExecuteData()
     {
-        return this.Operate.ExecuteData(count);
+        var Int count;
+        count : this.ExecuteCount();
+        inf (count = null)
+        {
+            return null;
+        }
+
+        inf (~this.ValidCount(count))
+        {
+            return null;
+        }
+
+        var Data data;
+        data : this.Operate.ExecuteData(count);
+        inf (data = null)
+        {
+            return null;
+        }
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Int a;
+            a : this.ExecuteByte();
+
+            this.Operate.ExecuteDataItemSet(data, i, a);
+
+            i : i + 1;
+        }
+        return data;
     }
 
     maide precate String ExecuteName()
