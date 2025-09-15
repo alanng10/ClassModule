@@ -209,6 +209,16 @@ class ReadCountOperate : ReadOperate
     {
         var ReadArg arg;
         arg : this.Read.Arg;
+        arg.Index : arg.Index + count * 4;
+        arg.StringIndex : arg.StringIndex + 1;
+        arg.StringTextIndex : arg.StringTextIndex + count;
+        return this.String;
+    }
+
+    maide prusate String ExecuteName(var Int count)
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
         arg.Index : arg.Index + count;
         arg.StringIndex : arg.StringIndex + 1;
         arg.StringTextIndex : arg.StringTextIndex + count;
