@@ -200,7 +200,7 @@ class ReadStringOperate : ReadOperate
         return this.ModuleRef;
     }
 
-    maide prusate String ExecuteName(var Int count)
+    maide prusate String ExecuteString(var Int count)
     {
         var ReadArg arg;
         arg : this.Read.Arg;
@@ -210,21 +210,19 @@ class ReadStringOperate : ReadOperate
         kd : kd * 8;
         this.InfraInfra.DataIntSet(arg.StringCountData, kd, count);
 
-        var Int i;
-        i : 0;
-        while (i < count)
-        {
-            var Int ka;
-            ka : this.Read.Data.Get(arg.Index + i);
-
-            this.TextInfra.DataCharSet(arg.StringTextData, arg.StringTextIndex + i, ka);
-
-            i : i + 1;
-        }
-
         arg.StringIndex : arg.StringIndex + 1;
-        arg.StringTextIndex : arg.StringTextIndex + count;
         return this.String;
+    }
+
+    maide prusate Bool ExecuteStringDataCharSet(var Int value)
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+
+        this.TextInfra.DataCharSet(arg.StringTextData, arg.StringTextIndex, value);
+
+        arg.StringTextIndex : arg.StringTextIndex + 1;
+        return true;
     }
 
     maide prusate Array ExecuteArray(var Int count)
