@@ -398,20 +398,6 @@ class Write : Any
         return true;
     }
 
-    maide precate Bool ExecuteBool(var Bool value)
-    {
-        var Int k;
-        k : 0;
-
-        inf (value)
-        {
-            k : 1;
-        }
-
-        this.ExecuteByte(k);
-        return true;
-    }
-
     maide precate Bool ExecuteMid(var Int value)
     {
         return this.ExecuteIntCount(value, 4);
