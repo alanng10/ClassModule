@@ -1059,7 +1059,7 @@ class Read : Any
             var Int a;
             a : this.ExecuteByte();
 
-            this.Operate.ExecuteDataItemSet(data, i, a);
+            this.Operate.ExecuteDataSet(data, i, a);
 
             i : i + 1;
         }
