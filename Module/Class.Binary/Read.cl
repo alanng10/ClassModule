@@ -1161,8 +1161,28 @@ class Read : Any
         var Int index;
         index : arg.Index;
 
+        var Int k;
+        k : 0;
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Int ka;
+            ka : this.ExecuteByte();
+
+            var Int shift;
+            shift : i * 8;
+
+            ka : bit <(ka, shift);
+
+            k : bit |(k, ka);
+
+            i : i + 1;
+        }
+
         var Int a;
-        a : this.InfraInfra.DataIntGet(this.Data, index);
+        a : k;
 
         index : index + count;
         arg.Index : index;
