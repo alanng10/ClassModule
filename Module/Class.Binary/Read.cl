@@ -78,6 +78,10 @@ class Read : Any
         arg.ArrayCountData.Count : arg.ArrayIndex * 8;
         arg.ArrayCountData.Init();
 
+        arg.DataCountData : new Data;
+        arg.DataCountData.Count : arg.DataIndex * 8;
+        arg.DataCountData.Init();
+
         this.Operate : this.StringOperate;
 
         this.ResetStage();
@@ -90,11 +94,10 @@ class Read : Any
         arg.FieldArray : this.ListInfra.ArrayCreate(arg.FieldIndex);
         arg.MaideArray : this.ListInfra.ArrayCreate(arg.MaideIndex);
         arg.VarArray : this.ListInfra.ArrayCreate(arg.VarIndex);
-        arg.StateArray : this.ListInfra.ArrayCreate(arg.StateIndex);
-        arg.OperateArray : this.ListInfra.ArrayCreate(arg.OperateIndex);
         arg.ModuleRefArray : this.ListInfra.ArrayCreate(arg.ModuleRefIndex);
         arg.StringArray : this.ListInfra.ArrayCreate(arg.StringIndex);
         arg.ArrayArray : this.ListInfra.ArrayCreate(arg.ArrayIndex);
+        arg.DataArray : this.ListInfra.ArrayCreate(arg.DataIndex);
 
         this.ExecuteCreateBinary();
         this.ExecuteCreateClass();
@@ -103,11 +106,10 @@ class Read : Any
         this.ExecuteCreateField();
         this.ExecuteCreateMaide();
         this.ExecuteCreateVar();
-        this.ExecuteCreateState();
-        this.ExecuteCreateOperate();
         this.ExecuteCreateModuleRef();
         this.ExecuteCreateString();
         this.ExecuteCreateArray();
+        this.ExecuteCreateData();
 
         this.Operate : this.SetOperate;
 
