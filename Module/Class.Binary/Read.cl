@@ -1052,17 +1052,8 @@ class Read : Any
             return null;
         }
 
-        var Int i;
-        i : 0;
-        while (i < count)
-        {
-            var Int a;
-            a : this.ExecuteByte();
+        this.Operate.ExecuteDataCopy(data, count);
 
-            this.Operate.ExecuteDataItemSet(data, i, a);
-
-            i : i + 1;
-        }
         return data;
     }
 
