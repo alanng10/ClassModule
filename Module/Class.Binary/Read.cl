@@ -133,6 +133,7 @@ class Read : Any
         a.FieldIndex : 0;
         a.MaideIndex : 0;
         a.VarIndex : 0;
+        a.EntryIndex : 0;
         a.ModuleRefIndex : 0;
         a.StringIndex : 0;
         a.StringTextIndex : 0;
