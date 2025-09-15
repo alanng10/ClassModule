@@ -305,6 +305,29 @@ class Read : Any
         return true;
     }
 
+    maide precate Bool ExecuteCreateEntry()
+    {
+        var Array array;
+        array : this.Arg.EntryArray;
+
+        var Int count;
+        count : array.Count;
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Entry k;
+            k : new Entry;
+            k.Init();
+
+            array.Set(i, k);
+
+            i : i + 1;
+        }
+        return true;
+    }
+
     maide precate Bool ExecuteCreateModuleRef()
     {
         var Array array;
