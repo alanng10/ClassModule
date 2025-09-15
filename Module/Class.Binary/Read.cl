@@ -1024,7 +1024,7 @@ class Read : Any
         return this.Operate.ExecuteArray(count);
     }
 
-    maide precate Data ExecuteData()
+    maide precate Data ExecuteData(var Int count)
     {
         return this.Operate.ExecuteData(count);
     }
