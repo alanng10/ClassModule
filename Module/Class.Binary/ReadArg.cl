@@ -15,10 +15,6 @@ class ReadArg : Any
     field prusate Array MaideArray { get { return data; } set { data : value; } }
     field prusate Int VarIndex { get { return data; } set { data : value; } }
     field prusate Array VarArray { get { return data; } set { data : value; } }
-    field prusate Int StateIndex { get { return data; } set { data : value; } }
-    field prusate Array StateArray { get { return data; } set { data : value; } }
-    field prusate Int OperateIndex { get { return data; } set { data : value; } }
-    field prusate Array OperateArray { get { return data; } set { data : value; } }
     field prusate Int ModuleRefIndex { get { return data; } set { data : value; } }
     field prusate Array ModuleRefArray { get { return data; } set { data : value; } }
     field prusate Int StringIndex { get { return data; } set { data : value; } }
@@ -29,4 +25,7 @@ class ReadArg : Any
     field prusate Int ArrayIndex { get { return data; } set { data : value; } }
     field prusate Data ArrayCountData { get { return data; } set { data : value; } }
     field prusate Array ArrayArray { get { return data; } set { data : value; } }
+    field prusate Int DataIndex { get { return data; } set { data : value; } }
+    field prusate Data DataCountData { get { return data; } set { data : value; } }
+    field prusate Array DataArray { get { return data; } set { data : value; } }
 }
