@@ -90,8 +90,8 @@ class ReadSetOperate : ReadOperate
         arg : this.Read.Arg;
         var Int index;
         index : arg.EntryIndex;
-        var Var a;
-        a : cast Var(arg.EntryArray.Get(index));
+        var Entry a;
+        a : cast Entry(arg.EntryArray.Get(index));
         arg.EntryIndex : index + 1;
         return a;
     }
