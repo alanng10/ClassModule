@@ -6,5 +6,5 @@ The binary has refer and state.
 
 State has operate list.
 
-When making module, the module list also generates machine code library
-from the binary data.
+The module list also has task kind to generate machine code library
+from the module binary.
