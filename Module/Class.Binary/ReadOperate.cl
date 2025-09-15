@@ -42,6 +42,10 @@ class ReadOperate : Any
     {
     }
 
+    maide prusate Bool ExecuteStringDataCharSet(var Int value)
+    {
+    }
+
     maide prusate Array ExecuteArray(var Int count)
     {
     }
