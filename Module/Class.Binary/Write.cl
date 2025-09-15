@@ -276,8 +276,11 @@ class Write : Any
     {
         inf (entry = null)
         {
+            this.ExecuteByte(0);
             return true;
         }
+
+        this.ExecuteByte(1);
 
         this.ExecuteIndex(entry);
         return true;
