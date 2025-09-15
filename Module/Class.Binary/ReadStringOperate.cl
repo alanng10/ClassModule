@@ -261,7 +261,7 @@ class ReadStringOperate : ReadOperate
         return this.Data;
     }
 
-    maide prusate Bool ExecuteDataSet(var Data data, var Int count)
+    maide prusate Bool ExecuteDataItemSet(var Data data, var Int index, var Int value)
     {
         return true;
     }
