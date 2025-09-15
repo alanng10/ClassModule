@@ -1,6 +1,6 @@
 # Class
 
-Class is Class compiler module list written in Class Lang.
+Class is Class compile module list written in Class Lang.
 
 Class is park class.
 
