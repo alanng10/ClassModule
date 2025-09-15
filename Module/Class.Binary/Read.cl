@@ -484,8 +484,12 @@ class Read : Any
             return null;
         }
 
-        var Int entry;
+        var Entry entry;
         entry : this.ExecuteEntry();
+        inf (entry = null)
+        {
+            return null;
+        }
 
         var Binary a;
         a : this.Operate.ExecuteBinary();
