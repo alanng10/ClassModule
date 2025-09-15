@@ -137,6 +137,7 @@ class Read : Any
         a.StringIndex : 0;
         a.StringTextIndex : 0;
         a.ArrayIndex : 0;
+        a.DataIndex : 0;
         return true;
     }
 
