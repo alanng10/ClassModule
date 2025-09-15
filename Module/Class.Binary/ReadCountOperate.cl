@@ -111,6 +111,7 @@ class ReadCountOperate : ReadOperate
     field precate Field Field { get { return data; } set { data : value; } }
     field precate Maide Maide { get { return data; } set { data : value; } }
     field precate Var Var { get { return data; } set { data : value; } }
+    field precate Entry Entry { get { return data; } set { data : value; } }
     field precate ModuleRef ModuleRef { get { return data; } set { data : value; } }
     field precate String String { get { return data; } set { data : value; } }
     field precate Array Array { get { return data; } set { data : value; } }
@@ -170,6 +171,10 @@ class ReadCountOperate : ReadOperate
         arg : this.Read.Arg;
         arg.VarIndex : arg.VarIndex + 1;
         return this.Var;
+    }
+
+    maide prusate Entry ExecuteEntry()
+    {
     }
 
     maide prusate ModuleRef ExecuteModuleRef()
