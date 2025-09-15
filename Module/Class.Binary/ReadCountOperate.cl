@@ -203,8 +203,15 @@ class ReadCountOperate : ReadOperate
         var ReadArg arg;
         arg : this.Read.Arg;
         arg.StringIndex : arg.StringIndex + 1;
-        arg.StringTextIndex : arg.StringTextIndex + count;
         return this.String;
+    }
+
+    maide prusate Bool ExecuteStringDataCharSet(var Int value)
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.StringTextIndex : arg.StringTextIndex + 1;
+        return true;
     }
 
     maide prusate Array ExecuteArray(var Int count)
