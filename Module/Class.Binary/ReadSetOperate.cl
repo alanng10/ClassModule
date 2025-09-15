@@ -108,7 +108,7 @@ class ReadSetOperate : ReadOperate
         return a;
     }
 
-    maide prusate String ExecuteName(var Int count)
+    maide prusate String ExecuteString(var Int count)
     {
         var ReadArg arg;
         arg : this.Read.Arg;
@@ -118,8 +118,15 @@ class ReadSetOperate : ReadOperate
         a : cast String(arg.StringArray.Get(index));
 
         arg.StringIndex : index + 1;
-        arg.StringTextIndex : arg.StringTextIndex + count;
         return a;
+    }
+
+    maide prusate Bool ExecuteStringDataCharSet(var Int value)
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.StringTextIndex : arg.StringTextIndex + 1;
+        return true;
     }
 
     maide prusate Array ExecuteArray(var Int count)
