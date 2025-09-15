@@ -760,14 +760,14 @@ class Read : Any
             return null;
         }
 
-        var State varGet;
+        var Data varGet;
         varGet : this.ExecuteState();
         inf (varGet = null)
         {
             return null;
         }
 
-        var State varSet;
+        var Data varSet;
         varSet : this.ExecuteState();
         inf (varSet = null)
         {
@@ -848,7 +848,7 @@ class Read : Any
             return null;
         }
 
-        var State call;
+        var Data call;
         call : this.ExecuteState();
         inf (call = null)
         {
