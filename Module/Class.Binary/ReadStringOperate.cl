@@ -265,4 +265,23 @@ class ReadStringOperate : ReadOperate
     {
         return true;
     }
+
+    maide prusate Array ExecuteData(var Int count)
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+
+        var Int kd;
+        kd : arg.DataIndex;
+        kd : kd * 8;
+        this.InfraInfra.DataIntSet(arg.DataCountData, kd, count);
+
+        arg.DataIndex : arg.DataIndex + 1;
+        return this.Data;
+    }
+
+    maide prusate Bool ExecuteDataItemSet(var Data data, var Int index, var Int value)
+    {
+        return true;
+    }
 }
