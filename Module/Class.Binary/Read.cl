@@ -546,7 +546,7 @@ class Read : Any
     maide precate Class ExecuteClass()
     {
         var String name;
-        name : this.ExecuteString();
+        name : this.ExecuteName();
         inf (name = null)
         {
             return null;
@@ -754,7 +754,7 @@ class Read : Any
         }
 
         var String name;
-        name : this.ExecuteString();
+        name : this.ExecuteName();
         inf (name = null)
         {
             return null;
@@ -835,7 +835,7 @@ class Read : Any
         }
 
         var String name;
-        name : this.ExecuteString();
+        name : this.ExecuteName();
         inf (name = null)
         {
             return null;
@@ -909,7 +909,7 @@ class Read : Any
         }
 
         var String name;
-        name : this.ExecuteString();
+        name : this.ExecuteName();
         inf (name = null)
         {
             return null;
@@ -1075,7 +1075,7 @@ class Read : Any
     maide precate ModuleRef ExecuteModuleRef()
     {
         var String name;
-        name : this.ExecuteString();
+        name : this.ExecuteName();
         inf (name = null)
         {
             return null;
