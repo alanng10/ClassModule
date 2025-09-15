@@ -184,6 +184,10 @@ class ReadCountOperate : ReadOperate
 
     maide prusate Entry ExecuteEntry()
     {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.EntryIndex : arg.EntryIndex + 1;
+        return this.Entry;
     }
 
     maide prusate ModuleRef ExecuteModuleRef()
