@@ -924,15 +924,24 @@ class Read : Any
 
     maide precate Data ExecuteState()
     {
-        var Data data;
-        data : this.ExecuteData();
-        inf (data = null)
+        var Int count;
+        count : this.ExecuteCount();
+        inf (count = null)
         {
             return null;
         }
 
-        var Int count;
-        count : data.Count;
+        inf (~this.ValidCount(count))
+        {
+            return null;
+        }
+
+        var Data data;
+        data : this.ExecuteData(count);
+        inf (data = null)
+        {
+            return null;
+        }
 
         var Int i;
         i : 0;
@@ -1027,21 +1036,7 @@ class Read : Any
 
     maide precate Data ExecuteData()
     {
-        var Int count;
-        count : this.ExecuteCount();
-        inf (count = null)
-        {
-            return null;
-        }
-
-        inf (~this.ValidCount(count))
-        {
-            return null;
-        }
-
-        var Data a;
-        a : this.Operate.ExecuteData(count);
-        return a;
+        return this.Operate.ExecuteData(count);
     }
 
     maide precate String ExecuteName()
