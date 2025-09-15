@@ -211,8 +211,8 @@ class Write : Any
         this.ExecuteIndex(varField.Class);
         this.ExecuteByte(varField.Count);
         this.ExecuteName(varField.Name);
-        this.ExecuteState(varField.Get);
-        this.ExecuteState(varField.Set);
+        this.ExecuteData(varField.Get);
+        this.ExecuteData(varField.Set);
         return true;
     }
 
@@ -243,7 +243,7 @@ class Write : Any
         this.ExecuteByte(varMaide.Count);
         this.ExecuteName(varMaide.Name);
         this.ExecuteVarArray(varMaide.Param);
-        this.ExecuteState(varMaide.Call);
+        this.ExecuteData(varMaide.Call);
         return true;
     }
 
