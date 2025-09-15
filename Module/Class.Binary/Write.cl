@@ -290,11 +290,11 @@ class Write : Any
     {
         this.ExecuteCount(state.Var);
 
-        var Array array;
-        array : state.Operate;
+        var Data data;
+        data : state.Operate;
 
         var Int count;
-        count : array.Count;
+        count : data.Count;
 
         this.ExecuteCount(count);
 
@@ -302,66 +302,13 @@ class Write : Any
         i : 0;
         while (i < count)
         {
-            var Operate operate;
-            operate : cast Operate(array.Get(i));
+            var Int ka;
+            ka : data.Get(i);
 
-            this.ExecuteOperate(operate);
+            this.ExecuteByte(ka);
 
             i : i + 1;
         }
-        return true;
-    }
-
-    maide precate Bool ExecuteOperate(var Operate operate)
-    {
-        this.ExecuteByte(operate.Kind);
-        this.ExecuteOperateArg(operate.ArgA);
-        this.ExecuteOperateArg(operate.ArgB);
-        return true;
-    }
-
-    maide precate Bool ExecuteOperateArg(var Any arg)
-    {
-        var Bool b;
-        b : false;
-
-        inf (arg = null)
-        {
-            this.ExecuteByte(0);
-
-            b : true;
-        }
-
-        var Bool ka;
-        ka : cast Bool(arg);
-        inf (~b & ~(ka = null))
-        {
-            this.ExecuteByte(1);
-
-            this.ExecuteBool(ka);
-            b : true;
-        }
-
-        var Int kb;
-        kb : cast Int(arg);
-        inf (~b & ~(kb = null))
-        {
-            this.ExecuteByte(2);
-
-            this.ExecuteInt(kb);
-            b : true;
-        }
-
-        var String kc;
-        kc : cast String(arg);
-        inf (~b & ~(kc = null))
-        {
-            this.ExecuteByte(3);
-
-            this.ExecuteString(kc);
-            b : true;
-        }
-
         return true;
     }
 
