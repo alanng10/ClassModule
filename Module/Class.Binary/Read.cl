@@ -1156,11 +1156,6 @@ class Read : Any
             return null;
         }
 
-        var ReadArg arg;
-        arg : this.Arg;
-        var Int index;
-        index : arg.Index;
-
         var Int k;
         k : 0;
 
@@ -1183,9 +1178,6 @@ class Read : Any
 
         var Int a;
         a : k;
-
-        index : index + count;
-        arg.Index : index;
         return a;
     }
 
