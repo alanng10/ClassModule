@@ -1080,8 +1080,23 @@ class Read : Any
             return null;
         }
 
+        var String k;
+        k : this.Operate.ExecuteName(count);
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Int ka;
+            ka : this.ExecuteByte();
+
+            this.Operate.ExecuteStringDataCharSet(ka);
+
+            i : i + 1;
+        }
+
         var String a;
-        a : this.Operate.ExecuteName(count);
+        a : k;
         return a;
     }
 
