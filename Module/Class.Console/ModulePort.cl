@@ -704,7 +704,7 @@ class ModulePort : TextAdd
         var String entry;
 
         var Int k;
-        k : this.Binary.Entry;
+        k : this.Binary.Entry.Class;
         inf (~(k = null))
         {
             var Class a;
