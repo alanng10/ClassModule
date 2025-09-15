@@ -273,9 +273,9 @@ class Write : Any
         return true;
     }
 
-    maide precate Bool ExecuteEntry(var Int entry)
+    maide precate Bool ExecuteEntry(var Entry entry)
     {
-        inf (entry = null)
+        inf (entry.Class = null)
         {
             this.ExecuteByte(0);
             return true;
@@ -283,7 +283,7 @@ class Write : Any
 
         this.ExecuteByte(1);
 
-        this.ExecuteIndex(entry);
+        this.ExecuteIndex(entry.Class);
         return true;
     }
 
