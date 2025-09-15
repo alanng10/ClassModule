@@ -922,30 +922,7 @@ class Read : Any
         return a;
     }
 
-    maide precate State ExecuteState()
-    {
-        var Int varVar;
-        varVar : this.ExecuteCount();
-        inf (varVar = null)
-        {
-            return null;
-        }
-
-        var Array operate;
-        operate : this.ExecuteOperateArray();
-        inf (operate = null)
-        {
-            return null;
-        }
-
-        var State a;
-        a : this.Operate.ExecuteState();
-        a.Var : varVar;
-        a.Operate : operate;
-        return a;
-    }
-
-    maide precate Array ExecuteOperateArray()
+    maide precate Data ExecuteState()
     {
         var Int count;
         count : this.ExecuteCount();
@@ -954,9 +931,9 @@ class Read : Any
             return null;
         }
 
-        var Array array;
-        array : this.ExecuteArray(count);
-        inf (array = null)
+        var Data data;
+        data : this.ExecuteData(count);
+        inf (data = null)
         {
             return null;
         }
@@ -965,80 +942,18 @@ class Read : Any
         i : 0;
         while (i < count)
         {
-            var Operate a;
-            a : this.ExecuteOperate();
+            var Int a;
+            a : this.ExecuteByte();
             inf (a = null)
             {
                 return null;
             }
 
-            this.Operate.ExecuteArrayItemSet(array, i, a);
+            this.Operate.ExecuteDataItemSet(data, i, a);
 
             i : i + 1;
         }
-        return array;
-    }
-
-    maide precate Operate ExecuteOperate()
-    {
-        var Int kind;
-        kind : this.ExecuteByte();
-        inf (kind = null)
-        {
-            return null;
-        }
-
-        var Any argA;
-        argA : this.ExecuteOperateArg();
-
-        var Any argB;
-        argB : this.ExecuteOperateArg();
-
-        var Operate a;
-        a : this.Operate.ExecuteOperate();
-        a.Kind : kind;
-        a.ArgA : argA;
-        a.ArgB : argB;
-        return a;
-    }
-
-    maide precate Any ExecuteOperateArg()
-    {
-        var Int kind;
-        kind : this.ExecuteByte();
-        inf (kind = null)
-        {
-            return null;
-        }
-
-        inf (kind = 0)
-        {
-            return null;
-        }
-
-        var Any k;
-
-        inf (kind = 1)
-        {
-            k : this.ExecuteBool();
-        }
-        inf (kind = 2)
-        {
-            k : this.ExecuteInt();
-        }
-        inf (kind = 3)
-        {
-            k : this.ExecuteString();
-        }
-
-        inf (k = null)
-        {
-            return null;
-        }
-
-        var Any a;
-        a : k;
-        return a;
+        return data;
     }
 
     maide precate Int ExecuteEntry()
@@ -1116,6 +1031,11 @@ class Read : Any
     maide precate Array ExecuteArray(var Int count)
     {
         return this.Operate.ExecuteArray(count);
+    }
+
+    maide precate Data ExecuteData(var Int count)
+    {
+        return this.Operate.ExecuteData(count);
     }
 
     maide precate String ExecuteName()
