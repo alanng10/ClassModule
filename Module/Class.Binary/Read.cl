@@ -979,6 +979,16 @@ class Read : Any
         return array;
     }
 
+    maide precate Operate ExecuteOperate()
+    {
+        var Int kind;
+        kind : this.ExecuteByte();
+        inf (kind = null)
+        {
+            return null;
+        }
+    }
+
     maide precate Int ExecuteEntry()
     {
         var Int k;
