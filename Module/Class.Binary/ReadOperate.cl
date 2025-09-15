@@ -30,19 +30,7 @@ class ReadOperate : Any
     {
     }
 
-    maide prusate State ExecuteState()
-    {
-    }
-
-    maide prusate Operate ExecuteOperate()
-    {
-    }
-
     maide prusate ModuleRef ExecuteModuleRef()
-    {
-    }
-
-    maide prusate String ExecuteString(var Int count)
     {
     }
 
@@ -55,6 +43,14 @@ class ReadOperate : Any
     }
 
     maide prusate Bool ExecuteArrayItemSet(var Array array, var Int index, var Any value)
+    {
+    }
+
+    maide prusate Data ExecuteData(var Int count)
+    {
+    }
+
+    maide prusate Bool ExecuteDataItemSet(var Data data, var Int index, var Int value)
     {
     }
 }
