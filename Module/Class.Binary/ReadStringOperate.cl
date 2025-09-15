@@ -174,22 +174,6 @@ class ReadStringOperate : ReadOperate
         return this.Var;
     }
 
-    maide prusate State ExecuteState()
-    {
-        var ReadArg arg;
-        arg : this.Read.Arg;
-        arg.StateIndex : arg.StateIndex + 1;
-        return this.State;
-    }
-
-    maide prusate Operate ExecuteOperate()
-    {
-        var ReadArg arg;
-        arg : this.Read.Arg;
-        arg.OperateIndex : arg.OperateIndex + 1;
-        return this.Operate;
-    }
-
     maide prusate ModuleRef ExecuteModuleRef()
     {
         var ReadArg arg;
