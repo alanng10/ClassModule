@@ -1081,7 +1081,7 @@ class Read : Any
         }
 
         var String k;
-        k : this.Operate.ExecuteName(count);
+        k : this.Operate.ExecuteString(count);
 
         var Int i;
         i : 0;
