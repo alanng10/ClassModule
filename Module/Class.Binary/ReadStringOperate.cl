@@ -222,7 +222,6 @@ class ReadStringOperate : ReadOperate
             i : i + 1;
         }
 
-        arg.Index : arg.Index + count;
         arg.StringIndex : arg.StringIndex + 1;
         arg.StringTextIndex : arg.StringTextIndex + count;
         return this.String;

@@ -202,7 +202,6 @@ class ReadCountOperate : ReadOperate
     {
         var ReadArg arg;
         arg : this.Read.Arg;
-        arg.Index : arg.Index + count;
         arg.StringIndex : arg.StringIndex + 1;
         arg.StringTextIndex : arg.StringTextIndex + count;
         return this.String;

@@ -117,7 +117,6 @@ class ReadSetOperate : ReadOperate
         var String a;
         a : cast String(arg.StringArray.Get(index));
 
-        arg.Index : arg.Index + count;
         arg.StringIndex : index + 1;
         arg.StringTextIndex : arg.StringTextIndex + count;
         return a;
