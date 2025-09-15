@@ -228,7 +228,7 @@ class ReadStringOperate : ReadOperate
         return this.String;
     }
 
-    maide prusate String ExecuteString(var Int count)
+    maide prusate String ExecuteName(var Int count)
     {
         var ReadArg arg;
         arg : this.Read.Arg;
