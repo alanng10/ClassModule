@@ -848,12 +848,20 @@ class Read : Any
             return null;
         }
 
+        var State call;
+        call : this.ExecuteState();
+        inf (call = null)
+        {
+            return null;
+        }
+
         var Maide a;
         a : this.Operate.ExecuteMaide();
         a.Class : varClass;
         a.Count : count;
         a.Name : name;
         a.Param : param;
+        a.Call : call;
         return a;
     }
 
