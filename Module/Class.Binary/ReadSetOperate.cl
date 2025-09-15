@@ -153,8 +153,9 @@ class ReadSetOperate : ReadOperate
         return a;
     }
 
-    maide prusate Bool ExecuteDataSet(var Data data, var Int count)
+    maide prusate Bool ExecuteDataItemSet(var Data data, var Int index, var Int value)
     {
+        data.Set(index, value);
         return true;
     }
 }
