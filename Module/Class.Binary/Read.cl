@@ -987,6 +987,8 @@ class Read : Any
         {
             return null;
         }
+
+        
     }
 
     maide precate Any ExecuteOperateArg()
@@ -998,17 +1000,22 @@ class Read : Any
             return null;
         }
 
+        inf (kind = 0)
+        {
+            return null;
+        }
+
         var Any k;
 
-        inf (kind = 0)
+        inf (kind = 1)
         {
             k : this.ExecuteBool();
         }
-        inf (kind = 1)
+        inf (kind = 2)
         {
             k : this.ExecuteInt();
         }
-        inf (kind = 2)
+        inf (kind = 3)
         {
             k : this.ExecuteString();
         }
