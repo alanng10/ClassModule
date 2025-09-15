@@ -84,6 +84,7 @@ class Write : Any
         this.ExecuteBaseArray(binary.Base);
         this.ExecutePartArray(binary.Part);
         this.ExecuteEntry(binary.Entry);
+        this.ExecuteState(binary.State);
         return true;
     }
 
@@ -284,6 +285,11 @@ class Write : Any
 
         this.ExecuteIndex(entry);
         return true;
+    }
+
+    maide precate Bool ExecuteState(var Data data)
+    {
+        return this.ExecuteData(data);
     }
 
     maide precate Bool ExecuteData(var Data data)
