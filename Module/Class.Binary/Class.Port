@@ -29,6 +29,10 @@ Part
 Field
 Maide
 Var
+State
+Operate
+OperateKind
+OperateKindList
 Read
 ReadArg
 ReadOperate
