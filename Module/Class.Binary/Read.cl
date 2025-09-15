@@ -517,6 +517,13 @@ class Read : Any
             return null;
         }
 
+        var Data state;
+        state : this.ExecuteState();
+        inf (state = null)
+        {
+            return null;
+        }
+
         var Binary a;
         a : this.Operate.ExecuteBinary();
         a.Ref : ref;
@@ -526,6 +533,7 @@ class Read : Any
         a.Base : varBase;
         a.Part : part;
         a.Entry : entry;
+        a.State : state;
         return a;
     }
 
@@ -780,27 +788,11 @@ class Read : Any
             return null;
         }
 
-        var Data varGet;
-        varGet : this.ExecuteState();
-        inf (varGet = null)
-        {
-            return null;
-        }
-
-        var Data varSet;
-        varSet : this.ExecuteState();
-        inf (varSet = null)
-        {
-            return null;
-        }
-
         var Field a;
         a : this.Operate.ExecuteField();
         a.Class : varClass;
         a.Count : count;
         a.Name : name;
-        a.Get : varGet;
-        a.Set : varSet;
         return a;
     }
 
@@ -868,20 +860,12 @@ class Read : Any
             return null;
         }
 
-        var Data call;
-        call : this.ExecuteState();
-        inf (call = null)
-        {
-            return null;
-        }
-
         var Maide a;
         a : this.Operate.ExecuteMaide();
         a.Class : varClass;
         a.Count : count;
         a.Name : name;
         a.Param : param;
-        a.Call : call;
         return a;
     }
 
