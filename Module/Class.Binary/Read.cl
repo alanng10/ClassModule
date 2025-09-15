@@ -1100,6 +1100,25 @@ class Read : Any
         return this.Operate.ExecuteArray(count);
     }
 
+    maide precate String ExecuteName()
+    {
+        var Int count;
+        count : this.ExecuteCount();
+        inf (count = null)
+        {
+            return null;
+        }
+
+        inf (~this.ValidCount(count))
+        {
+            return null;
+        }
+
+        var String a;
+        a : this.Operate.ExecuteName(count);
+        return a;
+    }
+
     maide precate String ExecuteString()
     {
         var Int count;
