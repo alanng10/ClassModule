@@ -128,4 +128,22 @@ class ReadSetOperate : ReadOperate
         array.Set(index, value);
         return true;
     }
+
+    maide prusate Data ExecuteData(var Int count)
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        var Int index;
+        index : arg.DataIndex;
+        var Data a;
+        a : cast Data(arg.DataArray.Get(index));
+        arg.DataIndex : index + 1;
+        return a;
+    }
+
+    maide prusate Bool ExecuteDataItemSet(var Data data, var Int index, var Int value)
+    {
+        data.Set(index, value);
+        return true;
+    }
 }
