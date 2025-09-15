@@ -289,10 +289,12 @@ class Write : Any
     maide precate Bool ExecuteState(var State state)
     {
         this.ExecuteCount(state.Var);
+        this.ExecuteData(state.Operate);
+        return true;
+    }
 
-        var Data data;
-        data : state.Operate;
-
+    maide precate Bool ExecuteData(var Data data)
+    {
         var Int count;
         count : data.Count;
 
