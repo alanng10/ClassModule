@@ -989,6 +989,40 @@ class Read : Any
         }
     }
 
+    maide precate Any ExecuteOperateArg()
+    {
+        var Int kind;
+        kind : this.ExecuteByte();
+        inf (kind = null)
+        {
+            return null;
+        }
+
+        var Any k;
+
+        inf (kind = 0)
+        {
+            k : this.ExecuteBool();
+        }
+        inf (kind = 1)
+        {
+            k : this.ExecuteInt();
+        }
+        inf (kind = 2)
+        {
+            k : this.ExecuteString();
+        }
+
+        inf (k = null)
+        {
+            return null;
+        }
+
+        var Any a;
+        a : k;
+        return a;
+    }
+
     maide precate Int ExecuteEntry()
     {
         var Int k;
@@ -1093,6 +1127,16 @@ class Read : Any
     maide precate Int ExecuteCount()
     {
         return this.ExecuteInt();
+    }
+
+    maide precate Bool ExecuteBool()
+    {
+        var Int k;
+        k : this.ExecuteByte();
+
+        var Bool a;
+        a : ~(k = 0);
+        return a;
     }
 
     maide precate Int ExecuteInt()
