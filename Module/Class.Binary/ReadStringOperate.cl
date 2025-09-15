@@ -250,7 +250,7 @@ class ReadStringOperate : ReadOperate
         return true;
     }
 
-    maide prusate Array ExecuteData(var Int count)
+    maide prusate Data ExecuteData(var Int count)
     {
         var ReadArg arg;
         arg : this.Read.Arg;
