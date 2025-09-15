@@ -6,6 +6,6 @@ class Binary : Any
     field prusate Array Export { get { return data; } set { data : value; } }
     field prusate Array Base { get { return data; } set { data : value; } }
     field prusate Array Part { get { return data; } set { data : value; } }
-    field prusate Int Entry { get { return data; } set { data : value; } }
+    field prusate Entry Entry { get { return data; } set { data : value; } }
     field prusate Data State { get { return data; } set { data : value; } }
 }
