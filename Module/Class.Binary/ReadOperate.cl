@@ -30,6 +30,10 @@ class ReadOperate : Any
     {
     }
 
+    maide prusate Entry ExecuteEntry()
+    {
+    }
+
     maide prusate ModuleRef ExecuteModuleRef()
     {
     }
