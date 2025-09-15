@@ -107,6 +107,7 @@ class Read : Any
         this.ExecuteCreateField();
         this.ExecuteCreateMaide();
         this.ExecuteCreateVar();
+        this.ExecuteCreateEntry();
         this.ExecuteCreateModuleRef();
         this.ExecuteCreateString();
         this.ExecuteCreateArray();
