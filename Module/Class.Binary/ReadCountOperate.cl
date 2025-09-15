@@ -14,11 +14,10 @@ class ReadCountOperate : ReadOperate
         this.Field : this.CreateField();
         this.Maide : this.CreateMaide();
         this.Var : this.CreateVar();
-        this.State : this.CreateState();
-        this.Operate : this.CreateOperate();
         this.ModuleRef : this.CreateModuleRef();
         this.String : this.CreateString();
         this.Array : this.CreateArray();
+        this.Data : this.CreateData();
         return true;
     }
 
@@ -78,22 +77,6 @@ class ReadCountOperate : ReadOperate
         return a;
     }
 
-    maide precate State CreateState()
-    {
-        var State a;
-        a : new State;
-        a.Init();
-        return a;
-    }
-
-    maide precate Operate CreateOperate()
-    {
-        var Operate a;
-        a : new Operate;
-        a.Init();
-        return a;
-    }
-
     maide precate ModuleRef CreateModuleRef()
     {
         return this.ClassInfra.ModuleRefCreate(null, null);
@@ -109,6 +92,15 @@ class ReadCountOperate : ReadOperate
         return this.ListInfra.ArrayCreate(0);
     }
 
+    maide precate Data CreateData()
+    {
+        var Data a;
+        a : new Data;
+        a.Count : 0;
+        a.Init();
+        return a;
+    }
+
     field precate ListInfra ListInfra { get { return data; } set { data : value; } }
     field precate TextInfra TextInfra { get { return data; } set { data : value; } }
     field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
@@ -119,11 +111,10 @@ class ReadCountOperate : ReadOperate
     field precate Field Field { get { return data; } set { data : value; } }
     field precate Maide Maide { get { return data; } set { data : value; } }
     field precate Var Var { get { return data; } set { data : value; } }
-    field precate State State { get { return data; } set { data : value; } }
-    field precate Operate Operate { get { return data; } set { data : value; } }
     field precate ModuleRef ModuleRef { get { return data; } set { data : value; } }
     field precate String String { get { return data; } set { data : value; } }
     field precate Array Array { get { return data; } set { data : value; } }
+    field precate Data Data { get { return data; } set { data : value; } }
 
     maide prusate Binary ExecuteBinary()
     {
