@@ -940,7 +940,7 @@ class Read : Any
         inf (ka = 1)
         {
             var Int kd;
-            kd : this.ExecuteClassIndex();
+            kd : this.ExecuteIndex();
             inf (kd = null)
             {
                 return null;
