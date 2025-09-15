@@ -912,6 +912,11 @@ class Read : Any
         return a;
     }
 
+    maide precate Data ExecuteState()
+    {
+        return this.ExecuteData();
+    }
+
     maide precate Int ExecuteEntry()
     {
         var Int k;
