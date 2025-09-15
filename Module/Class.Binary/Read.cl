@@ -1139,10 +1139,18 @@ class Read : Any
         return a;
     }
 
+    maide precate Int ExecuteMid()
+    {
+        this.ExecuteIntCount(4);
+    }
+
     maide precate Int ExecuteInt()
     {
-        var Int count;
-        count : 8;
+        this.ExecuteIntCount(8);
+    }
+
+    maide precate Int ExecuteIntCount(var Int count)
+    {
         inf (~this.ValidCount(count))
         {
             return null;
