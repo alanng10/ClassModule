@@ -113,11 +113,10 @@ class ReadStringOperate : ReadOperate
     field precate Field Field { get { return data; } set { data : value; } }
     field precate Maide Maide { get { return data; } set { data : value; } }
     field precate Var Var { get { return data; } set { data : value; } }
-    field precate State State { get { return data; } set { data : value; } }
-    field precate Operate Operate { get { return data; } set { data : value; } }
     field precate ModuleRef ModuleRef { get { return data; } set { data : value; } }
     field precate String String { get { return data; } set { data : value; } }
     field precate Array Array { get { return data; } set { data : value; } }
+    field precate Data Data { get { return data; } set { data : value; } }
 
     maide prusate Binary ExecuteBinary()
     {
