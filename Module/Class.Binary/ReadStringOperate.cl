@@ -15,11 +15,10 @@ class ReadStringOperate : ReadOperate
         this.Field : this.CreateField();
         this.Maide : this.CreateMaide();
         this.Var : this.CreateVar();
-        this.State : this.CreateState();
-        this.Operate : this.CreateOperate();
         this.ModuleRef : this.CreateModuleRef();
         this.String : this.CreateString();
         this.Array : this.CreateArray();
+        this.Data : this.CreateData();
         return true;
     }
 
@@ -79,22 +78,6 @@ class ReadStringOperate : ReadOperate
         return a;
     }
 
-    maide precate State CreateState()
-    {
-        var State a;
-        a : new State;
-        a.Init();
-        return a;
-    }
-
-    maide precate Operate CreateOperate()
-    {
-        var Operate a;
-        a : new Operate;
-        a.Init();
-        return a;
-    }
-
     maide precate ModuleRef CreateModuleRef()
     {
         return this.ClassInfra.ModuleRefCreate(null, null);
@@ -108,6 +91,15 @@ class ReadStringOperate : ReadOperate
     maide precate Array CreateArray()
     {
         return this.ListInfra.ArrayCreate(0);
+    }
+
+    maide precate Data CreateData()
+    {
+        var Data a;
+        a : new Data;
+        a.Count : 0;
+        a.Init();
+        return a;
     }
 
     field precate InfraInfra InfraInfra { get { return data; } set { data : value; } }
