@@ -46,6 +46,10 @@ class ReadOperate : Any
     {
     }
 
+    maide prusate String ExecuteName(var Int count)
+    {
+    }
+
     maide prusate Array ExecuteArray(var Int count)
     {
     }
