@@ -299,52 +299,6 @@ class Read : Any
         return true;
     }
 
-    maide precate Bool ExecuteCreateState()
-    {
-        var Array array;
-        array : this.Arg.StateArray;
-
-        var Int count;
-        count : array.Count;
-
-        var Int i;
-        i : 0;
-        while (i < count)
-        {
-            var State k;
-            k : new State;
-            k.Init();
-
-            array.Set(i, k);
-
-            i : i + 1;
-        }
-        return true;
-    }
-
-    maide precate Bool ExecuteCreateOperate()
-    {
-        var Array array;
-        array : this.Arg.OperateArray;
-
-        var Int count;
-        count : array.Count;
-
-        var Int i;
-        i : 0;
-        while (i < count)
-        {
-            var Operate k;
-            k : new Operate;
-            k.Init();
-
-            array.Set(i, k);
-
-            i : i + 1;
-        }
-        return true;
-    }
-
     maide precate Bool ExecuteCreateModuleRef()
     {
         var Array array;
@@ -436,6 +390,39 @@ class Read : Any
 
             var Array k;
             k : this.ListInfra.ArrayCreate(ka);
+
+            array.Set(i, k);
+
+            i : i + 1;
+        }
+        return true;
+    }
+
+    maide precate Bool ExecuteCreateData()
+    {
+        var ReadArg arg;
+        arg : this.Arg;
+
+        var Array array;
+        array : arg.DataArray;
+
+        var Int count;
+        count : array.Count;
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Int index;
+            index : i * 8;
+
+            var Int ka;
+            ka : this.InfraInfra.DataIntGet(arg.DataCountData, index);
+
+            var Data k;
+            k : new Data;
+            k.Count : ka;
+            k.Init();
 
             array.Set(i, k);
 
