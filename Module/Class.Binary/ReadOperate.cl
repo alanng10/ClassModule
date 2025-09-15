@@ -54,7 +54,7 @@ class ReadOperate : Any
     {
     }
 
-    maide prusate Bool ExecuteDataCopy(var Data data, var Int count)
+    maide prusate Bool ExecuteDataItemSet(var Data data, var Int index, var Int value)
     {
     }
 }
