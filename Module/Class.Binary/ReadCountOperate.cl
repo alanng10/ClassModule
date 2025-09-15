@@ -198,7 +198,7 @@ class ReadCountOperate : ReadOperate
         return this.ModuleRef;
     }
 
-    maide prusate String ExecuteName(var Int count)
+    maide prusate String ExecuteString(var Int count)
     {
         var ReadArg arg;
         arg : this.Read.Arg;
