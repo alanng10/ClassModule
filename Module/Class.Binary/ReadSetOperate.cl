@@ -84,30 +84,6 @@ class ReadSetOperate : ReadOperate
         return a;
     }
 
-    maide prusate State ExecuteState()
-    {
-        var ReadArg arg;
-        arg : this.Read.Arg;
-        var Int index;
-        index : arg.StateIndex;
-        var State a;
-        a : cast State(arg.StateArray.Get(index));
-        arg.StateIndex : index + 1;
-        return a;
-    }
-
-    maide prusate Operate ExecuteOperate()
-    {
-        var ReadArg arg;
-        arg : this.Read.Arg;
-        var Int index;
-        index : arg.OperateIndex;
-        var Operate a;
-        a : cast Operate(arg.OperateArray.Get(index));
-        arg.OperateIndex : index + 1;
-        return a;
-    }
-
     maide prusate ModuleRef ExecuteModuleRef()
     {
         var ReadArg arg;
