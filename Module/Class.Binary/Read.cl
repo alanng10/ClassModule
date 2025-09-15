@@ -980,6 +980,11 @@ class Read : Any
         return a;
     }
 
+    maide precate Data ExecuteState()
+    {
+        return this.ExecuteData();
+    }
+
     maide precate Array ExecuteClassIndexArray()
     {
         var Int count;
