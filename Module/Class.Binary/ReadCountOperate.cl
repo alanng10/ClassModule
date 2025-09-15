@@ -202,4 +202,17 @@ class ReadCountOperate : ReadOperate
     {
         return true;
     }
+
+    maide prusate Data ExecuteData(var Int count)
+    {
+        var ReadArg arg;
+        arg : this.Read.Arg;
+        arg.DataIndex : arg.DataIndex + 1;
+        return this.Data;
+    }
+
+    maide prusate Bool ExecuteDataItemSet(var Data data, var Int index, var Int value)
+    {
+        return true;
+    }
 }
