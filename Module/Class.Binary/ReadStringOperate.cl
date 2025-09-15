@@ -15,6 +15,7 @@ class ReadStringOperate : ReadOperate
         this.Field : this.CreateField();
         this.Maide : this.CreateMaide();
         this.Var : this.CreateVar();
+        this.Entry : this.CreateEntry();
         this.ModuleRef : this.CreateModuleRef();
         this.String : this.CreateString();
         this.Array : this.CreateArray();
@@ -74,6 +75,14 @@ class ReadStringOperate : ReadOperate
     {
         var Var a;
         a : new Var;
+        a.Init();
+        return a;
+    }
+
+    maide precate Entry CreateEntry()
+    {
+        var Entry a;
+        a : new Entry;
         a.Init();
         return a;
     }
