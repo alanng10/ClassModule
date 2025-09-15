@@ -988,7 +988,18 @@ class Read : Any
             return null;
         }
 
-        
+        var Any argA;
+        argA : this.ExecuteOperateArg();
+
+        var Any argB;
+        argB : this.ExecuteOperateArg();
+
+        var Operate a;
+        a : this.Operate.ExecuteOperate();
+        a.Kind : kind;
+        a.ArgA : argA;
+        a.ArgB : argB;
+        return a;
     }
 
     maide precate Any ExecuteOperateArg()
