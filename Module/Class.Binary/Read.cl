@@ -760,11 +760,27 @@ class Read : Any
             return null;
         }
 
+        var State varGet;
+        varGet : this.ExecuteState();
+        inf (varGet = null)
+        {
+            return null;
+        }
+
+        var State varSet;
+        varSet : this.ExecuteState();
+        inf (varSet = null)
+        {
+            return null;
+        }
+
         var Field a;
         a : this.Operate.ExecuteField();
         a.Class : varClass;
         a.Count : count;
         a.Name : name;
+        a.Get : varGet;
+        a.Set : varSet;
         return a;
     }
 
