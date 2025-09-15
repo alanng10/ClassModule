@@ -917,13 +917,36 @@ class Read : Any
         return this.ExecuteData();
     }
 
-    maide precate Int ExecuteEntry()
+    maide precate Entry ExecuteEntry()
     {
-        var Int k;
-        k : this.ExecuteClassIndex();
+        var Int ka;
+        ka : this.ExecuteByte();
+        inf (ka = null)
+        {
+            return null;
+        }
 
-        var Int a;
-        a : k;
+        var Int varClass;
+
+        inf (ka = 0)
+        {
+            varClass : null;
+        }
+
+        inf (ka = 1)
+        {
+            var Int kd;
+            kd : this.ExecuteClassIndex();
+            inf (kd = null)
+            {
+                return null;
+            }
+            varClass : kd;
+        }
+
+        var Entry a;
+        a : this.Operate.ExecuteEntry();
+        a.Class : varClass;
         return a;
     }
 
