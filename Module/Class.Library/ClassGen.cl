@@ -1,4 +1,4 @@
-class ClassGena : TextAdd
+class ClassGen : TextAdd
 {
     maide prusate Bool Init()
     {
@@ -11,20 +11,20 @@ class ClassGena : TextAdd
         return true;
     }
 
-    maide precate ClassGenaCountOperate CreateCountOperate()
+    maide precate ClassGenCountOperate CreateCountOperate()
     {
-        var ClassGenaCountOperate a;
-        a : new ClassGenaCountOperate;
-        a.Gena : this;
+        var ClassGenCountOperate a;
+        a : new ClassGenCountOperate;
+        a.Gen : this;
         a.Init();
         return a;
     }
 
-    maide precate ClassGenaSetOperate CreateSetOperate()
+    maide precate ClassGenSetOperate CreateSetOperate()
     {
-        var ClassGenaSetOperate a;
-        a : new ClassGenaSetOperate;
-        a.Gena : this;
+        var ClassGenSetOperate a;
+        a : new ClassGenSetOperate;
+        a.Gen : this;
         a.Init();
         return a;
     }
@@ -37,16 +37,16 @@ class ClassGena : TextAdd
         return a;
     }
 
-    field prusate ClassGenaOperate Operate { get { return data; } set { data : value; } }
-    field prusate ClassGenaCountOperate CountOperate { get { return data; } set { data : value; } }
-    field prusate ClassGenaSetOperate SetOperate { get { return data; } set { data : value; } }
-    field prusate ClassGenaArg Arg { get { return data; } set { data : value; } }
+    field prusate ClassGenOperate Operate { get { return data; } set { data : value; } }
+    field prusate ClassGenCountOperate CountOperate { get { return data; } set { data : value; } }
+    field prusate ClassGenSetOperate SetOperate { get { return data; } set { data : value; } }
+    field prusate ClassGenArg Arg { get { return data; } set { data : value; } }
     field prusate TableIter ClassIter { get { return data; } set { data : value; } }
     field precate OperateKindList OperateKindList { get { return data; } set { data : value; } }
 
     maide prusate Bool Execute()
     {
-        this.Arg : new ClassGenaArg;
+        this.Arg : new ClassGenArg;
         this.Arg.Init();
 
         this.Operate : this.CountOperate;

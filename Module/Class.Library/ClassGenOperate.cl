@@ -1,6 +1,6 @@
-class ClassGenaOperate : Any
+class ClassGenOperate : Any
 {
-    field prusate Gena Gena { get { return data; } set { data : value; } }
+    field prusate Gen Gen { get { return data; } set { data : value; } }
 
     maide prusate Bool ExecuteChar(var Int value)
     {

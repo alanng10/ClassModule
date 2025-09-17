@@ -1,4 +1,4 @@
-class ClassGenaCountOperate : ClassGenaOperate
+class ClassGenCountOperate : ClassGenOperate
 {
     maide prusate Bool Init()
     {
@@ -32,8 +32,8 @@ class ClassGenaCountOperate : ClassGenaOperate
 
     maide prusate Bool ExecuteChar(var Int value)
     {
-        var ClassGenaArg arg;
-        arg : this.Gena.Arg;
+        var ClassGenArg arg;
+        arg : this.Gen.Arg;
 
         var Int index;
         index : arg.Index;
@@ -44,8 +44,8 @@ class ClassGenaCountOperate : ClassGenaOperate
 
     maide prusate Bool ExecuteTextInt(var Int value)
     {
-        var ClassGenaArg arg;
-        arg : this.Gena.Arg;
+        var ClassGenArg arg;
+        arg : this.Gen.Arg;
 
         var Int index;
         index : arg.Index;
@@ -78,8 +78,8 @@ class ClassGenaCountOperate : ClassGenaOperate
 
     maide prusate Bool ExecuteTextIntHex(var Int value)
     {
-        var ClassGenaArg arg;
-        arg : this.Gena.Arg;
+        var ClassGenArg arg;
+        arg : this.Gen.Arg;
 
         var Int index;
         index : arg.Index;
