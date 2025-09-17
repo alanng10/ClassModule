@@ -14,3 +14,11 @@ Binary has park operate.
 Binary is most gain.
 
 Binary is most apply able.
+
+Binary refer is most gain.
+
+Binary refer is most apply able.
+
+Binary state is most gain.
+
+Binary state is most apply able.
