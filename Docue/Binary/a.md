@@ -8,3 +8,5 @@ State has operate list.
 
 The module list also has task kind to generate machine code library
 from the module binary.
+
+Binary has park operate.
