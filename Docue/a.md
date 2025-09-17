@@ -62,7 +62,7 @@ Class has park token.
 
 Class has park port.
 
-Class has park binary. 
+Class has park binary.
 
 Class has park infra.
 
