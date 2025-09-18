@@ -12,7 +12,7 @@ public class Gen : SourceGen
         this.ItemClassName = this.S("OperateKind");
         this.ArrayClassName = this.S("Array");
         this.Export = true;
-        this.ItemListFileName = this.S("ToolData/Class/ItemListOperateKind.txt");
+        this.ItemListFileName = this.S("../../../Class/Out/net8.0/ToolData/Saber/ItemListOperateKind.txt");
         this.AddMethodFileName = this.S("ToolData/Class/AddMaideOperateKind.txt");
         this.OutputFilePath = this.S("../../Module/Class.Binary/OperateKindList.cl");
         return true;
