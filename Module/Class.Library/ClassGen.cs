@@ -19,15 +19,13 @@ public class ClassGen : TextAdd
         this.NewLine = this.TextInfra.NewLine;
         this.Zero = this.S("0");
         this.One = this.S("1");
-        String k;
-        k = this.S("v");
-        this.VarA = this.InitVar(k, "A");
-        this.VarB = this.InitVar(k, "B");
-        this.VarC = this.InitVar(k, "C");
-        this.VarD = this.InitVar(k, "D");
-        this.VarSA = this.InitVar(k, "SA");
-        this.VarSB = this.InitVar(k, "SB");
-        this.VarSC = this.InitVar(k, "SC");
+        this.VarA = this.InitVar("A");
+        this.VarB = this.InitVar("B");
+        this.VarC = this.InitVar("C");
+        this.VarD = this.InitVar("D");
+        this.VarSA = this.InitVar("SA");
+        this.VarSB = this.InitVar("SB");
+        this.VarSC = this.InitVar("SC");
         this.EvalVar = this.S("e");
         this.EvalStackVar = this.S("S");
         this.EvalIndexVar = this.S("N");
@@ -3730,8 +3728,8 @@ public class ClassGen : TextAdd
         return k;
     }
 
-    protected virtual String InitVar(String prefix, string name)
+    protected virtual String InitVar(string name)
     {
-        return this.AddClear().Add(prefix).AddS(name).AddResult();
+        return this.AddClear().AddS("v").AddS(name).AddResult();
     }
 }
