@@ -652,10 +652,10 @@ class ClassGen : TextAdd
         var Int kk;
         kk : varVar.Index;
 
-        inf (stateKind == this.StateKindGet)
+        inf (stateKind = this.StateKindGet)
         {
             bool ba;
-            ba : (kk == 0);
+            ba : (kk = 0);
 
             inf (ba)
             {
@@ -673,12 +673,12 @@ class ClassGen : TextAdd
             }
         }
 
-        inf (stateKind == this.StateKindSet)
+        inf (stateKind = this.StateKindSet)
         {
             bool bb;
-            bb : (kk == 0);
+            bb : (kk = 0);
             bool bc;
-            bc : (kk == 1);
+            bc : (kk = 1);
 
             inf (bb)
             {
@@ -704,7 +704,7 @@ class ClassGen : TextAdd
             }
         }
 
-        inf (stateKind == this.StateKindCall)
+        inf (stateKind = this.StateKindCall)
         {
             long posD;
             posD : kk - k;
