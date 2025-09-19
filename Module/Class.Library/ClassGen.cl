@@ -60,11 +60,11 @@ class ClassGen : TextAdd
         this.RefKindIntMacro : this.S("RefKindInt");
         this.RefKindStringValueMacro : this.S("RefKindStringValue");
         this.RefKindStringValueDataMacro : this.S("RefKindStringValueData");
-        this.StateGet : this.S("G");
-        this.StateSet : this.S("S");
-        this.StateCall : this.S("C");
-        this.NameCombine : this.S("_");
-        this.NamePre : this.S("C");
+        this.StateGet : "G";
+        this.StateSet : "S";
+        this.StateCall : "C";
+        this.NameCombine : "_";
+        this.NamePre : "C";
         this.ClassWord : this.S("Class");
         this.ModuleWord : this.S("Module");
         this.ListWord : this.S("List");
