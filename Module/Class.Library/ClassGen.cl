@@ -87,12 +87,12 @@ class ClassGen : TextAdd
         this.VarMWord : "m";
         this.VarNWord : "n";
         this.CastInt : "CastInt";
-        this.WhileLabelPre : this.S("W_");
-        this.DirectiveInclude : this.S("#include");
-        this.IncludeValueInfra : this.S("<Infra/Prusate.h>");
-        this.IncludeValueInfraIntern : this.S("<InfraIntern/Prusate.h>");
-        this.IncludeValueInfraInternIntern : this.S("<InfraIntern/Prusate_Intern.h>");
-        this.IncludeValueInfraInternExtern : this.S("<InfraIntern/Prusate_Extern.h>");
+        this.WhileLabelPre : "W_";
+        this.DirectiveInclude : "#include";
+        this.IncludeValueInfra : "<Infra/Prusate.h>";
+        this.IncludeValueInfraIntern : "<InfraIntern/Prusate.h>";
+        this.IncludeValueInfraInternIntern : "<InfraIntern/Prusate_Intern.h>";
+        this.IncludeValueInfraInternExtern : "<InfraIntern/Prusate_Extern.h>";
         this.IndexExtern : "extern";
         this.IndexStatic : "static";
         this.IndexReturn : "return";
