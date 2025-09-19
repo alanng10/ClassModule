@@ -638,6 +638,87 @@ class ClassGen : TextAdd
         return true;
     }
 
+    maide prusate Bool ExecuteVarGet(var Var varVar)
+    {
+        var String varA;
+        varA : this.VarA;
+
+        var Int stateKind;
+        stateKind : this.CompStateKind;
+
+        var Int k;
+        k : this.ParamCount;
+
+        var Int kk;
+        kk : varVar.Index;
+
+        if (stateKind == this.StateKindGet)
+        {
+            bool ba;
+            ba : (kk == 0);
+
+            if (ba)
+            {
+                this.ExecuteThisFieldData();
+
+                this.VarSetDeref(varA, varA, 0);
+            }
+
+            if (!ba)
+            {
+                long posA;
+                posA : kk - 1;
+
+                this.EvalFrameValueGet(posA, varA);
+            }
+        }
+
+        if (stateKind == this.StateKindSet)
+        {
+            bool bb;
+            bb : (kk == 0);
+            bool bc;
+            bc : (kk == 1);
+
+            if (bb)
+            {
+                this.ExecuteThisFieldData();
+
+                this.VarSetDeref(varA, varA, 0);
+            }
+
+            if (bc)
+            {
+                long posB;
+                posB : -1;
+
+                this.EvalFrameValueGet(posB, varA);
+            }
+
+            if (!(bb | bc))
+            {
+                long posC;
+                posC : kk - 2;
+
+                this.EvalFrameValueGet(posC, varA);
+            }
+        }
+
+        if (stateKind == this.StateKindCall)
+        {
+            long posD;
+            posD : kk - k;
+
+            this.EvalFrameValueGet(posD, varA);
+        }
+
+        this.EvalValueSet(0, varA);
+
+        this.EvalIndexPosSet(1);
+
+        return true;
+    }
+
     maide prusate Bool ExecuteVarSet(var Var varVar)
     {
         var String varA;
