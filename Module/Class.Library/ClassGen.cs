@@ -7,10 +7,7 @@ public class ClassGen : TextAdd
         base.Init();
         this.CountOperate = this.CreateCountOperate();
         this.SetOperate = this.CreateSetOperate();
-
-        this.Travel = new ClassGenTravel();
-        this.Travel.Gen = this;
-        this.Travel.Init();
+        this.Travel = this.CreateTravel();
 
         this.ClassIter = new TableIter();
         this.ClassIter.Init();
@@ -152,6 +149,15 @@ public class ClassGen : TextAdd
     {
         ClassGenSetOperate a;
         a = new ClassGenSetOperate();
+        a.Gen = this;
+        a.Init();
+        return a;
+    }
+
+    protected virtual ClassGenTravel CreateTravel()
+    {
+        ClassGenTravel a;
+        a = new ClassGenTravel();
         a.Gen = this;
         a.Init();
         return a;
