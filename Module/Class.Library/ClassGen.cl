@@ -652,19 +652,19 @@ class ClassGen : TextAdd
         var Int kk;
         kk : varVar.Index;
 
-        if (stateKind == this.StateKindGet)
+        inf (stateKind == this.StateKindGet)
         {
             bool ba;
             ba : (kk == 0);
 
-            if (ba)
+            inf (ba)
             {
                 this.ExecuteThisFieldData();
 
                 this.VarSetDeref(varA, varA, 0);
             }
 
-            if (!ba)
+            inf (!ba)
             {
                 long posA;
                 posA : kk - 1;
@@ -673,21 +673,21 @@ class ClassGen : TextAdd
             }
         }
 
-        if (stateKind == this.StateKindSet)
+        inf (stateKind == this.StateKindSet)
         {
             bool bb;
             bb : (kk == 0);
             bool bc;
             bc : (kk == 1);
 
-            if (bb)
+            inf (bb)
             {
                 this.ExecuteThisFieldData();
 
                 this.VarSetDeref(varA, varA, 0);
             }
 
-            if (bc)
+            inf (bc)
             {
                 long posB;
                 posB : -1;
@@ -695,7 +695,7 @@ class ClassGen : TextAdd
                 this.EvalFrameValueGet(posB, varA);
             }
 
-            if (!(bb | bc))
+            inf (!(bb | bc))
             {
                 long posC;
                 posC : kk - 2;
@@ -704,7 +704,7 @@ class ClassGen : TextAdd
             }
         }
 
-        if (stateKind == this.StateKindCall)
+        inf (stateKind == this.StateKindCall)
         {
             long posD;
             posD : kk - k;
