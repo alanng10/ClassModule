@@ -5,12 +5,8 @@ public class ClassGen : TextAdd
     public override bool Init()
     {
         base.Init();
-        this.CountOperate = new ClassGenCountOperate();
-        this.CountOperate.Gen = this;
-        this.CountOperate.Init();
-        this.SetOperate = new ClassGenSetOperate();
-        this.SetOperate.Gen = this;
-        this.SetOperate.Init();
+        this.CountOperate = this.CreateCountOperate();
+        this.SetOperate = this.CreateSetOperate();
 
         this.Travel = new ClassGenTravel();
         this.Travel.Gen = this;
@@ -141,6 +137,24 @@ public class ClassGen : TextAdd
         this.LimitBitLite = this.S("<<");
         this.LimitBitRite = this.S(">>");
         return true;
+    }
+
+    protected virtual ClassGenCountOperate CreateCountOperate()
+    {
+        ClassGenCountOperate a;
+        a = new ClassGenCountOperate();
+        a.Gen = this;
+        a.Init();
+        return a;
+    }
+
+    protected virtual ClassGenSetOperate CreateSetOperate()
+    {
+        ClassGenSetOperate a;
+        a = new ClassGenSetOperate();
+        a.Gen = this;
+        a.Init();
+        return a;
     }
 
     public virtual ClassModule Module { get; set; }
