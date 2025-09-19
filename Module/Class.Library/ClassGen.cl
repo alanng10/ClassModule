@@ -664,7 +664,7 @@ class ClassGen : TextAdd
                 this.VarSetDeref(varA, varA, 0);
             }
 
-            inf (!ba)
+            inf (~ba)
             {
                 var Int posA;
                 posA : kk - 1;
@@ -695,7 +695,7 @@ class ClassGen : TextAdd
                 this.EvalFrameValueGet(posB, varA);
             }
 
-            inf (!(bb | bc))
+            inf (~(bb | bc))
             {
                 var Int posC;
                 posC : kk - 2;
