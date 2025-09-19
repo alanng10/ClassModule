@@ -162,6 +162,11 @@ class ClassGen : TextAdd
         return a;
     }
 
+    maide precate String InitVar(var String name)
+    {
+        return this.AddClear().Add("v").Add(name).AddResult();
+    }
+
     field prusate ClassGenArg Arg { get { return data; } set { data : value; } }
     field prusate ClassGenOperate Operate { get { return data; } set { data : value; } }
     field prusate ClassGenCountOperate CountOperate { get { return data; } set { data : value; } }
