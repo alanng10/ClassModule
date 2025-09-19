@@ -42,7 +42,7 @@ class ClassGen : TextAdd
     field prusate ClassGenSetOperate SetOperate { get { return data; } set { data : value; } }
     field prusate ClassGenArg Arg { get { return data; } set { data : value; } }
     field prusate TableIter ClassIter { get { return data; } set { data : value; } }
-    field precate OperateKindList OperateKindList { get { return data; } set { data : value; } }
+    field prusate OperateKindList OperateKindList { get { return data; } set { data : value; } }
     field prusate String Space { get; set; }
     field prusate String NewLine { get; set; }
     field prusate String Zero { get; set; }
