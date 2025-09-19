@@ -8,6 +8,7 @@ class ClassGen : TextAdd
         this.CountOperate : this.CreateCountOperate();
         this.SetOperate : this.CreateSetOperate();
         this.ClassIter : this.CreateClassIter();
+        this.TableIter : this.CreateTableIter();
 
         this.StateKindGet : 1;
         this.StateKindSet : 2;
@@ -149,6 +150,11 @@ class ClassGen : TextAdd
     }
 
     maide precate TableIter CreateClassIter()
+    {
+        return this.CreateTableIter();
+    }
+
+    maide precate TableIter CreateTableIter()
     {
         var TableIter a;
         a : new TableIter;
