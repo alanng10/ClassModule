@@ -170,6 +170,11 @@ public class ClassGen : TextAdd
         return a;
     }
 
+    protected virtual String InitVar(string name)
+    {
+        return this.AddClear().AddS("v").AddS(name).AddResult();
+    }
+
     public virtual ClassModule Module { get; set; }
     public virtual long ModuleCount { get; set; }
     public virtual Array InitArray { get; set; }
@@ -3726,10 +3731,5 @@ public class ClassGen : TextAdd
         k = k & 0xff;
         k = k << 52;
         return k;
-    }
-
-    protected virtual String InitVar(string name)
-    {
-        return this.AddClear().AddS("v").AddS(name).AddResult();
     }
 }
