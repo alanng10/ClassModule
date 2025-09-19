@@ -33,6 +33,18 @@ class BinaryStateTravel : Travel
         return true;
     }
 
+    maide prusate Bool ExecuteShareOperate(var ShareOperate shareOperate)
+    {
+        var Class ka;
+        ka : this.Info(shareOperate).OperateClass;
+
+        var Int k;
+        k : this.State.ClassIndex(ka);
+
+        this.Op(this.Kind.Share, k, null);
+        return true;
+    }
+
     maide prusate Bool ExecuteBoolValue(var BoolValue boolValue)
     {
         this.Op(this.Kind.BoolValue, boolValue.Value, null);
