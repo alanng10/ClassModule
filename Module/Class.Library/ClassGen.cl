@@ -100,12 +100,12 @@ class ClassGen : TextAdd
         this.IndexGoto : this.S("goto");
         this.LimitDot : this.S(".");
         this.LimitDotPointer : this.S("->");
-        this.LimitBraceRoundLite : this.S("(");
-        this.LimitBraceRoundRite : this.S(")");
-        this.LimitBraceRightLite : this.S("[");
-        this.LimitBraceRightRite : this.S("]");
-        this.LimitBraceCurveLite : this.S("{");
-        this.LimitBraceCurveRite : this.S("}");
+        this.LimitBraceRoundLite : "(";
+        this.LimitBraceRoundRite : ")";
+        this.LimitBraceRightLite : "[";
+        this.LimitBraceRightRite : "]";
+        this.LimitBraceCurveLite : "{";
+        this.LimitBraceCurveRite : "}";
         this.LimitColon : this.S(":");
         this.LimitSemicolon : this.S(";");
         this.LimitComma : this.S(",");
