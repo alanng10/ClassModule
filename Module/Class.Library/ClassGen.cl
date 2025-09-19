@@ -158,118 +158,118 @@ class ClassGen : TextAdd
     field prusate ClassGenSetOperate SetOperate { get { return data; } set { data : value; } }
     field prusate TableIter ClassIter { get { return data; } set { data : value; } }
     field prusate OperateKindList OperateKindList { get { return data; } set { data : value; } }
-    field prusate String Space { get; set; }
-    field prusate String NewLine { get; set; }
-    field prusate String Zero { get; set; }
-    field prusate String One { get; set; }
-    field prusate String VarA { get; set; }
-    field prusate String VarB { get; set; }
-    field prusate String VarC { get; set; }
-    field prusate String VarD { get; set; }
-    field prusate String VarSA { get; set; }
-    field prusate String VarSB { get; set; }
-    field prusate String VarSC { get; set; }
-    field prusate String EvalVar { get; set; }
-    field prusate String EvalStackVar { get; set; }
-    field prusate String EvalIndexVar { get; set; }
-    field prusate String EvalFrameVar { get; set; }
-    field prusate String IntValueHexPre { get; set; }
-    field prusate String BaseBitRiteCount { get; set; }
-    field prusate String RefKindBitRiteCount { get; set; }
-    field prusate String RefBitCount { get; set; }
-    field prusate String RefKindAny { get; set; }
-    field prusate String RefKindBool { get; set; }
-    field prusate String RefKindInt { get; set; }
-    field prusate String RefKindString { get; set; }
-    field prusate String RefKindStringValue { get; set; }
-    field prusate String RefKindClearMask { get; set; }
-    field prusate String RefKindBoolMask { get; set; }
-    field prusate String RefKindIntMask { get; set; }
-    field prusate String BaseClearMask { get; set; }
-    field prusate String BaseMask { get; set; }
-    field prusate String MemoryIndexMask { get; set; }
-    field prusate String ClassInt { get; set; }
-    field prusate String ClassSInt { get; set; }
-    field prusate String ClassInt32 { get; set; }
-    field prusate String ClassEval { get; set; }
-    field prusate String ClassCompState { get; set; }
-    field prusate String InternNewMaide { get; set; }
-    field prusate String InternShareMaide { get; set; }
-    field prusate String InternValueRef { get; set; }
-    field prusate String InternValueClass { get; set; }
-    field prusate String InternValueBool { get; set; }
-    field prusate String InternValueInt { get; set; }
-    field prusate String InternValueString { get; set; }
-    field prusate String InternClassStruct { get; set; }
-    field prusate String InternModuleStruct { get; set; }
-    field prusate String InternBaseSet { get; set; }
-    field prusate String InternModuleSet { get; set; }
-    field prusate String RefKindIntMacro { get; set; }
-    field prusate String RefKindStringValueMacro { get; set; }
-    field prusate String RefKindStringValueDataMacro { get; set; }
-    field prusate String StateGet { get; set; }
-    field prusate String StateSet { get; set; }
-    field prusate String StateCall { get; set; }
-    field prusate String NameCombine { get; set; }
-    field prusate String NamePre { get; set; }
-    field prusate String ClassWord { get; set; }
-    field prusate String ModuleWord { get; set; }
-    field prusate String ListWord { get; set; }
-    field prusate String BaseWord { get; set; }
-    field prusate String ItemWord { get; set; }
-    field prusate String AnyWord { get; set; }
-    field prusate String InitWord { get; set; }
-    field prusate String CountWord { get; set; }
-    field prusate String VarWord { get; set; }
-    field prusate String ImportWord { get; set; }
-    field prusate String ExportWord { get; set; }
-    field prusate String ApiWord { get; set; }
-    field prusate String InternWord { get; set; }
-    field prusate String ExternWord { get; set; }
-    field prusate String StringWord { get; set; }
-    field prusate String DataWord { get; set; }
-    field prusate String EntryWord { get; set; }
-    field prusate String VarOWord { get; set; }
-    field prusate String VarKWord { get; set; }
-    field prusate String VarMWord { get; set; }
-    field prusate String VarNWord { get; set; }
-    field prusate String CastInt { get; set; }
-    field prusate String WhileLabelPre { get; set; }
-    field prusate String DirectiveInclude { get; set; }
-    field prusate String IncludeValueInfra { get; set; }
-    field prusate String IncludeValueInfraIntern { get; set; }
-    field prusate String IncludeValueInfraInternIntern { get; set; }
-    field prusate String IncludeValueInfraInternExtern { get; set; }
-    field prusate String IndexExtern { get; set; }
-    field prusate String IndexStatic { get; set; }
-    field prusate String IndexReturn { get; set; }
-    field prusate String IndexInf { get; set; }
-    field prusate String IndexGoto { get; set; }
-    field prusate String LimitDot { get; set; }
-    field prusate String LimitDotPointer { get; set; }
-    field prusate String LimitBraceRoundLite { get; set; }
-    field prusate String LimitBraceRoundRite { get; set; }
-    field prusate String LimitBraceRightLite { get; set; }
-    field prusate String LimitBraceRightRite { get; set; }
-    field prusate String LimitBraceCurveLite { get; set; }
-    field prusate String LimitBraceCurveRite { get; set; }
-    field prusate String LimitColon { get; set; }
-    field prusate String LimitSemicolon { get; set; }
-    field prusate String LimitComma { get; set; }
-    field prusate String LimitAsterisk { get; set; }
-    field prusate String LimitAre { get; set; }
-    field prusate String LimitSame { get; set; }
-    field prusate String LimitLess { get; set; }
-    field prusate String LimitAnd { get; set; }
-    field prusate String LimitOrn { get; set; }
-    field prusate String LimitNot { get; set; }
-    field prusate String LimitAdd { get; set; }
-    field prusate String LimitSub { get; set; }
-    field prusate String LimitMul { get; set; }
-    field prusate String LimitDiv { get; set; }
-    field prusate String LimitBitNot { get; set; }
-    field prusate String LimitBitLite { get; set; }
-    field prusate String LimitBitRite { get; set; }
+    field prusate String Space { get { return data; } set { data : value; } }
+    field prusate String NewLine { get { return data; } set { data : value; } }
+    field prusate String Zero { get { return data; } set { data : value; } }
+    field prusate String One { get { return data; } set { data : value; } }
+    field prusate String VarA { get { return data; } set { data : value; } }
+    field prusate String VarB { get { return data; } set { data : value; } }
+    field prusate String VarC { get { return data; } set { data : value; } }
+    field prusate String VarD { get { return data; } set { data : value; } }
+    field prusate String VarSA { get { return data; } set { data : value; } }
+    field prusate String VarSB { get { return data; } set { data : value; } }
+    field prusate String VarSC { get { return data; } set { data : value; } }
+    field prusate String EvalVar { get { return data; } set { data : value; } }
+    field prusate String EvalStackVar { get { return data; } set { data : value; } }
+    field prusate String EvalIndexVar { get { return data; } set { data : value; } }
+    field prusate String EvalFrameVar { get { return data; } set { data : value; } }
+    field prusate String IntValueHexPre { get { return data; } set { data : value; } }
+    field prusate String BaseBitRiteCount { get { return data; } set { data : value; } }
+    field prusate String RefKindBitRiteCount { get { return data; } set { data : value; } }
+    field prusate String RefBitCount { get { return data; } set { data : value; } }
+    field prusate String RefKindAny { get { return data; } set { data : value; } }
+    field prusate String RefKindBool { get { return data; } set { data : value; } }
+    field prusate String RefKindInt { get { return data; } set { data : value; } }
+    field prusate String RefKindString { get { return data; } set { data : value; } }
+    field prusate String RefKindStringValue { get { return data; } set { data : value; } }
+    field prusate String RefKindClearMask { get { return data; } set { data : value; } }
+    field prusate String RefKindBoolMask { get { return data; } set { data : value; } }
+    field prusate String RefKindIntMask { get { return data; } set { data : value; } }
+    field prusate String BaseClearMask { get { return data; } set { data : value; } }
+    field prusate String BaseMask { get { return data; } set { data : value; } }
+    field prusate String MemoryIndexMask { get { return data; } set { data : value; } }
+    field prusate String ClassInt { get { return data; } set { data : value; } }
+    field prusate String ClassSInt { get { return data; } set { data : value; } }
+    field prusate String ClassInt32 { get { return data; } set { data : value; } }
+    field prusate String ClassEval { get { return data; } set { data : value; } }
+    field prusate String ClassCompState { get { return data; } set { data : value; } }
+    field prusate String InternNewMaide { get { return data; } set { data : value; } }
+    field prusate String InternShareMaide { get { return data; } set { data : value; } }
+    field prusate String InternValueRef { get { return data; } set { data : value; } }
+    field prusate String InternValueClass { get { return data; } set { data : value; } }
+    field prusate String InternValueBool { get { return data; } set { data : value; } }
+    field prusate String InternValueInt { get { return data; } set { data : value; } }
+    field prusate String InternValueString { get { return data; } set { data : value; } }
+    field prusate String InternClassStruct { get { return data; } set { data : value; } }
+    field prusate String InternModuleStruct { get { return data; } set { data : value; } }
+    field prusate String InternBaseSet { get { return data; } set { data : value; } }
+    field prusate String InternModuleSet { get { return data; } set { data : value; } }
+    field prusate String RefKindIntMacro { get { return data; } set { data : value; } }
+    field prusate String RefKindStringValueMacro { get { return data; } set { data : value; } }
+    field prusate String RefKindStringValueDataMacro { get { return data; } set { data : value; } }
+    field prusate String StateGet { get { return data; } set { data : value; } }
+    field prusate String StateSet { get { return data; } set { data : value; } }
+    field prusate String StateCall { get { return data; } set { data : value; } }
+    field prusate String NameCombine { get { return data; } set { data : value; } }
+    field prusate String NamePre { get { return data; } set { data : value; } }
+    field prusate String ClassWord { get { return data; } set { data : value; } }
+    field prusate String ModuleWord { get { return data; } set { data : value; } }
+    field prusate String ListWord { get { return data; } set { data : value; } }
+    field prusate String BaseWord { get { return data; } set { data : value; } }
+    field prusate String ItemWord { get { return data; } set { data : value; } }
+    field prusate String AnyWord { get { return data; } set { data : value; } }
+    field prusate String InitWord { get { return data; } set { data : value; } }
+    field prusate String CountWord { get { return data; } set { data : value; } }
+    field prusate String VarWord { get { return data; } set { data : value; } }
+    field prusate String ImportWord { get { return data; } set { data : value; } }
+    field prusate String ExportWord { get { return data; } set { data : value; } }
+    field prusate String ApiWord { get { return data; } set { data : value; } }
+    field prusate String InternWord { get { return data; } set { data : value; } }
+    field prusate String ExternWord { get { return data; } set { data : value; } }
+    field prusate String StringWord { get { return data; } set { data : value; } }
+    field prusate String DataWord { get { return data; } set { data : value; } }
+    field prusate String EntryWord { get { return data; } set { data : value; } }
+    field prusate String VarOWord { get { return data; } set { data : value; } }
+    field prusate String VarKWord { get { return data; } set { data : value; } }
+    field prusate String VarMWord { get { return data; } set { data : value; } }
+    field prusate String VarNWord { get { return data; } set { data : value; } }
+    field prusate String CastInt { get { return data; } set { data : value; } }
+    field prusate String WhileLabelPre { get { return data; } set { data : value; } }
+    field prusate String DirectiveInclude { get { return data; } set { data : value; } }
+    field prusate String IncludeValueInfra { get { return data; } set { data : value; } }
+    field prusate String IncludeValueInfraIntern { get { return data; } set { data : value; } }
+    field prusate String IncludeValueInfraInternIntern { get { return data; } set { data : value; } }
+    field prusate String IncludeValueInfraInternExtern { get { return data; } set { data : value; } }
+    field prusate String IndexExtern { get { return data; } set { data : value; } }
+    field prusate String IndexStatic { get { return data; } set { data : value; } }
+    field prusate String IndexReturn { get { return data; } set { data : value; } }
+    field prusate String IndexInf { get { return data; } set { data : value; } }
+    field prusate String IndexGoto { get { return data; } set { data : value; } }
+    field prusate String LimitDot { get { return data; } set { data : value; } }
+    field prusate String LimitDotPointer { get { return data; } set { data : value; } }
+    field prusate String LimitBraceRoundLite { get { return data; } set { data : value; } }
+    field prusate String LimitBraceRoundRite { get { return data; } set { data : value; } }
+    field prusate String LimitBraceRightLite { get { return data; } set { data : value; } }
+    field prusate String LimitBraceRightRite { get { return data; } set { data : value; } }
+    field prusate String LimitBraceCurveLite { get { return data; } set { data : value; } }
+    field prusate String LimitBraceCurveRite { get { return data; } set { data : value; } }
+    field prusate String LimitColon { get { return data; } set { data : value; } }
+    field prusate String LimitSemicolon { get { return data; } set { data : value; } }
+    field prusate String LimitComma { get { return data; } set { data : value; } }
+    field prusate String LimitAsterisk { get { return data; } set { data : value; } }
+    field prusate String LimitAre { get { return data; } set { data : value; } }
+    field prusate String LimitSame { get { return data; } set { data : value; } }
+    field prusate String LimitLess { get { return data; } set { data : value; } }
+    field prusate String LimitAnd { get { return data; } set { data : value; } }
+    field prusate String LimitOrn { get { return data; } set { data : value; } }
+    field prusate String LimitNot { get { return data; } set { data : value; } }
+    field prusate String LimitAdd { get { return data; } set { data : value; } }
+    field prusate String LimitSub { get { return data; } set { data : value; } }
+    field prusate String LimitMul { get { return data; } set { data : value; } }
+    field prusate String LimitDiv { get { return data; } set { data : value; } }
+    field prusate String LimitBitNot { get { return data; } set { data : value; } }
+    field prusate String LimitBitLite { get { return data; } set { data : value; } }
+    field prusate String LimitBitRite { get { return data; } set { data : value; } }
 
     maide prusate Bool Execute()
     {
