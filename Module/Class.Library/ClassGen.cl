@@ -654,7 +654,7 @@ class ClassGen : TextAdd
 
         inf (stateKind = this.StateKindGet)
         {
-            bool ba;
+            var Bool ba;
             ba : kk = 0;
 
             inf (ba)
@@ -666,7 +666,7 @@ class ClassGen : TextAdd
 
             inf (!ba)
             {
-                long posA;
+                var Int posA;
                 posA : kk - 1;
 
                 this.EvalFrameValueGet(posA, varA);
@@ -675,9 +675,9 @@ class ClassGen : TextAdd
 
         inf (stateKind = this.StateKindSet)
         {
-            bool bb;
+            var Bool bb;
             bb : kk = 0;
-            bool bc;
+            var Bool bc;
             bc : kk = 1;
 
             inf (bb)
@@ -689,7 +689,7 @@ class ClassGen : TextAdd
 
             inf (bc)
             {
-                long posB;
+                var Int posB;
                 posB : -1;
 
                 this.EvalFrameValueGet(posB, varA);
@@ -697,7 +697,7 @@ class ClassGen : TextAdd
 
             inf (!(bb | bc))
             {
-                long posC;
+                var Int posC;
                 posC : kk - 2;
 
                 this.EvalFrameValueGet(posC, varA);
@@ -706,7 +706,7 @@ class ClassGen : TextAdd
 
         inf (stateKind = this.StateKindCall)
         {
-            long posD;
+            var Int posD;
             posD : kk - k;
 
             this.EvalFrameValueGet(posD, varA);
