@@ -1920,23 +1920,10 @@ public class ClassGen : TextAdd
 
         if (stateKind == this.StateKindCall)
         {
-            bool b;
-            b = (kk < k);
-            if (b)
-            {
-                long posD;
-                posD = kk - k;
+            long posD;
+            posD = kk - k;
 
-                this.EvalFrameValueGet(posD, varA);
-            }
-
-            if (!b)
-            {
-                long posE;
-                posE = kk - k;
-
-                this.EvalFrameValueGet(posE, varA);
-            }
+            this.EvalFrameValueGet(posD, varA);
         }
 
         this.EvalValueSet(0, varA);
