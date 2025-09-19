@@ -14,7 +14,7 @@ class ClassGen : TextAdd
         this.StateKindCall : 3;
 
         this.Space : " ";
-        this.NewLine : "\n";
+        this.NewLine : this.TextInfra.NewLine;
         this.Zero : "0";
         this.One : "1";
         var String k;
