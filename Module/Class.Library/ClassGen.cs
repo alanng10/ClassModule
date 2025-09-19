@@ -8,12 +8,8 @@ public class ClassGen : TextAdd
         this.CountOperate = this.CreateCountOperate();
         this.SetOperate = this.CreateSetOperate();
         this.Travel = this.CreateTravel();
-
-        this.ClassIter = new TableIter();
-        this.ClassIter.Init();
-
-        this.TableIter = new TableIter();
-        this.TableIter.Init();
+        this.ClassIter = this.CreateClassIter();
+        this.TableIter = this.CreateTableIter();
 
         this.StateKindGet = 1;
         this.StateKindSet = 2;
@@ -159,6 +155,19 @@ public class ClassGen : TextAdd
         ClassGenTravel a;
         a = new ClassGenTravel();
         a.Gen = this;
+        a.Init();
+        return a;
+    }
+
+    protected virtual TableIter CreateClassIter()
+    {
+        return this.CreateTableIter();
+    }
+
+    protected virtual TableIter CreateTableIter()
+    {
+        TableIter a;
+        a = new TableIter();
         a.Init();
         return a;
     }
