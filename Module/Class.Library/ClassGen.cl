@@ -9,6 +9,10 @@ class ClassGen : TextAdd
         this.SetOperate : this.CreateSetOperate();
         this.ClassIter : this.CreateClassIter();
 
+        this.StateKindGet : 1;
+        this.StateKindSet : 2;
+        this.StateKindCall : 3;
+
         this.Space : " ";
         this.NewLine : "\n";
         this.Zero : "0";
