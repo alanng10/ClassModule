@@ -39,6 +39,12 @@ class BinaryStateTravel : Travel
         return true;
     }
 
+    maide prusate Bool ExecuteIntHexValue(var IntHexValue intHexValue)
+    {
+        this.IntValueOp(intHexValue.Value);
+        return true;
+    }
+
     maide prusate Bool ExecuteStringValue(var StringValue stringValue)
     {
         this.Op(this.Kind.StringValue, stringValue.Value, null);
