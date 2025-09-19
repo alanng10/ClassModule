@@ -33,6 +33,12 @@ class BinaryStateTravel : Travel
         return true;
     }
 
+    maide prusate Bool ExecuteStringValue(var StringValue stringValue)
+    {
+        this.Op(this.Kind.StringValue, stringValue.Value, null);
+        return true;
+    }
+
     maide precate Bool Op(var BinaryOperateKind kind, var Any argA, var Any argB)
     {
         this.Operate.Kind : kind.Index;
