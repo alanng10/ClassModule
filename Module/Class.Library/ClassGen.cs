@@ -1889,19 +1889,19 @@ public class ClassGen : TextAdd
 
         if (stateKind == this.StateKindSet)
         {
+            bool bb;
+            bb = (kk == 0);
             bool bc;
-            bc = (kk == 0);
-            bool bd;
-            bd = (kk == 1);
+            bc = (kk == 1);
 
-            if (bc)
+            if (bb)
             {
                 this.ExecuteThisFieldData();
 
                 this.VarSetDeref(varA, varA, 0);
             }
 
-            if (bd)
+            if (bc)
             {
                 long posB;
                 posB = -1;
@@ -1909,7 +1909,7 @@ public class ClassGen : TextAdd
                 this.EvalFrameValueGet(posB, varA);
             }
 
-            if (!(bc | bd))
+            if (!(bb | bc))
             {
                 long posC;
                 posC = kk - 2;
