@@ -37,6 +37,18 @@ class BinaryStateTravel : Travel
         return true;
     }
 
+    maide prusate Bool ExecuteReferExecute(var ReferExecute referExecute)
+    {
+        var NodeVar nodeVar;
+        nodeVar : referExecute.Var;
+
+        var Var varVar;
+        varVar : this.Info(nodeVar).Var;
+
+        this.Op(this.Kind.Refer, varVar.Index, null);
+        return true;
+    }
+
     maide prusate Bool ExecuteNewOperate(var NewOperate newOperate)
     {
         var Class ka;
