@@ -72,6 +72,29 @@ class BinaryStateTravel : Travel
         return true;
     }
 
+    maide prusate Bool ExecuteSetMark(var SetMark setMark)
+    {
+        base.ExecuteSetMark(setMark);
+
+        var Field varField;
+        varField : this.Info(setMark).SetField;
+
+        inf (~(varField.Virtual = null))
+        {
+            varField : varField.Virtual;
+        }
+
+        var Class varClass;
+        varClass : varField.Parent;
+
+        var Int kk;
+        kk : varClass.FieldStart;
+        kk : kk + varField.Index;
+
+        this.Ope(this.Kind.SetMark, kk, null);
+        return true;
+    }
+
     maide prusate Bool ExecuteNewOperate(var NewOperate newOperate)
     {
         var Class ka;
