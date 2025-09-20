@@ -227,6 +227,14 @@ class BinaryStateTravel : Travel
         return true;
     }
 
+    maide prusate Bool ExecuteBitSignRiteOperate(var BitSignRiteOperate bitSignRiteOperate)
+    {
+        base.ExecuteBitSignRiteOperate(bitSignRiteOperate);
+
+        this.Op(this.Kind.BitSignRite, null, null);
+        return true;
+    }
+
     maide prusate Bool ExecuteBoolValue(var BoolValue boolValue)
     {
         this.Op(this.Kind.BoolValue, boolValue.Value, null);
