@@ -99,6 +99,14 @@ class BinaryStateTravel : Travel
         return true;
     }
 
+    maide prusate Bool ExecuteLessOperate(var LessOperate lessOperate)
+    {
+        base.ExecuteLessOperate(lessOperate);
+
+        this.Op(this.Kind.Less, null, null);
+        return true;
+    }
+
     maide prusate Bool ExecuteBoolValue(var BoolValue boolValue)
     {
         this.Op(this.Kind.BoolValue, boolValue.Value, null);
