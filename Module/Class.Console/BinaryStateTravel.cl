@@ -241,6 +241,18 @@ class BinaryStateTravel : Travel
         return true;
     }
 
+    maide prusate Bool ExecuteIntValue(var IntValue intValue)
+    {
+        this.IntValueOp(intValue.Value);
+        return true;
+    }
+
+    maide prusate Bool ExecuteIntSignValue(var IntSignValue intSignValue)
+    {
+        this.IntValueOp(intSignValue.Value);
+        return true;
+    }
+
     maide prusate Bool ExecuteIntHexValue(var IntHexValue intHexValue)
     {
         this.IntValueOp(intHexValue.Value);
