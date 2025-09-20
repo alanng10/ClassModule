@@ -163,6 +163,14 @@ class BinaryStateTravel : Travel
         return true;
     }
 
+    maide prusate Bool ExecuteSignLessOperate(var SignLessOperate signLessOperate)
+    {
+        base.ExecuteSignLessOperate(signLessOperate);
+
+        this.Op(this.Kind.SignLess, null, null);
+        return true;
+    }
+
     maide prusate Bool ExecuteBoolValue(var BoolValue boolValue)
     {
         this.Op(this.Kind.BoolValue, boolValue.Value, null);
