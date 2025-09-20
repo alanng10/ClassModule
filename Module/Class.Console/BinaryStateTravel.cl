@@ -21,6 +21,22 @@ class BinaryStateTravel : Travel
     field precate BinaryOperateKindList Kind { get { return data; } set { data : value; } }
     field precate BinaryOperate Operate { get { return data; } set { data : value; } }
 
+    maide prusate Bool ExecuteOperateExecute(var OperateExecute operateExecute)
+    {
+        base.ExecuteOperateExecute(operateExecute);
+
+        this.Op(this.Kind.End, null, null);
+        return true;
+    }
+
+    maide prusate Bool ExecuteReturnExecute(var ReturnExecute returnExecute)
+    {
+        base.ExecuteReturnExecute(returnExecute);
+
+        this.Op(this.Kind.Ret, null, null);
+        return true;
+    }
+
     maide prusate Bool ExecuteNewOperate(var NewOperate newOperate)
     {
         var Class ka;
