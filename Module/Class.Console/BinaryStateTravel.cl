@@ -79,6 +79,12 @@ class BinaryStateTravel : Travel
         return true;
     }
 
+    maide prusate Bool ExecuteBaseOperate(var BaseOperate baseOperate)
+    {
+        this.Op(this.Kind.Base, null, null);
+        return true;
+    }
+
     maide prusate Bool ExecuteBoolValue(var BoolValue boolValue)
     {
         this.Op(this.Kind.BoolValue, boolValue.Value, null);
