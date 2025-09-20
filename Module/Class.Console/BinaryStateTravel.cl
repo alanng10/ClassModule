@@ -171,6 +171,14 @@ class BinaryStateTravel : Travel
         return true;
     }
 
+    maide prusate Bool ExecuteSignMulOperate(var SignMulOperate signMulOperate)
+    {
+        base.ExecuteSignMulOperate(signMulOperate);
+
+        this.Op(this.Kind.SignMul, null, null);
+        return true;
+    }
+
     maide prusate Bool ExecuteBoolValue(var BoolValue boolValue)
     {
         this.Op(this.Kind.BoolValue, boolValue.Value, null);
