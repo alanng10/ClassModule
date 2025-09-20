@@ -49,6 +49,29 @@ class BinaryStateTravel : Travel
         return true;
     }
 
+    maide prusate Bool ExecuteGetOperate(var GetOperate getOperate)
+    {
+        base.ExecuteGetOperate(getOperate);
+
+        var Field varField;
+        varField : this.Info(getOperate).GetField;
+
+        inf (~(varField.Virtual = null))
+        {
+            varField : varField.Virtual;
+        }
+
+        var Class varClass;
+        varClass : varField.Parent;
+
+        var Int kk;
+        kk : varClass.FieldStart;
+        kk : kk + varField.Index;
+
+        this.Ope(this.Kind.ItemGet, kk, null);
+        return true;
+    }
+
     maide prusate Bool ExecuteNewOperate(var NewOperate newOperate)
     {
         var Class ka;
