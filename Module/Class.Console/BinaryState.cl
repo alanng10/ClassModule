@@ -249,4 +249,70 @@ class BinaryState : Any
         this.Operate.ExecuteOperate();
         return true;
     }
+
+    maide prusate Bool ExecuteOperateArg(var Any arg)
+    {
+        inf (arg = null)
+        {
+            return true;
+        }
+
+        var Bool b;
+        b : false;
+
+        inf (~b)
+        {
+            var Bool bool;
+            bool : cast Bool(arg);
+
+            inf (~(bool = null))
+            {
+                this.ExecuteBool(bool);
+
+                b : true;
+            }
+        }
+
+        inf (~b)
+        {
+            var Int int;
+            int : cast Int(arg);
+
+            inf (~(int = null))
+            {
+                this.ExecuteInt(int);
+
+                b : true;
+            }
+        }
+
+        inf (~b)
+        {
+            var String string;
+            string : cast String(arg);
+
+            inf (~(string = null))
+            {
+                this.ExecuteString(string);
+
+                b : true;
+            }
+        }
+
+        return true;
+    }
+
+    maide prusate Bool ExecuteBool(var Bool value)
+    {
+        var Int k;
+        k : 0;
+
+        inf (value)
+        {
+            k : 1;
+        }
+
+        this.ExecuteByte(k);
+        return true;
+    }
 }
