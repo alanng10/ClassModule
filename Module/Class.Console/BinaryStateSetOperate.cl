@@ -37,9 +37,9 @@ class BinaryStateSetOperate : BinaryStateOperate
         return true;
     }
 
-    public override bool ExecuteOperate()
+    maide prusate Bool ExecuteOperate()
     {
-        BinaryStateArg arg;
+        var BinaryStateArg arg;
         arg : this.State.Arg;
 
         arg.OperateIndex : arg.OperateIndex + 1;
