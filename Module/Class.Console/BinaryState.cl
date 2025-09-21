@@ -53,4 +53,18 @@ class BinaryState : Any
         a.Init();
         return a;
     }
+
+    field prusate Module Module { get { return data; } set { data : value; } }
+    field prusate Table IndexTable { get { return data; } set { data : value; } }
+    field prusate Data Result { get { return data; } set { data : value; } }
+    field prusate BinaryStateArg Arg { get { return data; } set { data : value; } }
+    field prusate BinaryStateOperate Operate { get { return data; } set { data : value; } }
+    field prusate BinaryStateCountOperate CountOperate { get { return data; } set { data : value; } }
+    field prusate BinaryStateSetOperate SetOperate { get { return data; } set { data : value; } }
+    field prusate Int StateCount { get { return data; } set { data : value; } }
+    field precate InfraInfra InfraInfra { get { return data; } set { data : value; } }
+    field precate StringComp StringComp { get { return data; } set { data : value; } }
+    field precate BinaryStateTravel Travel { get { return data; } set { data : value; } }
+    field precate TableIter ClassIter { get { return data; } set { data : value; } }
+    field precate TableIter TableIter { get { return data; } set { data : value; } }
 }
