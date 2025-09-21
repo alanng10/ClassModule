@@ -315,4 +315,10 @@ class BinaryState : Any
         this.ExecuteByte(k);
         return true;
     }
+
+    maide prusate Bool ExecuteByte(var Int value)
+    {
+        this.Operate.ExecuteByte(value);
+        return true;
+    }
 }
