@@ -7,7 +7,7 @@ class BinaryStateSetOperate : BinaryStateOperate
         return true;
     }
 
-    protected virtual InfraInfra InfraInfra { get; set; }
+    field precate InfraInfra InfraInfra { get { return data; } set { data : value; } }
 
     public override bool ExecuteTravelStart()
     {
