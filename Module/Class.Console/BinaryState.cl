@@ -156,4 +156,33 @@ class BinaryState : Any
         iter.Clear();
         return true;
     }
+
+    maide prusate Bool ExecuteClass(var Class varClass)
+    {
+        var Iter iter;
+        iter : this.TableIter;
+
+        varClass.Field.IterSet(iter);
+
+        while (iter.Next())
+        {
+            var Field varField;
+            varField : cast Field(iter.Value);
+
+            this.ExecuteField(varField);
+        }
+
+        varClass.Maide.IterSet(iter);
+
+        while (iter.Next())
+        {
+            var Maide varMaide;
+            varMaide : cast Maide(iter.Value);
+
+            this.ExecuteMaide(varMaide);
+        }
+
+        iter.Clear();
+        return true;
+    }
 }
