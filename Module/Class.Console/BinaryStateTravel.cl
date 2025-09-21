@@ -25,7 +25,7 @@ class BinaryStateTravel : Travel
     {
         base.ExecuteOperateExecute(operateExecute);
 
-        this.Ope(this.Kind.End, null, null);
+        this.Op(this.Kind.End, null, null);
         return true;
     }
 
@@ -33,7 +33,7 @@ class BinaryStateTravel : Travel
     {
         base.ExecuteReturnExecute(returnExecute);
 
-        this.Ope(this.Kind.Ret, null, null);
+        this.Op(this.Kind.Ret, null, null);
         return true;
     }
 
@@ -45,7 +45,7 @@ class BinaryStateTravel : Travel
         var Var varVar;
         varVar : this.Info(nodeVar).Var;
 
-        this.Ope(this.Kind.Refer, varVar.Index, null);
+        this.Op(this.Kind.Refer, varVar.Index, null);
         return true;
     }
 
@@ -68,7 +68,7 @@ class BinaryStateTravel : Travel
         kk : varClass.FieldStart;
         kk : kk + varField.Index;
 
-        this.Ope(this.Kind.ItemGet, kk, null);
+        this.Op(this.Kind.ItemGet, kk, null);
         return true;
     }
 
@@ -91,7 +91,7 @@ class BinaryStateTravel : Travel
         kk : varClass.FieldStart;
         kk : kk + varField.Index;
 
-        this.Ope(this.Kind.SetMark, kk, null);
+        this.Op(this.Kind.SetMark, kk, null);
         return true;
     }
 
@@ -117,7 +117,7 @@ class BinaryStateTravel : Travel
         var Int k;
         k : varMaide.Param.Count;
 
-        this.Ope(this.Kind.Call, kk, k);
+        this.Op(this.Kind.Call, kk, k);
         return true;
     }
 
@@ -129,7 +129,7 @@ class BinaryStateTravel : Travel
         var Int k;
         k : this.State.ClassIndex(ka);
 
-        this.Ope(this.Kind.New, k, null);
+        this.Op(this.Kind.New, k, null);
         return true;
     }
 
@@ -141,25 +141,25 @@ class BinaryStateTravel : Travel
         var Int k;
         k : this.State.ClassIndex(ka);
 
-        this.Ope(this.Kind.Share, k, null);
+        this.Op(this.Kind.Share, k, null);
         return true;
     }
 
     maide prusate Bool ExecuteThisOperate(var ThisOperate thisOperate)
     {
-        this.Ope(this.Kind.This, null, null);
+        this.Op(this.Kind.This, null, null);
         return true;
     }
 
     maide prusate Bool ExecuteBaseOperate(var BaseOperate baseOperate)
     {
-        this.Ope(this.Kind.Base, null, null);
+        this.Op(this.Kind.Base, null, null);
         return true;
     }
 
     maide prusate Bool ExecuteNullOperate(var NullOperate nullOperate)
     {
-        this.Ope(this.Kind.Null, null, null);
+        this.Op(this.Kind.Null, null, null);
         return true;
     }
 
@@ -167,7 +167,7 @@ class BinaryStateTravel : Travel
     {
         base.ExecuteSameOperate(sameOperate);
 
-        this.Ope(this.Kind.Same, null, null);
+        this.Op(this.Kind.Same, null, null);
         return true;
     }
 
@@ -175,7 +175,7 @@ class BinaryStateTravel : Travel
     {
         base.ExecuteLessOperate(lessOperate);
 
-        this.Ope(this.Kind.Less, null, null);
+        this.Op(this.Kind.Less, null, null);
         return true;
     }
 
@@ -183,7 +183,7 @@ class BinaryStateTravel : Travel
     {
         base.ExecuteAndOperate(andOperate);
 
-        this.Ope(this.Kind.And, null, null);
+        this.Op(this.Kind.And, null, null);
         return true;
     }
 
@@ -191,7 +191,7 @@ class BinaryStateTravel : Travel
     {
         base.ExecuteOrnOperate(ornOperate);
 
-        this.Ope(this.Kind.Orn, null, null);
+        this.Op(this.Kind.Orn, null, null);
         return true;
     }
 
@@ -199,7 +199,7 @@ class BinaryStateTravel : Travel
     {
         base.ExecuteNotOperate(notOperate);
 
-        this.Ope(this.Kind.Not, null, null);
+        this.Op(this.Kind.Not, null, null);
         return true;
     }
 
@@ -207,7 +207,7 @@ class BinaryStateTravel : Travel
     {
         base.ExecuteAddOperate(addOperate);
 
-        this.Ope(this.Kind.Add, null, null);
+        this.Op(this.Kind.Add, null, null);
         return true;
     }
 
@@ -215,7 +215,7 @@ class BinaryStateTravel : Travel
     {
         base.ExecuteSubOperate(subOperate);
 
-        this.Ope(this.Kind.Sub, null, null);
+        this.Op(this.Kind.Sub, null, null);
         return true;
     }
 
@@ -223,7 +223,7 @@ class BinaryStateTravel : Travel
     {
         base.ExecuteMulOperate(mulOperate);
 
-        this.Ope(this.Kind.Mul, null, null);
+        this.Op(this.Kind.Mul, null, null);
         return true;
     }
 
@@ -231,7 +231,7 @@ class BinaryStateTravel : Travel
     {
         base.ExecuteDivOperate(divOperate);
 
-        this.Ope(this.Kind.Div, null, null);
+        this.Op(this.Kind.Div, null, null);
         return true;
     }
 
@@ -239,7 +239,7 @@ class BinaryStateTravel : Travel
     {
         base.ExecuteSignLessOperate(signLessOperate);
 
-        this.Ope(this.Kind.SignLess, null, null);
+        this.Op(this.Kind.SignLess, null, null);
         return true;
     }
 
@@ -247,7 +247,7 @@ class BinaryStateTravel : Travel
     {
         base.ExecuteSignMulOperate(signMulOperate);
 
-        this.Ope(this.Kind.SignMul, null, null);
+        this.Op(this.Kind.SignMul, null, null);
         return true;
     }
 
@@ -255,7 +255,7 @@ class BinaryStateTravel : Travel
     {
         base.ExecuteSignDivOperate(signDivOperate);
 
-        this.Ope(this.Kind.SignDiv, null, null);
+        this.Op(this.Kind.SignDiv, null, null);
         return true;
     }
 
@@ -263,7 +263,7 @@ class BinaryStateTravel : Travel
     {
         base.ExecuteBitAndOperate(bitAndOperate);
 
-        this.Ope(this.Kind.BitAnd, null, null);
+        this.Op(this.Kind.BitAnd, null, null);
         return true;
     }
 
@@ -271,7 +271,7 @@ class BinaryStateTravel : Travel
     {
         base.ExecuteBitOrnOperate(bitOrnOperate);
 
-        this.Ope(this.Kind.BitOrn, null, null);
+        this.Op(this.Kind.BitOrn, null, null);
         return true;
     }
 
@@ -279,7 +279,7 @@ class BinaryStateTravel : Travel
     {
         base.ExecuteBitNotOperate(bitNotOperate);
 
-        this.Ope(this.Kind.BitNot, null, null);
+        this.Op(this.Kind.BitNot, null, null);
         return true;
     }
 
@@ -287,7 +287,7 @@ class BinaryStateTravel : Travel
     {
         base.ExecuteBitLiteOperate(bitLiteOperate);
 
-        this.Ope(this.Kind.BitLite, null, null);
+        this.Op(this.Kind.BitLite, null, null);
         return true;
     }
 
@@ -295,7 +295,7 @@ class BinaryStateTravel : Travel
     {
         base.ExecuteBitRiteOperate(bitRiteOperate);
 
-        this.Ope(this.Kind.BitRite, null, null);
+        this.Op(this.Kind.BitRite, null, null);
         return true;
     }
 
@@ -303,13 +303,13 @@ class BinaryStateTravel : Travel
     {
         base.ExecuteBitSignRiteOperate(bitSignRiteOperate);
 
-        this.Ope(this.Kind.BitSignRite, null, null);
+        this.Op(this.Kind.BitSignRite, null, null);
         return true;
     }
 
     maide prusate Bool ExecuteBoolValue(var BoolValue boolValue)
     {
-        this.Ope(this.Kind.BoolValue, boolValue.Value, null);
+        this.Op(this.Kind.BoolValue, boolValue.Value, null);
         return true;
     }
 
@@ -339,17 +339,17 @@ class BinaryStateTravel : Travel
 
     maide prusate Bool ExecuteStringValue(var StringValue stringValue)
     {
-        this.Ope(this.Kind.StringValue, stringValue.Value, null);
+        this.Op(this.Kind.StringValue, stringValue.Value, null);
         return true;
     }
 
     maide precate Bool IntValueOpe(var Int value)
     {
-        this.Ope(this.Kind.IntValue, value, null);
+        this.Op(this.Kind.IntValue, value, null);
         return true;
     }
 
-    maide precate Bool Ope(var BinaryOperateKind kind, var Any argA, var Any argB)
+    maide precate Bool Op(var BinaryOperateKind kind, var Any argA, var Any argB)
     {
         this.Operate.Kind : kind.Index;
         this.Operate.ArgA : argA;
