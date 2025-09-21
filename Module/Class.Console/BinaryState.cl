@@ -185,4 +185,12 @@ class BinaryState : Any
         iter.Clear();
         return true;
     }
+
+    maide prusate Bool ExecuteField(var Field varField)
+    {
+        this.ExecuteFieldGet(varField);
+
+        this.ExecuteFieldSet(varField);
+        return true;
+    }
 }
