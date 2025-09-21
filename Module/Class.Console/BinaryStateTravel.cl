@@ -130,6 +130,15 @@ class BinaryStateTravel : Travel
         return true;
     }
 
+    maide prusate Bool ExecuteVarMark(var VarMark varMark)
+    {
+        var Var varVar;
+        varVar : this.Info(varMark).Var;
+
+        this.Op(this.Kind.VarMark, varVar.Index, null);
+        return true;
+    }
+
     maide prusate Bool ExecuteNewOperate(var NewOperate newOperate)
     {
         var Class ka;
