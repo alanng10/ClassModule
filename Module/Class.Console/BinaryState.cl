@@ -226,4 +226,16 @@ class BinaryState : Any
         this.ExecuteCompState(nodeMaide.Call, varMaide.Call.Count);
         return true;
     }
+
+    maide prusate Bool ExecuteCompState(var State state, var Int varVar)
+    {
+        this.ExecuteCount(varVar);
+
+        this.Operate.ExecuteTravelStart();
+
+        this.Travel.ExecuteState(state);
+
+        this.Operate.ExecuteTravelEnd();
+        return true;
+    }
 }
