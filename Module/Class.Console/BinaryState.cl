@@ -67,4 +67,39 @@ class BinaryState : Any
     field precate BinaryStateTravel Travel { get { return data; } set { data : value; } }
     field precate TableIter ClassIter { get { return data; } set { data : value; } }
     field precate TableIter TableIter { get { return data; } set { data : value; } }
+
+    maide prusate Bool Execute()
+    {
+        this.StateCount : this.StateCountGet();
+
+        this.Arg : new BinaryStateArg;
+        this.Arg.Init();
+
+        this.Arg.OperateCountData : new Data;
+        this.Arg.OperateCountData.Count : this.StateCount * 8;
+        this.Arg.OperateCountData.Init();
+
+        this.Operate : this.CountOperate;
+
+        this.ResetStage();
+        this.ExecuteStage();
+
+        var Int count;
+        count : this.Arg.Index;
+        this.Arg.Data : new Data;
+        this.Arg.Data.Count : count;
+        this.Arg.Data.Init();
+
+        this.Operate : this.SetOperate;
+
+        this.ResetStage();
+        this.ExecuteStage();
+
+        this.Result : this.Arg.Data;
+
+        this.Operate : null;
+        this.Arg : null;
+        this.StateCount : null;
+        return true;
+    }
 }
