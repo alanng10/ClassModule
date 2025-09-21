@@ -49,6 +49,28 @@ class BinaryStateTravel : Travel
         return true;
     }
 
+    maide prusate Bool ExecuteAreExecute(var AreExecute areExecute)
+    {
+        base.ExecuteAreExecute(areExecute);
+
+        var Mark mark;
+        mark : areExecute.Mark;
+
+        var Int k;
+        k : 0;
+
+        var VarMark ka;
+        ka : cast VarMark(mark);
+
+        inf (ka = null)
+        {
+            k : 1;
+        }
+
+        this.Op(this.Kind.Are, k, null);
+        return true;
+    }
+
     maide prusate Bool ExecuteGetOperate(var GetOperate getOperate)
     {
         base.ExecuteGetOperate(getOperate);
