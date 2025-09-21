@@ -238,4 +238,15 @@ class BinaryState : Any
         this.Operate.ExecuteTravelEnd();
         return true;
     }
+
+    maide prusate Bool ExecuteOperate(var BinaryOperate operate)
+    {
+        this.ExecuteByte(operate.Kind);
+
+        this.ExecuteOperateArg(operate.ArgA);
+        this.ExecuteOperateArg(operate.ArgB);
+
+        this.Operate.ExecuteOperate();
+        return true;
+    }
 }
