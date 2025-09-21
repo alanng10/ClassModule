@@ -316,6 +316,21 @@ class BinaryState : Any
         return true;
     }
 
+    maide prusate Bool ExecuteCount(var Int value)
+    {
+        return this.ExecuteInt(value);
+    }
+
+    maide prusate Bool ExecuteMid(var Int value)
+    {
+        return this.ExecuteIntCount(value, 4);
+    }
+
+    maide prusate Bool ExecuteInt(var Int value)
+    {
+        return this.ExecuteIntCount(value, 8);
+    }
+
     maide prusate Bool ExecuteIntCount(var Int value, var Int count)
     {
         var Int i;
