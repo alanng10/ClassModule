@@ -302,6 +302,27 @@ class BinaryState : Any
         return true;
     }
 
+    maide prusate Bool ExecuteString(var String value)
+    {
+        var Int count;
+        count : this.StringComp.Count(value);
+
+        this.ExecuteCount(count);
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Int ka;
+            ka : this.StringComp.Char(value, i);
+
+            this.ExecuteMid(ka);
+
+            i : i + 1;
+        }
+        return true;
+    }
+
     maide prusate Bool ExecuteBool(var Bool value)
     {
         var Int k;
