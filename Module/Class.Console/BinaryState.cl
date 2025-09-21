@@ -217,4 +217,13 @@ class BinaryState : Any
         this.ExecuteMaideCall(varMaide);
         return true;
     }
+
+    maide prusate Bool ExecuteMaideCall(var Maide varMaide)
+    {
+        var NodeMaide nodeMaide;
+        nodeMaide : cast NodeMaide(varMaide.Any);
+
+        this.ExecuteCompState(nodeMaide.Call, varMaide.Call.Count);
+        return true;
+    }
 }
