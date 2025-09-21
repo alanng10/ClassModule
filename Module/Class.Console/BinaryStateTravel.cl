@@ -163,6 +163,18 @@ class BinaryStateTravel : Travel
         return true;
     }
 
+    maide prusate Bool ExecuteCastOperate(var CastOperate castOperate)
+    {
+        var Class ka;
+        ka : this.Info(castOperate).OperateClass;
+
+        var Int k;
+        k : this.State.ClassIndex(ka);
+
+        this.Op(this.Kind.Cast, k, null);
+        return true;
+    }
+
     maide prusate Bool ExecuteThisOperate(var ThisOperate thisOperate)
     {
         this.Op(this.Kind.This, null, null);
