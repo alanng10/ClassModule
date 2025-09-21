@@ -95,6 +95,32 @@ class BinaryStateTravel : Travel
         return true;
     }
 
+    maide prusate Bool ExecuteCallOperate(var CallOperate callOperate)
+    {
+        base.ExecuteCallOperate(callOperate);
+
+        var Maide varMaide;
+        varMaide : this.Info(callOperate).CallMaide;
+
+        inf (~(varMaide.Virtual = null))
+        {
+            varMaide : varMaide.Virtual;
+        }
+
+        var Class varClass;
+        varClass : varMaide.Parent;
+
+        var Int kk;
+        kk : varClass.MaideStart;
+        kk : kk + varMaide.Index;
+
+        var Int k;
+        k : varMaide.Param.Count;
+
+        this.Ope(this.Kind.Call, kk, k);
+        return true;
+    }
+
     maide prusate Bool ExecuteNewOperate(var NewOperate newOperate)
     {
         var Class ka;
