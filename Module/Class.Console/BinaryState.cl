@@ -202,4 +202,13 @@ class BinaryState : Any
         this.ExecuteCompState(nodeField.Get, varField.Get.Count);
         return true;
     }
+
+    maide prusate Bool ExecuteFieldSet(var Field varField)
+    {
+        var NodeField nodeField;
+        nodeField : cast NodeField(varField.Any);
+
+        this.ExecuteCompState(nodeField.Set, varField.Set.Count);
+        return true;
+    }
 }
