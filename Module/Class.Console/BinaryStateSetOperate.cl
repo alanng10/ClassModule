@@ -46,12 +46,12 @@ class BinaryStateSetOperate : BinaryStateOperate
         return true;
     }
 
-    public override bool ExecuteByte(long value)
+    maide prusate Bool ExecuteByte(var Int value)
     {
-        BinaryStateArg arg;
+        var BinaryStateArg arg;
         arg : this.State.Arg;
 
-        long index;
+        var Int index;
         index : arg.Index;
 
         arg.Data.Set(index, value);
