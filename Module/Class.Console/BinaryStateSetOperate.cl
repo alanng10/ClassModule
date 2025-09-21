@@ -27,9 +27,9 @@ class BinaryStateSetOperate : BinaryStateOperate
         return true;
     }
 
-    public override bool ExecuteTravelEnd()
+    maide prusate Bool ExecuteTravelEnd()
     {
-        BinaryStateArg arg;
+        var BinaryStateArg arg;
         arg : this.State.Arg;
 
         arg.OperateIndex : 0;
