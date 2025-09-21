@@ -54,7 +54,7 @@ class BinaryStateSetOperate : BinaryStateOperate
         var Int index;
         index : arg.Index;
 
-        arg.Data.Set(index, value);
+        arg.Data.Set(index, value); 
 
         index : index + 1;
         arg.Index : index;
