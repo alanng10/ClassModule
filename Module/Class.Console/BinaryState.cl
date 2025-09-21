@@ -316,6 +316,26 @@ class BinaryState : Any
         return true;
     }
 
+    maide prusate Bool ExecuteIntCount(var Int value, var Int count)
+    {
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var Int shift;
+            shift : i * 8;
+
+            var Int ka;
+            ka : bit >(value, shift);
+            ka : bit &(ka, 0hff);
+
+            this.ExecuteByte(ka);
+
+            i : i + 1;
+        }
+        return true;
+    }
+
     maide prusate Bool ExecuteByte(var Int value)
     {
         this.Operate.ExecuteByte(value);
