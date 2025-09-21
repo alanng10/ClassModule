@@ -88,6 +88,25 @@ class BinaryStateTravel : Travel
         return true;
     }
 
+    maide prusate Bool ExecuteWhileExecute(var WhileExecute whileExecute)
+    {
+        var Operate cond;
+        cond : whileExecute.Cond;
+        var State loop;
+        loop : whileExecute.Loop;
+
+        this.Op(this.Kind.WhileStart, null, null);
+
+        this.ExecuteOperate(cond);
+
+        this.Op(this.Kind.While, null, null);
+
+        this.ExecuteState(loop);
+
+        this.Op(this.Kind.WhileEnd, null, null);
+        return true;
+    }
+
     maide prusate Bool ExecuteGetOperate(var GetOperate getOperate)
     {
         base.ExecuteGetOperate(getOperate);
