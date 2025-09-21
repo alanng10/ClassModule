@@ -377,4 +377,14 @@ class BinaryState : Any
         this.Operate.ExecuteByte(value);
         return true;
     }
+
+    maide prusate Int ClassIndex(var Class varClass)
+    {
+        var Int k;
+        k : cast Int(this.IndexTable.Get(varClass));
+
+        var Int a;
+        a : k;
+        return a;
+    }
 }
