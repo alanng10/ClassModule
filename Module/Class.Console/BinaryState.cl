@@ -211,4 +211,10 @@ class BinaryState : Any
         this.ExecuteCompState(nodeField.Set, varField.Set.Count);
         return true;
     }
+
+    maide prusate Bool ExecuteMaide(var Maide varMaide)
+    {
+        this.ExecuteMaideCall(varMaide);
+        return true;
+    }
 }
