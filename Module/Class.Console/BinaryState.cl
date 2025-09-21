@@ -31,4 +31,26 @@ class BinaryState : Any
         a.Init();
         return a;
     }
+
+    maide precate BinaryStateTravel CreateTravel()
+    {
+        var BinaryStateTravel a;
+        a : new BinaryStateTravel;
+        a.State : this;
+        a.Init();
+        return a;
+    }
+
+    maide precate TableIter CreateClassIter()
+    {
+        return this.CreateTableIter();
+    }
+
+    maide precate TableIter CreateTableIter()
+    {
+        var TableIter a;
+        a : new TableIter;
+        a.Init();
+        return a;
+    }
 }
