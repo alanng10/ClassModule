@@ -102,4 +102,29 @@ class BinaryState : Any
         this.StateCount : null;
         return true;
     }
+
+    maide prusate Int StateCountGet()
+    {
+        var Int count;
+        count : 0;
+
+        var Iter iter;
+        iter : this.ClassIter;
+
+        this.Module.Class.IterSet(iter);
+
+        while (iter.Next())
+        {
+            var Class varClass;
+            varClass : cast Class(iter.Value);
+
+            count : count + varClass.Field.Count * 2;
+
+            count : count + varClass.Maide.Count;
+        }
+
+        iter.Clear();
+
+        return count;
+    }
 }
