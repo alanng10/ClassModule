@@ -4,6 +4,7 @@ class Write : Any
     {
         base.Init();
         this.StringComp : share StringComp;
+
         this.CountOperate : this.CreateCountOperate();
         this.SetOperate : this.CreateSetOperate();
         return true;
