@@ -127,4 +127,12 @@ class BinaryState : Any
 
         return count;
     }
+
+    maide prusate Bool ResetStage()
+    {
+        this.Arg.Index : 0;
+        this.Arg.StateIndex : 0;
+        this.Arg.OperateIndex : 0;
+        return true;
+    }
 }
