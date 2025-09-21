@@ -135,4 +135,25 @@ class BinaryState : Any
         this.Arg.OperateIndex : 0;
         return true;
     }
+
+    maide prusate Bool ExecuteStage()
+    {
+        this.ExecuteCount(this.StateCount);
+
+        var Iter iter;
+        iter : this.ClassIter;
+
+        this.Module.Class.IterSet(iter);
+
+        while (iter.Next())
+        {
+            var Class varClass;
+            varClass : cast Class(iter.Value);
+
+            this.ExecuteClass(varClass);
+        }
+
+        iter.Clear();
+        return true;
+    }
 }
