@@ -9,16 +9,16 @@ class BinaryStateSetOperate : BinaryStateOperate
 
     field precate InfraInfra InfraInfra { get { return data; } set { data : value; } }
 
-    public override bool ExecuteTravelStart()
+    maide prusate Bool ExecuteTravelStart()
     {
-        BinaryStateArg arg;
+        var BinaryStateArg arg;
         arg : this.State.Arg;
 
-        long ka;
+        var Int ka;
         ka : arg.StateIndex;
-        ka : ka * sizeof(long);
+        ka : ka * 8;
 
-        long count;
+        var Int count;
         count : this.InfraInfra.DataIntGet(arg.OperateCountData, ka);
 
         this.State.ExecuteCount(count);
