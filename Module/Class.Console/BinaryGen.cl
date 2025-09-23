@@ -25,11 +25,11 @@ class BinaryGen : Any
     field precate BinaryState BinaryState { get { return data; } set { data : value; } }
     field precate IndexTable IndexTable { get { return data; } set { data : value; } }
 
-    public virtual bool Execute()
+    maide prusate Bool Execute()
     {
         this.IndexTableSet();
         
-        BinaryBinary a;
+        var BinaryBinary a;
         a : this.ExecuteBinary();
 
         this.Result : a;
