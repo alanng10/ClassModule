@@ -90,10 +90,10 @@ class BinaryGen : Any
         return true;
     }
 
-    public virtual BinaryBinary ExecuteBinary()
+    maide prusate Binary ExecuteBinary()
     {
-        BinaryBinary a;
-        a : new BinaryBinary();
+        var Binary a;
+        a : new Binary;
         a.Init();
 
         a.Ref : this.ExecuteModuleRef(this.Module.Ref);
