@@ -456,31 +456,31 @@ class BinaryGen : Any
         return a;
     }
 
-    public virtual Array ExecuteVarArray(Table table)
+    maide prusate Array ExecuteVarArray(var Table table)
     {
-        long count;
+        var Int count;
         count : table.Count;
 
-        Array array;
+        var Array array;
         array : this.ListInfra.ArrayCreate(count);
 
-        Iter iter;
+        var Iter iter;
         iter : table.IterCreate();
         table.IterSet(iter);
 
-        long i;
+        var Int i;
         i : 0;
         while (i < count)
         {
             iter.Next();
 
-            Var varVar;
-            varVar : iter.Value as Var;
+            var Var varVar;
+            varVar : cast Var(iter.Value);
 
-            BinaryVar a;
+            var BinaryVar a;
             a : this.ExecuteVar(varVar);
 
-            array.SetAt(i, a);
+            array.Set(i, a);
 
             i : i + 1;
         }
