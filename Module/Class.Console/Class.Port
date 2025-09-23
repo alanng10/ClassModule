@@ -21,6 +21,7 @@ System.Text
     TextForm Form
     TextLess Less
     StringAdd StringAdd
+    StringComp StringComp
     TextInfra Infra
 System.Storage
     StorageComp Comp
