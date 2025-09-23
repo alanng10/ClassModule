@@ -81,17 +81,12 @@ class BinaryGen : Any
         return true;
     }
 
-    public virtual bool IndexTableAdd(ClassClass ka)
+    maide prusate Bool IndexTableAdd(var Class varClass)
     {
-        long k;
+        var Int k;
         k : this.IndexTable.Count;
 
-        InfraValue value;
-        value : new InfraValue();
-        value.Init();
-        value.Int : k;
-
-        this.ListInfra.TableAdd(this.IndexTable, ka, value);
+        this.ListInfra.TableAdd(this.IndexTable, varClass, k);
         return true;
     }
 
