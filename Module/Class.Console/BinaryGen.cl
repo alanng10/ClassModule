@@ -546,9 +546,9 @@ class BinaryGen : Any
         return a;
     }
 
-    public virtual ModuleRef ExecuteModuleRef(ModuleRef moduleRef)
+    maide prusate ModuleRef ExecuteModuleRef(var ModuleRef moduleRef)
     {
-        ModuleRef a;
+        var ModuleRef a;
         a : this.ClassInfra.ModuleRefCreate(moduleRef.Name, moduleRef.Ver);
         return a;
     }
