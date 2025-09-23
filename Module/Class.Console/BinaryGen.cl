@@ -325,21 +325,21 @@ class BinaryGen : Any
         return array;
     }
 
-    public virtual BinaryPart ExecutePart(ClassClass varClass)
+    maide prusate BinaryPart ExecutePart(var Class varClass)
     {
-        long fieldStart;
-        long maideStart;
+        var Int fieldStart;
+        var Int maideStart;
         fieldStart : varClass.FieldStart;
         maideStart : varClass.MaideStart;
 
-        Array varField;
+        var Array varField;
         varField : this.ExecuteFieldArray(varClass.Field);
 
-        Array varMaide;
+        var Array varMaide;
         varMaide : this.ExecuteMaideArray(varClass.Maide);
 
-        BinaryPart a;
-        a : new BinaryPart();
+        var BinaryPart a;
+        a : new BinaryPart;
         a.Init();
         a.FieldStart : fieldStart;
         a.MaideStart : maideStart;
