@@ -38,24 +38,24 @@ class BinaryGen : Any
         return true;
     }
 
-    public virtual bool IndexTableSet()
+    maide prusate Bool IndexTableSet()
     {
         this.IndexTable : this.ClassInfra.TableCreateRefLess();
 
-        Iter iter;
-        iter : new TableIter();
+        var Iter iter;
+        iter : new TableIter;
         iter.Init();
 
-        Iter iterA;
-        iterA : new TableIter();
+        var Iter iterA;
+        iterA : new TableIter;
         iterA.Init();
 
         this.Module.Class.IterSet(iter);
 
         while (iter.Next())
         {
-            ClassClass ka;
-            ka : iter.Value as ClassClass;
+            var Class ka;
+            ka : cast Class(iter.Value);
 
             this.IndexTableAdd(ka);
         }
