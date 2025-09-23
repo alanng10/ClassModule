@@ -64,15 +64,15 @@ class BinaryGen : Any
 
         while (iter.Next())
         {
-            Table kk;
-            kk : iter.Value as Table;
+            var Table kk;
+            kk : cast Table(iter.Value);
 
             kk.IterSet(iterA);
 
             while (iterA.Next())
             {
-                ClassClass kb;
-                kb : iterA.Value as ClassClass;
+                var Class kb;
+                kb : cast Class(iterA.Value);
 
                 this.IndexTableAdd(kb);
             }
