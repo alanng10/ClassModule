@@ -15,6 +15,7 @@ global using ClassNodeStateGen = Z.Tool.Saber.NodeList.NodeStateGen;
 global using ClassCreateSetStateGen = Z.Tool.Saber.NodeList.CreateSetStateGen;
 global using ClassTravelGen = Z.Tool.Saber.NodeList.TravelGen;
 global using ClassTravelPathGen = Z.Tool.Saber.NodeList.TravelPathGen;
+global using ClassTravelInfoGen = Z.Tool.Saber.NodeList.TravelInfoGen;
 global using GenClass = Z.Tool.Saber.NodeList.Class;
 global using Field = Z.Tool.Saber.NodeList.Field;
 global using SourceGen = Z.Infra.ListSourceGen.Gen;
