@@ -132,6 +132,7 @@ Class.Binary:0.00.00
     BinaryField Field
     BinaryMaide Maide
     BinaryVar Var
+    BinaryEntry Entry
     BinaryOperate Operate
     BinaryOperateKind OperateKind
     BinaryOperateKindList OperateKindList
