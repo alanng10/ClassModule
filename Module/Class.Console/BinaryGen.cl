@@ -3,17 +3,17 @@ class BinaryGen : Any
     maide prusate Bool Init()
     {
         base.Init();
-        this.ListInfra : ListInfra.This;
-        this.ClassInfra : ClassInfra.This;
+        this.ListInfra : share ListInfra;
+        this.ClassInfra : share ClassInfra;
 
         this.BinaryState : this.CreateBinaryState();
         return true;
     }
 
-    protected virtual BinaryState CreateBinaryState()
+    maide precate BinaryState CreateBinaryState()
     {
-        BinaryState a;
-        a : new BinaryState();
+        var BinaryState a;
+        a : new BinaryState;
         a.Init();
         return a;
     }
