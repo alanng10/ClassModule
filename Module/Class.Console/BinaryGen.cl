@@ -18,12 +18,12 @@ class BinaryGen : Any
         return a;
     }
 
-    public virtual ClassModule Module { get; set; }
-    public virtual BinaryBinary Result { get; set; }
-    protected virtual ListInfra ListInfra { get; set; }
-    protected virtual ClassInfra ClassInfra { get; set; }
-    protected virtual BinaryState BinaryState { get; set; }
-    protected virtual Table IndexTable { get; set; }
+    field prusate Module Module { get { return data; } set { data : value; } }
+    field prusate Binary Result { get { return data; } set { data : value; } }
+    field precate ListInfra ListInfra { get { return data; } set { data : value; } }
+    field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
+    field precate BinaryState BinaryState { get { return data; } set { data : value; } }
+    field precate IndexTable IndexTable { get { return data; } set { data : value; } }
 
     public virtual bool Execute()
     {
