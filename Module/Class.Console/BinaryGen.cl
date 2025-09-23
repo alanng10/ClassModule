@@ -526,14 +526,14 @@ class BinaryGen : Any
         return a;
     }
 
-    public virtual Data ExecuteState()
+    maide prusate Data ExecuteState()
     {
         this.BinaryState.Module : this.Module;
         this.BinaryState.IndexTable : this.IndexTable;
 
         this.BinaryState.Execute();
 
-        Data k;
+        var Data k;
         k : this.BinaryState.Result;
 
         this.BinaryState.Result : null;
@@ -541,7 +541,7 @@ class BinaryGen : Any
         this.BinaryState.IndexTable : null;
         this.BinaryState.Module : null;
 
-        Data a;
+        var Data a;
         a : k;
         return a;
     }
