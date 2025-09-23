@@ -3,17 +3,17 @@ class BinaryGen : Any
     maide prusate Bool Init()
     {
         base.Init();
-        this.ListInfra = ListInfra.This;
-        this.ClassInfra = ClassInfra.This;
+        this.ListInfra : ListInfra.This;
+        this.ClassInfra : ClassInfra.This;
 
-        this.BinaryState = this.CreateBinaryState();
+        this.BinaryState : this.CreateBinaryState();
         return true;
     }
 
     protected virtual BinaryState CreateBinaryState()
     {
         BinaryState a;
-        a = new BinaryState();
+        a : new BinaryState();
         a.Init();
         return a;
     }
@@ -30,24 +30,24 @@ class BinaryGen : Any
         this.IndexTableSet();
         
         BinaryBinary a;
-        a = this.ExecuteBinary();
+        a : this.ExecuteBinary();
 
-        this.Result = a;
+        this.Result : a;
 
-        this.IndexTable = null;
+        this.IndexTable : null;
         return true;
     }
 
     public virtual bool IndexTableSet()
     {
-        this.IndexTable = this.ClassInfra.TableCreateRefLess();
+        this.IndexTable : this.ClassInfra.TableCreateRefLess();
 
         Iter iter;
-        iter = new TableIter();
+        iter : new TableIter();
         iter.Init();
 
         Iter iterA;
-        iterA = new TableIter();
+        iterA : new TableIter();
         iterA.Init();
 
         this.Module.Class.IterSet(iter);
@@ -55,7 +55,7 @@ class BinaryGen : Any
         while (iter.Next())
         {
             ClassClass ka;
-            ka = iter.Value as ClassClass;
+            ka : iter.Value as ClassClass;
 
             this.IndexTableAdd(ka);
         }
@@ -65,14 +65,14 @@ class BinaryGen : Any
         while (iter.Next())
         {
             Table kk;
-            kk = iter.Value as Table;
+            kk : iter.Value as Table;
 
             kk.IterSet(iterA);
 
             while (iterA.Next())
             {
                 ClassClass kb;
-                kb = iterA.Value as ClassClass;
+                kb : iterA.Value as ClassClass;
 
                 this.IndexTableAdd(kb);
             }
@@ -84,12 +84,12 @@ class BinaryGen : Any
     public virtual bool IndexTableAdd(ClassClass ka)
     {
         long k;
-        k = this.IndexTable.Count;
+        k : this.IndexTable.Count;
 
         InfraValue value;
-        value = new InfraValue();
+        value : new InfraValue();
         value.Init();
-        value.Int = k;
+        value.Int : k;
 
         this.ListInfra.TableAdd(this.IndexTable, ka, value);
         return true;
@@ -98,47 +98,47 @@ class BinaryGen : Any
     public virtual BinaryBinary ExecuteBinary()
     {
         BinaryBinary a;
-        a = new BinaryBinary();
+        a : new BinaryBinary();
         a.Init();
 
-        a.Ref = this.ExecuteModuleRef(this.Module.Ref);
-        a.Class = this.ExecuteClassArray();
-        a.Import = this.ExecuteImportArray();
-        a.Export = this.ExecuteExportArray();
-        a.Base = this.ExecuteBaseArray();
-        a.Part = this.ExecutePartArray();
-        a.Entry = this.ExecuteEntry();
-        a.State = this.ExecuteState();
+        a.Ref : this.ExecuteModuleRef(this.Module.Ref);
+        a.Class : this.ExecuteClassArray();
+        a.Import : this.ExecuteImportArray();
+        a.Export : this.ExecuteExportArray();
+        a.Base : this.ExecuteBaseArray();
+        a.Part : this.ExecutePartArray();
+        a.Entry : this.ExecuteEntry();
+        a.State : this.ExecuteState();
         return a;
     }
 
     public virtual Array ExecuteClassArray()
     {
         long count;
-        count = this.Module.Class.Count;
+        count : this.Module.Class.Count;
 
         Array array;
-        array = this.ListInfra.ArrayCreate(count);
+        array : this.ListInfra.ArrayCreate(count);
 
         Iter iter;
-        iter = this.Module.Class.IterCreate();
+        iter : this.Module.Class.IterCreate();
         this.Module.Class.IterSet(iter);
 
         long i;
-        i = 0;
+        i : 0;
         while (i < count)
         {
             iter.Next();
 
             ClassClass varClass;
-            varClass = iter.Value as ClassClass;
+            varClass : iter.Value as ClassClass;
 
             BinaryClass a;
-            a = this.ExecuteClass(varClass);
+            a : this.ExecuteClass(varClass);
 
             array.SetAt(i, a);
 
-            i = i + 1;
+            i : i + 1;
         }
 
         return array;
@@ -147,45 +147,45 @@ class BinaryGen : Any
     public virtual BinaryClass ExecuteClass(ClassClass varClass)
     {
         String name;
-        name = varClass.Name;
+        name : varClass.Name;
 
         BinaryClass a;
-        a = new BinaryClass();
+        a : new BinaryClass();
         a.Init();
-        a.Name = name;
+        a.Name : name;
         return a;
     }
 
     public virtual Array ExecuteImportArray()
     {
         long count;
-        count = this.Module.Import.Count;
+        count : this.Module.Import.Count;
 
         Array array;
-        array = this.ListInfra.ArrayCreate(count);
+        array : this.ListInfra.ArrayCreate(count);
 
         Iter iter;
-        iter = this.Module.Import.IterCreate();
+        iter : this.Module.Import.IterCreate();
         this.Module.Import.IterSet(iter);
 
         long i;
-        i = 0;
+        i : 0;
         while (i < count)
         {
             iter.Next();
 
             ModuleRef ka;
-            ka = iter.Index as ModuleRef;
+            ka : iter.Index as ModuleRef;
 
             Table kb;
-            kb = iter.Value as Table;
+            kb : iter.Value as Table;
 
             BinaryImport a;
-            a = this.ExecuteImport(ka, kb);
+            a : this.ExecuteImport(ka, kb);
 
             array.SetAt(i, a);
 
-            i = i + 1;
+            i : i + 1;
         }
 
         return array;
@@ -194,80 +194,80 @@ class BinaryGen : Any
     public virtual BinaryImport ExecuteImport(ModuleRef moduleRef, Table table)
     {
         ModuleRef moduleRefA;
-        moduleRefA = this.ExecuteModuleRef(moduleRef);
+        moduleRefA : this.ExecuteModuleRef(moduleRef);
 
         long count;
-        count = table.Count;
+        count : table.Count;
 
         Array array;
-        array = this.ListInfra.ArrayCreate(count);
+        array : this.ListInfra.ArrayCreate(count);
 
         Iter iter;
-        iter = table.IterCreate();
+        iter : table.IterCreate();
         table.IterSet(iter);
 
         long i;
-        i = 0;
+        i : 0;
         while (i < count)
         {
             iter.Next();
 
             ClassClass varClass;
-            varClass = iter.Value as ClassClass;
+            varClass : iter.Value as ClassClass;
 
             long ka;
-            ka = varClass.Index;
+            ka : varClass.Index;
 
             InfraValue value;
-            value = new InfraValue();
+            value : new InfraValue();
             value.Init();
-            value.Int = ka;
+            value.Int : ka;
 
             array.SetAt(i, value);
 
-            i = i + 1;
+            i : i + 1;
         }
 
         BinaryImport a;
-        a = new BinaryImport();
+        a : new BinaryImport();
         a.Init();
-        a.Module = moduleRefA;
-        a.Class = array;
+        a.Module : moduleRefA;
+        a.Class : array;
         return a;
     }
 
     public virtual Array ExecuteExportArray()
     {
         long count;
-        count = this.Module.Export.Count;
+        count : this.Module.Export.Count;
 
         Array array;
-        array = this.ListInfra.ArrayCreate(count);
+        array : this.ListInfra.ArrayCreate(count);
 
         Iter iter;
-        iter = this.Module.Export.IterCreate();
+        iter : this.Module.Export.IterCreate();
         this.Module.Export.IterSet(iter);
 
         long i;
-        i = 0;
+        i : 0;
         while (i < count)
         {
             iter.Next();
 
             ClassClass varClass;
-            varClass = iter.Value as ClassClass;
+            varClass : iter.Value as ClassClass;
 
             long ka;
-            ka = varClass.Index;
+            ka : varClass.Index;
 
             InfraValue value;
-            value = new InfraValue();
+            value : new InfraValue();
             value.Init();
-            value.Int = ka;
+            value.Int : ka;
 
             array.SetAt(i, value);
 
-            i = i + 1;
+            i : i + 1;
         }
 
         return array;
@@ -276,38 +276,38 @@ class BinaryGen : Any
     public virtual Array ExecuteBaseArray()
     {
         long count;
-        count = this.Module.Class.Count;
+        count : this.Module.Class.Count;
 
         Array array;
-        array = this.ListInfra.ArrayCreate(count);
+        array : this.ListInfra.ArrayCreate(count);
 
         Iter iter;
-        iter = this.Module.Class.IterCreate();
+        iter : this.Module.Class.IterCreate();
         this.Module.Class.IterSet(iter);
 
         long i;
-        i = 0;
+        i : 0;
         while (i < count)
         {
             iter.Next();
 
             ClassClass varClass;
-            varClass = iter.Value as ClassClass;
+            varClass : iter.Value as ClassClass;
 
             ClassClass baseClass;
-            baseClass = varClass.Base;
+            baseClass : varClass.Base;
 
             long ka;
-            ka = this.ClassIndex(baseClass);
+            ka : this.ClassIndex(baseClass);
 
             InfraValue value;
-            value = new InfraValue();
+            value : new InfraValue();
             value.Init();
-            value.Int = ka;
+            value.Int : ka;
 
             array.SetAt(i, value);
 
-            i = i + 1;
+            i : i + 1;
         }
 
         return array;
@@ -316,30 +316,30 @@ class BinaryGen : Any
     public virtual Array ExecutePartArray()
     {
         long count;
-        count = this.Module.Class.Count;
+        count : this.Module.Class.Count;
 
         Array array;
-        array = this.ListInfra.ArrayCreate(count);
+        array : this.ListInfra.ArrayCreate(count);
 
         Iter iter;
-        iter = this.Module.Class.IterCreate();
+        iter : this.Module.Class.IterCreate();
         this.Module.Class.IterSet(iter);
 
         long i;
-        i = 0;
+        i : 0;
         while (i < count)
         {
             iter.Next();
 
             ClassClass varClass;
-            varClass = iter.Value as ClassClass;
+            varClass : iter.Value as ClassClass;
 
             BinaryPart a;
-            a = this.ExecutePart(varClass);
+            a : this.ExecutePart(varClass);
 
             array.SetAt(i, a);
 
-            i = i + 1;
+            i : i + 1;
         }
 
         return array;
@@ -349,52 +349,52 @@ class BinaryGen : Any
     {
         long fieldStart;
         long maideStart;
-        fieldStart = varClass.FieldStart;
-        maideStart = varClass.MaideStart;
+        fieldStart : varClass.FieldStart;
+        maideStart : varClass.MaideStart;
 
         Array field;
-        field = this.ExecuteFieldArray(varClass.Field);
+        field : this.ExecuteFieldArray(varClass.Field);
 
         Array maide;
-        maide = this.ExecuteMaideArray(varClass.Maide);
+        maide : this.ExecuteMaideArray(varClass.Maide);
 
         BinaryPart a;
-        a = new BinaryPart();
+        a : new BinaryPart();
         a.Init();
-        a.FieldStart = fieldStart;
-        a.MaideStart = maideStart;
-        a.Field = field;
-        a.Maide = maide;
+        a.FieldStart : fieldStart;
+        a.MaideStart : maideStart;
+        a.Field : field;
+        a.Maide : maide;
         return a;
     }
 
     public virtual Array ExecuteFieldArray(Table table)
     {
         long count;
-        count = table.Count;
+        count : table.Count;
 
         Array array;
-        array = this.ListInfra.ArrayCreate(count);
+        array : this.ListInfra.ArrayCreate(count);
 
         Iter iter;
-        iter = table.IterCreate();
+        iter : table.IterCreate();
         table.IterSet(iter);
 
         long i;
-        i = 0;
+        i : 0;
         while (i < count)
         {
             iter.Next();
 
             Field varField;
-            varField = iter.Value as Field;
+            varField : iter.Value as Field;
 
             BinaryField a;
-            a = this.ExecuteField(varField);
+            a : this.ExecuteField(varField);
 
             array.SetAt(i, a);
 
-            i = i + 1;
+            i : i + 1;
         }
 
         return array;
@@ -403,50 +403,50 @@ class BinaryGen : Any
     public virtual BinaryField ExecuteField(Field varField)
     {
         long varClass;
-        varClass = this.ClassIndex(varField.Class);
+        varClass : this.ClassIndex(varField.Class);
 
         long count;
-        count = varField.Count.Index;
+        count : varField.Count.Index;
 
         String name;
-        name = varField.Name;
+        name : varField.Name;
 
         BinaryField a;
-        a = new BinaryField();
+        a : new BinaryField();
         a.Init();
-        a.Class = varClass;
-        a.Count = count;
-        a.Name = name;
+        a.Class : varClass;
+        a.Count : count;
+        a.Name : name;
         return a;
     }
 
     public virtual Array ExecuteMaideArray(Table table)
     {
         long count;
-        count = table.Count;
+        count : table.Count;
 
         Array array;
-        array = this.ListInfra.ArrayCreate(count);
+        array : this.ListInfra.ArrayCreate(count);
 
         Iter iter;
-        iter = table.IterCreate();
+        iter : table.IterCreate();
         table.IterSet(iter);
 
         long i;
-        i = 0;
+        i : 0;
         while (i < count)
         {
             iter.Next();
 
             Maide varMaide;
-            varMaide = iter.Value as Maide;
+            varMaide : iter.Value as Maide;
 
             BinaryMaide a;
-            a = this.ExecuteMaide(varMaide);
+            a : this.ExecuteMaide(varMaide);
 
             array.SetAt(i, a);
 
-            i = i + 1;
+            i : i + 1;
         }
 
         return array;
@@ -455,54 +455,54 @@ class BinaryGen : Any
     public virtual BinaryMaide ExecuteMaide(Maide varMaide)
     {
         long varClass;
-        varClass = this.ClassIndex(varMaide.Class);
+        varClass : this.ClassIndex(varMaide.Class);
 
         long count;
-        count = varMaide.Count.Index;
+        count : varMaide.Count.Index;
 
         String name;
-        name = varMaide.Name;
+        name : varMaide.Name;
 
         Array param;
-        param = this.ExecuteVarArray(varMaide.Param);
+        param : this.ExecuteVarArray(varMaide.Param);
 
         BinaryMaide a;
-        a = new BinaryMaide();
+        a : new BinaryMaide();
         a.Init();
-        a.Class = varClass;
-        a.Count = count;
-        a.Name = name;
-        a.Param = param;
+        a.Class : varClass;
+        a.Count : count;
+        a.Name : name;
+        a.Param : param;
         return a;
     }
 
     public virtual Array ExecuteVarArray(Table table)
     {
         long count;
-        count = table.Count;
+        count : table.Count;
 
         Array array;
-        array = this.ListInfra.ArrayCreate(count);
+        array : this.ListInfra.ArrayCreate(count);
 
         Iter iter;
-        iter = table.IterCreate();
+        iter : table.IterCreate();
         table.IterSet(iter);
 
         long i;
-        i = 0;
+        i : 0;
         while (i < count)
         {
             iter.Next();
 
             Var varVar;
-            varVar = iter.Value as Var;
+            varVar : iter.Value as Var;
 
             BinaryVar a;
-            a = this.ExecuteVar(varVar);
+            a : this.ExecuteVar(varVar);
 
             array.SetAt(i, a);
 
-            i = i + 1;
+            i : i + 1;
         }
 
         return array;
@@ -511,76 +511,76 @@ class BinaryGen : Any
     public virtual BinaryVar ExecuteVar(Var varVar)
     {
         long varClass;
-        varClass = this.ClassIndex(varVar.Class);
+        varClass : this.ClassIndex(varVar.Class);
 
         String name;
-        name = varVar.Name;
+        name : varVar.Name;
 
         BinaryVar a;
-        a = new BinaryVar();
+        a : new BinaryVar();
         a.Init();
-        a.Class = varClass;
-        a.Name = name;
+        a.Class : varClass;
+        a.Name : name;
         return a;
     }
 
     public virtual BinaryEntry ExecuteEntry()
     {
         long k;
-        k = -1;
+        k : -1;
 
         String entry;
-        entry = this.Module.Entry;
+        entry : this.Module.Entry;
 
         if (!(entry == null))
         {
             ClassClass entryClass;
-            entryClass = this.Module.Class.Get(entry) as ClassClass;
+            entryClass : this.Module.Class.Get(entry) as ClassClass;
 
-            k = entryClass.Index;
+            k : entryClass.Index;
         }
 
         BinaryEntry a;
-        a = new BinaryEntry();
+        a : new BinaryEntry();
         a.Init();
-        a.Class = k;
+        a.Class : k;
         return a;
     }
 
     public virtual Data ExecuteState()
     {
-        this.BinaryState.Module = this.Module;
-        this.BinaryState.IndexTable = this.IndexTable;
+        this.BinaryState.Module : this.Module;
+        this.BinaryState.IndexTable : this.IndexTable;
 
         this.BinaryState.Execute();
 
         Data k;
-        k = this.BinaryState.Result;
+        k : this.BinaryState.Result;
 
-        this.BinaryState.Result = null;
+        this.BinaryState.Result : null;
 
-        this.BinaryState.IndexTable = null;
-        this.BinaryState.Module = null;
+        this.BinaryState.IndexTable : null;
+        this.BinaryState.Module : null;
 
         Data a;
-        a = k;
+        a : k;
         return a;
     }
 
     public virtual ModuleRef ExecuteModuleRef(ModuleRef moduleRef)
     {
         ModuleRef a;
-        a = this.ClassInfra.ModuleRefCreate(moduleRef.Name, moduleRef.Ver);
+        a : this.ClassInfra.ModuleRefCreate(moduleRef.Name, moduleRef.Ver);
         return a;
     }
 
     public virtual long ClassIndex(ClassClass varClass)
     {
         InfraValue k;
-        k = this.IndexTable.Get(varClass) as InfraValue;
+        k : this.IndexTable.Get(varClass) as InfraValue;
 
         long a;
-        a = k.Int;
+        a : k.Int;
         return a;
     }
 }
