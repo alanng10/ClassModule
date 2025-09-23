@@ -139,13 +139,13 @@ class BinaryGen : Any
         return array;
     }
 
-    public virtual BinaryClass ExecuteClass(ClassClass varClass)
+    maide prusate BinaryClass ExecuteClass(var Class varClass)
     {
-        String name;
+        var String name;
         name : varClass.Name;
 
-        BinaryClass a;
-        a : new BinaryClass();
+        var BinaryClass a;
+        a : new BinaryClass;
         a.Init();
         a.Name : name;
         return a;
