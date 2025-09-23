@@ -58,6 +58,14 @@ public class Gen : ClassGen
         return a;
     }
 
+    protected override ClassTravelInfoGen CreateTravelInfoGen()
+    {
+        ClassTravelInfoGen a;
+        a = new TravelInfoGen();
+        a.Init();
+        return a;
+    }
+
     protected override bool ExecuteNodeKindList()
     {
         NodeKindListGen nodeKindListGen;
@@ -71,14 +79,6 @@ public class Gen : ClassGen
     {
         PortGen a;
         a = new PortGen();
-        a.Init();
-        return a;
-    }
-
-    protected virtual TravelInfoGen CreateTravelInfoGen()
-    {
-        TravelInfoGen a;
-        a = new TravelInfoGen();
         a.Init();
         return a;
     }
@@ -97,11 +97,6 @@ public class Gen : ClassGen
         portGen = this.CreatePortGen();
         portGen.ClassTable = this.ClassTable;
         portGen.Execute();
-
-        TravelInfoGen travelInfoGen;
-        travelInfoGen = this.CreateTravelInfoGen();
-        travelInfoGen.ClassTable = this.ClassTable;
-        travelInfoGen.Execute();
         return 0;
     }
 }

@@ -1,6 +1,6 @@
 namespace Z.Tool.Class.NodeList;
 
-public class TravelInfoGen : TravelGen
+public class TravelInfoGen : ClassTravelInfoGen
 {
     public override bool Init()
     {
