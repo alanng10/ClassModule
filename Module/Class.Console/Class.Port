@@ -122,6 +122,8 @@ Class.Node:0.00.00
     IntHexSignValue IntHexSignValue
     StringValue StringValue
     Node Node
+Class.Module:0.00.00
+    Info Info
 Class.Binary:0.00.00
     Binary Binary
     BinaryClass Class
@@ -130,6 +132,9 @@ Class.Binary:0.00.00
     BinaryField Field
     BinaryMaide Maide
     BinaryVar Var
+    BinaryOperate Operate
+    BinaryOperateKind OperateKind
+    BinaryOperateKindList OperateKindList
 
 [Export]
 Console
