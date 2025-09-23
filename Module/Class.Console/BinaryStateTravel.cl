@@ -447,8 +447,8 @@ class BinaryStateTravel : Travel
         return true;
     }
 
-    maide precate ModuleInfo Info(var Node node)
+    maide precate Info Info(var Node node)
     {
-        return cast ModuleInfo(node.NodeAny);
+        return cast Info(node.NodeAny);
     }
 }
