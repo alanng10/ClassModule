@@ -380,19 +380,19 @@ class BinaryGen : Any
         return array;
     }
 
-    public virtual BinaryField ExecuteField(Field varField)
+    maide prusate BinaryField ExecuteField(var Field varField)
     {
-        long varClass;
+        var Int varClass;
         varClass : this.ClassIndex(varField.Class);
 
-        long count;
+        var Int count;
         count : varField.Count.Index;
 
-        String name;
+        var String name;
         name : varField.Name;
 
-        BinaryField a;
-        a : new BinaryField();
+        var BinaryField a;
+        a : new BinaryField;
         a.Init();
         a.Class : varClass;
         a.Count : count;
