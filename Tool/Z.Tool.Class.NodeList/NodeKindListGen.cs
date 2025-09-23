@@ -32,8 +32,8 @@ public class NodeKindListGen : SourceGen
 
         while (iter.Next())
         {
-            NodeListGen.Class varClass;
-            varClass = iter.Value as NodeListGen.Class;
+            Saber.NodeList.Class varClass;
+            varClass = iter.Value as Saber.NodeList.Class;
 
             String a;
             a = varClass.Name;

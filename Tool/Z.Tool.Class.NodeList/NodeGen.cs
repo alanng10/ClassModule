@@ -12,7 +12,7 @@ public class NodeGen : ClassNodeGen
         return true;
     }
 
-    protected override String OutputFilePath(global::Z.Tool.NodeListGen.Class varClass)
+    protected override String OutputFilePath(global::Z.Tool.Saber.NodeList.Class varClass)
     {
         String fileName;
         fileName = this.AddClear().AddS("Z_Node_").Add(varClass.Name).AddS(".cl").AddResult();
