@@ -504,24 +504,23 @@ class BinaryGen : Any
         return a;
     }
 
-    public virtual BinaryEntry ExecuteEntry()
+    maide prusate BinaryEntry ExecuteEntry()
     {
-        long k;
-        k : -1;
+        var Int k;
 
-        String entry;
+        var String entry;
         entry : this.Module.Entry;
 
-        if (!(entry == null))
+        inf (~(entry = null))
         {
-            ClassClass entryClass;
-            entryClass : this.Module.Class.Get(entry) as ClassClass;
+            var Class entryClass;
+            entryClass : cast Class(this.Module.Class.Get(entry));
 
             k : entryClass.Index;
         }
 
-        BinaryEntry a;
-        a : new BinaryEntry();
+        var BinaryEntry a;
+        a : new BinaryEntry;
         a.Init();
         a.Class : k;
         return a;
