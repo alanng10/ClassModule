@@ -488,16 +488,16 @@ class BinaryGen : Any
         return array;
     }
 
-    public virtual BinaryVar ExecuteVar(Var varVar)
+    maide prusate BinaryVar ExecuteVar(var Var varVar)
     {
-        long varClass;
+        var Int varClass;
         varClass : this.ClassIndex(varVar.Class);
 
-        String name;
+        var String name;
         name : varVar.Name;
 
-        BinaryVar a;
-        a : new BinaryVar();
+        var BinaryVar a;
+        a : new BinaryVar;
         a.Init();
         a.Class : varClass;
         a.Name : name;
