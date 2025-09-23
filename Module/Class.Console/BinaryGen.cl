@@ -23,13 +23,13 @@ class BinaryGen : Any
     field precate ListInfra ListInfra { get { return data; } set { data : value; } }
     field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
     field precate BinaryState BinaryState { get { return data; } set { data : value; } }
-    field precate IndexTable IndexTable { get { return data; } set { data : value; } }
+    field precate Table IndexTable { get { return data; } set { data : value; } }
 
     maide prusate Bool Execute()
     {
         this.IndexTableSet();
         
-        var BinaryBinary a;
+        var Binary a;
         a : this.ExecuteBinary();
 
         this.Result : a;
