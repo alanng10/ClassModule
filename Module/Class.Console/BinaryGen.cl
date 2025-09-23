@@ -151,34 +151,34 @@ class BinaryGen : Any
         return a;
     }
 
-    public virtual Array ExecuteImportArray()
+    maide prusate Array ExecuteImportArray()
     {
-        long count;
+        var Int count;
         count : this.Module.Import.Count;
 
-        Array array;
+        var Array array;
         array : this.ListInfra.ArrayCreate(count);
 
-        Iter iter;
+        var Iter iter;
         iter : this.Module.Import.IterCreate();
         this.Module.Import.IterSet(iter);
 
-        long i;
+        var Int i;
         i : 0;
         while (i < count)
         {
             iter.Next();
 
-            ModuleRef ka;
-            ka : iter.Index as ModuleRef;
+            var ModuleRef ka;
+            ka : cast ModuleRef(iter.Index);
 
-            Table kb;
-            kb : iter.Value as Table;
+            var Table kb;
+            kb : cast Table(iter.Value);
 
-            BinaryImport a;
+            var BinaryImport a;
             a : this.ExecuteImport(ka, kb);
 
-            array.SetAt(i, a);
+            array.Set(i, a);
 
             i : i + 1;
         }
