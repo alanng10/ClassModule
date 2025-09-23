@@ -258,39 +258,34 @@ class BinaryGen : Any
         return array;
     }
 
-    public virtual Array ExecuteBaseArray()
+    maide prusate Array ExecuteBaseArray()
     {
-        long count;
+        var Int count;
         count : this.Module.Class.Count;
 
-        Array array;
+        var Array array;
         array : this.ListInfra.ArrayCreate(count);
 
-        Iter iter;
+        var Iter iter;
         iter : this.Module.Class.IterCreate();
         this.Module.Class.IterSet(iter);
 
-        long i;
+        var Int i;
         i : 0;
         while (i < count)
         {
             iter.Next();
 
-            ClassClass varClass;
-            varClass : iter.Value as ClassClass;
+            var Class varClass;
+            varClass : cast Class(iter.Value);
 
-            ClassClass baseClass;
+            var Class baseClass;
             baseClass : varClass.Base;
 
-            long ka;
+            var Int ka;
             ka : this.ClassIndex(baseClass);
 
-            InfraValue value;
-            value : new InfraValue();
-            value.Init();
-            value.Int : ka;
-
-            array.SetAt(i, value);
+            array.SetAt(i, ka);
 
             i : i + 1;
         }
