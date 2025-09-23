@@ -553,13 +553,13 @@ class BinaryGen : Any
         return a;
     }
 
-    public virtual long ClassIndex(ClassClass varClass)
+    maide prusate Int ClassIndex(var Class varClass)
     {
-        InfraValue k;
-        k : this.IndexTable.Get(varClass) as InfraValue;
+        var Int k;
+        k : cast Int(this.IndexTable.Get(varClass));
 
-        long a;
-        a : k.Int;
+        var Int a;
+        a : k;
         return a;
     }
 }
