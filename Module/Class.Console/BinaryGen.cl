@@ -432,22 +432,22 @@ class BinaryGen : Any
         return array;
     }
 
-    public virtual BinaryMaide ExecuteMaide(Maide varMaide)
+    maide prusate BinaryMaide ExecuteMaide(var Maide varMaide)
     {
-        long varClass;
+        var Int varClass;
         varClass : this.ClassIndex(varMaide.Class);
 
-        long count;
+        var Int count;
         count : varMaide.Count.Index;
 
-        String name;
+        var String name;
         name : varMaide.Name;
 
-        Array param;
+        var Array param;
         param : this.ExecuteVarArray(varMaide.Param);
 
-        BinaryMaide a;
-        a : new BinaryMaide();
+        var BinaryMaide a;
+        a : new BinaryMaide;
         a.Init();
         a.Class : varClass;
         a.Count : count;
