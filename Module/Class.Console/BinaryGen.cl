@@ -400,31 +400,31 @@ class BinaryGen : Any
         return a;
     }
 
-    public virtual Array ExecuteMaideArray(Table table)
+    maide prusate Array ExecuteMaideArray(var Table table)
     {
-        long count;
+        var Int count;
         count : table.Count;
 
-        Array array;
+        var Array array;
         array : this.ListInfra.ArrayCreate(count);
 
-        Iter iter;
+        var Iter iter;
         iter : table.IterCreate();
         table.IterSet(iter);
 
-        long i;
+        var Int i;
         i : 0;
         while (i < count)
         {
             iter.Next();
 
-            Maide varMaide;
-            varMaide : iter.Value as Maide;
+            var Maide varMaide;
+            varMaide : cast Maide(iter.Value);
 
-            BinaryMaide a;
+            var BinaryMaide a;
             a : this.ExecuteMaide(varMaide);
 
-            array.SetAt(i, a);
+            array.Set(i, a);
 
             i : i + 1;
         }
