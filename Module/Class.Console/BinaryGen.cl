@@ -186,45 +186,40 @@ class BinaryGen : Any
         return array;
     }
 
-    public virtual BinaryImport ExecuteImport(ModuleRef moduleRef, Table table)
+    maide prusate BinaryImport ExecuteImport(var ModuleRef moduleRef, var Table table)
     {
-        ModuleRef moduleRefA;
+        var ModuleRef moduleRefA;
         moduleRefA : this.ExecuteModuleRef(moduleRef);
 
-        long count;
+        var Int count;
         count : table.Count;
 
-        Array array;
+        var Array array;
         array : this.ListInfra.ArrayCreate(count);
 
-        Iter iter;
+        var Iter iter;
         iter : table.IterCreate();
         table.IterSet(iter);
 
-        long i;
+        var Int i;
         i : 0;
         while (i < count)
         {
             iter.Next();
 
-            ClassClass varClass;
-            varClass : iter.Value as ClassClass;
+            var Class varClass;
+            varClass : cast Class(iter.Value);
 
-            long ka;
+            var Int ka;
             ka : varClass.Index;
 
-            InfraValue value;
-            value : new InfraValue();
-            value.Init();
-            value.Int : ka;
-
-            array.SetAt(i, value);
+            array.Set(i, ka);
 
             i : i + 1;
         }
 
-        BinaryImport a;
-        a : new BinaryImport();
+        var BinaryImport a;
+        a : new BinaryImport;
         a.Init();
         a.Module : moduleRefA;
         a.Class : array;
