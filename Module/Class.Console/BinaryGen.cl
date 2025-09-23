@@ -285,7 +285,7 @@ class BinaryGen : Any
             var Int ka;
             ka : this.ClassIndex(baseClass);
 
-            array.SetAt(i, ka);
+            array.Set(i, ka);
 
             i : i + 1;
         }
