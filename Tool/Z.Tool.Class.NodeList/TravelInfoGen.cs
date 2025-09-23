@@ -16,9 +16,6 @@ public class TravelInfoGen : ClassTravelInfoGen
         return true;
     }
 
-    protected virtual String PathExecute { get; set; }
-    protected virtual String TextExecute { get; set; }
-
     public override bool Execute()
     {
         this.TextSource = this.StorageTextRead(this.PathSource);
@@ -47,152 +44,6 @@ public class TravelInfoGen : ClassTravelInfoGen
 
         this.StorageTextWrite(this.PathOutput, a);
         return true;
-    }
-
-    protected virtual String ExecuteList()
-    {
-        StringAdd h;
-        h = new StringAdd();
-        h.Init();
-
-        StringAdd hh;
-        hh = this.StringAdd;
-
-        this.StringAdd = h;
-
-        Table table;
-        table = this.ClassTable;
-
-        Iter iter;
-        iter = table.IterCreate();
-        table.IterSet(iter);
-
-        while (iter.Next())
-        {
-            GenClass varClass;
-            varClass = iter.Value as GenClass;
-
-            String ka;
-            ka = this.ExecuteOne(varClass);
-
-            this.Add(ka);
-        }
-
-        String a;
-        a = this.AddResult();
-
-        this.StringAdd = hh;
-
-        return a;
-    }
-
-    protected virtual String ExecuteOne(GenClass varClass)
-    {
-        if (varClass.AnyInt == 1)
-        {
-            return this.TextInfra.Zero;
-        }
-
-        String className;
-        className = varClass.Name;
-
-        String declareClassName;
-        declareClassName = this.DeclareClassName(className);
-
-        Text k;
-        k = this.TextCreate(this.TextExecute);
-        k = this.Place(k, "#ClassName#", className);
-        k = this.Place(k, "#DeclareClassName#", declareClassName);
-
-        String a;
-        a = this.StringCreate(k);
-        return a;
-    }
-
-    protected override String DeriveState(GenClass varClass, String varName)
-    {
-        StringAdd h;
-        h = new StringAdd();
-        h.Init();
-
-        StringAdd hh;
-        hh = this.StringAdd;
-
-        this.StringAdd = h;
-
-        this.AddClear();
-
-        this.AddLine();
-
-        Text k;
-        k = this.TextCreate(this.TextDerive);
-        k = this.Place(k, "#VarName#", varName);
-        k = this.Place(k, "#ClassName#", varClass.Name);
-
-        String ka;
-        ka = this.StringCreate(k);
-
-        this.Add(ka);
-
-        String a;
-        a = this.AddResult();
-
-        this.StringAdd = hh;
-
-        return a;
-    }
-
-    protected override String ArrayState(GenClass varClass, String varName)
-    {
-        StringAdd h;
-        h = new StringAdd();
-        h.Init();
-
-        StringAdd hh;
-        hh = this.StringAdd;
-
-        this.StringAdd = h;
-
-        this.AddClear();
-
-        Iter iter;
-        iter = varClass.Field.IterCreate();
-        varClass.Field.IterSet(iter);
-
-        iter.Next();
-
-        Field field;
-        field = iter.Value as Field;
-
-        String itemClassName;
-        itemClassName = field.ItemClass;
-
-        String itemDeclareClassName;
-        itemDeclareClassName = this.DeclareClassName(itemClassName);
-
-        String ka;
-        ka = this.ExecuteNode(varName);
-
-        Text k;
-        k = this.TextCreate(this.TextArray);
-        k = this.Place(k, "#VarName#", varName);
-        k = this.Place(k, "#ClassName#", varClass.Name);
-        k = this.Place(k, "#ItemClassName#", itemClassName);
-        k = this.Place(k, "#ItemDeclareClassName#", itemDeclareClassName);
-
-        String ke;
-        ke = this.StringCreate(k);
-
-        this.Add(ka);
-        this.AddLine();
-        this.Add(ke);
-
-        String a;
-        a = this.AddResult();
-
-        this.StringAdd = hh;
-
-        return a;
     }
 
     protected override String FieldState(GenClass varClass, String varName)
@@ -272,71 +123,18 @@ public class TravelInfoGen : ClassTravelInfoGen
         return a;
     }
 
-    protected override String DeclareClassName(String className)
+    protected override String InitStringMaide()
     {
-        Text k;
-        k = this.TextCreate(className);
+        return this.TextInfra.Zero;
+    }
 
-        bool b;
-        b = false;
-        if (!b)
-        {
-            if (this.TextSame(k, this.TA(this.SClass)))
-            {
-                b = true;
-            }
-        }
-        if (!b)
-        {
-            if (this.TextSame(k, this.TA(this.SField)))
-            {
-                b = true;
-            }
-        }
-        if (!b)
-        {
-            if (this.TextSame(k, this.TA(this.SMaide)))
-            {
-                b = true;
-            }
-        }
-        if (!b)
-        {
-            if (this.TextSame(k, this.TA(this.SVar)))
-            {
-                b = true;
-            }
-        }
-        if (!b)
-        {
-            if (this.TextSame(k, this.TA(this.SCount)))
-            {
-                b = true;
-            }
-        }
+    protected override String StringFieldList()
+    {
+        return this.TextInfra.Zero;
+    }
 
-        if (b)
-        {
-            StringAdd h;
-            h = new StringAdd();
-            h.Init();
-
-            StringAdd hh;
-            hh = this.StringAdd;
-
-            this.StringAdd = h;
-
-            this.AddClear().AddS("Node").Add(className);
-
-            String a;
-            a = this.AddResult();
-
-            this.StringAdd = hh;
-
-            return a;
-
-        }
-
-        return className;
+    protected override String GetPathName(String name)
+    {
+        return this.AddClear().AddS("ToolData/Class/Travel").Add(name).AddResult();
     }
 }
