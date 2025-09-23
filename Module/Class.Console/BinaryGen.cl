@@ -348,31 +348,31 @@ class BinaryGen : Any
         return a;
     }
 
-    public virtual Array ExecuteFieldArray(Table table)
+    maide prusate Array ExecuteFieldArray(var Table table)
     {
-        long count;
+        var Int count;
         count : table.Count;
 
-        Array array;
+        var Array array;
         array : this.ListInfra.ArrayCreate(count);
 
-        Iter iter;
+        var Iter iter;
         iter : table.IterCreate();
         table.IterSet(iter);
 
-        long i;
+        var Int i;
         i : 0;
         while (i < count)
         {
             iter.Next();
 
-            Field varField;
-            varField : iter.Value as Field;
+            var Field varField;
+            varField : cast Field(iter.Value);
 
-            BinaryField a;
+            var BinaryField a;
             a : this.ExecuteField(varField);
 
-            array.SetAt(i, a);
+            array.Set(i, a);
 
             i : i + 1;
         }
