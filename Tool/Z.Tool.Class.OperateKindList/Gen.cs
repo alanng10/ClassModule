@@ -95,9 +95,14 @@ public class Gen : SourceGen
         ka = value as Value;
 
         this.AddIndent(1)
-            .AddS("public").AddS(" ").AddS("virtual").AddS(" ")
+            .AddS("field").AddS(" ").AddS("prusate").AddS(" ")
             .Add(this.ItemClassName).AddS(" ").Add(ka.FieldName).AddS(" ")
-            .AddS("{").AddS(" ").AddS("get").AddS(";").AddS(" ").AddS("set").AddS(";").AddS(" ").AddS("}")
+            .AddS("{").AddS(" ")
+            .AddS("get").AddS(" ").AddS("{").AddS(" ").AddS("return").AddS(" ").AddS("data").AddS(";").AddS(" ").AddS("}")
+            .AddS(" ")
+            .AddS("set").AddS(" ").AddS("{").AddS(" ").AddS("data").AddS(" ").AddS(":").AddS(" ").AddS("value").AddS(";").AddS(" ").AddS("}")
+            .AddS(" ")
+            .AddS("}")
             .AddLine();
         return true;
     }
