@@ -318,12 +318,21 @@ class BinaryState : Any
 
             inf (~(string = null))
             {
-                this.ExecuteString(string);
+                this.ExecuteStringArg();
 
                 b : true;
             }
         }
 
+        return true;
+    }
+
+    maide prusate Bool ExecuteStringArg()
+    {
+        var Int k;
+        k : this.Operate.ExecuteString();
+
+        this.ExecuteInt(k);
         return true;
     }
 
