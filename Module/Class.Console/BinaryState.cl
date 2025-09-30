@@ -161,6 +161,27 @@ class BinaryState : Any
         return true;
     }
 
+    maide prusate Bool ExecuteStringArray(var Array array)
+    {
+        this.ExecuteCount(array.Count);
+
+        var Int count;
+        count : array.Count;
+
+        var Int i;
+        i : 0;
+        while (i < count)
+        {
+            var String k;
+            k : cast String(array.Get(i));
+
+            this.ExecuteString(k);
+
+            i : i + 1;
+        }
+        return true;
+    }
+
     maide prusate Bool ExecuteClass(var Class varClass)
     {
         var Iter iter;
