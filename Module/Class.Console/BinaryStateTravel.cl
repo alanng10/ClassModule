@@ -403,25 +403,25 @@ class BinaryStateTravel : Travel
 
     maide prusate Bool ExecuteIntValue(var IntValue intValue)
     {
-        this.IntValueOp(intValue.Value);
+        this.IntValueOpe(intValue.Value);
         return true;
     }
 
     maide prusate Bool ExecuteIntSignValue(var IntSignValue intSignValue)
     {
-        this.IntValueOp(intSignValue.Value);
+        this.IntValueOpe(intSignValue.Value);
         return true;
     }
 
     maide prusate Bool ExecuteIntHexValue(var IntHexValue intHexValue)
     {
-        this.IntValueOp(intHexValue.Value);
+        this.IntValueOpe(intHexValue.Value);
         return true;
     }
 
     maide prusate Bool ExecuteIntHexSignValue(var IntHexSignValue intHexSignValue)
     {
-        this.IntValueOp(intHexSignValue.Value);
+        this.IntValueOpe(intHexSignValue.Value);
         return true;
     }
 
