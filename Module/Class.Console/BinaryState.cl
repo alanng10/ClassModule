@@ -131,6 +131,7 @@ class BinaryState : Any
     maide prusate Bool ResetStage()
     {
         this.Arg.Index : 0;
+        this.Arg.StringIndex : 0;
         this.Arg.StateIndex : 0;
         this.Arg.OperateIndex : 0;
         return true;
@@ -138,6 +139,8 @@ class BinaryState : Any
 
     maide prusate Bool ExecuteStage()
     {
+        this.ExecuteStringArray(this.StringArray);
+
         this.ExecuteCount(this.StateCount);
 
         var Iter iter;
