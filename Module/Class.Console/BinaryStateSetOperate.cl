@@ -9,6 +9,22 @@ class BinaryStateSetOperate : BinaryStateOperate
 
     field precate InfraInfra InfraInfra { get { return data; } set { data : value; } }
 
+    maide prusate Int ExecuteString()
+    {
+        var BinaryStateArg arg;
+        arg : this.State.Arg;
+
+        var Int index;
+        index : arg.StringIndex;
+
+        var Int a;
+        a : index;
+
+        index : index + 1;
+        arg.StringIndex : index;
+        return a;
+    }
+
     maide prusate Bool ExecuteTravelStart()
     {
         var BinaryStateArg arg;
