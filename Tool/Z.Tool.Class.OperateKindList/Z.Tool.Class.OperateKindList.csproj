@@ -8,6 +8,7 @@
 
     <ItemGroup>
         <ProjectReference Include="../../../Class/Tool/Z.Infra.ListSourceGen/Z.Infra.ListSourceGen.csproj" />
+        <ProjectReference Include="../../../Class/Tool/Z.Tool.Saber.OperateKindList/Z.Tool.Saber.OperateKindList.csproj" />
     </ItemGroup>
 
     <ItemGroup>
