@@ -56,6 +56,7 @@ class BinaryState : Any
 
     field prusate Module Module { get { return data; } set { data : value; } }
     field prusate Table IndexTable { get { return data; } set { data : value; } }
+    field prusate Array StringArray { get { return data; } set { data : value; } }
     field prusate Data Result { get { return data; } set { data : value; } }
     field prusate BinaryStateArg Arg { get { return data; } set { data : value; } }
     field prusate BinaryStateOperate Operate { get { return data; } set { data : value; } }
