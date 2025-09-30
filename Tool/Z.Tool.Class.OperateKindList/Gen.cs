@@ -37,9 +37,12 @@ public class Gen : SourceGen
         String index;
         index = this.StringCreate(ka);
 
+        String fieldName;
+        fieldName = index;
+
         if (this.TextSame(this.TA(index), this.TB(this.S("Get"))))
         {
-            index = this.AddClear().AddS("Item").Add(index).AddResult();
+            fieldName = this.AddClear().AddS("Item").Add(index).AddResult();
         }
 
         long arg;
@@ -48,7 +51,8 @@ public class Gen : SourceGen
         Value value;
         value = new Value();
         value.Init();
-        value.Int = arg;
+        value.Arg = arg;
+        value.FieldName = fieldName;
 
         ListEntry entry;
         entry = new ListEntry();
@@ -65,8 +69,36 @@ public class Gen : SourceGen
 
         this.AddS("AddItem")
             .AddS("(")
-            .AddInt(a.Int)
+            .AddInt(a.Arg)
             .AddS(")");
+        return true;
+    }
+
+    protected override bool AddInitField(String index, object value)
+    {
+        Value ka;
+        ka = value as Value;
+
+        this.AddIndent(2);
+
+        this.AddS("this").AddS(".").Add(ka.FieldName).AddS(" ").AddS(":").AddS(" ").AddS("this").AddS(".");
+
+        this.AddInitFieldAddItem(index, value);
+
+        this.AddS(";").AddLine();
+        return true;
+    }
+
+    protected override bool AddField(String index, object value)
+    {
+        Value ka;
+        ka = value as Value;
+
+        this.AddIndent(1)
+            .AddS("public").AddS(" ").AddS("virtual").AddS(" ")
+            .Add(this.ItemClassName).AddS(" ").Add(ka.FieldName).AddS(" ")
+            .AddS("{").AddS(" ").AddS("get").AddS(";").AddS(" ").AddS("set").AddS(";").AddS(" ").AddS("}")
+            .AddLine();
         return true;
     }
 }
