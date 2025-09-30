@@ -2,6 +2,10 @@ class BinaryStateOperate : Any
 {
     field prusate BinaryState State { get { return data; } set { data : value; } }
 
+    maide prusate Int ExecuteString()
+    {
+    }
+
     maide prusate Bool ExecuteTravelStart()
     {
     }
