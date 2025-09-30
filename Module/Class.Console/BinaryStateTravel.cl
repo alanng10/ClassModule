@@ -149,7 +149,7 @@ class BinaryStateTravel : Travel
         kk : varClass.FieldStart;
         kk : kk + varField.Index;
 
-        this.Ope(this.Kind.SetMark, kk, null);
+        this.Ope(this.Kind.Set, kk, null);
         return true;
     }
 
