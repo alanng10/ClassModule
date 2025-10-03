@@ -62,13 +62,13 @@ Class has park token.
 
 Class has park port.
 
-Class has park binary.
+Class has park binary. 
 
 Class has park infra.
 
 Class has park class.
 
-Class is did.
+Class is did. 
 
 Class has major.
 
