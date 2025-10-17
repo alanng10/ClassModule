@@ -43,8 +43,8 @@ class StringTravel : Travel
     field prusate StringOperate Operate { get { return data; } set { data : value; } }
     field prusate StringCountOperate CountOperate { get { return data; } set { data : value; } }
     field prusate StringSetOperate SetOperate { get { return data; } set { data : value; } }
-    protected virtual ListInfra ListInfra { get; set; }
-    protected virtual TableIter TableIter { get; set; }
+    field precate ListInfra ListInfra { get { return data; } set { data : value; } }
+    field precate TableIter TableIter { get { return data; } set { data : value; } }
 
     public virtual bool Execute()
     {
