@@ -70,7 +70,7 @@ class StringTravel : Travel
         return true;
     }
 
-    public virtual bool ResetStage()
+    maide prusate Bool ResetStage()
     {
         this.Arg.Index : 0;
         return true;
