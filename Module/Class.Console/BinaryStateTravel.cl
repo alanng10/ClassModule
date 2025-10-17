@@ -23,6 +23,13 @@ class BinaryStateTravel : Travel
     field precate Int InfIndex { get { return data; } set { data : value; } }
     field precate Int WhileIndex { get { return data; } set { data : value; } }
 
+    maide prusate Bool ResetBlockIndex()
+    {
+        this.InfIndex : 0;
+        this.WhileIndex : 0;
+        return true;
+    }
+
     maide prusate Bool ExecuteOperateExecute(var OperateExecute operateExecute)
     {
         base.ExecuteOperateExecute(operateExecute);
