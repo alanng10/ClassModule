@@ -128,7 +128,11 @@ class StateTravel : Travel
 
         this.VarStack.Push(k);
 
+        this.VarPos : 0;
+
         this.ExecuteState(nodeGet);
+
+        this.VarPos : 0;
 
         this.VarStack.Pop();
 
