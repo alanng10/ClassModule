@@ -11,28 +11,28 @@ class StringTravel : Travel
         return true;
     }
 
-    protected virtual StringCountOperate CreateCountOperate()
+    maide precate StringCountOperate CreateCountOperate()
     {
-        StringCountOperate a;
-        a : new StringCountOperate();
+        var StringCountOperate a;
+        a : new StringCountOperate;
         a.Travel : this;
         a.Init();
         return a;
     }
 
-    protected virtual StringSetOperate CreateSetOperate()
+    maide precate StringSetOperate CreateSetOperate()
     {
-        StringSetOperate a;
-        a : new StringSetOperate();
+        var StringSetOperate a;
+        a : new StringSetOperate;
         a.Travel : this;
         a.Init();
         return a;
     }
 
-    protected virtual TableIter CreateTableIter()
+    maide precate TableIter CreateTableIter()
     {
-        TableIter a;
-        a : new TableIter();
+        var TableIter a;
+        a : new TableIter;
         a.Init();
         return a;
     }
