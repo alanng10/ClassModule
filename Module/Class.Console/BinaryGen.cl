@@ -530,6 +530,7 @@ class BinaryGen : Any
     {
         this.BinaryState.Module : this.Module;
         this.BinaryState.IndexTable : this.IndexTable;
+        this.BinaryState.StringArray : this.StringArray;
 
         this.BinaryState.Execute();
 
@@ -538,6 +539,7 @@ class BinaryGen : Any
 
         this.BinaryState.Result : null;
 
+        this.BinaryState.StringArray : null;
         this.BinaryState.IndexTable : null;
         this.BinaryState.Module : null;
 
