@@ -105,6 +105,19 @@ class BinaryGen : Any
         return true;
     }
 
+    maide prusate Bool StringArraySet()
+    {
+        this.StringTravel.Module : this.Module;
+
+        this.StringTravel.Execute();
+
+        this.StringArray : this.StringTravel.Result;
+
+        this.StringTravel.Result : null;
+        this.StringTravel.Module : null;
+        return true;
+    }
+
     maide prusate Binary ExecuteBinary()
     {
         var Binary a;
