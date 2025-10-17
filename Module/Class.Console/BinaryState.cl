@@ -142,6 +142,8 @@ class BinaryState : Any
     {
         this.ExecuteStringArray(this.StringArray);
 
+        this.Travel.ResetBlockIndex();
+
         this.ExecuteCount(this.StateCount);
 
         var Iter iter;
