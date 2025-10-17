@@ -6,8 +6,17 @@ class BinaryGen : Any
         this.ListInfra : share ListInfra;
         this.ClassInfra : share ClassInfra;
 
+        this.StringTravel : this.CreateStringTravel();
         this.BinaryState : this.CreateBinaryState();
         return true;
+    }
+
+    maide precate StringTravel CreateStringTravel()
+    {
+        var StringTravel a;
+        a : new StringTravel;
+        a.Init();
+        return a;
     }
 
     maide precate BinaryState CreateBinaryState()
