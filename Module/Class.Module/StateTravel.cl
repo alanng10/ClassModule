@@ -309,7 +309,12 @@ class StateTravel : Travel
 
         this.VarStack.Push(k);
 
+        var Int pos;
+        pos : this.VarPos;
+
         base.ExecuteState(state);
+
+        this.VarPos : pos;
 
         this.VarStack.Pop();
 
