@@ -37,12 +37,12 @@ class StringTravel : Travel
         return a;
     }
 
-    public virtual ClassModule Module { get; set; }
-    public virtual Array Result { get; set; }
-    public virtual StringArg Arg { get; set; }
-    public virtual StringOperate Operate { get; set; }
-    public virtual StringCountOperate CountOperate { get; set; }
-    public virtual StringSetOperate SetOperate { get; set; }
+    field prusate Module Module { get { return data; } set { data : value; } }
+    field prusate Array Result { get { return data; } set { data : value; } }
+    field prusate StringArg Arg { get { return data; } set { data : value; } }
+    field prusate StringOperate Operate { get { return data; } set { data : value; } }
+    field prusate StringCountOperate CountOperate { get { return data; } set { data : value; } }
+    field prusate StringSetOperate SetOperate { get { return data; } set { data : value; } }
     protected virtual ListInfra ListInfra { get; set; }
     protected virtual TableIter TableIter { get; set; }
 
