@@ -20,6 +20,8 @@ class BinaryStateTravel : Travel
     field prusate BinaryState State { get { return data; } set { data : value; } }
     field precate BinaryOperateKindList Kind { get { return data; } set { data : value; } }
     field precate BinaryOperate Operate { get { return data; } set { data : value; } }
+    field precate Int InfIndex { get { return data; } set { data : value; } }
+    field precate Int WhileIndex { get { return data; } set { data : value; } }
 
     maide prusate Bool ExecuteOperateExecute(var OperateExecute operateExecute)
     {
