@@ -98,7 +98,7 @@ class StringTravel : Travel
         return true;
     }
 
-    public override bool ExecuteStringValue(StringValue stringValue)
+    maide prusate Bool ExecuteStringValue(var StringValue stringValue)
     {
         this.Operate.ExecuteString(stringValue.Value);
         return true;
