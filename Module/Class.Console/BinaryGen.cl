@@ -22,8 +22,10 @@ class BinaryGen : Any
     field prusate Binary Result { get { return data; } set { data : value; } }
     field precate ListInfra ListInfra { get { return data; } set { data : value; } }
     field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
+    field precate StringTravel StringTravel { get { return data; } set { data : value; } }
     field precate BinaryState BinaryState { get { return data; } set { data : value; } }
     field precate Table IndexTable { get { return data; } set { data : value; } }
+    field precate Array StringArray { get { return data; } set { data : value; } }
 
     maide prusate Bool Execute()
     {
