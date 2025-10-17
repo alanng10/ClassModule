@@ -109,15 +109,20 @@ class BinaryStateTravel : Travel
         var State loop;
         loop : whileExecute.Loop;
 
-        this.Ope(this.Kind.WhileStart, null, null);
+        var Int index;
+        index : this.WhileIndex;
+
+        this.WhileIndex : index + 1;
+
+        this.Ope(this.Kind.WhileStart, index, null);
 
         this.ExecuteOperate(cond);
 
-        this.Ope(this.Kind.While, null, null);
+        this.Ope(this.Kind.While, index, null);
 
         this.ExecuteState(loop);
 
-        this.Ope(this.Kind.WhileEnd, null, null);
+        this.Ope(this.Kind.WhileEnd, index, null);
         return true;
     }
 
