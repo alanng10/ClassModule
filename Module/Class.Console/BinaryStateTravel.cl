@@ -223,6 +223,8 @@ class BinaryStateTravel : Travel
 
     maide prusate Bool ExecuteCastOperate(var CastOperate castOperate)
     {
+        base.ExecuteCastOperate(castOperate);
+
         var Class ka;
         ka : this.Info(castOperate).OperateClass;
 
