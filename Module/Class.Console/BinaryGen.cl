@@ -28,11 +28,15 @@ class BinaryGen : Any
     maide prusate Bool Execute()
     {
         this.IndexTableSet();
-        
+
+        this.StringArraySet();
+
         var Binary a;
         a : this.ExecuteBinary();
 
         this.Result : a;
+
+        this.StringArray : null;
 
         this.IndexTable : null;
         return true;
