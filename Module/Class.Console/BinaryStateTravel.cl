@@ -184,7 +184,7 @@ class BinaryStateTravel : Travel
         var Var varVar;
         varVar : this.Info(varOperate).Var;
 
-        this.Ope(this.Kind.Var, varVar.Index, null);
+        this.Ope(this.Kind.Var, varVar.Index, varVar.Pos);
         return true;
     }
 
@@ -193,7 +193,7 @@ class BinaryStateTravel : Travel
         var Var varVar;
         varVar : this.Info(varMark).Var;
 
-        this.Ope(this.Kind.VarMark, varVar.Index, null);
+        this.Ope(this.Kind.VarMark, varVar.Index, varVar.Pos);
         return true;
     }
 
