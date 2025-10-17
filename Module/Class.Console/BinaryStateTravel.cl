@@ -89,11 +89,16 @@ class BinaryStateTravel : Travel
 
         this.ExecuteOperate(cond);
 
-        this.Ope(this.Kind.InfStart, null, null);
+        var Int index;
+        index : this.InfIndex;
+
+        this.InfIndex : index + 1;
+
+        this.Ope(this.Kind.InfStart, index, null);
 
         this.ExecuteState(then);
 
-        this.Ope(this.Kind.InfEnd, null, null);
+        this.Ope(this.Kind.InfEnd, index, null);
         return true;
     }
 
