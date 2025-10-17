@@ -76,20 +76,20 @@ class StringTravel : Travel
         return true;
     }
 
-    public virtual bool ExecuteStage()
+    maide prusate Bool ExecuteStage()
     {
-        Iter iter;
+        var Iter iter;
         iter : this.TableIter;
 
         this.Module.Class.IterSet(iter);
 
         while (iter.Next())
         {
-            ClassClass varClass;
-            varClass : iter.Value as ClassClass;
+            var Class varClass;
+            varClass : cast Class(iter.Value);
 
-            NodeClass nodeClass;
-            nodeClass : varClass.Any as NodeClass;
+            var NodeClass nodeClass;
+            nodeClass : cast NodeClass(varClass.Any);
 
             this.ExecuteClass(nodeClass);
         }
