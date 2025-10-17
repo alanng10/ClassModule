@@ -46,9 +46,9 @@ class StringTravel : Travel
     field precate ListInfra ListInfra { get { return data; } set { data : value; } }
     field precate TableIter TableIter { get { return data; } set { data : value; } }
 
-    public virtual bool Execute()
+    maide prusate Bool Execute()
     {
-        this.Arg : new StringArg();
+        this.Arg : new StringArg;
         this.Arg.Init();
 
         this.Operate : this.CountOperate;
