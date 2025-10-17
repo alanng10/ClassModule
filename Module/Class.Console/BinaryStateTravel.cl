@@ -45,7 +45,7 @@ class BinaryStateTravel : Travel
         var Var varVar;
         varVar : this.Info(nodeVar).Var;
 
-        this.Ope(this.Kind.Refer, varVar.Index, null);
+        this.Ope(this.Kind.Refer, varVar.Index, varVar.Pos);
         return true;
     }
 
