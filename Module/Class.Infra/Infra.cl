@@ -124,8 +124,8 @@ class Infra : Any
 
     maide prusate String VerString(var Int value)
     {
-        var Int revise;
-        revise : bit &(value, 0hff);
+        var Int melor;
+        melor : bit &(value, 0hff);
 
         var Int minor;
         minor : bit &(bit >(value, 8), 0hff);
@@ -150,7 +150,7 @@ class Infra : Any
 
         var Text kd;
 
-        arg.Value : revise;
+        arg.Value : melor;
 
         format.ExecuteArgCount(arg);
 
