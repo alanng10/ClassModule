@@ -1102,16 +1102,16 @@ class Read : TextAdd
         range.Index : index + kb;
         range.Count : kaa;
 
-        var Int revise;
-        revise : this.IntText(text, 10);
-        inf (revise = null)
+        var Int melor;
+        melor : this.IntText(text, 10);
+        inf (melor = null)
         {
             return null;
         }
 
         var Int k;
         k : 0;
-        k : bit |(k, revise);
+        k : bit |(k, melor);
         k : bit |(k, bit <(minor, 8));
         k : bit |(k, bit <(major, 16));
 
