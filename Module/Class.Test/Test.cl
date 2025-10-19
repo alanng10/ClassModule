@@ -430,7 +430,7 @@ class Test : TextAdd
     maide precate Array FoldList(var String foldPath)
     {
         var Array a;
-        a : this.StorageComp.EntryList(foldPath, true);
+        a : this.StorageComp.EntryInfoList(foldPath, true, false);
         return a;
     }
 }
