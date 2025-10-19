@@ -15,7 +15,6 @@ System.List
     Iter Iter
     ListInfra Infra
 System.Storage
-    StorageComp Comp
     StorageInfra Infra
 System.Console
     Console Console
@@ -24,6 +23,8 @@ System.Entry
     EntryEntry Entry
 Text.Text:0.00.00
     TextAdd Add
+Storage.Storage
+    StorageComp Comp
 Class.Infra:0.00.00
     ClassInfra Infra
 Class.Console:0.00.00
