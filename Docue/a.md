@@ -68,7 +68,7 @@ Class has park infra.
 
 Class has park class.
 
-Class is did.
+Class is did. 
 
 Class has major.
 
