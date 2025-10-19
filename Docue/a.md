@@ -50,23 +50,23 @@ Class has park kind arch marry.
 
 Class has park kind arch land.
 
-Class has park create.
+Class has park create. 
 
-Class has park console.
+Class has park console. 
 
-Class has park module.
+Class has park module. 
 
-Class has park node.
+Class has park node. 
 
-Class has park token.
+Class has park token. 
 
-Class has park port.
+Class has park port. 
 
 Class has park binary.
 
-Class has park infra.
+Class has park infra. 
 
-Class has park class.
+Class has park class. 
 
 Class is did.
 
