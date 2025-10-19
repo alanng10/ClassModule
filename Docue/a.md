@@ -70,6 +70,6 @@ Class has park class.
 
 Class is did.
 
-Class has major. 
+Class has major.
 
-Class has major on develop. 
+Class has major on develop.
