@@ -174,22 +174,22 @@ class Test : TextAdd
             var String kindFold;
             kindFold : this.AddClear().Add(setFold).Add(combine).Add(kind).AddResult();
 
-            var Array unitList;
-            unitList : this.FoldList(kindFold);
+            var Array caseList;
+            caseList : this.FoldList(kindFold);
 
-            var Iter unitIter;
-            unitIter : unitList.IterCreate();
-            unitList.IterSet(unitIter);
-            while (unitIter.Next())
+            var Iter caseIter;
+            caseIter : caseList.IterCreate();
+            caseList.IterSet(caseIter);
+            while (caseIter.Next())
             {
-                var String unit;
-                unit : cast String(unitIter.Value);
+                var String case;
+                case : cast String(caseIter.Value);
 
-                var String unitFold;
-                unitFold : this.AddClear().Add(kindFold).Add(combine).Add(unit).AddResult();
+                var String caseFold;
+                caseFold : this.AddClear().Add(kindFold).Add(combine).Add(case).AddResult();
 
                 var String expectFile;
-                expectFile : this.AddClear().Add(unitFold).Add(combine).Add("Expect").AddResult();
+                expectFile : this.AddClear().Add(caseFold).Add(combine).Add("Expect").AddResult();
 
                 var String expect;
                 expect : this.StorageInfra.TextRead(expectFile);
@@ -201,7 +201,7 @@ class Test : TextAdd
                 a.Init();
                 a.Set : this.Set;
                 a.Kind : kind;
-                a.Name : unit;
+                a.Name : case;
                 a.Expect : expect;
                 a.Path : path;
                 this.CaseList.Add(a);
@@ -296,7 +296,7 @@ class Test : TextAdd
         return true;
     }
 
-    maide precate Bool WriteResultLine(var Bool pass, var String varSet, var String kind, var String unit)
+    maide precate Bool WriteResultLine(var Bool pass, var String varSet, var String kind, var String case)
     {
         var String a;
 
@@ -318,7 +318,7 @@ class Test : TextAdd
         k : this.StringTextFormat(this.TA(kind), true, 24, null, this.Char(" "));
 
         var String j;
-        j : unit;
+        j : case;
 
         var Int n;
         n : this.CaseIndex;
@@ -341,11 +341,11 @@ class Test : TextAdd
     {
         var String k;
 
-        var Int unitCount;
-        unitCount : this.CaseIndex;
+        var Int caseCount;
+        caseCount : this.CaseIndex;
 
         var Bool b;
-        b : this.PassCount = unitCount;
+        b : this.PassCount = caseCount;
         inf (b)
         {
             k : "All";
