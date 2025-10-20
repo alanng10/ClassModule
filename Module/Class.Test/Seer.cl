@@ -1,4 +1,4 @@
-class Set : Any
+class Seer : Any
 {
     field prusate String Name { get { return data; } set { data : value; } }
     field prusate TaskKind TaskKind { get { return data; } set { data : value; } }
