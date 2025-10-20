@@ -12,11 +12,11 @@ class Test : TextAdd
 
         this.Console : this.CreateConsole();
         this.LangName : this.CreateLangName();
-        this.SetTable : this.CreateSetTable();
+        this.SeerTable : this.CreateSeerTable();
         this.DataFold : this.CreateDataFold();
         this.ResultSpace : this.CreateResultSpace();
 
-        this.AddSetList();
+        this.AddSeerList();
         return true;
     }
 
@@ -33,7 +33,7 @@ class Test : TextAdd
         return "Class";
     }
 
-    maide precate Table CreateSetTable()
+    maide precate Table CreateSeerTable()
     {
         return this.ClassInfra.TableCreateStringLess();
     }
@@ -57,8 +57,8 @@ class Test : TextAdd
     field precate String LangName { get { return data; } set { data : value; } }
     field precate String DataFold { get { return data; } set { data : value; } }
     field precate List CaseList { get { return data; } set { data : value; } }
-    field precate Table SetTable { get { return data; } set { data : value; } }
-    field precate Set Set { get { return data; } set { data : value; } }
+    field precate Table SeerTable { get { return data; } set { data : value; } }
+    field precate Seer Seer { get { return data; } set { data : value; } }
     field precate Case Case { get { return data; } set { data : value; } }
     field precate Int PassCount { get { return data; } set { data : value; } }
     field precate ClassConsole Console { get { return data; } set { data : value; } }
@@ -75,18 +75,18 @@ class Test : TextAdd
         return "../../Saber/SaberTest/Test";
     }
 
-    maide precate Bool AddSetList()
+    maide precate Bool AddSeerList()
     {
-        this.AddSet("Token", this.TaskKindList.Token, false, false, false);
+        this.AddSeer("Token", this.TaskKindList.Token, false, false, false);
 
-        this.AddSet("Node", this.TaskKindList.Node, true, false, false);
+        this.AddSeer("Node", this.TaskKindList.Node, true, false, false);
         return true;
     }
 
-    maide precate Bool AddSet(var String name, var TaskKind taskKind, var Bool addKindAfterTaskArg, var Bool addPathAfterTaskArg, var Bool sourceFold)
+    maide precate Bool AddSeer(var String name, var TaskKind taskKind, var Bool addKindAfterTaskArg, var Bool addPathAfterTaskArg, var Bool sourceFold)
     {
-        var Set k;
-        k : new Set;
+        var Seer k;
+        k : new Seer;
         k.Init();
         k.Name : name;
         k.TaskKind : taskKind;
@@ -94,7 +94,7 @@ class Test : TextAdd
         k.AddPathAfterTaskArg : addPathAfterTaskArg;
         k.SourceFold : sourceFold;
 
-        this.ListInfra.TableAdd(this.SetTable, k.Name, k);
+        this.ListInfra.TableAdd(this.SeerTable, k.Name, k);
         return true;
     }
 
@@ -124,29 +124,29 @@ class Test : TextAdd
             return 700;
         }
 
-        this.ExecuteSetList();
+        this.ExecuteSeerList();
         return 0;
     }
 
-    maide precate Bool ExecuteSetList()
+    maide precate Bool ExecuteSeerList()
     {
         var Iter iter;
-        iter : this.SetTable.IterCreate();
-        this.SetTable.IterSet(iter);
+        iter : this.SeerTable.IterCreate();
+        this.SeerTable.IterSet(iter);
         while (iter.Next())
         {
-            this.Set : cast Set(iter.Value);
+            this.Seer : cast Seer(iter.Value);
 
-            this.AddSetCaseList();
+            this.AddSeerCaseList();
 
-            this.ExecuteSet();
+            this.ExecuteSeer();
 
-            this.Set : null;
+            this.Seer : null;
         }
         return true;
     }
 
-    maide precate Bool AddSetCaseList()
+    maide precate Bool AddSeerCaseList()
     {
         this.CaseList : new List;
         this.CaseList.Init();
@@ -154,11 +154,11 @@ class Test : TextAdd
         var String combine;
         combine : this.TextInfra.PathCombine;
 
-        var String varSet;
-        varSet : this.Set.Name;
+        var String varSeer;
+        varSeer : this.Seer.Name;
 
         var String setFold;
-        setFold : this.AddClear().Add(this.DataFold).Add(combine).Add(varSet).AddResult();
+        setFold : this.AddClear().Add(this.DataFold).Add(combine).Add(varSeer).AddResult();
 
         var Array kindList;
         kindList : this.FoldList(setFold);
@@ -199,7 +199,7 @@ class Test : TextAdd
                 var Case a;
                 a : new Case;
                 a.Init();
-                a.Set : this.Set;
+                a.Seer : this.Seer;
                 a.Kind : kind;
                 a.Name : case;
                 a.Expect : expect;
@@ -210,9 +210,9 @@ class Test : TextAdd
         return true;
     }
 
-    maide precate Bool ExecuteSet()
+    maide precate Bool ExecuteSeer()
     {
-        this.WriteHead(this.Set.Name);
+        this.WriteHead(this.Seer.Name);
 
         this.PassCount : 0;
         this.CaseIndex : 0;
@@ -248,7 +248,7 @@ class Test : TextAdd
         combine : this.TextInfra.PathCombine;
 
         this.CaseFold : this.AddClear().Add(this.DataFold).Add(combine)
-            .Add(this.Case.Set.Name).Add(combine)
+            .Add(this.Case.Seer.Name).Add(combine)
             .Add(this.Case.Kind).Add(combine)
             .Add(this.Case.Name).AddResult();
 
@@ -292,11 +292,11 @@ class Test : TextAdd
 
     maide precate Bool WriteCaseResult()
     {
-        this.WriteResultLine(this.CasePass, this.Case.Set.Name, this.Case.Kind, this.Case.Name);
+        this.WriteResultLine(this.CasePass, this.Case.Seer.Name, this.Case.Kind, this.Case.Name);
         return true;
     }
 
-    maide precate Bool WriteResultLine(var Bool pass, var String varSet, var String kind, var String case)
+    maide precate Bool WriteResultLine(var Bool pass, var String varSeer, var String kind, var String case)
     {
         var String a;
 
@@ -312,7 +312,7 @@ class Test : TextAdd
         }
 
         var String u;
-        u : this.StringTextFormat(this.TA(varSet), true, 8, null, this.Char(" "));
+        u : this.StringTextFormat(this.TA(varSeer), true, 8, null, this.Char(" "));
 
         var String k;
         k : this.StringTextFormat(this.TA(kind), true, 24, null, this.Char(" "));
@@ -390,10 +390,10 @@ class Test : TextAdd
         var Task task;
         task : new Task;
         task.Init();
-        task.Kind : this.Case.Set.TaskKind;
+        task.Kind : this.Case.Seer.TaskKind;
 
         var Bool ba;
-        ba : this.Set.AddKindAfterTaskArg;
+        ba : this.Seer.AddKindAfterTaskArg;
         inf (ba)
         {
             task.Node : this.Case.Kind;
@@ -408,7 +408,7 @@ class Test : TextAdd
         var String source;
         
         var Bool b;
-        b : this.Set.SourceFold;
+        b : this.Seer.SourceFold;
         inf (b)
         {
             source : "Source";
