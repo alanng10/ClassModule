@@ -171,11 +171,11 @@ class Test : TextAdd
             var String kind;
             kind : cast String(kindIter.Value);
 
-            var String kindFold;
-            kindFold : this.AddClear().Add(seerFoldPath).Add(combine).Add(kind).AddResult();
+            var String kindFoldPath;
+            kindFoldPath : this.AddClear().Add(seerFoldPath).Add(combine).Add(kind).AddResult();
 
             var Array caseList;
-            caseList : this.FoldList(kindFold);
+            caseList : this.FoldList(kindFoldPath);
 
             var Iter caseIter;
             caseIter : caseList.IterCreate();
@@ -186,7 +186,7 @@ class Test : TextAdd
                 case : cast String(caseIter.Value);
 
                 var String caseFold;
-                caseFold : this.AddClear().Add(kindFold).Add(combine).Add(case).AddResult();
+                caseFold : this.AddClear().Add(kindFoldPath).Add(combine).Add(case).AddResult();
 
                 var String expectFile;
                 expectFile : this.AddClear().Add(caseFold).Add(combine).Add("Expect").AddResult();
