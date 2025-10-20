@@ -23,7 +23,7 @@ System.Entry
     EntryEntry Entry
 Text.Text:0.00.00
     TextAdd Add
-Storage.Storage
+Storage.Storage:0.00.00
     StorageComp Comp
     StorageEntry Entry
 Class.Infra:0.00.00
