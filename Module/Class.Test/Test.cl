@@ -185,14 +185,17 @@ class Test : TextAdd
             caseList.IterSet(caseIter);
             while (caseIter.Next())
             {
-                var String case;
-                case : cast String(caseIter.Value);
+                var StorageEntry caseFold;
+                caseFold : cast StorageEntry(caseIter.Value);
 
-                var String caseFold;
-                caseFold : this.AddClear().Add(kindFoldPath).Add(combine).Add(case).AddResult();
+                var String case;
+                case : caseFold.Name;
+
+                var String caseFoldPath;
+                caseFoldPath : this.AddClear().Add(kindFoldPath).Add(combine).Add(case).AddResult();
 
                 var String expectFile;
-                expectFile : this.AddClear().Add(caseFold).Add(combine).Add("Expect").AddResult();
+                expectFile : this.AddClear().Add(caseFoldPath).Add(combine).Add("Expect").AddResult();
 
                 var String expect;
                 expect : this.StorageInfra.TextRead(expectFile);
