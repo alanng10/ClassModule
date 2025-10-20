@@ -56,19 +56,19 @@ class Test : TextAdd
     field precate TaskKindList TaskKindList { get { return data; } set { data : value; } }
     field precate String LangName { get { return data; } set { data : value; } }
     field precate String DataFold { get { return data; } set { data : value; } }
-    field precate List UnitList { get { return data; } set { data : value; } }
+    field precate List CaseList { get { return data; } set { data : value; } }
     field precate Table SetTable { get { return data; } set { data : value; } }
     field precate Set Set { get { return data; } set { data : value; } }
-    field precate Unit Unit { get { return data; } set { data : value; } }
+    field precate Case Case { get { return data; } set { data : value; } }
     field precate Int PassCount { get { return data; } set { data : value; } }
     field precate ClassConsole Console { get { return data; } set { data : value; } }
-    field precate String UnitFold { get { return data; } set { data : value; } }
+    field precate String CaseFold { get { return data; } set { data : value; } }
     field precate StringOut Out { get { return data; } set { data : value; } }
     field precate StringOut Err { get { return data; } set { data : value; } }
     field precate String InitThisFold { get { return data; } set { data : value; } }
     field precate String ResultSpace { get { return data; } set { data : value; } }
-    field precate Int UnitIndex { get { return data; } set { data : value; } }
-    field precate Bool UnitPass { get { return data; } set { data : value; } }
+    field precate Int CaseIndex { get { return data; } set { data : value; } }
+    field precate Bool CasePass { get { return data; } set { data : value; } }
 
     maide precate String DataRootFold()
     {
@@ -137,7 +137,7 @@ class Test : TextAdd
         {
             this.Set : cast Set(iter.Value);
 
-            this.AddSetUnitList();
+            this.AddSetCaseList();
 
             this.ExecuteSet();
 
@@ -146,10 +146,10 @@ class Test : TextAdd
         return true;
     }
 
-    maide precate Bool AddSetUnitList()
+    maide precate Bool AddSetCaseList()
     {
-        this.UnitList : new List;
-        this.UnitList.Init();
+        this.CaseList : new List;
+        this.CaseList.Init();
 
         var String combine;
         combine : this.TextInfra.PathCombine;
@@ -196,15 +196,15 @@ class Test : TextAdd
 
                 var String path;
 
-                var Unit a;
-                a : new Unit;
+                var Case a;
+                a : new Case;
                 a.Init();
                 a.Set : this.Set;
                 a.Kind : kind;
                 a.Name : unit;
                 a.Expect : expect;
                 a.Path : path;
-                this.UnitList.Add(a);
+                this.CaseList.Add(a);
             }
         }
         return true;
@@ -215,24 +215,24 @@ class Test : TextAdd
         this.WriteHead(this.Set.Name);
 
         this.PassCount : 0;
-        this.UnitIndex : 0;
+        this.CaseIndex : 0;
 
         var Iter iter;
-        iter : this.UnitList.IterCreate();
-        this.UnitList.IterSet(iter);
+        iter : this.CaseList.IterCreate();
+        this.CaseList.IterSet(iter);
         while (iter.Next())
         {
-            this.Unit : cast Unit(iter.Value);
+            this.Case : cast Case(iter.Value);
 
-            this.ExecuteUnit();
+            this.ExecuteCase();
 
-            this.WriteUnitResult();
+            this.WriteCaseResult();
 
-            this.Unit : null;
+            this.Case : null;
 
-            this.UnitIndex : this.UnitIndex + 1;
+            this.CaseIndex : this.CaseIndex + 1;
 
-            inf (this.UnitPass)
+            inf (this.CasePass)
             {
                 this.PassCount : this.PassCount + 1;
             }
@@ -242,22 +242,22 @@ class Test : TextAdd
         return true;
     }
 
-    maide precate Bool ExecuteUnit()
+    maide precate Bool ExecuteCase()
     {
         var String combine;
         combine : this.TextInfra.PathCombine;
 
-        this.UnitFold : this.AddClear().Add(this.DataFold).Add(combine)
-            .Add(this.Unit.Set.Name).Add(combine)
-            .Add(this.Unit.Kind).Add(combine)
-            .Add(this.Unit.Name).AddResult();
+        this.CaseFold : this.AddClear().Add(this.DataFold).Add(combine)
+            .Add(this.Case.Set.Name).Add(combine)
+            .Add(this.Case.Kind).Add(combine)
+            .Add(this.Case.Name).AddResult();
 
         this.Out : new StringOut;
         this.Out.Init();
         this.Err : new StringOut;
         this.Err.Init();
 
-        this.StorageComp.ThisFoldSet(this.UnitFold);
+        this.StorageComp.ThisFoldSet(this.CaseFold);
 
         var Task task;
         task : this.CreateTask();
@@ -277,22 +277,22 @@ class Test : TextAdd
         actual : this.AddClear().Add(actualErr).Add(actualOut).AddResult();
 
         var String actualFile;
-        actualFile : this.AddClear().Add(this.UnitFold).Add(combine).Add("Actual").AddResult();
+        actualFile : this.AddClear().Add(this.CaseFold).Add(combine).Add("Actual").AddResult();
 
         this.StorageInfra.TextWrite(actualFile, actual);
 
-        this.Unit.Actual : actual;
+        this.Case.Actual : actual;
 
         var Bool pass;
-        pass : this.TextSame(this.TA(this.Unit.Actual), this.TB(this.Unit.Expect));
+        pass : this.TextSame(this.TA(this.Case.Actual), this.TB(this.Case.Expect));
 
-        this.UnitPass : pass;
+        this.CasePass : pass;
         return true;
     }
 
-    maide precate Bool WriteUnitResult()
+    maide precate Bool WriteCaseResult()
     {
-        this.WriteResultLine(this.UnitPass, this.Unit.Set.Name, this.Unit.Kind, this.Unit.Name);
+        this.WriteResultLine(this.CasePass, this.Case.Set.Name, this.Case.Kind, this.Case.Name);
         return true;
     }
 
@@ -321,7 +321,7 @@ class Test : TextAdd
         j : unit;
 
         var Int n;
-        n : this.UnitIndex;
+        n : this.CaseIndex;
 
         var String p;
         p : this.StringIntFormat(n, 10, false, 3, null, this.Char("0"));
@@ -342,7 +342,7 @@ class Test : TextAdd
         var String k;
 
         var Int unitCount;
-        unitCount : this.UnitIndex;
+        unitCount : this.CaseIndex;
 
         var Bool b;
         b : this.PassCount = unitCount;
@@ -390,13 +390,13 @@ class Test : TextAdd
         var Task task;
         task : new Task;
         task.Init();
-        task.Kind : this.Unit.Set.TaskKind;
+        task.Kind : this.Case.Set.TaskKind;
 
         var Bool ba;
         ba : this.Set.AddKindAfterTaskArg;
         inf (ba)
         {
-            task.Node : this.Unit.Kind;
+            task.Node : this.Case.Kind;
         }
         inf (~ba)
         {
