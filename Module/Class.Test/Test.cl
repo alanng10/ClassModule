@@ -154,11 +154,11 @@ class Test : TextAdd
         var String combine;
         combine : this.TextInfra.PathCombine;
 
-        var String varSeer;
-        varSeer : this.Seer.Name;
+        var String seer;
+        seer : this.Seer.Name;
 
         var String setFold;
-        setFold : this.AddClear().Add(this.DataFold).Add(combine).Add(varSeer).AddResult();
+        setFold : this.AddClear().Add(this.DataFold).Add(combine).Add(seer).AddResult();
 
         var Array kindList;
         kindList : this.FoldList(setFold);
@@ -296,7 +296,7 @@ class Test : TextAdd
         return true;
     }
 
-    maide precate Bool WriteResultLine(var Bool pass, var String varSeer, var String kind, var String case)
+    maide precate Bool WriteResultLine(var Bool pass, var String seer, var String kind, var String case)
     {
         var String a;
 
@@ -312,7 +312,7 @@ class Test : TextAdd
         }
 
         var String u;
-        u : this.StringTextFormat(this.TA(varSeer), true, 8, null, this.Char(" "));
+        u : this.StringTextFormat(this.TA(seer), true, 8, null, this.Char(" "));
 
         var String k;
         k : this.StringTextFormat(this.TA(kind), true, 24, null, this.Char(" "));
