@@ -157,11 +157,11 @@ class Test : TextAdd
         var String seer;
         seer : this.Seer.Name;
 
-        var String setFold;
-        setFold : this.AddClear().Add(this.DataFold).Add(combine).Add(seer).AddResult();
+        var String seerFold;
+        seerFold : this.AddClear().Add(this.DataFold).Add(combine).Add(seer).AddResult();
 
         var Array kindList;
-        kindList : this.FoldList(setFold);
+        kindList : this.FoldList(seerFold);
 
         var Iter kindIter;
         kindIter : kindList.IterCreate();
@@ -172,7 +172,7 @@ class Test : TextAdd
             kind : cast String(kindIter.Value);
 
             var String kindFold;
-            kindFold : this.AddClear().Add(setFold).Add(combine).Add(kind).AddResult();
+            kindFold : this.AddClear().Add(seerFold).Add(combine).Add(kind).AddResult();
 
             var Array caseList;
             caseList : this.FoldList(kindFold);
