@@ -168,8 +168,11 @@ class Test : TextAdd
         kindList.IterSet(kindIter);
         while (kindIter.Next())
         {
+            var StorageEntry kindFold;
+            kindFold : cast StorageEntry(kindIter.Value);
+
             var String kind;
-            kind : cast String(kindIter.Value);
+            kind : kindFold.Name;
 
             var String kindFoldPath;
             kindFoldPath : this.AddClear().Add(seerFoldPath).Add(combine).Add(kind).AddResult();
