@@ -25,6 +25,7 @@ Text.Text:0.00.00
     TextAdd Add
 Storage.Storage
     StorageComp Comp
+    StorageEntry Entry
 Class.Infra:0.00.00
     ClassInfra Infra
 Class.Console:0.00.00
