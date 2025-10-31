@@ -84,73 +84,73 @@ class PortLoad : TextAdd
         bool b;
 
         b : this.ValidModuleRef(port.Module);
-        if (~b)
+        inf (~b)
         {
             return false;
         }
 
         b : this.ValidImportModuleRef(port.Import);
-        if (~b)
+        inf (~b)
         {
             return false;
         }
 
         b : this.ExecuteModuleRef();
-        if (~b)
+        inf (~b)
         {
             return false;
         }
 
         b : this.ExecuteImportModuleRef();
-        if (~b)
+        inf (~b)
         {
             return false;
         }
 
         b : this.ExecuteBinaryLoad();
-        if (~b)
+        inf (~b)
         {
             return false;
         }
 
         b : this.ExecuteDepend();
-        if (~b)
+        inf (~b)
         {
             return false;
         }
 
         b : this.ExecuteModulePort();
-        if (~b)
+        inf (~b)
         {
             return false;
         }
 
         b : this.ExecuteCreateModule();
-        if (~b)
+        inf (~b)
         {
             return false;
         }
 
         b : this.ExecuteImport();
-        if (~b)
+        inf (~b)
         {
             return false;
         }
 
         b : this.ExecuteExport();
-        if (~b)
+        inf (~b)
         {
             return false;
         }
 
         b : this.ExecuteStorage();
-        if (~b)
+        inf (~b)
         {
             return false;
         }
 
         b : this.ExecuteEntry();
-        if (~b)
+        inf (~b)
         {
             return false;
         }
@@ -166,7 +166,7 @@ class PortLoad : TextAdd
         ModuleRef k;
         k : this.ClassInfra.ModuleRefCreate(ka.Name, ka.Ver);
 
-        if (this.SystemModule)
+        inf (this.SystemModule)
         {
             k.Ver : 0;
         }
@@ -203,7 +203,7 @@ class PortLoad : TextAdd
             name : k.Name;
             long ver;
             ver : k.Ver;
-            if (ver = -1)
+            inf (ver = -1)
             {
                 ver : 0;
             }
@@ -211,7 +211,7 @@ class PortLoad : TextAdd
             ModuleRef a;
             a : this.ClassInfra.ModuleRefCreate(name, ver);
 
-            if (table.Valid(a))
+            inf (table.Valid(a))
             {
                 this.Status : 30;
                 return false;
@@ -235,21 +235,21 @@ class PortLoad : TextAdd
         long ver;
         ver : module.Ver;
 
-        if (~(this.NameValid.ModuleName(this.TA(name))))
+        inf (~(this.NameValid.ModuleName(this.TA(name))))
         {
             this.Status : 1;
             return false;
         }
 
-        if (~this.SystemModule)
+        inf (~this.SystemModule)
         {
-            if (ver = -1)
+            inf (ver = -1)
             {
                 this.Status : 2;
                 return false;
             }
 
-            if (this.BuiltModuleRef(module))
+            inf (this.BuiltModuleRef(module))
             {
                 this.Status : 3;
                 return false;
@@ -271,7 +271,7 @@ class PortLoad : TextAdd
             PortImport a;
             a : array.GetAt(i) as PortImport;
 
-            if (~this.ValidImportModuleRefOne(a.Module))
+            inf (~this.ValidImportModuleRefOne(a.Module))
             {
                 this.Status : 10;
                 return false;
@@ -289,7 +289,7 @@ class PortLoad : TextAdd
         long ver;
         ver : moduleRef.Ver;
 
-        if (~(this.NameValid.ModuleName(this.TA(name))))
+        inf (~(this.NameValid.ModuleName(this.TA(name))))
         {
             return false;
         }
@@ -324,7 +324,7 @@ class PortLoad : TextAdd
 
             bool b;
             b : this.BinaryLoadRecurse(a);
-            if (~b)
+            inf (~b)
             {
                 String k;
                 k : this.ModuleRefString(a);
@@ -342,14 +342,14 @@ class PortLoad : TextAdd
 
     protected virtual bool BinaryLoadRecurse(ModuleRef moduleRef)
     {
-        if (this.BinaryTable.Valid(moduleRef))
+        inf (this.BinaryTable.Valid(moduleRef))
         {
             return true;
         }
 
         BinaryBinary binary;
         binary : this.BinaryLoad(moduleRef);
-        if (binary = null)
+        inf (binary = null)
         {
             return false;
         }
@@ -369,7 +369,7 @@ class PortLoad : TextAdd
 
             bool b;
             b : this.BinaryLoadRecurse(import.Module);
-            if (~b)
+            inf (~b)
             {
                 return false;
             }
@@ -395,7 +395,7 @@ class PortLoad : TextAdd
         Data data;
         data : this.StorageInfra.DataRead(filePath);
 
-        if (data = null)
+        inf (data = null)
         {
             return null;
         }
@@ -423,7 +423,7 @@ class PortLoad : TextAdd
         ModuleRef ka;
         ka : this.ModuleRef;
 
-        if (this.BinaryTable.Valid(ka))
+        inf (this.BinaryTable.Valid(ka))
         {
             String k;
             k : this.ModuleRefString(ka);
@@ -460,7 +460,7 @@ class PortLoad : TextAdd
             bool b;
             b : modulePort.Execute();
 
-            if (~b)
+            inf (~b)
             {
                 long ka;
                 ka : modulePort.Status;
@@ -569,40 +569,40 @@ class PortLoad : TextAdd
                 bool ba;
                 ba : false;
 
-                if (~ba)
+                inf (~ba)
                 {
-                    if (~this.NameValid.Name(this.TA(className)))
+                    inf (~this.NameValid.Name(this.TA(className)))
                     {
                         ba : true;
                     }
                 }
 
-                if (~ba)
+                inf (~ba)
                 {
                     varClass : module.Class.Get(className) as ClassClass;
 
-                    if (varClass = null)
+                    inf (varClass = null)
                     {
                         ba : true;
                     }
                 }
 
-                if (~ba)
+                inf (~ba)
                 {
-                    if (~module.Export.Valid(className))
+                    inf (~module.Export.Valid(className))
                     {
                         ba : true;
                     }
                 }
 
-                if (ba)
+                inf (ba)
                 {
                     this.ErrorAdd(this.ErrorKind.ImportClassUndefine, className);
 
                     b : true;
                 }
 
-                if (~ba)
+                inf (~ba)
                 {
                     this.ListInfra.TableAdd(importTable, varClass, varClass);
                 }
@@ -613,30 +613,30 @@ class PortLoad : TextAdd
                 bool bb;
                 bb : false;
 
-                if (~bb)
+                inf (~bb)
                 {
-                    if (~this.NameValid.Name(this.TA(name)))
+                    inf (~this.NameValid.Name(this.TA(name)))
                     {
                         bb : true;
                     }
                 }
 
-                if (~bb)
+                inf (~bb)
                 {
-                    if (this.ImportClass.Valid(name))
+                    inf (this.ImportClass.Valid(name))
                     {
                         bb : true;
                     }
                 }
 
-                if (bb)
+                inf (bb)
                 {
                     this.ErrorAdd(this.ErrorKind.ImportNameUnavail, name);
 
                     b : true;
                 }
 
-                if (~(ba | bb))
+                inf (~(ba | bb))
                 {
                     this.ListInfra.TableAdd(this.ImportClass, name, varClass);
                 }
@@ -647,7 +647,7 @@ class PortLoad : TextAdd
             i : i + 1;
         }
 
-        if (b)
+        inf (b)
         {
             this.Status : 80;
             return false;
@@ -680,38 +680,38 @@ class PortLoad : TextAdd
             bool ba;
             ba : false;
 
-            if (~ba)
+            inf (~ba)
             {
-                if (~this.NameValid.Name(this.TA(name)))
+                inf (~this.NameValid.Name(this.TA(name)))
                 {
                     ba : true;
                 }
             }
 
-            if (~ba)
+            inf (~ba)
             {
-                if (this.ImportClass.Valid(name))
+                inf (this.ImportClass.Valid(name))
                 {
                     ba : true;
                 }
             }
 
-            if (~ba)
+            inf (~ba)
             {
-                if (this.Module.Export.Valid(name))
+                inf (this.Module.Export.Valid(name))
                 {
                     ba : true;
                 }
             }
 
-            if (ba)
+            inf (ba)
             {
                 this.ErrorAdd(this.ErrorKind.ExportUnvalid, name);
 
                 b : true;
             }
 
-            if (~ba)
+            inf (~ba)
             {
                 this.ListInfra.TableAdd(this.Module.Export, name, null);
             }
@@ -719,7 +719,7 @@ class PortLoad : TextAdd
             i : i + 1;
         }
 
-        if (b)
+        inf (b)
         {
             this.Status : 90;
             return false;
@@ -764,7 +764,7 @@ class PortLoad : TextAdd
             String sourcePathA;
             sourcePathA : sourcePath;
 
-            if (this.StorageInfra.PathRelate(this.TA(sourcePath), this.TLess))
+            inf (this.StorageInfra.PathRelate(this.TA(sourcePath), this.TLess))
             {
                 sourcePathA : this.AddClear().Add(this.SourceFold).Add(this.TextInfra.PathCombine).Add(sourcePath).AddResult();
             }
@@ -772,9 +772,9 @@ class PortLoad : TextAdd
             bool ba;
             ba : false;
 
-            if (~ba)
+            inf (~ba)
             {
-                if (~this.StoragePathValid.ValidSourcePath(this.TA(sourcePathA)))
+                inf (~this.StoragePathValid.ValidSourcePath(this.TA(sourcePathA)))
                 {
                     this.ErrorAdd(this.ErrorKind.StorageSourceUnvalid, sourcePath);
 
@@ -782,9 +782,9 @@ class PortLoad : TextAdd
                 }
             }
 
-            if (~ba)
+            inf (~ba)
             {
-                if (~this.StoragePathValid.ValidDestPath(this.TA(destPath)))
+                inf (~this.StoragePathValid.ValidDestPath(this.TA(destPath)))
                 {
                     this.ErrorAdd(this.ErrorKind.StorageDestUnvalid, destPath);
 
@@ -792,9 +792,9 @@ class PortLoad : TextAdd
                 }
             }
 
-            if (~ba)
+            inf (~ba)
             {
-                if (this.Module.Storage.Valid(destPath))
+                inf (this.Module.Storage.Valid(destPath))
                 {
                     this.ErrorAdd(this.ErrorKind.StorageDestUnavail, destPath);
 
@@ -802,9 +802,9 @@ class PortLoad : TextAdd
                 }
             }
 
-            if (~ba)
+            inf (~ba)
             {
-                if (~this.StorageComp.Entry(sourcePathA).Exist)
+                inf (~this.StorageComp.Entry(sourcePathA).Exist)
                 {
                     this.ErrorAdd(this.ErrorKind.StorageSourceUnachieve, sourcePath);
 
@@ -812,7 +812,7 @@ class PortLoad : TextAdd
                 }
             }
 
-            if (ba)
+            inf (ba)
             {
                 b : true;
             }
@@ -822,7 +822,7 @@ class PortLoad : TextAdd
             i : i + 1;
         }
 
-        if (b)
+        inf (b)
         {
             this.Status : 100;
             return false;
@@ -836,7 +836,7 @@ class PortLoad : TextAdd
         String entry;
         entry : this.Port.Entry;
 
-        if (entry = null)
+        inf (entry = null)
         {
             return true;
         }
@@ -844,17 +844,17 @@ class PortLoad : TextAdd
         bool b;
         b : false;
 
-        if (~this.NameValid.Name(this.TA(entry)))
+        inf (~this.NameValid.Name(this.TA(entry)))
         {
             b : true;
         }
 
-        if (this.ImportClass.Valid(entry))
+        inf (this.ImportClass.Valid(entry))
         {
             b : true;
         }
 
-        if (b)
+        inf (b)
         {
             this.ErrorAdd(this.ErrorKind.EntryUnachieve, entry);
 
@@ -887,16 +887,16 @@ class PortLoad : TextAdd
         bool b;
         b : false;
 
-        if (~b)
+        inf (~b)
         {
-            if (this.TextSame(textName, this.TB(this.SystemModuleSingle)))
+            inf (this.TextSame(textName, this.TB(this.SystemModuleSingle)))
             {
                 b : true;
             }
         }
-        if (~b)
+        inf (~b)
         {
-            if (this.TextStart(textName, this.TB(this.SystemModulePre)))
+            inf (this.TextStart(textName, this.TB(this.SystemModulePre)))
             {
                 b : true;
             }
