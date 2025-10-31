@@ -670,8 +670,8 @@ class PortLoad : TextAdd
         i : 0;
         while (i < count)
         {
-            PortExport portExport;
-            portExport : array.Get(i) as PortExport;
+            var PortExport portExport;
+            portExport : cast PortExport(array.Get(i));
 
             var String name;
             name : portExport.Class;
