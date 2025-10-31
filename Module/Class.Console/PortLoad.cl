@@ -24,11 +24,11 @@ class PortLoad : TextAdd
         return a;
     }
 
-    public virtual PortPort Port { get; set; }
-    public virtual bool SystemModule { get; set; }
-    public virtual ClassModule Module { get; set; }
-    public virtual long Status { get; set; }
-    public virtual Array Error { get; set; }
+    field prusate Port Port { get { return data; } set { data : value; } }
+    field prusate Bool SystemModule { get { return data; } set { data : value; } }
+    field prusate Module Module { get { return data; } set { data : value; } }
+    field prusate Int Status { get { return data; } set { data : value; } }
+    field prusate Array Error { get { return data; } set { data : value; } }
     public virtual ModulePort ModulePort { get; set; }
     public virtual BinaryRead BinaryRead { get; set; }
     public virtual Table ModuleTable { get; set; }
