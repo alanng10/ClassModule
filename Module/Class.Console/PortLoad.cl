@@ -29,10 +29,10 @@ class PortLoad : TextAdd
     field prusate Module Module { get { return data; } set { data : value; } }
     field prusate Int Status { get { return data; } set { data : value; } }
     field prusate Array Error { get { return data; } set { data : value; } }
-    public virtual ModulePort ModulePort { get; set; }
-    public virtual BinaryRead BinaryRead { get; set; }
-    public virtual Table ModuleTable { get; set; }
-    public virtual Table ImportClass { get; set; }
+    field prusate ModulePort ModulePort { get { return data; } set { data : value; } }
+    field prusate BinaryRead BinaryRead { get { return data; } set { data : value; } }
+    field prusate Table ModuleTable { get { return data; } set { data : value; } }
+    field prusate Table ImportClass { get { return data; } set { data : value; } }
     public virtual NameValid NameValid { get; set; }
     public virtual String ClassPath { get; set; }
     public virtual String SourceFold { get; set; }
