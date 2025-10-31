@@ -23,15 +23,14 @@ System.Text
     StringAdd StringAdd
     StringComp StringComp
     TextInfra Infra
-System.Storage
-    StorageComp Comp
-    StorageInfra Infra
 System.Console
     Out Out
 Text.Text:0.00.00
     TextAdd Add
 Storage.Storage:0.00.00
+    StorageComp Comp
     StorageNameForm NameForm
+    StorageInfra Infra
 Class.Infra:0.00.00
     Class Class
     Field Field
