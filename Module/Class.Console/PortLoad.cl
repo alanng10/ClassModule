@@ -906,8 +906,8 @@ class PortLoad : TextAdd
 
     maide precate Bool ErrorAdd(ErrorKind kind, String name)
     {
-        Error a;
-        a : new Error();
+        var Error a;
+        a : new Error;
         a.Init();
         a.Kind : kind;
         a.Name : name;
