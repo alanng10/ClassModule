@@ -578,7 +578,7 @@ class PortLoad : TextAdd
 
                 inf (~ba)
                 {
-                    varClass : module.Class.Get(className) as ClassClass;
+                    varClass : cast Class(module.Class.Get(className));
 
                     inf (varClass = null)
                     {
