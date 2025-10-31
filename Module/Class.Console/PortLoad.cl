@@ -501,10 +501,10 @@ class PortLoad : TextAdd
         return true;
     }
 
-    public virtual StringLess StorageStringLessCreate()
+    maide precate StringLess StorageStringLessCreate()
     {
-        StringLess a;
-        a : new StringLess();
+        var StringLess a;
+        a : new StringLess;
         a.LiteForm : this.StorageInfra.NameForm;
         a.RiteForm : this.StorageInfra.NameForm;
         a.CharLess : this.ILess;
