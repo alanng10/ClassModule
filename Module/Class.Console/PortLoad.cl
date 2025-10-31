@@ -222,7 +222,7 @@ class PortLoad : TextAdd
         return true;
     }
 
-    maide precate bool ValidModuleRef(ModuleRef module)
+    maide precate Bool ValidModuleRef(ModuleRef module)
     {
         String name;
         name : module.Name;
@@ -253,7 +253,7 @@ class PortLoad : TextAdd
         return true;
     }
 
-    maide precate bool ValidImportModuleRef(Array array)
+    maide precate Bool ValidImportModuleRef(Array array)
     {
         long count;
         count : array.Count;
@@ -276,7 +276,7 @@ class PortLoad : TextAdd
         return true;
     }
 
-    maide precate bool ValidImportModuleRefOne(ModuleRef moduleRef)
+    maide precate Bool ValidImportModuleRefOne(ModuleRef moduleRef)
     {
         String name;
         name : moduleRef.Name;
@@ -288,18 +288,18 @@ class PortLoad : TextAdd
             return false;
         }
 
-        bool built;
+        Bool built;
         built : this.BuiltModuleRef(moduleRef);
 
-        bool b;
+        Bool b;
         b : (ver = -1);
 
-        bool a;
+        Bool a;
         a : (built = b);
         return a;
     }
 
-    maide precate bool ExecuteBinaryLoad()
+    maide precate Bool ExecuteBinaryLoad()
     {
         this.BinaryTable : this.ClassInfra.TableCreateModuleRefLess();
 
@@ -316,7 +316,7 @@ class PortLoad : TextAdd
             ModuleRef a;
             a : array.Get(i) as ModuleRef;
 
-            bool b;
+            Bool b;
             b : this.BinaryLoadRecurse(a);
             inf (~b)
             {
@@ -334,7 +334,7 @@ class PortLoad : TextAdd
         return true;
     }
 
-    maide precate bool BinaryLoadRecurse(ModuleRef moduleRef)
+    maide precate Bool BinaryLoadRecurse(ModuleRef moduleRef)
     {
         inf (this.BinaryTable.Valid(moduleRef))
         {
@@ -361,7 +361,7 @@ class PortLoad : TextAdd
             BinaryImport import;
             import : array.Get(i) as BinaryImport;
 
-            bool b;
+            Bool b;
             b : this.BinaryLoadRecurse(import.Module);
             inf (~b)
             {
@@ -412,7 +412,7 @@ class PortLoad : TextAdd
         return a;
     }
 
-    maide precate bool ExecuteDepend()
+    maide precate Bool ExecuteDepend()
     {
         ModuleRef ka;
         ka : this.ModuleRef;
@@ -431,7 +431,7 @@ class PortLoad : TextAdd
         return true;
     }
 
-    maide precate bool ExecuteModulePort()
+    maide precate Bool ExecuteModulePort()
     {
         ModulePort modulePort;
         modulePort : this.ModulePort;
@@ -451,7 +451,7 @@ class PortLoad : TextAdd
             modulePort.ModuleRef : moduleRef;
             modulePort.AnyClass : this.AnyClass;
 
-            bool b;
+            Bool b;
             b : modulePort.Execute();
 
             inf (~b)
@@ -483,7 +483,7 @@ class PortLoad : TextAdd
         return true;
     }
 
-    maide precate bool ExecuteCreateModule()
+    maide precate Bool ExecuteCreateModule()
     {
         ClassModule module;
         module : new ClassModule();
@@ -512,12 +512,12 @@ class PortLoad : TextAdd
         return a;
     }
 
-    maide precate bool ExecuteImport()
+    maide precate Bool ExecuteImport()
     {
         Array array;
         array : this.Port.Import;
 
-        bool b;
+        Bool b;
         b : false;
 
         long count;
@@ -560,7 +560,7 @@ class PortLoad : TextAdd
                 ClassClass varClass;
                 varClass : null;
 
-                bool ba;
+                Bool ba;
                 ba : false;
 
                 inf (~ba)
@@ -604,7 +604,7 @@ class PortLoad : TextAdd
                 String name;
                 name : importClass.Name;
 
-                bool bb;
+                Bool bb;
                 bb : false;
 
                 inf (~bb)
@@ -650,12 +650,12 @@ class PortLoad : TextAdd
         return true;
     }
 
-    maide precate bool ExecuteExport()
+    maide precate Bool ExecuteExport()
     {
         Array array;
         array : this.Port.Export;
 
-        bool b;
+        Bool b;
         b : false;
 
         long count;
@@ -671,7 +671,7 @@ class PortLoad : TextAdd
             String name;
             name : portExport.Class;
 
-            bool ba;
+            Bool ba;
             ba : false;
 
             inf (~ba)
@@ -722,12 +722,12 @@ class PortLoad : TextAdd
         return true;
     }
 
-    maide precate bool ExecuteStorage()
+    maide precate Bool ExecuteStorage()
     {
         Array array;
         array : this.Port.Storage;
 
-        bool b;
+        Bool b;
         b : false;
 
         long count;
@@ -763,7 +763,7 @@ class PortLoad : TextAdd
                 sourcePathA : this.AddClear().Add(this.SourceFold).Add(this.TextInfra.PathCombine).Add(sourcePath).AddResult();
             }
 
-            bool ba;
+            Bool ba;
             ba : false;
 
             inf (~ba)
@@ -825,7 +825,7 @@ class PortLoad : TextAdd
         return true;
     }
 
-    maide precate bool ExecuteEntry()
+    maide precate Bool ExecuteEntry()
     {
         String entry;
         entry : this.Port.Entry;
@@ -835,7 +835,7 @@ class PortLoad : TextAdd
             return true;
         }
 
-        bool b;
+        Bool b;
         b : false;
 
         inf (~this.NameValid.Name(this.TA(entry)))
@@ -870,7 +870,7 @@ class PortLoad : TextAdd
         return a;
     }
 
-    maide precate bool BuiltModuleRef(ModuleRef moduleRef)
+    maide precate Bool BuiltModuleRef(ModuleRef moduleRef)
     {
         String name;
         name : moduleRef.Name;
@@ -878,7 +878,7 @@ class PortLoad : TextAdd
         Text textName;
         textName : this.TA(name);
 
-        bool b;
+        Bool b;
         b : false;
 
         inf (~b)
@@ -899,7 +899,7 @@ class PortLoad : TextAdd
         return b;
     }
 
-    maide precate bool ErrorAdd(ErrorKind kind, String name)
+    maide precate Bool ErrorAdd(ErrorKind kind, String name)
     {
         Error a;
         a : new Error();
