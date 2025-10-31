@@ -303,7 +303,7 @@ class PortLoad : TextAdd
     {
         this.BinaryTable : this.ClassInfra.TableCreateModuleRefLess();
 
-        Array array;
+        var Array array;
         array : this.ImportModuleRef;
 
         var Int count;
@@ -348,7 +348,7 @@ class PortLoad : TextAdd
             return false;
         }
 
-        Array array;
+        var Array array;
         array : binary.Import;
 
         var Int count;
@@ -514,7 +514,7 @@ class PortLoad : TextAdd
 
     maide precate Bool ExecuteImport()
     {
-        Array array;
+        var Array array;
         array : this.Port.Import;
 
         var Bool b;
@@ -541,7 +541,7 @@ class PortLoad : TextAdd
             PortImport portImport;
             portImport : array.Get(i) as PortImport;
 
-            Array importClassArray;
+            var Array importClassArray;
             importClassArray : portImport.Class;
 
             var Int countA;
@@ -652,7 +652,7 @@ class PortLoad : TextAdd
 
     maide precate Bool ExecuteExport()
     {
-        Array array;
+        var Array array;
         array : this.Port.Export;
 
         var Bool b;
@@ -724,7 +724,7 @@ class PortLoad : TextAdd
 
     maide precate Bool ExecuteStorage()
     {
-        Array array;
+        var Array array;
         array : this.Port.Storage;
 
         var Bool b;
