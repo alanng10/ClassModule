@@ -384,9 +384,9 @@ class PortLoad : TextAdd
         var String filePath;
         filePath : this.AddClear().Add(this.ClassInfra.ClassModulePath(this.ClassPath))
             .Add(this.TextInfra.PathCombine).Add(moduleRefString)
-            .Add(this.TextInfra.PathCombine).Add(this.SModule).AddResult();
+            .Add(this.TextInfra.PathCombine).Add("Module").AddResult();
 
-        Data data;
+        var Data data;
         data : this.StorageInfra.DataRead(filePath);
 
         inf (data = null)
@@ -394,21 +394,20 @@ class PortLoad : TextAdd
             return null;
         }
 
-        BinaryRead read;
+        var BinaryRead read;
         read : this.BinaryRead;
 
         read.Data : data;
 
         read.Execute();
 
-        BinaryBinary binary;
+        var Binary binary;
         binary : read.Result;
 
         read.Result : null;
 
-        BinaryBinary a;
+        var Binary a;
         a : binary;
-
         return a;
     }
 
