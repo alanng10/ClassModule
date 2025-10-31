@@ -253,7 +253,7 @@ class PortLoad : TextAdd
         return true;
     }
 
-    maide precate Bool ValidImportModuleRef(Array array)
+    maide precate Bool ValidImportModuleRef(var Array array)
     {
         var Int count;
         count : array.Count;
@@ -262,8 +262,8 @@ class PortLoad : TextAdd
         i : 0;
         while (i < count)
         {
-            PortImport a;
-            a : array.Get(i) as PortImport;
+            var PortImport a;
+            a : cast PortImport(array.Get(i));
 
             inf (~this.ValidImportModuleRefOne(a.Module))
             {
