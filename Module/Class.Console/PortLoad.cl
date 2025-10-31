@@ -292,10 +292,10 @@ class PortLoad : TextAdd
         built : this.BuiltModuleRef(moduleRef);
 
         var Bool b;
-        b : (ver = null);
+        b : ver = null;
 
         var Bool a;
-        a : (built = b);
+        a : built = b;
         return a;
     }
 
