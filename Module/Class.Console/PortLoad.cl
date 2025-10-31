@@ -237,7 +237,7 @@ class PortLoad : TextAdd
 
         inf (~this.SystemModule)
         {
-            inf (ver = -1)
+            inf (ver = null)
             {
                 this.Status : 2;
                 return false;
@@ -292,7 +292,7 @@ class PortLoad : TextAdd
         built : this.BuiltModuleRef(moduleRef);
 
         var Bool b;
-        b : (ver = -1);
+        b : (ver = null);
 
         var Bool a;
         a : (built = b);
@@ -906,7 +906,7 @@ class PortLoad : TextAdd
         a.Init();
         a.Kind : kind;
         a.Name : name;
-        a.Source : -1;
+        a.Source : null;
 
         this.ErrorList.Add(a);
         return true;
