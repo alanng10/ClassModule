@@ -68,17 +68,17 @@ class PortLoad : TextAdd
         return b;
     }
 
-    protected virtual bool ExecuteAll()
+    maide precate Bool ExecuteAll()
     {
         this.Status : 0;
 
-        PortPort port;
+        var Port port;
         port : this.Port;
 
-        this.ErrorList : new List();
+        this.ErrorList : new List;
         this.ErrorList.Init();
 
-        bool b;
+        var Bool b;
 
         b : this.ValidModuleRef(port.Module);
         inf (~b)
