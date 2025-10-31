@@ -533,7 +533,7 @@ class PortLoad : TextAdd
         while (i < count)
         {
             var ModuleRef moduleRef;
-            moduleRef : this.ImportModuleRef.Get(i) as ModuleRef;
+            moduleRef : cast ModuleRef(this.ImportModuleRef.Get(i));
 
             var Module module;
             module : this.ModuleTable.Get(moduleRef) as Module;
