@@ -224,7 +224,7 @@ class PortLoad : TextAdd
 
     maide precate Bool ValidModuleRef(ModuleRef module)
     {
-        String name;
+        var String name;
         name : module.Name;
         var Int ver;
         ver : module.Ver;
@@ -278,7 +278,7 @@ class PortLoad : TextAdd
 
     maide precate Bool ValidImportModuleRefOne(ModuleRef moduleRef)
     {
-        String name;
+        var String name;
         name : moduleRef.Name;
         var Int ver;
         ver : moduleRef.Ver;
@@ -320,7 +320,7 @@ class PortLoad : TextAdd
             b : this.BinaryLoadRecurse(a);
             inf (~b)
             {
-                String k;
+                var String k;
                 k : this.ModuleRefString(a);
 
                 this.ErrorAdd(this.ErrorKind.ModuleUnvalid, k);
@@ -378,10 +378,10 @@ class PortLoad : TextAdd
 
     maide precate BinaryBinary BinaryLoad(ModuleRef moduleRef)
     {
-        String moduleRefString;
+        var String moduleRefString;
         moduleRefString : this.ModuleRefString(moduleRef);
 
-        String filePath;
+        var String filePath;
         filePath : this.AddClear().Add(this.ClassInfra.ClassModulePath(this.ClassPath))
             .Add(this.TextInfra.PathCombine).Add(moduleRefString)
             .Add(this.TextInfra.PathCombine).Add(this.SModule).AddResult();
@@ -419,7 +419,7 @@ class PortLoad : TextAdd
 
         inf (this.BinaryTable.Valid(ka))
         {
-            String k;
+            var String k;
             k : this.ModuleRefString(ka);
 
             this.ErrorAdd(this.ErrorKind.ModuleUndefine, k);
@@ -459,7 +459,7 @@ class PortLoad : TextAdd
                 var Int ka;
                 ka : modulePort.Status;
 
-                String k;
+                var String k;
                 k : this.ModuleRefString(moduleRef);
 
                 this.ErrorAdd(this.ErrorKind.ModuleUndefine, k);
@@ -554,7 +554,7 @@ class PortLoad : TextAdd
                 PortImportClass importClass;
                 importClass : importClassArray.Get(iA) as PortImportClass;
 
-                String className;
+                var String className;
                 className : importClass.Class;
 
                 ClassClass varClass;
@@ -601,7 +601,7 @@ class PortLoad : TextAdd
                     this.ListInfra.TableAdd(importTable, varClass, varClass);
                 }
 
-                String name;
+                var String name;
                 name : importClass.Name;
 
                 var Bool bb;
@@ -668,7 +668,7 @@ class PortLoad : TextAdd
             PortExport portExport;
             portExport : array.Get(i) as PortExport;
 
-            String name;
+            var String name;
             name : portExport.Class;
 
             var Bool ba;
@@ -740,22 +740,22 @@ class PortLoad : TextAdd
             PortStorage portStorage;
             portStorage : array.Get(i) as PortStorage;
 
-            String sourcePathKa;
-            String destPathKa;
+            var String sourcePathKa;
+            var String destPathKa;
             sourcePathKa : portStorage.Source;
             destPathKa : portStorage.Dest;
 
             Text sourcePathK;
-            String sourcePath;
+            var String sourcePath;
             sourcePathK : this.TextTrimEnd(this.TextTrimStart(this.TA(sourcePathKa)));
             sourcePath : this.StringCreate(sourcePathK);
 
             Text destPathK;
-            String destPath;
+            var String destPath;
             destPathK : this.TextTrimEnd(this.TextTrimStart(this.TA(destPathKa)));
             destPath : this.StringCreate(destPathK);
 
-            String sourcePathA;
+            var String sourcePathA;
             sourcePathA : sourcePath;
 
             inf (this.StorageInfra.PathRelate(this.TA(sourcePath), this.TLess))
@@ -827,7 +827,7 @@ class PortLoad : TextAdd
 
     maide precate Bool ExecuteEntry()
     {
-        String entry;
+        var String entry;
         entry : this.Port.Entry;
 
         inf (entry = null)
@@ -862,17 +862,17 @@ class PortLoad : TextAdd
 
     maide precate String ModuleRefString(ModuleRef k)
     {
-        String verString;
+        var String verString;
         verString : this.ClassInfra.VerString(k.Ver);
 
-        String a;
+        var String a;
         a : this.ClassInfra.ModuleRefString(k.Name, verString);
         return a;
     }
 
     maide precate Bool BuiltModuleRef(ModuleRef moduleRef)
     {
-        String name;
+        var String name;
         name : moduleRef.Name;
 
         Text textName;
