@@ -376,7 +376,7 @@ class PortLoad : TextAdd
         return true;
     }
 
-    maide precate BinaryBinary BinaryLoad(var ModuleRef moduleRef)
+    maide precate Binary BinaryLoad(var ModuleRef moduleRef)
     {
         var String moduleRefString;
         moduleRefString : this.ModuleRefString(moduleRef);
