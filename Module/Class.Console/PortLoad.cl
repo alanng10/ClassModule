@@ -334,14 +334,14 @@ class PortLoad : TextAdd
         return true;
     }
 
-    maide precate Bool BinaryLoadRecurse(ModuleRef moduleRef)
+    maide precate Bool BinaryLoadRecurse(var ModuleRef moduleRef)
     {
         inf (this.BinaryTable.Valid(moduleRef))
         {
             return true;
         }
 
-        BinaryBinary binary;
+        var Binary binary;
         binary : this.BinaryLoad(moduleRef);
         inf (binary = null)
         {
@@ -358,8 +358,8 @@ class PortLoad : TextAdd
         i : 0;
         while (i < count)
         {
-            BinaryImport import;
-            import : array.Get(i) as BinaryImport;
+            var BinaryImport import;
+            import : cast BinaryImport(array.Get(i));
 
             var Bool b;
             b : this.BinaryLoadRecurse(import.Module);
