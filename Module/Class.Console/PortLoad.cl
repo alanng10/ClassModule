@@ -433,20 +433,20 @@ class PortLoad : TextAdd
 
     maide precate Bool ExecuteModulePort()
     {
-        ModulePort modulePort;
+        var ModulePort modulePort;
         modulePort : this.ModulePort;
 
         modulePort.BinaryTable : this.BinaryTable;
         modulePort.ModuleTable : this.ModuleTable;
 
-        Iter iter;
+        var Iter iter;
         iter : this.BinaryTable.IterCreate();
         this.BinaryTable.IterSet(iter);
 
         while (iter.Next())
         {
             var ModuleRef moduleRef;
-            moduleRef : iter.Index as ModuleRef;
+            moduleRef : cast ModuleRef(iter.Index);
 
             modulePort.ModuleRef : moduleRef;
             modulePort.AnyClass : this.AnyClass;
