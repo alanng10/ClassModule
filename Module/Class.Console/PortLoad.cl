@@ -745,12 +745,12 @@ class PortLoad : TextAdd
             sourcePathKa : portStorage.Source;
             destPathKa : portStorage.Dest;
 
-            Text sourcePathK;
+            var Text sourcePathK;
             var String sourcePath;
             sourcePathK : this.TextTrimEnd(this.TextTrimStart(this.TA(sourcePathKa)));
             sourcePath : this.StringCreate(sourcePathK);
 
-            Text destPathK;
+            var Text destPathK;
             var String destPath;
             destPathK : this.TextTrimEnd(this.TextTrimStart(this.TA(destPathKa)));
             destPath : this.StringCreate(destPathK);
@@ -875,7 +875,7 @@ class PortLoad : TextAdd
         var String name;
         name : moduleRef.Name;
 
-        Text textName;
+        var Text textName;
         textName : this.TA(name);
 
         var Bool b;
