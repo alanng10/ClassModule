@@ -34,7 +34,7 @@ class PortLoad : TextAdd
     field prusate Table ModuleTable { get { return data; } set { data : value; } }
     field prusate Table ImportClass { get { return data; } set { data : value; } }
     field prusate NameValid NameValid { get { return data; } set { data : value; } }
-    public virtual String ClassPath { get; set; }
+    field prusate String ClassPath { get { return data; } set { data : value; } }
     public virtual String SourceFold { get; set; }
     protected virtual ListInfra ListInfra { get; set; }
     protected virtual StorageInfra StorageInfra { get; set; }
