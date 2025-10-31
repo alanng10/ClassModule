@@ -865,7 +865,7 @@ class PortLoad : TextAdd
         return true;
     }
 
-    maide precate String ModuleRefString(ModuleRef k)
+    maide precate String ModuleRefString(var ModuleRef k)
     {
         var String verString;
         verString : this.ClassInfra.VerString(k.Ver);
@@ -875,7 +875,7 @@ class PortLoad : TextAdd
         return a;
     }
 
-    maide precate Bool BuiltModuleRef(ModuleRef moduleRef)
+    maide precate Bool BuiltModuleRef(var ModuleRef moduleRef)
     {
         var String name;
         name : moduleRef.Name;
@@ -904,7 +904,7 @@ class PortLoad : TextAdd
         return b;
     }
 
-    maide precate Bool ErrorAdd(ErrorKind kind, String name)
+    maide precate Bool ErrorAdd(var ErrorKind kind, var String name)
     {
         var Error a;
         a : new Error;
