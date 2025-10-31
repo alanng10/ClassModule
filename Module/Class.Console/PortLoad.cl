@@ -533,7 +533,7 @@ class PortLoad : TextAdd
             ClassModule module;
             module : this.ModuleTable.Get(moduleRef) as ClassModule;
 
-            Table importTable;
+            var Table importTable;
             importTable : this.ClassInfra.TableCreateRefLess();
 
             this.ListInfra.TableAdd(this.Module.Import, moduleRef, importTable);
