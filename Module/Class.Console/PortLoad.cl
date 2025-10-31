@@ -60,10 +60,10 @@ class PortLoad : TextAdd
         this.ImportModuleRef : null;
         this.ModulePort.BinaryTable : null;
         this.ModulePort.ModuleTable : null;
-        this.ModulePort.Result : null;
-        this.ModulePort.Status : null;
-        this.ModulePort.AnyClass : null;
         this.ModulePort.ModuleRef : null;
+        this.ModulePort.AnyClass : null;
+        this.ModulePort.Status : null;
+        this.ModulePort.Result : null;
         this.AnyClass : null;
         this.ErrorList : null;
         this.ModuleRef : null;
