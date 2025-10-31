@@ -288,13 +288,13 @@ class PortLoad : TextAdd
             return false;
         }
 
-        Bool built;
+        var Bool built;
         built : this.BuiltModuleRef(moduleRef);
 
-        Bool b;
+        var Bool b;
         b : (ver = -1);
 
-        Bool a;
+        var Bool a;
         a : (built = b);
         return a;
     }
@@ -316,7 +316,7 @@ class PortLoad : TextAdd
             ModuleRef a;
             a : array.Get(i) as ModuleRef;
 
-            Bool b;
+            var Bool b;
             b : this.BinaryLoadRecurse(a);
             inf (~b)
             {
@@ -361,7 +361,7 @@ class PortLoad : TextAdd
             BinaryImport import;
             import : array.Get(i) as BinaryImport;
 
-            Bool b;
+            var Bool b;
             b : this.BinaryLoadRecurse(import.Module);
             inf (~b)
             {
@@ -451,7 +451,7 @@ class PortLoad : TextAdd
             modulePort.ModuleRef : moduleRef;
             modulePort.AnyClass : this.AnyClass;
 
-            Bool b;
+            var Bool b;
             b : modulePort.Execute();
 
             inf (~b)
@@ -517,7 +517,7 @@ class PortLoad : TextAdd
         Array array;
         array : this.Port.Import;
 
-        Bool b;
+        var Bool b;
         b : false;
 
         long count;
@@ -560,7 +560,7 @@ class PortLoad : TextAdd
                 ClassClass varClass;
                 varClass : null;
 
-                Bool ba;
+                var Bool ba;
                 ba : false;
 
                 inf (~ba)
@@ -604,7 +604,7 @@ class PortLoad : TextAdd
                 String name;
                 name : importClass.Name;
 
-                Bool bb;
+                var Bool bb;
                 bb : false;
 
                 inf (~bb)
@@ -655,7 +655,7 @@ class PortLoad : TextAdd
         Array array;
         array : this.Port.Export;
 
-        Bool b;
+        var Bool b;
         b : false;
 
         long count;
@@ -671,7 +671,7 @@ class PortLoad : TextAdd
             String name;
             name : portExport.Class;
 
-            Bool ba;
+            var Bool ba;
             ba : false;
 
             inf (~ba)
@@ -727,7 +727,7 @@ class PortLoad : TextAdd
         Array array;
         array : this.Port.Storage;
 
-        Bool b;
+        var Bool b;
         b : false;
 
         long count;
@@ -763,7 +763,7 @@ class PortLoad : TextAdd
                 sourcePathA : this.AddClear().Add(this.SourceFold).Add(this.TextInfra.PathCombine).Add(sourcePath).AddResult();
             }
 
-            Bool ba;
+            var Bool ba;
             ba : false;
 
             inf (~ba)
@@ -835,7 +835,7 @@ class PortLoad : TextAdd
             return true;
         }
 
-        Bool b;
+        var Bool b;
         b : false;
 
         inf (~this.NameValid.Name(this.TA(entry)))
@@ -878,7 +878,7 @@ class PortLoad : TextAdd
         Text textName;
         textName : this.TA(name);
 
-        Bool b;
+        var Bool b;
         b : false;
 
         inf (~b)
