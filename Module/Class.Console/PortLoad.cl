@@ -16,10 +16,10 @@ class PortLoad : TextAdd
         return true;
     }
 
-    protected virtual StoragePathValid CreateStoragePathValid()
+    maide precate StoragePathValid CreateStoragePathValid()
     {
-        StoragePathValid a;
-        a : new StoragePathValid();
+        var StoragePathValid a;
+        a : new StoragePathValid;
         a.Init();
         return a;
     }
