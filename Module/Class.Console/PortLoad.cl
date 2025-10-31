@@ -222,7 +222,7 @@ class PortLoad : TextAdd
         return true;
     }
 
-    protected virtual bool ValidModuleRef(ModuleRef module)
+    maide precate bool ValidModuleRef(ModuleRef module)
     {
         String name;
         name : module.Name;
@@ -253,7 +253,7 @@ class PortLoad : TextAdd
         return true;
     }
 
-    protected virtual bool ValidImportModuleRef(Array array)
+    maide precate bool ValidImportModuleRef(Array array)
     {
         long count;
         count : array.Count;
@@ -276,7 +276,7 @@ class PortLoad : TextAdd
         return true;
     }
 
-    protected virtual bool ValidImportModuleRefOne(ModuleRef moduleRef)
+    maide precate bool ValidImportModuleRefOne(ModuleRef moduleRef)
     {
         String name;
         name : moduleRef.Name;
@@ -299,7 +299,7 @@ class PortLoad : TextAdd
         return a;
     }
 
-    protected virtual bool ExecuteBinaryLoad()
+    maide precate bool ExecuteBinaryLoad()
     {
         this.BinaryTable : this.ClassInfra.TableCreateModuleRefLess();
 
@@ -334,7 +334,7 @@ class PortLoad : TextAdd
         return true;
     }
 
-    protected virtual bool BinaryLoadRecurse(ModuleRef moduleRef)
+    maide precate bool BinaryLoadRecurse(ModuleRef moduleRef)
     {
         inf (this.BinaryTable.Valid(moduleRef))
         {
@@ -376,7 +376,7 @@ class PortLoad : TextAdd
         return true;
     }
 
-    protected virtual BinaryBinary BinaryLoad(ModuleRef moduleRef)
+    maide precate BinaryBinary BinaryLoad(ModuleRef moduleRef)
     {
         String moduleRefString;
         moduleRefString : this.ModuleRefString(moduleRef);
@@ -412,7 +412,7 @@ class PortLoad : TextAdd
         return a;
     }
 
-    protected virtual bool ExecuteDepend()
+    maide precate bool ExecuteDepend()
     {
         ModuleRef ka;
         ka : this.ModuleRef;
@@ -431,7 +431,7 @@ class PortLoad : TextAdd
         return true;
     }
 
-    protected virtual bool ExecuteModulePort()
+    maide precate bool ExecuteModulePort()
     {
         ModulePort modulePort;
         modulePort : this.ModulePort;
@@ -483,7 +483,7 @@ class PortLoad : TextAdd
         return true;
     }
 
-    protected virtual bool ExecuteCreateModule()
+    maide precate bool ExecuteCreateModule()
     {
         ClassModule module;
         module : new ClassModule();
@@ -512,7 +512,7 @@ class PortLoad : TextAdd
         return a;
     }
 
-    protected virtual bool ExecuteImport()
+    maide precate bool ExecuteImport()
     {
         Array array;
         array : this.Port.Import;
@@ -650,7 +650,7 @@ class PortLoad : TextAdd
         return true;
     }
 
-    protected virtual bool ExecuteExport()
+    maide precate bool ExecuteExport()
     {
         Array array;
         array : this.Port.Export;
@@ -722,7 +722,7 @@ class PortLoad : TextAdd
         return true;
     }
 
-    protected virtual bool ExecuteStorage()
+    maide precate bool ExecuteStorage()
     {
         Array array;
         array : this.Port.Storage;
@@ -825,7 +825,7 @@ class PortLoad : TextAdd
         return true;
     }
 
-    protected virtual bool ExecuteEntry()
+    maide precate bool ExecuteEntry()
     {
         String entry;
         entry : this.Port.Entry;
@@ -860,7 +860,7 @@ class PortLoad : TextAdd
         return true;
     }
 
-    protected virtual String ModuleRefString(ModuleRef k)
+    maide precate String ModuleRefString(ModuleRef k)
     {
         String verString;
         verString : this.ClassInfra.VerString(k.Ver);
@@ -870,7 +870,7 @@ class PortLoad : TextAdd
         return a;
     }
 
-    protected virtual bool BuiltModuleRef(ModuleRef moduleRef)
+    maide precate bool BuiltModuleRef(ModuleRef moduleRef)
     {
         String name;
         name : moduleRef.Name;
@@ -899,7 +899,7 @@ class PortLoad : TextAdd
         return b;
     }
 
-    protected virtual bool ErrorAdd(ErrorKind kind, String name)
+    maide precate bool ErrorAdd(ErrorKind kind, String name)
     {
         Error a;
         a : new Error();
