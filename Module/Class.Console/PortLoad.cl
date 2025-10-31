@@ -169,40 +169,40 @@ class PortLoad : TextAdd
         return true;
     }
 
-    protected virtual bool ExecuteImportModuleRef()
+    maide precate Bool ExecuteImportModuleRef()
     {
-        Array import;
+        var Array import;
         import : this.Port.Import;
 
-        Table table;
+        var Table table;
         table : this.ClassInfra.TableCreateModuleRefLess();
 
-        Array array;
+        var Array array;
         array : this.ListInfra.ArrayCreate(import.Count);
 
-        long count;
+        var Int count;
         count : array.Count;
 
-        long i;
+        var Int i;
         i : 0;
         while (i < count)
         {
-            PortImport ka;
-            ka : import.GetAt(i) as PortImport;
+            var PortImport ka;
+            ka : cast PortImport(import.Get(i));
 
-            ModuleRef k;
+            var ModuleRef k;
             k : ka.Module;
 
-            String name;
+            var String name;
             name : k.Name;
-            long ver;
+            var Int ver;
             ver : k.Ver;
-            inf (ver = -1)
+            inf (ver = null)
             {
                 ver : 0;
             }
 
-            ModuleRef a;
+            var ModuleRef a;
             a : this.ClassInfra.ModuleRefCreate(name, ver);
 
             inf (table.Valid(a))
@@ -213,7 +213,7 @@ class PortLoad : TextAdd
 
             this.ListInfra.TableAdd(table, a, a);
 
-            array.SetAt(i, a);
+            array.Set(i, a);
 
             i : i + 1;
         }
