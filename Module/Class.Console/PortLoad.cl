@@ -742,8 +742,8 @@ class PortLoad : TextAdd
         i : 0;
         while (i < count)
         {
-            PortStorage portStorage;
-            portStorage : array.Get(i) as PortStorage;
+            var PortStorage portStorage;
+            portStorage : cast PortStorage(array.Get(i));
 
             var String sourcePathKa;
             var String destPathKa;
