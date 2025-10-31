@@ -50,9 +50,9 @@ class PortLoad : TextAdd
     field precate String SystemModuleSingle { get { return data; } set { data : value; } }
     field precate String SystemModulePre { get { return data; } set { data : value; } }
 
-    public virtual bool Execute()
+    maide prusate Bool Execute()
     {
-        bool b;
+        var Bool b;
         b : this.ExecuteAll();
 
         this.Error : this.ListInfra.ArrayCreateList(this.ErrorList);
@@ -65,7 +65,7 @@ class PortLoad : TextAdd
         this.ModuleRef : null;
 
         this.ClearData();
-        return b;
+        return b; 
     }
 
     protected virtual bool ExecuteAll()
