@@ -36,11 +36,11 @@ class PortLoad : TextAdd
     field prusate NameValid NameValid { get { return data; } set { data : value; } }
     field prusate String ClassPath { get { return data; } set { data : value; } }
     field prusate String SourceFold { get { return data; } set { data : value; } }
-    protected virtual ListInfra ListInfra { get; set; }
-    protected virtual StorageInfra StorageInfra { get; set; }
-    protected virtual ClassInfra ClassInfra { get; set; }
-    protected virtual StorageComp StorageComp { get; set; }
-    protected virtual ErrorKindList ErrorKind { get; set; }
+    field precate ListInfra ListInfra { get { return data; } set { data : value; } }
+    field precate StorageInfra StorageInfra { get { return data; } set { data : value; } }
+    field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
+    field precate StorageComp StorageComp { get { return data; } set { data : value; } }
+    field precate ErrorKindList ErrorKind { get { return data; } set { data : value; } }
     protected virtual StoragePathValid StoragePathValid { get; set; }
     protected virtual Array ImportModuleRef { get; set; }
     protected virtual Table BinaryTable { get; set; }
