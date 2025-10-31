@@ -543,8 +543,8 @@ class PortLoad : TextAdd
 
             this.ListInfra.TableAdd(this.Module.Import, moduleRef, importTable);
 
-            PortImport portImport;
-            portImport : array.Get(i) as PortImport;
+            var PortImport portImport;
+            portImport : cast PortImport(array.Get(i));
 
             var Array importClassArray;
             importClassArray : portImport.Class;
