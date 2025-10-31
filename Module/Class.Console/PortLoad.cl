@@ -41,14 +41,14 @@ class PortLoad : TextAdd
     field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
     field precate StorageComp StorageComp { get { return data; } set { data : value; } }
     field precate ErrorKindList ErrorKind { get { return data; } set { data : value; } }
-    protected virtual StoragePathValid StoragePathValid { get; set; }
-    protected virtual Array ImportModuleRef { get; set; }
-    protected virtual Table BinaryTable { get; set; }
-    protected virtual ClassClass AnyClass { get; set; }
-    protected virtual List ErrorList { get; set; }
-    protected virtual ModuleRef ModuleRef { get; set; }
-    protected virtual String SystemModuleSingle { get; set; }
-    protected virtual String SystemModulePre { get; set; }
+    field precate StoragePathValid StoragePathValid { get { return data; } set { data : value; } }
+    field precate Array ImportModuleRef { get { return data; } set { data : value; } }
+    field precate Table BinaryTable { get { return data; } set { data : value; } }
+    field precate Class AnyClass { get { return data; } set { data : value; } }
+    field precate List ErrorList { get { return data; } set { data : value; } }
+    field precate ModuleRef ModuleRef { get { return data; } set { data : value; } }
+    field precate String SystemModuleSingle { get { return data; } set { data : value; } }
+    field precate String SystemModulePre { get { return data; } set { data : value; } }
 
     public virtual bool Execute()
     {
