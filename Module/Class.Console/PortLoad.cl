@@ -1,8 +1,6 @@
-namespace Saber.Console;
-
-public class PortLoad : TextAdd
+class PortLoad : TextAdd
 {
-    public override bool Init()
+    maide prusate Bool Init()
     {
         base.Init();
         this.ListInfra = ListInfra.This;
