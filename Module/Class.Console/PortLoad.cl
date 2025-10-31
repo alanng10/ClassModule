@@ -486,14 +486,14 @@ class PortLoad : TextAdd
     maide precate Bool ExecuteCreateModule()
     {
         var Module module;
-        module : new Module();
+        module : new Module;
         module.Init();
         module.Ref : this.ModuleRef;
         module.Class : this.ClassInfra.TableCreateStringLess();
         module.Import : this.ClassInfra.TableCreateModuleRefLess();
         module.Export : this.ClassInfra.TableCreateStringLess();
 
-        module.Storage : new Table();
+        module.Storage : new Table;
         module.Storage.Less : this.StorageStringLessCreate();
         module.Storage.Init();
 
