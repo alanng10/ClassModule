@@ -314,7 +314,7 @@ class PortLoad : TextAdd
         while (i < count)
         {
             var ModuleRef a;
-            a : array.Get(i) as ModuleRef;
+            a : cast ModuleRef(array.Get(i));
 
             var Bool b;
             b : this.BinaryLoadRecurse(a);
