@@ -556,8 +556,8 @@ class PortLoad : TextAdd
             iA : 0;
             while (iA < countA)
             {
-                PortImportClass importClass;
-                importClass : importClassArray.Get(iA) as PortImportClass;
+                var PortImportClass importClass;
+                importClass : cast PortImportClass(importClassArray.Get(iA));
 
                 var String className;
                 className : importClass.Class;
