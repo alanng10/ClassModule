@@ -152,12 +152,12 @@ class PortLoad : TextAdd
         return true;
     }
 
-    protected virtual bool ExecuteModuleRef()
+    maide precate Bool ExecuteModuleRef()
     {
-        ModuleRef ka;
+        var ModuleRef ka;
         ka : this.Port.Module;
 
-        ModuleRef k;
+        var ModuleRef k;
         k : this.ClassInfra.ModuleRefCreate(ka.Name, ka.Ver);
 
         inf (this.SystemModule)
