@@ -203,7 +203,7 @@ class PortLoad : TextAdd
             name : k.Name;
             long ver;
             ver : k.Ver;
-            if (ver == -1)
+            if (ver = -1)
             {
                 ver : 0;
             }
@@ -243,7 +243,7 @@ class PortLoad : TextAdd
 
         if (!this.SystemModule)
         {
-            if (ver == -1)
+            if (ver = -1)
             {
                 this.Status : 2;
                 return false;
@@ -298,10 +298,10 @@ class PortLoad : TextAdd
         built : this.BuiltModuleRef(moduleRef);
 
         bool b;
-        b : (ver == -1);
+        b : (ver = -1);
 
         bool a;
-        a : (built == b);
+        a : (built = b);
         return a;
     }
 
@@ -349,7 +349,7 @@ class PortLoad : TextAdd
 
         BinaryBinary binary;
         binary : this.BinaryLoad(moduleRef);
-        if (binary == null)
+        if (binary = null)
         {
             return false;
         }
@@ -395,7 +395,7 @@ class PortLoad : TextAdd
         Data data;
         data : this.StorageInfra.DataRead(filePath);
 
-        if (data == null)
+        if (data = null)
         {
             return null;
         }
@@ -581,7 +581,7 @@ class PortLoad : TextAdd
                 {
                     varClass : module.Class.Get(className) as ClassClass;
 
-                    if (varClass == null)
+                    if (varClass = null)
                     {
                         ba : true;
                     }
@@ -836,7 +836,7 @@ class PortLoad : TextAdd
         String entry;
         entry : this.Port.Entry;
 
-        if (entry == null)
+        if (entry = null)
         {
             return true;
         }
