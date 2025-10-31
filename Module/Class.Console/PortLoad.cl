@@ -33,7 +33,7 @@ class PortLoad : TextAdd
     field prusate BinaryRead BinaryRead { get { return data; } set { data : value; } }
     field prusate Table ModuleTable { get { return data; } set { data : value; } }
     field prusate Table ImportClass { get { return data; } set { data : value; } }
-    public virtual NameValid NameValid { get; set; }
+    field prusate NameValid NameValid { get { return data; } set { data : value; } }
     public virtual String ClassPath { get; set; }
     public virtual String SourceFold { get; set; }
     protected virtual ListInfra ListInfra { get; set; }
