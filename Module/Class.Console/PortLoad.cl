@@ -313,7 +313,7 @@ class PortLoad : TextAdd
         i : 0;
         while (i < count)
         {
-            ModuleRef a;
+            var ModuleRef a;
             a : array.Get(i) as ModuleRef;
 
             var Bool b;
@@ -414,7 +414,7 @@ class PortLoad : TextAdd
 
     maide precate Bool ExecuteDepend()
     {
-        ModuleRef ka;
+        var ModuleRef ka;
         ka : this.ModuleRef;
 
         inf (this.BinaryTable.Valid(ka))
@@ -445,7 +445,7 @@ class PortLoad : TextAdd
 
         while (iter.Next())
         {
-            ModuleRef moduleRef;
+            var ModuleRef moduleRef;
             moduleRef : iter.Index as ModuleRef;
 
             modulePort.ModuleRef : moduleRef;
@@ -527,7 +527,7 @@ class PortLoad : TextAdd
         i : 0;
         while (i < count)
         {
-            ModuleRef moduleRef;
+            var ModuleRef moduleRef;
             moduleRef : this.ImportModuleRef.Get(i) as ModuleRef;
 
             ClassModule module;
