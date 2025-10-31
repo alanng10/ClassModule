@@ -405,6 +405,7 @@ class PortLoad : TextAdd
         binary : read.Result;
 
         read.Result : null;
+        read.Data : null;
 
         var Binary a;
         a : binary;
