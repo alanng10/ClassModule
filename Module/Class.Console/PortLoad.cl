@@ -226,7 +226,7 @@ class PortLoad : TextAdd
     {
         String name;
         name : module.Name;
-        Int ver;
+        var Int ver;
         ver : module.Ver;
 
         inf (~(this.NameValid.ModuleName(this.TA(name))))
@@ -255,10 +255,10 @@ class PortLoad : TextAdd
 
     maide precate Bool ValidImportModuleRef(Array array)
     {
-        Int count;
+        var Int count;
         count : array.Count;
 
-        Int i;
+        var Int i;
         i : 0;
         while (i < count)
         {
@@ -280,7 +280,7 @@ class PortLoad : TextAdd
     {
         String name;
         name : moduleRef.Name;
-        Int ver;
+        var Int ver;
         ver : moduleRef.Ver;
 
         inf (~(this.NameValid.ModuleName(this.TA(name))))
@@ -306,10 +306,10 @@ class PortLoad : TextAdd
         Array array;
         array : this.ImportModuleRef;
 
-        Int count;
+        var Int count;
         count : array.Count;
 
-        Int i;
+        var Int i;
         i : 0;
         while (i < count)
         {
@@ -351,10 +351,10 @@ class PortLoad : TextAdd
         Array array;
         array : binary.Import;
 
-        Int count;
+        var Int count;
         count : array.Count;
 
-        Int i;
+        var Int i;
         i : 0;
         while (i < count)
         {
@@ -456,7 +456,7 @@ class PortLoad : TextAdd
 
             inf (~b)
             {
-                Int ka;
+                var Int ka;
                 ka : modulePort.Status;
 
                 String k;
@@ -520,10 +520,10 @@ class PortLoad : TextAdd
         var Bool b;
         b : false;
 
-        Int count;
+        var Int count;
         count : array.Count;
 
-        Int i;
+        var Int i;
         i : 0;
         while (i < count)
         {
@@ -544,10 +544,10 @@ class PortLoad : TextAdd
             Array importClassArray;
             importClassArray : portImport.Class;
 
-            Int countA;
+            var Int countA;
             countA : importClassArray.Count;
 
-            Int iA;
+            var Int iA;
             iA : 0;
             while (iA < countA)
             {
@@ -658,10 +658,10 @@ class PortLoad : TextAdd
         var Bool b;
         b : false;
 
-        Int count;
+        var Int count;
         count : array.Count;
 
-        Int i;
+        var Int i;
         i : 0;
         while (i < count)
         {
@@ -730,10 +730,10 @@ class PortLoad : TextAdd
         var Bool b;
         b : false;
 
-        Int count;
+        var Int count;
         count : array.Count;
 
-        Int i;
+        var Int i;
         i : 0;
         while (i < count)
         {
