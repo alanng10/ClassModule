@@ -562,7 +562,7 @@ class PortLoad : TextAdd
                 var String className;
                 className : importClass.Class;
 
-                ClassClass varClass;
+                var Class varClass;
                 varClass : null;
 
                 var Bool ba;
