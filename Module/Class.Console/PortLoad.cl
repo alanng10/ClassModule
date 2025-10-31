@@ -3,18 +3,16 @@ class PortLoad : TextAdd
     maide prusate Bool Init()
     {
         base.Init();
-        this.ListInfra : ListInfra.This;
-        this.StorageInfra : StorageInfra.This;
-        this.ClassInfra : ClassInfra.This;
-        this.StorageComp : StorageComp.This;
-        this.ErrorKind : ErrorKindList.This;
+        this.ListInfra : share ListInfra;
+        this.StorageInfra : share StorageInfra;
+        this.ClassInfra : share ClassInfra;
+        this.StorageComp : share StorageComp;
+        this.ErrorKind : share ErrorKindList;
 
         this.StoragePathValid : this.CreateStoragePathValid();
 
-        this.SystemModuleSingle : this.S("System");
+        this.SystemModuleSingle : "System";
         this.SystemModulePre : this.AddClear().Add(this.SystemModuleSingle).Add(this.ClassInfra.TextDot).AddResult();
-
-        this.SModule : this.S("Module");
         return true;
     }
 
@@ -51,7 +49,6 @@ class PortLoad : TextAdd
     protected virtual ModuleRef ModuleRef { get; set; }
     protected virtual String SystemModuleSingle { get; set; }
     protected virtual String SystemModulePre { get; set; }
-    protected virtual String SModule { get; set; }
 
     public virtual bool Execute()
     {
