@@ -263,7 +263,7 @@ class PortLoad : TextAdd
         while (i < count)
         {
             PortImport a;
-            a : array.GetAt(i) as PortImport;
+            a : array.Get(i) as PortImport;
 
             inf (~this.ValidImportModuleRefOne(a.Module))
             {
@@ -314,7 +314,7 @@ class PortLoad : TextAdd
         while (i < count)
         {
             ModuleRef a;
-            a : array.GetAt(i) as ModuleRef;
+            a : array.Get(i) as ModuleRef;
 
             bool b;
             b : this.BinaryLoadRecurse(a);
@@ -359,7 +359,7 @@ class PortLoad : TextAdd
         while (i < count)
         {
             BinaryImport import;
-            import : array.GetAt(i) as BinaryImport;
+            import : array.Get(i) as BinaryImport;
 
             bool b;
             b : this.BinaryLoadRecurse(import.Module);
@@ -528,7 +528,7 @@ class PortLoad : TextAdd
         while (i < count)
         {
             ModuleRef moduleRef;
-            moduleRef : this.ImportModuleRef.GetAt(i) as ModuleRef;
+            moduleRef : this.ImportModuleRef.Get(i) as ModuleRef;
 
             ClassModule module;
             module : this.ModuleTable.Get(moduleRef) as ClassModule;
@@ -539,7 +539,7 @@ class PortLoad : TextAdd
             this.ListInfra.TableAdd(this.Module.Import, moduleRef, importTable);
 
             PortImport portImport;
-            portImport : array.GetAt(i) as PortImport;
+            portImport : array.Get(i) as PortImport;
 
             Array importClassArray;
             importClassArray : portImport.Class;
@@ -552,7 +552,7 @@ class PortLoad : TextAdd
             while (iA < countA)
             {
                 PortImportClass importClass;
-                importClass : importClassArray.GetAt(iA) as PortImportClass;
+                importClass : importClassArray.Get(iA) as PortImportClass;
 
                 String className;
                 className : importClass.Class;
@@ -666,7 +666,7 @@ class PortLoad : TextAdd
         while (i < count)
         {
             PortExport portExport;
-            portExport : array.GetAt(i) as PortExport;
+            portExport : array.Get(i) as PortExport;
 
             String name;
             name : portExport.Class;
@@ -738,7 +738,7 @@ class PortLoad : TextAdd
         while (i < count)
         {
             PortStorage portStorage;
-            portStorage : array.GetAt(i) as PortStorage;
+            portStorage : array.Get(i) as PortStorage;
 
             String sourcePathKa;
             String destPathKa;
