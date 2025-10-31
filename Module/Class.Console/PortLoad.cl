@@ -229,7 +229,7 @@ class PortLoad : TextAdd
         var Int ver;
         ver : module.Ver;
 
-        inf (~(this.NameValid.ModuleName(this.TA(name))))
+        inf (~this.NameValid.ModuleName(this.TA(name)))
         {
             this.Status : 1;
             return false;
@@ -283,7 +283,7 @@ class PortLoad : TextAdd
         var Int ver;
         ver : moduleRef.Ver;
 
-        inf (~(this.NameValid.ModuleName(this.TA(name))))
+        inf (~this.NameValid.ModuleName(this.TA(name)))
         {
             return false;
         }
