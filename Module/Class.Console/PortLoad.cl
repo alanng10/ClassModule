@@ -3,25 +3,25 @@ class PortLoad : TextAdd
     maide prusate Bool Init()
     {
         base.Init();
-        this.ListInfra = ListInfra.This;
-        this.StorageInfra = StorageInfra.This;
-        this.ClassInfra = ClassInfra.This;
-        this.StorageComp = StorageComp.This;
-        this.ErrorKind = ErrorKindList.This;
+        this.ListInfra : ListInfra.This;
+        this.StorageInfra : StorageInfra.This;
+        this.ClassInfra : ClassInfra.This;
+        this.StorageComp : StorageComp.This;
+        this.ErrorKind : ErrorKindList.This;
 
-        this.StoragePathValid = this.CreateStoragePathValid();
+        this.StoragePathValid : this.CreateStoragePathValid();
 
-        this.SystemModuleSingle = this.S("System");
-        this.SystemModulePre = this.AddClear().Add(this.SystemModuleSingle).Add(this.ClassInfra.TextDot).AddResult();
+        this.SystemModuleSingle : this.S("System");
+        this.SystemModulePre : this.AddClear().Add(this.SystemModuleSingle).Add(this.ClassInfra.TextDot).AddResult();
 
-        this.SModule = this.S("Module");
+        this.SModule : this.S("Module");
         return true;
     }
 
     protected virtual StoragePathValid CreateStoragePathValid()
     {
         StoragePathValid a;
-        a = new StoragePathValid();
+        a : new StoragePathValid();
         a.Init();
         return a;
     }
@@ -56,16 +56,16 @@ class PortLoad : TextAdd
     public virtual bool Execute()
     {
         bool b;
-        b = this.ExecuteAll();
+        b : this.ExecuteAll();
 
-        this.Error = this.ListInfra.ArrayCreateList(this.ErrorList);
+        this.Error : this.ListInfra.ArrayCreateList(this.ErrorList);
 
-        this.ImportModuleRef = null;
-        this.ModulePort.BinaryTable = null;
-        this.ModulePort.ModuleTable = null;
-        this.AnyClass = null;
-        this.ErrorList = null;
-        this.ModuleRef = null;
+        this.ImportModuleRef : null;
+        this.ModulePort.BinaryTable : null;
+        this.ModulePort.ModuleTable : null;
+        this.AnyClass : null;
+        this.ErrorList : null;
+        this.ModuleRef : null;
 
         this.ClearData();
         return b;
@@ -73,83 +73,83 @@ class PortLoad : TextAdd
 
     protected virtual bool ExecuteAll()
     {
-        this.Status = 0;
+        this.Status : 0;
 
         PortPort port;
-        port = this.Port;
+        port : this.Port;
 
-        this.ErrorList = new List();
+        this.ErrorList : new List();
         this.ErrorList.Init();
 
         bool b;
 
-        b = this.ValidModuleRef(port.Module);
+        b : this.ValidModuleRef(port.Module);
         if (!b)
         {
             return false;
         }
 
-        b = this.ValidImportModuleRef(port.Import);
+        b : this.ValidImportModuleRef(port.Import);
         if (!b)
         {
             return false;
         }
 
-        b = this.ExecuteModuleRef();
+        b : this.ExecuteModuleRef();
         if (!b)
         {
             return false;
         }
 
-        b = this.ExecuteImportModuleRef();
+        b : this.ExecuteImportModuleRef();
         if (!b)
         {
             return false;
         }
 
-        b = this.ExecuteBinaryLoad();
+        b : this.ExecuteBinaryLoad();
         if (!b)
         {
             return false;
         }
 
-        b = this.ExecuteDepend();
+        b : this.ExecuteDepend();
         if (!b)
         {
             return false;
         }
 
-        b = this.ExecuteModulePort();
+        b : this.ExecuteModulePort();
         if (!b)
         {
             return false;
         }
 
-        b = this.ExecuteCreateModule();
+        b : this.ExecuteCreateModule();
         if (!b)
         {
             return false;
         }
 
-        b = this.ExecuteImport();
+        b : this.ExecuteImport();
         if (!b)
         {
             return false;
         }
 
-        b = this.ExecuteExport();
+        b : this.ExecuteExport();
         if (!b)
         {
             return false;
         }
 
-        b = this.ExecuteStorage();
+        b : this.ExecuteStorage();
         if (!b)
         {
             return false;
         }
 
-        b = this.ExecuteEntry();
+        b : this.ExecuteEntry();
         if (!b)
         {
             return false;
@@ -161,59 +161,59 @@ class PortLoad : TextAdd
     protected virtual bool ExecuteModuleRef()
     {
         ModuleRef ka;
-        ka = this.Port.Module;
+        ka : this.Port.Module;
 
         ModuleRef k;
-        k = this.ClassInfra.ModuleRefCreate(ka.Name, ka.Ver);
+        k : this.ClassInfra.ModuleRefCreate(ka.Name, ka.Ver);
 
         if (this.SystemModule)
         {
-            k.Ver = 0;
+            k.Ver : 0;
         }
 
-        this.ModuleRef = k;
+        this.ModuleRef : k;
         return true;
     }
 
     protected virtual bool ExecuteImportModuleRef()
     {
         Array import;
-        import = this.Port.Import;
+        import : this.Port.Import;
 
         Table table;
-        table = this.ClassInfra.TableCreateModuleRefLess();
+        table : this.ClassInfra.TableCreateModuleRefLess();
 
         Array array;
-        array = this.ListInfra.ArrayCreate(import.Count);
+        array : this.ListInfra.ArrayCreate(import.Count);
 
         long count;
-        count = array.Count;
+        count : array.Count;
 
         long i;
-        i = 0;
+        i : 0;
         while (i < count)
         {
             PortImport ka;
-            ka = import.GetAt(i) as PortImport;
+            ka : import.GetAt(i) as PortImport;
 
             ModuleRef k;
-            k = ka.Module;
+            k : ka.Module;
 
             String name;
-            name = k.Name;
+            name : k.Name;
             long ver;
-            ver = k.Ver;
+            ver : k.Ver;
             if (ver == -1)
             {
-                ver = 0;
+                ver : 0;
             }
 
             ModuleRef a;
-            a = this.ClassInfra.ModuleRefCreate(name, ver);
+            a : this.ClassInfra.ModuleRefCreate(name, ver);
 
             if (table.Valid(a))
             {
-                this.Status = 30;
+                this.Status : 30;
                 return false;
             }
 
@@ -221,23 +221,23 @@ class PortLoad : TextAdd
 
             array.SetAt(i, a);
 
-            i = i + 1;
+            i : i + 1;
         }
 
-        this.ImportModuleRef = array;
+        this.ImportModuleRef : array;
         return true;
     }
 
     protected virtual bool ValidModuleRef(ModuleRef module)
     {
         String name;
-        name = module.Name;
+        name : module.Name;
         long ver;
-        ver = module.Ver;
+        ver : module.Ver;
 
         if (!(this.NameValid.ModuleName(this.TA(name))))
         {
-            this.Status = 1;
+            this.Status : 1;
             return false;
         }
 
@@ -245,13 +245,13 @@ class PortLoad : TextAdd
         {
             if (ver == -1)
             {
-                this.Status = 2;
+                this.Status : 2;
                 return false;
             }
 
             if (this.BuiltModuleRef(module))
             {
-                this.Status = 3;
+                this.Status : 3;
                 return false;
             }
         }
@@ -262,22 +262,22 @@ class PortLoad : TextAdd
     protected virtual bool ValidImportModuleRef(Array array)
     {
         long count;
-        count = array.Count;
+        count : array.Count;
 
         long i;
-        i = 0;
+        i : 0;
         while (i < count)
         {
             PortImport a;
-            a = array.GetAt(i) as PortImport;
+            a : array.GetAt(i) as PortImport;
 
             if (!this.ValidImportModuleRefOne(a.Module))
             {
-                this.Status = 10;
+                this.Status : 10;
                 return false;
             }
 
-            i = i + 1;
+            i : i + 1;
         }
         return true;
     }
@@ -285,9 +285,9 @@ class PortLoad : TextAdd
     protected virtual bool ValidImportModuleRefOne(ModuleRef moduleRef)
     {
         String name;
-        name = moduleRef.Name;
+        name : moduleRef.Name;
         long ver;
-        ver = moduleRef.Ver;
+        ver : moduleRef.Ver;
 
         if (!(this.NameValid.ModuleName(this.TA(name))))
         {
@@ -295,47 +295,47 @@ class PortLoad : TextAdd
         }
 
         bool built;
-        built = this.BuiltModuleRef(moduleRef);
+        built : this.BuiltModuleRef(moduleRef);
 
         bool b;
-        b = (ver == -1);
+        b : (ver == -1);
 
         bool a;
-        a = (built == b);
+        a : (built == b);
         return a;
     }
 
     protected virtual bool ExecuteBinaryLoad()
     {
-        this.BinaryTable = this.ClassInfra.TableCreateModuleRefLess();
+        this.BinaryTable : this.ClassInfra.TableCreateModuleRefLess();
 
         Array array;
-        array = this.ImportModuleRef;
+        array : this.ImportModuleRef;
 
         long count;
-        count = array.Count;
+        count : array.Count;
 
         long i;
-        i = 0;
+        i : 0;
         while (i < count)
         {
             ModuleRef a;
-            a = array.GetAt(i) as ModuleRef;
+            a : array.GetAt(i) as ModuleRef;
 
             bool b;
-            b = this.BinaryLoadRecurse(a);
+            b : this.BinaryLoadRecurse(a);
             if (!b)
             {
                 String k;
-                k = this.ModuleRefString(a);
+                k : this.ModuleRefString(a);
 
                 this.ErrorAdd(this.ErrorKind.ModuleUnvalid, k);
 
-                this.Status = 50;
+                this.Status : 50;
                 return false;
             }
 
-            i = i + 1;
+            i : i + 1;
         }
         return true;
     }
@@ -348,33 +348,33 @@ class PortLoad : TextAdd
         }
 
         BinaryBinary binary;
-        binary = this.BinaryLoad(moduleRef);
+        binary : this.BinaryLoad(moduleRef);
         if (binary == null)
         {
             return false;
         }
 
         Array array;
-        array = binary.Import;
+        array : binary.Import;
 
         long count;
-        count = array.Count;
+        count : array.Count;
 
         long i;
-        i = 0;
+        i : 0;
         while (i < count)
         {
             BinaryImport import;
-            import = array.GetAt(i) as BinaryImport;
+            import : array.GetAt(i) as BinaryImport;
 
             bool b;
-            b = this.BinaryLoadRecurse(import.Module);
+            b : this.BinaryLoadRecurse(import.Module);
             if (!b)
             {
                 return false;
             }
 
-            i = i + 1;
+            i : i + 1;
         }
 
         this.ListInfra.TableAdd(this.BinaryTable, binary.Ref, binary);
@@ -385,15 +385,15 @@ class PortLoad : TextAdd
     protected virtual BinaryBinary BinaryLoad(ModuleRef moduleRef)
     {
         String moduleRefString;
-        moduleRefString = this.ModuleRefString(moduleRef);
+        moduleRefString : this.ModuleRefString(moduleRef);
 
         String filePath;
-        filePath = this.AddClear().Add(this.ClassInfra.ClassModulePath(this.ClassPath))
+        filePath : this.AddClear().Add(this.ClassInfra.ClassModulePath(this.ClassPath))
             .Add(this.TextInfra.PathCombine).Add(moduleRefString)
             .Add(this.TextInfra.PathCombine).Add(this.SModule).AddResult();
 
         Data data;
-        data = this.StorageInfra.DataRead(filePath);
+        data : this.StorageInfra.DataRead(filePath);
 
         if (data == null)
         {
@@ -401,19 +401,19 @@ class PortLoad : TextAdd
         }
 
         BinaryRead read;
-        read = this.BinaryRead;
+        read : this.BinaryRead;
 
-        read.Data = data;
+        read.Data : data;
 
         read.Execute();
 
         BinaryBinary binary;
-        binary = read.Result;
+        binary : read.Result;
 
-        read.Result = null;
+        read.Result : null;
 
         BinaryBinary a;
-        a = binary;
+        a : binary;
 
         return a;
     }
@@ -421,16 +421,16 @@ class PortLoad : TextAdd
     protected virtual bool ExecuteDepend()
     {
         ModuleRef ka;
-        ka = this.ModuleRef;
+        ka : this.ModuleRef;
 
         if (this.BinaryTable.Valid(ka))
         {
             String k;
-            k = this.ModuleRefString(ka);
+            k : this.ModuleRefString(ka);
 
             this.ErrorAdd(this.ErrorKind.ModuleUndefine, k);
 
-            this.Status = 60;
+            this.Status : 60;
             return false;
         }
 
@@ -440,48 +440,48 @@ class PortLoad : TextAdd
     protected virtual bool ExecuteModulePort()
     {
         ModulePort modulePort;
-        modulePort = this.ModulePort;
+        modulePort : this.ModulePort;
 
-        modulePort.BinaryTable = this.BinaryTable;
-        modulePort.ModuleTable = this.ModuleTable;
+        modulePort.BinaryTable : this.BinaryTable;
+        modulePort.ModuleTable : this.ModuleTable;
 
         Iter iter;
-        iter = this.BinaryTable.IterCreate();
+        iter : this.BinaryTable.IterCreate();
         this.BinaryTable.IterSet(iter);
 
         while (iter.Next())
         {
             ModuleRef moduleRef;
-            moduleRef = iter.Index as ModuleRef;
+            moduleRef : iter.Index as ModuleRef;
 
-            modulePort.ModuleRef = moduleRef;
-            modulePort.AnyClass = this.AnyClass;
+            modulePort.ModuleRef : moduleRef;
+            modulePort.AnyClass : this.AnyClass;
 
             bool b;
-            b = modulePort.Execute();
+            b : modulePort.Execute();
 
             if (!b)
             {
                 long ka;
-                ka = modulePort.Status;
+                ka : modulePort.Status;
 
                 String k;
-                k = this.ModuleRefString(moduleRef);
+                k : this.ModuleRefString(moduleRef);
 
                 this.ErrorAdd(this.ErrorKind.ModuleUndefine, k);
 
-                this.Status = 200 + ka;
+                this.Status : 200 + ka;
                 return false;
             }
 
             ClassModule a;
-            a = modulePort.Result;
+            a : modulePort.Result;
 
-            this.AnyClass = modulePort.AnyClass;
+            this.AnyClass : modulePort.AnyClass;
 
-            modulePort.Result = null;
-            modulePort.AnyClass = null;
-            modulePort.ModuleRef = null;
+            modulePort.Result : null;
+            modulePort.AnyClass : null;
+            modulePort.ModuleRef : null;
 
             this.ListInfra.TableAdd(this.ModuleTable, a.Ref, a);
         }
@@ -492,28 +492,28 @@ class PortLoad : TextAdd
     protected virtual bool ExecuteCreateModule()
     {
         ClassModule module;
-        module = new ClassModule();
+        module : new ClassModule();
         module.Init();
-        module.Ref = this.ModuleRef;
-        module.Class = this.ClassInfra.TableCreateStringLess();
-        module.Import = this.ClassInfra.TableCreateModuleRefLess();
-        module.Export = this.ClassInfra.TableCreateStringLess();
+        module.Ref : this.ModuleRef;
+        module.Class : this.ClassInfra.TableCreateStringLess();
+        module.Import : this.ClassInfra.TableCreateModuleRefLess();
+        module.Export : this.ClassInfra.TableCreateStringLess();
 
-        module.Storage = new Table();
-        module.Storage.Less = this.StorageStringLessCreate();
+        module.Storage : new Table();
+        module.Storage.Less : this.StorageStringLessCreate();
         module.Storage.Init();
 
-        this.Module = module;
+        this.Module : module;
         return true;
     }
 
     public virtual StringLess StorageStringLessCreate()
     {
         StringLess a;
-        a = new StringLess();
-        a.LiteForm = this.StorageInfra.NameForm;
-        a.RiteForm = this.StorageInfra.NameForm;
-        a.CharLess = this.ILess;
+        a : new StringLess();
+        a.LiteForm : this.StorageInfra.NameForm;
+        a.RiteForm : this.StorageInfra.NameForm;
+        a.CharLess : this.ILess;
         a.Init();
         return a;
     }
@@ -521,69 +521,69 @@ class PortLoad : TextAdd
     protected virtual bool ExecuteImport()
     {
         Array array;
-        array = this.Port.Import;
+        array : this.Port.Import;
 
         bool b;
-        b = false;
+        b : false;
 
         long count;
-        count = array.Count;
+        count : array.Count;
 
         long i;
-        i = 0;
+        i : 0;
         while (i < count)
         {
             ModuleRef moduleRef;
-            moduleRef = this.ImportModuleRef.GetAt(i) as ModuleRef;
+            moduleRef : this.ImportModuleRef.GetAt(i) as ModuleRef;
 
             ClassModule module;
-            module = this.ModuleTable.Get(moduleRef) as ClassModule;
+            module : this.ModuleTable.Get(moduleRef) as ClassModule;
 
             Table importTable;
-            importTable = this.ClassInfra.TableCreateRefLess();
+            importTable : this.ClassInfra.TableCreateRefLess();
 
             this.ListInfra.TableAdd(this.Module.Import, moduleRef, importTable);
 
             PortImport portImport;
-            portImport = array.GetAt(i) as PortImport;
+            portImport : array.GetAt(i) as PortImport;
 
             Array importClassArray;
-            importClassArray = portImport.Class;
+            importClassArray : portImport.Class;
 
             long countA;
-            countA = importClassArray.Count;
+            countA : importClassArray.Count;
 
             long iA;
-            iA = 0;
+            iA : 0;
             while (iA < countA)
             {
                 PortImportClass importClass;
-                importClass = importClassArray.GetAt(iA) as PortImportClass;
+                importClass : importClassArray.GetAt(iA) as PortImportClass;
 
                 String className;
-                className = importClass.Class;
+                className : importClass.Class;
 
                 ClassClass varClass;
-                varClass = null;
+                varClass : null;
 
                 bool ba;
-                ba = false;
+                ba : false;
 
                 if (!ba)
                 {
                     if (!this.NameValid.Name(this.TA(className)))
                     {
-                        ba = true;
+                        ba : true;
                     }
                 }
 
                 if (!ba)
                 {
-                    varClass = module.Class.Get(className) as ClassClass;
+                    varClass : module.Class.Get(className) as ClassClass;
 
                     if (varClass == null)
                     {
-                        ba = true;
+                        ba : true;
                     }
                 }
 
@@ -591,7 +591,7 @@ class PortLoad : TextAdd
                 {
                     if (!module.Export.Valid(className))
                     {
-                        ba = true;
+                        ba : true;
                     }
                 }
 
@@ -599,7 +599,7 @@ class PortLoad : TextAdd
                 {
                     this.ErrorAdd(this.ErrorKind.ImportClassUndefine, className);
 
-                    b = true;
+                    b : true;
                 }
 
                 if (!ba)
@@ -608,16 +608,16 @@ class PortLoad : TextAdd
                 }
 
                 String name;
-                name = importClass.Name;
+                name : importClass.Name;
 
                 bool bb;
-                bb = false;
+                bb : false;
 
                 if (!bb)
                 {
                     if (!this.NameValid.Name(this.TA(name)))
                     {
-                        bb = true;
+                        bb : true;
                     }
                 }
 
@@ -625,7 +625,7 @@ class PortLoad : TextAdd
                 {
                     if (this.ImportClass.Valid(name))
                     {
-                        bb = true;
+                        bb : true;
                     }
                 }
 
@@ -633,7 +633,7 @@ class PortLoad : TextAdd
                 {
                     this.ErrorAdd(this.ErrorKind.ImportNameUnavail, name);
 
-                    b = true;
+                    b : true;
                 }
 
                 if (!(ba | bb))
@@ -641,15 +641,15 @@ class PortLoad : TextAdd
                     this.ListInfra.TableAdd(this.ImportClass, name, varClass);
                 }
 
-                iA = iA + 1;
+                iA : iA + 1;
             }
 
-            i = i + 1;
+            i : i + 1;
         }
 
         if (b)
         {
-            this.Status = 80;
+            this.Status : 80;
             return false;
         }
 
@@ -659,32 +659,32 @@ class PortLoad : TextAdd
     protected virtual bool ExecuteExport()
     {
         Array array;
-        array = this.Port.Export;
+        array : this.Port.Export;
 
         bool b;
-        b = false;
+        b : false;
 
         long count;
-        count = array.Count;
+        count : array.Count;
 
         long i;
-        i = 0;
+        i : 0;
         while (i < count)
         {
             PortExport portExport;
-            portExport = array.GetAt(i) as PortExport;
+            portExport : array.GetAt(i) as PortExport;
 
             String name;
-            name = portExport.Class;
+            name : portExport.Class;
 
             bool ba;
-            ba = false;
+            ba : false;
 
             if (!ba)
             {
                 if (!this.NameValid.Name(this.TA(name)))
                 {
-                    ba = true;
+                    ba : true;
                 }
             }
 
@@ -692,7 +692,7 @@ class PortLoad : TextAdd
             {
                 if (this.ImportClass.Valid(name))
                 {
-                    ba = true;
+                    ba : true;
                 }
             }
 
@@ -700,7 +700,7 @@ class PortLoad : TextAdd
             {
                 if (this.Module.Export.Valid(name))
                 {
-                    ba = true;
+                    ba : true;
                 }
             }
 
@@ -708,7 +708,7 @@ class PortLoad : TextAdd
             {
                 this.ErrorAdd(this.ErrorKind.ExportUnvalid, name);
 
-                b = true;
+                b : true;
             }
 
             if (!ba)
@@ -716,12 +716,12 @@ class PortLoad : TextAdd
                 this.ListInfra.TableAdd(this.Module.Export, name, null);
             }
 
-            i = i + 1;
+            i : i + 1;
         }
 
         if (b)
         {
-            this.Status = 90;
+            this.Status : 90;
             return false;
         }
 
@@ -731,46 +731,46 @@ class PortLoad : TextAdd
     protected virtual bool ExecuteStorage()
     {
         Array array;
-        array = this.Port.Storage;
+        array : this.Port.Storage;
 
         bool b;
-        b = false;
+        b : false;
 
         long count;
-        count = array.Count;
+        count : array.Count;
 
         long i;
-        i = 0;
+        i : 0;
         while (i < count)
         {
             PortStorage portStorage;
-            portStorage = array.GetAt(i) as PortStorage;
+            portStorage : array.GetAt(i) as PortStorage;
 
             String sourcePathKa;
             String destPathKa;
-            sourcePathKa = portStorage.Source;
-            destPathKa = portStorage.Dest;
+            sourcePathKa : portStorage.Source;
+            destPathKa : portStorage.Dest;
 
             Text sourcePathK;
             String sourcePath;
-            sourcePathK = this.TextTrimEnd(this.TextTrimStart(this.TA(sourcePathKa)));
-            sourcePath = this.StringCreate(sourcePathK);
+            sourcePathK : this.TextTrimEnd(this.TextTrimStart(this.TA(sourcePathKa)));
+            sourcePath : this.StringCreate(sourcePathK);
 
             Text destPathK;
             String destPath;
-            destPathK = this.TextTrimEnd(this.TextTrimStart(this.TA(destPathKa)));
-            destPath = this.StringCreate(destPathK);
+            destPathK : this.TextTrimEnd(this.TextTrimStart(this.TA(destPathKa)));
+            destPath : this.StringCreate(destPathK);
 
             String sourcePathA;
-            sourcePathA = sourcePath;
+            sourcePathA : sourcePath;
 
             if (this.StorageInfra.PathRelate(this.TA(sourcePath), this.TLess))
             {
-                sourcePathA = this.AddClear().Add(this.SourceFold).Add(this.TextInfra.PathCombine).Add(sourcePath).AddResult();
+                sourcePathA : this.AddClear().Add(this.SourceFold).Add(this.TextInfra.PathCombine).Add(sourcePath).AddResult();
             }
 
             bool ba;
-            ba = false;
+            ba : false;
 
             if (!ba)
             {
@@ -778,7 +778,7 @@ class PortLoad : TextAdd
                 {
                     this.ErrorAdd(this.ErrorKind.StorageSourceUnvalid, sourcePath);
 
-                    ba = true;
+                    ba : true;
                 }
             }
 
@@ -788,7 +788,7 @@ class PortLoad : TextAdd
                 {
                     this.ErrorAdd(this.ErrorKind.StorageDestUnvalid, destPath);
 
-                    ba = true;
+                    ba : true;
                 }
             }
 
@@ -798,7 +798,7 @@ class PortLoad : TextAdd
                 {
                     this.ErrorAdd(this.ErrorKind.StorageDestUnavail, destPath);
 
-                    ba = true;
+                    ba : true;
                 }
             }
 
@@ -808,23 +808,23 @@ class PortLoad : TextAdd
                 {
                     this.ErrorAdd(this.ErrorKind.StorageSourceUnachieve, sourcePath);
 
-                    ba = true;
+                    ba : true;
                 }
             }
 
             if (ba)
             {
-                b = true;
+                b : true;
             }
 
             this.ListInfra.TableAdd(this.Module.Storage, destPath, sourcePathA);
 
-            i = i + 1;
+            i : i + 1;
         }
 
         if (b)
         {
-            this.Status = 100;
+            this.Status : 100;
             return false;
         }
 
@@ -834,7 +834,7 @@ class PortLoad : TextAdd
     protected virtual bool ExecuteEntry()
     {
         String entry;
-        entry = this.Port.Entry;
+        entry : this.Port.Entry;
 
         if (entry == null)
         {
@@ -842,63 +842,63 @@ class PortLoad : TextAdd
         }
 
         bool b;
-        b = false;
+        b : false;
 
         if (!this.NameValid.Name(this.TA(entry)))
         {
-            b = true;
+            b : true;
         }
 
         if (this.ImportClass.Valid(entry))
         {
-            b = true;
+            b : true;
         }
 
         if (b)
         {
             this.ErrorAdd(this.ErrorKind.EntryUnachieve, entry);
 
-            this.Status = 110;
+            this.Status : 110;
             return false;
         }
 
-        this.Module.Entry = entry;
+        this.Module.Entry : entry;
         return true;
     }
 
     protected virtual String ModuleRefString(ModuleRef k)
     {
         String verString;
-        verString = this.ClassInfra.VerString(k.Ver);
+        verString : this.ClassInfra.VerString(k.Ver);
 
         String a;
-        a = this.ClassInfra.ModuleRefString(k.Name, verString);
+        a : this.ClassInfra.ModuleRefString(k.Name, verString);
         return a;
     }
 
     protected virtual bool BuiltModuleRef(ModuleRef moduleRef)
     {
         String name;
-        name = moduleRef.Name;
+        name : moduleRef.Name;
 
         Text textName;
-        textName = this.TA(name);
+        textName : this.TA(name);
 
         bool b;
-        b = false;
+        b : false;
 
         if (!b)
         {
             if (this.TextSame(textName, this.TB(this.SystemModuleSingle)))
             {
-                b = true;
+                b : true;
             }
         }
         if (!b)
         {
             if (this.TextStart(textName, this.TB(this.SystemModulePre)))
             {
-                b = true;
+                b : true;
             }
         }
 
@@ -908,11 +908,11 @@ class PortLoad : TextAdd
     protected virtual bool ErrorAdd(ErrorKind kind, String name)
     {
         Error a;
-        a = new Error();
+        a : new Error();
         a.Init();
-        a.Kind = kind;
-        a.Name = name;
-        a.Source = -1;
+        a.Kind : kind;
+        a.Name : name;
+        a.Source : -1;
 
         this.ErrorList.Add(a);
         return true;
