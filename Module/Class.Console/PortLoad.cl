@@ -222,7 +222,7 @@ class PortLoad : TextAdd
         return true;
     }
 
-    maide precate Bool ValidModuleRef(ModuleRef module)
+    maide precate Bool ValidModuleRef(var ModuleRef module)
     {
         var String name;
         name : module.Name;
@@ -276,7 +276,7 @@ class PortLoad : TextAdd
         return true;
     }
 
-    maide precate Bool ValidImportModuleRefOne(ModuleRef moduleRef)
+    maide precate Bool ValidImportModuleRefOne(var ModuleRef moduleRef)
     {
         var String name;
         name : moduleRef.Name;
