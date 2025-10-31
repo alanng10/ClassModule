@@ -468,7 +468,7 @@ class PortLoad : TextAdd
                 return false;
             }
 
-            Module a;
+            var Module a;
             a : modulePort.Result;
 
             this.AnyClass : modulePort.AnyClass;
@@ -485,7 +485,7 @@ class PortLoad : TextAdd
 
     maide precate Bool ExecuteCreateModule()
     {
-        Module module;
+        var Module module;
         module : new Module();
         module.Init();
         module.Ref : this.ModuleRef;
@@ -530,7 +530,7 @@ class PortLoad : TextAdd
             var ModuleRef moduleRef;
             moduleRef : this.ImportModuleRef.Get(i) as ModuleRef;
 
-            Module module;
+            var Module module;
             module : this.ModuleTable.Get(moduleRef) as Module;
 
             var Table importTable;
