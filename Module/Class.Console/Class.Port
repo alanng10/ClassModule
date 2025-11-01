@@ -44,6 +44,7 @@ Class.Infra:0.00.00
     Error Error
     CountList CountList
     PrintChar PrintChar
+    StoragePathValid StoragePathValid
     ClassInfra Infra
 Class.Token:0.00.00
     TokenCreate Create
