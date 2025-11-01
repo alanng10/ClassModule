@@ -67,6 +67,8 @@ Class.Port:0.00.00
     Port Port
     PortImport Import
     PortImportClass ImportClass
+    PortExport Export
+    PortStorage Storage
 Class.Token:0.00.00
     TokenCreate Create
     TokenResult Result
