@@ -3,10 +3,10 @@ class StorageGen : TextAdd
     maide prusate Bool Init()
     {
         base.Init();
-        this.StorageInfra = StorageInfra.This;
-        this.ClassInfra = ClassInfra.This;
-        this.StorageComp = StorageComp.This;
-        this.SData = this.S("Data");
+        this.StorageInfra : StorageInfra.This;
+        this.ClassInfra : ClassInfra.This;
+        this.StorageComp : StorageComp.This;
+        this.SData : this.S("Data");
         return true;
     }
 
@@ -21,7 +21,7 @@ class StorageGen : TextAdd
     public virtual Bool Execute()
     {
         String dataFoldPath;
-        dataFoldPath = this.AddClear().Add(this.ClassInfra.ClassModulePath(this.ClassPath))
+        dataFoldPath : this.AddClear().Add(this.ClassInfra.ClassModulePath(this.ClassPath))
             .Add(this.TextInfra.PathCombine)
             .Add(this.ModuleRefString).Add(this.TextInfra.PathCombine).Add(this.SData).AddResult();
 
@@ -30,53 +30,53 @@ class StorageGen : TextAdd
         this.StorageComp.FoldCreate(dataFoldPath);
 
         StorageEntry entry;
-        entry = this.StorageComp.Entry(dataFoldPath);
+        entry : this.StorageComp.Entry(dataFoldPath);
 
         Bool ba;
 
-        ba = entry.Exist;
+        ba : entry.Exist;
         if (!ba)
         {
             return false;
         }
 
-        ba = entry.Fold;
+        ba : entry.Fold;
         if (!ba)
         {
             return false;
         }
 
         Iter iter;
-        iter = this.Module.Storage.IterCreate();
+        iter : this.Module.Storage.IterCreate();
         this.Module.Storage.IterSet(iter);
 
         while (iter.Next())
         {
             String destPath;
             String sourcePath;
-            destPath = iter.Index as String;
-            sourcePath = iter.Value as String;
+            destPath : iter.Index as String;
+            sourcePath : iter.Value as String;
 
             Int combine;
-            combine = this.StorageInfra.EntryPathNameCombine(this.TA(destPath), this.TLess);
+            combine : this.StorageInfra.EntryPathNameCombine(this.TA(destPath), this.TLess);
 
             String pathA;
-            pathA = null;
+            pathA : null;
 
             if (!(combine == -1))
             {
-                pathA = this.StringCreateRange(destPath, 0, combine);
+                pathA : this.StringCreateRange(destPath, 0, combine);
             }
             
             if (!(pathA == null))
             {
                 String destFoldPath;
-                destFoldPath = this.AddClear().Add(dataFoldPath).Add(this.TextInfra.PathCombine).Add(pathA).AddResult();
+                destFoldPath : this.AddClear().Add(dataFoldPath).Add(this.TextInfra.PathCombine).Add(pathA).AddResult();
 
                 this.StorageComp.FoldCreate(destFoldPath);
 
                 StorageEntry entryA;
-                entryA = this.StorageComp.Entry(destFoldPath);
+                entryA : this.StorageComp.Entry(destFoldPath);
 
                 if (!entryA.Exist)
                 {
@@ -90,15 +90,15 @@ class StorageGen : TextAdd
             }
 
             String finalDestPath;
-            finalDestPath = this.AddClear().Add(dataFoldPath).Add(this.TextInfra.PathCombine).Add(destPath).AddResult();
+            finalDestPath : this.AddClear().Add(dataFoldPath).Add(this.TextInfra.PathCombine).Add(destPath).AddResult();
 
             Bool fold;
-            fold = this.StorageComp.Entry(sourcePath).Fold;
+            fold : this.StorageComp.Entry(sourcePath).Fold;
 
             if (fold)
             {
                 Bool bb;
-                bb = this.StorageComp.FoldCopy(sourcePath, finalDestPath);
+                bb : this.StorageComp.FoldCopy(sourcePath, finalDestPath);
 
                 if (!bb)
                 {
@@ -109,7 +109,7 @@ class StorageGen : TextAdd
             if (!fold)
             {
                 Bool bc;
-                bc = this.StorageComp.FileCopy(sourcePath, finalDestPath);
+                bc : this.StorageComp.FileCopy(sourcePath, finalDestPath);
 
                 if (!bc)
                 {
