@@ -11,7 +11,6 @@ class TaskKindList : Any
         this.Node : this.AddItem();
         this.Module : this.AddItem();
         this.Console : this.AddItem();
-        this.Docue : this.AddItem();
         this.Library : this.AddItem();
         return true;
     }
@@ -20,7 +19,6 @@ class TaskKindList : Any
     field prusate TaskKind Node { get { return data; } set { data : value; } }
     field prusate TaskKind Module { get { return data; } set { data : value; } }
     field prusate TaskKind Console { get { return data; } set { data : value; } }
-    field prusate TaskKind Docue { get { return data; } set { data : value; } }
     field prusate TaskKind Library { get { return data; } set { data : value; } }
 
     maide precate TaskKind AddItem()
@@ -44,7 +42,7 @@ class TaskKindList : Any
 
     field precate Array Array { get { return data; } set { data : value; } }
 
-    field precate Int ArrayCount { get { return 6; } set { } }
+    field precate Int ArrayCount { get { return 5; } set { } }
 
     field prusate Int Count { get { return data; } set { data : value; } }
 
