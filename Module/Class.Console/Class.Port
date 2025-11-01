@@ -46,6 +46,20 @@ Class.Infra:0.00.00
     PrintChar PrintChar
     StoragePathValid StoragePathValid
     ClassInfra Infra
+Class.Binary:0.00.00
+    Binary Binary
+    BinaryClass Class
+    BinaryImport Import
+    BinaryPart Part
+    BinaryField Field
+    BinaryMaide Maide
+    BinaryVar Var
+    BinaryEntry Entry
+    BinaryOperate Operate
+    BinaryOperateKind OperateKind
+    BinaryOperateKindList OperateKindList
+Class.Port:0.00.00
+    Port Port
 Class.Token:0.00.00
     TokenCreate Create
     TokenResult Result
@@ -124,18 +138,6 @@ Class.Node:0.00.00
     Node Node
 Class.Module:0.00.00
     Info Info
-Class.Binary:0.00.00
-    Binary Binary
-    BinaryClass Class
-    BinaryImport Import
-    BinaryPart Part
-    BinaryField Field
-    BinaryMaide Maide
-    BinaryVar Var
-    BinaryEntry Entry
-    BinaryOperate Operate
-    BinaryOperateKind OperateKind
-    BinaryOperateKindList OperateKindList
 
 [Export]
 Console
