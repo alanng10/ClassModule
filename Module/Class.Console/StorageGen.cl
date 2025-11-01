@@ -10,7 +10,6 @@ class StorageGen : TextAdd
     }
 
     field prusate Module Module { get { return data; } set { data : value; } }
-    field prusate ModuleRef ModuleRef { get { return data; } set { data : value; } }
 
     public virtual String ClassPath { get; set; }
     protected virtual StorageInfra StorageInfra { get; set; }
