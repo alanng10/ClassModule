@@ -140,6 +140,7 @@ Class.Node:0.00.00
     Node Node
 Class.Module:0.00.00
     Info Info
+    ErrorKindList ErrorKindList
 
 [Export]
 Console
