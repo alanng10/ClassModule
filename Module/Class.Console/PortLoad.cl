@@ -325,7 +325,7 @@ class PortLoad : TextAdd
             inf (~b)
             {
                 var String k;
-                k : this.ModuleRefString(a);
+                k : this.ClassInfra.ModuleRefString(a);
 
                 this.ErrorAdd(this.ErrorKind.ModuleUnvalid, k);
 
@@ -383,7 +383,7 @@ class PortLoad : TextAdd
     maide precate Binary BinaryLoad(var ModuleRef moduleRef)
     {
         var String moduleRefString;
-        moduleRefString : this.ModuleRefString(moduleRef);
+        moduleRefString : this.ClassInfra.ModuleRefString(moduleRef);
 
         var String filePath;
         filePath : this.AddClear().Add(this.ClassInfra.ClassModulePath(this.ClassPath))
@@ -424,7 +424,7 @@ class PortLoad : TextAdd
         inf (this.BinaryTable.Valid(ka))
         {
             var String k;
-            k : this.ModuleRefString(ka);
+            k : this.ClassInfra.ModuleRefString(ka);
 
             this.ErrorAdd(this.ErrorKind.ModuleUndefine, k);
 
@@ -464,7 +464,7 @@ class PortLoad : TextAdd
                 ka : modulePort.Status;
 
                 var String k;
-                k : this.ModuleRefString(moduleRef);
+                k : this.ClassInfra.ModuleRefString(moduleRef);
 
                 this.ErrorAdd(this.ErrorKind.ModuleUndefine, k);
 
@@ -862,16 +862,6 @@ class PortLoad : TextAdd
 
         this.Module.Entry : entry;
         return true;
-    }
-
-    maide precate String ModuleRefString(var ModuleRef moduleRef)
-    {
-        var String verString;
-        verString : this.ClassInfra.VerString(moduleRef.Ver);
-
-        var String a;
-        a : this.ClassInfra.ModuleRefString(moduleRef.Name, verString);
-        return a;
     }
 
     maide precate Bool BuiltModuleRef(var ModuleRef moduleRef)
