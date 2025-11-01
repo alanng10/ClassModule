@@ -31,6 +31,7 @@ Text.Text:0.00.00
     TextAdd Add
 Storage.Storage:0.00.00
     StorageComp Comp
+    StorageEntry Entry
     StorageNameForm NameForm
     StorageInfra Infra
 Class.Infra:0.00.00
