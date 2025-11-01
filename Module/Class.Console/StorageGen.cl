@@ -52,15 +52,15 @@ class StorageGen : TextAdd
 
         while (iter.Next())
         {
-            String destPath;
-            String sourcePath;
+            var String destPath;
+            var String sourcePath;
             destPath : iter.Index as String;
             sourcePath : iter.Value as String;
 
             var Int combine;
             combine : this.StorageInfra.EntryPathNameCombine(this.TA(destPath), this.TLess);
 
-            String pathA;
+            var String pathA;
             pathA : null;
 
             inf (~(combine == -1))
@@ -70,7 +70,7 @@ class StorageGen : TextAdd
             
             inf (~(pathA == null))
             {
-                String destFoldPath;
+                var String destFoldPath;
                 destFoldPath : this.AddClear().Add(dataFoldPath).Add(this.TextInfra.PathCombine).Add(pathA).AddResult();
 
                 this.StorageComp.FoldCreate(destFoldPath);
@@ -89,7 +89,7 @@ class StorageGen : TextAdd
                 }
             }
 
-            String finalDestPath;
+            var String finalDestPath;
             finalDestPath : this.AddClear().Add(dataFoldPath).Add(this.TextInfra.PathCombine).Add(destPath).AddResult();
 
             var Bool fold;
