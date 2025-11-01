@@ -15,7 +15,7 @@ class StorageGen : TextAdd
     field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
     field precate StorageComp StorageComp { get { return data; } set { data : value; } }
 
-    public virtual Bool Execute()
+    maide prusate Bool Execute()
     {
         String moduleRefString;
         moduleRefString = this.ClassInfra.ModuleRefString(this.Module.Ref);
