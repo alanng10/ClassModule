@@ -865,13 +865,13 @@ class PortLoad : TextAdd
         return true;
     }
 
-    maide precate String ModuleRefString(var ModuleRef k)
+    maide precate String ModuleRefString(var ModuleRef moduleRef)
     {
         var String verString;
-        verString : this.ClassInfra.VerString(k.Ver);
+        verString : this.ClassInfra.VerString(moduleRef.Ver);
 
         var String a;
-        a : this.ClassInfra.ModuleRefString(k.Name, verString);
+        a : this.ClassInfra.ModuleRefString(moduleRef.Name, verString);
         return a;
     }
 
