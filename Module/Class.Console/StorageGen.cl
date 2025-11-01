@@ -3,10 +3,9 @@ class StorageGen : TextAdd
     maide prusate Bool Init()
     {
         base.Init();
-        this.StorageInfra : StorageInfra.This;
-        this.ClassInfra : ClassInfra.This;
-        this.StorageComp : StorageComp.This;
-        this.SData : this.S("Data");
+        this.StorageInfra : share StorageInfra;
+        this.ClassInfra : share ClassInfra;
+        this.StorageComp : share StorageComp;
         return true;
     }
 
@@ -16,7 +15,6 @@ class StorageGen : TextAdd
     protected virtual StorageInfra StorageInfra { get; set; }
     protected virtual ClassInfra ClassInfra { get; set; }
     protected virtual StorageComp StorageComp { get; set; }
-    protected virtual String SData { get; set; }
 
     public virtual Bool Execute()
     {
