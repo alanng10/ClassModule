@@ -54,8 +54,8 @@ class StorageGen : TextAdd
         {
             var String destPath;
             var String sourcePath;
-            destPath : iter.Index as String;
-            sourcePath : iter.Value as String;
+            destPath : cast String(iter.Index);
+            sourcePath : cast String(iter.Value);
 
             var Int combine;
             combine : this.StorageInfra.EntryPathNameCombine(this.TA(destPath), this.TLess);
