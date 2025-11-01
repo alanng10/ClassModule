@@ -17,7 +17,7 @@ class StorageGen : TextAdd
 
     maide prusate Bool Execute()
     {
-        String moduleRefString;
+        var String moduleRefString;
         moduleRefString : this.ClassInfra.ModuleRefString(this.Module.Ref);
 
         String dataFoldPath;
