@@ -1,8 +1,6 @@
-namespace Saber.Console;
-
-public class StorageGen : TextAdd
+class StorageGen : TextAdd
 {
-    public override bool Init()
+    maide prusate bool Init()
     {
         base.Init();
         this.StorageInfra = StorageInfra.This;
