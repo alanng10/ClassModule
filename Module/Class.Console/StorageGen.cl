@@ -66,7 +66,7 @@ class StorageGen : TextAdd
             {
                 pathA : this.StringCreateRange(destPath, 0, combine);
             }
-            
+
             inf (~(pathA = null))
             {
                 var String destFoldPath;
