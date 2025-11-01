@@ -32,7 +32,7 @@ class StorageGen : TextAdd
         StorageEntry entry;
         entry : this.StorageComp.Entry(dataFoldPath);
 
-        Bool ba;
+        var Bool ba;
 
         ba : entry.Exist;
         if (!ba)
@@ -92,12 +92,12 @@ class StorageGen : TextAdd
             String finalDestPath;
             finalDestPath : this.AddClear().Add(dataFoldPath).Add(this.TextInfra.PathCombine).Add(destPath).AddResult();
 
-            Bool fold;
+            var Bool fold;
             fold : this.StorageComp.Entry(sourcePath).Fold;
 
             if (fold)
             {
-                Bool bb;
+                var Bool bb;
                 bb : this.StorageComp.FoldCopy(sourcePath, finalDestPath);
 
                 if (!bb)
@@ -108,7 +108,7 @@ class StorageGen : TextAdd
 
             if (!fold)
             {
-                Bool bc;
+                var Bool bc;
                 bc : this.StorageComp.FileCopy(sourcePath, finalDestPath);
 
                 if (!bc)
