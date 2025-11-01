@@ -62,12 +62,12 @@ class StorageGen : TextAdd
 
             var String pathA;
 
-            inf (~(combine == -1))
+            inf (~(combine = -1))
             {
                 pathA : this.StringCreateRange(destPath, 0, combine);
             }
             
-            inf (~(pathA == null))
+            inf (~(pathA = null))
             {
                 var String destFoldPath;
                 destFoldPath : this.AddClear().Add(dataFoldPath).Add(this.TextInfra.PathCombine).Add(pathA).AddResult();
