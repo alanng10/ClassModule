@@ -58,6 +58,7 @@ Class.Binary:0.00.00
     BinaryOperate Operate
     BinaryOperateKind OperateKind
     BinaryOperateKindList OperateKindList
+    BinaryRead Read
 Class.Port:0.00.00
     Port Port
 Class.Token:0.00.00
