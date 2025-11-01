@@ -12,29 +12,30 @@ class ModulePort : TextAdd
     field prusate Table ModuleTable { get { return data; } set { data : value; } }
     field prusate Table BinaryTable { get { return data; } set { data : value; } }
     field prusate ModuleRef ModuleRef { get { return data; } set { data : value; } }
-    field prusate Module Module { get { return data; } set { data : value; } }
+    field prusate Module Result { get { return data; } set { data : value; } }
+    field prusate Class AnyClass { get { return data; } set { data : value; } }
     field prusate Int Status { get { return data; } set { data : value; } }
     field precate ListInfra ListInfra { get { return data; } set { data : value; } }
     field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
     field precate CountList CountList { get { return data; } set { data : value; } }
+    field precate Module Module { get { return data; } set { data : value; } }
     field precate Binary Binary { get { return data; } set { data : value; } }
     field precate Array ClassArray { get { return data; } set { data : value; } }
     field precate Array ImportArray { get { return data; } set { data : value; } }
     field precate Table VirtualTable { get { return data; } set { data : value; } }
-    field precate Class AnyClass { get { return data; } set { data : value; } }
 
     maide prusate Bool Execute()
     {
         var Bool b;
         b : this.ExecuteAll();
 
+        this.Module : null;
         this.Binary : null;
         this.ClassArray : null;
         this.ImportArray : null;
 
         inf (~b)
         {
-            this.Module : null;
             return false;
         }
 
@@ -44,6 +45,7 @@ class ModulePort : TextAdd
     maide precate Bool ExecuteAll()
     {
         this.Status : 0;
+        this.Result : null;
 
         inf (this.ModuleTable.Valid(this.ModuleRef))
         {
@@ -104,6 +106,7 @@ class ModulePort : TextAdd
             return false;
         }
 
+        this.Result : this.Module;
         return true;
     }
 
