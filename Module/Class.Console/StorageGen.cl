@@ -18,10 +18,13 @@ class StorageGen : TextAdd
 
     public virtual Bool Execute()
     {
+        String moduleRefString;
+        moduleRefString = this.ClassInfra.ModuleRefString(this.Module.Ref);
+
         String dataFoldPath;
         dataFoldPath : this.AddClear().Add(this.ClassInfra.ClassModulePath(this.ClassPath))
             .Add(this.TextInfra.PathCombine)
-            .Add(this.ModuleRefString).Add(this.TextInfra.PathCombine).Add(this.SData).AddResult();
+            .Add(moduleRefString).Add(this.TextInfra.PathCombine).Add(this.SData).AddResult();
 
         this.StorageComp.FoldDelete(dataFoldPath);
 
