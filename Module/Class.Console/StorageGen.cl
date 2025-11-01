@@ -10,11 +10,10 @@ class StorageGen : TextAdd
     }
 
     field prusate Module Module { get { return data; } set { data : value; } }
-
-    public virtual String ClassPath { get; set; }
-    protected virtual StorageInfra StorageInfra { get; set; }
-    protected virtual ClassInfra ClassInfra { get; set; }
-    protected virtual StorageComp StorageComp { get; set; }
+    field prusate String ClassPath { get { return data; } set { data : value; } }
+    field precate StorageInfra StorageInfra { get { return data; } set { data : value; } }
+    field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
+    field precate StorageComp StorageComp { get { return data; } set { data : value; } }
 
     public virtual Bool Execute()
     {
