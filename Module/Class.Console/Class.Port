@@ -65,6 +65,7 @@ Class.Binary:0.00.00
     BinaryRead Read
 Class.Port:0.00.00
     Port Port
+    PortImport Import
 Class.Token:0.00.00
     TokenCreate Create
     TokenResult Result
