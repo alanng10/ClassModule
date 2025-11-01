@@ -35,13 +35,13 @@ class StorageGen : TextAdd
         var Bool ba;
 
         ba : entry.Exist;
-        if (!ba)
+        if (~ba)
         {
             return false;
         }
 
         ba : entry.Fold;
-        if (!ba)
+        if (~ba)
         {
             return false;
         }
@@ -63,12 +63,12 @@ class StorageGen : TextAdd
             String pathA;
             pathA : null;
 
-            if (!(combine == -1))
+            if (~(combine == -1))
             {
                 pathA : this.StringCreateRange(destPath, 0, combine);
             }
             
-            if (!(pathA == null))
+            if (~(pathA == null))
             {
                 String destFoldPath;
                 destFoldPath : this.AddClear().Add(dataFoldPath).Add(this.TextInfra.PathCombine).Add(pathA).AddResult();
@@ -78,12 +78,12 @@ class StorageGen : TextAdd
                 StorageEntry entryA;
                 entryA : this.StorageComp.Entry(destFoldPath);
 
-                if (!entryA.Exist)
+                if (~entryA.Exist)
                 {
                     return false;
                 }
 
-                if (!entryA.Fold)
+                if (~entryA.Fold)
                 {
                     return false;
                 }
@@ -100,18 +100,18 @@ class StorageGen : TextAdd
                 var Bool bb;
                 bb : this.StorageComp.FoldCopy(sourcePath, finalDestPath);
 
-                if (!bb)
+                if (~bb)
                 {
                     return false;
                 }
             }
 
-            if (!fold)
+            if (~fold)
             {
                 var Bool bc;
                 bc : this.StorageComp.FileCopy(sourcePath, finalDestPath);
 
-                if (!bc)
+                if (~bc)
                 {
                     return false;
                 }
