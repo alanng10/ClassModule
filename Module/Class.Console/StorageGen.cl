@@ -61,7 +61,6 @@ class StorageGen : TextAdd
             combine : this.StorageInfra.EntryPathNameCombine(this.TA(destPath), this.TLess);
 
             var String pathA;
-            pathA : null;
 
             inf (~(combine == -1))
             {
