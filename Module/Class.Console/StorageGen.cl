@@ -62,7 +62,7 @@ class StorageGen : TextAdd
 
             var String pathA;
 
-            inf (~(combine = -1))
+            inf (~(combine = null))
             {
                 pathA : this.StringCreateRange(destPath, 0, combine);
             }
