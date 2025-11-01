@@ -29,7 +29,7 @@ class StorageGen : TextAdd
 
         this.StorageComp.FoldCreate(dataFoldPath);
 
-        StorageEntry entry;
+        var StorageEntry entry;
         entry : this.StorageComp.Entry(dataFoldPath);
 
         var Bool ba;
@@ -74,7 +74,7 @@ class StorageGen : TextAdd
 
                 this.StorageComp.FoldCreate(destFoldPath);
 
-                StorageEntry entryA;
+                var StorageEntry entryA;
                 entryA : this.StorageComp.Entry(destFoldPath);
 
                 inf (~entryA.Exist)
