@@ -1,6 +1,6 @@
 class StorageGen : TextAdd
 {
-    maide prusate bool Init()
+    maide prusate Bool Init()
     {
         base.Init();
         this.StorageInfra = StorageInfra.This;
@@ -18,7 +18,7 @@ class StorageGen : TextAdd
     protected virtual StorageComp StorageComp { get; set; }
     protected virtual String SData { get; set; }
 
-    public virtual bool Execute()
+    public virtual Bool Execute()
     {
         String dataFoldPath;
         dataFoldPath = this.AddClear().Add(this.ClassInfra.ClassModulePath(this.ClassPath))
@@ -32,7 +32,7 @@ class StorageGen : TextAdd
         StorageEntry entry;
         entry = this.StorageComp.Entry(dataFoldPath);
 
-        bool ba;
+        Bool ba;
 
         ba = entry.Exist;
         if (!ba)
@@ -57,7 +57,7 @@ class StorageGen : TextAdd
             destPath = iter.Index as String;
             sourcePath = iter.Value as String;
 
-            long combine;
+            Int combine;
             combine = this.StorageInfra.EntryPathNameCombine(this.TA(destPath), this.TLess);
 
             String pathA;
@@ -92,12 +92,12 @@ class StorageGen : TextAdd
             String finalDestPath;
             finalDestPath = this.AddClear().Add(dataFoldPath).Add(this.TextInfra.PathCombine).Add(destPath).AddResult();
 
-            bool fold;
+            Bool fold;
             fold = this.StorageComp.Entry(sourcePath).Fold;
 
             if (fold)
             {
-                bool bb;
+                Bool bb;
                 bb = this.StorageComp.FoldCopy(sourcePath, finalDestPath);
 
                 if (!bb)
@@ -108,7 +108,7 @@ class StorageGen : TextAdd
 
             if (!fold)
             {
-                bool bc;
+                Bool bc;
                 bc = this.StorageComp.FileCopy(sourcePath, finalDestPath);
 
                 if (!bc)
