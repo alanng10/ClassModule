@@ -46,7 +46,7 @@ class StorageGen : TextAdd
             return false;
         }
 
-        Iter iter;
+        var Iter iter;
         iter : this.Module.Storage.IterCreate();
         this.Module.Storage.IterSet(iter);
 
