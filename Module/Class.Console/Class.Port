@@ -44,6 +44,7 @@ Class.Infra:0.00.00
     Pos Pos
     Source Source
     Error Error
+    ErrorKind ErrorKind
     CountList CountList
     PrintChar PrintChar
     NameValid NameValid
