@@ -9,7 +9,8 @@ class StorageGen : TextAdd
         return true;
     }
 
-    public virtual ClassModule Module { get; set; }
+    field prusate Module Module { get { return data; } set { data : value; } }
+
     public virtual String ModuleRefString { get; set; }
     public virtual String ClassPath { get; set; }
     protected virtual StorageInfra StorageInfra { get; set; }
