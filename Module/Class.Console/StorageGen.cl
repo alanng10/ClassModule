@@ -20,10 +20,10 @@ class StorageGen : TextAdd
         var String moduleRefString;
         moduleRefString : this.ClassInfra.ModuleRefString(this.Module.Ref);
 
-        String dataFoldPath;
+        var String dataFoldPath;
         dataFoldPath : this.AddClear().Add(this.ClassInfra.ClassModulePath(this.ClassPath))
             .Add(this.TextInfra.PathCombine)
-            .Add(moduleRefString).Add(this.TextInfra.PathCombine).Add(this.SData).AddResult();
+            .Add(moduleRefString).Add(this.TextInfra.PathCombine).Add("Data").AddResult();
 
         this.StorageComp.FoldDelete(dataFoldPath);
 
