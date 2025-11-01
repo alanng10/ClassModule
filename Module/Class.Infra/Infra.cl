@@ -109,13 +109,16 @@ class Infra : Any
         return a;
     }
 
-    maide prusate String ModuleRefString(var String name, var String verString)
+    maide prusate String ModuleRefString(var ModuleRef moduleRef)
     {
         var StringAdd k;
         k : new StringAdd;
         k.Init();
 
-        this.Add(k, name).Add(k, this.TextHyphen).Add(k, verString);
+        var String verString;
+        verString : this.VerString(moduleRef.Ver);
+
+        this.Add(k, moduleRef.Name).Add(k, this.TextHyphen).Add(k, verString);
 
         var String a;
         a : k.Result();
