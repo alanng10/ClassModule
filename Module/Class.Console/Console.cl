@@ -10,6 +10,7 @@ class Console : TextAdd
         this.TaskKind : share TaskKindList;
 
         this.ErrorWrite : true;
+        this.ClassPath : this.StorageComp.ModuleFoldPath;
         this.Create : this.CreateCreate();
         this.PortRead : this.CreatePortRead();
         this.BinaryRead : this.CreateBinaryRead();
