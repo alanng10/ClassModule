@@ -184,7 +184,7 @@ class ErrorString : TextAdd
         var Int endRow;
         var Int endCol;
 
-        TokenToken token;
+        var Token token;
 
         InfraRange tokenRange;
 
