@@ -300,9 +300,13 @@ class Console : TextAdd
             {
                 this.PrintTokenResult();
             }
-            inf (kind = kindList.Node)
+            inf (kind = kindList.Node | kind = kindList.Console)
             {
                 this.PrintNodeResult();
+            }
+            inf (kind = kindList.Module)
+            {
+                this.PrintModuleResult();
             }
         }
         return true;
