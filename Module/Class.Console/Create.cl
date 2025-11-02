@@ -49,16 +49,26 @@ class Create : Any
         var TaskKind kind;
         kind : this.Console.Task.Kind;
 
-        inf (kind = kindList.Node |
+        inf (kind = kindList.Console |
+            kind = kindList.Module |
+            kind = kindList.Node |
             kind = kindList.Token
         )
         {
             this.ExecuteToken();
         }
 
-        inf (kind = kindList.Node)
+        inf (kind = kindList.Console |
+            kind = kindList.Module |
+            kind = kindList.Node)
         {
             this.ExecuteNode();
+        }
+
+        inf (kind = kindList.Console |
+            kind = kindList.Module)
+        {
+            this.ExecuteModule();
         }
 
         return true;
