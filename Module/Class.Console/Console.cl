@@ -264,7 +264,7 @@ class Console : TextAdd
                 return false;
             }
 
-            hasFileExtend : true;
+            fileExtend : true;
             sourceNameList : this.SourceNameList(this.SourceFold);
         }
 
