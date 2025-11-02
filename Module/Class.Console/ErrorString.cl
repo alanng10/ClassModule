@@ -10,14 +10,6 @@ class ErrorString : TextAdd
         return true;
     }
 
-    maide precate Pos CreatePos()
-    {
-        var Pos a;
-        a : new Pos;
-        a.Init();
-        return a;
-    }
-
     maide precate Pos CreateStartPos()
     {
         return this.CreatePos();
@@ -26,6 +18,14 @@ class ErrorString : TextAdd
     maide precate Pos CreateEndPos()
     {
         return this.CreatePos();
+    }
+
+    maide precate Pos CreatePos()
+    {
+        var Pos a;
+        a : new Pos;
+        a.Init();
+        return a;
     }
 
     maide precate String CreateBord()
@@ -69,6 +69,7 @@ class ErrorString : TextAdd
             var String kaa;
             inf (ba)
             {
+                kaa : this.RangePosString(error);
             }
             inf (~ba)
             {
