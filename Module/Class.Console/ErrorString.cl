@@ -183,10 +183,6 @@ class ErrorString : TextAdd
         long startCol;
         long endRow;
         long endCol;
-        startRow : 0;
-        startCol : 0;
-        endRow : 0;
-        endCol : 0;
 
         TokenToken token;
 
