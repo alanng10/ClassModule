@@ -108,6 +108,46 @@ class ErrorString : TextAdd
         return a;
     }
 
+    maide precate String RangePosString(var Error error)
+    {
+        var StringAdd kk;
+        kk : this.StringAdd;
+
+        var StringAdd k;
+        k : new StringAdd;
+        k.Init();
+
+        this.StringAdd : k;
+
+        var Range range;
+        range : error.Range;
+
+        var Code code;
+        code : cast Code(this.CodeArray.Get(error.Source));
+
+        var Array tokenArray;
+        tokenArray : code.Token;
+
+        this.PosRange(this.StartPos, this.EndPos, range, tokenArray);
+
+        this.AddClear();
+
+        this.AddPos(this.StartPos);
+
+        this.Add(this.SSpace);
+        this.Add(this.SHyphen);
+        this.Add(this.SSpace);
+
+        this.AddPos(this.EndPos);
+
+        var String a;
+        a : this.AddResult();
+
+        this.StringAdd : kk;
+
+        return a;
+    }
+
     maide precate String RangeString(var Error error)
     {
         var StringAdd kk;
