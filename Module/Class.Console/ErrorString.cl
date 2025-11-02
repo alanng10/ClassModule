@@ -218,7 +218,7 @@ class ErrorString : TextAdd
         }
         inf (~b)
         {
-            token : tokenArray.GetAt(start) as TokenToken;
+            token : cast Token(tokenArray.Get(start));
 
             tokenRange : token.Range;
 
