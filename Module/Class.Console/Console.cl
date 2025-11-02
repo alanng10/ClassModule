@@ -51,16 +51,12 @@ class Console : TextAdd
         return a;
     }
 
-    maide precate TextLess CreateStorageTextLess()
+    maide precate TextLess CreateStorageNameLess()
     {
-        var TextForm nameForm;
-        nameForm : new StorageNameForm;
-        nameForm.Init();
-
         var TextLess a;
         a : new TextLess;
-        a.LiteForm : nameForm;
-        a.RiteForm : nameForm;
+        a.LiteForm : this.StorageInfra.NameForm;
+        a.RiteForm : this.StorageInfra.NameForm;
         a.CharLess : this.ILess;
         a.Init();
         return a;
