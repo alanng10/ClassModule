@@ -171,18 +171,18 @@ class ErrorString : TextAdd
 
     maide precate Bool PosRange(var Pos resultStart, var Pos resultEnd, var Range range, var Array tokenArray)
     {
-        long tokenCount;
+        var Int tokenCount;
         tokenCount : tokenArray.Count;
 
-        long start;
-        long end;
+        var Int start;
+        var Int end;
         start : range.Start;
         end : range.End;
 
-        long startRow;
-        long startCol;
-        long endRow;
-        long endCol;
+        var Int startRow;
+        var Int startCol;
+        var Int endRow;
+        var Int endCol;
 
         TokenToken token;
 
@@ -203,7 +203,7 @@ class ErrorString : TextAdd
             }
             inf (!ba)
             {
-                long prev;
+                var Int prev;
                 prev : start - 1;
 
                 token : tokenArray.GetAt(prev) as TokenToken;
