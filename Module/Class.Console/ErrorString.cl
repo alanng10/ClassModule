@@ -148,6 +148,27 @@ class ErrorString : TextAdd
         return a;
     }
 
+    maide precate Bool AddPos(var Pos pos)
+    {
+        var String row;
+        var String col;
+        row : this.StringInt(pos.Row);
+        col : this.StringInt(pos.Col);
+
+        this.Add("(");
+        this.Add("Row");
+        this.Add(" ");
+        this.Add(row);
+        this.Add(",");
+        this.Add(" ");
+        this.Add("Col");
+        this.Add(" ");
+        this.Add(col);
+        this.Add(")");
+
+        return true;
+    }
+
     maide precate String RangeString(var Error error)
     {
         var StringAdd kk;
