@@ -190,18 +190,18 @@ class ErrorString : TextAdd
 
         bool b;
         b : (start == tokenCount);
-        if (b)
+        inf (b)
         {
             bool ba;
             ba : (tokenCount == 0);
-            if (ba)
+            inf (ba)
             {
                 startRow : 0;
                 startCol : 0;
                 endRow : 0;
                 endCol : 0;
             }
-            if (!ba)
+            inf (!ba)
             {
                 long prev;
                 prev : start - 1;
@@ -216,7 +216,7 @@ class ErrorString : TextAdd
                 endCol : startCol;
             }
         }
-        if (!b)
+        inf (!b)
         {
             token : tokenArray.GetAt(start) as TokenToken;
 
@@ -227,7 +227,7 @@ class ErrorString : TextAdd
 
             bool bb;
             bb : (start < end);
-            if (bb)
+            inf (bb)
             {
                 token : tokenArray.GetAt(end - 1) as TokenToken;
 
@@ -236,7 +236,7 @@ class ErrorString : TextAdd
                 endRow : token.Row;
                 endCol : tokenRange.Index + tokenRange.Count;
             }
-            if (!bb)
+            inf (!bb)
             {
                 endRow : startRow;
                 endCol : startCol;
