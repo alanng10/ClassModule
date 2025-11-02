@@ -67,6 +67,22 @@ class Console : TextAdd
         return a;
     }
 
+    maide precate BinaryGen CreateBinaryGen()
+    {
+        var BinaryGen a;
+        a : new BinaryGen;
+        a.Init();
+        return a;
+    }
+
+    maide precate StorageGen CreateStorageGen()
+    {
+        var StorageGen a;
+        a : new StorageGen;
+        a.Init();
+        return a;
+    }
+
     maide precate ErrorString CreateErrorString()
     {
         var ErrorString a;
@@ -87,6 +103,22 @@ class Console : TextAdd
     {
         var InfoTravel a;
         a : new InfoTravel;
+        a.Init();
+        return a;
+    }
+
+    maide precate NameValid CreateNameValid()
+    {
+        var NameValid a;
+        a : new NameValid;
+        a.Init();
+        return a;
+    }
+
+    maide precate ModuleRefLess CreateModuleRefLess()
+    {
+        var ModuleRefLess a;
+        a : new ModuleRefLess;
         a.Init();
         return a;
     }
