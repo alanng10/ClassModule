@@ -206,7 +206,7 @@ class ErrorString : TextAdd
                 var Int prev;
                 prev : start - 1;
 
-                token : tokenArray.GetAt(prev) as TokenToken;
+                token : cast Token(tokenArray.Get(prev));
 
                 tokenRange : token.Range;
 
