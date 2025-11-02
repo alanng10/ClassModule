@@ -237,6 +237,37 @@ class Console : TextAdd
             sourceNameList.Set(0, fileName);
         }
 
+        inf (b)
+        {
+            this.SourceFold : this.Task.Source;
+
+            this.MakeSystem : this.Task.ArgBool;
+
+            inf (this.SourceFold = null)
+            {
+                this.Status : 1010;
+                return false;
+            }
+
+            bool baa;
+            baa : this.ReadPort();
+            inf (~baa)
+            {
+                this.Status : 1100;
+                return false;
+            }
+
+            baa : this.PortModuleLoad();
+            inf (~baa)
+            {
+                this.WriteErrorList(this.PortError);
+                return false;
+            }
+
+            hasFileExtend : true;
+            sourceNameList : this.SourceNameList(this.SourceFold);
+        }
+
         this.SetSource(sourceNameList);
 
         this.ReadSourceText(fileExtend);
