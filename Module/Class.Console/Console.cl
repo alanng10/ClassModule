@@ -198,6 +198,8 @@ class Console : TextAdd
         var TaskKind kind;
         kind : this.Task.Kind;
 
+        var Bool b;
+        b : kind = kindList.Console | kind = kindList.Module;
         var Bool ba;
         ba : kind = kindList.Token | kind = kindList.Node;
 
@@ -222,6 +224,13 @@ class Console : TextAdd
                 fileName : file;
 
                 this.SourceFold : ".";
+            }
+
+            inf (~baaa)
+            {
+                fileName : this.StringCreateIndex(file, combineIndex + 1);
+
+                this.SourceFold : this.StringCreateRange(file, 0, combineIndex);
             }
 
             sourceNameList : this.ListInfra.ArrayCreate(1);
