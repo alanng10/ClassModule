@@ -201,7 +201,7 @@ class ErrorString : TextAdd
                 endRow : 0;
                 endCol : 0;
             }
-            inf (!ba)
+            inf (~ba)
             {
                 var Int prev;
                 prev : start - 1;
@@ -216,7 +216,7 @@ class ErrorString : TextAdd
                 endCol : startCol;
             }
         }
-        inf (!b)
+        inf (~b)
         {
             token : tokenArray.GetAt(start) as TokenToken;
 
@@ -236,7 +236,7 @@ class ErrorString : TextAdd
                 endRow : token.Row;
                 endCol : tokenRange.Index + tokenRange.Count;
             }
-            inf (!bb)
+            inf (~bb)
             {
                 endRow : startRow;
                 endCol : startCol;
