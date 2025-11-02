@@ -229,7 +229,7 @@ class ErrorString : TextAdd
             bb : start < end;
             inf (bb)
             {
-                token : tokenArray.GetAt(end - 1) as TokenToken;
+                token : cast Token(tokenArray.Get(end - 1));
 
                 tokenRange : token.Range;
 
