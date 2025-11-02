@@ -147,6 +147,8 @@ Class.Node:0.00.00
     StringValue StringValue
     Node Node
 Class.Module:0.00.00
+    ModuleCreate Create
+    ModuleResult Result
     Info Info
     ErrorKindList ErrorKindList
 
