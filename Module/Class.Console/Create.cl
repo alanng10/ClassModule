@@ -5,6 +5,7 @@ class Create : Any
         base.Init();
         this.Token : this.CreateToken();
         this.Node : this.CreateNode();
+        this.Module : this.CreateModule();
         return true;
     }
 
@@ -24,10 +25,19 @@ class Create : Any
         return a;
     }
 
+    maide precate ModuleCreate CreateModule()
+    {
+        var ModuleCreate a;
+        a : new ModuleCreate;
+        a.Init();
+        return a;
+    }
+
     field prusate Console Console { get { return data; } set { data : value; } }
     field prusate Result Result { get { return data; } set { data : value; } }
     field prusate TokenCreate Token { get { return data; } set { data : value; } }
     field prusate NodeCreate Node { get { return data; } set { data : value; } }
+    field prusate ModuleCreate Module { get { return data; } set { data : value; } }
 
     maide prusate Bool Execute()
     {
