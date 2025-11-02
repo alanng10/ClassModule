@@ -99,4 +99,23 @@ class Create : Any
         this.Node.Source : null;
         return true;
     }
+
+    maide prusate Bool ExecuteModule()
+    {
+        this.Module.Source : this.Console.Source;
+        this.Module.RootNode : this.Result.Node.Root;
+        this.Module.ModuleTable : this.Console.ModuleTable;
+        this.Module.ImportClass : this.Console.ImportClass;
+        this.Module.Module : this.Console.PortModule;
+        this.Module.Execute();
+        this.Result.Module : this.Module.Result;
+
+        this.Module.Result : null;
+        this.Module.Module : null;
+        this.Module.ImportClass : null;
+        this.Module.ModuleTable : null;
+        this.Module.RootNode : null;
+        this.Module.Source : null;
+        return true;
+    }
 }
