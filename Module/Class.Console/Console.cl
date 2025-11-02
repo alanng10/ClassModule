@@ -51,6 +51,22 @@ class Console : TextAdd
         return a;
     }
 
+    maide precate ModulePort CreateModulePort()
+    {
+        var ModulePort a;
+        a : new ModulePort;
+        a.Init();
+        return a;
+    }
+
+    maide precate PortLoad CreatePortLoad()
+    {
+        var PortLoad a;
+        a : new PortLoad;
+        a.Init();
+        return a;
+    }
+
     maide precate ErrorString CreateErrorString()
     {
         var ErrorString a;
