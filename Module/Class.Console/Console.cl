@@ -27,6 +27,30 @@ class Console : TextAdd
         return a;
     }
 
+    maide precate PortRead CreatePortRead()
+    {
+        var PortRead a;
+        a : new PortRead;
+        a.Init();
+        return a;
+    }
+
+    maide precate BinaryRead CreateBinaryRead()
+    {
+        var BinaryRead a;
+        a : new BinaryRead;
+        a.Init();
+        return a;
+    }
+
+    maide precate BinaryWrite CreateBinaryWrite()
+    {
+        var BinaryWrite a;
+        a : new BinaryWrite;
+        a.Init();
+        return a;
+    }
+
     maide precate ErrorString CreateErrorString()
     {
         var ErrorString a;
