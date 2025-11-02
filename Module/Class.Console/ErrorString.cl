@@ -188,11 +188,11 @@ class ErrorString : TextAdd
 
         InfraRange tokenRange;
 
-        bool b;
+        var Bool b;
         b : (start == tokenCount);
         inf (b)
         {
-            bool ba;
+            var Bool ba;
             ba : (tokenCount == 0);
             inf (ba)
             {
@@ -225,7 +225,7 @@ class ErrorString : TextAdd
             startRow : token.Row;
             startCol : tokenRange.Index;
 
-            bool bb;
+            var Bool bb;
             bb : (start < end);
             inf (bb)
             {
