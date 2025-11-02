@@ -172,86 +172,86 @@ class ErrorString : TextAdd
     maide precate Bool PosRange(var Pos resultStart, var Pos resultEnd, var Range range, var Array tokenArray)
     {
         long tokenCount;
-        tokenCount = tokenArray.Count;
+        tokenCount : tokenArray.Count;
 
         long start;
         long end;
-        start = range.Start;
-        end = range.End;
+        start : range.Start;
+        end : range.End;
 
         long startRow;
         long startCol;
         long endRow;
         long endCol;
-        startRow = 0;
-        startCol = 0;
-        endRow = 0;
-        endCol = 0;
+        startRow : 0;
+        startCol : 0;
+        endRow : 0;
+        endCol : 0;
 
         TokenToken token;
 
         InfraRange tokenRange;
 
         bool b;
-        b = (start == tokenCount);
+        b : (start == tokenCount);
         if (b)
         {
             bool ba;
-            ba = (tokenCount == 0);
+            ba : (tokenCount == 0);
             if (ba)
             {
-                startRow = 0;
-                startCol = 0;
-                endRow = 0;
-                endCol = 0;
+                startRow : 0;
+                startCol : 0;
+                endRow : 0;
+                endCol : 0;
             }
             if (!ba)
             {
                 long prev;
-                prev = start - 1;
+                prev : start - 1;
 
-                token = tokenArray.GetAt(prev) as TokenToken;
+                token : tokenArray.GetAt(prev) as TokenToken;
 
-                tokenRange = token.Range;
+                tokenRange : token.Range;
 
-                startRow = token.Row;
-                startCol = tokenRange.Index + tokenRange.Count;
-                endRow = startRow;
-                endCol = startCol;
+                startRow : token.Row;
+                startCol : tokenRange.Index + tokenRange.Count;
+                endRow : startRow;
+                endCol : startCol;
             }
         }
         if (!b)
         {
-            token = tokenArray.GetAt(start) as TokenToken;
+            token : tokenArray.GetAt(start) as TokenToken;
 
-            tokenRange = token.Range;
+            tokenRange : token.Range;
 
-            startRow = token.Row;
-            startCol = tokenRange.Index;
+            startRow : token.Row;
+            startCol : tokenRange.Index;
 
             bool bb;
-            bb = (start < end);
+            bb : (start < end);
             if (bb)
             {
-                token = tokenArray.GetAt(end - 1) as TokenToken;
+                token : tokenArray.GetAt(end - 1) as TokenToken;
 
-                tokenRange = token.Range;
+                tokenRange : token.Range;
 
-                endRow = token.Row;
-                endCol = tokenRange.Index + tokenRange.Count;
+                endRow : token.Row;
+                endCol : tokenRange.Index + tokenRange.Count;
             }
             if (!bb)
             {
-                endRow = startRow;
-                endCol = startCol;
+                endRow : startRow;
+                endCol : startCol;
             }
         }
 
-        resultStart.Row = startRow;
-        resultStart.Col = startCol;
+        resultStart.Row : startRow;
+        resultStart.Col : startCol;
 
-        resultEnd.Row = endRow;
-        resultEnd.Col = endCol;
+        resultEnd.Row : endRow;
+        resultEnd.Col : endCol;
         return true;
     }
 
