@@ -249,7 +249,7 @@ class Console : TextAdd
                 return false;
             }
 
-            bool baa;
+            var Bool baa;
             baa : this.ReadPort();
             inf (~baa)
             {
