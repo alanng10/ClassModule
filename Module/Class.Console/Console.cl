@@ -276,6 +276,22 @@ class Console : TextAdd
 
         this.ErrorString.SourceArray : this.Source;
 
+        inf (kind = kindList.Console)
+        {
+            inf (this.CanGen())
+            {
+                var Bool bea;
+                bea : this.ExecuteGen();
+                inf (~bea)
+                {
+                    return false;
+                }
+            }
+
+            this.ErrorString.RangePos : true;
+            this.ErrorString.CodeArray : this.Result.Token.Code;
+        }
+
         this.WriteAllError();
 
         inf (this.Task.Print)
