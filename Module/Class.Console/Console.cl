@@ -82,12 +82,25 @@ class Console : TextAdd
     field precate StorageInfra StorageInfra { get { return data; } set { data : value; } }
     field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
     field precate StorageComp StorageComp { get { return data; } set { data : value; } }
+    field precate BinaryRead BinaryRead { get { return data; } set { data : value; } }
+    field precate BinaryWrite BinaryWrite { get { return data; } set { data : value; } }
+    field precate ModulePort ModulePort { get { return data; } set { data : value; } }
+    field precate PortRead PortRead { get { return data; } set { data : value; } }
+    field precate PortLoad PortLoad { get { return data; } set { data : value; } }
+    field precate BinaryGen BinaryGen { get { return data; } set { data : value; } }
+    field precate StorageGen StorageGen { get { return data; } set { data : value; } }
     field precate ErrorString ErrorString { get { return data; } set { data : value; } }
-    field precate Out Out { get { return data; } set { data : value; } }
-    field precate Out Err { get { return data; } set { data : value; } }
+    field precate NameValid NameValid { get { return data; } set { data : value; } }
     field precate InfoToken InfoToken { get { return data; } set { data : value; } }
     field precate InfoTravel InfoTravel { get { return data; } set { data : value; } }
-    field precate TextLess StorageTextLess { get { return data; } set { data : value; } }
+    field precate Out Out { get { return data; } set { data : value; } }
+    field precate Out Err { get { return data; } set { data : value; } }
+    field precate String ClassPath { get { return data; } set { data : value; } }
+    field precate Port Port { get { return data; } set { data : value; } }
+    field precate Array PortError { get { return data; } set { data : value; } }
+    field precate Bool MakeSystem { get { return data; } set { data : value; } }
+    field precate ModuleRefLess ModuleRefLess { get { return data; } set { data : value; } }
+    field precate TextLess StorageNameLess { get { return data; } set { data : value; } }
 
     maide prusate Bool Execute()
     {
