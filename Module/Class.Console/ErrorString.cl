@@ -169,7 +169,7 @@ class ErrorString : TextAdd
         return true;
     }
 
-    public virtual bool PosRange(Pos resultStart, Pos resultEnd, Range range, Array tokenArray)
+    maide precate Bool PosRange(var Pos resultStart, var Pos resultEnd, var Range range, var Array tokenArray)
     {
         long tokenCount;
         tokenCount = tokenArray.Count;
