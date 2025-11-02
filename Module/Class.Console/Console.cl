@@ -10,7 +10,6 @@ class Console : TextAdd
         this.TaskKind : share TaskKindList;
 
         this.ErrorWrite : true;
-
         this.Create : this.CreateCreate();
         this.ErrorString : this.CreateErrorString();
         this.InfoToken : this.CreateInfoToken();
@@ -74,13 +73,16 @@ class Console : TextAdd
     field prusate String SourceFold { get { return data; } set { data : value; } }
     field prusate Create Create { get { return data; } set { data : value; } }
     field prusate Result Result { get { return data; } set { data : value; } }
-    field prusate ErrorString ErrorString { get { return data; } set { data : value; } }
+    field prusate Module PortModule { get { return data; } set { data : value; } }
     field prusate TaskKindList TaskKind { get { return data; } set { data : value; } }
+    field prusate Table ModuleTable { get { return data; } set { data : value; } }
+    field prusate Table ImportClass { get { return data; } set { data : value; } }
     field prusate Bool ErrorWrite { get { return data; } set { data : value; } }
     field precate ListInfra ListInfra { get { return data; } set { data : value; } }
     field precate StorageInfra StorageInfra { get { return data; } set { data : value; } }
     field precate ClassInfra ClassInfra { get { return data; } set { data : value; } }
     field precate StorageComp StorageComp { get { return data; } set { data : value; } }
+    field precate ErrorString ErrorString { get { return data; } set { data : value; } }
     field precate Out Out { get { return data; } set { data : value; } }
     field precate Out Err { get { return data; } set { data : value; } }
     field precate InfoToken InfoToken { get { return data; } set { data : value; } }
