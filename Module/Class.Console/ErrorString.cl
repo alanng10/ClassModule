@@ -186,7 +186,7 @@ class ErrorString : TextAdd
 
         var Token token;
 
-        InfraRange tokenRange;
+        var InfraRange tokenRange;
 
         var Bool b;
         b : (start = tokenCount);
