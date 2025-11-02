@@ -11,10 +11,19 @@ class Console : TextAdd
 
         this.ErrorWrite : true;
         this.Create : this.CreateCreate();
+        this.PortRead : this.CreatePortRead();
+        this.BinaryRead : this.CreateBinaryRead();
+        this.BinaryWrite : this.CreateBinaryWrite();
+        this.ModulePort : this.CreateModulePort();
+        this.PortLoad : this.CreatePortLoad();
+        this.BinaryGen : this.CreateBinaryGen();
+        this.StorageGen : this.CreateStorageGen();
         this.ErrorString : this.CreateErrorString();
         this.InfoToken : this.CreateInfoToken();
         this.InfoTravel : this.CreateInfoTravel();
-        this.StorageTextLess : this.CreateStorageTextLess();
+        this.NameValid : this.CreateNameValid();
+        this.ModuleRefLess : this.CreateModuleRefLess();
+        this.StorageNameLess : this.CreateStorageNameLess();
         return true;
     }
 
