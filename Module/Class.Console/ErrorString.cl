@@ -134,9 +134,9 @@ class ErrorString : TextAdd
 
         this.AddPos(this.StartPos);
 
-        this.Add(this.SSpace);
-        this.Add(this.SHyphen);
-        this.Add(this.SSpace);
+        this.Add(" ");
+        this.Add("-");
+        this.Add(" ");
 
         this.AddPos(this.EndPos);
 
