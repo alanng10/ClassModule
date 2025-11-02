@@ -189,11 +189,11 @@ class ErrorString : TextAdd
         InfraRange tokenRange;
 
         var Bool b;
-        b : (start == tokenCount);
+        b : (start = tokenCount);
         inf (b)
         {
             var Bool ba;
-            ba : (tokenCount == 0);
+            ba : (tokenCount = 0);
             inf (ba)
             {
                 startRow : 0;
