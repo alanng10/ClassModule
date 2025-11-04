@@ -24,7 +24,7 @@ class Entry : EntryEntry
             }
         }
 
-        long a;
+        var Int a;
         a : console.Status;
         return a;
     }
