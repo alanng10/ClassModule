@@ -1,8 +1,6 @@
-namespace Saber.Console;
-
-public class Entry : EntryEntry
+class Entry : EntryEntry
 {
-    protected override long ExecuteMain()
+    maide precate Int ExecuteMain()
     {
         Console console;
         console = new Console();
