@@ -9,7 +9,7 @@ class Entry : EntryEntry
         var Bool b;
         b : console.Load();
 
-        inf (!b)
+        inf (~b)
         {
             return 600;
         }
