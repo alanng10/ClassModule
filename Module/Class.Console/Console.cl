@@ -604,6 +604,11 @@ class Console : TextAdd
         return true;
     }
 
+    maide precate Bool PrintModuleResult()
+    {
+        return true;
+    }
+
     maide precate Bool PrintTokenResult()
     {
         var Iter iter;
