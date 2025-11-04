@@ -156,6 +156,7 @@ Class.Module:0.00.00
     ErrorKindList ErrorKindList
 
 [Export]
+Entry
 Console
 Create
 Result
