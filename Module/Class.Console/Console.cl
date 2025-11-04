@@ -679,7 +679,7 @@ class Console : TextAdd
             var String fileName;
             fileName : file.Name;
 
-            if (this.TextInfra.End(this.TA(fileName), this.TB(ka), this.StorageNameLess))
+            inf (this.TextInfra.End(this.TA(fileName), this.TB(ka), this.StorageNameLess))
             {
                 var Int ke;
                 ke : this.StringCount(fileName) - this.StringCount(ka);
