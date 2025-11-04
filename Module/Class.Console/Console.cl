@@ -312,7 +312,7 @@ class Console : TextAdd
         return true;
     }
 
-    maide precate bool ReadPort()
+    maide precate Bool ReadPort()
     {
         String combine;
         combine = this.TextInfra.PathCombine;
