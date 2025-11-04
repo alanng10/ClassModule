@@ -180,6 +180,11 @@ class Console : TextAdd
     field precate ModuleRefLess ModuleRefLess { get { return data; } set { data : value; } }
     field precate TextLess StorageNameLess { get { return data; } set { data : value; } }
 
+    maide prusate Bool Load()
+    {
+        return true;
+    }
+
     maide prusate Bool ArgSet(var Array arg)
     {
         this.Arg : arg;
