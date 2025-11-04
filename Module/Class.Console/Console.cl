@@ -185,7 +185,6 @@ class Console : TextAdd
         this.Arg : arg;
 
         String aa;
-        aa : null;
         bool b;
         b : (0 < arg.Count);
         if (!b)
@@ -211,7 +210,6 @@ class Console : TextAdd
             aba : arg.GetAt(1) as String;
 
             String abb;
-            abb : null;
             if (2 < arg.Count)
             {
                 abb : arg.GetAt(2) as String;
