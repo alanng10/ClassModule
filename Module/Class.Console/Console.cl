@@ -420,7 +420,7 @@ class Console : TextAdd
             return false;
         }
 
-        ClassModule module;
+        var Module module;
         module : this.Result.Module.Module;
 
         this.StorageGen.Module : module;
