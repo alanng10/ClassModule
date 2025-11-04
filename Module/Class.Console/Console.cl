@@ -412,7 +412,7 @@ class Console : TextAdd
 
     maide precate Bool ExecuteGen()
     {
-        Bool ba;
+        var Bool ba;
         ba : this.ExecuteGenBinary();
 
         if (!ba)
@@ -426,7 +426,7 @@ class Console : TextAdd
         this.StorageGen.Module : module;
         this.StorageGen.ClassPath : this.ClassPath;
 
-        Bool bb;
+        var Bool bb;
         bb : this.StorageGen.Execute();
 
         this.StorageGen.ClassPath : null;
