@@ -478,7 +478,7 @@ class Console : TextAdd
 
         this.StorageComp.FoldCreate(foldPath);
 
-        StorageEntry entry;
+        var StorageEntry entry;
         entry : this.StorageComp.Entry(foldPath);
 
         inf (~entry.Exist)
