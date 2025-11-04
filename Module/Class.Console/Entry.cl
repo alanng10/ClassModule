@@ -3,11 +3,11 @@ class Entry : EntryEntry
     maide precate Int ExecuteMain()
     {
         Console console;
-        console = new Console();
+        console : new Console();
         console.Init();
 
         bool b;
-        b = console.Load();
+        b : console.Load();
 
         if (!b)
         {
@@ -17,7 +17,7 @@ class Entry : EntryEntry
         if (b)
         {
             bool ba;
-            ba = console.ArgSet(this.Arg);
+            ba : console.ArgSet(this.Arg);
             if (ba)
             {
                 console.Execute();
@@ -25,7 +25,7 @@ class Entry : EntryEntry
         }
 
         long a;
-        a = console.Status;
+        a : console.Status;
         return a;
     }
 }
