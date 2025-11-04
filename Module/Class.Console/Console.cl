@@ -570,9 +570,9 @@ class Console : TextAdd
             }
         }
 
-        if (kindConsole | (kind == kindList.Module))
+        inf (kindConsole | (kind == kindList.Module))
         {
-            if (!(this.Result.Module == null))
+            inf (!(this.Result.Module == null))
             {
                 this.WriteErrorList(this.Result.Module.Error);
             }
