@@ -665,7 +665,7 @@ class Console : TextAdd
         list.Init();
 
         var String ka;
-        ka : this.SDotCl;
+        ka : ".cl";
 
         var Int count;
         count : fileArray.Count;
