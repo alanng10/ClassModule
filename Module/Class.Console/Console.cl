@@ -193,7 +193,7 @@ class Console : TextAdd
         }
         inf (b)
         {
-            aa : arg.GetAt(0) as String;
+            aa : cast String(arg.Get(0));
         }
 
         var Bool bb;
