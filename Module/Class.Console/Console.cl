@@ -410,6 +410,37 @@ class Console : TextAdd
         return true;
     }
 
+    protected virtual bool ExecuteGen()
+    {
+        bool ba;
+        ba = this.ExecuteGenBinary();
+
+        if (!ba)
+        {
+            return false;
+        }
+
+        ClassModule module;
+        module = this.Result.Module.Module;
+
+        this.StorageGen.Module = module;
+        this.StorageGen.ClassPath = this.ClassPath;
+
+        bool bb;
+        bb = this.StorageGen.Execute();
+
+        this.StorageGen.ClassPath = null;
+        this.StorageGen.Module = null;
+
+        if (!bb)
+        {
+            this.Status = 5200;
+            return false;
+        }
+
+        return true;
+    }
+
     maide precate Bool WriteAllError()
     {
         inf (~this.ErrorWrite)
