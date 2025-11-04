@@ -9,16 +9,16 @@ class Entry : EntryEntry
         var Bool b;
         b : console.Load();
 
-        if (!b)
+        inf (!b)
         {
             return 600;
         }
 
-        if (b)
+        inf (b)
         {
             var Bool ba;
             ba : console.ArgSet(this.Arg);
-            if (ba)
+            inf (ba)
             {
                 console.Execute();
             }
