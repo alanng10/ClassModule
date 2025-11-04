@@ -569,6 +569,14 @@ class Console : TextAdd
                 this.WriteErrorList(this.Result.Node.Error);
             }
         }
+
+        if (kindConsole | (kind == kindList.Module))
+        {
+            if (!(this.Result.Module == null))
+            {
+                this.WriteErrorList(this.Result.Module.Error);
+            }
+        }
         return true;
     }
 
