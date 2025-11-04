@@ -609,25 +609,6 @@ class Console : TextAdd
         return true;
     }
 
-    maide precate Bool PrintTokenResult()
-    {
-        var Iter iter;
-        iter : this.Result.Token.Code.IterCreate();
-        this.Result.Token.Code.IterSet(iter);
-
-        while (iter.Next())
-        {
-            var Code code;
-            code : cast Code(iter.Value);
-
-            var String a;
-            a : this.InfoToken.Execute(code);
-
-            this.Out.Write(a);
-        }
-        return true;
-    }
-
     maide precate Bool PrintNodeResult()
     {
         var Iter iter;
@@ -641,6 +622,25 @@ class Console : TextAdd
 
             var String a;
             a : this.InfoTravel.Execute(root);
+
+            this.Out.Write(a);
+        }
+        return true;
+    }
+
+    maide precate Bool PrintTokenResult()
+    {
+        var Iter iter;
+        iter : this.Result.Token.Code.IterCreate();
+        this.Result.Token.Code.IterSet(iter);
+
+        while (iter.Next())
+        {
+            var Code code;
+            code : cast Code(iter.Value);
+
+            var String a;
+            a : this.InfoToken.Execute(code);
 
             this.Out.Write(a);
         }
