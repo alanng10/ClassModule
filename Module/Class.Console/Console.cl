@@ -312,6 +312,50 @@ class Console : TextAdd
         return true;
     }
 
+    maide precate bool ReadPort()
+    {
+        String combine;
+        combine = this.TextInfra.PathCombine;
+
+        String fileName;
+        fileName = this.SClassDotPort;
+
+        String filePath;
+        filePath = this.AddClear().Add(this.SourceFold).Add(combine).Add(fileName).AddResult();
+
+        String source;
+        source = this.StorageInfra.TextRead(filePath);
+
+        if (source == null)
+        {
+            return false;
+        }
+
+        Array lineArray;
+        lineArray = this.TextLine(this.TextCreate(source));
+
+        PortRead read;
+        read = this.PortRead;
+
+        read.Source = lineArray;
+
+        read.Execute();
+
+        PortPort port;
+        port = read.Result;
+
+        read.Result = null;
+        read.Source = null;
+
+        if (port == null)
+        {
+            return false;
+        }
+
+        this.Port = port;
+        return true;
+    }
+
     maide prusate Bool ExecuteCreate()
     {
         this.Create.Execute();
