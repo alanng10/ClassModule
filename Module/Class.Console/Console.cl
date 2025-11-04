@@ -509,7 +509,7 @@ class Console : TextAdd
         return true;
     }
 
-    protected virtual bool CanGen()
+    maide precate Bool CanGen()
     {
         if (!(this.Result.Token == null))
         {
