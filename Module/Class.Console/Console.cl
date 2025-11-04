@@ -185,7 +185,7 @@ class Console : TextAdd
         this.Arg : arg;
 
         String aa;
-        bool b;
+        var Bool b;
         b : (0 < arg.Count);
         if (!b)
         {
@@ -196,11 +196,11 @@ class Console : TextAdd
             aa : arg.GetAt(0) as String;
         }
 
-        bool bb;
+        var Bool bb;
         bb : this.TextSame(this.TA(aa), this.TB(this.SMake));
         if (bb)
         {
-            bool bba;
+            var Bool bba;
             bba : (1 < arg.Count);
             if (!bba)
             {
@@ -218,7 +218,7 @@ class Console : TextAdd
             String sourceFold;
             sourceFold : aba;
 
-            bool systemModule;
+            var Bool systemModule;
             systemModule : false;
             if (!(abb == null))
             {
