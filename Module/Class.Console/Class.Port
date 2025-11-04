@@ -165,6 +165,13 @@ TaskKindList
 PortLoad
 ModulePort
 BinaryGen
+BinaryState
+BinaryStateArg
+BinaryStateOperate
+BinaryStateCountOperate
+BinaryStateSetOperate
+BinaryStateTravel
+StringTravel
 StorageGen
 InfoToken
 InfoTravel
