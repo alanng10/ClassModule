@@ -207,7 +207,7 @@ class Console : TextAdd
                 return false;
             }
             var String aba;
-            aba : arg.GetAt(1) as String;
+            aba : cast String(arg.Get(1));
 
             var String abb;
             inf (2 < arg.Count)
