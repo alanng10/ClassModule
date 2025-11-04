@@ -410,7 +410,7 @@ class Console : TextAdd
         return true;
     }
 
-    protected virtual bool ExecuteGen()
+    maide precate bool ExecuteGen()
     {
         bool ba;
         ba = this.ExecuteGenBinary();
