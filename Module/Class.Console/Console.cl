@@ -674,7 +674,7 @@ class Console : TextAdd
         while (i < count)
         {
             var StorageEntry file;
-            file : fileArray.GetAt(i) as StorageEntry;
+            file : cast StorageEntry(fileArray.Get(i));
 
             var String fileName;
             fileName : file.Name;
