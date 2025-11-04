@@ -441,7 +441,7 @@ class Console : TextAdd
         return true;
     }
 
-    protected virtual bool ExecuteGenBinary()
+    maide precate Bool ExecuteGenBinary()
     {
         ClassModule module;
         module = this.Result.Module.Module;
