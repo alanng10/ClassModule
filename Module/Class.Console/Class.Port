@@ -172,6 +172,10 @@ BinaryStateCountOperate
 BinaryStateSetOperate
 BinaryStateTravel
 StringTravel
+StringArg
+StringOperate
+StringCountOperate
+StringSetOperate
 StorageGen
 InfoToken
 InfoTravel
