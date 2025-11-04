@@ -509,6 +509,35 @@ class Console : TextAdd
         return true;
     }
 
+    protected virtual bool CanGen()
+    {
+        if (!(this.Result.Token == null))
+        {
+            if (0 < this.Result.Token.Error.Count)
+            {
+                return false;
+            }
+        }
+
+        if (!(this.Result.Node == null))
+        {
+            if (0 < this.Result.Node.Error.Count)
+            {
+                return false;
+            }
+        }
+
+        if (!(this.Result.Module == null))
+        {
+            if (0 < this.Result.Module.Error.Count)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     maide precate Bool WriteAllError()
     {
         inf (~this.ErrorWrite)
