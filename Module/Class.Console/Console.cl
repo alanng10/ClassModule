@@ -650,7 +650,7 @@ class Console : TextAdd
     maide precate Array FileList(var String foldPath)
     {
         var Array a;
-        a : this.StorageComp.EntryList(foldPath, false);
+        a : this.StorageComp.EntryInfoList(foldPath, false, true);
 
         return a;
     }
