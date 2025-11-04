@@ -511,25 +511,25 @@ class Console : TextAdd
 
     maide precate Bool CanGen()
     {
-        if (!(this.Result.Token == null))
+        inf (!(this.Result.Token == null))
         {
-            if (0 < this.Result.Token.Error.Count)
+            inf (0 < this.Result.Token.Error.Count)
             {
                 return false;
             }
         }
 
-        if (!(this.Result.Node == null))
+        inf (!(this.Result.Node == null))
         {
-            if (0 < this.Result.Node.Error.Count)
+            inf (0 < this.Result.Node.Error.Count)
             {
                 return false;
             }
         }
 
-        if (!(this.Result.Module == null))
+        inf (!(this.Result.Module == null))
         {
-            if (0 < this.Result.Module.Error.Count)
+            inf (0 < this.Result.Module.Error.Count)
             {
                 return false;
             }
