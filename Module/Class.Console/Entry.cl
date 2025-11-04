@@ -6,7 +6,7 @@ class Entry : EntryEntry
         console : new Console();
         console.Init();
 
-        bool b;
+        var Bool b;
         b : console.Load();
 
         if (!b)
@@ -16,7 +16,7 @@ class Entry : EntryEntry
 
         if (b)
         {
-            bool ba;
+            var Bool ba;
             ba : console.ArgSet(this.Arg);
             if (ba)
             {
