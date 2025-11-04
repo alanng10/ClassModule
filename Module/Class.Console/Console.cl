@@ -182,69 +182,69 @@ class Console : TextAdd
 
     maide prusate Bool ArgSet(var Array arg)
     {
-        this.Arg = arg;
+        this.Arg : arg;
 
         String aa;
-        aa = null;
+        aa : null;
         bool b;
-        b = (0 < arg.Count);
+        b : (0 < arg.Count);
         if (!b)
         {
             return false;
         }
         if (b)
         {
-            aa = arg.GetAt(0) as String;
+            aa : arg.GetAt(0) as String;
         }
 
         bool bb;
-        bb = this.TextSame(this.TA(aa), this.TB(this.SMake));
+        bb : this.TextSame(this.TA(aa), this.TB(this.SMake));
         if (bb)
         {
             bool bba;
-            bba = (1 < arg.Count);
+            bba : (1 < arg.Count);
             if (!bba)
             {
                 return false;
             }
             String aba;
-            aba = arg.GetAt(1) as String;
+            aba : arg.GetAt(1) as String;
 
             String abb;
-            abb = null;
+            abb : null;
             if (2 < arg.Count)
             {
-                abb = arg.GetAt(2) as String;
+                abb : arg.GetAt(2) as String;
             }
 
             String sourceFold;
-            sourceFold = aba;
+            sourceFold : aba;
 
             bool systemModule;
-            systemModule = false;
+            systemModule : false;
             if (!(abb == null))
             {
                 if (this.TextSame(this.TA(abb), this.TB(this.SFlagM)))
                 {
-                    systemModule = true;
+                    systemModule : true;
                 }
             }
 
             ConsoleConsole oo;
-            oo = new ConsoleConsole();
+            oo : new ConsoleConsole();
             oo.Init();
 
             Task task;
-            task = new Task();
+            task : new Task();
             task.Init();
-            task.Kind = this.TaskKind.Console;
-            task.Source = sourceFold;
-            task.ArgBool = systemModule;
-            task.Node = this.SClass;
-            task.Out = oo.Out;
-            task.Err = oo.Err;
+            task.Kind : this.TaskKind.Console;
+            task.Source : sourceFold;
+            task.ArgBool : systemModule;
+            task.Node : this.SClass;
+            task.Out : oo.Out;
+            task.Err : oo.Err;
 
-            this.Task = task;
+            this.Task : task;
         }
         return true;
     }
