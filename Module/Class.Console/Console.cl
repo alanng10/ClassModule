@@ -511,7 +511,7 @@ class Console : TextAdd
 
     maide precate Bool CanGen()
     {
-        inf (!(this.Result.Token = null))
+        inf (~(this.Result.Token = null))
         {
             inf (0 < this.Result.Token.Error.Count)
             {
@@ -519,7 +519,7 @@ class Console : TextAdd
             }
         }
 
-        inf (!(this.Result.Node = null))
+        inf (~(this.Result.Node = null))
         {
             inf (0 < this.Result.Node.Error.Count)
             {
@@ -527,7 +527,7 @@ class Console : TextAdd
             }
         }
 
-        inf (!(this.Result.Module = null))
+        inf (~(this.Result.Module = null))
         {
             inf (0 < this.Result.Module.Error.Count)
             {
