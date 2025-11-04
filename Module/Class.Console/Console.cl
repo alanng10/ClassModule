@@ -661,7 +661,7 @@ class Console : TextAdd
         fileArray : this.FileList(foldPath);
 
         var List list;
-        list : new List();
+        list : new List;
         list.Init();
 
         var String ka;
