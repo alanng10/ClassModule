@@ -361,7 +361,7 @@ class Console : TextAdd
         this.ModuleTable : this.ClassInfra.TableCreateModuleRefLess();
         this.ImportClass : this.ClassInfra.TableCreateStringLess();
 
-        PortLoad portLoad;
+        var PortLoad portLoad;
         portLoad : this.PortLoad;
 
         portLoad.Port : this.Port;
