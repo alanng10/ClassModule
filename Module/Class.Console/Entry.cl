@@ -2,8 +2,8 @@ class Entry : EntryEntry
 {
     maide precate Int ExecuteMain()
     {
-        Console console;
-        console : new Console();
+        var Console console;
+        console : new Console;
         console.Init();
 
         var Bool b;
