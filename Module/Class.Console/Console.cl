@@ -444,33 +444,33 @@ class Console : TextAdd
     maide precate Bool ExecuteGenBinary()
     {
         ClassModule module;
-        module = this.Result.Module.Module;
+        module : this.Result.Module.Module;
 
-        this.BinaryGen.Module = module;
+        this.BinaryGen.Module : module;
 
         this.BinaryGen.Execute();
 
         BinaryBinary binary;
-        binary = this.BinaryGen.Result;
+        binary : this.BinaryGen.Result;
 
-        this.BinaryGen.Result = null;
-        this.BinaryGen.Module = null;
+        this.BinaryGen.Result : null;
+        this.BinaryGen.Module : null;
 
-        this.BinaryWrite.Binary = binary;
+        this.BinaryWrite.Binary : binary;
 
         this.BinaryWrite.Execute();
 
         Data data;
-        data = this.BinaryWrite.Result;
+        data : this.BinaryWrite.Result;
 
-        this.BinaryWrite.Result = null;
-        this.BinaryWrite.Binary = null;
+        this.BinaryWrite.Result : null;
+        this.BinaryWrite.Binary : null;
 
         String moduleRefString;
-        moduleRefString = this.ClassInfra.ModuleRefString(module.Ref);
+        moduleRefString : this.ClassInfra.ModuleRefString(module.Ref);
 
         String foldPath;
-        foldPath = this.AddClear().Add(this.ClassInfra.ClassModulePath(this.ClassPath))
+        foldPath : this.AddClear().Add(this.ClassInfra.ClassModulePath(this.ClassPath))
             .Add(this.TextInfra.PathCombine)
             .Add(moduleRefString).AddResult();
 
@@ -479,30 +479,30 @@ class Console : TextAdd
         this.StorageComp.FoldCreate(foldPath);
 
         StorageEntry entry;
-        entry = this.StorageComp.Entry(foldPath);
+        entry : this.StorageComp.Entry(foldPath);
 
         if (!entry.Exist)
         {
-            this.Status = 5000 + 10;
+            this.Status : 5000 + 10;
             return false;
         }
 
         if (!entry.Fold)
         {
-            this.Status = 5000 + 20;
+            this.Status : 5000 + 20;
             return false;
         }
 
         String filePath;
-        filePath = this.AddClear().Add(foldPath).Add(this.TextInfra.PathCombine)
+        filePath : this.AddClear().Add(foldPath).Add(this.TextInfra.PathCombine)
             .Add(this.SModule).AddResult();
 
         bool b;
-        b = this.StorageInfra.DataWrite(filePath, data);
+        b : this.StorageInfra.DataWrite(filePath, data);
 
         if (!b)
         {
-            this.Status = 5000 + 30;
+            this.Status : 5000 + 30;
             return false;
         }
 
