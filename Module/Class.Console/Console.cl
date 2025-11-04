@@ -443,7 +443,7 @@ class Console : TextAdd
 
     maide precate Bool ExecuteGenBinary()
     {
-        ClassModule module;
+        var Module module;
         module : this.Result.Module.Module;
 
         this.BinaryGen.Module : module;
