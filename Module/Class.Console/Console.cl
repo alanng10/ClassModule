@@ -377,7 +377,7 @@ class Console : TextAdd
         var Bool b;
         b : portLoad.Execute();
 
-        inf (!b)
+        inf (~b)
         {
             this.Status : 3000 + portLoad.Status;
             this.PortError : portLoad.Error;
