@@ -415,7 +415,7 @@ class Console : TextAdd
         var Bool ba;
         ba : this.ExecuteGenBinary();
 
-        inf (!ba)
+        inf (~ba)
         {
             return false;
         }
@@ -432,7 +432,7 @@ class Console : TextAdd
         this.StorageGen.ClassPath : null;
         this.StorageGen.Module : null;
 
-        inf (!bb)
+        inf (~bb)
         {
             this.Status : 5200;
             return false;
