@@ -356,6 +356,50 @@ class Console : TextAdd
         return true;
     }
 
+    protected virtual bool PortModuleLoad()
+    {
+        this.ModuleTable = this.ClassInfra.TableCreateModuleRefLess();
+        this.ImportClass = this.ClassInfra.TableCreateStringLess();
+
+        PortLoad portLoad;
+        portLoad = this.PortLoad;
+
+        portLoad.Port = this.Port;
+        portLoad.BinaryRead = this.BinaryRead;
+        portLoad.ModulePort = this.ModulePort;
+        portLoad.ModuleTable = this.ModuleTable;
+        portLoad.ImportClass = this.ImportClass;
+        portLoad.NameValid = this.NameValid;
+        portLoad.SystemModule = this.MakeSystem;
+        portLoad.ClassPath = this.ClassPath;
+        portLoad.SourceFold = this.SourceFold;
+
+        bool b;
+        b = portLoad.Execute();
+
+        if (!b)
+        {
+            this.Status = 3000 + portLoad.Status;
+            this.PortError = portLoad.Error;
+            return false;
+        }
+
+        this.PortModule = portLoad.Module;
+
+        portLoad.Error = null;
+        portLoad.Module = null;
+        portLoad.SourceFold = null;
+        portLoad.ClassPath = null;
+        portLoad.SystemModule = false;
+        portLoad.NameValid = null;
+        portLoad.ImportClass = null;
+        portLoad.ModuleTable = null;
+        portLoad.ModulePort = null;
+        portLoad.BinaryRead = null;
+        portLoad.Port = null;
+        return true;
+    }
+
     maide prusate Bool ExecuteCreate()
     {
         this.Create.Execute();
