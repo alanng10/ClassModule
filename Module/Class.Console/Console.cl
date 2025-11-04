@@ -180,6 +180,108 @@ class Console : TextAdd
     field precate ModuleRefLess ModuleRefLess { get { return data; } set { data : value; } }
     field precate TextLess StorageNameLess { get { return data; } set { data : value; } }
 
+    public virtual bool ArgSet(Array arg)
+    {
+        this.Arg = arg;
+
+        String aa;
+        aa = null;
+        bool b;
+        b = (0 < arg.Count);
+        if (!b)
+        {
+            return false;
+        }
+        if (b)
+        {
+            aa = arg.GetAt(0) as String;
+        }
+
+        bool bb;
+        bb = this.TextSame(this.TA(aa), this.TB(this.SMake));
+        if (bb)
+        {
+            bool bba;
+            bba = (1 < arg.Count);
+            if (!bba)
+            {
+                return false;
+            }
+            String aba;
+            aba = arg.GetAt(1) as String;
+
+            String abb;
+            abb = null;
+            if (2 < arg.Count)
+            {
+                abb = arg.GetAt(2) as String;
+            }
+
+            String sourceFold;
+            sourceFold = aba;
+
+            bool systemModule;
+            systemModule = false;
+            if (!(abb == null))
+            {
+                if (this.TextSame(this.TA(abb), this.TB(this.SFlagM)))
+                {
+                    systemModule = true;
+                }
+            }
+
+            ConsoleConsole oo;
+            oo = new ConsoleConsole();
+            oo.Init();
+
+            Task task;
+            task = new Task();
+            task.Init();
+            task.Kind = this.TaskKind.Console;
+            task.Source = sourceFold;
+            task.ArgBool = systemModule;
+            task.Node = this.SClass;
+            task.Out = oo.Out;
+            task.Err = oo.Err;
+
+            this.Task = task;
+        }
+
+        bool bc;
+        bc = this.TextSame(this.TA(aa), this.TB(this.SLibrary));
+        if (bc)
+        {
+            bool bca;
+            bca = (1 < arg.Count);
+            if (!bca)
+            {
+                return false;
+            }
+            String aca;
+            aca = arg.GetAt(1) as String;
+
+            String moduleRefString;
+            moduleRefString = aca;
+
+            ConsoleConsole oo;
+            oo = new ConsoleConsole();
+            oo.Init();
+
+            Task task;
+            task = new Task();
+            task.Init();
+            task.Kind = this.TaskKind.Library;
+            task.Source = moduleRefString;
+            task.ArgBool = false;
+            task.Node = null;
+            task.Out = oo.Out;
+            task.Err = oo.Err;
+
+            this.Task = task;
+        }
+        return true;
+    }
+
     maide prusate Bool Execute()
     {
         this.Status : 0;
