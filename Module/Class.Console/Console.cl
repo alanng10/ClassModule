@@ -243,7 +243,7 @@ class Console : TextAdd
             task.Kind : this.TaskKind.Console;
             task.Source : sourceFold;
             task.ArgBool : systemModule;
-            task.Node : this.SClass;
+            task.Node : "Class";
             task.Out : oo.Out;
             task.Err : oo.Err;
 
