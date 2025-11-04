@@ -212,7 +212,7 @@ class Console : TextAdd
             var String abb;
             inf (2 < arg.Count)
             {
-                abb : arg.GetAt(2) as String;
+                abb : cast String(arg.Get(2));
             }
 
             var String sourceFold;
