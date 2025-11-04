@@ -326,7 +326,7 @@ class Console : TextAdd
         String source;
         source : this.StorageInfra.TextRead(filePath);
 
-        if (source == null)
+        if (source = null)
         {
             return false;
         }
@@ -347,7 +347,7 @@ class Console : TextAdd
         read.Result : null;
         read.Source : null;
 
-        if (port == null)
+        if (port = null)
         {
             return false;
         }
