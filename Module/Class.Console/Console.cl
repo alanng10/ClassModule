@@ -356,7 +356,7 @@ class Console : TextAdd
         return true;
     }
 
-    protected virtual bool PortModuleLoad()
+    maide precate Bool PortModuleLoad()
     {
         this.ModuleTable = this.ClassInfra.TableCreateModuleRefLess();
         this.ImportClass = this.ClassInfra.TableCreateStringLess();
@@ -374,7 +374,7 @@ class Console : TextAdd
         portLoad.ClassPath = this.ClassPath;
         portLoad.SourceFold = this.SourceFold;
 
-        bool b;
+        var Bool b;
         b = portLoad.Execute();
 
         if (!b)
