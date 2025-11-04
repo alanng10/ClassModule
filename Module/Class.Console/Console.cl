@@ -9,6 +9,7 @@ class Console : TextAdd
         this.StorageComp : share StorageComp;
         this.TaskKind : share TaskKindList;
 
+        this.Status : 0;
         this.ErrorWrite : true;
         this.ClassPath : this.StorageComp.ModuleFoldPath;
         this.Create : this.CreateCreate();
