@@ -572,7 +572,7 @@ class Console : TextAdd
 
         inf (kindConsole | (kind == kindList.Module))
         {
-            inf (!(this.Result.Module == null))
+            inf (~(this.Result.Module == null))
             {
                 this.WriteErrorList(this.Result.Module.Error);
             }
