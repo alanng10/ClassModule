@@ -481,13 +481,13 @@ class Console : TextAdd
         StorageEntry entry;
         entry : this.StorageComp.Entry(foldPath);
 
-        inf (!entry.Exist)
+        inf (~entry.Exist)
         {
             this.Status : 5000 + 10;
             return false;
         }
 
-        inf (!entry.Fold)
+        inf (~entry.Fold)
         {
             this.Status : 5000 + 20;
             return false;
@@ -500,7 +500,7 @@ class Console : TextAdd
         var Bool b;
         b : this.StorageInfra.DataWrite(filePath, data);
 
-        inf (!b)
+        inf (~b)
         {
             this.Status : 5000 + 30;
             return false;
