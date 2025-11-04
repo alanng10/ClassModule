@@ -413,7 +413,7 @@ class Console : TextAdd
     maide precate bool ExecuteGen()
     {
         bool ba;
-        ba = this.ExecuteGenBinary();
+        ba : this.ExecuteGenBinary();
 
         if (!ba)
         {
@@ -421,20 +421,20 @@ class Console : TextAdd
         }
 
         ClassModule module;
-        module = this.Result.Module.Module;
+        module : this.Result.Module.Module;
 
-        this.StorageGen.Module = module;
-        this.StorageGen.ClassPath = this.ClassPath;
+        this.StorageGen.Module : module;
+        this.StorageGen.ClassPath : this.ClassPath;
 
         bool bb;
-        bb = this.StorageGen.Execute();
+        bb : this.StorageGen.Execute();
 
-        this.StorageGen.ClassPath = null;
-        this.StorageGen.Module = null;
+        this.StorageGen.ClassPath : null;
+        this.StorageGen.Module : null;
 
         if (!bb)
         {
-            this.Status = 5200;
+            this.Status : 5200;
             return false;
         }
 
