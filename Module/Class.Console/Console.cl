@@ -248,8 +248,10 @@ class Console : TextAdd
             task.Err : oo.Err;
 
             this.Task : task;
+
+            return true;
         }
-        return true;
+        return false;
     }
 
     maide prusate Bool Execute()
