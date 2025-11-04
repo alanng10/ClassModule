@@ -497,7 +497,7 @@ class Console : TextAdd
         filePath : this.AddClear().Add(foldPath).Add(this.TextInfra.PathCombine)
             .Add(this.SModule).AddResult();
 
-        bool b;
+        var Bool b;
         b : this.StorageInfra.DataWrite(filePath, data);
 
         inf (!b)
