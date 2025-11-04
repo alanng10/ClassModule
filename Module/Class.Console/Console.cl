@@ -314,16 +314,16 @@ class Console : TextAdd
 
     maide precate Bool ReadPort()
     {
-        String combine;
+        var String combine;
         combine : this.TextInfra.PathCombine;
 
-        String fileName;
+        var String fileName;
         fileName : this.SClassDotPort;
 
-        String filePath;
+        var String filePath;
         filePath : this.AddClear().Add(this.SourceFold).Add(combine).Add(fileName).AddResult();
 
-        String source;
+        var String source;
         source : this.StorageInfra.TextRead(filePath);
 
         inf (source = null)
