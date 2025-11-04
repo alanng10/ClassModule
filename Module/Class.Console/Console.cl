@@ -197,7 +197,7 @@ class Console : TextAdd
         }
 
         var Bool bb;
-        bb : this.TextSame(this.TA(aa), this.TB(this.SMake));
+        bb : this.TextSame(this.TA(aa), this.TB("make"));
         inf (bb)
         {
             var Bool bba;
@@ -222,7 +222,7 @@ class Console : TextAdd
             systemModule : false;
             inf (~(abb = null))
             {
-                inf (this.TextSame(this.TA(abb), this.TB(this.SFlagM)))
+                inf (this.TextSame(this.TA(abb), this.TB("-m")))
                 {
                     systemModule : true;
                 }
