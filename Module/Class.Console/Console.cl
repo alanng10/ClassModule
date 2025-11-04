@@ -657,26 +657,26 @@ class Console : TextAdd
 
     maide precate Array SourceNameList(var String foldPath)
     {
-        Array fileArray;
+        var Array fileArray;
         fileArray : this.FileList(foldPath);
 
-        List list;
+        var List list;
         list : new List();
         list.Init();
 
-        String ka;
+        var String ka;
         ka : this.SDotCl;
 
-        long count;
+        var Int count;
         count : fileArray.Count;
-        long i;
+        var Int i;
         i : 0;
         while (i < count)
         {
-            StorageEntry file;
+            var StorageEntry file;
             file : fileArray.GetAt(i) as StorageEntry;
 
-            String fileName;
+            var String fileName;
             fileName : file.Name;
 
             if (this.TextInfra.End(this.TA(fileName), this.TB(ka), this.StorageNameLess))
