@@ -315,16 +315,16 @@ class Console : TextAdd
     maide precate Bool ReadPort()
     {
         String combine;
-        combine = this.TextInfra.PathCombine;
+        combine : this.TextInfra.PathCombine;
 
         String fileName;
-        fileName = this.SClassDotPort;
+        fileName : this.SClassDotPort;
 
         String filePath;
-        filePath = this.AddClear().Add(this.SourceFold).Add(combine).Add(fileName).AddResult();
+        filePath : this.AddClear().Add(this.SourceFold).Add(combine).Add(fileName).AddResult();
 
         String source;
-        source = this.StorageInfra.TextRead(filePath);
+        source : this.StorageInfra.TextRead(filePath);
 
         if (source == null)
         {
@@ -332,27 +332,27 @@ class Console : TextAdd
         }
 
         Array lineArray;
-        lineArray = this.TextLine(this.TextCreate(source));
+        lineArray : this.TextLine(this.TextCreate(source));
 
         PortRead read;
-        read = this.PortRead;
+        read : this.PortRead;
 
-        read.Source = lineArray;
+        read.Source : lineArray;
 
         read.Execute();
 
         PortPort port;
-        port = read.Result;
+        port : read.Result;
 
-        read.Result = null;
-        read.Source = null;
+        read.Result : null;
+        read.Source : null;
 
         if (port == null)
         {
             return false;
         }
 
-        this.Port = port;
+        this.Port : port;
         return true;
     }
 
