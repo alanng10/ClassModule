@@ -228,12 +228,12 @@ class Console : TextAdd
                 }
             }
 
-            ConsoleConsole oo;
-            oo : new ConsoleConsole();
+            var ConsoleConsole oo;
+            oo : new ConsoleConsole;
             oo.Init();
 
-            Task task;
-            task : new Task();
+            var Task task;
+            task : new Task;
             task.Init();
             task.Kind : this.TaskKind.Console;
             task.Source : sourceFold;
