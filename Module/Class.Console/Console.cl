@@ -681,10 +681,10 @@ class Console : TextAdd
 
             if (this.TextInfra.End(this.TA(fileName), this.TB(ka), this.StorageNameLess))
             {
-                long ke;
+                var Int ke;
                 ke : this.StringCount(fileName) - this.StringCount(ka);
 
-                String name;
+                var String name;
                 name : this.StringCreateRange(fileName, 0, ke);
 
                 list.Add(name);
@@ -693,7 +693,7 @@ class Console : TextAdd
             i : i + 1;
         }
 
-        Array a;
+        var Array a;
         a : this.ListInfra.ArrayCreateList(list);
         return a;
     }
