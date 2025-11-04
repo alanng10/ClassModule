@@ -450,7 +450,7 @@ class Console : TextAdd
 
         this.BinaryGen.Execute();
 
-        BinaryBinary binary;
+        var Binary binary;
         binary : this.BinaryGen.Result;
 
         this.BinaryGen.Result : null;
