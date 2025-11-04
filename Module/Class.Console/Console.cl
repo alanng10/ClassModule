@@ -460,7 +460,7 @@ class Console : TextAdd
 
         this.BinaryWrite.Execute();
 
-        Data data;
+        var Data data;
         data : this.BinaryWrite.Result;
 
         this.BinaryWrite.Result : null;
