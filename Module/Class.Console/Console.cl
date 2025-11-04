@@ -187,22 +187,22 @@ class Console : TextAdd
         var String aa;
         var Bool b;
         b : (0 < arg.Count);
-        if (!b)
+        inf (!b)
         {
             return false;
         }
-        if (b)
+        inf (b)
         {
             aa : arg.GetAt(0) as String;
         }
 
         var Bool bb;
         bb : this.TextSame(this.TA(aa), this.TB(this.SMake));
-        if (bb)
+        inf (bb)
         {
             var Bool bba;
             bba : (1 < arg.Count);
-            if (!bba)
+            inf (!bba)
             {
                 return false;
             }
@@ -210,7 +210,7 @@ class Console : TextAdd
             aba : arg.GetAt(1) as String;
 
             var String abb;
-            if (2 < arg.Count)
+            inf (2 < arg.Count)
             {
                 abb : arg.GetAt(2) as String;
             }
@@ -220,9 +220,9 @@ class Console : TextAdd
 
             var Bool systemModule;
             systemModule : false;
-            if (!(abb == null))
+            inf (!(abb == null))
             {
-                if (this.TextSame(this.TA(abb), this.TB(this.SFlagM)))
+                inf (this.TextSame(this.TA(abb), this.TB(this.SFlagM)))
                 {
                     systemModule : true;
                 }
