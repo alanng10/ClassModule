@@ -41,6 +41,7 @@ Class.Infra:0.00.00
     Var Var
     Module Module
     ModuleRef ModuleRef
+    ModuleRefLess ModuleRefLess
     Range Range
     Pos Pos
     Source Source
