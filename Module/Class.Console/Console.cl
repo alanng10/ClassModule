@@ -187,7 +187,7 @@ class Console : TextAdd
         var String aa;
         var Bool b;
         b : (0 < arg.Count);
-        inf (!b)
+        inf (~b)
         {
             return false;
         }
@@ -202,7 +202,7 @@ class Console : TextAdd
         {
             var Bool bba;
             bba : (1 < arg.Count);
-            inf (!bba)
+            inf (~bba)
             {
                 return false;
             }
@@ -220,7 +220,7 @@ class Console : TextAdd
 
             var Bool systemModule;
             systemModule : false;
-            inf (!(abb == null))
+            inf (~(abb == null))
             {
                 inf (this.TextSame(this.TA(abb), this.TB(this.SFlagM)))
                 {
