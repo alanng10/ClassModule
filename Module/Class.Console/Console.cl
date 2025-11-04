@@ -184,7 +184,7 @@ class Console : TextAdd
     {
         this.Arg : arg;
 
-        String aa;
+        var String aa;
         var Bool b;
         b : (0 < arg.Count);
         if (!b)
@@ -206,16 +206,16 @@ class Console : TextAdd
             {
                 return false;
             }
-            String aba;
+            var String aba;
             aba : arg.GetAt(1) as String;
 
-            String abb;
+            var String abb;
             if (2 < arg.Count)
             {
                 abb : arg.GetAt(2) as String;
             }
 
-            String sourceFold;
+            var String sourceFold;
             sourceFold : aba;
 
             var Bool systemModule;
