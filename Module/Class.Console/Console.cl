@@ -318,7 +318,7 @@ class Console : TextAdd
         combine : this.TextInfra.PathCombine;
 
         var String fileName;
-        fileName : this.SClassDotPort;
+        fileName : "Class.Port";
 
         var String filePath;
         filePath : this.AddClear().Add(this.SourceFold).Add(combine).Add(fileName).AddResult();
