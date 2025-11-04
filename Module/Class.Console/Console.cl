@@ -186,7 +186,7 @@ class Console : TextAdd
 
         var String aa;
         var Bool b;
-        b : (0 < arg.Count);
+        b : 0 < arg.Count;
         inf (~b)
         {
             return false;
@@ -201,7 +201,7 @@ class Console : TextAdd
         inf (bb)
         {
             var Bool bba;
-            bba : (1 < arg.Count);
+            bba : 1 < arg.Count;
             inf (~bba)
             {
                 return false;
