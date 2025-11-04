@@ -331,17 +331,17 @@ class Console : TextAdd
             return false;
         }
 
-        Array lineArray;
+        var Array lineArray;
         lineArray : this.TextLine(this.TextCreate(source));
 
-        PortRead read;
+        var PortRead read;
         read : this.PortRead;
 
         read.Source : lineArray;
 
         read.Execute();
 
-        PortPort port;
+        var Port port;
         port : read.Result;
 
         read.Result : null;
