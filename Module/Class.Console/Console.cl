@@ -220,7 +220,7 @@ class Console : TextAdd
 
             var Bool systemModule;
             systemModule : false;
-            inf (~(abb == null))
+            inf (~(abb = null))
             {
                 inf (this.TextSame(this.TA(abb), this.TB(this.SFlagM)))
                 {
