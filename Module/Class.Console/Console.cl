@@ -655,7 +655,7 @@ class Console : TextAdd
         return a;
     }
 
-    protected virtual Array SourceNameList(String foldPath)
+    maide precate Array SourceNameList(var String foldPath)
     {
         Array fileArray;
         fileArray = this.FileList(foldPath);
