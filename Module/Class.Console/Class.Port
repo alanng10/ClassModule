@@ -26,7 +26,10 @@ System.Text
     StringComp StringComp
     TextInfra Infra
 System.Console
+    ConsoleConsole Console
     Out Out
+System.Entry
+    EntryEntry Entry
 Text.Text:0.00.00
     TextAdd Add
 Storage.Storage:0.00.00
