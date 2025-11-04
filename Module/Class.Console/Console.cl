@@ -466,10 +466,10 @@ class Console : TextAdd
         this.BinaryWrite.Result : null;
         this.BinaryWrite.Binary : null;
 
-        String moduleRefString;
+        var String moduleRefString;
         moduleRefString : this.ClassInfra.ModuleRefString(module.Ref);
 
-        String foldPath;
+        var String foldPath;
         foldPath : this.AddClear().Add(this.ClassInfra.ClassModulePath(this.ClassPath))
             .Add(this.TextInfra.PathCombine)
             .Add(moduleRefString).AddResult();
@@ -493,7 +493,7 @@ class Console : TextAdd
             return false;
         }
 
-        String filePath;
+        var String filePath;
         filePath : this.AddClear().Add(foldPath).Add(this.TextInfra.PathCombine)
             .Add(this.SModule).AddResult();
 
