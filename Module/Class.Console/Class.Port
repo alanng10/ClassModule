@@ -162,6 +162,8 @@ Result
 Task
 TaskKind
 TaskKindList
+PortLoad
+ModulePort
 InfoToken
 InfoTravel
 PathTravel
