@@ -165,6 +165,7 @@ TaskKindList
 PortLoad
 ModulePort
 BinaryGen
+StorageGen
 InfoToken
 InfoTravel
 PathTravel
