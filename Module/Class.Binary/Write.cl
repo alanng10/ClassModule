@@ -52,7 +52,7 @@ class Write : Any
         this.Arg.Data.Count : count;
         this.Arg.Data.Init();
 
-        this.Operate : this.CountOperate;
+        this.Operate : this.SetOperate;
 
         this.ResetStage();
         this.ExecuteStage();
